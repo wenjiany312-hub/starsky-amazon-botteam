@@ -10,7 +10,7 @@
 
 每字段和每条问答可复制英文；HTML按钮复制经过校验的英文源码。复制整套带英文字段名，顺序同上，但按后台粘贴顺序把属性置于QA之前；不会夹带中文、计数或审核备注。待核稿可复制本地编辑，不能标可直接上架。HTML表示不证明后台接受所有标签，API默认描述纯文字。
 
-运营版手工粘贴。旗舰版已接SP-API时按钮只生成审核请求，线上旧值未读取就明确 `not_read`。本地 `push_listing_copy.py` 读取同SKU/站点实际旧值，生成完整现在→改成提案；人工审核与确认后才写，写前保存可回滚旧值，写后实际回读。当前自动映射仅 `item_name`、`bullet_point`、`product_description`、`generic_keyword`；Highlights、QA、HTML和其他属性明确手工操作。不存在的SKU须手工创建，不能用空旧值假装更新或可回滚。
+运营版手工粘贴。接了数据底座（SP-API）时按钮只生成审核请求，线上旧值未读取就明确 `not_read`。本地 `push_listing_copy.py` 读取同SKU/站点实际旧值，生成完整现在→改成提案；人工审核与确认后才写，写前保存可回滚旧值，写后实际回读。当前自动映射仅 `item_name`、`bullet_point`、`product_description`、`generic_keyword`；Highlights、QA、HTML和其他属性明确手工操作。不存在的SKU须手工创建，不能用空旧值假装更新或可回滚。
 
 ## 输入与审核分开
 

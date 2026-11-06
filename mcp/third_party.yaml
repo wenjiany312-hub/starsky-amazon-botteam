@@ -98,7 +98,7 @@ mcps:
     required: later
     status: read_only_skill
     roles: [ads, reviewer]
-    note: 不在 Bot 里直接接。经数据底座读报表、交方案；老板确认推送后才改店铺。开新活动在接通前走 Bulk 表格
+    note: 不在 Bot 里直接接。经数据底座读报表、交方案；老板在审核报告里确认推送后才改店铺。接了 Ads API 时新建活动也走审核报告（先建暂停、回读一致才开启）；只有领星 ERP 的店铺新建活动仍走 Bulk 表格
     prefer: data_hub
 local:
   1688_scraper:             {name: 1688 抓取, roles: [warehouse], grokbot: "云电脑上装（mcp/local/install_grokbot.sh），以 stdio 自定义 MCP 注册", tools: [ping, search_offers, login_1688, get_offer, download_media]}
