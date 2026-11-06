@@ -1,0 +1,31 @@
+schema_version: "1.0"
+run_id: ""
+cycle_id: ""
+strategy_id: ""
+strategy_version: 0
+strategy_hash: "sha256:"
+plan_id: ""
+plan_version: 0
+plan_hash: "sha256:"
+hash_schema: ad-plan-c14n-v1
+approved_compile_context_sha256: "sha256:"  # canonical campaigns + production 时必填
+status: pending  # pending | changes_requested | approved_for_bulk | approved_for_demo_bulk | rejected | blocked
+reviewed_by: ""
+reviewed_at: ""
+checks:
+  identity_scope: pending
+  campaign_role_and_goal: pending
+  daily_budget_reconciliation: pending
+  profit_and_inventory_guardrails: pending
+  maximum_effective_bid: pending
+  placement_and_bidding: pending
+  targeting_source_traceability: pending
+  negative_relevance_and_res_per_safety: pending
+  sp_sb_sd_eligibility: pending
+requested_changes: []
+decision_record: []
+archive_review:
+  status: not_applicable  # approved | rejected | not_applicable
+  approved_action_ids: []
+  reviewed_by: ""
+  reviewed_at: ""

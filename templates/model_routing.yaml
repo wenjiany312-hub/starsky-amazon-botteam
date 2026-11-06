@@ -1,0 +1,1275 @@
+schema_version: '3.3'
+artifact_type: model_routing
+display_names:
+  6.1 Sol: GPT-6.1 Sol
+  6 Sol: GPT-6 Sol
+  6 Luna: GPT-6 Luna
+  6 Astra: GPT-6 Astra
+  5.6 Sol: GPT-5.6 Sol
+  5.6 Terra: GPT-5.6 Terra
+  5.6 Luna: GPT-5.6 Luna
+updated: '2026-10-12'
+evidence_status: 2026-10-12核对OpenAI官方能力、API价格和订阅用量说明；步骤分工为星空业务建议，尚无星空同题跨模型质量/完整消耗实测。
+sources:
+- https://developers.openai.com/api/docs/models/gpt-6.1-sol
+- https://developers.openai.com/api/docs/pricing
+- https://developers.openai.com/api/docs/guides/model-selection
+- https://learn.chatgpt.com/docs/models
+- https://learn.chatgpt.com/docs/pricing
+- https://developers.openai.com/cookbook/examples/partners/harness_aware_plugin_evals/harness_aware_plugin_evals
+beginner_default: 6.1 Sol · 中
+quality_first: 6.1 Sol · 高；关键决策用 6 Astra · 中复核
+model_change_requires_new_thread: false
+startup_hint: 模型：沿用当前模型。官方模型的阶段建议按需查看，第三方模型不受推荐型号和推理档位约束；插件不自动切换模型。
+third_party_policy: 沿用用户当前模型与提供商；不按品牌设白名单，不因推荐型号或档位暂停，不自动切换或委托其他模型。工具权限、真实数据和人工审核要求保持一致。
+roles:
+- model: 6.1 Sol
+  role: 性价比主力：多源选品、文案、读图、广告与异常诊断。
+  reasoning: 中起步；深度取舍升高；证据冲突或要求更精细时再极高。
+  input_usd_per_million: 2
+  output_usd_per_million: 10
+  cached_input_usd_per_million: 0.1
+  price_checked_at: '2026-10-12'
+  price_basis: API Standard, input <=272K, USD per 1M tokens
+- model: 6 Luna
+  role: 规则明确的提取、归档、固定巡检与脚本辅助。
+  reasoning: 低或中；开放式判断与异常诊断交 Sol。
+  input_usd_per_million: 0.1
+  output_usd_per_million: 0.5
+  cached_input_usd_per_million: 0.01
+  price_checked_at: '2026-10-12'
+  price_basis: API Standard, input <=272K, USD per 1M tokens
+- model: 6 Astra
+  role: 复杂、多步骤、跨资料的综合推理与执行；适合关键决策和疑难复核。
+  reasoning: 中起步；证据冲突或约束复杂时升高，仍有明确难点再用极高。
+  input_usd_per_million: 10
+  output_usd_per_million: 50
+  cached_input_usd_per_million: 1
+  price_checked_at: '2026-10-12'
+  price_basis: API Standard, input <=272K, USD per 1M tokens
+- model: 5.6 Sol
+  role: GPT-6 不可用或已验证旧流程更稳定时的备选。
+  reasoning: 中起步；明确难点再高，不因旧模板强制使用 Sol 高。
+  input_usd_per_million: 4
+  output_usd_per_million: 20
+  cached_input_usd_per_million: 0.4
+  price_checked_at: '2026-10-12'
+  price_basis: API Standard, input <=272K, USD per 1M tokens
+- model: 5.6 Terra
+  role: 可选旧流程；同题质量和套餐实耗验证后再决定保留。
+  reasoning: 中起步；多表诊断和中间分析按需要升高。
+  input_usd_per_million: 2
+  output_usd_per_million: 12
+  cached_input_usd_per_million: 0.2
+  price_checked_at: '2026-10-12'
+  price_basis: API Standard, input <=272K, USD per 1M tokens
+- model: 5.6 Luna
+  role: GPT-6 Luna 不可用或旧流程回归时的备选。
+  reasoning: 低或中；通过脚本与抽样核对结果，不默认叠到最高档。
+  input_usd_per_million: 0.2
+  output_usd_per_million: 1.2
+  cached_input_usd_per_million: 0.02
+  price_checked_at: '2026-10-12'
+  price_basis: API Standard, input <=272K, USD per 1M tokens
+- model: 6 Sol
+  role: 旧Sol兼容备选：账号尚无6.1或已有同题结果更稳定时保留。
+  reasoning: 中起步；沿用用户明确选择，不强制迁移。
+  input_usd_per_million: 2
+  output_usd_per_million: 10
+  cached_input_usd_per_million: 0.2
+  price_checked_at: '2026-10-12'
+  price_basis: API Standard, input <=272K, USD per 1M tokens
+by_stage:
+  S1:
+    name: 选品
+    window_default: 6.1 Sol · 中
+    analysis: 6.1 Sol · 高：候选取舍、深度市场与竞品分析
+    escalate: 先6.1 Sol高；证据冲突仍难解或重大采购风险时6 Astra中/高复核
+    mechanical: 6 Luna · 低/中辅助固定流程；计算、清洗、渲染与 Bulk 优先确定性脚本
+    never: 无来源数据或未解决的缺项，不能靠升级模型放行。
+  S2:
+    name: 文案
+    window_default: 6.1 Sol · 中
+    analysis: 6.1 Sol · 中：词意、场景与 Listing；多变体升高
+    escalate: 先6.1 Sol高；重大风险、多源冲突或高代价判断时6 Astra中/高复核
+    mechanical: 6 Luna · 低/中辅助固定流程；计算、清洗、渲染与 Bulk 优先确定性脚本
+    never: 清洗规则、产品事实和合规证据不能用模型猜测补齐。
+  S3:
+    name: 视觉
+    window_default: 6.1 Sol · 中
+    analysis: 6.1 Sol · 中：读图、剧本、提示词与视觉验收
+    escalate: 先6.1 Sol高；重大风险、多源冲突或高代价判断时6 Astra中/高复核
+    mechanical: 6 Luna · 低/中辅助固定流程；计算、清洗、渲染与 Bulk 优先确定性脚本
+    never: 聊天模型选择不等于实际出图或视频生成能力已接通。
+  S4:
+    name: 广告
+    window_default: 6.1 Sol · 中
+    analysis: 6.1 Sol · 中：架构与机会词；预算盘子和策略用高
+    escalate: 先6.1 Sol高；重大风险、多源冲突或高代价判断时6 Astra中/高复核
+    mechanical: 6 Luna · 低/中辅助固定流程；计算、清洗、渲染与 Bulk 优先确定性脚本
+    never: 任何模型都不能替代策略确认、Bulk 校验和用户审核上传。
+  S5:
+    name: 运营
+    window_default: 6 Luna · 中 + 接入脚本
+    analysis: 6.1 Sol · 中：异常诊断；跨表归因用高
+    escalate: 先6.1 Sol高；重大风险、多源冲突或高代价判断时6 Astra中/高复核
+    mechanical: 6 Luna · 低/中辅助固定流程；计算、清洗、渲染与 Bulk 优先确定性脚本
+    never: 发现异常不等于已定位原因，不自动修改广告或店铺后台。
+by_task:
+  安装/体检/装MCP:
+    model: 脚本执行不需要选择聊天模型
+    note: 脚本负责执行；解释报错用 6.1 Sol · 中，先核对实际错误。
+  1688验通与抓详情:
+    model: 6 Luna · 中
+    note: 成熟抓取流程可用 Luna；登录和验证码先处理工具状态。
+    escalate: 页面结构复杂或工具失败需定位时 6.1 Sol · 中
+    fallback: 5.6 Terra · 中
+  00C资料接入/建夹:
+    model: 6.1 Sol · 中
+    note: 先明确站点、预算、供应条件；已有清晰表单可用 6 Luna · 中整理。
+    escalate: 需求明显冲突时 6.1 Sol · 高
+    fallback: 5.6 Terra · 中
+  市场穿透/竞品池:
+    model: 6.1 Sol · 高
+    escalate: 跨源结论冲突或重要合规风险时 6 Astra · 高
+    note: 市场穿透、竞争与风险需要综合证据；关键事实必须可回查。
+    fallback: 5.6 Sol · 高
+  IP/合规裁定:
+    model: 6.1 Sol · 高
+    note: 市场穿透、竞争与风险需要综合证据；关键事实必须可回查。
+    escalate: 跨源结论冲突或重要合规风险时 6 Astra · 高
+    fallback: 5.6 Sol · 高
+  词表清洗分池:
+    model: 6.1 Sol · 中 + 清洗脚本
+    note: 固定清洗子任务可交 Luna 中；词意判断与来源资格由 Sol 核对。
+    escalate: 词意歧义、用途分类冲突时 6.1 Sol · 高
+    fallback: 5.6 Terra · 中
+  Listing终稿:
+    model: 6.1 Sol · 中
+    escalate: 多变体、强约束文案用 Sol 高；难定声明用 Astra 中
+    note: 文案、关键词覆盖与合规一起验收；固定字符和字节规则交给脚本。
+    fallback: 5.6 Sol · 中
+  视觉方案取舍:
+    model: 6.1 Sol · 中
+    escalate: 卖点排序或跨模块表达复杂时 6.1 Sol · 高
+    note: 形成主副图与 A+ 的完整表达顺序，逐格绑定事实和垫图。
+    fallback: 5.6 Sol · 中
+  垫图清单/资产编号:
+    model: 6.1 Sol · 中
+    note: 读图涉及产品真实性，先由 Sol 看结构；已确认后的编号可用 Luna。
+    escalate: 佩戴、结构、尺寸证据冲突时 6 Astra · 中
+    fallback: 5.6 Terra · 中
+  广告策略(brief):
+    model: 6.1 Sol · 高
+    fallback: 5.6 Sol · 高
+    escalate: 较大预算承诺或利润约束复杂时 6 Astra · 中复核
+    note: 预算、保本目标、库存与试错范围相互约束；确认后才编译。
+  广告架构编译(ad_plan):
+    model: 6.1 Sol · 中 + 编译脚本
+    note: 按已确认 brief 编译；完整确定性字段转换子任务可交 Luna 中。
+    escalate: 词包到架构存在歧义时 6.1 Sol · 高
+    fallback: 5.6 Terra · 中
+  Bulk编译/校验/Hash:
+    model: 6 Luna · 中 + 确定性脚本
+    note: Bulk、模板、Hash 和格式用脚本编译验证；没有真实 SKU 不冒充可上传。
+    escalate: 校验失败需理解结构时 6.1 Sol · 中
+    fallback: 5.6 Luna · 中
+  报表诊断:
+    model: 6 Luna · 中初筛；6.1 Sol · 中诊断
+    escalate: 跨广告/库存/价格归因用 Sol 高；仍冲突用 Astra 高
+    note: 这是复合步骤：固定快照与报警可便宜，原因判断和动作建议必须升级。
+    fallback: 5.6 Terra · 中做常规巡检
+  HTML渲染(数据已齐):
+    model: 6 Luna · 低 + 渲染脚本
+    note: 内容已确认后渲染，检查表格和数字；不趁渲染重写策略。
+    escalate: 数据或结论发生变化时回到 6.1 Sol · 中
+    fallback: 5.6 Luna · 低
+  交接闸门核对(报数):
+    model: 按下一实际任务推荐；用户当前已选模型可继续
+    note: 以文件、状态和验证输出为证据。
+  限定字段小改:
+    model: 6.1 Sol · 中；已确认的固定格式处理可用 6 Luna · 中
+    note: 只修改指定字段，核对相关事实和格式；不重建词库，不扩大范围，保留其他内容。
+  插件跨Skill疑难排查:
+    model: 6 Astra · 高
+    note: 先复现和定位根因；仅有明确难点时升 xhigh，不默认 max/ultra。
+value_card_rules:
+- 这些是可调整建议。用户明确选择模型时沿用；不要求只为显示入口菜单切模型。
+- 优先按本步任务推荐，必要时补充升级条件；不每一步重复整张模型表。
+- 常规主力 6.1 Sol 中；复杂取舍用 Sol 高；固定整理用 6 Luna 低/中；关键结论用 6 Astra 复核。
+- 模型名、推理档位和速度模式是不同设置；以用户选择器真实可用项为准，不推断 Power 对应固定模型。
+- 建议切换由用户手动完成，不宣称当前会话模型已被插件自动更换。
+- 模型变化本身不要求新任务；正式阶段交接、上下文混乱或过长时按报告状态与交接文件继续。
+- 标准速度优先；Fast 不是推理档位，开启前核对当前额度计费。
+- 数据缺失、登录失败或网络超时先解决对应问题，不靠升档反复重跑。
+- 以合格任务的完整执行与返工消耗对照；没有实测，不承诺节省百分比。
+- 每一步按 by_step 的模型、理由与升级条件展示，模型提示放在步骤卡正文；步骤未完成时不假装已进入下一步。
+- 主窗口保持用户当前模型；本步/下步型号是任务分工参考。确定性任务先脚本，必要机械任务按子代理契约有限派发；推荐型号不冒充真实运行型号。
+fallback: 优先保留用户当前选择；GPT-6 不可用时按各步 fallback 使用旧模型，保留证据与审核标准，不声称质量等效。
+handoff_rule: 本阶段按 by_step；正式交接推荐目标阶段第1步。保留 _NEXT_、报告验收和用户选择；不以模型名作为放行条件。
+value_card_template: '本步建议：{window_default}
+
+  主要分析：{analysis}
+
+  复杂时：{escalate}
+
+  格式处理：{mechanical}
+
+  仍需核对：{never}
+
+  用户自行选择，以上不作为硬性切换门槛。'
+speed_default: standard
+mapping_source: 官方文档支持6.1 Sol作为性价比主力；保留原阶段与工具门禁，逐步推荐，不自动切换。
+by_step:
+  S1:
+    '1':
+      task_id: intake_interview
+      name: 意图确认 + 条件访谈
+      recommended: 6.1 Sol · 中
+      model: gpt-6.1-sol
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 先明确站点、预算、供应条件；已有清晰表单可用 6 Luna · 中整理。
+      escalate_when: 需求明显冲突时 6.1 Sol · 高
+      fallback: 5.6 Terra · 中
+    '2':
+      task_id: condition_select
+      name: L1 品类市场筛选
+      recommended: 6.1 Sol · 中
+      model: gpt-6.1-sol
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 需要结合市场体量、增长、竞争和供应限制；保留数据日期。
+      escalate_when: 多品类或旺季判断复杂时 6.1 Sol · 高
+      fallback: 5.6 Terra · 中仅整理；分析可用 5.6 Sol · 中
+    '3':
+      task_id: candidate_convergence
+      name: 品类内 Top 候选收敛
+      recommended: 6.1 Sol · 高
+      model: gpt-6.1-sol
+      effort: high
+      assignments:
+      - model: gpt-6.1-sol
+        effort: high
+      reason: 比较同一标准下的候选，解释淘汰原因和最强反对理由。
+      escalate_when: 证据矛盾或候选接近时 6 Astra · 中
+      fallback: 5.6 Sol · 高
+    '4':
+      task_id: product_selection
+      name: 品类内选款 → 定到具体 SKU
+      recommended: 6.1 Sol · 高
+      model: gpt-6.1-sol
+      effort: high
+      assignments:
+      - model: gpt-6.1-sol
+        effort: high
+      reason: 核对产品结构、变体、目标人群与真实供应能力。
+      escalate_when: 影响采购的规格取舍难定时 6 Astra · 中
+      fallback: 5.6 Sol · 高
+    '5':
+      task_id: supplier_sourcing
+      name: 去 1688 反查货源 + 抓页面事实
+      recommended: 6 Luna · 中
+      model: gpt-6-luna
+      effort: medium
+      assignments:
+      - model: gpt-6-luna
+        effort: medium
+      reason: 成熟抓取流程可用 Luna；登录和验证码先处理工具状态。
+      escalate_when: 页面结构复杂或工具失败需定位时 6.1 Sol · 中
+      fallback: 5.6 Terra · 中
+    '6':
+      task_id: supplier_data_merge
+      name: 供应商回填
+      recommended: 6.1 Sol · 中
+      model: gpt-6.1-sol
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 核对组件、厂家装套包装报价、费用包含与缺项；固定字段提取仍可交脚本或Luna。
+      escalate_when: 供应商说法与实拍冲突时 6.1 Sol · 中
+      fallback: 5.6 Terra · 中
+    '7':
+      task_id: cost_feasibility
+      name: L2 成本可行性
+      recommended: 6.1 Sol · 中 + 计算脚本
+      model: gpt-6.1-sol
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 计算交给脚本；模型核查单位、费率、边界条件和缺项。
+      escalate_when: 利润敏感性或现金约束复杂时 6.1 Sol · 高
+      fallback: 5.6 Terra · 中 + 脚本
+    '8':
+      task_id: market_ip_review
+      name: 市场穿透 + 竞品池 + IP 合规
+      recommended: 6.1 Sol · 高
+      model: gpt-6.1-sol
+      effort: high
+      assignments:
+      - model: gpt-6.1-sol
+        effort: high
+      reason: 市场穿透、竞争与风险需要综合证据；关键事实必须可回查。
+      escalate_when: 跨源结论冲突或重要合规风险时 6 Astra · 高
+      fallback: 5.6 Sol · 高
+    '9':
+      task_id: s1_report_delivery
+      name: S1 综合可行性报告 + HTML
+      recommended: 6.1 Sol · 高
+      model: gpt-6.1-sol
+      effort: high
+      assignments:
+      - model: gpt-6.1-sol
+        effort: high
+      reason: 核对做/暂缓/不做的依据及反例；HTML 使用固定渲染脚本。
+      escalate_when: 先用6.1 Sol高完成综合核查；重大采购风险或相互矛盾的证据未解决时再用6 Astra中/高复核。
+      fallback: 5.6 Sol · 高
+  S2:
+    '1':
+      task_id: inherit_asset
+      name: 承接 S1 + 读词库资产
+      recommended: 6.1 Sol · 中
+      model: gpt-6.1-sol
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 按已存交接文件和验证输出核对，不重复启动选品研究。
+      escalate_when: 历史状态不一致时 6.1 Sol · 中
+      fallback: 5.6 Terra · 中
+    '2':
+      task_id: competitor_select
+      name: 竞品分层挑选
+      recommended: 6.1 Sol · 高
+      model: gpt-6.1-sol
+      effort: high
+      assignments:
+      - model: gpt-6.1-sol
+        effort: high
+      reason: 独立竞品、相似度及覆盖要核对；人工确认范围仍然保留。
+      escalate_when: 同父体去重或可比性争议时 6.1 Sol · 高
+      fallback: 5.6 Terra · 中
+    '3':
+      task_id: export_intake
+      name: 导关键词表
+      recommended: 6.1 Sol · 中
+      model: gpt-6.1-sol
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 出导表操作卡和归档清单；真实平台导出仍由对应工具或用户完成。
+      escalate_when: 导出来源和结构异常时 6.1 Sol · 中
+      fallback: 5.6 Luna · 低；不可用时 Terra · 中
+    '4':
+      task_id: asset_clean
+      name: 清洗重判 + 补数 → 词库入库
+      recommended: 6.1 Sol · 高
+      model: gpt-6.1-sol
+      effort: high
+      assignments:
+      - model: gpt-6.1-sol
+        effort: high
+      reason: 固定清洗子任务可交 Luna 中；词意判断与来源资格由 Sol 核对。
+      escalate_when: 词意歧义、用途分类冲突时 6.1 Sol · 高
+      fallback: 5.6 Terra · 中
+    '5':
+      task_id: ct_placement
+      name: CT 映射 + 埋词地图
+      recommended: 6.1 Sol · 高
+      model: gpt-6.1-sol
+      effort: high
+      assignments:
+      - model: gpt-6.1-sol
+        effort: high
+      reason: 场景来自产品事实和需求证据，不能为了凑卖点补事实。
+      escalate_when: 多用途或证据限制复杂时 6.1 Sol · 高
+      fallback: 5.6 Sol · 中
+    '6':
+      task_id: variant_copy
+      name: 逐变体写文案
+      recommended: 6.1 Sol · 高
+      model: gpt-6.1-sol
+      effort: high
+      assignments:
+      - model: gpt-6.1-sol
+        effort: high
+      reason: 文案、关键词覆盖与合规一起验收；固定字符和字节规则交给脚本。
+      escalate_when: 多变体、强约束文案用 Sol 高；难定声明用 Astra 中
+      fallback: 5.6 Sol · 中
+    '7':
+      task_id: compliance_delivery
+      name: 合规扫描 + 算法自检 → 交付
+      recommended: 6.1 Sol · 中
+      model: gpt-6.1-sol
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 当前合规与编辑自检交由脚本核验，人工审阅和推送确认由用户完成。
+      escalate_when: 多变体、强约束文案用 Sol 高；难定声明用 Astra 中
+      fallback: 5.6 Sol · 中
+  S3:
+    '1':
+      task_id: s3_intake
+      name: 承接 S2 + 读 CT、文案、词库
+      recommended: 6 Luna · 中
+      model: gpt-6-luna
+      effort: medium
+      assignments:
+      - model: gpt-6-luna
+        effort: medium
+      reason: 核对事实、文案、资产和已有验收状态。
+      escalate_when: 交接与媒体状态冲突时 6.1 Sol · 中
+      fallback: 5.6 Terra · 中
+    '2':
+      task_id: visual_references
+      name: 素材全量盘点 + 视频抽帧 + 充足度检查
+      recommended: 6.1 Sol · 中
+      model: gpt-6.1-sol
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 读图涉及产品真实性，先由 Sol 看结构；已确认后的编号可用 Luna。
+      escalate_when: 佩戴、结构、尺寸证据冲突时 6 Astra · 中
+      fallback: 5.6 Terra · 中
+    '3':
+      task_id: product_manual
+      name: 学会产品：产品使用说明书
+      recommended: 6.1 Sol · 高
+      model: gpt-6.1-sol
+      effort: high
+      assignments:
+      - model: gpt-6.1-sol
+        effort: high
+      reason: 产品理解与证据冲突/视觉规划；其他机械处理优先脚本
+      escalate_when: 卖点排序或跨模块表达复杂时 6.1 Sol · 高
+      fallback: 5.6 Sol · 中
+    '4':
+      task_id: visual_selling_points
+      name: 卖点与购买决策
+      recommended: 6.1 Sol · 中
+      model: gpt-6.1-sol
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 形成主副图与 A+ 的完整表达顺序，逐格绑定事实和垫图。
+      escalate_when: 卖点排序或跨模块表达复杂时 6.1 Sol · 高
+      fallback: 5.6 Sol · 中
+    '5':
+      task_id: visual_master_plan
+      name: 视觉总规划：7 图任务表 + 高级 A+ 模块表
+      recommended: 6.1 Sol · 高
+      model: gpt-6.1-sol
+      effort: high
+      assignments:
+      - model: gpt-6.1-sol
+        effort: high
+      reason: 产品理解与证据冲突/视觉规划；其他机械处理优先脚本
+      escalate_when: 卖点排序或跨模块表达复杂时 6.1 Sol · 高
+      fallback: 5.6 Sol · 中
+    '6':
+      task_id: listing_image_prompts
+      name: 主副图：选垫图 + 提示词 → 投喂包
+      recommended: 6.1 Sol · 中
+      model: gpt-6.1-sol
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 按已确认剧本生成提示词，保护产品结构和规格。
+      escalate_when: 多变体一致性或提示约束复杂时 6.1 Sol · 高
+      fallback: 5.6 Sol · 中
+    '7':
+      task_id: listing_image_production
+      name: 主副图：出图 → 放回 → 后处理验收 → 最终版
+      recommended: 6.1 Sol · 中
+      model: null
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 图片费用和质量由实际生成服务另计，聊天模型档位不等于出图能力。
+      escalate_when: 结构失真回查原图，再用 Sol 中修订提示词
+      fallback: 不按聊天模型替代出图模型
+    '8':
+      task_id: aplus_production
+      name: 高级 A+：投喂包 → 回填验收 → 最终版
+      recommended: 6.1 Sol · 中
+      model: null
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 按插件约定的两端套图验收实际文件；提示词就绪不算已生成。
+      escalate_when: 产品失真或模块漏项先修对应素材
+      fallback: 不按聊天模型替代出图模型
+    '9':
+      task_id: video_package
+      name: 产品视频：证据档位 → 分镜 + 关键帧 + 提示词
+      recommended: 6.1 Sol · 中
+      model: gpt-6.1-sol
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 先定数量、时长、比例和分组维度；分镜与真实物理结构一致。
+      escalate_when: 多个尺码、镜头衔接或穿戴约束时 6.1 Sol · 高
+      fallback: 5.6 Sol · 中
+    '10':
+      task_id: video_production
+      name: 视频回填 → 抽帧对照 → 验收 → 最终版
+      recommended: 6.1 Sol · 中
+      model: null
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 视频生成另行消耗服务额度，验收真实 MP4 和画面。
+      escalate_when: 成片问题交 Sol 中诊断具体镜头
+      fallback: 不按聊天模型替代视频模型
+    '11':
+      task_id: s3_report_delivery
+      name: S3 交付 → S3→S4 交接
+      recommended: 6.1 Sol · 中 + 验收脚本
+      model: gpt-6.1-sol
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 数量/尺寸用脚本，画面真实性要看图；区分方案、生成、最终接受。
+      escalate_when: 产品变形或证据冲突时 6 Astra · 中
+      fallback: 5.6 Terra · 中仅文件核验；视觉用 5.6 Sol · 中
+    '12':
+      task_id: brand_story
+      name: 品牌故事（按需）
+      recommended: 6.1 Sol · 中
+      model: gpt-6.1-sol
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 品牌表达、风格与后台模块取舍要判断；尺寸导出、上传包与清单由脚本完成。
+      escalate_when: 品牌定位或多系列取舍复杂时 6 Astra · 中
+      fallback: 5.6 Sol · 中
+    '13':
+      task_id: brand_store
+      name: 品牌旗舰店（按需）
+      recommended: 6.1 Sol · 中
+      model: gpt-6.1-sol
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 店铺页面结构与风格推荐要判断；图块尺寸、上传包与搭建步骤由脚本完成。
+      escalate_when: 系列多、页面层级复杂时 6 Astra · 中
+      fallback: 5.6 Sol · 中
+  S4:
+    '1':
+      task_id: s4_intake
+      name: 承接 S1–S3：词库索引、文案、图片与类目资料
+      recommended: 6 Luna · 中
+      model: gpt-6-luna
+      effort: medium
+      assignments:
+      - model: gpt-6-luna
+        effort: medium
+      reason: 承接事实与状态，不重复输出整份历史。
+      escalate_when: 前序产品事实与广告输入不一致时 6.1 Sol · 中
+      fallback: 5.6 Terra · 中
+    '2':
+      task_id: ad_classification
+      name: 判断产品与选择打法
+      recommended: 6.1 Sol · 中
+      model: gpt-6.1-sol
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 区分产品形态和阶段，给出可被用户否决的判断依据。
+      escalate_when: 品类流量与经营目标冲突时 6.1 Sol · 高
+      fallback: 5.6 Sol · 中
+    '3':
+      task_id: strategy_review
+      name: 定盘子：日预算、可接受 ACOS 与亏损上限
+      recommended: 6.1 Sol · 高
+      model: gpt-6.1-sol
+      effort: high
+      assignments:
+      - model: gpt-6.1-sol
+        effort: high
+      reason: 预算、保本目标、库存与试错范围相互约束；确认后才编译。
+      escalate_when: 较大预算承诺或利润约束复杂时 6 Astra · 中复核
+      fallback: 5.6 Sol · 高
+    '4':
+      task_id: ad_keywords_bid
+      name: 选词与确定起始出价
+      recommended: 6.1 Sol · 中 + 编译脚本
+      model: gpt-6.1-sol
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 按已确认 brief 编译；完整确定性字段转换子任务可交 Luna 中。
+      escalate_when: 词包到架构存在歧义时 6.1 Sol · 高
+      fallback: 5.6 Terra · 中
+    '5':
+      task_id: s4_report_review
+      name: 一页广告方案与批准
+      recommended: 用户审核；6.1 Sol · 中辅助
+      model: gpt-6.1-sol
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 模型检查无法代替预算和上线决定；保留已有有效授权。
+      escalate_when: 重要预算方案用 6 Astra · 中做反例复核
+      fallback: 5.6 Sol · 中
+    '6':
+      task_id: sku_bulk_release
+      name: 填写并确认 Seller SKU，生成 Bulk 表
+      recommended: 6 Luna · 中 + 确定性脚本
+      model: gpt-6-luna
+      effort: medium
+      assignments:
+      - model: gpt-6-luna
+        effort: medium
+      reason: Bulk、模板、Hash 和格式用脚本编译验证；没有真实 SKU 不冒充可上传。
+      escalate_when: 校验失败需理解结构时 6.1 Sol · 中
+      fallback: 5.6 Luna · 中
+    '7':
+      task_id: s4_report_delivery
+      name: 上传四步指引与交接 S5
+      recommended: 6 Luna · 低
+      model: gpt-6-luna
+      effort: low
+      assignments:
+      - model: gpt-6-luna
+        effort: low
+      reason: 交付真实上传文件与后续投喂路径，明确已准备和已上线的区别。
+      escalate_when: 上线状态或范围不清时 6.1 Sol · 中
+      fallback: 5.6 Terra · 中
+  S5:
+    '1':
+      task_id: s5_ingest
+      name: 选来源并取数
+      recommended: 6 Luna · 中 + 取数脚本
+      model: gpt-6-luna
+      effort: medium
+      assignments:
+      - model: gpt-6-luna
+        effort: medium
+      reason: 固定脚本取数，下载表格或领星都是确定性流程。
+      escalate_when: 首次配置领星或数据对不上时 6.1 Sol · 中
+      fallback: 5.6 Terra · 中
+    '2':
+      task_id: s5_diagnose
+      name: 诊断与依据
+      recommended: 6.1 Sol · 中
+      model: gpt-6.1-sol
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 规则脚本出候选，知识库 / SIF 依据与建议执行 / 暂缓需要判断。
+      escalate_when: 跨广告 / 库存 / 价格归因或证据冲突用 Sol 高
+      fallback: 5.6 Terra · 中
+    '3':
+      task_id: s5_review
+      name: 优化前后对比报告与审批
+      recommended: 6 Luna · 中
+      model: gpt-6-luna
+      effort: medium
+      assignments:
+      - model: gpt-6-luna
+        effort: medium
+      reason: 报告由脚本渲染，只需发链接、记录用户原话。
+      escalate_when: 用户给出复杂自定义指令时 6.1 Sol · 中
+      fallback: 5.6 Terra · 中
+    '4':
+      task_id: s5_apply
+      name: 写回 / 上传表 / 文案改稿与回执
+      recommended: 6 Luna · 中 + 写回脚本
+      model: gpt-6-luna
+      effort: medium
+      assignments:
+      - model: gpt-6-luna
+        effort: medium
+      reason: 写回、上传表、回执都是脚本；核对后台现值与操作日志。
+      escalate_when: 写回报错或后台值对不上时 6.1 Sol · 中
+      fallback: 5.6 Terra · 中
+    '5':
+      task_id: s5_close
+      name: 本轮收尾与日报
+      recommended: 6 Luna · 低；日报是脚本定时，不用 AI
+      model: gpt-6-luna
+      effort: low
+      assignments:
+      - model: gpt-6-luna
+        effort: low
+      reason: 交付本轮报告；日报由本机定时任务跑脚本推飞书，不耗模型。
+      escalate_when: 推送失败排查时 6 Luna · 中
+      fallback: 5.6 Terra · 低
+legacy_host_routing:
+  S1:
+    model_default: 5.6 Terra · 中（访谈、资料、整理）；第 2/3/8 步分析用 6 Astra · 中；证据冲突再升高
+    steps:
+      '1':
+        model: 5.6 Terra · 中
+        model_ref:
+        - by_stage
+        - S1
+        - window_default
+      '2':
+        model: 6 Astra · 中
+        model_ref:
+        - by_stage
+        - S1
+        - analysis
+      '3':
+        model: 6 Astra · 中
+        model_ref:
+        - by_stage
+        - S1
+        - analysis
+      '4':
+        model: 6 Astra · 中
+        model_ref:
+        - by_stage
+        - S1
+        - analysis
+      '5':
+        model: 5.6 Luna · 中
+        model_ref:
+        - by_task
+        - 1688验通与抓详情
+        - model
+      '6':
+        model: 5.6 Luna · 中
+        model_ref:
+        - by_stage
+        - S1
+        - mechanical
+      '7':
+        model: 5.6 Terra · 中
+        model_ref:
+        - by_stage
+        - S1
+        - window_default
+      '8':
+        model: 6 Astra · 中；证据冲突升 6 Astra · 高
+        model_ref:
+        - by_stage
+        - S1
+        - analysis
+      '9':
+        model: 6 Astra · 中；HTML 渲染为固定脚本
+        model_ref:
+        - by_stage
+        - S1
+        - analysis
+  S2:
+    model_default: 5.6 Terra · 中（词表接入、清洗）；文案与卖点用 6 Astra · 中
+    steps:
+      '1':
+        model: 5.6 Terra · 中
+        model_ref:
+        - by_stage
+        - S2
+        - window_default
+      '2':
+        model: 6 Astra · 中
+        model_ref:
+        - by_stage
+        - S2
+        - analysis
+      '3':
+        model: 5.6 Luna · 低
+        model_ref:
+        - by_stage
+        - S2
+        - mechanical
+      '4':
+        model: 5.6 Terra · 中
+        model_ref:
+        - by_stage
+        - S2
+        - window_default
+      '5':
+        model: 6 Astra · 中
+        model_ref:
+        - by_stage
+        - S2
+        - analysis
+      '6':
+        model: 6 Astra · 中
+        model_ref:
+        - by_stage
+        - S2
+        - analysis
+  S3:
+    model_default: 6 Astra · 中（方案与提示词）；垫图清单 / 资产编号用 5.6 Terra · 中
+    steps:
+      '1':
+        model: 5.6 Terra · 中
+        model_ref:
+        - by_stage
+        - S3
+        - mechanical
+      '2':
+        model: 5.6 Terra · 中
+        model_ref:
+        - by_stage
+        - S3
+        - mechanical
+      '3':
+        model: 6 Astra · 中
+        model_ref:
+        - by_stage
+        - S3
+        - analysis
+      '4':
+        model: 6 Astra · 中
+        model_ref:
+        - by_stage
+        - S3
+        - analysis
+      '5':
+        model: 6 Astra · 中
+        model_ref:
+        - by_stage
+        - S3
+        - analysis
+      '6':
+        model: 6 Astra · 中
+        model_ref:
+        - by_stage
+        - S3
+        - analysis
+      '7':
+        model: 6 Astra · 中
+        model_ref:
+        - by_stage
+        - S3
+        - analysis
+      '8':
+        model: 6 Astra · 中
+        model_ref:
+        - by_stage
+        - S3
+        - analysis
+      '9':
+        model: —
+        model_ref:
+        - by_stage
+        - S3
+        - analysis
+      '10':
+        model: 6 Astra · 中
+        model_ref:
+        - by_stage
+        - S3
+        - analysis
+      '11':
+        model: 6 Astra · 中
+        model_ref:
+        - by_stage
+        - S3
+        - analysis
+      '12':
+        model: 6 Astra · 中
+        model_ref:
+        - by_stage
+        - S3
+        - analysis
+  S4:
+    model_default: 5.6 Terra · 中（报表 / 编译）；策略与架构用 6 Astra · 中
+    steps:
+      '1':
+        model: 5.6 Terra · 中
+        model_ref:
+        - by_stage
+        - S4
+        - window_default
+      '2':
+        model: 6 Astra · 中
+        model_ref:
+        - by_stage
+        - S4
+        - analysis
+      '3':
+        model: 6 Astra · 中
+        model_ref:
+        - by_stage
+        - S4
+        - analysis
+      '4':
+        model: 5.6 Terra · 中
+        model_ref:
+        - by_stage
+        - S4
+        - window_default
+      '5':
+        model: 5.6 Terra · 中
+        model_ref:
+        - by_stage
+        - S4
+        - window_default
+      '6':
+        model: 5.6 Luna · 低
+        model_ref:
+        - by_stage
+        - S4
+        - mechanical
+      '7':
+        model: —
+        model_ref:
+        - by_stage
+        - S4
+        - analysis
+      '8':
+        model: 确定性脚本；Luna · 中可辅助
+        model_ref:
+        - by_stage
+        - S4
+        - mechanical
+      '9':
+        model: 5.6 Luna · 低
+        model_ref:
+        - by_stage
+        - S4
+        - mechanical
+  S5:
+    model_default: 5.6 Terra · 中（取数 / 报告 / 写回）；诊断与依据用 6 Astra · 中
+    steps:
+      '1':
+        model: 5.6 Luna · 中 + 取数脚本
+        model_ref:
+        - by_stage
+        - S5
+        - mechanical
+      '2':
+        model: 6 Astra · 中
+        model_ref:
+        - by_stage
+        - S5
+        - analysis
+      '3':
+        model: 5.6 Terra · 中
+        model_ref:
+        - by_stage
+        - S5
+        - window_default
+      '4':
+        model: 5.6 Luna · 中 + 写回脚本
+        model_ref:
+        - by_stage
+        - S5
+        - mechanical
+      '5':
+        model: 脚本定时，不用 AI
+        model_ref:
+        - by_stage
+        - S5
+        - mechanical
+billing:
+  api_is_not_subscription: true
+  checked_at: '2026-10-12'
+  api_fast_multiplier: 2
+  api_ultrafast_multiplier: 6
+  subscription_fast_multiplier: 2.5
+  subscription_ultrafast_multiplier: 8
+  long_context_input_threshold: 272000
+  long_context_input_multiplier: 2
+  long_context_output_multiplier: 1.5
+  source: https://learn.chatgpt.com/docs/pricing
+  note: API价格不换算订阅可用任务数；实际额度依模型、上下文、推理、工具、缓存和返工。
+official_model_support:
+  gpt-6.1-sol:
+    api_reasoning_efforts:
+    - low
+    - medium
+    - high
+    - xhigh
+    - max
+    api_tool_endpoint: responses
+    chat_completions_tools_supported: false
+    ui_note: Codex可见档位按账户、客户端和配置；Ultra是推理档，与Ultrafast速度模式分开。
+official_eval_reference:
+  source: https://developers.openai.com/cookbook/examples/partners/harness_aware_plugin_evals/harness_aware_plugin_evals
+  dataset: BLS 108 questions, Codex harness
+  models:
+    gpt-6.1-sol:
+      pass_rate: 0.94
+      tool_calls: 4.02
+    gpt-6-astra:
+      pass_rate: 0.94
+      tool_calls: 3.74
+    gpt-6-luna:
+      pass_rate: 0.88
+      tool_calls: 5.54
+  limitation: 一次模型对比不足以排名；不是星空业务测试，不外推质量或省量比例。
+execution_policy:
+  stable_main_model: true
+  preserve_user_choice: true
+  default_main_recommendation: 6.1 Sol · 中
+  scripts_first: true
+  helper_contract: templates/mechanical_helper_contract.md
+  max_helper_concurrency: 2
+  actual_model_requires_observed_metadata: true
+  token_saving_unproven: true
+  semantic_helper:
+    requested_model: gpt-6-luna
+    reasoning_effort: high
+    display: 6 Luna · 高
+legacy_step_routing:
+  s2.six:
+    '1':
+      task_id: s2_intake
+      name: 承接 S1，核对闸门
+      recommended: 6 Luna · 中
+      model: gpt-6-luna
+      effort: medium
+      assignments:
+      - model: gpt-6-luna
+        effort: medium
+      reason: 按已存交接文件和验证输出核对，不重复启动选品研究。
+      escalate_when: 历史状态不一致时 6.1 Sol · 中
+      fallback: 5.6 Terra · 中
+    '2':
+      task_id: competitor_asin_research
+      name: 竞品 ASIN 池（20 个）
+      recommended: 6.1 Sol · 中
+      model: gpt-6.1-sol
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 独立竞品、相似度及覆盖要核对；人工确认范围仍然保留。
+      escalate_when: 同父体去重或可比性争议时 6.1 Sol · 高
+      fallback: 5.6 Terra · 中
+    '3':
+      task_id: keyword_export_prepare
+      name: 导关键词表
+      recommended: 6 Luna · 低
+      model: gpt-6-luna
+      effort: low
+      assignments:
+      - model: gpt-6-luna
+        effort: low
+      reason: 出导表操作卡和归档清单；真实平台导出仍由对应工具或用户完成。
+      escalate_when: 导出来源和结构异常时 6.1 Sol · 中
+      fallback: 5.6 Luna · 低；不可用时 Terra · 中
+    '4':
+      task_id: keyword_research
+      name: 词库清洗分池 + MCP 补数 → 词库报告
+      recommended: 6.1 Sol · 中 + 清洗脚本
+      model: gpt-6.1-sol
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 固定清洗子任务可交 Luna 中；词意判断与来源资格由 Sol 核对。
+      escalate_when: 词意歧义、用途分类冲突时 6.1 Sol · 高
+      fallback: 5.6 Terra · 中
+    '5':
+      task_id: scene_library
+      name: 场景库
+      recommended: 6.1 Sol · 中
+      model: gpt-6.1-sol
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 场景来自产品事实和需求证据，不能为了凑卖点补事实。
+      escalate_when: 多用途或证据限制复杂时 6.1 Sol · 高
+      fallback: 5.6 Sol · 中
+    '6':
+      task_id: s2_report_delivery
+      name: Listing 文案 + 5 条 Q&A → 文案报告
+      recommended: 6.1 Sol · 中
+      model: gpt-6.1-sol
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 文案、关键词覆盖与合规一起验收；固定字符和字节规则交给脚本。
+      escalate_when: 多变体、强约束文案用 Sol 高；难定声明用 Astra 中
+      fallback: 5.6 Sol · 中
+legacy_by_step:
+  S3:
+    '1':
+      recommended: 5.6 Terra · 中
+    '2':
+      recommended: 5.6 Terra · 中
+    '3':
+      recommended: 6 Astra · 中
+    '4':
+      recommended: 6 Astra · 中
+    '5':
+      recommended: 6 Astra · 中
+    '6':
+      recommended: 6 Astra · 中
+    '7':
+      recommended: 6 Astra · 中
+    '8':
+      recommended: 6 Astra · 中
+    '9':
+      recommended: —
+    '10':
+      recommended: 6 Astra · 中
+    '11':
+      recommended: 6 Astra · 中
+    '12':
+      recommended: 6 Astra · 中
+  S4:
+    '1':
+      task_id: s4_intake
+      name: 承接 S3，核对闸门，先印 S4 九步交接卡
+      recommended: 6 Luna · 中
+      model: gpt-6-luna
+      effort: medium
+      assignments:
+      - model: gpt-6-luna
+        effort: medium
+      reason: 承接事实与状态，不重复输出整份历史。
+      escalate_when: 前序产品事实与广告输入不一致时 6.1 Sol · 中
+      fallback: 5.6 Terra · 中
+    '2':
+      task_id: ad_classification
+      name: 系统预判（读 S1/S2/S3：标品半标非标 · 新品 · 首期角色）
+      recommended: 6.1 Sol · 中
+      model: gpt-6.1-sol
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 区分产品形态和阶段，给出可被用户否决的判断依据。
+      escalate_when: 品类流量与经营目标冲突时 6.1 Sol · 高
+      fallback: 5.6 Sol · 中
+    '3':
+      task_id: strategy_review
+      name: 交互定盘子（日预算 · 毛利/保本 ACOS · 目标 ACOS · 前期能否亏损 · 打法）
+      recommended: 6.1 Sol · 高
+      model: gpt-6.1-sol
+      effort: high
+      assignments:
+      - model: gpt-6.1-sol
+        effort: high
+      reason: 预算、保本目标、库存与试错范围相互约束；确认后才编译。
+      escalate_when: 较大预算承诺或利润约束复杂时 6 Astra · 中复核
+      fallback: 5.6 Sol · 高
+    '4':
+      task_id: ad_architecture
+      name: 编译新品广告架构（吃词库 + Listing 埋词 + 主副图/A+ 图位）
+      recommended: 6.1 Sol · 中 + 编译脚本
+      model: gpt-6.1-sol
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 按已确认 brief 编译；完整确定性字段转换子任务可交 Luna 中。
+      escalate_when: 词包到架构存在歧义时 6.1 Sol · 高
+      fallback: 5.6 Terra · 中
+    '5':
+      task_id: ad_signal
+      name: 机会词对齐（已有 SIF 词包 + 文案埋词；有 SIF MCP 再补当前类目）
+      recommended: 6.1 Sol · 中
+      model: gpt-6.1-sol
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 核对词包来源、意图、机会与产品适配，补数后记录时点。
+      escalate_when: 信号冲突或可能抢量时 6.1 Sol · 高
+      fallback: 5.6 Terra · 中
+    '6':
+      task_id: s4_report_delivery
+      name: 强制出新品广告 HTML 报告
+      recommended: 6 Luna · 低 + 渲染脚本
+      model: gpt-6-luna
+      effort: low
+      assignments:
+      - model: gpt-6-luna
+        effort: low
+      reason: 内容已确认后渲染，检查表格和数字；不趁渲染重写策略。
+      escalate_when: 数据或结论发生变化时回到 6.1 Sol · 中
+      fallback: 5.6 Luna · 低
+    '7':
+      task_id: architecture_review
+      name: 审 HTML / 架构（过了才允许 Bulk）
+      recommended: 用户审核；6.1 Sol · 中辅助
+      model: gpt-6.1-sol
+      effort: medium
+      assignments:
+      - model: gpt-6.1-sol
+        effort: medium
+      reason: 模型检查无法代替预算和上线决定；保留已有有效授权。
+      escalate_when: 重要预算方案用 6 Astra · 中做反例复核
+      fallback: 5.6 Sol · 中
+    '8':
+      task_id: bulk_release
+      name: 检查官方 Bulk 模板已同步 → 出表 → 技术校验
+      recommended: 6 Luna · 中 + 确定性脚本
+      model: gpt-6-luna
+      effort: medium
+      assignments:
+      - model: gpt-6-luna
+        effort: medium
+      reason: Bulk、模板、Hash 和格式用脚本编译验证；没有真实 SKU 不冒充可上传。
+      escalate_when: 校验失败需理解结构时 6.1 Sol · 中
+      fallback: 5.6 Luna · 中
+    '9':
+      task_id: s4_classroom_close
+      name: 课堂收尾（去后台手传；写清 3–5 天后报表投喂路径）
+      recommended: 6 Luna · 低
+      model: gpt-6-luna
+      effort: low
+      assignments:
+      - model: gpt-6-luna
+        effort: low
+      reason: 交付真实上传文件与后续投喂路径，明确已准备和已上线的区别。
+      escalate_when: 上线状态或范围不清时 6.1 Sol · 中
+      fallback: 5.6 Terra · 中
+    '10':
+      task_id: s4_post_launch_10
+      name: 用户把 Bulk 手动上传到 Amazon 后台
+      recommended: 用户操作
+      model: null
+      effort: null
+      assignments: []
+      reason: 后台手动上传，模型仅辅助解释处理报告。
+      escalate_when: 上传出错后按处理报告定位
+      fallback: 不适用
+    '11':
+      task_id: s4_post_launch_11
+      name: 跑 3–5 天，把后台报表放入 S4_广告板块/_投喂_广告报表/
+      recommended: 6 Luna · 低
+      model: gpt-6-luna
+      effort: low
+      assignments:
+      - model: gpt-6-luna
+        effort: low
+      reason: 归档报表与记录时间范围；几天后回看不等于归因已经成熟。
+      escalate_when: 表头或归因窗口不一致时 6.1 Sol · 中
+      fallback: 5.6 Terra · 中
+    '12':
+      task_id: s4_post_launch_12
+      name: 阶段1优化 HTML（含是否开 SB/SD/视频广告）→ 审过再出下一版 Bulk
+      recommended: 6.1 Sol · 高
+      model: gpt-6.1-sol
+      effort: high
+      assignments:
+      - model: gpt-6.1-sol
+        effort: high
+      reason: 先做成熟度和样本判断，再生成待审核优化候选。
+      escalate_when: 策略需要大改或归因证据矛盾时 6 Astra · 高
+      fallback: 5.6 Sol · 高

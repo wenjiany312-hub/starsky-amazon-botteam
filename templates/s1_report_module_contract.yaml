@@ -1,0 +1,222 @@
+schema_version: '1.0'
+revision: R06-C5
+name: S1 M00–M18全模块报告
+purpose: 同源事实生成固定模块；缺数据明确待核及补证；不授予采购许可。
+check_by: skills/starsky-fullchain-workflow/scripts/verify_s1_acceptance.py
+verdicts:
+  invest:
+    label: 做
+    negative: false
+  conditional:
+    label: 有条件做
+    negative: true
+  hold:
+    label: 暂缓（Hold）
+    negative: true
+  reject:
+    label: 不做
+    negative: true
+market_field_mapping:
+  为什么是这个站点: M02
+  需求与痛点: M08
+  切入点与机会: M10
+modules:
+- id: M00
+  order: 0
+  title: 报告头 · 阶段 S1 选品可行性研究报告
+  match: ^M00\s
+  must_contain:
+  - label: 产品
+    pattern: 产品
+  - label: 汇率
+    pattern: 汇率
+- id: M01
+  order: 1
+  title: 关键判定卡
+  match: ^M01\s
+  must_contain:
+  - label: 研究结论
+    pattern: 研究结论
+- id: M02
+  order: 2
+  title: 五问总决策表
+  match: ^M02\s
+  must_contain:
+  - label: 是什么
+    pattern: 是什么
+  - label: 为什么选
+    pattern: 为什么选
+  - label: 会不会侵权
+    pattern: 会不会侵权
+  - label: 好不好推
+    pattern: 好不好推
+  - label: 赚不赚钱
+    pattern: 赚不赚钱
+  - label: 为什么是这个站点
+    pattern: 为什么是这个站点
+- id: M03
+  order: 3
+  title: 核心指标卡（每个数字必带口径）
+  match: ^M03\s
+  must_contain:
+  - label: 来源
+    pattern: 来源
+  - label: 时间
+    pattern: 时间
+  - label: 范围
+    pattern: 范围
+- id: M04
+  order: 4
+  title: 增长跑赢强制警示（双重基准）
+  match: ^M04\s
+  must_contain:
+  - label: 上级类目大盘
+    pattern: 上级类目大盘
+  - label: 站点大盘
+    pattern: 站点大盘
+- id: M05
+  order: 5
+  title: 明确不做 / 唯一观察方向 / 硬门槛
+  match: ^M05\s
+  must_contain:
+  - label: 明确不做
+    pattern: 明确不做
+  - label: 硬门槛
+    pattern: 硬门槛
+- id: M06
+  order: 6
+  title: 允许动作 / 禁止动作 / 当前最高授权预算
+  match: ^M06\s
+  must_contain:
+  - label: 允许动作
+    pattern: 允许动作
+  - label: 禁止动作
+    pattern: 禁止动作
+  - label: 当前最高授权预算
+    pattern: 当前最高授权预算
+- id: M07
+  order: 7
+  title: 结论翻转条件与下次复核
+  match: ^M07\s
+  must_contain:
+  - label: 翻转条件
+    pattern: 翻转条件
+  - label: 下次复核
+    pattern: 下次复核
+- id: M08
+  order: 8
+  title: 市场容量与集中度
+  match: ^M08\s
+  must_contain:
+  - label: 市场容量
+    pattern: 市场容量
+  - label: 需求与痛点
+    pattern: 需求与痛点
+- id: M09
+  order: 9
+  title: 成交价格带与价格分位
+  match: ^M09\s
+  must_contain:
+  - label: 价格
+    pattern: 价格
+- id: M10
+  order: 10
+  title: 竞品穿透（变体 / 上架日期分层 / 双时间窗）
+  match: ^M10\s
+  must_contain:
+  - label: '### 变体穿透'
+    pattern: \#\#\#\ 变体穿透
+  - label: '### 上架日期分层'
+    pattern: \#\#\#\ 上架日期分层
+  - label: '### 双时间窗'
+    pattern: \#\#\#\ 双时间窗
+  - label: '### 头部基准与费用'
+    pattern: \#\#\#\ 头部基准与费用
+  - label: 切入点与机会
+    pattern: 切入点与机会
+- id: M11
+  order: 11
+  title: 季节性与最晚下单日
+  match: ^M11\s
+  must_contain:
+  - label: 季节
+    pattern: 季节
+  - label: 最晚下单日
+    pattern: 最晚下单日
+- id: M12
+  order: 12
+  title: 财务模型与允许成本情景
+  match: ^M12\s
+  must_contain:
+  - label: 成本
+    pattern: 成本
+  - label: 保本
+    pattern: 保本
+- id: M13
+  order: 13
+  title: 供应链与成本核实
+  match: ^M13\s
+  must_contain:
+  - label: 到岸成本逐项拆解
+    pattern: 到岸成本逐项拆解
+  - label: 形态与结构风险
+    pattern: 形态与结构风险
+  - label: 做工与结构细节图
+    pattern: 做工与结构细节图
+- id: M14
+  order: 14
+  title: IP 与合规
+  match: ^M14\s
+  must_contain:
+  - label: 商标
+    pattern: 商标
+  - label: 专利号
+    pattern: 专利号
+  - label: 相似点
+    pattern: 相似点
+  - label: 差异点
+    pattern: 差异点
+  - label: 结论
+    pattern: 结论
+- id: M15
+  order: 15
+  title: 横向与纵向替代市场（只做候选，不作投资推荐）
+  match: ^M15\s
+  must_contain:
+  - label: 替代市场
+    pattern: 替代市场
+- id: M16
+  order: 16
+  title: 数据解释窗口（五栏）
+  match: ^M16\s
+  must_contain:
+  - label: 已获取事实
+    pattern: 已获取事实
+  - label: 自动提取/推导
+    pattern: 自动提取/推导
+  - label: 模拟参数
+    pattern: 模拟参数
+  - label: 缺失及影响
+    pattern: 缺失及影响
+  - label: 继续与修订
+    pattern: 继续与修订
+- id: M17
+  order: 17
+  title: 证据与口径索引
+  match: ^M17\s
+  must_contain:
+  - label: 来源
+    pattern: 来源
+  - label: 时间
+    pattern: 时间
+  - label: SHA-256
+    pattern: SHA\-256
+- id: M18
+  order: 18
+  title: 验收自检
+  match: ^M18\s
+  must_contain:
+  - label: 验收
+    pattern: 验收
+  - label: 采购授权
+    pattern: 采购授权

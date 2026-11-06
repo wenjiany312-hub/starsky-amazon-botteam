@@ -1,0 +1,161 @@
+schema_version: "2.1"
+artifact_type: s1_quick_select
+updated: "2026-09-03"
+purpose: >
+  S1 新手轨道（operator_track A）。禁止再盘问一长串。
+  用户回一行就写 00A 并进入 condition_select（接 MCP）。
+  编号模板和用户自己写的方向都算有效回复，不得因为「没按编号」再问一轮。
+
+trigger:
+  stage: S1
+  operator_track: A
+  aliases: ["A", "新手", "没有资料", "从零选品", "按缺数继续"]
+  meaning: "新手轨道：无资料，快速选品后接 MCP"
+
+max_turns_before_mcp: 1
+forbidden_after_trigger:
+  - 再问有没有资料夹
+  - 再问要不要建 00_产品资料
+  - 再逐项访谈类目/预算/季节/认证/风险承受
+  - 再出一次 S1 三块说明卡
+
+required:
+  - id: marketplace
+    label: 站点
+    default_if_user_says_default: "US"
+    options:
+      - { code: "1", value: "US", label: "美国 US（常用）" }
+      - { code: "2", value: "UK", label: "英国 UK" }
+      - { code: "3", value: "DE", label: "德国 DE" }
+      - { code: "4", value: "JP", label: "日本 JP" }
+  - id: price_band
+    label: 售价
+    currency_note: "选项按美元标；非美站按该站日常价带理解，报告里写清站点货币。"
+    default_if_user_says_default: "15-25"
+    options:
+      - { code: "1", value: "8-15", label: "$8–15 入门测款" }
+      - { code: "2", value: "15-25", label: "$15–25 主流带（常用）" }
+      - { code: "3", value: "25-40", label: "$25–40 中端" }
+      - { code: "4", value: "40+", label: "$40+ 高客单" }
+
+  - id: target_margin_pre_ad
+    label: 目标毛利（广告前）
+    default_if_user_says_default: 0.40
+    options:
+      - { code: "1", value: 0.30, label: "30%" }
+      - { code: "2", value: 0.40, label: "40%（默认）" }
+      - { code: "3", value: 0.50, label: "50%" }
+optional:
+  - { id: initial_budget, label: "首批预算", required: false, default: null }
+
+templates:
+  description: 可多选。写入 00A 硬条件，供 condition_select / market-research 过滤 MCP 结果。
+  items:
+    - code: "A"
+      name: 蓝海选品
+      filters:
+        - 头部不太集中，新链接还有进入空间
+        - 不得把「没搜到」写成已验证蓝海
+    - code: "B"
+      name: 约两个月可上架
+      filters:
+        - 结构简单、优先 1688 现货/快打样
+        - 少认证、少开模、交期短
+        - 避开长周期定制与复杂包材
+    - code: "C"
+      name: 对中国卖家友好
+      filters:
+        - 认证门槛低（避开 FDA/EPA/儿童玩具等重认证类目）
+        - 默认避开电池/液体/食品接触/医疗器械
+        - 供应链在国内成熟、1688 可直接找到货源
+    - code: "D"
+      name: 用户自有方向
+      filters:
+        - 把用户写下的品名/类目/禁区当作硬条件
+        - 可与 A/B/C 同时存在；冲突时以用户原话为准
+    - code: "E"
+      name: 精铺选品
+      route_skill: jingpu-product-selection
+      filters:
+        - 低竞争入口：从具体人群/场景/痛点切入，不做大泛词正面战场
+        - 目标 2-3 个月回本，少量广告可启动
+      note: >
+        选 E 时先调 jingpu-product-selection 出产品灵感池（10-20 个方向），
+        用户选定 1-3 个方向后再进 condition_select → amazon-market-research 数据验证。
+        可与 A/B/C/D 叠加：其它模板作为灵感池的过滤条件。
+    - code: "F"
+      name: 阈值失衡法
+      route_skill: amazon-trend-signal-scanner
+      filters:
+        - 数据入口：在类目月销榜里找「评论少×销量高 / 自然词多×广告词少 / 上架短×销量大 / 旺季好×淡季不掉」四种失衡
+        - 候选必须过运营难度双法（30 评均销 ÷ 自然前 5 均销；销量 ÷ 广告词数），阈值读 templates/s1_thresholds.yaml
+        - 不用「近期上架」做主筛选；疑似刷/合并/烧广告的先过 amazon-gray-tactic-detector
+      note: >
+        选 F 时先调 amazon-trend-signal-scanner 出 5-10 个失衡候选（写入
+        S1_选品板块/amazon-trend-signal-scanner/SCAN_失衡快扫候选.md），【等你】选定 1-3 个后
+        逐个调 amazon-competition-difficulty-assessor 出难度双法，再进 condition_select →
+        amazon-market-research。E 是「人群/场景/痛点」切入，F 是「数据失衡」切入，可同时选；
+        两者都只是灵感层，可行性结论以市场穿透与 S1 综合报告为准。
+
+accept_free_text: true
+free_text_rule: >
+  用户没按编号、自己写了站点/价带/品名/类目/禁区，一律收下并往下走。
+  站点、售价或毛利没写时用默认（US + $15–25 + 广告前40%），缺的标在 00A「系统默认」，首批预算可空，不再追问。
+  禁止因为格式不标准而重出本卡。
+
+card: |
+  【S1 快速选品 · 新手】回一行就能进市场，不再追问。
+
+  ① 站点（必选）
+  1 美国 US（常用）
+  2 英国 UK
+  3 德国 DE
+  4 日本 JP
+  其他：直接写站点代码，如 CA / AU
+
+  ② 售价（必选，按目标站日常价理解）
+  1 $8–15 入门测款
+  2 $15–25 主流带（常用）
+  3 $25–40 中端
+  4 $40+ 高客单
+  其他：写出区间，如 12-18
+
+  ③ 选品模板（可多选；有自己的想法直接写在后面）
+  A 蓝海：集中度不高，还有进入空间
+  B 约两个月可上架：简单结构、少认证、快交期
+  C 对中国卖家友好：认证好做，默认避开电池/液体/食接触/医疗
+  D 我自己有方向：品名/类目/禁区写在同一行即可
+  E 精铺选品：从人群/场景/痛点切低竞争入口，先出灵感池再验证（2-3个月回本打法）
+  F 阈值失衡法：扫月销榜找「评论少销量高」等失衡品，再用难度双法（30评均销÷自然前5）验新品能不能分到单
+
+  ④ 目标毛利（广告前，参考值，不是门槛）：1 30% / 2 40%（默认）/ 3 50%
+  首批预算（可选）：直接写「预算10000元」。
+
+  怎么回（一行，编号或自己写都可以）：
+  1 2 A C
+  默认 A C
+  默认 宠物清洁，不要季节品
+  US 15-25 犬用雨衣
+
+  「默认」= 美国 US + $15–25 + 广告前40%。
+  有自己的想法就写上，不等格式完美，回完就进市场。
+
+  回完我写选品条件，接市场数据开始筛方向。
+  我先不干活。
+
+after_reply:
+  write: "00_总控/starsky-fullchain-workflow/00A_选品需求确认单.md"
+  also_yaml: "00_总控/starsky-fullchain-workflow/00A_quick_select.yaml"
+  next: condition_select
+  then: "amazon-market-research（MCP：生产首选 Sorftime，SIF 交叉验证）"
+  if_template_E: >
+    写完 00A 后先调 jingpu-product-selection：按用户切入点出产品灵感池（写入
+    S1_选品板块/jingpu-product-selection/00_精铺灵感池.md），【等你】选定 1-3 个方向后
+    再进 condition_select → amazon-market-research。灵感池不是可行性结论，数据验证不省。
+  if_template_F: >
+    写完 00A 后先调 amazon-trend-signal-scanner：按用户硬条件扫类目月销榜，出 5-10 个失衡候选（写入
+    S1_选品板块/amazon-trend-signal-scanner/SCAN_失衡快扫候选.md + signal_scan.yaml），【等你】选定 1-3 个后
+    逐个调 amazon-competition-difficulty-assessor（写 01A_运营难度双法评估.md + difficulty_assessment.yaml），
+    疑似刷/合并/烧广告的先过 amazon-gray-tactic-detector，再进 condition_select → amazon-market-research。
+    双法判定进 S1 综合报告 M05 硬门槛与 M10 竞品穿透；快扫不是可行性结论，MCP 验证不省。
+  do_not: 再开一轮访谈；不得因用户自己写方向而要求改用编号

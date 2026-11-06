@@ -1,0 +1,16 @@
+{
+ "schema_version": "1.0",
+ "name": "星空选品知识库",
+ "created": "2026-09-17",
+ "updated": "2026-09-26",
+ "home": "<bundled-selection-kb>",
+ "migrated_from": "<bundled-selection-kb>",
+ "mcp_server": "mcp-server\\server.py（注册名 selection_knowledge_base）",
+ "skill": "amazon-selection-knowledge-learner",
+ "stats": {
+  "sources": 1417,
+  "sources_pending": 0,
+  "cards": 177,
+  "playbooks": 5
+ }
+}

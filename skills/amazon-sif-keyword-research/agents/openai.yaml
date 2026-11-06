@@ -1,0 +1,4 @@
+interface:
+  display_name: "Amazon SIF 关键词研究"
+  short_description: "将 SIF 导出清洗为可审计、可追溯的单源 Keyword Package 2.0"
+  default_prompt: "使用 $amazon-sif-keyword-research 清洗这份 SIF 导出，并生成可交接给广告策略层的单源关键词包。"

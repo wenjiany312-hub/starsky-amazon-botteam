@@ -1,0 +1,8 @@
+schema_version: "1.0"
+start_date: "20260809"  # YYYYMMDD
+default_state: paused  # enabled | paused
+sku_asin_map:
+  REAL-CHILD-SKU: B012345678
+
+# canonical campaigns 的部署参数，不属于 ad_plan 策略语义。
+# production 必须由 architecture_review.approved_compile_context_sha256 锁定本文件 SHA-256。

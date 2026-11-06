@@ -1,0 +1,32 @@
+schema_version: "2.0"
+analysis_id: ""
+run_id: ""
+plan_ref: {plan_id: null, plan_version: null, plan_hash: null}
+scope:
+  marketplace: US
+  currency: USD
+  timezone: "America/Los_Angeles"
+  account_id: null
+  asins: []
+  skus: []
+  date_range: {start: null, end: null}
+  attribution_windows: {}
+sources: []
+data_quality:
+  completeness: null
+  unavailable_domains: []
+  warnings: []
+business_context:
+  product_and_profit: {}
+  inventory: {}
+  business_goal: {}
+advertising_context:
+  overall: {}
+  campaign: []
+  targeting: []
+  search_term: []
+  placement: []
+  natural_vs_ad: {}
+change_context_refs: []
+mcp_evidence: []
+previous_action_results: []

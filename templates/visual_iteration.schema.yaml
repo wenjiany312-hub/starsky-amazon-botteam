@@ -1,0 +1,29 @@
+schema_version: "1.0"
+asset_or_shot_id: ""
+content_type: listing_image | premium_aplus_desktop | premium_aplus_mobile | video_keyframe | video_clip
+reference_asset_ids: []
+truth_constraints:
+  structure: []
+  material: []
+  scale: []
+  selected_variant: ""
+motion_contract:
+  start_frame: ""
+  action_path: ""
+  end_frame: ""
+  camera_path: ""
+  forbidden_mutations: []
+iterations:
+  - version: v1
+    prompt: ""
+    model_or_tool: ""
+    output_path: ""
+    failure_observed: ""
+    repair_action: ""
+    status: draft | failed | needs_revision | accepted
+final_version: ""
+acceptance_checks:
+  - "产品结构、材质、比例与已选变体一致"
+  - "失败版本和修复原因保留，不覆盖"
+  - "视频包含首帧、动作路径、尾帧和禁止变化"
+

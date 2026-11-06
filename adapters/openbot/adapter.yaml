@@ -1,0 +1,15 @@
+platform: openbot
+name: OpenBot（原 Hermes + Discord 那一套已平移进来）
+verified: 2026-11-02 A 段试跑跑通
+runtime: local
+paths:
+  kit: <老板指定，比如 /Users/<你>/OpenBot/Shared/starsky-amazon-botteam>
+  work: <同上>/work
+create_roles: manual_or_director     # 手动粘贴，或运营总监创建「助手」
+dispatch: assistant_message
+skills: per_assistant_toggle         # 「你的技能」页，每个助手单独开关
+mcp_local: app                       # 「你的应用」
+approval: owner_in_director_chat
+reports: html_link
+models: magpie_per_role              # 每个助手单独选模型（通过 MagPie）
+upgrade: in_place                    # 已有团队走原地升级：换提示词、调开关，不删助手

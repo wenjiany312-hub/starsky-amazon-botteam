@@ -1,0 +1,36 @@
+schema_version: "2.0"
+run_id: ""
+package_ref:
+  package_id: ""
+  package_version: 1
+  package_hash: ""
+source_mode: sif
+sources:
+  - source_id: "SRC-SIF-FILE-001"
+    provider: sif
+    acquisition_method: file
+    file:
+      relative_path: ""
+      sha256: ""
+      sheet: ""
+      rows_returned: 0
+    marketplace: US
+    as_of: ""
+    period:
+      start: null
+      end: null
+      month: null
+      timezone: "America/Los_Angeles"
+    units: {}
+    field_mapping: {}
+    missing_fields: []
+    missing_counts: {}
+    truncated: false
+    failures: []
+    secret_redacted: true
+mcp:
+  status: skipped
+  skipped_reason: "not_called_this_run"
+  calls: []
+source_conflicts: []
+acceptance_checks: {}

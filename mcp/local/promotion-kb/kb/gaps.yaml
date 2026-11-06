@@ -1,0 +1,262 @@
+{
+ "gaps": [
+  {
+   "topic": "lifecycle_overview",
+   "name": "新品/成长/成熟/衰退 阶段判定标准与打法总纲",
+   "gap_cards": 6,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-18",
+   "status": "closed",
+   "closed": "2026-09-27",
+   "closed_by": "PK-0055/0056/0057/0058"
+  },
+  {
+   "topic": "promotion_sop",
+   "name": "推广SOP与复盘节奏（年/日复盘SOP、运营检查清单）",
+   "gap_cards": 4,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-18",
+   "status": "closed",
+   "closed": "2026-09-18"
+  },
+  {
+   "topic": "launch_new_product",
+   "name": "新品首推：两套高效打法/42天螺旋/9周推品SOP/必胜哥节奏",
+   "gap_cards": 7,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-18",
+   "status": "closed",
+   "closed": "2026-09-18"
+  },
+  {
+   "topic": "standard_vs_nonstandard",
+   "name": "标品 vs 非标品打法差异（标品打法直接适用）",
+   "gap_cards": 4,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-18",
+   "status": "closed",
+   "closed": "2026-09-27",
+   "closed_by": "PK-0059/0060/0061/0062"
+  },
+  {
+   "topic": "overtaking_battle",
+   "name": "老品被超越反超战（差距诊断→定向反超）",
+   "gap_cards": 2,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-18",
+   "status": "closed",
+   "closed": "2026-09-18"
+  },
+  {
+   "topic": "ranking_recovery",
+   "name": "关键词掉出前三页恢复/上首页系列",
+   "gap_cards": 3,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-18",
+   "status": "closed",
+   "closed": "2026-09-18"
+  },
+  {
+   "topic": "relink_relaunch",
+   "name": "换链接重上/老链接激活（词海打法/截流）",
+   "gap_cards": 3,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-18",
+   "status": "closed",
+   "closed": "2026-09-27",
+   "closed_by": "PK-0063/0064/0065"
+  },
+  {
+   "topic": "keyword_tiering",
+   "name": "词库搭建与分层（标品词库实操/ABA维度/全系搜索维度/采集规范）",
+   "gap_cards": 5,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-18",
+   "status": "closed",
+   "closed": "2026-09-18"
+  },
+  {
+   "topic": "keyword_research_tools",
+   "name": "H10/SIF/卖家精灵关键词归类方法三件套 + 工具拓词",
+   "gap_cards": 4,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-18",
+   "status": "closed",
+   "closed": "2026-09-18"
+  },
+  {
+   "topic": "aba_analysis",
+   "name": "ABA 排名透析与搜索词趋势（MCP 拉数口径）",
+   "gap_cards": 3,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-18",
+   "status": "closed",
+   "closed": "2026-09-27",
+   "closed_by": "PK-0066"
+  },
+  {
+   "topic": "keyword_dynamic_control",
+   "name": "词的动态调动：升降级/预算迁移/波动应对",
+   "gap_cards": 1,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-18",
+   "status": "closed",
+   "closed": "2026-09-18"
+  },
+  {
+   "topic": "growth_scale",
+   "name": "成长期放量：出单词扩量/预算递增/自然位爬升",
+   "gap_cards": 5,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-18",
+   "status": "closed",
+   "closed": "2026-09-27",
+   "closed_by": "PK-0058"
+  },
+  {
+   "topic": "mature_defense",
+   "name": "成熟期稳利润：防御打法/TACOS管控/捡漏",
+   "gap_cards": 2,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-18",
+   "status": "closed",
+   "closed": "2026-09-18"
+  },
+  {
+   "topic": "decline_clearance",
+   "name": "衰退清仓与退出",
+   "gap_cards": 2,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-18",
+   "status": "closed",
+   "closed": "2026-09-18"
+  },
+  {
+   "topic": "peak_season",
+   "name": "旺季大促节奏（黑五网一复盘+Q4攻略）",
+   "gap_cards": 3,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-18",
+   "status": "closed",
+   "closed": "2026-09-18"
+  },
+  {
+   "topic": "off_season",
+   "name": "淡季维持",
+   "gap_cards": 2,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-18",
+   "status": "closed",
+   "closed": "2026-09-27",
+   "closed_by": "PK-0071/0072"
+  },
+  {
+   "topic": "diagnostics_gates",
+   "name": "曝光/CTR/CVR/排名/库存 闸门阈值与触发动作",
+   "gap_cards": 2,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-18",
+   "status": "closed",
+   "closed": "2026-09-18"
+  },
+  {
+   "topic": "case_studies",
+   "name": "自有案例复盘切片（实战项目复盘，产品细节在店铺运营库档案）",
+   "gap_cards": 4,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-18",
+   "status": "closed",
+   "closed": "2026-09-18"
+  },
+  {
+   "topic": "pet_category",
+   "name": "宠物类目打法与品类专题（数据为产品档案层，打法卡为知识层）",
+   "gap_cards": 4,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-18",
+   "status": "closed",
+   "closed": "2026-09-18"
+  },
+  {
+   "topic": "review_velocity",
+   "name": "评价与Vine配合（新品期承接力）",
+   "gap_cards": 2,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-18",
+   "status": "closed",
+   "closed": "2026-09-27",
+   "closed_by": "PK-0067"
+  },
+  {
+   "topic": "pricing_strategy",
+   "name": "定价与促销配合（新品期价格杠杆）",
+   "gap_cards": 2,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-18",
+   "status": "closed",
+   "closed": "2026-09-18"
+  },
+  {
+   "topic": "offsite_traffic",
+   "name": "站外Deal/达人合作配合推广",
+   "gap_cards": 1,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-18",
+   "status": "closed",
+   "closed": "2026-09-18"
+  },
+  {
+   "kind": "observation",
+   "topic": "official_updates",
+   "observation": "A+/品牌旗舰店（Storefront）规范型知识缺失：本库现有卡片覆盖 Listing 图文/ST/GEO（PK-0007/0018/0025），但没有 A+ 模块设计规范与品牌旗舰店结构/移动端适配的知识卡。本次双线方案执行按通用工作流走并已成文，待下一轮学习从 pending 源或官方页面补卡。",
+   "run_id": "D3-2026-09-18-dual-plan",
+   "card_id": null,
+   "product_id": null,
+   "metrics": {
+    "pending_sources": 29
+   },
+   "added": "2026-09-18",
+   "status": "closed",
+   "source": "mcp:kb_record_observation",
+   "closed_note": "2026-09-18 D4 已补：PK-0038（A+ 官方规范）+ PK-0039（品牌旗舰店官方规范），来源为官方页面（SRC-0054/0055/0057/0060/0061）；同步新增 taxonomy topic=listing_assets 与 learning_plan M9 模块"
+  },
+  {
+   "topic": "listing_assets",
+   "name": "A+ 与品牌旗舰店官方规范（资格/模块/尺寸/流程/指标）",
+   "gap_cards": 2,
+   "priority": 3,
+   "seed_urls": [
+    "https://sell.amazon.com/tools/a-content",
+    "https://sell.amazon.com/blog/amazon-storefront",
+    "https://advertising.amazon.com/resources/ad-specs/stores"
+   ],
+   "added": "2026-09-18",
+   "status": "closed",
+   "closed": "2026-09-27",
+   "closed_by": "PK-0068/0069"
+  }
+ ],
+ "note": "plan 会追加未覆盖主题；模型学习中发现的开放问题也记这里（含 why / 需要什么来源）"
+}

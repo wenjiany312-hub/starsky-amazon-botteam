@@ -1,0 +1,106 @@
+# 沙龙第二版 · 统一资料接入约束 Overlay
+# 生成位置：{产品根}/00_总控/starsky-fullchain-workflow/00C_data_intake_overlay.yaml
+schema_version: "1.0"
+edition: starsky-v2
+release_tag: "2026-08-01"
+artifact_type: "data_intake_overlay"
+
+artifact_paths:
+  report: "00_总控/starsky-fullchain-workflow/00C_资料接入与优化建议报告.md"
+  overlay: "00_总控/starsky-fullchain-workflow/00C_data_intake_overlay.yaml"
+  enterprise_manifest: "00_总控/starsky-fullchain-workflow/enterprise_data_manifest.yaml"
+  runtime_overlay: "00_总控/starsky-fullchain-workflow/runtime_data_overlay.yaml"
+
+intake:
+  status: "not_requested"  # not_requested | indexing | report_ready | consumed | revision_needed
+  source_mode: "external_read_only"  # external_read_only | current_run | mixed
+  accept_unorganized_sources: true
+  user_prompted_at_entry: true
+  indexed_at: ""
+  source_count: 0
+  unclassified_count: 0
+  product_directory: ""
+
+source_inventory:
+  # 原始资料可为目录、单文件、附件、链接、截图、表格或历史报告；源文件不被改写。
+  sources: []
+  usable_by_task:
+    market_research: []
+    listing_optimization: []
+    ad_diagnosis: []
+    ad_architecture: []
+    image_optimization: []
+    product_video: []
+    keyword_research: []
+    ip_compliance: []
+    supplier_evaluation: []
+
+optimization_access_advice:
+  # 先给用户看到：资料能支持什么、建议先跑什么、还缺什么、MCP 可补什么。
+  recommended_entry_tasks: []
+  recommended_skills: []
+  usable_evidence_summary: []
+  data_gaps:
+    - field: ""
+      impact: ""  # front_end_claim | calculation_precision | task_module | hard_block
+      can_mcp_supplement: false
+      recommended_action: ""
+  user_decisions_needed: []
+
+constraint_layer:
+  required_first_read: true
+  source_precedence:
+    - "current_product_facts_and_current_mcp"
+    - "platform_compliance_ip_and_user_confirmed_hard_rules"
+    - "user_supplied_raw_materials_and_historical_reports"
+    - "labeled_defaults_or_ai_inference"
+  factual_claims_allowed: []
+  factual_claims_blocked: []
+  brand_and_compliance_constraints: []
+  visual_constraints: []
+  advertising_constraints: []
+  supplier_constraints: []
+  conflict_records: []
+
+mcp_supplement_plan:
+  policy: "use_after_existing_sources_before_user_followup"
+  task_routes:
+    - task: ""
+      target_skill: ""
+      purpose: ""
+      expected_fields: []
+      status: "pending"  # pending | used | skipped | unavailable | partial
+      evidence_refs: []
+
+skill_read_plan:
+  all_business_skills:
+    must_read_before_execution: true
+    read_order:
+      - "00C_资料接入与优化建议报告.md"
+      - "00C_data_intake_overlay.yaml"
+      - "当前任务的 state/00B/阶段产物"
+      - "目标 Skill 的 MCP 补数结果"
+  stage_injection:
+    S1: []
+    S2: []
+    S3: []
+    S4: []
+    S5: []
+    Ops: []
+  direct_task_injection:
+    task: ""
+    sources: []
+    restrictions: []
+
+late_data_revision:
+  policy: "impact_scoped"
+  new_sources: []
+  affected_artifacts: []
+  retained_versions: []
+
+acceptance_checks:
+  - "用户可以在首屏提供未整理资料，不要求先整理或迁移。"
+  - "所有来源已登记；未知资料保留为 unclassified，未被静默丢弃。"
+  - "00C 报告明确可用信息、约束、缺口、推荐任务和 MCP 补数计划。"
+  - "后续业务 Skill 先读 00C Overlay，再读当前任务产物和 MCP 结果。"
+  - "历史资料未覆盖当前产品事实、本轮 MCP、合规、IP 或用户硬规则。"

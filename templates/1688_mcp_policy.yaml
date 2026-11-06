@@ -1,0 +1,33 @@
+schema_version: "2.0"
+artifact_type: 1688_mcp_policy
+updated: "2026-08-25"
+purpose: >
+  星空 V2：本地 1688 MCP（注册名 1688_scraper）是 S1 抓详情的必装能力。
+  它辅助或取代 1688-product-detail-scraper 去抓页；Skill 只负责把 MCP 事实写成规范报告。
+
+required: true
+mcp_name: 1688_scraper
+install_dir: "<home>/mcp/1688/"
+tools: [ping, login_1688, get_offer, download_media]
+channel: "MCP 自带 Chromium，不是 Codex 内置浏览器"
+
+production:
+  - S1 进入 product_scrape 前必须 ping 通 1688_scraper。
+  - 不通 → 停，指引用户按 mcp/1688/★先读我.md 安装，禁止假装已抓到页面。
+  - 主路径：ping → get_offer → 需要时 login_1688 → download_media。
+  - 登录/滑块在 MCP 自己的 Chromium 里完成，用户回「已完成」后同一通道继续。
+  - 报告 data_source 必须写 1688_scraper(MCP)。
+
+skill_role: >
+  1688-product-detail-scraper 不再是抓页主入口。
+  它把 MCP 返回的事实整理成 03_1688产品资料_{ID}.md / 03_product_facts.yaml。
+  落盘：S1_选品板块/1688-product-detail-scraper/
+
+demo_only_fallback: >
+  仅当用户明确说「演示、没有 1688 MCP」时，才允许 Skill 网页半辅助。
+  必须标 source_fallback=网页半辅助。生产模式禁止这条。
+
+hard_stops:
+  - 不得把 Skill 网页半辅助写成默认。
+  - 不得 MCP 抓一半改用 Codex 内置浏览器再试（会触发 1688 风控）。
+  - 不得把店铺 URL 当成 offer 详情。

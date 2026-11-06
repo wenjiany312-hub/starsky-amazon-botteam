@@ -1,0 +1,26 @@
+# S2 第 2 步竞品候选池画像（competitor_candidate_pool.py --profile）
+# 只有 marketplace、entry_keywords 必填；product_id 缺省取产品文件夹名。其余字段不填就不参与判断。
+# 词都写英文小写、按标题里会出现的写法；一个字段写错只影响该特征，不会整体判无关——
+# 若候选几乎全判“无关”，先检查 form_tokens 是否填对。
+product_id: 2026-10-26_window-screen-repair-kit   # 可省
+marketplace: US                                   # 必填
+entry_keywords:                                   # 必填，4–5 个已确认入口词，不重复
+  - window screen repair kit
+  - screen repair kit
+  - window screen replacement
+  - screen mesh roll
+form_tokens:                  # 形态判断：标题同时含 required_any 之一和 container_any 之一才算同形态
+  required_any: [screen, mesh]          # 产品主体词
+  container_any: [kit, roll, replacement] # 形态/包装词
+form_bridge_tokens: [window, door]      # 主体词与形态词之间允许夹的词
+target_price: 15.99                     # 本品目标售价（美元），用于价格带
+price_band: [0.33, 3.0]                 # 候选价 / 目标价 的可接受倍数
+target_node_ids: ["2245332011"]         # 本品目标类目节点（可省）
+variant_tokens: [pet, heavy duty]       # 同类不同款
+accessory_tokens: [spline roller, tool only]  # 配件耗材
+substitute_tokens: [magnetic, retractable]    # 替代方案（不是本形态）
+contains_goods_tokens: []               # 含其它商品的组合装
+own_brands: []                          # 本品牌（同品牌家族不作独立竞品）
+own_parent_asins: []
+target_asin: null
+enrich_limit: 60

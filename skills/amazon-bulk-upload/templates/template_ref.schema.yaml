@@ -1,0 +1,15 @@
+schema_version: "1.0"
+source: amazon_account_download  # production: amazon_account_download/current_account_download/skill_bundled_official; demo: fixture
+# skill_bundled_official = 使用 Skill 内置官方表 AmazonAdvertisingBulksheetSellerTemplate.xlsx，
+# 标准填法见 template_ref.bundled_official.example.yaml（hash 已预填）。
+downloaded_at: ""
+marketplace: US
+locale: en-US
+ad_product: SP
+sheet_name: Sponsored Products Campaigns
+adapter: SP_V1
+blank_template: true
+file_sha256: "sha256:"
+# 只有当前账户模板的列名与英文 SP adapter 不同且已人工核对时才覆盖。
+column_map: {}
+

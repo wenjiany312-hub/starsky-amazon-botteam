@@ -1,0 +1,198 @@
+schema_version: "1.0"
+# ====================================================================
+# 视觉样式令牌 —— 一条产品线一份
+#
+# 这份文件是图上所有文字的「唯一真相」：字体、字号、颜色、字距、落位，
+# 全部锁死在这里。AI 只决定「写什么」，不决定「长什么样」。
+#
+# 落位：{产品根}/S3_视觉板块/amazon-listing-image-designer/visual_style_tokens.yaml
+# 消费：<home>/scripts/叠字渲染器.py
+# 契约：skills/amazon-listing-image-designer/references/叠字渲染契约.md
+#
+# ⛔ 改这份文件 = 整条产品线的图全部重渲染（两秒的事，产品像素不动）。
+#    所以要改就在这里改一处，不要去改单张图。
+# ====================================================================
+
+product_line: ""            # 例：us_pet_raincoat
+marketplace: "US"
+
+# -------------------------------------------------- 画布
+canvas:
+  reference_width: 1600     # 字号刻度以 1600 宽为基准
+  # ⛔ type_scale：画布专属字号系数（2026-08-10 实测新增）
+  #
+  #   只按宽度缩放会出事。字号刻度是按副图 1600×2000 定的，
+  #   h1=108px 在 2000 高的画布上占 5.4% 高度，很合适；
+  #   但 A+ Desktop 是 1464×600 的扁横幅，同样算法得 99px，
+  #   占 600 高的 **16.5%** —— 相对大了 3 倍，标题被迫换行、
+  #   整块文字从 26% 一路压到 93% 顶住安全区。
+  #
+  #   反过来 A+ Mobile 600×450，按宽度算 h2 只有 24px（占高 5.3%），
+  #   在手机上又偏小。
+  #
+  #   所以扁横幅要调小、小画布要调大。缺省 1.0。
+  presets:
+    main:       { w: 1600, h: 1600 }                    # 主图（禁止叠字）
+    secondary:  { w: 1600, h: 2000 }                    # 副图（刻度基准，1.0）
+    aplus_d:    { w: 1464, h: 600,  type_scale: 0.68 }  # A+ 桌面：扁横幅，字要收
+    aplus_m:    { w: 600,  h: 450,  type_scale: 1.75 }  # A+ 移动：小画布，字要放
+    std_wide:   { w: 970,  h: 600,  type_scale: 1.15 }
+    std_band:   { w: 970,  h: 300,  type_scale: 0.85 }
+    video_16x9: { w: 1920, h: 1080 }                    # 视频字幕层
+    video_9x16: { w: 1080, h: 1920, type_scale: 1.35 }  # 竖版窄，字要放
+  # ⛔ 标准 A+ 的三图(300×300)/四图(220×220)模块**自带后台文本框**，
+  #    文字走 Amazon 原生字段即可，不要烧进图里 —— 那么小的画幅烧字必然糊。
+  #    只有「图文重叠 Banner」这类没有文本框的模块才需要叠字。
+
+# -------------------------------------------------- 闸门
+gates:
+  safe_margin_pct: 6.0            # 文字不得越过画布边缘 6%
+  thumbnail_width: 500            # 亚马逊搜索结果缩略图宽度
+  min_thumbnail_px: 11.0          # 缩到 500px 后字号下限，低于此判失败
+  main_image_text_forbidden: true # 主图叠字直接判失败
+  # --- 底图质量（这两条专治「模型给的底图留白区不干净」）---
+  plate_flatness_max_stddev: 18.0 # 文字落位处的灰度标准差上限；超了说明那块太花
+  min_contrast_ratio: 4.0         # 文字与背景的 WCAG 对比度下限
+
+# -------------------------------------------------- 调色板
+# 整条产品线只用这几个色。⛔ AI 不得在图上引入这里没有的颜色。
+# （实测事故：某张副图凭空冒出一整套藏青色块表格，其他六张都没有这个色。）
+palette:
+  ink:       "#1A1D21"    # 主文字，近黑不用纯黑
+  # ⛔ 2026-08-10 校准：原值 #5A6067 在真实场景底图上反复过不了对比度闸门。
+  #   实测 A+ 底图落字区背景 #C4B39C（带阴影的暖墙面），#5A6067 只有 3.11:1，
+  #   低于 4.0 下限 —— 连撞三次。改深到 #454B52 后 4.31:1。
+  #   代价：与 ink 的对比从 2.66 降到 1.92，颜色层级变弱；
+  #   但层级主要由**字号（h1 是 sub 的两倍）和字重（Bold vs Regular）**承担，
+  #   颜色只是第三道信号，可以接受。
+  ink_soft:  "#454B52"    # 次级文字 / 单位 / 补充说明
+  accent:    "#C2410C"    # 唯一强调色，只给「最关键的那一个数字」
+  plate_bg:  "#F2F1EF"    # 底图背景锁定色
+  rule:      "#D8D6D2"    # 分隔线 / 色带
+  on_dark:   "#FFFFFF"    # 深色底上的反白文字
+
+# -------------------------------------------------- 产品基准色
+# 给 <home>/scripts/产品色彩审计.py 用，检测产品主色在各图之间漂没漂。
+# ⛔ 这不是调色板的一部分 —— palette 管图上的字，这里管产品本身的颜色。
+#
+# primary 怎么取：从 S3_视觉板块/amazon-listing-image-designer/产品垫图/ 里**最可信的一张实物图**上吸产品主色
+#   （光线正常、无滤镜、无强反光的那张；⛔ 不要从生成图上吸）
+# 多变体产品：先跑通主推变体，其它变体各自建 run，各填各的
+product_colors:
+  primary: ""            # 例："#F2D24B"（黄色雨衣）。留空则跳过色彩审计
+  match_tolerance: 20.0  # Lab 色度匹配半径；调大能圈进更多阴影面，太大会误圈背景
+  max_drift: 5.0         # Δab 上限。<2 看不出、2-5 并排能看出、>5 明显
+
+# -------------------------------------------------- 字体
+# 只写文件名即可 —— 渲染器按 令牌目录 → <home>/assets/fonts/ → 平台兜底 依次找。
+# 跨平台、跨产品目录都能解析（学员在 Mac 上跑也一样）。
+#
+# 工具包自带两套（均 SIL OFL，可合法随学员包分发）：
+#   Inter    —— 默认。有 Display / Text 两套光学尺寸；数字质量最好，spec_dense 档首选
+#   Archivo  —— 备选。字形更硬朗、更有编辑感；想要多一点个性时换它
+#
+# 换成 Archivo 只改这三行：
+#   display: "Archivo-Bold.ttf"
+#   strong:  "Archivo-SemiBold.ttf"
+#   body:    "Archivo-Regular.ttf"
+fonts:
+  display: "InterDisplay-Bold.ttf"     # 大标题，用 Display 光学尺寸
+  strong:  "Inter-SemiBold.ttf"        # 参数标签，比 Display-Bold 更适合小字
+  body:    "Inter-Regular.ttf"         # 正文 / 副标 / 说明
+
+# -------------------------------------------------- 字号刻度
+# ⛔ 只有这几档。刻度外的字号 = 不一致的开始。
+type_scale:
+  h1:    { font: display, size: 108, tracking: -0.012, line_height: 1.08, case: upper, color: ink }
+  h2:    { font: display, size: 64,  tracking: -0.005, line_height: 1.12, case: upper, color: ink }
+  sub:   { font: body,    size: 52,  tracking: 0.0,    line_height: 1.25, case: upper, color: ink_soft }
+  label: { font: strong,  size: 40,  tracking: 0.06,   line_height: 1.20, case: upper, color: ink }
+  spec:  { font: body,    size: 38,  tracking: 0.01,   line_height: 1.35, case: none,  color: ink_soft }
+  micro: { font: body,    size: 36,  tracking: 0.02,   line_height: 1.30, case: none,  color: ink_soft }
+
+# -------------------------------------------------- 版式积木
+# 落位只能从这里选，⛔ 不允许在任务表里自由给坐标。
+# x / y / max_width 均为画布百分比；follows 表示紧跟在另一块下面。
+blocks:
+  # A 档常用
+  headline_tl:     { x: 6.0,  y: 6.0,  max_width: 62.0, align: left,   anchor: top }
+  headline_tl_sub: { x: 6.0,  y: 6.0,  max_width: 62.0, align: left,   anchor: top, follows: headline_tl, gap: 0.9 }
+  headline_bl:     { x: 6.0,  y: 70.0, max_width: 62.0, align: left,   anchor: top }
+  headline_bl_sub: { x: 6.0,  y: 70.0, max_width: 62.0, align: left,   anchor: top, follows: headline_bl, gap: 0.9 }
+  headline_tc:     { x: 50.0, y: 7.0,  max_width: 80.0, align: center, anchor: top }
+  label_bc:        { x: 50.0, y: 86.0, max_width: 80.0, align: center, anchor: top }
+  micro_br:        { x: 94.0, y: 90.0, max_width: 45.0, align: right,  anchor: top }
+  micro_bl:        { x: 6.0,  y: 90.0, max_width: 45.0, align: left,   anchor: top }
+
+  # B 档统一底栏：配合 type: band 使用（band 画色带，这几块写字）
+  barlabel_l:      { x: 8.0,  y: 89.5, max_width: 28.0, align: left,   anchor: top }
+  barlabel_c:      { x: 50.0, y: 89.5, max_width: 28.0, align: center, anchor: top }
+  barlabel_r:      { x: 92.0, y: 89.5, max_width: 28.0, align: right,  anchor: top }
+
+  # Premium A+ 专用
+  # Desktop 1464×600 是很扁的横幅：产品占左侧，文案走右侧竖排
+  aplus_d_right:      { x: 52.0, y: 26.0, max_width: 42.0, align: left, anchor: top }
+  aplus_d_right_sub:  { x: 52.0, y: 26.0, max_width: 42.0, align: left, anchor: top, follows: aplus_d_right, gap: 0.7 }
+  aplus_d_left:       { x: 6.0,  y: 26.0, max_width: 40.0, align: left, anchor: top }
+  aplus_d_left_sub:   { x: 6.0,  y: 26.0, max_width: 40.0, align: left, anchor: top, follows: aplus_d_left, gap: 0.7 }
+  # ⛔ 居中带（2026-08-10 实测新增）。
+  #   实拍/场景类底图常把干净墙面留在**画面中段**，两侧反而是窗、绿植、镜框、毛巾。
+  #   实测一张浴室场景：中左标准差 6.6、中右 8.3（干净），而右侧 50.7（镜框+毛巾）。
+  #   此时 aplus_d_right 从 x=52% 伸到 94%，标题一长就撞进杂物区。
+  #   ⛔ 选积木前先跑 scripts/扫描底图落字区.py 看哪条带干净，别凭构图想象。
+  aplus_d_center:     { x: 50.0, y: 22.0, max_width: 44.0, align: center, anchor: top }
+  aplus_d_center_sub: { x: 50.0, y: 22.0, max_width: 44.0, align: center, anchor: top, follows: aplus_d_center, gap: 0.7 }
+  # Mobile 600×450：产品在上、文案在下，⛔ 不是把桌面版裁一刀
+  aplus_m_bottom:     { x: 8.0,  y: 60.0, max_width: 84.0, align: left, anchor: top }
+  aplus_m_bottom_sub: { x: 8.0,  y: 60.0, max_width: 84.0, align: left, anchor: top, follows: aplus_m_bottom, gap: 0.7 }
+  aplus_m_top:        { x: 50.0, y: 10.0, max_width: 84.0, align: center, anchor: top }
+  aplus_m_top_sub:    { x: 50.0, y: 10.0, max_width: 84.0, align: center, anchor: top, follows: aplus_m_top, gap: 0.7 }
+
+  # 视频字幕层（透明 PNG，拖进剪映当叠加）
+  # 横版竖版**各渲染一份**（同样的文字，一条 canvas: video_16x9、一条 video_9x16），
+  # 令牌相同所以两版天然一致 —— ⛔ 不需要为了「裁切后不丢字」把字幕区压窄。
+  vid_lower_third:  { x: 50.0, y: 74.0, max_width: 78.0, align: center, anchor: top }
+  vid_lower_sub:    { x: 50.0, y: 74.0, max_width: 78.0, align: center, anchor: top, follows: vid_lower_third, gap: 0.5 }
+  vid_upper_third:  { x: 50.0, y: 12.0, max_width: 78.0, align: center, anchor: top }
+  vid_endcard:      { x: 50.0, y: 40.0, max_width: 80.0, align: center, anchor: top }
+  vid_endcard_sub:  { x: 50.0, y: 40.0, max_width: 80.0, align: center, anchor: top, follows: vid_endcard, gap: 0.6 }
+
+# -------------------------------------------------- 档位规则
+# 对应 visual_playbook.yaml → global.visual_profile
+profiles:
+  editorial_dtc:                 # 服饰 · 家居 · 宠物服饰 · 美妆
+    allowed_styles: [h1, h2, sub, micro]
+    max_text_blocks: 2           # 一张图最多两块文字，留白是卖点
+    accent_allowed: false
+  spec_dense:                    # 汽配 · 工具 · 电子 · 五金
+    allowed_styles: [h2, label, spec, micro]
+    max_text_blocks: 8
+    accent_allowed: true         # 只许标在唯一一个决策关键数值上
+  hybrid:                        # 户外 · 运动 · 母婴
+    allowed_styles: [h1, h2, sub, label, spec, micro]
+    max_text_blocks: 5
+    accent_allowed: true
+  premium_aplus:                 # Premium A+ 模块图（Desktop / Mobile 共用此档）
+    allowed_styles: [h1, h2, sub, label, micro]
+    max_text_blocks: 3           # A+ 模块画幅扁，文字多了立刻拥挤
+    accent_allowed: false
+  standard_aplus:                # 标准 A+ 970 体系
+    allowed_styles: [h2, sub, label, spec, micro]
+    max_text_blocks: 4
+    accent_allowed: false
+  video_subtitle:                # 视频字幕层（透明 PNG）
+    allowed_styles: [h1, h2, sub, label]
+    max_text_blocks: 2           # 一个镜头只说一件事，字幕两行封顶
+    accent_allowed: false
+    # ⛔ SBV 静音自动播放 —— 卖点必须靠画面文字传达，字幕不是可选项。
+    #    同时字幕必须带 stroke 或 scrim，否则遇到浅色镜头就糊（渲染器会拦）。
+
+# -------------------------------------------------- 底图约定
+# 写给出图环节看的：底图必须给叠字留出干净的负空间。
+plate_contract:
+  no_text_in_plate: true         # 底图一个字都不许有
+  background_lock: plate_bg      # 纯色/浅色背景锁到 palette.plate_bg
+  reserved_zones:                # 出图提示词里要明确要求留白的区域
+    headline_tl: "画面左上 1/3 保持干净负空间，不要产品主体、不要道具"
+    headline_bl: "画面左下 1/3 保持干净负空间"
+    bottom_bar:  "画面底部 15% 保持干净，用于参数底栏"

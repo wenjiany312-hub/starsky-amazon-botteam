@@ -1,0 +1,205 @@
+schema_version: "1.1"          # 1.1：新增 SP/SB/SD 三类广告维度；1.0 计划仍可读（缺省 ad_product=SP）
+plan_id: ""
+plan_version: 1
+marketplace: US
+product_id: ""
+source_versions:
+  product_facts: ""
+  keyword_package: ""
+  compliance_blacklist: ""
+  ad_strategy_input: ""
+  brand_registry_status: ""     # SB 必需：品牌备案状态来源
+
+# 三类广告分两层判定：capability（能不能投）与 readiness（现在该不该投）。
+# ★ 实际运营中店铺基本都已完成品牌备案，capability 极少是瓶颈；
+#   真正的判断点是 readiness —— SB/SD 属于第二轮，须由 SP 第一轮的真实数据触发。
+capability:
+  SP: {status: available, missing: []}
+  SB:
+    status: available | missing_assets    # 品牌备案通常已有；缺的多是素材
+    brand_registered: true                # 默认 true，与事实不符时显式改
+    missing: []                           # brand_logo_asset | headline_copy | landing_page
+  SD:
+    status: available | missing_assets
+    brand_registered: true
+    missing: []
+
+# ★ 核心闸门：现在该不该开。依据必须是 SP 第一轮的真实投放数据，不是拍脑袋。
+readiness:
+  evaluated_after_sp_round: null    # 第几轮 SP 优化后评估；第一轮搭建时为 null
+  sp_data_window: ""                # 数据窗口，如 "2026-08-01 ~ 2026-08-14"
+  SB:
+    decision: defer | open | partial
+    decision_basis: []              # 逐条列出命中的触发条件
+    triggers_met: []
+    triggers_unmet: []
+    recommended_scope: []           # 建议先开哪几个词组，不必一次全开
+  SD:
+    decision: defer | open | partial
+    decision_basis: []
+    triggers_met: []
+    triggers_unmet: []
+    recommended_tactics: []         # product_targeting 先行 / audiences 待流量
+
+# SB/SD 的标准触发条件（可被企业叠层覆盖，覆盖须记录来源）
+readiness_criteria:
+  SB:
+    - id: SB-T1
+      rule: "SP 已跑出 ≥5 个稳定转化词（连续 7 天有单）"
+      why: "SB 不做探索，只收割 SP 验证过的词；无验证词则无词可投"
+    - id: SB-T2
+      rule: "品牌词有搜索量，或已发现竞品在本品牌词上投放"
+      why: "品牌防守是 SB 的第一价值；无品牌搜索量时防守无意义"
+    - id: SB-T3
+      rule: "自然排名已进入目标词前 3 页"
+      why: "有排名才有防守价值；否则 SB 是在为没有承接力的页面导流"
+    - id: SB-T4
+      rule: "SP 日预算已跑满且 ACOS 在可接受区间"
+      why: "SP 未跑满时，加预算给 SP 的边际收益高于开新类型"
+  SB_format_thresholds:         # ★ 不同 SB 格式门槛不同，不可一刀切
+    video:
+      required_triggers: [SB-T1, SB-T4]
+      extra_requirement: "有可用 16:9 成片（来自 amazon-product-video-director）"
+      note: "1 个 ASIN 即可，无需 Store；单品/少SKU卖家第二轮首选，只要 T1+T4 满足就应小预算试跑"
+    product_collection:
+      required_triggers: [SB-T1, SB-T2, SB-T3, SB-T4]
+      extra_requirement: "≥3 个可推 ASIN"
+      note: "单品卖家不适用；防守与品类占位为主，门槛高于 video"
+    store_spotlight:
+      required_triggers: [SB-T1, SB-T2, SB-T3, SB-T4]
+      extra_requirement: "已建 Store 且 ≥3 个子页面"
+      note: "多品线品牌专用"
+  SD:
+    - id: SD-T1
+      rule: "SP 的 PAT（商品定位）已验证有效竞品 ASIN"
+      why: "SD product_targeting 应复用 SP 已验证的拦截对象，不凭空拦"
+    - id: SD-T2
+      rule: "详情页有稳定浏览量（再营销打法专用）"
+      why: "Audiences-Views 依赖既有浏览数据；量不足则受众池太小"
+    - id: SD-T3
+      rule: "有复购属性或明确关联品"
+      why: "Audiences-Purchases / Interests 无此属性时投放效率极低"
+    - id: SD-T4
+      rule: "SP 已控住 ACOS，有预算余量做曝光型投放"
+      why: "SD 含浏览归因，见效慢；SP 未稳时开 SD 会掩盖真实问题"
+
+# 明确不该开的信号（命中任一即 defer，优先级高于上面的触发条件）
+defer_signals:
+  - "SP 尚未跑出转化词 → 先修 SP 词与结构，不加新变量"
+  - "SP 日预算未跑满 → 先加 SP 预算"
+  - "SP ACOS 显著高于盈亏线 → 先控 SP"
+  - "自然排名无起色 → 先查 Listing/评价/价格，不是广告类型问题"
+  - "当前处于第一轮搭建（无投放数据）→ SB/SD 一律 defer"
+
+deferred_ad_products: []          # 记录本轮 defer 的类型与原因，不得静默省略
+
+inputs:
+  price: null
+  landed_cost: null
+  breakeven_acos: null
+  target_acos: null
+  total_daily_budget: null
+  budget_split_by_ad_product:   # 三类之间的预算分配，必须显式给出
+    SP: null
+    SB: null
+    SD: null
+  cpc_source: ""
+  cvr_source: ""
+assumptions: []
+
+campaigns:
+  - campaign_key: ""
+    campaign_name: ""
+    ad_product: SP | SB | SD    # ★ 新增：广告类型，必填
+    role: ""
+    lifecycle_stage: 新品期 | 成长期 | 成熟期
+
+    # ---- SP / SB 关键词与商品定位共用 ----
+    targeting_type: manual | auto | product | audience | contextual
+    match_type: exact | phrase | broad | product | auto | null
+
+    # ---- SB 专属（ad_product=SB 时必填，其余留空）----
+    sb_format: video | product_collection | store_spotlight | brand_video | null
+                                # ★ 单品/少SKU卖家默认 video：门槛最低（1个ASIN即可、无需Store）、CTR通常更高
+    sb_landing_page: ""         # store_url | custom_url | product_list
+    sb_asin_count: null         # product_collection 需 ≥3
+    sb_headline: ""             # 受字符上限约束，须过合规黑名单
+    sb_creative_assets: []      # logo / custom_image / video 的资产 ID，须绑定本品垫图
+    sb_video_spec: {}           # 画幅须 16:9（SBV 规格）；时长以平台当期规格为准
+    sb_video_source: ""         # 引用 S3_视觉板块/amazon-product-video-director/视频垫图/asset_manifest.yaml 的 clip_id，不得为广告单独重做
+
+    # ---- SD 专属（ad_product=SD 时必填，其余留空）----
+    sd_tactic: product_targeting | audience_views | audience_purchases | audience_interests | null
+    sd_targeting_scope: {}      # asin_list / category_list / refinement(品牌·价格·星级·配送)
+    sd_lookback_days: null      # 再营销回看窗
+    sd_bid_optimization: reach | page_visits | conversions | null
+    sd_creative: auto | custom  # custom 时须绑定本品素材
+    sd_video_source: ""         # 可复用 SB Video 同一批成片，不必重做
+
+    daily_budget: null
+    bid_formula: ""
+    default_bid: null
+    placement_adjustments: {}   # SP: TOS/PP/ROS；SB: TOS/其他；SD 无
+    targets: []
+    negatives: []
+    source_keyword_ids: []
+    source_asins: []
+    success_metric: ""
+    stop_or_adjust_rule: ""
+
+# 三类之间的协同规则，不能各搭各的
+cross_ad_product_rules:
+  rollout_order: "第一轮只搭 SP → SP 投放 14-30 天 → ad-report-analyzer 诊断 → 第二轮据 readiness 判定是否开 SB/SD"
+  budget_priority: "SP 未跑满预算前不开 SB/SD；开启后 SP 仍占主导，SB/SD 从小预算试跑"
+  keyword_overlap: "SB 精准词必须来自 SP 已验证转化词，不得与 SP Exact 直接竞价打架"
+  negative_sync: "SP 的否词必须同步到 SB；SD 的商品定位排除清单须与 IP 黑名单一致"
+  defense_split: "品牌词防守优先 SB；竞品 ASIN 拦截优先 SD product_targeting"
+  attribution_note: "SD 含浏览归因（vCPM/viewable），ACOS 口径与 SP/SB 不可直接相加比较"
+
+totals:
+  campaign_count: 0
+  campaign_count_by_ad_product:
+    SP: 0
+    SB: 0
+    SD: 0
+  target_count: 0
+  daily_budget: 0
+
+outputs:
+  markdown_report: "S4_广告板块/amazon-ad-campaign-builder/11_新品广告架构.md"
+  html_report: "S4_广告板块/github-tabler-html-report/HTML/11_广告架构审阅版.html"
+  bulk_files:                   # ★ 改为分类型；Amazon Bulk 模板 SP/SB/SD 字段不同，不能混在一个 sheet
+    SP: "S4_广告板块/amazon-bulk-upload/bulk/SP_bulk_upload_{date}_v1.xlsx"
+    SB: "S4_广告板块/amazon-bulk-upload/bulk/SB_bulk_upload_{date}_v1.xlsx"
+    SD: "S4_广告板块/amazon-bulk-upload/bulk/SD_bulk_upload_{date}_v1.xlsx"
+  bulk_file: ""                 # 1.0 兼容字段，新计划留空
+
+review:
+  status: draft | approved | demo_default
+  reviewed_by: ""
+  reviewed_at: ""
+
+consistency_checks:
+  report_matches_plan: false
+  bulk_matches_plan: false
+  budget_sum_matches: false
+  campaign_count_matches: false
+  target_count_matches: false
+  # ---- 1.1 新增 ----
+  ad_product_declared: false          # 每条 campaign 都有 ad_product
+  capability_checked: false           # 三类能力前置已判定
+  readiness_evaluated: false          # ★ SB/SD 的开启时机已基于 SP 数据判定
+  defer_reason_recorded: false        # 本轮 defer 的类型有明确原因与触发条件对照
+  sp_round_recorded: false            # readiness 判定引用了具体的 SP 轮次与数据窗口
+  type_specific_fields_complete: false # SB/SD 专属字段齐全
+  budget_split_sums_to_total: false
+  negative_synced_across_types: false
+  bulk_split_by_type: false           # 每个启用类型各出一份 Bulk
+
+# 迁移说明
+migration_from_1_0:
+  rule: "1.0 计划读入时，所有 campaign 默认 ad_product=SP；capability 默认 available，readiness 未评估"
+  requirement: |
+    任何新生成的计划必须为 1.1。
+    第一轮搭建（无投放数据）时，readiness.SB/SD 必须为 defer，且 decision_basis 写明"第一轮无数据"；
+    不得以"品牌已备案所以可以投"为由在第一轮就搭 SB/SD —— 能投 ≠ 现在该投。

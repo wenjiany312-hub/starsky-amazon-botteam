@@ -1,0 +1,30 @@
+# 分析规则(40号文档 P1:阈值外置,改这里不用改代码)
+# 生效范围:daily_patrol_data.py / fba_stock_alert.py 的 findings 判定
+# 巡检对象结构(家族/floor_price)仍在 amazon-store-patrol/references/巡检配置.yaml,此处只管"怎么判"
+
+ads:
+  acos_red: 0.35            # 昨日 ACOS 红线
+  acos_yellow: 0.25         # 关注线(暂未单独出 finding)
+  min_spend_for_red: 5.0    # 花费低于此不触发 ACOS/烧钱红线(降噪)
+  burn_min_spend_7d: 5.0    # 近7天烧钱无单的花费下限
+  bad_status_keywords: [OUT_OF_BUDGET, SUSPENDED, INCOMPLETE, MISSING_]
+  bad_status_min_spend_7d: 1.0   # ⭐僵尸活动降噪:7天花费低于此的"投放异常"不再报(解决 63 条误报)
+
+sales:
+  drop_pct_warn: 0.40       # 昨日环比跌幅超 40% 出 finding
+  min_amount_base: 50       # 且对比基数(前日销售额)不低于此,防小额噪音
+
+family:                     # 子体级(price/star/review 红线;floor_price 在巡检配置里)
+  price_change_pct: 0.10
+  star_drop: 0.1
+  review_jump: 3            # 评论新增≥此值且星级未升 → 疑集中差评
+
+inventory:
+  # fba_stock_alert 分层沿用领星健康标签+可售天数(脚本内);此处控制 finding 聚合方式
+  red_per_sku: true         # 🔴低库存逐 SKU 出 finding(时间敏感=P1)
+  aggregate_others: true    # 零库存/滞销/关注 按店铺聚合成单条(降噪)
+
+priority:                   # P1/P2/P3 判定(影响金额×紧迫度×置信度;金额单位=店铺币种原值)
+  p1_min_impact: 20         # 影响金额≥此值且置信度高 → P1
+  p2_min_impact: 5          # 影响金额≥此值 → 至少 P2
+  # 时间敏感类(断货)不看金额直接 P1(置信度低除外)

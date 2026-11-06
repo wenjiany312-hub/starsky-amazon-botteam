@@ -1,0 +1,166 @@
+schema_version: "2.0"
+package_id: "KWP-SIF-PRODUCT-001"
+package_version: 1
+package_hash: "sha256:RECOMPUTE_WITH_SCRIPT"
+supersedes: null
+change_reason: initial
+run_id: ""
+run_mode: production
+demo_label: null
+marketplace: US
+product_id: ""
+source_mode: sif
+source_line_policy: isolated
+data_sources:
+  - source_id: "SRC-SIF-FILE-001"
+    provider: sif
+    acquisition_method: file
+    relative_path: ""
+    sha256: "sha256:"
+    source_sheet: ""
+    marketplace: US
+    as_of: ""
+    period: {start: null, end: null, month: null, timezone: "America/Los_Angeles"}
+    units: {}
+    field_mapping: {}
+    missing_fields: []
+mcp:
+  status: skipped
+  skipped_reason: not_called_this_run
+  calls: []
+records:
+  - keyword_id: KW-001
+    keyword: ""
+    normalized_keyword: ""
+    source_keyword: ""
+    disposition: retained
+    retention_status: retained_core
+    claim_restricted: false
+    labels: []
+    six_dimensions: {D1: [], D2: [], D3: [], D4: [], D5: [], D6: []}
+    metrics:
+      search_volume:
+        value: null
+        status: missing
+        missing_reason: source_field_null
+        unit: weekly
+        source_id: SRC-SIF-FILE-001
+        semantic: weekly_search_volume
+        period: {start: null, end: null, month: null}
+      cpc:
+        value: null
+        status: missing
+        missing_reason: source_field_null
+        currency: USD
+        low: null
+        high: null
+        source_id: SRC-SIF-FILE-001
+        semantic: third_party_cpc_signal
+        period: {start: null, end: null, month: null}
+      cvr:
+        value: null
+        status: missing
+        missing_reason: source_field_null
+        source_id: SRC-SIF-FILE-001
+        semantic: third_party_metric_not_amazon_account_cvr
+        period: {start: null, end: null, month: null}
+    coverage:
+      confirmed_competitor_count: 0
+      competitor_coverage_count: 0
+      competitor_asins: []
+      coverage_ratio: null
+      coverage_missing_reason: no_confirmed_competitors
+      export_observed_asins: []
+    listing_eligibility: {allowed: true, blocked_reasons: []}
+    ad_eligibility: {allowed: true, blocked_reasons: []}
+    unassigned_reason: null
+    lineage:
+      - source_id: SRC-SIF-FILE-001
+        source_sheet: ""
+        source_row: null
+        semantic: keyword_export
+listing_pools:
+  title_candidates: []
+  highlights_candidates: []
+  bullet_feature: []
+  bullet_scenario: []
+  description_aplus: []
+  search_terms_candidates: []
+  attributes: []
+  qa: []
+  fitment_review: []
+pools:
+  exact: []
+  exact_p1: []
+  exact_p2: []
+  phrase_feature: []
+  phrase_scenario: []
+  broad_discovery: []
+  observe: []
+negative_records: []
+negative_pools: {exact: [], phrase: []}
+asin_records: []
+asin_pools: {pat_candidates: [], defense_candidates: [], brand_review: []}
+compliance:
+  blacklist_source: null
+  removed_terms: []
+  brand_isolated_terms: []
+  claim_restricted_terms: []
+conservation:
+  raw_rows: 0
+  blank_keyword_rows: 0
+  invalid_rows: 0
+  normalized_valid_rows: 0
+  unique_keywords: 0
+  merged_duplicate_rows: 0
+  disposition_counts:
+    retained: 0
+    observe: 0
+    brand_isolated: 0
+    compliance_negative: 0
+    low_relevance_negative: 0
+  records_count: 0
+analysis:
+  traffic_concentration: {status: unavailable, source_id: null, top10_share: null, keywords_to_80pct: null}
+  seasonality: {status: unavailable, source_ids: [], classification: unknown, as_of: null}
+  competitor_coverage: {confirmed_competitor_count: 0, source_id: null}
+  metric_fill_rates: {}
+handoff:
+  strategy_brief_inputs:
+    package_ref: {package_id: "", package_version: 1, package_hash: ""}
+    source_refs: []
+    pool_counts: {}
+    market_signals: {}
+    data_caveats: []
+    strongest_counterargument: ""
+  ad_plan_pool_mapping:
+    exact: {target_type: keyword, match_type: exact}
+    phrase_feature: {target_type: keyword, match_type: phrase}
+    phrase_scenario: {target_type: keyword, match_type: phrase}
+    broad_discovery: {target_type: keyword, match_type: broad}
+    pat_candidates: {target_type: asin, match_type: product}
+  never_authorizes_external_upload: true
+downstream_eligibility:
+  strategy: conditional
+  builder: conditional
+  external_upload: never_authorized_by_keyword_package
+  reasons: []
+data_explanation_window:
+  obtained_facts: []
+  derived: []
+  simulated: []
+  missing_and_impact: []
+  continue_and_revision: []
+late_data_revision:
+  policy: impact_scoped
+  changed_source_ids: []
+  changed_record_ids: []
+  changed_fields: []
+  affected_artifacts: []
+  unaffected_artifacts: []
+  invalidates_downstream_hashes: true
+acceptance_checks: {}
+_meta:
+  generated_at: null
+  generator: "amazon-<source>-keyword-research/4.0.0"
+  canonicalization_version: kwp-c14n-1

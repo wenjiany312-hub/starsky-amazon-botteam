@@ -1,0 +1,45 @@
+schema_version: 1
+scope: null  # 沿用本轮明确范围；仅用户限制S1时填写S1_only，不覆盖已有全链授权。
+product_name: 待确认产品
+user_settings:
+  pre_ad_margin_target: {value: null, status: missing, source: ''}
+  post_ad_margin_target: {value: null, status: missing, source: ''}
+  operating_mode: {value: null, status: missing, source: ''}
+components: []
+# name, quantity, image, offer_url, sku, specification, material,
+# page_price, moq, stock, page_weight; facts carry value/unit/status/source/
+# observed_at/valid_until. Null is unknown; zero needs explicit evidence.
+packaging: {}
+demand:
+  evidence: []
+  counterevidence: []
+  # Match a complete native cost scenario by id and exact price, with current
+  # same-form market evidence. Never certify an assumed high price.
+  market_price_evidence: []
+  # - scenario_id: A
+  #   price: {value: null, unit: USD, status: missing, source: '', observed_at: null, valid_until: null}
+  #   form_match: {value: null, status: missing, source: '', observed_at: null, valid_until: null}
+economics:
+  viable: {value: null, status: missing, source: ''}
+  actual_profit: {value: null, status: missing, source: ''}
+  basis: incomplete
+supplier_checks:
+  # A single-component product may use verified value: not_applicable for assembly only.
+  - {id: assembly, name: 组装与混装, result: {value: null, status: missing, source: ''}}
+  - {id: packaging, name: 独立包装, result: {value: null, status: missing, source: ''}}
+  - {id: labeling, name: 标签与条码, result: {value: null, status: missing, source: ''}}
+  - {id: carton, name: 外箱尺寸和装箱, result: {value: null, status: missing, source: ''}}
+  - {id: quote, name: 完整报价, result: {value: null, status: missing, source: ''}}
+  - {id: lead_time, name: 交期, result: {value: null, status: missing, source: ''}}
+  - {id: quality, name: 质量验收标准, result: {value: null, status: missing, source: ''}}
+risks:
+  - {id: intellectual_property, name: 知识产权, cleared: {value: null, status: missing, source: ''}}
+  - {id: compliance, name: 合规要求, cleared: {value: null, status: missing, source: ''}}
+  - {id: safety, name: 产品安全, cleared: {value: null, status: missing, source: ''}}
+  - {id: logistics, name: 物流与包装限制, cleared: {value: null, status: missing, source: ''}}
+scenarios: []
+next_action: 补充真实需求、组件与厂家证据，复算成本后评估拿样。
+future_interfaces:
+  sample_validation: null
+  first_batch_sku: null
+  replenishment_review: null

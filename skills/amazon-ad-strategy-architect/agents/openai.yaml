@@ -1,0 +1,4 @@
+interface:
+  display_name: "Amazon 广告策略架构师"
+  short_description: "将经营目标、利润、库存与证据转成可审核可回滚的亚马逊广告策略"
+  default_prompt: "Use $amazon-ad-strategy-architect to design or revise an evidence-backed Amazon advertising strategy before campaign compilation."

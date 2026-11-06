@@ -1,0 +1,26 @@
+schema_version: "1.0"
+run_id: ""
+cycle_id: ""
+run_mode: production  # production | demo_direct_run
+plan:
+  plan_id: ""
+  plan_version: 0
+  plan_hash: "sha256:"
+bulk:
+  bulk_id: ""
+  bulk_version: 0
+  bulk_hash: "sha256:"
+validation:
+  status: pass
+  validation_hash: "sha256:"
+status: pending  # pending | changes_requested | approved_for_external_upload | demo_not_releasable | rejected | blocked
+reviewed_by: ""
+reviewed_at: ""
+checks:
+  real_child_sku_asin: pending
+  marketplace_account_scope: pending
+  current_official_template: pending
+  budget_and_profit_authorized: pending
+  plan_bulk_counts_match: pending
+  unresolved_high_risk_actions: pending
+external_action_authorized: false

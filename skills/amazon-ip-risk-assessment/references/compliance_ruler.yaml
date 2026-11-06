@@ -1,0 +1,343 @@
+# 合规尺子规则库（compliance_ruler.py 读取）。只作上架前初筛，不是法律意见；以官方与亚马逊后台最新要求为准。
+# light：red=硬门槛（禁止/需特殊许可，常规卖家基本不能做）；orange=要资质（能做，但要检测/证书/审批，且要进成本账）；
+#        yellow=要规避（改词、改宣传、改设计或补申报）。
+# when.attributes：产品属性（04A_ruler_inputs.yaml 里逐个判 true/false/null）；null 为灰灯待核，不抬高风险灯。
+# when.keywords：只扫描本品目标或选定 SKU；参考款、排除词、字段名不参与。
+# （英文按整词，中文按包含）。属性明确为 false 而只有关键词命中时，降为 yellow「宣传别往这边写」。
+schema_version: "1.1"
+as_of: "2026-09"
+matching_logic_updated: "2026-10-14"
+
+attributes:
+  battery_lithium: 含锂电池（内置或随附）
+  battery_button: 含纽扣/硬币电池
+  electric: 带电子电路或插电
+  wireless: 蓝牙/WiFi/无线充电等无线功能
+  heating: 发热/加热元件
+  children_12_under: 面向 12 岁及以下儿童（含宣传写 for kids）
+  infant: 婴幼儿用品（床、推车、座椅、奶瓶、牙胶、安抚奶嘴、睡袋等）
+  food_contact: 接触食品或饮用水
+  cosmetic_skin: 化妆品/个护，涂抹或长期接触皮肤
+  medical_claim: 医疗/治疗/缓解疾病类用途或宣称
+  antimicrobial_claim: 抗菌、杀菌、除螨、防霉、驱虫等功效宣称
+  magnet_small: 含可分离的小强磁
+  laser: 含激光
+  blade_sharp: 刀具或锋利刃口
+  weapon_related: 枪械、弹药、仿真枪、弓弩及其配件
+  liquid_powder_paste: 液体、粉末、膏体、气雾剂
+  textile_apparel: 服装、纺织品
+  helmet_protective: 头盔、护具
+  eyewear: 太阳镜、老花镜等眼镜
+  auto_safety: 汽车灯、刹车、座椅等安全相关配件
+  plant_animal_material: 木、竹、藤、皮毛、骨角、珊瑚等动植物材料
+  licensed_ip_character: 动漫/影视/游戏/球队/奢侈品牌的图案、角色或款式
+  compatible_other_brand: 标注适配其他品牌（for iPhone、fits Sonicare 等）
+
+rules:
+  # ---------- 中国出口 / 头程 ----------
+  - id: CN-DUAL-USE
+    light: red
+    scope: 中国出口
+    title: 两用物项（出口许可证管制）
+    when: {keywords: [drone, uav, 无人机, 加密, encryption module, 镓, 锗, gallium, germanium, 石墨负极]}
+    requires: 需商务部两用物项出口许可；部分无人机、加密通信、镓锗石墨等原材料受管制
+    action: 常规跨境卖家不做；确需做先问货代与报关行能否出口
+  - id: CN-CITES
+    light: red
+    scope: 中国出口
+    title: 濒危动植物及其制品
+    when: {keywords: [ivory, 象牙, 犀角, rhino horn, 玳瑁, tortoiseshell, 珊瑚, coral, 红木, rosewood, 沉香, agarwood, 鳄鱼皮, 蟒蛇皮, python skin]}
+    requires: 需 CITES 允许进出口证明，美国入境同样核查
+    action: 换材质；无证明不做
+  - id: CN-CONTROLLED
+    light: red
+    scope: 中国出口
+    title: 管制刀具、弓弩、仿真枪
+    when: {attributes: [weapon_related], keywords: [crossbow, 弓弩, 管制刀具, 仿真枪, replica gun, airsoft]}
+    requires: 国内管制，物流与快递拒收
+    action: 不做
+  - id: CN-LIVE
+    light: red
+    scope: 中国出口 / 美国入境
+    title: 种子、土壤、活体动植物
+    when: {keywords: [seed, seeds, 种子, soil, 土壤, 活体, live plant, 活植物]}
+    requires: 出口与美国入境（USDA/APHIS）基本禁止或需植检许可
+    action: 不做；做仿真植物等替代
+  - id: CN-FUMIGATION
+    light: yellow
+    scope: 中国出口 / 美国入境
+    title: 竹木、藤、羽毛等材料的熏蒸与查验
+    when: {attributes: [plant_animal_material], keywords: [原木, raw wood, unfinished wood, 羽毛, feather, 树皮, bark]}
+    requires: 已加工（刨光、上漆、胶合）的竹木制品一般无需熏蒸；原木、带皮、未处理材料需熏蒸证明，美国入境可能查验
+    action: 向厂家确认加工工艺；未处理材料让货代确认熏蒸要求并把熏蒸费计入成本账
+  - id: LOGI-DG
+    light: orange
+    scope: 头程物流
+    title: 带电 / 液体 / 粉末 / 膏体 / 磁性货物
+    when: {attributes: [battery_lithium, battery_button, liquid_powder_paste, magnet_small], keywords: [battery, 电池, liquid, 液体, powder, 粉末, gel, 膏, aerosol, 喷雾, magnet, 磁]}
+    requires: 需 MSDS/SDS、运输鉴定（锂电池 UN38.3）、磁检；只能走带电/敏感货渠道
+    action: 头程单价按敏感货报价填进物流配置；普货渠道会拒收
+
+  # ---------- 美国 / 亚马逊 禁售 ----------
+  - id: US-WEAPON
+    light: red
+    scope: 美国/亚马逊
+    title: 枪械、弹药及配件
+    when: {attributes: [weapon_related], keywords: [firearm, gun, magazine, 弹匣, silencer, suppressor, 消音器, ammo, ammunition, 弹药, bump stock, 枪托, rifle scope mount]}
+    requires: 亚马逊禁售枪械、弹药、弹匣及多数枪械配件
+    action: 不做
+  - id: US-KNIFE
+    light: red
+    scope: 美国/亚马逊
+    title: 弹簧刀、蝴蝶刀、指虎等
+    when: {keywords: [switchblade, 弹簧刀, butterfly knife, balisong, 蝴蝶刀, brass knuckles, 指虎, gravity knife]}
+    requires: 亚马逊禁售，多州违法
+    action: 不做；普通刀具另看 US-SHARP
+  - id: US-VAPE-CBD
+    light: red
+    scope: 美国/亚马逊
+    title: 电子烟、烟具、大麻/CBD
+    when: {keywords: [vape, e-cigarette, 电子烟, cbd, cannabis, 大麻, hemp oil, bong, 烟斗]}
+    requires: 亚马逊禁售
+    action: 不做
+  - id: US-LASER
+    light: orange
+    scope: 美国/亚马逊
+    title: 激光产品
+    when: {attributes: [laser], keywords: [laser, 激光]}
+    requires: FDA CDRH 激光产品报告；激光笔超 5mW 禁售
+    action: 向厂家要 FDA 登记与功率证明；没有不做
+
+  # ---------- 美国 / 亚马逊 要资质 ----------
+  - id: US-CHILD
+    light: orange
+    scope: 美国/亚马逊
+    title: 儿童产品（12 岁及以下）
+    when: {attributes: [children_12_under], keywords: [kids, kid, children, child, toddler, 儿童, 宝宝, 小孩, toy, toys, 玩具]}
+    requires: CPC 儿童产品证书 + CPSIA 检测（铅、邻苯）+ 永久追踪标签；玩具另需 ASTM F963；亚马逊要求上传
+    action: 向厂家要现成 CPC/ASTM 报告；没有就把检测费计入成本账 one_off_cny。只要宣传面向孩子就算儿童产品
+  - id: US-INFANT
+    light: orange
+    scope: 美国/亚马逊
+    title: 婴幼儿用品
+    when: {attributes: [infant], keywords: [baby, infant, 婴儿, 新生儿, crib, 婴儿床, stroller, 推车, pacifier, 安抚奶嘴, teether, 牙胶, bottle nipple]}
+    requires: 各品有专项 CPSC 强制标准（婴儿床、推车、睡眠用品等），多个类目需亚马逊审批
+    action: 先查该品的 CPSC 专项标准与亚马逊审批要求；新手慎做
+  - id: US-MEDICAL
+    light: orange
+    scope: 美国/亚马逊
+    title: 医疗器械或医疗宣称
+    when: {attributes: [medical_claim], keywords: [medical, 医疗, therapy, 治疗, relieve pain, 止痛, cure, heal, 理疗, massager for pain, posture corrector, 矫正]}
+    requires: FDA 企业注册与器械列名，部分需 510(k)；亚马逊医疗类目审核
+    action: 能改成非医疗用途就改宣传；否则按医疗器械合规走
+  - id: US-SUPPLEMENT
+    light: red
+    scope: 美国/亚马逊
+    title: 药品与膳食补充剂
+    when: {keywords: [supplement, 补充剂, vitamin, 维生素, capsule, 胶囊, drug, 药, melatonin, 褪黑素]}
+    requires: FDA 监管 + 亚马逊审批 + 第三方检测，普通卖家基本不能做
+    action: 不做
+  - id: US-PESTICIDE
+    light: orange
+    scope: 美国/亚马逊
+    title: 抗菌 / 杀菌 / 除螨 / 驱虫宣称（EPA FIFRA）
+    when: {attributes: [antimicrobial_claim], keywords: [antibacterial, antimicrobial, 抗菌, 杀菌, kills germs, disinfect, 消毒, anti-mold, 防霉, mite, 除螨, repellent, 驱虫, insecticide, 杀虫]}
+    requires: 功效宣称需 EPA 注册；亚马逊会要 EPA 注册号，否则下架。材质自带抗菌只能说保护产品本身（treated article），不能说保护人
+    action: 宣传改成客观结构/材质描述（如 quick-dry、drain holes），不写功效
+  - id: US-COSMETIC
+    light: orange
+    scope: 美国/亚马逊
+    title: 化妆品与个护
+    when: {attributes: [cosmetic_skin], keywords: [cosmetic, 化妆品, lotion, 乳液, cream, 面霜, serum, 精华, shampoo, 洗发, lip balm, 唇膏]}
+    requires: MoCRA：设施登记 + 产品列名 + 成分标签；部分类目需亚马逊审批
+    action: 确认厂家/品牌方是否已完成 MoCRA 登记
+  - id: US-FOOD-CONTACT
+    light: orange
+    scope: 美国/亚马逊
+    title: 食品接触材料
+    when: {attributes: [food_contact], keywords: [food grade, 食品级, cup, 杯, bottle, 水瓶, lunch box, 饭盒, cutting board, 砧板, baby bottle, straw, 吸管, bowl, 碗, utensil, 餐具]}
+    requires: 按 FDA 21 CFR 相应材料做食品接触检测；写 BPA free / food grade 需有报告
+    action: 向厂家要 FDA 食品接触报告（LFGB 不能代替）
+  - id: US-BUTTON-BATTERY
+    light: orange
+    scope: 美国/亚马逊
+    title: 含纽扣/硬币电池（Reese's Law）
+    when: {attributes: [battery_button], keywords: [button battery, coin battery, 纽扣电池, cr2032]}
+    requires: 16 CFR 1263：电池仓需螺丝或双动作锁闭 + 警示标签 + 检测（2024 年起强制）
+    action: 向厂家要 Reese's Law 检测报告与警示标签
+  - id: US-MAGNET
+    light: orange
+    scope: 美国/亚马逊
+    title: 小强磁
+    when: {attributes: [magnet_small], keywords: [magnetic balls, 磁力珠, neodymium, 钕磁]}
+    requires: 16 CFR 1262 磁铁安全标准；儿童可触及的小强磁基本禁售
+    action: 确认磁铁是否可分离、磁通量是否超标
+  - id: US-LITHIUM
+    light: orange
+    scope: 美国/亚马逊
+    title: 锂电池产品
+    when: {attributes: [battery_lithium], keywords: [lithium, 锂电, rechargeable, 充电, power bank, 充电宝, 移动电源]}
+    requires: UN38.3 + SDS + 亚马逊危险品（Hazmat）审核；充电宝等另需 UL 认证
+    action: 向厂家要 UN38.3、SDS；上架前预留 Hazmat 审核时间
+  - id: US-FCC
+    light: orange
+    scope: 美国/亚马逊
+    title: 电子产品 FCC
+    when: {attributes: [electric, wireless], keywords: [bluetooth, 蓝牙, wifi, wireless, 无线, led, usb, electronic, 电子, remote control, 遥控]}
+    requires: 无线功能需 FCC ID；其他电子电路需 FCC SDoC
+    action: 向厂家要 FCC 报告/FCC ID
+  - id: US-UL
+    light: orange
+    scope: 美国/亚马逊
+    title: 插电、加热、充电类（UL/ETL）
+    when: {attributes: [heating], keywords: [heater, 加热, 发热, heated, electric blanket, 电热毯, hair dryer, 吹风, space heater]}
+    requires: 亚马逊常要求 UL/ETL 等 NRTL 认证（加热器、电热毯、充电宝等）
+    action: 向厂家要 UL/ETL 证书；没有基本上不了
+  - id: US-HELMET
+    light: orange
+    scope: 美国/亚马逊
+    title: 自行车头盔
+    when: {attributes: [helmet_protective], keywords: [helmet, 头盔]}
+    requires: CPSC 16 CFR 1203 + CPC
+    action: 向厂家要 CPSC 1203 报告
+  - id: US-EYEWEAR
+    light: orange
+    scope: 美国/亚马逊
+    title: 太阳镜 / 老花镜
+    when: {attributes: [eyewear], keywords: [sunglasses, 太阳镜, reading glasses, 老花镜, eyeglasses]}
+    requires: FDA 抗冲击（落球）检测
+    action: 向厂家要落球测试报告
+  - id: US-AUTO
+    light: orange
+    scope: 美国/亚马逊
+    title: 汽车安全件
+    when: {attributes: [auto_safety], keywords: [headlight, 大灯, brake, 刹车, tail light, 尾灯, car seat]}
+    requires: DOT / FMVSS 合规
+    action: 非安全件（收纳、清洁）不涉及；安全件新手慎做
+  - id: US-SHARP
+    light: yellow
+    scope: 美国/亚马逊
+    title: 普通刀具与锋利刃口
+    when: {attributes: [blade_sharp], keywords: [knife, 刀, blade, 刀片, razor, 剃刀]}
+    requires: 需满足亚马逊刀具政策，部分州限售；包装需防割
+    action: 核对亚马逊刀具政策与目标州限制
+
+  # ---------- 要规避 / 补申报 ----------
+  - id: US-TEXTILE
+    light: yellow
+    scope: 美国/亚马逊
+    title: 纺织品标签
+    when: {attributes: [textile_apparel], keywords: [shirt, 衣服, apparel, 服装, fabric, 面料, blanket, 毯, towel, 毛巾, pajamas, 睡衣]}
+    requires: 纺织品标签法（成分、原产地、RN 或企业名）；儿童睡衣另需阻燃标准（16 CFR 1615/1616）
+    action: 缝标内容上架前定稿
+  - id: US-PROP65
+    light: yellow
+    scope: 美国/亚马逊
+    title: 加州 Prop 65 警示
+    when: {keywords: [pvc, vinyl, 人造革, faux leather, brass, 黄铜, lead, 铅]}
+    requires: 含清单物质需加警示，否则易被起诉
+    action: 向厂家要材料检测；需要时加 Prop 65 警示
+  - id: US-LACEY
+    light: yellow
+    scope: 美国入境
+    title: 木竹制品 Lacey Act 申报
+    when: {attributes: [plant_animal_material], keywords: [wood, wooden, 木, bamboo, 竹, rattan, 藤]}
+    requires: 部分植物制品进口需 Lacey Act 申报（树种、原产国）
+    action: 让货代确认是否需申报，并向厂家要树种信息
+
+  # ---------- 高侵权品类 ----------
+  - id: IP-LICENSED
+    light: red
+    scope: 知识产权
+    title: 授权 IP（动漫、影视、游戏、球队、奢侈品牌）
+    when: {attributes: [licensed_ip_character], keywords: [disney, 迪士尼, marvel, 漫威, pokemon, 宝可梦, hello kitty, sanrio, harry potter, star wars, nintendo, mario, nfl, nba, mlb, nhl, louis vuitton, gucci, chanel, anime, 动漫周边]}
+    requires: 无授权即侵权；这类品牌维权频繁
+    action: 不做，除非拿到品牌授权书
+  - id: IP-LEGO
+    light: red
+    scope: 知识产权
+    title: 乐高兼容积木 / 人仔
+    when: {keywords: [lego, 乐高, minifigure, 人仔, building bricks compatible]}
+    requires: 乐高商标与积木/人仔外观受保护；写 LEGO compatible 基本必被投诉
+    action: 不用 LEGO 字样和人仔外观；自有体系积木另查外观专利
+  - id: IP-TRADE-DRESS
+    light: orange
+    scope: 知识产权
+    title: 网红爆款外观（商业外观 / 外观专利高发）
+    when: {keywords: [stanley, owala, yeti, hydro flask, crocs, jibbitz, clog, 洞洞鞋, squishmallow, pop it, magsafe, dyson]}
+    requires: 这些品牌常用外观专利或商业外观批量维权（含 Schedule A 诉讼）
+    action: 必做外观专利检索与图片反搜；外形与原款拉开差异
+  - id: IP-ARTWORK
+    light: orange
+    scope: 知识产权
+    title: 印花图案 / 画作 / 贴纸（版权）
+    when: {keywords: [print, 印花, pattern, 图案, poster, 海报, sticker, 贴纸, wall art, 装饰画, phone case, 手机壳, t-shirt]}
+    requires: 图案版权是 Schedule A 批量诉讼高发区
+    action: 只用自有或已购授权图案，保留授权凭证
+
+# 看着像通用词、其实是注册商标：不得进标题、五点、ST、广告通投词，改用右边通用说法。
+generic_trademark_traps:
+  - {term: Q-tips, generic: cotton swabs, owner: Unilever}
+  - {term: Velcro, generic: hook and loop, owner: Velcro}
+  - {term: Ziploc, generic: resealable zipper bag, owner: S.C. Johnson}
+  - {term: Band-Aid, generic: adhesive bandage, owner: Kenvue}
+  - {term: Kleenex, generic: facial tissue, owner: Kimberly-Clark}
+  - {term: Post-it, generic: sticky notes, owner: 3M}
+  - {term: Scotch tape, generic: clear tape, owner: 3M}
+  - {term: Sharpie, generic: permanent marker, owner: Newell Brands}
+  - {term: Tupperware, generic: food storage container}
+  - {term: Crock-Pot, generic: slow cooker}
+  - {term: Instant Pot, generic: electric pressure cooker}
+  - {term: Bubble Wrap, generic: bubble cushioning wrap, owner: Sealed Air}
+  - {term: Styrofoam, generic: foam / polystyrene foam}
+  - {term: Popsicle, generic: ice pop, owner: Unilever}
+  - {term: Vaseline, generic: petroleum jelly, owner: Unilever}
+  - {term: Chapstick, generic: lip balm}
+  - {term: Jacuzzi, generic: hot tub / whirlpool}
+  - {term: Frisbee, generic: flying disc, owner: Wham-O}
+  - {term: Hula Hoop, generic: exercise hoop, owner: Wham-O}
+  - {term: Jet Ski, generic: personal watercraft, owner: Kawasaki}
+  - {term: Onesie, generic: baby bodysuit, owner: Gerber}
+  - {term: Magic Eraser, generic: melamine sponge, owner: Procter & Gamble}
+  - {term: Swiffer, generic: dust mop / sweeper pads, owner: Procter & Gamble}
+  - {term: Play-Doh, generic: modeling dough, owner: Hasbro}
+  - {term: Lego, generic: building blocks}
+  - {term: Taser, generic: stun device, owner: Axon}
+  - {term: Teflon, generic: non-stick coating / PTFE, owner: Chemours}
+  - {term: Lycra, generic: spandex / elastane}
+  - {term: Gore-Tex, generic: waterproof breathable membrane, owner: W. L. Gore}
+  - {term: Kevlar, generic: aramid fiber, owner: DuPont}
+  - {term: Plexiglas, generic: acrylic sheet}
+  - {term: Super Glue, generic: instant adhesive / cyanoacrylate glue}
+  - {term: Ping-Pong, generic: table tennis}
+  - {term: Rollerblade, generic: inline skates}
+  - {term: Crayola, generic: crayons}
+  - {term: K-Cup, generic: single-serve coffee pod, owner: Keurig}
+  - {term: WD-40, generic: penetrating lubricant}
+  - {term: Windex, generic: glass cleaner, owner: S.C. Johnson}
+  - {term: Pop It, generic: fidget popper}
+  - {term: Dumpster, generic: roll-off container}
+
+# 适配其他品牌：只能以 "compatible with / for <型号>" 出现在标题或五点的适配说明里；
+# 不进 Search Terms、不作广告通投词、不用对方 logo，并加 "not affiliated with" 说明。
+compatibility_brands: [iPhone, iPad, AirPods, Apple Watch, MagSafe, Samsung Galaxy, Sonicare, Oral-B, Dyson, Nintendo Switch,
+                       PlayStation, Xbox, KitchenAid, Ninja, Keurig, Nespresso, Vitamix, Roomba, Shark, GoPro, Tesla, Stanley,
+                       Yeti, Owala, Hydro Flask, Crocs, Kindle]
+
+# 每个产品都要做的检索；做不了的必须写 user_todo 和原因，不能静默跳过。
+required_searches:
+  - id: uspto_trademark
+    title: USPTO 商标检索（核心词、卖点短语、拟用品牌名）
+    url: https://tmsearch.uspto.gov/
+  - id: design_patent
+    title: 外观专利检索（US D 字头）
+    url_template: https://patents.google.com/?q=%22{q}%22&country=US&type=DESIGN
+  - id: utility_patent
+    title: 发明/实用新型专利检索（按功能结构关键词）
+    url_template: https://patents.google.com/?q=%22{q}%22&country=US
+  - id: image_reverse
+    title: 图片反搜（本品主图，看是否某品牌独有外观）
+    url: https://lens.google.com/
+  - id: schedule_a
+    title: Schedule A 批量诉讼排查（品类词 + 头部品牌）
+    url_template: https://www.google.com/search?q=%22Schedule+A%22+%22{q}%22+lawsuit

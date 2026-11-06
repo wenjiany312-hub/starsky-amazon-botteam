@@ -1,0 +1,59 @@
+schema_version: "2.1"
+artifact_type: product_layout
+updated: "2026-09-26"
+decision: >
+  只装一个插件。S1–S5 是同一个产品项目里的五个夹，不是五个插件。
+  新开对话靠交接口令，不靠插件个数。Codex 打开的文件夹是不是产品根，看它有没有自己的
+  workflow_state.yaml：有 → 它就是产品根（续跑老产品，不再嵌套）；没有 → 它是"放很多产品的
+  大文件夹"，真正的产品根是新建在它下面的 product_runs/{日期}_{占位或产品名}/ 一层，见
+  product_root_resolution。这样同一个大文件夹下可以并排放很多产品，互不混在一起。
+
+why_not_five_plugins:
+  - 五个插件不会自动变成五个对话。对话是人新开的，插件只是技能包。
+  - S2 必须读 S1 的选款和成本，S3 读卖点顺序，S4 读词池。拆插件会复制契约、版本漂移、互相找不到文件。
+  - 00C、模型表、Bulk 引擎、词包合同是共用件，装五次只会各改各的。
+  - 要防上下文过长：一块一个窗口 + 产物落盘 + 下一窗只读 _NEXT_。这和装几个插件无关。
+
+when_new_chat:
+  - 临时换板块（「启动S2」「先切到S3」）：允许同窗。立刻出目标板块入口，复用本窗已选的 A/B/C；没选过才问轨道。禁止一边赶去新窗口、一边又在本窗出卡。
+  - 上游没产物：明说「按缺数继续」，不得假装已有 S1 选款/词库。
+  - 出 HTML：必须新开干净窗口。会话里出现过「正在自动压缩上下文」就不要再出 HTML。
+  - 升模型档：Terra→Sol 或出 Bulk 改 Luna：建议新开（一个窗口只干一档）。
+  - 正式收尾换板块（上一块已闭环、要写长报告）：建议新开并粘 `_NEXT_S*到S*.md`；用户坚持同窗则同窗继续。
+  - 同一板块里：00C 和抓数可同窗；IP/选款/Listing 终稿升 Sol 时再换窗。
+
+layout_authority: templates/skill_folder_map.yaml
+
+product_root_resolution:
+  已续跑: "Codex 打开的文件夹里已有 workflow_state.yaml → 它就是产品根，原样使用，不再往下多套一层。"
+  宿主目录: "使用scripts/s1_intake.py --create-product --host codex|claude --workspace 用户工作区；按实际宿主选参数，已是product_runs不再嵌套。"
+  全新产品: >
+    Codex 打开的文件夹里没有 workflow_state.yaml → 先在它下面建
+    product_runs/{YYYY-MM-DD}_待定产品{n}/ 作为占位产品根（n 从空开始，当天已有同名占位才追加
+    2、3…），静默建夹和后续所有产物都落在这个占位根里，不落在用户打开的那个大文件夹本身。
+  改名时机: >
+    一旦拿到能组出描述性名字的信息（站点 + 价格带 + 一句话定位/品类，通常是 S1 候选收敛或选定
+    SKU 之后；不走 S1、直接给 ASIN/品类的场景，拿到那句话就算），在下一次落盘前把占位文件夹
+    整体改名成 {YYYY-MM-DD}_{站点}-{价格带}-{一句话定位} 这种描述性名字（参考已有产品夹的命名
+    风格）。**改名一律用脚本**：`python "<home>/scripts/rename_product_root.py" --root "<占位产品根>" --name "US-9.99-16.99-电动牙刷架"`
+    （只改夹名，夹里文件不动；同时把悬浮窗记住的旧路径指到新夹，不用脚本悬浮窗会找不到项目）。改完在当次回复里用一句话告诉用户
+    新路径，旧路径由软链接/Windows junction保留，导航记忆同步；workflow_state.yaml 和所有产物记录的都是相对路径，不用回填，但用户如果在终端手动 cd 过旧路径，要提醒他们改用新路径。
+    此后这个产品所有数据（S1–S5、报告、上传包）都落在这个夹里。
+  不适用: "用户显式指定了其他目录（如企业投喂根、共用素材库），以用户指定为准，不套这层。"
+
+layout:
+  product_root: "见上面 product_root_resolution；不是简单地\"Codex 打开的那一个大文件夹\""
+  shared:
+    - "00_产品资料/        # 企业投喂原件，不是 Skill"
+    - "00_总控/<skill>/    # 入口与 00C，夹名=插件 Skill 名"
+    - "workflow_state.yaml # 总进度，永远在根上"
+    - "_NEXT_S*到S*.md     # 接力口令，永远在根上"
+  stage_pattern: "{S1_选品板块|S2_文案板块|S3_视觉板块|S4_广告板块|S5_运营板块}/{skill-dir}/"
+  skill_dir_equals: "插件 skills/<name>/ 目录名"
+
+rules:
+  - 第一次「启动星空」跑 init_stage_folders.py，按 Skill 名建齐子夹。
+  - 调用哪个 Skill，就只写那个同名夹。文件名仍用 artifact_contract。
+  - 禁止写到产品根 生成报告/。禁止把 A Skill 的文件写进 B Skill 夹。
+  - 下游读上游：上一板块对应 Skill 夹 + 根上那一份 _NEXT_。
+  - 插件仍只装在 %USERPROFILE%\\plugins\\starsky-amazon-agent，禁止拷进产品。

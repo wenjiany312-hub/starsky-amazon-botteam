@@ -1,0 +1,13 @@
+region: "NA"                       # NA | EU | FE；不按站点猜测
+expected_country: "US"             # 以 profile 返回校验；英国填 UK，兼容返回 GB
+profile_id: null                   # 运行 profiles 后由用户明确选择
+profile_id_env: "AMAZON_ADS_PROFILE_ID"
+credential_file: null              # 可指向发布包外、该站点独立的 .env；仅解析，不执行
+client_id_env: "AMAZON_ADS_CLIENT_ID"
+client_secret_env: "AMAZON_ADS_CLIENT_SECRET"
+refresh_token_env: "AMAZON_ADS_REFRESH_TOKEN"
+token_file: null                   # 每站独立；authorize 与 refresh_token_env 二选一
+redirect_uri: "http://127.0.0.1:8765/callback"
+
+# 上述四个 *_env 也可使用短前缀：
+# ADS_PROFILE_ID / ADS_CLIENT_ID / ADS_CLIENT_SECRET / ADS_REFRESH_TOKEN

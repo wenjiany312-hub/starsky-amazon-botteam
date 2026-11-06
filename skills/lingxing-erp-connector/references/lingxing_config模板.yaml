@@ -1,0 +1,28 @@
+# 领星 OpenAPI 凭据配置模板
+# 使用方法:复制到 ~/.starsky-codex/config/lingxing_config.yaml 后填写（用户目录，插件升级不会丢）
+# 注意:填好后的 lingxing_config.yaml 不得进入公开仓库、分享包或课程包
+
+lingxing:
+  app_id: ""        # 领星开放后台 -> API 信息 -> AppID
+  app_secret: ""    # 领星开放后台 -> API 信息 -> AppSecret
+  base_url: "https://openapi.lingxing.com"
+
+# 店铺映射(接入领星的店铺才填;冒烟测试会返回 sid)
+stores:
+  # - sid: 123
+  #   nickname: "美国站主店"
+  #   marketplace: "US"
+  #   patrol: true
+
+# 可选:自定义报告输出根目录
+# report_root: "D:\\产品\\犬用雨衣\\S5_运营板块\\lingxing-erp-connector\\erp_extract"   # 产品根下的 erp_extract；不填则按 STARSKY_PRODUCT_ROOT / 当前目录 / 用户目录兜底
+
+# 可选:巡检结果推送到飞书群(scripts/feishu_push.py)
+# webhook 拿法:飞书群 → 右上角设置 → 群机器人 → 添加机器人 → 自定义机器人
+# 不填 webhook 就不推送,不影响巡检本身;secret 只在开了「签名校验」时填
+feishu:
+  webhook: ""
+  secret: ""
+  push_priority: ["P1", "P2"]
+  max_items: 10
+  push_when_clear: true

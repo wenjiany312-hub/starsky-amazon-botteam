@@ -1,0 +1,250 @@
+{
+ "gaps": [
+  {
+   "topic": "mode_jingpu",
+   "name": "精铺 vs 精品：月单分界、资源与试错哲学",
+   "gap_cards": 1,
+   "priority": 1,
+   "seed_urls": [],
+   "added": "2026-09-17",
+   "status": "closed",
+   "closed": "2026-09-17"
+  },
+  {
+   "topic": "mode_zero_to_one",
+   "name": "从0到1选品：入口、候选量、深研纪律",
+   "gap_cards": 1,
+   "priority": 1,
+   "seed_urls": [],
+   "added": "2026-09-17",
+   "status": "closed",
+   "closed": "2026-09-17"
+  },
+  {
+   "topic": "mode_vertical",
+   "name": "垂直选品：同一需求簇深挖、不打一枪换一个地方",
+   "gap_cards": 1,
+   "priority": 1,
+   "seed_urls": [],
+   "added": "2026-09-17",
+   "status": "closed",
+   "closed": "2026-09-17"
+  },
+  {
+   "topic": "entry_imbalance",
+   "name": "大盘四失衡扫描（评论×销量 / 自然×广告 / 时间×销量 / 旺淡季）",
+   "gap_cards": 1,
+   "priority": 1,
+   "seed_urls": [],
+   "added": "2026-09-17",
+   "status": "closed",
+   "closed": "2026-09-17"
+  },
+  {
+   "topic": "entry_category",
+   "name": "类目方向法：前台浏览 + 主题词翻译 + 产品查询",
+   "gap_cards": 1,
+   "priority": 1,
+   "seed_urls": [],
+   "added": "2026-09-17",
+   "status": "closed",
+   "closed": "2026-09-17"
+  },
+  {
+   "topic": "entry_seasonal",
+   "name": "季节/偏季档期与备货提前量",
+   "gap_cards": 1,
+   "priority": 1,
+   "seed_urls": [],
+   "added": "2026-09-17",
+   "status": "closed",
+   "closed": "2026-09-17"
+  },
+  {
+   "topic": "entry_supply_first",
+   "name": "货源倒推：有工厂/1688 再验市场需求",
+   "gap_cards": 1,
+   "priority": 2,
+   "seed_urls": [],
+   "added": "2026-09-17",
+   "status": "closed",
+   "closed": "2026-09-17"
+  },
+  {
+   "topic": "demand_ten_checks",
+   "name": "热卖原因十查（逐项通过/失败口径）",
+   "gap_cards": 1,
+   "priority": 1,
+   "seed_urls": [],
+   "added": "2026-09-17",
+   "status": "closed",
+   "closed": "2026-09-17"
+  },
+  {
+   "topic": "gray_signals",
+   "name": "合并/刷/烧广告公开信号（只判读不操作）",
+   "gap_cards": 1,
+   "priority": 1,
+   "seed_urls": [],
+   "added": "2026-09-17",
+   "status": "closed",
+   "closed": "2026-09-17"
+  },
+  {
+   "topic": "difficulty_ad_efficiency",
+   "name": "广告效率法与广告词占比>80%否决",
+   "gap_cards": 1,
+   "priority": 1,
+   "seed_urls": [],
+   "added": "2026-09-17",
+   "status": "closed",
+   "closed": "2026-09-17"
+  },
+  {
+   "topic": "variant_no_cannibal",
+   "name": "变体三板斧与变体不互抢红线",
+   "gap_cards": 1,
+   "priority": 1,
+   "seed_urls": [],
+   "added": "2026-09-17",
+   "status": "closed",
+   "closed": "2026-09-17"
+  },
+  {
+   "topic": "profit_go_line",
+   "name": "去广告投产比>50% 立项线",
+   "gap_cards": 1,
+   "priority": 1,
+   "seed_urls": [],
+   "added": "2026-09-17",
+   "status": "closed",
+   "closed": "2026-09-17"
+  },
+  {
+   "topic": "ip_patent",
+   "name": "外观/实用新型专利排查时机",
+   "gap_cards": 1,
+   "priority": 2,
+   "seed_urls": [],
+   "added": "2026-09-17",
+   "status": "closed",
+   "closed": "2026-09-17"
+  },
+  {
+   "topic": "blue_ocean_scan",
+   "name": "蓝海/失衡扫描操作顺序与禁用筛选项",
+   "gap_cards": 1,
+   "priority": 2,
+   "seed_urls": [],
+   "added": "2026-09-17",
+   "status": "closed",
+   "closed": "2026-09-17"
+  },
+  {
+   "topic": "category_diff",
+   "name": "家居/宠物/服装等类目差异（后补）",
+   "gap_cards": 1,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-17",
+   "status": "closed",
+   "closed": "2026-09-17"
+  },
+  {
+   "topic": "anti_copy_hit",
+   "name": "禁止把灰手段当进场路径；只识别不复制",
+   "gap_cards": 1,
+   "priority": 1,
+   "seed_urls": [],
+   "added": "2026-09-17",
+   "status": "closed",
+   "closed": "2026-09-17"
+  },
+  {
+   "topic": "supplier_horizontal",
+   "name": "开放问题：KC-0057 仿品牌货源线目前单源（SRC-0455），需第二来源印证成本-毛利口径",
+   "gap_cards": 0,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-26",
+   "status": "closed",
+   "why": "validate 建议 B 级 reviewed 卡 ≥2 源；案例数据（¥65-66 → 毛利 -8%~1.3%）仅出自 James 交接包单份文档",
+   "need": "任一独立沙龙/课程/实跑报告中关于仿品牌货源成本或风险的段落",
+   "closed": "2026-09-26"
+  },
+  {
+   "topic": "voc_method",
+   "name": "开放问题：KC-0061/KC-0062 VOC 机制与参数卡目前单源（SRC-0494），需第二来源印证",
+   "gap_cards": 0,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-26",
+   "status": "closed",
+   "why": "VOC 方法论为自研单文档；SRC-0493 为同文档 html 双格式，不计独立印证",
+   "need": "第二份 VOC/社媒前导信号方法论来源（如 SRC-0438 VOC驱动产品迭代或社群外部资料）",
+   "closed": "2026-09-26"
+  },
+  {
+   "topic": "trend_season_ai",
+   "name": "趋势/季节/事件性机会捕捉（AI 辅助）",
+   "gap_cards": 1,
+   "priority": 2,
+   "seed_urls": [],
+   "added": "2026-09-26",
+   "status": "closed",
+   "closed": "2026-09-26"
+  },
+  {
+   "topic": "aba_diagnose",
+   "name": "ABA 排名透析与工具数据源判读口径",
+   "gap_cards": 1,
+   "priority": 2,
+   "seed_urls": [],
+   "added": "2026-09-26",
+   "status": "closed",
+   "closed": "2026-09-26"
+  },
+  {
+   "topic": "ai_funnel",
+   "name": "AI 蓝海漏斗：阶段参数、硬过滤条件与人工复核点",
+   "gap_cards": 2,
+   "priority": 1,
+   "seed_urls": [],
+   "added": "2026-09-26",
+   "status": "closed",
+   "closed": "2026-09-26"
+  },
+  {
+   "topic": "ai_workflow_skills",
+   "name": "SKILL/MCP 选品工作流编排（角色分工与产物交接）",
+   "gap_cards": 1,
+   "priority": 2,
+   "seed_urls": [],
+   "added": "2026-09-26",
+   "status": "closed",
+   "closed": "2026-09-26"
+  },
+  {
+   "topic": "prompt_templates",
+   "name": "选品研究指令模板的用法与边界",
+   "gap_cards": 1,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-26",
+   "status": "closed",
+   "closed": "2026-09-26"
+  },
+  {
+   "topic": "ai_workflow_skills",
+   "name": "待补卡：StyleSnap 视觉饱和度四系数评分（SRC-0540）",
+   "gap_cards": 1,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-26",
+   "status": "open",
+   "why": "波次3B 判读发现现有 177 卡无此点，本轮配额所限未出卡",
+   "need": "SRC-0540（Hermes 技能库，已入库关闭）重读后出一张 B 级卡"
+  }
+ ],
+ "note": "plan 会追加未覆盖主题；模型学习中发现的开放问题也记这里（含 why / 需要什么来源）"
+}

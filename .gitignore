@@ -1,0 +1,19 @@
+# 构建产物
+dist/
+*.zip
+# 密钥和本机环境（.env.example 保留）
+.env
+*.env
+!.env.example
+*.pem
+*.key
+**/secrets/
+# 运行时数据（在工作目录，不进仓库）
+**/pw_user_data/
+**/ms-playwright/
+**/.venv/
+**/__pycache__/
+*.pyc
+.DS_Store
+.versions/
+.metadata/

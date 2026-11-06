@@ -1,0 +1,22 @@
+schema_version: "1.0"
+selection_id: "KWS-PRODUCT-001"
+run_id: ""
+marketplace: US
+product_id: ""
+status: selected
+selected_package:
+  package_id: ""
+  package_version: 1
+  package_hash: "sha256:"
+  source_mode: sif
+  relative_path: ""
+selection_evidence:
+  selected_by: user
+  selected_at: ""
+  rationale: ""
+  compared_package_refs: []
+  unresolved_conflicts: []
+authorization:
+  strategy_handoff: true
+  bulk_upload: false
+notes: []

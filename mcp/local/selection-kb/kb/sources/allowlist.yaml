@@ -1,0 +1,12 @@
+{
+ "domains": {
+  "sellercentral.amazon.com": "A",
+  "sellercentral.amazon.cn": "A",
+  "sell.amazon.com": "A",
+  "sell.amazon.cn": "A",
+  "brandservices.amazon.com": "A",
+  "sellercentral.amazon.co.uk": "A",
+  "sellercentral.amazon.de": "A"
+ },
+ "note": "域名 → 默认 authority。加第三方站点时给 C；厂商站点给 V。抓取前会查 robots.txt。"
+}

@@ -1,0 +1,40 @@
+schema_version: "1.0"
+product_id: "{product_slug}"
+generated_at: "{ISO8601}"
+source_assets: "S3_视觉板块/amazon-listing-image-designer/产品垫图/asset_manifest.yaml"
+generation_mode: "pending_user_confirmation"
+groups:
+  - group_id: "listing_7_images"
+    display_name: "Amazon Listing 主图+6副图"
+    output_dir: "S3_视觉板块/amazon-listing-image-designer/visuals/listing/"
+    readiness: "ready | blocked"
+    items:
+      - item_id: "IMG01"
+        prompt_source: "S3_视觉板块/amazon-listing-image-designer/08_主副图设计方案.md#IMG01"
+        reference_asset_id: "IMG01"
+        reference_asset_path: "S3_视觉板块/amazon-listing-image-designer/产品垫图/主副图/IMG01_main_front.jpg"
+        output_path: "S3_视觉板块/amazon-listing-image-designer/visuals/listing/IMG01_main_v1.png"
+        status: "ready | blocked_missing_reference_asset | generated | needs_revision"
+        blocking_reasons: []
+        review_checks: ["结构一致", "主图纯白无叠字", "无水印Logo", "合规词核对"]
+  - group_id: "premium_aplus_5_modules"
+    display_name: "Premium A+ 五模块"
+    output_dir: "S3_视觉板块/amazon-premium-aplus-designer/aplus_visuals/"
+    readiness: "ready | blocked"
+    items:
+      - item_id: "M1"
+        prompt_source: "S3_视觉板块/amazon-premium-aplus-designer/09_高级A+方案.md#M1"
+        reference_asset_id: "APLUS01"
+        reference_asset_path: "S3_视觉板块/amazon-listing-image-designer/产品垫图/高级A+/APLUS01_Hero_detail.jpg"
+        output_path: "S3_视觉板块/amazon-premium-aplus-designer/aplus_visuals/M1_hero_desktop_v1.png"
+        status: "ready | blocked_missing_reference_asset | generated | needs_revision"
+        blocking_reasons: []
+        review_checks: ["结构一致", "不重复Listing主题", "桌面移动规格分开", "合规词核对"]
+one_click_commands:
+  listing: "确认一键出图：主副图"
+  premium_aplus: "确认一键出图：高级A+"
+  all: "确认一键出图：全部视觉"
+  single: "先生成 IMG03" 
+cowart_postprocess:
+  status: "not_started"
+  rule: "只在用户确认进入 Cowart 后调用；原图不覆盖，批注修改生成新版本。"

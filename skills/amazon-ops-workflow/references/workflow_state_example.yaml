@@ -1,0 +1,717 @@
+# 路径口径：本示例里的 path 全部是产品根相对的 V2.1 字面路径（{板块夹}/{skill}/文件），
+#    归属见 templates/skill_folder_map.yaml；读旧 run（根上有 生成报告/）时记入 legacy_artifacts。
+schema_version: "4.1"
+edition: starsky-v2
+release_tag: "2026-08-09"
+
+run:
+  run_id: "run_<stable_id>"
+  run_mode: production  # production | demo_direct_run
+  scenario: A  # A | B | C | D | E
+  status: active
+  created_at: ""
+  updated_at: ""
+
+entry:
+  mode: workflow  # workflow | single_point | continue | status_audit
+  task: full_chain
+  routing_status: active
+  quickstart_used: false
+
+single_point_progress:
+  state: not_started  # not_started | active | awaiting_user_choice | completed
+  intake_path: 00_总控/starsky-singlepoint-intake/00B_单点任务接入单.md
+  active_skill: ""
+  completed_skills: []
+  user_requested_next_skill: ""
+  available_followups: []
+
+identity:
+  marketplace: US
+  account_scope: ""
+  product_id: ""
+  product_name: ""
+  parent_asin: ""
+  child_asins: []
+  child_skus: []
+  currency: USD
+  timezone: America/Los_Angeles
+  identity_hash: "sha256:"
+
+interaction_policy:
+  repeat_authorization_questions: false
+  proceed_with_labeled_defaults: true
+  external_upload_by_user_only: true
+  irreversible_action_requires_explicit_user_action: true
+
+data_intake:
+  status: not_requested  # not_requested | indexing | report_ready | consumed | revision_needed
+  accept_unorganized_sources: true
+  source_write_allowed: false
+  report_key: data_intake_report
+  overlay_key: data_intake_overlay
+  source_count: 0
+  unclassified_count: 0
+  consumed_by: []
+
+enterprise_data_pack:
+  source_mode: external_read_only
+  root: ""
+  root_status: not_provided
+  manifest_status: not_created
+  source_write_allowed: false
+  active_overlay_version: ""
+
+profile_selection:
+  status: pending
+  user_mode: 通用模式
+  enterprise_id: ""
+  category_id: ""
+  routing_profile: ""
+  confirmed_by: ""
+  confirmed_at: ""
+
+data_policy:
+  prefer_existing_artifacts: true
+  existing_file_is_completion_evidence: false
+  require_hash_schema_identity_review: true
+  auto_extract_existing_sources: true
+  mcp_refresh_before_prompt_when_relevant: true
+  never_silent_fabricate: true
+  missing_data_behavior: explain_and_continue
+  late_data_revision: impact_scoped
+  preserve_superseded_versions: true
+
+mcp_status:
+  sorftime:
+    status: not_checked
+    tool_name: ""
+    called_at: ""
+    request_scope: ""
+    result_status: ""
+    source_as_of: ""
+    consumed_by: []
+  sif:
+    status: not_checked
+    tool_name: ""
+    called_at: ""
+    request_scope: ""
+    result_status: ""
+    source_as_of: ""
+    consumed_by: []
+  sellersprite:
+    status: not_checked
+    tool_name: ""
+    called_at: ""
+    request_scope: ""
+    result_status: ""
+    source_as_of: ""
+    consumed_by: []
+  xiyou:
+    status: not_checked
+    tool_name: ""
+    called_at: ""
+    request_scope: ""
+    result_status: ""
+    source_as_of: ""
+    consumed_by: []
+  lingxing:
+    status: not_checked
+    tool_name: ""
+    called_at: ""
+    request_scope: ""
+    result_status: ""
+    source_as_of: ""
+    consumed_by: []
+  local_1688:
+    status: not_checked
+    tool_name: ""
+    called_at: ""
+    request_scope: ""
+    result_status: ""
+    source_as_of: ""
+    consumed_by: []
+
+artifacts:
+  data_intake_report:
+    path: 00_总控/starsky-fullchain-workflow/00C_资料接入与优化建议报告.md
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: data-intake
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  data_intake_overlay:
+    path: 00_总控/starsky-fullchain-workflow/00C_data_intake_overlay.yaml
+    sha256: ""
+    schema_version: "1.0"
+    status: missing
+    producer_skill: data-intake
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  product_profile:
+    path: S1_选品板块/amazon-market-research/01_product_profile.yaml
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: amazon-market-research
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  market_report:
+    path: S1_选品板块/amazon-market-research/01_市场穿透报告.md
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: amazon-market-research
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  product_scrape:
+    path: S1_选品板块/1688-product-detail-scraper/03_1688产品资料_{商品ID}.md
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: 1688-product-detail-scraper
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  product_facts:
+    path: S1_选品板块/1688-product-detail-scraper/03_product_facts.yaml
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: 1688-product-detail-scraper
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  ip_report:
+    path: S1_选品板块/amazon-ip-risk-assessment/04_IP风险排查与专利分析.md
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: amazon-ip-risk-assessment
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  compliance_blacklist:
+    path: S1_选品板块/amazon-ip-risk-assessment/04_compliance_blacklist.yaml
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: amazon-ip-risk-assessment
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  phase_s1:
+    path: S1_选品板块/_阶段总览/阶段_S1_选品可行性研究报告.md
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: amazon-ops-workflow
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  competitor_asin_report:
+    path: S1_选品板块/amazon-market-research/05_竞品ASIN研究报告.md
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: amazon-ops-workflow
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  competitor_asin_pool:
+    path: S1_选品板块/amazon-market-research/competitor_asin_pool.yaml
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: amazon-ops-workflow
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  keyword_export_manifest:
+    path: S2_文案板块/_投喂_关键词导出/keyword_export_manifest.yaml
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: amazon-ops-workflow
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  keyword_package:
+    path: S2_文案板块/amazon-sif-keyword-research/keyword_package.yaml
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: ""
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  listing_content:
+    path: S2_文案板块/amazon-listing-copywriter/07_Listing文案.md
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: amazon-listing-copywriter
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  listing_bullet_ledger:
+    path: S2_文案板块/amazon-listing-copywriter/07_listing_bullet_ledger.yaml
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: amazon-listing-copywriter
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  listing_conversion_blueprint:
+    path: S2_文案板块/amazon-listing-copywriter/07A_Listing转化蓝图.yaml
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: amazon-listing-copywriter
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  listing_validation_result:
+    path: S2_文案板块/amazon-listing-copywriter/07C_Listing校验结果.json
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: amazon-listing-copywriter
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  visual_playbook:
+    path: S3_视觉板块/amazon-visual-benchmark-learner/visual_playbook.yaml
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: amazon-visual-benchmark-learner
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  visual_asset_manifest:
+    path: S3_视觉板块/amazon-listing-image-designer/产品垫图/asset_manifest.yaml
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: amazon-listing-image-designer
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  image_brief:
+    path: S3_视觉板块/amazon-listing-image-designer/08_主副图设计方案.md
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: amazon-listing-image-designer
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  premium_aplus_brief:
+    path: S3_视觉板块/amazon-premium-aplus-designer/09_高级A+方案.md
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: amazon-premium-aplus-designer
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  visual_generation_manifest:
+    path: S3_视觉板块/amazon-listing-image-designer/visual_generation_manifest.yaml
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: amazon-listing-image-designer
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  video_generation_manifest:
+    path: S3_视觉板块/amazon-product-video-director/video_generation_manifest.yaml
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: amazon-product-video-director
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  video_storyboard:
+    path: S3_视觉板块/amazon-product-video-director/14_产品视频分镜.md
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: amazon-product-video-director
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  video_prompt_package:
+    path: S3_视觉板块/amazon-product-video-director/14_video_prompt_package.yaml
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: amazon-product-video-director
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  video_acceptance:
+    path: S3_视觉板块/amazon-product-video-director/14C_视频回填验收.md
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: amazon-product-video-director
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  ad_strategy_brief:
+    path: S4_广告板块/amazon-ad-strategy-architect/ad_strategy_brief.yaml
+    sha256: ""
+    schema_version: "2.0"
+    status: missing
+    producer_skill: amazon-ad-strategy-architect
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  ad_plan:
+    path: S4_广告板块/amazon-ad-campaign-builder/ad_plan.yaml
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: amazon-ad-campaign-builder
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  architecture_review:
+    path: S4_广告板块/amazon-ad-campaign-builder/architecture_review.yaml
+    sha256: ""
+    schema_version: "1.0"
+    status: missing
+    producer_skill: amazon-ops-workflow
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  bulk_manifest:
+    path: S4_广告板块/amazon-bulk-upload/bulk/bulk_manifest.yaml
+    sha256: ""
+    schema_version: "1.0"
+    status: missing
+    producer_skill: amazon-bulk-upload
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  bulk_validation:
+    path: S4_广告板块/amazon-bulk-upload-troubleshooter/bulk/bulk_validation.yaml
+    sha256: ""
+    schema_version: "1.0"
+    status: missing
+    producer_skill: amazon-bulk-upload-troubleshooter
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  bulk_release_review:
+    path: S4_广告板块/amazon-bulk-upload-troubleshooter/bulk/bulk_release_review.yaml
+    sha256: ""
+    schema_version: "1.0"
+    status: missing
+    producer_skill: amazon-ops-workflow
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  external_upload_receipt:
+    path: S4_广告板块/amazon-bulk-upload/bulk/external_upload_receipt.yaml
+    sha256: ""
+    schema_version: "1.0"
+    status: missing
+    producer_skill: user
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  bulk_processing_result:
+    path: S4_广告板块/amazon-bulk-upload/bulk/bulk_processing_result.yaml
+    sha256: ""
+    schema_version: "1.0"
+    status: missing
+    producer_skill: amazon-bulk-upload-troubleshooter
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  monitoring_plan:
+    path: S4_广告板块/amazon-ad-report-analyzer/monitoring_plan.yaml
+    sha256: ""
+    schema_version: "1.0"
+    status: missing
+    producer_skill: amazon-ops-workflow
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  diagnostic_evidence_card:
+    path: S4_广告板块/amazon-ad-strategy-architect/diagnostic_evidence_card.yaml
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: amazon-ad-report-analyzer
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  ad_analysis:
+    path: S4_广告板块/amazon-ad-report-analyzer/ad_analysis.yaml
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: amazon-ad-report-analyzer
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  optimization_actions:
+    path: S4_广告板块/amazon-ad-report-analyzer/optimization_actions.yaml
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: amazon-ad-report-analyzer
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  feedback_record:
+    path: S4_广告板块/amazon-ad-strategy-architect/feedback_record.yaml
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: amazon-ad-strategy-architect
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+  handoff:
+    path: S4_广告板块/amazon-ad-campaign-builder/handoff.yaml
+    sha256: ""
+    schema_version: ""
+    status: missing
+    producer_skill: ""
+    produced_at: ""
+    source_ids: []
+    identity_scope: {}
+    validation_refs: []
+    review_refs: []
+
+ip_decision:
+  status: pending  # pending | fix_required | accept_risk | abort | not_applicable
+  decision_record_ref: ""
+  decided_by: ""
+  decided_at: ""
+
+stage_acceptance:
+  S1:
+    status: pending
+    evidence_refs: []
+  S2:
+    status: pending
+    evidence_refs: []
+  S3:
+    status: pending
+    evidence_refs: []
+  S4:
+    status: pending
+    classroom_status: pending
+    post_launch_status: pending
+    evidence_refs: []
+  S5:
+    status: pending
+    package_ready: false
+    final_accepted: false
+    evidence_refs: []
+  Ops:
+    status: not_applicable
+    baseline_status: not_started
+    evidence_refs: []
+
+ad_system:
+  cycle_id: "adcycle_001"
+  cycle_number: 1
+  entry_mode: architecture  # architecture | optimization | full_cycle
+  current_status: ad_not_started
+  run_mode: production
+  product_identity_hash: "sha256:"
+  strategy:
+    strategy_id: ""
+    strategy_version: 0
+    strategy_hash: ""
+    status: missing
+    review_status: pending
+    review_hash: ""
+  plan:
+    plan_id: ""
+    plan_version: 0
+    plan_hash: ""
+    source_strategy_hash: ""
+    status: missing
+  architecture_review:
+    status: pending
+    reviewed_plan_hash: ""
+    review_hash: ""
+    reviewed_by: ""
+    reviewed_at: ""
+  bulk:
+    bulk_id: ""
+    bulk_version: 0
+    bulk_hash: ""
+    source_plan_hash: ""
+    template_hash: ""
+    manifest_hash: ""
+    uploadability: not_generated
+    status: missing
+  validation:
+    status: pending
+    validation_hash: ""
+    validated_plan_hash: ""
+    validated_bulk_hash: ""
+    p0_errors: null
+    p1_errors: null
+    entity_reconciliation: pending
+  release_review:
+    status: pending
+    reviewed_plan_hash: ""
+    reviewed_bulk_hash: ""
+    reviewed_validation_hash: ""
+    external_action_authorized: false
+  external_upload:
+    status: not_authorized
+    submission_id: ""
+    submitted_at: ""
+    submitted_by: ""
+    submitted_bulk_hash: ""
+    receipt_hash: ""
+  processing:
+    status: pending
+    report_path: ""
+    report_hash: ""
+    matched_submission_id: ""
+    matched_bulk_hash: ""
+    submitted_entities: 0
+    accepted_entities: 0
+    accepted_with_warning: 0
+    rejected_entities: 0
+    ignored_entities: 0
+    reconciliation_status: pending
+  monitor:
+    status: not_started
+    effective_at: ""
+    baseline_window: ""
+    observation_window: ""
+    sample_maturity: pending
+    snapshot_refs: []
+    change_context_log_ref: ""
+  analyzer:
+    status: not_started
+    source_plan_hash: ""
+    source_window: ""
+    evidence_card_hash: ""
+    analysis_hash: ""
+    actions_hash: ""
+  revision:
+    status: not_started
+    supersedes_strategy_hash: ""
+    new_strategy_version: 0
+    new_strategy_hash: ""
+    feedback_hash: ""
+
+completed_steps: []  # 仅由验收谓词派生，不手工勾选
+recovery_candidates: []
+data_explanation_windows: []
+evidence_registry: []
+data_source_logs: []
+revision_queue: []
+decisions: []
+legacy_artifacts: []
+
+next_step:
+  step_id: ""
+  skill: ""
+  instruction: ""
+  required_inputs: []
+  expected_outputs: []
+
+blocked:
+  hard_blocks: []
+  soft_warnings: []
+  blocked_reason: ""

@@ -1,0 +1,19 @@
+# 1688 本地详情（星空 V2 必装）。Windows 用户建议直接双击「写入Codex配置.bat」自动写入。
+# 安装位置固定为 %USERPROFILE%\.codex\mcp\starsky-1688（插件外，升级不丢环境）。
+# 手动贴时：把 <用户名> 换成你的 Windows 用户名，改完后完全退出再开 Codex。
+# ⚠️ Windows 路径必须用单引号（TOML 字面量字符串）。双引号里的 \S \. 是非法转义，Codex 会读不了整个配置。
+
+# ---- Windows（单引号）----
+[mcp_servers.1688_scraper]
+type = "stdio"
+command = 'C:\Users\<用户名>\.codex\mcp\starsky-1688\.venv\Scripts\python.exe'
+args = ['C:\Users\<用户名>\.codex\mcp\starsky-1688\server.py']
+cwd = 'C:\Users\<用户名>\.codex\mcp\starsky-1688'
+startup_timeout_sec = 120
+tool_timeout_sec = 300
+
+# ---- Mac / Linux 示例 ----
+# [mcp_servers.1688_scraper]
+# command = "/Users/<用户名>/.codex/mcp/starsky-1688/.venv/bin/python"
+# args = ["/Users/<用户名>/.codex/mcp/starsky-1688/server.py"]
+# startup_timeout_sec = 120

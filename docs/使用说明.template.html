@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>星空亚马逊 Bot Team · 使用说明</title>
+<style>
+:root{--ink:#17243b;--muted:#5b6b82;--line:#dce4ef;--bg:#f5f7fb;--card:#fff;--brand:#2355d8;--ok:#16a34a;--warn:#b45309;--gate:#7c3aed}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;overflow-wrap:anywhere}
+.layout{display:flex;max-width:1240px;margin:0 auto}
+nav{position:sticky;top:0;align-self:flex-start;width:220px;height:100vh;overflow:auto;padding:28px 12px 28px 20px;font-size:14px}
+nav b{display:block;margin:0 0 10px;color:var(--muted);font-size:12px;letter-spacing:.08em}
+nav a{display:block;padding:5px 10px;border-radius:8px;color:var(--ink);text-decoration:none}nav a:hover{background:#e8eefb}
+main{flex:1;min-width:0;padding:28px 24px 60px}
+header{background:linear-gradient(135deg,#1e3a8a,#2355d8);color:#fff;border-radius:16px;padding:28px 30px;margin-bottom:18px}
+header h1{margin:0 0 6px;font-size:26px}header p{margin:0;opacity:.9}
+.tag{display:inline-block;background:rgba(255,255,255,.18);border-radius:999px;padding:2px 10px;font-size:13px;margin:10px 8px 0 0}
+section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 26px;margin-bottom:16px}
+h2{font-size:19px;margin:0 0 12px;padding-left:10px;border-left:4px solid var(--brand)}h3{font-size:16px;margin:18px 0 8px}
+table{border-collapse:collapse;width:100%;font-size:14.5px;margin:8px 0}th,td{border-bottom:1px solid var(--line);text-align:left;padding:9px 10px;vertical-align:top}
+th{background:#f8fafc;color:var(--muted);font-weight:600;white-space:nowrap}
+pre{white-space:pre-wrap;background:#0f172a;color:#e2e8f0;padding:14px 16px;border-radius:10px;font-size:13.5px;line-height:1.6}
+code{background:#eef2f8;padding:1px 6px;border-radius:5px;font-size:13.5px}pre code{background:none;padding:0}
+.steps{counter-reset:s;list-style:none;padding:0}.steps li{counter-increment:s;position:relative;padding:8px 0 8px 44px}
+.steps li:before{content:counter(s);position:absolute;left:0;top:8px;width:30px;height:30px;border-radius:50%;background:var(--brand);color:#fff;text-align:center;line-height:30px;font-weight:700}
+.note{background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:10px 14px;margin:10px 0}
+.good{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:10px 14px;margin:10px 0}
+.gate{color:var(--gate);font-weight:600}a{color:var(--brand)}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:14px}.flow span{background:#eef2ff;border-radius:8px;padding:4px 10px}.flow i{color:var(--muted);font-style:normal}
+footer{color:var(--muted);font-size:13px;text-align:center;margin-top:24px}
+@media(max-width:860px){nav{display:none}main{padding:16px}}
+@media print{nav{display:none}body{background:#fff}section{break-inside:avoid}}
+</style></head><body><div class="layout">
+<nav><b>目录</b>
+<a href="#quick">快速上手</a><a href="#team">团队有哪些人</a><a href="#flow">一个品怎么走完</a><a href="#setup">装好后要配置的</a>
+<a href="#mcp">接入数据工具（MCP）</a><a href="#verify">怎么知道配好了</a><a href="#cmds">常用口令</a><a href="#visual">出图与视频</a>
+<a href="#models">按角色配模型</a><a href="#safety">安全红线</a><a href="#faq">常见问题</a><a href="#license">授权与更新</a></nav>
+<main>
+<header><h1>星空亚马逊 Bot Team · 使用说明</h1>
+<p>一支 11 个 AI 角色的亚马逊美国站运营团队。AI 干活，AI 互相检查，钱和风险由你拍板。</p>
+<span class="tag">版本 {VER}</span><span class="tag">平台 {PLATFORM_NAME}</span><span class="tag">{EDITION}</span></header>
+
+<section id="quick"><h2>快速上手</h2>
+<ol class="steps">
+<li><b>装团队</b>：把安装包（zip）作为附件发给平台上的主控 Bot，说：<br><code>把附件解压到工作目录，读里面的 SETUP.md，按步骤把亚马逊运营团队搭建出来。</code></li>
+<li><b>设审批规则</b>：搭建到第 8 步时，按提示本人设置（凡是动卖家后台、动钱、对外发消息的，都先问你）</li>
+<li><b>接数据工具</b>：把你买的 MCP 清单（或截图）拖给<b>运营总监</b>，它会自动识别、分配给对应角色并逐个体检（见「接入数据工具」）</li>
+<li><b>开始干活</b>：私聊运营总监，发 <code>docs/试跑口令.txt</code> 里的口令，先跑一轮选品</li>
+</ol>
+<div class="note">装好团队 ≠ 配好数据工具。没接的 MCP，对应角色会改用页面信号或你导出的文件，并在报告里标明，不会编数据。</div>
+</section>
+
+<section id="team"><h2>团队有哪些人</h2>
+<table><tr><th>角色</th><th>负责什么</th><th>默认数据工具</th><th>建议模型能力</th></tr>
+{ROLE_ROWS}
+</table>
+<p>设计原则：<b>干活和检查分开</b>（写的人不查自己）；<b>能只读就只读</b>；<b>钱和风险由你拍板</b>；<b>每列台账只有一个角色能写</b>；<b>有证据才算数</b>；<b>复盘经验写回知识库，越跑越准</b>。</p>
+</section>
+
+<section id="flow"><h2>一个品怎么走完</h2>
+<div class="flow"><span>选品侦察员 选品</span><i>→</i><span>风控官 初筛</span><i>→</i><span>仓管物流 货源</span><i>→</i><span>风控官 图片 IP 复核</span><i>→</i><span>财务管家 利润</span><i>→</i><span class="gate">🔒 闸门 1 选品</span></div>
+<div class="flow" style="margin-top:8px"><span>文案算法师 文案</span><i>∥</i><span>创意美工 设计</span><i>→</i><span>出图工 出图 + 复检</span><i>→</i><span>质检官</span><i>→</i><span>风控官 上架前</span><i>→</i><span class="gate">🔒 闸门 2 上架</span><i>→</i><span>你在后台创建</span></div>
+<div class="flow" style="margin-top:8px"><span class="gate">🔒 闸门 3 广告预算</span><i>→</i><span>广告优化师 出 Bulk</span><i>→</i><span>你上传</span><i>→</i><span>复盘分析师 第 3/7/14/30 天</span><i>→</i><span>放量 / 优化 / 转 FBA / 补货 / 清仓 / 下架</span></div>
+<p>7 道闸门只认你本人：选品、上架抽检、广告预算、转 FBA、补货、清仓、下架。动钱的闸门在任何自动化等级下都要你确认。风控官碰到账户健康红线会全店暂停，也只有你能解除。</p>
+</section>
+
+<section id="setup"><h2>装好后要配置的</h2>
+<table><tr><th>项</th><th>在哪里</th><th>说明</th></tr>
+<tr><td>审批规则</td><td>{APPROVAL_WHERE}</td><td>动卖家后台 / 广告后台、联系供应商、付款订阅、对外发消息、删外部文件 → 先问你</td></tr>
+<tr><td>你的称呼</td><td>{NAME_WHERE}</td><td>默认叫「老板」</td></tr>
+<tr><td>数据工具（MCP）</td><td>拖清单给运营总监</td><td>见下一节</td></tr>
+<tr><td>出图方式</td><td>工作目录 <code>config/team_settings.yaml</code> → <code>visual</code></td><td>出图工有出图能力用 <code>in_team</code>；没有就 <code>outsource</code>（创意美工出投喂包）</td></tr>
+<tr><td>模型</td><td>工作目录 <code>config/team_settings.yaml</code> → <code>models</code></td><td>{MODEL_NOTE}</td></tr>
+</table></section>
+
+<section id="mcp"><h2>接入数据工具（MCP）</h2>
+<h3>最省事的做法：一份清单拖给运营总监</h3>
+<ol class="steps">
+<li>照 <code>mcp/我的MCP清单_模板.md</code> 填好（或者直接用服务商后台的截图、你在别的工具里的 MCP 配置片段），<b>密钥能不写就不写</b></li>
+<li>私聊运营总监，把文件拖进去，说：<code>按 amazon-mcp-onboarding 把这份清单里的 MCP 接上，按默认分配给角色，先给我确认卡。</code></li>
+<li>它会认出每一家、按默认表分配角色，给你一张确认卡。你回「确认」，或者「确认，另外给风控官加上 Sorftime」</li>
+<li>接入时弹出密钥填写框，你在框里填（{SECRET_WHERE}），<b>不要把密钥贴进聊天</b></li>
+<li>每家做四层体检，最后交给你一张结果表；以后说「检测 MCP」可以随时重查</li>
+</ol>
+<h3>各家服务</h3>
+<table><tr><th>服务</th><th>要求</th><th>用来做什么</th><th>默认给谁</th><th>去哪里拿密钥</th></tr>
+{MCP_ROWS}
+</table>
+<p>渠道码 <b>KJZSGH</b>：Sorftime 走上面的开放平台链接；SIF、卖家精灵在结算页看有没有输入框。下单前以服务商当前活动为准。</p>
+<div class="note">星空授权、平台会员、第三方数据服务是三件事。买了 Bot Team 不会自动开通这些第三方账号；已有网站会员的，也要确认是否包含 MCP 权益。</div>
+{MCP_PLATFORM_NOTE}
+</section>
+
+<section id="verify"><h2>怎么知道真正配好了</h2>
+<table><tr><th>层</th><th>通过的证据</th><th>还不能说明</th></tr>
+<tr><td>① 已配置</td><td>配置条目存在，密钥非空</td><td>连不连得上</td></tr>
+<tr><td>② 可连接</td><td>能列出这个服务的工具</td><td>账号有没有认证、有没有额度</td></tr>
+<tr><td>③ 已认证</td><td>一次只读请求成功</td><td>所有接口和站点都有权限</td></tr>
+<tr><td>④ 实际可调用</td><td>查 1 个对象拿到真实数据</td><td>整个流程都没问题</td></tr></table>
+<p>第 ④ 层会消耗服务点数，只查 1 个对象。常见卡点按顺序排查：密钥为空或填错 → 401/403（密钥值、字段名、服务是否启用）→ 点数不足或套餐到期 → 超时 / 代理 → 配置格式错误。</p>
+</section>
+
+<section id="cmds"><h2>常用口令（发给运营总监）</h2>
+<table><tr><th>你想</th><th>这样说</th></tr>
+<tr><td>开始一批选品</td><td><code>新批次：美国站，FBM 测款，选 10 个品，售价 $15–40，轻小件</code>（完整版见 <code>docs/试跑口令.txt</code>）</td></tr>
+<tr><td>看进度</td><td><code>状态</code> / <code>日报</code> / <code>SC-xxx 怎么样了</code></td></tr>
+<tr><td>审批</td><td><code>批准 1,3,5 否决 2 原因：专利 搁置 4</code></td></tr>
+<tr><td>接数据工具</td><td>拖 MCP 清单 + <code>接入 MCP</code>；<code>给财务管家加上领星</code>；<code>检测 MCP</code></td></tr>
+<tr><td>紧急停</td><td><code>全部暂停</code>（解除要你本人在台账里写 halt_override）</td></tr>
+<tr><td>换自动化等级</td><td><code>切到 L2</code>（只在闸门停）</td></tr></table></section>
+
+<section id="visual"><h2>出图与视频</h2>
+<table><tr><th>方式</th><th>图片</th><th>视频</th></tr>
+<tr><td><code>in_team</code></td><td>创意美工出方案 → 出图工直接出图 → 三项复检（真实性、图片规范、AI 人物标记）</td><td>以后接入视频模型再开</td></tr>
+<tr><td><code>outsource</code></td><td>创意美工出投喂包 → 你拿去 ChatGPT 网页端 / 即梦 / 外包 → 放回回填文件夹 → 出图工复检</td><td><b>现在默认</b>：分镜投喂包 → 即梦等平台生成 → 回填 → 出图工质检</td></tr></table>
+<div class="good">亚马逊要求：图片或视频里有写实的 AI 生成人物（包括手），上传前要在文件里写入 <code>contains-synthetic-performer</code> 标记。出图工每张图都会检查并读回确认；A+ 上传时还要勾选「AI 生成」和「AI 生成人物」。</div>
+</section>
+
+<section id="models"><h2>按角色配模型</h2>
+{MODEL_SECTION}
+</section>
+
+<section id="safety"><h2>安全红线</h2>
+<ul>
+<li><b>团队不登录你的卖家后台和广告后台</b>。上架、改价、开广告、建货件由你本人操作，团队准备好资料包、Bulk 表格和照填清单</li>
+<li><b>密钥不进对话、不进文件</b>，用平台的安全填写方式</li>
+<li>不刷单、不跟卖、不侵权，不提供任何规避亚马逊规则的方法；灰色手法类技能只用来识别风险</li>
+<li>没有亚马逊回执，不写「已上架」「已上线」；查不到的数据写「查不到」，不编</li>
+{SAFETY_EXTRA}
+</ul></section>
+
+<section id="faq"><h2>常见问题</h2>
+<p><b>Bot 每一步都停下来问我？</b> 回它一句「后面一口气做完，只有需要我本人操作或做不下去时再找我」。</p>
+<p><b>某个角色说没有数据工具？</b> 看工作目录里的 <code>config/mcp_assignment.yaml</code> 有没有分配给它；没有就跟运营总监说「给 XX 加上 YY」。</p>
+<p><b>报告里写「部分估算」？</b> 还没接 SP-API 费用预估或头程报价，财务管家会标明哪些数是估的，闸门 1 由你判断。</p>
+<p><b>出图工出不了图？</b> 把出图方式改成 <code>outsource</code>，创意美工会出投喂包，你拿去第三方平台出图再放回来。</p>
+<p><b>要更新团队包？</b> 把新版 zip 发给主控 Bot，说「按升级模式更新，不要删除任何角色、台账和产物」。</p>
+<p><b>遇到问题怎么反馈？</b> 发：平台、团队包版本、哪个角色、做了什么、完整报错原文；截图遮住密钥和店铺敏感信息。</p>
+</section>
+
+<section id="license"><h2>授权与更新</h2>
+<p>一机一码，按年会员（365 天）。有效期内更新新版无需重新领码；到期后已装内容保留，新版本需续期。客户版安装包带授权水印，请勿转售或公开分享。</p>
+<p>联系作者：微信公众号「跨境者说干货」，或知识星球「星空的跨境圈子」私信坚哥。只发产品、平台和本机申请码，<b>不要发密码、API Key 或店铺登录信息</b>。</p>
+</section>
+<footer>星空亚马逊 Bot Team · {VER} · {PLATFORM_NAME} · 生成于 {DATE}</footer>
+</main></div></body></html>

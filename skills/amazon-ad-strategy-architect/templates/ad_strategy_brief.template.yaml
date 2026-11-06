@@ -1,0 +1,172 @@
+schema_version: "2.0"
+run_id: ""
+cycle_id: ""
+run_mode: production
+entry_mode: architecture
+strategy_id: ""
+strategy_version: 1
+strategy_hash: ""
+supersedes: null
+change_reason: initial
+plan: {plan_id: null}
+market:
+  marketplace: US
+  currency: USD
+  timezone: America/Los_Angeles
+product:
+  product_id: ""
+  parent_asin: null
+  child_asins: []
+  seller_skus: []
+  form: standard
+  form_evidence: []
+  lifecycle: new
+  lifecycle_evidence: []
+category_traffic:
+  concentration: unknown
+  entry_count: null
+  top1_share: null
+  top3_share: null
+  top10_share: null
+  keywords_to_80pct: null
+  head_mid_gap: unknown
+  keyword_monotonicity: unknown
+  decision_cycle: unknown
+  seasonality: unknown
+  evidence_refs: []
+product_competitiveness:
+  price: {value: null, source_id: null}
+  rating: {value: null, source_id: null}
+  review_count: {value: null, source_id: null}
+  differentiation: {value: null, source_id: null}
+  listing_readiness: unknown
+  strongest_counterargument: ""
+business_goal:
+  primary: stable_orders
+  secondary: []
+  target_kpis: {}
+  guardrails: {}
+unit_economics:
+  selling_price: null
+  contribution_margin_before_ads: null
+  break_even_acos: null
+  target_acos: null
+  target_cpa: null
+  source_ids: []
+  exploration_override:
+    confirmed: false
+    max_loss: null
+    expires_at: null
+    rollback_if: null
+inventory:
+  sellable_units: null
+  days_of_cover: null
+  replenishment_lead_days: null
+  source_ids: []
+budget:
+  daily_total: null
+  min_campaign_daily_budget: null
+  exploration_loss_budget: null
+  currency: USD
+  source_id: null
+complexity:
+  requested: auto
+  evidence_maturity: none
+  max_campaigns_override: null
+  evidence: []
+  retained_capabilities: []
+  omitted_capabilities: []
+ad_product_decisions:
+  SP:
+    capability: {status: unknown, evidence: [], missing: []}
+    readiness: {decision: unknown, decision_basis: [], recommended_scope: [], reevaluate_when: []}
+  SB:
+    capability: {status: unknown, evidence: [], missing: []}
+    readiness: {decision: unknown, decision_basis: [], recommended_scope: [], reevaluate_when: []}
+  SD:
+    capability: {status: unknown, evidence: [], missing: []}
+    readiness: {decision: unknown, decision_basis: [], recommended_scope: [], reevaluate_when: []}
+architecture:
+  campaign_blueprints:
+    - campaign_key: ""
+      campaign_name: ""
+      minimum_complexity: simple
+      required: false
+      loss_if_omitted: ""
+      ad_product: SP
+      scope_id: null
+      role: foundation
+      primary_goal: discovery
+      objective: null
+      objective_evidence:
+        source_refs: []
+        rationale: null
+        window: {}
+      objective_kpi: {}
+      investment_guardrails:
+        max_loss: null
+        expires_at: null
+        rollback_if: null
+      kpi: {}
+      advertised_skus: []
+      daily_budget_weight: 1
+      bidding_strategy: unspecified
+      placement_adjustments: {}
+      expected_cvr:
+        value: null
+        clicks: null
+        orders: null
+        source_type: unknown
+        source_id: null
+        window: {}
+        metric_semantic: null
+      bid_signal:
+        value: null
+        source_id: null
+        intent_factor: null
+        safety_factor: null
+        requested_action: hold
+      effective_bid_factors:
+        formula_mode: unverified
+        dynamic_multiplier: null
+        business_multiplier: null
+        audience_multiplier: null
+        rule_source_id: null
+      ad_groups:
+        - ad_group_key: ""
+          name: ""
+          purpose: ""
+          target_sources: []
+          negative_sources: []
+          manual_targets: []
+          manual_negatives: []
+      success_rule: {}
+      stop_or_reduce_rule: {}
+      graduation_rule: {}
+      rollback_rule: {}
+      review_cadence: {}
+  transfers: []
+res_per_policy:
+  graduation_rule: {}
+  destination_acceptance: {}
+  source_negative_after: destination_validated
+  rollback_rule: {}
+economics_scenarios: []
+capacity_scenarios: []
+mcp_execution_log: []
+source_manifest: []
+source_conflicts: []
+assumptions: []
+case_defaults_used: []
+case_defaults_overrides: {}
+data_explanation_window:
+  obtained_facts: []
+  derived: []
+  simulated: []
+  missing_and_impact: []
+  continue_and_revision: []
+revision:
+  prior_plan_file: null
+  change_reason: initial
+review_status: pending
+acceptance_checks: {}

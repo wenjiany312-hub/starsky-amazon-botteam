@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "fonts": {
+    "body-font": "system-ui,-apple-system,\"Segoe UI\",\"Microsoft YaHei\",\"PingFang SC\",sans-serif",
+    "paper-heading-font": "\"Noto Serif SC\",SimSun,serif",
+    "code-font": "Consolas,\"Cascadia Mono\",ui-monospace,monospace"
+  },
+  "forbidden_fonts": [],
+  "required_classes": ["hero", "kpirow", "tablewrap"],
+  "table_wrapper_class": "tablewrap",
+  "required_css_markers": ["--accent:#0f766e", "overflow-x:clip"],
+  "forbidden_markers": ["editorial-html-report", "overflow-x:hidden"]
+}

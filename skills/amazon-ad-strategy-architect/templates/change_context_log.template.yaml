@@ -1,0 +1,13 @@
+schema_version: "1.0"
+run_id: ""
+events:
+  - event_id: ""
+    event_type: price | promotion | listing | image | rating_review | inventory | competitor | holiday | platform | other
+    object_id: ""
+    started_at: ""
+    ended_at: null
+    old_value: null
+    new_value: null
+    source_id: ""
+    expected_metric_impact: []
+    confounding_risk: low | medium | high

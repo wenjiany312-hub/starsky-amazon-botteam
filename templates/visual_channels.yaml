@@ -1,0 +1,5 @@
+schema_version: 1
+visual:
+  default_channel: B
+  direct_repair_max_images: 3
+  channel_c_enabled: false

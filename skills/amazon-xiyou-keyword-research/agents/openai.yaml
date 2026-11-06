@@ -1,0 +1,4 @@
+interface:
+  display_name: "Amazon 西柚关键词研究"
+  short_description: "将西柚多 ASIN 导出清洗为可审计、守恒的 Keyword Package 2.0"
+  default_prompt: "使用 $amazon-xiyou-keyword-research 清洗这份西柚多 ASIN 导出，并生成可交接广告策略层的单源关键词包。"

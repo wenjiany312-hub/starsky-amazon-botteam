@@ -1,0 +1,71 @@
+# s1_cost_model.py 的出厂默认值。全部按 default_assumption 进模型，永远不算“真实成本”。
+# 用户自己的费率写在 ~/.starsky/物流配置.yaml（所有产品通用）或 <产品根>/00_产品资料/物流配置.yaml（只管本产品），
+# 键与本文件 logistics / amazon / ads 三段相同，只写要覆盖的键即可；用户配置按 user_profile 计入。
+schema_version: "1.0"
+
+fx: 7.2                       # 1 站点币 = ? 人民币；有 fx_rate_snapshot.yaml 时以快照为准
+target_net_margin: 0.15       # 目标净利率（广告后）
+first_batch_qty: 500          # 首批数量：按票分摊报关/国内运费、摊销打样开模检测
+
+logistics:
+  customs_mode: "9810"
+  customs_fee_cny_per_shipment: 200     # 9810 报关每票约 ¥150–200，取上沿
+  domestic_freight_cny_per_shipment: null   # 工厂 → 货代，问厂家
+  other_cny_per_shipment: 0             # 英国等站点的额外报关/清关杂费填这里
+  first_leg_basis: kg                   # kg=按计费重；cbm=按方
+  first_leg_rate_cny: 13                # 美森/快船包税到 FBA 的每 kg 单价（示意，务必换成自己的报价）
+  volumetric_divisor: 6000              # 体积重 = 长×宽×高(cm) / 除数
+  duty_included: false                  # 默认不包税；只有真实报价或用户认可后才改为 true
+  duty_rate: null                       # 不包税时必填：HTS 税率 + 附加关税合计，如 0.25
+
+amazon:
+  referral_rate: 0.15
+  referral_min: 0.30
+  fba_fee: null                         # 有后台收入计算器的真实值就填；空着按下方近似表估
+  storage_per_cuft_month: 0.78          # 标准尺寸 1–9 月；10–12 月约 2.40
+  storage_months: 2
+  inbound_placement_fee: null           # 入库配置费；空着则不计入并提示
+  return_loss_rate: 0.03                # 退货/损耗按售价比例
+
+ads:
+  cvr_scenarios: [0.08, 0.10, 0.12]     # 没有 SIF/西柚转化数据时的类目默认情景
+
+# 广告前毛利率分档（毛利 = 售价 − 到岸成本 − 亚马逊费用）。只作参考标尺，做不做由用户拍板。
+margin_bands:
+  - [0.40, "很好（≥40%）"]
+  - [0.30, "优秀（30–40%）"]
+  - [0.20, "一般（20–30%）"]
+  - [0.00, "偏低（<20%）"]
+  - [-99, "亏损（广告前已亏）"]
+
+# 官方 2026 美国站非服装、非危险品标准尺寸表；不支持的档位不外推。
+# 数字按 Amazon 官方页面索引核验 2026-10-14；后台实际计费仍需复核。
+fba_fee_table_us:
+  as_of: "2026 US non-apparel standard size"
+  source_url: "https://sellercentral.amazon.com/help/hub/reference/external/GABBX6GZPA8MSZGW?ld=NSGoogle&locale=en-US"
+  verified_on: "2026-10-14"
+  valid_from: "2026-01-15"
+  valid_until: "2027-01-14"
+  fuel_surcharge_from: "2026-04-17"
+  fuel_surcharge_rate: 0.035
+  peak_from: "2026-10-15"
+  # 每行 [重量上限oz, 售价<10, 售价10-50, 售价>50]，未含附加费。
+  non_peak:
+    small_standard_oz: [[2,2.43,3.32,3.58],[4,2.49,3.42,3.68],[6,2.56,3.45,3.71],[8,2.66,3.54,3.80],[10,2.77,3.68,3.94],[12,2.82,3.78,4.04],[14,2.92,3.91,4.17],[16,2.95,3.96,4.22]]
+    large_standard_oz: [[4,2.91,3.73,3.99],[8,3.13,3.95,4.21],[12,3.38,4.20,4.46],[16,3.78,4.60,4.86],[20,4.22,5.04,5.30],[24,4.60,5.42,5.68],[28,4.75,5.57,5.83],[32,5.00,5.82,6.08],[36,5.10,5.92,6.18],[40,5.28,6.10,6.36],[44,5.44,6.26,6.52],[48,5.85,6.67,6.93]]
+  peak:
+    small_standard_oz: [[2,2.62,3.51,3.77],[4,2.68,3.61,3.87],[6,2.76,3.65,3.91],[8,2.86,3.74,4.00],[10,2.98,3.89,4.15],[12,3.03,3.99,4.25],[14,3.14,4.13,4.39],[16,3.17,4.18,4.44]]
+    large_standard_oz: [[4,3.15,3.97,4.23],[8,3.39,4.21,4.47],[12,3.66,4.48,4.74],[16,4.07,4.89,5.15],[20,4.52,5.34,5.60],[24,4.91,5.73,5.99],[28,5.07,5.89,6.15],[32,5.33,6.15,6.41],[36,5.47,6.29,6.55],[40,5.67,6.49,6.75],[44,5.84,6.66,6.92],[48,6.26,7.08,7.34]]
+
+# 未知小费用压力测试假设；不是厂家报价或官方收费上限，实际可能超过。
+conditional_fee_bounds:
+  source: "cost_defaults.yaml：可替换的预算压力测试假设，非市场费率或实际费用上限"
+  upper:
+    factory.packaging_cny_per_unit: 3
+    factory.labeling_cny_per_unit: 0.5
+    factory.domestic_freight_cny_per_shipment: 300
+    factory.one_off_cny: 1000
+    logistics.other_cny_per_shipment: 200
+    amazon.inbound_placement_fee: 1
+    amazon.storage_per_cuft_month: 2.4
+    amazon.storage_months: 3

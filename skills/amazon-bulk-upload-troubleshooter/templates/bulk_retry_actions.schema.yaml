@@ -1,0 +1,16 @@
+schema_version: "1.0"
+artifact_type: amazon_ad_bulk_retry_actions
+status: draft_requires_plan_revision_and_review
+source_plan_ref: {}
+source_bulk: {}
+processing_report_ref: {path: "", sha256: "sha256:"}
+retry_action_ids: []
+bulk_operations: []
+unmapped_action_ids: []
+failure_evidence: []
+parent_resolution_required: []
+required_next_steps:
+  - 核对每个失败原因与 Amazon 返回行
+  - 生成新的 ad_plan 版本/hash，并记录 supersedes/change_reason
+  - 重新人工审核当前 plan hash
+  - 调用 amazon-bulk-upload 生成新的 v2/v3；不得覆盖旧 Bulk

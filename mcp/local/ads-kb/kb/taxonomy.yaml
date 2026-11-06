@@ -1,0 +1,114 @@
+# 亚马逊广告知识库 · 分类法（受控词表）
+# kb.py init 时复制到 <知识库>/taxonomy.yaml；validate 用它校验每张知识卡的标签枚举。
+# 想加新枚举：改这里再 validate，禁止在卡片里随手造词。
+
+version: "1.0"
+
+# ---- 证据层级（决定 confidence 上限；写卡时必填 authority）----
+authority:
+  A: {name: 官方事实,   desc: "Amazon Ads / Seller Central 官方页面、官方培训、账户界面实拍", confidence_range: [0.80, 1.00]}
+  B: {name: 权威课程原文, desc: "系统性付费课程 / 头部服务商方法论的明确原文（保留页码/时间码）", confidence_range: [0.55, 0.85]}
+  C: {name: 第三方经验,  desc: "博主、社群、个人笔记、单案例复盘", confidence_range: [0.30, 0.65]}
+  D: {name: 项目推论,    desc: "由多源归纳/推导出的结论（必须写验证方法）", confidence_range: [0.20, 0.60]}
+  V: {name: 厂商宣称,    desc: "工具/服务商的能力与效果宣称——隔离，不进决策规则", confidence_range: [0.00, 0.30]}
+
+# ---- 知识类型 ----
+knowledge_type:
+  policy:      "官方规范/政策（能不能做、资格、创意规范、禁售）"
+  mechanism:   "官方机制（匹配类型、竞价策略、位置、预算逻辑、归因窗口、报表字段）"
+  inference:   "算法推论（相关性、CTR/CVR 影响、广告与自然位关系等未被官方明说的部分）"
+  playbook:    "实操打法（场景化的结构/词/出价/预算/节奏）"
+  threshold:   "阈值经验（ACOS 线、否词点击数、复盘周期等——必标经验值与来源日期）"
+  diagnostic:  "诊断规则（症状 → 原因树 → 动作）"
+  anti_pattern: "反面案例/常见误区"
+  glossary:    "术语定义"
+  formula:     "指标公式与口径"
+
+# ---- 标签维度（多选；至少填 product_type / lifecycle_stage / ad_type / objective 四维，不适用填 [通用]）----
+tags:
+  product_type: [标品, 非标品, 半标品, 通用]
+  lifecycle_stage: [新品期, 成长期, 成熟期, 衰退清仓, 旺季大促, 淡季, 断货重启, 通用]
+  ad_type: [SP, SB, SBV, SD, DSP, 站外, 品牌旗舰店, 帖子, 通用]
+  targeting: [自动-紧密, 自动-宽泛, 自动-同类, 自动-关联, 手动-广泛, 手动-词组, 手动-精准, 商品投放-ASIN, 商品投放-类目, 受众, 再营销, 否定投放, 自动投放, AMC人群, 通用]
+  placement: [首页顶部, 商品页面, 其余位置, 通用]
+  bidding: [动态降低, 动态提高降低, 固定竞价, 位置加价, 竞价规则, 通用]
+  objective: [冲销量, 拉自然位, 利润, 防御, 捡漏, 关联流量, 品牌曝光, 清仓, 测词, 推排名, 控成本, 保权重, 占坑, 拉新, 大促资格, 通用]
+  metric: [ACOS, TACoS, ROAS, CTR, CVR, CPC, CPA, 曝光, 点击, 订单, NTB, 广告占比, 自然占比, 预算消耗率, 展示份额, 自然排名, 搜索量, 价格历史, 通用]
+  category_family: [家居, 宠物, 服装, 3C, 美妆, 户外园艺, 玩具, 食品, 母婴, 汽配, 工具, 办公, 通用]
+  marketplace: [US, CA, UK, DE, JP, 通用]
+  topic:   # 与 learning_plan.yaml 的课程主题 ID 对齐，用于覆盖度统计
+    - sp_basics
+    - sp_targeting
+    - sp_bidding
+    - sp_budget
+    - sp_placement
+    - keyword_match_types
+    - negative_targeting
+    - sb_basics
+    - sbv
+    - sd_basics
+    - dsp_basics
+    - attribution_reporting
+    - ad_policy
+    - brand_registry_eligibility
+    - auction_mechanism
+    - relevance_quality
+    - ads_vs_organic
+    - new_product_traffic
+    - standard_vs_nonstandard
+    - lifecycle_playbooks
+    - budget_allocation
+    - keyword_tiering
+    - negative_cadence
+    - bid_cadence
+    - peak_season
+    - clearance
+    - defense
+    - competitor_traffic
+    - diagnostics
+    - economics_formulas
+    - category_specifics
+    - official_updates
+    - kengchan
+    - organic_rank
+    - weight_cycles
+    - bid_research
+    - price_discrimination
+    - cvr_estimation
+    - placement_control
+    - bid_ladder
+    - funnel_rollout
+    - scale_management
+    - tacos
+    - profit_model
+    - variation_playbooks
+    - old_listing_relaunch
+    - seasonality_nodes
+    - new_product_architecture
+    - auto_bid_rules
+    - amc_audience
+    - indexing_seo
+    - keyword_matrix
+    - incremental_pacing
+    - acos_ladder
+    - competitor_daily_recon
+    - keyword_map
+    - offsite_affiliate
+    - pricing_policy
+    - promotion_mix
+    - algorithm_layers
+    - ai_enabled_ops
+    - stockout_playbook
+    - deal_coordination
+    - keyword_research
+    - old_listing
+
+# ---- 卡片状态 ----
+status: [draft, reviewed, superseded, retracted]
+
+# ---- 引文与时效纪律 ----
+rules:
+  quote_max_words: 60          # 单条摘录上限（避免镜像原文；官方页面不得整段复制）
+  min_sources_for_reviewed: 1   # A 级 1 源即可 reviewed；B/C 级建议 ≥2 源印证后再 reviewed
+  freshness_warn_days: 365      # 来源日期超过一年的 mechanism/policy 卡在 index 里标 stale
+  thresholds_must_have_source_date: true

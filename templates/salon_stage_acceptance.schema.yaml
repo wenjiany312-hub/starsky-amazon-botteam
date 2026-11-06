@@ -1,0 +1,123 @@
+# 沙龙第二版 · 实演成熟度与阶段验收状态（写入 workflow_state.stage_acceptance）
+schema_version: "1.0"
+artifact_type: "salon_stage_acceptance"
+important_boundary: "工作流可演示/可交付，不等于该产品一定有市场成功。"
+
+status_values:
+  - pending
+  - in_progress
+  - conditional_complete
+  - accepted_for_demo
+  - accepted_with_real_data
+  - blocked
+  - not_applicable
+
+readiness_baseline:
+  basis: "0711 融合审计后的静态契约与现有真实案例复盘；需再用新案例验证。"
+  not_a_market_success_probability: true
+  estimates:
+    end_to_end_main_chain_percent: "75-85"
+    reports_at_7_18_depth_percent: "55-65"
+    usable_visual_output_percent: "about_60"
+    ad_plan_bulk_and_post_launch_loop_percent: "60-70"
+    usable_video_completion_percent: "35-50"
+    enterprise_data_pack_ux_before_this_p0_percent: "30-40"
+    enterprise_data_pack_ux_target_after_this_p0_percent: "70-80"
+
+stages:
+  S1:
+    name: "S1: 选品板块"
+    required_steps: ["intake_interview", "condition_select", "market_research", "supplier", "product_scrape", "supplier_data_merge", "ip_compliance", "ip_decision"]
+    required_artifacts:
+      - "00A_选品需求确认单.md"
+      - "00_选品推荐报告.md"
+      - "01_市场穿透报告.md"
+      - "02_1688供应商短名单.md"
+      - "03_product_facts.yaml"
+      - "04_IP风险排查与专利分析.md"
+      - "阶段_S1_选品可行性研究报告.md"
+      - "HTML/阶段_S1_选品可行性研究报告.html"
+    acceptance_checks:
+      - "IP 决策已记录，且综合可行性结论、证据和限制一致。"
+      - "供应商暂不回填时使用已提取字段条件性续跑，不降低报告深度。"
+      - "S1 HTML 使用 github-tabler-html-report + salon_report.py（8.8 v2统一版皮）。"
+  S2:
+    name: "S2: 文案板块"
+    required_steps: ["competitor_asin_research", "keyword_export_prepare", "keyword_research", "listing_copy"]
+    required_artifacts:
+      - "competitor_asin_pool.yaml"
+      - "06_关键词库报告.md"
+      - "keyword_package.yaml"
+      - "07_Listing文案.md"
+      - "07_listing_bullet_ledger.yaml"
+    acceptance_checks:
+      - "竞品池已经确认或 demo_default，有来源和数量守恒。"
+      - "词表、黑名单与当前产品事实均被消费；Listing 未使用不被支持的声明。"
+      - "词库与 Listing HTML 均使用 github-tabler-html-report + salon_report.py；词库骨架按 keyword_report_layout.md；Listing 保留完整正文。"
+  S3:
+    name: "S3: 视觉板块"
+    # 2026-07-27 调整：视频从原 S5 并入 S3，视觉三件事在同一板块完成；广告顺延为最后一个板块。
+    # 理由：三者共用同一套本品垫图与 visual_playbook，拆开会导致垫图重复筛选、风格不一致；
+    #       且视频成片在广告之前就绪后，S4 判定 SB Video 的 capability 时素材已在手。
+    required_steps:
+      - "visual_asset_prepare"      # 本品垫图资产包（三类共用）
+      - "image_aplus"               # 主副图 7 图 + Premium A+ 5 模块
+      - "product_video"             # 产品视频分镜与生产包（原 S5）
+      - "visual_generation_ready"   # 三类出图/出片就绪清单
+    required_artifacts:
+      - "08A_视觉垫图资产清单.md"
+      - "S3_视觉板块/amazon-listing-image-designer/产品垫图/asset_manifest.yaml"
+      - "08_主副图设计方案.md"
+      - "09_高级A+方案.md"
+      - "visual_generation_manifest.yaml"
+      - "14A_视频垫图资产清单.md"
+      - "14_产品视频分镜.md"
+      - "14_video_prompt_package.yaml"
+      - "14B_视频执行清单.md"
+      - "阶段_S3_视觉资产总览.md"
+    sub_status:
+      # 三类各自独立记录，禁止合并为一个 S3 状态
+      images: {status: "pending", prompt_ready: false, generated: false, reviewed: false}
+      premium_aplus: {status: "pending", prompt_ready: false, generated: false, reviewed: false}
+      video: {status: "pending", package_ready: false, final_accepted: false}
+    acceptance_checks:
+      - "三类共用同一 S3_视觉板块/amazon-listing-image-designer/产品垫图/asset_manifest.yaml 与同一 visual_playbook.yaml；风格口径必须一致。"
+      - "Listing 7 图和 Premium A+ 5 组均有已绑定本品垫图的 Prompt。"
+      - "Premium A+ 每个模块同时包含 Desktop 与 Mobile 两套规格。"
+      - "视频画幅按用途分别导出：主图视频 9:16、SBV 16:9、A+ 视频区按模块规格。"
+      - "Prompt 就绪、已出图/已出片、已通过人工审阅必须分别记录，不得合并。"
+      - "视频 package_ready 与 final_accepted 分态；未回填验收 MP4 不得称为成片完成。"
+      - "A+ 模块主题不得重复 Listing 7 图的主主题；视频镜头不得与 A+ 场景完全重合。"
+  S4:
+    name: "S4: 广告板块"
+    # 2026-07-27 调整：广告由原 S4 顺延为主链最后一个板块，位于视觉三件事之后。
+    classroom_required_steps: ["ad_intake", "ad_architecture", "ad_review", "bulk"]
+    post_launch_required_steps: ["ad_upload_support", "ad_analysis"]
+    required_artifacts:
+      - "ad_plan.yaml"
+      - "11_新品广告架构.md"
+      - "S4_广告板块/amazon-bulk-upload/bulk/SP_bulk_upload_{date}_v1.xlsx"
+      - "阶段_S4_广告与上传总览.md"
+    acceptance_checks:
+      - "课堂验收只证明 ad_plan、架构与演示/生产 Bulk 可用；不等于后台已上传成功。"
+      - "真实上传、跑数、报表下载、优化建议和修订 Bulk 是延迟的上线后闭环。"
+      - "MD、HTML、Bulk 共同消费同一 ad_plan.yaml；演示占位 Bulk 显著标识不可上传。"
+      - "SB/SD 的 readiness 判定必须引用 S3 已就绪的视频素材：有 16:9 成片时 capability.SB 不缺 video_asset。"
+      - "第一轮无投放数据时 SB/SD 一律 defer，并写清 triggers_met / triggers_unmet。"
+  Ops:
+    name: "S5: 运营板块"
+    required_steps: ["store_patrol_or_first_snapshot"]
+    acceptance_checks:
+      - "无历史店铺数据时建立首次快照，不阻断新品主链。"
+      - "自然/广告流量分开诊断；所有操作先出建议并保留审核。"
+
+state_example:
+  S1: {status: "pending", evidence_mode: "", accepted_at: "", notes: ""}
+  S2: {status: "pending", evidence_mode: "", accepted_at: "", notes: ""}
+  S3: {status: "pending", evidence_mode: "", accepted_at: "", notes: "",
+       sub_status: {images: "pending", premium_aplus: "pending", video: "pending"}}
+  S4: {status: "pending", classroom_status: "pending", post_launch_status: "pending", notes: ""}
+  # V2：S5 对外名称是「S5: 运营板块」，对齐 stages.Ops。
+  # 下面这组 S5 视频字段是旧沙龙遗留，视频已并入 S3.sub_status.video，禁止再把视频写回 S5。
+  S5_legacy_video_do_not_use: {status: "pending", package_ready: false, final_accepted: false, notes: "deprecated; video lives in S3"}
+  Ops: {status: "not_applicable", baseline_status: "not_started", notes: "S5: 运营板块"}

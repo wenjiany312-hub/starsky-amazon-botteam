@@ -1,0 +1,87 @@
+schema_version: "1.0"
+artifact_type: seasonal_calendar
+updated: "2026-09-03"
+purpose: >
+  amazon-seasonal-selection 的全年档期大表（节日 × 场景 × 产品方向）。
+  source=course67 为课程《季节选品指南》实录；source=extrapolated 为同构补全，用前必须用去年同月数据验证。
+  用法：当前月往后看 2~3 个月 → 去年同月回看 → 偏季品判定 → 交期倒排。⛔ 不用「近期上架」做主筛选（课39）。
+
+usage:
+  lookahead_months: [2, 3]
+  strong_holiday_lead_months: 7
+  verify_with: "卖家精灵「选产品」月份选择器回看去年同月 / Sorftime 类目月度趋势 / 西柚季节性指数"
+  off_season_rule: "最优季节品 = 高需求月卖得好 AND 低需求月不掉太多（课63）"
+
+months:
+  - month: 1
+    events: ["元旦", "新年决心", "冬季促销", "NFL 季后赛", "返校补货", "蓝色星期一"]
+    scenes: ["派对", "健身开年", "观赛", "收纳重启"]
+    directions: ["新年装饰（烟花道具受限）", "日历计划本", "目标打卡板", "健身/减脂餐盒", "电热毯/保温杯", "观赛派对套装", "文具收纳", "减压玩具"]
+    source: course67
+  - month: 2
+    events: ["超级碗", "情人节", "猫之日"]
+    scenes: ["观赛派对", "情侣送礼", "宠物主题"]
+    directions: ["球迷 T 恤/零食拼盘", "首饰/情侣杯/永生花", "猫主题礼品"]
+    source: course67
+  - month: 3
+    events: ["女性历史月", "Mardi Gras", "圣帕特里克节", "春分"]
+    scenes: ["女性主题", "狂欢", "绿色节日", "春日户外"]
+    directions: ["标语杯/T 恤", "面具羽毛", "绿色主题套装", "园艺野餐"]
+    ip_caution: ["马里奥周边"]
+    source: course67
+  - month: 4
+    events: ["愚人节", "复活节", "春游花园", "墨西哥胜利日"]
+    scenes: ["整蛊", "亲子彩蛋", "园艺野餐"]
+    directions: ["搞怪道具", "彩蛋/兔子服装", "园艺工具", "野餐垫", "彩旗草帽"]
+    source: course67
+  - month: 5
+    events: ["母亲节", "阵亡将士纪念日", "毕业季启动"]
+    scenes: ["送礼", "纪念", "毕业"]
+    directions: ["礼盒珠宝定制杯", "户外家具/烧烤", "毕业装饰"]
+    source: course67
+  - month: 6
+    events: ["父亲节", "毕业季", "Pride", "夏季启动"]
+    scenes: ["男性送礼", "毕业派对", "彩虹主题", "户外"]
+    directions: ["工具/烧烤/酒类配件", "毕业帽袍周边", "彩虹小物（侵权慎）", "沙滩/泳池配件"]
+    source: extrapolated
+  - month: 7
+    events: ["独立日", "夏季高峰", "Prime Day 备战窗口"]
+    scenes: ["爱国派对", "烧烤", "旅行"]
+    directions: ["红白蓝装饰", "户外餐具", "旅行收纳", "泳池玩具"]
+    source: extrapolated
+    course_anchor: "独立日 Patriot 关键词演示见课60"
+  - month: 8
+    events: ["返校", "夏季尾声", "万圣节前瞻备货"]
+    scenes: ["开学", "宿舍", "早秋"]
+    directions: ["文具收纳", "午餐袋", "宿舍收纳", "秋季装饰打样"]
+    source: extrapolated
+    course_anchor: "bento box 返校案例见课66"
+  - month: 9
+    events: ["返校高峰", "秋季", "万圣节备货入仓"]
+    scenes: ["校园", "秋日家居"]
+    directions: ["书包配件", "保温杯", "秋季桌旗", "万圣样品确认"]
+    source: extrapolated
+  - month: 10
+    events: ["万圣节", "秋季", "感恩节前瞻"]
+    scenes: ["变装", "派对", "秋收"]
+    directions: ["服装配件/妆容小物", "南瓜装饰", "桌旗餐垫"]
+    source: extrapolated
+    course_anchor: "万圣/感恩前瞻见课70"
+  - month: 11
+    events: ["感恩节", "黑五网一", "圣诞预热"]
+    scenes: ["家庭聚餐", "礼品", "大促"]
+    directions: ["桌旗/餐具套装", "礼盒", "圣诞酒瓶套等礼品向"]
+    source: extrapolated
+    course_anchor: "圣诞酒瓶套前瞻案例见课70"
+  - month: 12
+    events: ["光明节", "冬至", "圣诞", "昆扎节", "除夕"]
+    scenes: ["送礼", "节日餐桌", "跨年"]
+    directions: ["圣诞装饰/礼品", "节日桌旗", "跨年派对", "计划本预售明年"]
+    source: extrapolated
+    course_anchor: "GPT 节日日历 12 月段见评审47"
+
+keyword_triplet_rule:
+  holiday: "st patricks day necklace"
+  gift: "father's day gift"
+  scene: "graduation party decorations"
+  note: "每个方向至少给节日词 / 礼品词 / 场景词各一类（评审47）"

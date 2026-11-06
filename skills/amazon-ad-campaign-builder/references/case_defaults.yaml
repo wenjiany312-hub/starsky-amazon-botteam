@@ -1,0 +1,56 @@
+schema_version: "1.0"
+source: apollo_case_library_and_historical_builder
+governance:
+  platform_rule: false
+  override_with_current_account_data: true
+  require_source_and_applicability_note: true
+  note: 所有值仅用于缺少当前账户证据时的可解释演示/起始情景，不是 Amazon 官方阈值。
+
+complexity:
+  level_order: [simple, standard, advanced]
+  evidence_order: [none, limited, stable]
+  levels:
+    simple:
+      min_affordable_campaigns: 1
+      max_campaigns: 4
+      min_evidence_maturity: none
+    standard:
+      min_affordable_campaigns: 5
+      max_campaigns: 8
+      min_evidence_maturity: limited
+    advanced:
+      min_affordable_campaigns: 9
+      max_campaigns: 14
+      min_evidence_maturity: stable
+  min_campaign_daily_budget: 5.0
+
+sample_reliability:
+  medium:
+    min_clicks: 20
+    min_orders: 2
+  high:
+    min_clicks: 50
+    min_orders: 5
+  note: 仅用于 Amazon 账户 observed CVR；第三方指标始终标 external_estimate。
+
+bid:
+  intent_factor: 1.0
+  safety_factor: 0.9
+  neutral_dynamic_multiplier: 1.0
+  neutral_business_multiplier: 1.0
+  neutral_audience_multiplier: 1.0
+
+transfer:
+  source_negative_after: destination_validated
+  unvalidated_negative_status: held
+
+revision:
+  hash_algorithm: sha256
+  hash_excluded_paths:
+    - plan_hash
+    - _meta.generated_at
+
+case_library_notes:
+  - 固定 Campaign 数、预算比例、Bid、TOS/PP 溢价必须由 strategy brief 单独引用。
+  - 固定天数、点击、订单、搜索量、排名页数和转化词数必须由 strategy brief 单独引用。
+  - 若企业覆盖本文件，覆盖项必须带 source_id、适用类目、有效期与失败条件。

@@ -1,0 +1,53 @@
+schema_version: "2.0"
+analysis_id: ""
+run_id: ""
+cycle_id: ""
+plan_ref:
+  plan_id: null
+  plan_version: null
+  plan_hash: null
+  computed_plan_hash: null
+  plan_hash_valid: null
+  plan_file_sha256: null
+actions:
+  - action_id: ""
+    finding_id: ""
+    priority: P0
+    action_type: ""
+    object: {}
+    current_value: null
+    recommended_value: null
+    value_source: evidence_review_required
+    evidence_refs: []
+    expected_effect:
+      status: pending_review
+      causal_claim: false
+    alternative_explanations: []
+    preconditions: []
+    protection_conditions: []
+    observe_until: null
+    rollback_if: []
+    confidence: low
+    requires_user_confirmation: true
+    human_decision: pending
+transfers:
+  - transfer_id: ""
+    source_object: {}
+    destination_object: {}
+    destination_status: planned
+    validation_rule: destination_must_be_live_and_show_qualified_acceptance_evidence
+    validation_evidence: []
+    acceptance_evidence_required: []
+    source_negative:
+      match_type: negative_exact
+      activate_after: destination_validated
+      status: held
+      executable: false
+    rollback_rule: []
+status: pending_review
+not_executable_without:
+  - human_action_review
+  - architecture_or_plan_revision
+  - new_plan_hash
+  - valid_plan_hash_if_plan_supplied
+  - bulk_release_review

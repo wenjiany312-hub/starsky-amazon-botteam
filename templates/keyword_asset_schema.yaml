@@ -1,0 +1,64 @@
+schema_version: '1.0'
+artifact_type: series_keyword_asset
+key: [marketplace, term_normalized]
+authority: keyword_master.yaml
+atomicity: Canonical master is replaced atomically under an exclusive lock. Sidecars are revision-tagged derived views; readers use the master.
+lists: [master, negative, brand, asin]
+fields:
+  term: Original term; normalized only for the key
+  term_normalized: Unicode NFKC, casefold, whitespace collapsed, outer quotes removed
+  chinese: Translation; null means missing
+  marketplace: Required marketplace code
+  first_seen: Immutable first import date
+  last_updated: Latest import date, never moves backwards
+  sources: Provider, subject (competitor/own/market/unknown), ASIN and provenance
+  metrics: Observations with source, observed_at, period, search_volume and unit; ABA rank, CPC and top3 click/conversion share remain source bound
+  seasonal: Stored source, rise_months, peak_months, trough_months, strength, holiday and optional reviewed copy_fragments
+  semantic_tags: Product/CT interpretation only
+  effect_tags: Original SIF tags, entry_signal, aba_position and traffic_dependency with source/ASIN identity
+  effect_observations: Dated original tag groups with original tool and stable provider/subject/ASIN product identity; file hashes are provenance, not identities
+  current_effect_tags: Latest dated observation per product identity and independent label dimension; entry signals cannot erase effect/ABA labels from other tools
+  effect_gaps: Unscoped legacy empty events require scoped reimport; prior labels remain unconfirmed rather than globally revoked
+  lifecycle: Import-time classification only
+  lifecycle_reason: Input-based decision explanation
+  permissions: Independent copy/ads allowed, reason and fact_refs
+  placements: S2 positions actually used
+  skus: Empty means series-wide; populated means named child SKUs only
+  sku_states: Independent permissions, placements and CT references per SKU; __series__ is explicitly series-wide
+  state_history: Prior scope-specific permission/fact/placement states, including classification revocations
+  ct_refs: Product CT field references
+  history: Unique import events with input fingerprint
+  target_type: ASIN list competitor/complementary/own_defense
+units: [weekly, monthly]
+missing_metrics: null
+permission_values:
+  copy: [可写, 弱化表述, 禁止]
+  ads: [可投, 仅定投, 仅观察, 否定]
+permission_defaults:
+  copy: 禁止
+  ads: 仅观察
+permission_rule: Positive permissions require a reason and nonempty fact_refs; brand and negative terms cannot become copy-allowed. Later H scanner may restrict further.
+lifecycle_thresholds:
+  blue_click_share_lt: 0.35
+  red_click_share_gte: 0.50
+  decline_consecutive_months: 3
+  category_overrides: Series-local lifecycle_thresholds.yaml can override numeric defaults
+lifecycle_states: [新发现, 蓝海, 成长, 红海, 衰退, 待验证, 否定]
+placements:
+  S2: [title, highlight, bullet_1, bullet_2, bullet_3, bullet_4, bullet_5, description, st, attributes.material, attributes.audience, attributes.scenario, attributes.special_features, attributes.size, attributes.color, attributes.style, qa]
+  S3: [main_image_text, secondary_image_text, standard_aplus, premium_aplus, aplus_qa, aplus_comparison, brand_story, brand_store, video, image_alt_text, aplus_alt_text, store_alt_text]
+  S4: [sp_exact, sp_phrase, sp_broad, theme_material, theme_function, theme_scenario, theme_audience, theme_gift, sb, sbv, product_targeting, brand_targeting, negative]
+excluded_placements: [image_filename]
+placement_groups:
+  bullets: [bullet_1, bullet_2, bullet_3, bullet_4, bullet_5]
+  attributes: [attributes.material, attributes.audience, attributes.scenario, attributes.special_features, attributes.size, attributes.color, attributes.style]
+effect_stream_dimensions:
+  market_get_asin_keyword_signals: [sif_tags]
+  market_screen_keyword_opportunities: [entry_signal]
+  market_get_asin_aba_footprint: [aba_position, traffic_dependency]
+seasonal_hooks:
+  evaluation: lazy_month_start_or_request
+  consumers: [product_navigation, s5_patrol, flagship_daily_brief]
+  external_scheduler: false
+  default_lead_weeks: 3
+  allowed_lead_weeks: [3, 4, 5, 6, 7, 8]

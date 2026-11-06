@@ -1,0 +1,75 @@
+# 亚马逊广告知识 · 学习大纲（自主进化的驱动器）
+# kb.py init 复制到 <知识库>/learning_plan.yaml。plan 命令按 min_cards 与现有卡片覆盖度算出「未覆盖主题」，
+# 排进任务单；官方主题附带 seed_urls（白名单内），让 fetch 直接拉。可按你的类目/阶段增删主题。
+
+version: "1.0"
+marketplace_default: US
+
+modules:
+  - id: M1_official_basics
+    name: 官方基础（机制与规范）
+    topics:
+      - {id: sp_basics,            name: "SP 是什么、适用与建立框架",          min_cards: 4, priority: 1,
+         seed_urls: ["https://advertising.amazon.com/library/guides/sponsored-products-best-practices"]}
+      - {id: sp_targeting,         name: "SP 自动/手动定向与四种自动匹配",       min_cards: 5, priority: 1,
+         seed_urls: ["https://advertising.amazon.com/library/guides/targeting-with-sponsored-products"]}
+      - {id: keyword_match_types,  name: "广泛/词组/精准匹配的边界与差异",        min_cards: 4, priority: 1,
+         seed_urls: ["https://advertising.amazon.com/library/guides/keyword-targeting"]}
+      - {id: sp_bidding,           name: "动态竞价（降低/提高降低/固定）与调整幅度", min_cards: 4, priority: 1,
+         seed_urls: ["https://advertising.amazon.com/library/guides/dynamic-bidding-sponsored-products"]}
+      - {id: sp_placement,         name: "广告位（首页顶部/商品页/其余）与位置加价", min_cards: 3, priority: 1}
+      - {id: sp_budget,            name: "日预算、平均日预算与超投规则",          min_cards: 3, priority: 1,
+         seed_urls: ["https://advertising.amazon.com/library/guides/sponsored-products-budget-best-practices",
+                     "https://advertising.amazon.com/resources/whats-new/sponsored-ads-daily-budgeting-policy-and-options"]}
+      - {id: negative_targeting,   name: "否定关键词/否定 ASIN 的机制与限制",      min_cards: 3, priority: 1}
+      - {id: sb_basics,            name: "SB 形式、资格、创意规范",              min_cards: 4, priority: 2,
+         seed_urls: ["https://advertising.amazon.com/library/guides/sponsored-brands-what-to-know"]}
+      - {id: sbv,                  name: "SB 视频广告规范与打法",                min_cards: 2, priority: 2}
+      - {id: sd_basics,            name: "SD 受众/商品投放与再营销",             min_cards: 3, priority: 2,
+         seed_urls: ["https://advertising.amazon.com/library/guides/reach-more-shoppers-sponsored-products-with-display-ads"]}
+      - {id: dsp_basics,           name: "DSP 与站外触点（了解即可）",           min_cards: 1, priority: 3}
+      - {id: attribution_reporting, name: "归因窗口、报表种类与字段、搜索词展示份额", min_cards: 4, priority: 1,
+         seed_urls: ["https://advertising.amazon.com/library/guides/measure-improve-campaigns",
+                     "https://advertising.amazon.com/resources/whats-new/search-term-impression-report-sponsored-products"]}
+      - {id: ad_policy,            name: "广告政策：禁投品类、创意与文案规范、品牌词使用", min_cards: 3, priority: 1}
+      - {id: brand_registry_eligibility, name: "品牌注册与 SB/SD/旗舰店资格",      min_cards: 2, priority: 2}
+      - {id: official_updates,     name: "近 12 个月官方功能/政策更新追踪",        min_cards: 3, priority: 2}
+
+  - id: M2_mechanism_inference
+    name: 机制与算法推论（必须标 D 级并写验证方法）
+    topics:
+      - {id: auction_mechanism,    name: "拍卖与扣费机制、CPC 与出价关系",        min_cards: 2, priority: 2}
+      - {id: relevance_quality,    name: "相关性/质量对展示与 CPC 的影响",        min_cards: 3, priority: 2}
+      - {id: ads_vs_organic,       name: "广告与自然位/BSR 的关系（相关≠因果）",    min_cards: 3, priority: 1}
+      - {id: new_product_traffic,  name: "新品期流量分配与冷启动",               min_cards: 3, priority: 1}
+
+  - id: M3_playbooks
+    name: 实操打法（场景化）
+    topics:
+      - {id: standard_vs_nonstandard, name: "标品 vs 非标品：打法差异总纲",       min_cards: 4, priority: 1}
+      - {id: lifecycle_playbooks,  name: "新品/成长/成熟/清仓 分阶段打法",         min_cards: 6, priority: 1}
+      - {id: keyword_tiering,      name: "关键词分层与六大打法（贴标签/冲销量/拉自然位/捡漏/关联/品牌防御）", min_cards: 6, priority: 1}
+      - {id: budget_allocation,    name: "预算分配（活动间/位置间/阶段间）",        min_cards: 3, priority: 2}
+      - {id: bid_cadence,          name: "调价节奏与幅度、样本量门槛",             min_cards: 3, priority: 1}
+      - {id: negative_cadence,     name: "否词节奏与点击阈值（多口径对比）",         min_cards: 3, priority: 1}
+      - {id: peak_season,          name: "Prime Day / 黑五网一 / 圣诞 的广告节奏",  min_cards: 4, priority: 2}
+      - {id: clearance,            name: "清仓与退出打法",                      min_cards: 2, priority: 3}
+      - {id: defense,              name: "品牌词/ASIN 防御",                    min_cards: 2, priority: 2}
+      - {id: competitor_traffic,   name: "关联流量与竞品 ASIN 投放",              min_cards: 3, priority: 2}
+
+  - id: M4_diagnostics_economics
+    name: 诊断与经济账
+    topics:
+      - {id: diagnostics,          name: "高曝光低点击 / 高点击低转化 / 花不出预算 / 抢不到位 / ACOS 高 的原因树与动作", min_cards: 6, priority: 1}
+      - {id: economics_formulas,   name: "ACOS/TACoS/盈亏平衡/CPA/投产比 公式与口径陷阱", min_cards: 4, priority: 1}
+
+  - id: M5_category
+    name: 类目专题（按你的类目增删）
+    topics:
+      - {id: category_specifics,   name: "各类目差异（家居/宠物/服装/3C/…）",        min_cards: 3, priority: 3}
+
+# 会话预算默认值（"免费时段"批量学习用）
+session_defaults:
+  budget_sources: 6        # 一次任务单最多处理的来源文件数
+  budget_topics: 3         # 一次任务单最多带的未覆盖主题数
+  target_cards_per_session: 8

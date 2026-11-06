@@ -1,0 +1,31 @@
+schema_version: 1
+artifact_type: product_manual
+outputs:
+  data: 00_产品资料/产品使用说明书.yaml
+  md: 00_产品资料/产品使用说明书.md
+  html: 00_产品资料/产品使用说明书.html
+  confirmation: 00_产品资料/说明书确认.json
+  shooting: 00_产品资料/拍摄清单.md
+source_priority: [user, manufacturer, '1688', competitor, hypothesis]
+required: [identity, capabilities, sources, scenes]
+identity_fields: [name, audience, includes, excludes]
+source_fields: [id, kind, path]
+evidence_fields: [source, file, time]
+depth:
+  L0: [identity, scenes]
+  L1: [identity, structure, states, actions, scenes]
+  L2: [identity, structure, states, actions, assembly, scenes]
+  L3: [identity, structure, states, actions, assembly, connection, scenes]
+structure_fields: [id, name, position, movement, evidence]
+state_fields: [id, name, description, image, evidence, missing_reason]
+action_fields: [id, name, from, to, motion, common_mistakes, evidence, missing_reason]
+scene_fields: [who, where, when, before, after, with, evidence]
+assembly_fields: [id, name, motion, tools, duration, image, evidence, missing_reason]
+conflict_fields: [id, topic, alternatives, evidence]
+rules:
+  - 图片、视频和截帧是原始证据，不计入每步五份默认交付文件。
+  - HTML 内嵌真实状态图片，不依赖本地相对图片加载。
+  - 一般经验和竞品参照不能冒充本品结构或动作事实。
+  - 缺真实画面用 missing_reason 保持待补，不以 AI 状态图替代操作证据。
+  - 所有来源文件保留 SHA256；再生成、来源变化或说明书变化使确认失效。
+  - 冲突需逐项记录用户选择，不因来源优先级擅自覆盖另一条证据。

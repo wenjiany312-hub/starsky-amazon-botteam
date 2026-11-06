@@ -1,0 +1,7 @@
+approval_where: "在运营总监对话里亲自回复；OpenBot 的工具权限设置"
+name_where: "在运营总监对话里说「叫我 XX」"
+secret_where: "OpenBot「你的应用」的密钥框，或团队包 mcp/.env"
+model_note: "通过 MagPie 给每个助手单独选模型（见下一节）"
+model_section: "<p>OpenBot 每个助手对话顶部都有模型选择器。装上 <b>MagPie</b>（本机模型网关），把你已经买的套餐和 Key 接进去，就能给每个角色配不同的模型。<code>config/team_settings.yaml</code> 里每个角色写的是<b>能力档</b>，详细见 <code>docs/模型分配指南.md</code>。</p><table><tr><th>能力档</th><th>角色</th></tr><tr><td>强推理</td><td>运营总监、风控官、复盘分析师</td></tr><tr><td>工具主力</td><td>选品侦察员、仓管物流、财务管家、广告优化师</td></tr><tr><td>英文写作</td><td>文案算法师</td></tr><tr><td>多模态</td><td>创意美工、质检官</td></tr><tr><td>出图</td><td>出图工</td></tr></table>"
+mcp_platform_note: "<div class='note'>OpenBot 的「你的应用」可以给每个助手单独开关：运营总监会给你一张「助手 × MCP」开关表，照着点就行。</div>"
+safety_extra: ""

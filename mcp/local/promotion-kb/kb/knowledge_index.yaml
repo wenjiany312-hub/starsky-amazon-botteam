@@ -1,0 +1,5406 @@
+{
+ "schema_version": "1.0",
+ "generated_at": "2026-09-27T10:44:02",
+ "cards": [
+  {
+   "id": "PK-0001",
+   "title": "老品流量下滑诊断：按 曝光→点击→转化→关键词→运营 五步定位病因",
+   "knowledge_type": "diagnostic",
+   "authority": "C",
+   "confidence": 0.5,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "衰退清仓",
+     "断货重启",
+     "成熟期D90+"
+    ],
+    "scene": [
+     "老品反超",
+     "排名恢复",
+     "断货重推"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "通用"
+    ],
+    "decision_metric": [
+     "曝光",
+     "CTR",
+     "CVR",
+     "自然位",
+     "评价数",
+     "BSR"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "通用"
+    ],
+    "channel": [
+     "站内自然",
+     "站内广告"
+    ],
+    "data_source": [
+     "SP-API",
+     "Ads-API"
+    ],
+    "topic": [
+     "restock_relaunch",
+     "overtaking_battle",
+     "diagnostics_gates"
+    ]
+   },
+   "statement": "老品流量下滑先按固定顺序做五层诊断——**曝光（自然/广告谁掉）→ 点击率（主图/价格/跟卖）→ 转化率（差评/价格战/Listing老化/退货）→ 关键词（收录/出单词排名/被卡位）→ 运营因素（断货/广告占比失衡/促销中断）**，先定位再动手，禁止无诊断直接加预算。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0002",
+     "locator": "§一 快速诊断框架（5步定位问题）",
+     "date": "2026-03",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0002"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0001.md"
+  },
+  {
+   "id": "PK-0002",
+   "title": "重推前决策树：市场容量→竞争烈度→侵权→库存→评分，五道门全过才值得重推",
+   "knowledge_type": "diagnostic",
+   "authority": "C",
+   "confidence": 0.45,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "断货重启",
+     "衰退清仓"
+    ],
+    "scene": [
+     "断货重推",
+     "老品反超"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "市场份额",
+     "竞争度"
+    ],
+    "decision_metric": [
+     "BSR",
+     "评价数",
+     "库存天数"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "通用"
+    ],
+    "channel": [
+     "通用"
+    ],
+    "data_source": [
+     "通用"
+    ],
+    "topic": [
+     "restock_relaunch",
+     "overtaking_battle"
+    ]
+   },
+   "statement": "老品重推前过**五道门**：① 市场还有容量（没容量→清货止损）② 竞争没烈到普遍亏损（烈→差异化再评估）③ 无侵权风险（有→放弃）④ 库存充足（不足→先补货）⑤ 评分 ≥4.0 星（不到→先解决差评）——**全过才立项重推**。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0002",
+     "locator": "§八 决策树（是否值得重推）",
+     "date": "2026-03",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0001",
+    "PK-0006"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0002.md"
+  },
+  {
+   "id": "PK-0003",
+   "title": "重推促销组合拳四周节奏：W1高Coupon→W2七天秒杀→W3站外放量→W4评估",
+   "knowledge_type": "playbook",
+   "authority": "C",
+   "confidence": 0.45,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "断货重启",
+     "衰退清仓"
+    ],
+    "scene": [
+     "断货重推",
+     "老品反超",
+     "排名恢复"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "通用"
+    ],
+    "decision_metric": [
+     "ACOS",
+     "BSR",
+     "自然位"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "促销活动",
+     "站外Deal"
+    ],
+    "data_source": [
+     "通用"
+    ],
+    "topic": [
+     "restock_relaunch",
+     "offsite_traffic"
+    ]
+   },
+   "statement": "重推期促销按**四周递进**编排：W1 高 Coupon（30-50% off）拉转化 → W2 七天秒杀（7-Day Deal）冲排名 → W3 站外放量 + 延续 Coupon → W4 数据评估再定下一轮——**促销负责出单体量，广告负责词排名**，两条线配合但不同时猛开。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0002",
+     "locator": "§三 策略A 站内促销组合拳",
+     "date": "2026-03",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0004",
+    "PK-0005"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0003.md"
+  },
+  {
+   "id": "PK-0004",
+   "title": "站外激活与站内广告切换纪律：站外期间关广告，站外后开广告出价=1/5毛利、精准承接",
+   "knowledge_type": "playbook",
+   "authority": "C",
+   "confidence": 0.4,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "断货重启",
+     "成长期D30-90"
+    ],
+    "scene": [
+     "断货重推",
+     "老品反超"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "通用"
+    ],
+    "decision_metric": [
+     "ACOS",
+     "自然位"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站外Deal",
+     "站内广告"
+    ],
+    "data_source": [
+     "通用"
+    ],
+    "topic": [
+     "restock_relaunch",
+     "offsite_traffic"
+    ]
+   },
+   "statement": "站外放量（FB 折扣组 / Deal 站 / 红人）与站内广告**不同时开**：站外期间关广告（防止广告位数据被站外流量污染、排名不稳）；站外把排名打上去后**再开广告**，出价提到**单件毛利的 1/5**，并用**精准匹配**承接站外带来的搜索热度。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0002",
+     "locator": "§三 策略B 站外推广激活 / §七 避坑指南",
+     "date": "2026-03",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0003"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0004.md"
+  },
+  {
+   "id": "PK-0005",
+   "title": "重推期广告以量取胜：30天窗口忽略ACOS，头部/腰部/长尾词分工，上首页后降bid让位自然单",
+   "knowledge_type": "playbook",
+   "authority": "C",
+   "confidence": 0.5,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "标品",
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "断货重启",
+     "成长期D30-90"
+    ],
+    "scene": [
+     "断货重推",
+     "老品反超",
+     "排名恢复"
+    ],
+    "keyword_tier": [
+     "核心大词",
+     "次核心",
+     "精准长尾"
+    ],
+    "market_signal": [
+     "CPC",
+     "竞争度"
+    ],
+    "decision_metric": [
+     "ACOS",
+     "自然位",
+     "曝光"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告"
+    ],
+    "data_source": [
+     "Ads-API"
+    ],
+    "topic": [
+     "restock_relaunch",
+     "launch_new_product",
+     "keyword_dynamic_control"
+    ]
+   },
+   "statement": "重推期广告**以 30 天为单位、以量为目标**（此窗口 ACOS 不是第一指标）：广泛+精准组合、竞价略高于市场；词分三层——**头部词开天花板、腰部词拿高相关单、长尾词网精准流量**；关键词上首页的 ACOS 经验线 ≤30%；**自然位上首页后逐步降 bid、把广告位压到自然位之后，为自然单让路**。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0002",
+     "locator": "§三 策略C 广告策略调整",
+     "date": "2026-03",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0003",
+    "PK-0006",
+    "PK-0008"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0005.md"
+  },
+  {
+   "id": "PK-0006",
+   "title": "老品重推成功指标线：评论≥100条且≥4.3星、核心词首页、ACOS≤30%、备货=销售额3倍",
+   "knowledge_type": "threshold",
+   "authority": "C",
+   "confidence": 0.45,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "断货重启",
+     "成长期D30-90"
+    ],
+    "scene": [
+     "断货重推",
+     "老品反超"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "通用"
+    ],
+    "decision_metric": [
+     "评价数",
+     "ACOS",
+     "自然位",
+     "库存天数"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "通用"
+    ],
+    "channel": [
+     "通用"
+    ],
+    "data_source": [
+     "通用"
+    ],
+    "topic": [
+     "restock_relaunch",
+     "diagnostics_gates"
+    ]
+   },
+   "statement": "重推达标五条线（经验值，2026-03 口径）：**评论 ≥100 条、评分 ≥4.3 星、核心词自然位进首页、广告 ACOS ≤30%、备货 = 销售额 3 倍**——验收时逐条打勾，缺哪条补哪条。",
+   "parameters": {
+    "min_reviews": {
+     "value": 100,
+     "unit": "条",
+     "note": "经验值(2026-03口径)"
+    },
+    "min_rating": {
+     "value": 4.3,
+     "unit": "星",
+     "note": "CVR保障线"
+    },
+    "acos_cap": {
+     "value": 30,
+     "unit": "%",
+     "note": "关键词上首页经验线"
+    },
+    "stock_multiple": {
+     "value": 3,
+     "unit": "倍",
+     "note": "备货额/销售额"
+    }
+   },
+   "sources": [
+    {
+     "source_id": "SRC-0002",
+     "locator": "§五 成功关键指标",
+     "date": "2026-03",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0002",
+    "PK-0005"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0006.md"
+  },
+  {
+   "id": "PK-0007",
+   "title": "重推 Listing 优化四件套：标题词根前5词、五点首条最大卖点、ST不重复埋词、主图纯白85%",
+   "knowledge_type": "playbook",
+   "authority": "C",
+   "confidence": 0.45,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "断货重启",
+     "成长期D30-90"
+    ],
+    "scene": [
+     "断货重推",
+     "老品反超",
+     "排名恢复"
+    ],
+    "keyword_tier": [
+     "核心大词"
+    ],
+    "market_signal": [
+     "通用"
+    ],
+    "decision_metric": [
+     "CTR",
+     "CVR"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内自然"
+    ],
+    "data_source": [
+     "H10",
+     "SIF"
+    ],
+    "topic": [
+     "restock_relaunch",
+     "relink_relaunch"
+    ]
+   },
+   "statement": "重推期 Listing 四件套规范：**标题**核心词根进前 5 个单词（用 - / : 分隔）、卖点顺序与五点一致；**五点**每条大写开头、第一条放最大卖点、忌说明书体；**Search Terms** 反查竞品收高频词、标题已用词根不重复埋、词间空格；**图片**主图纯白底实物 ≥85%、分辨率 ≥1600px、附图场景+特性、配视频增信任。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0002",
+     "locator": "§三 策略D Listing全面优化",
+     "date": "2026-03",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0001"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0007.md"
+  },
+  {
+   "id": "PK-0008",
+   "title": "重推避坑五条：站外不与广告同开、不盲目压ACOS牺牲量、不断货后才补货、重视季节性、日销记录养体感",
+   "knowledge_type": "anti_pattern",
+   "authority": "C",
+   "confidence": 0.5,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "断货重启"
+    ],
+    "scene": [
+     "断货重推",
+     "老品反超"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "季节性"
+    ],
+    "decision_metric": [
+     "ACOS",
+     "库存天数"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "通用"
+    ],
+    "channel": [
+     "通用"
+    ],
+    "data_source": [
+     "通用"
+    ],
+    "topic": [
+     "restock_relaunch",
+     "diagnostics_gates"
+    ]
+   },
+   "statement": "重推五条红线：**① 站外投放与站内广告不同时开 ② 不盲目压 ACOS 牺牲订单量 ③ 不等断货了才补货（备货 3 倍前置）④ 不忽视季节性 ⑤ 每天记录销量养\"体感\"**；正向原则：优先推自然排名、降低广告依赖。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0002",
+     "locator": "§七 避坑指南",
+     "date": "2026-03",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0004",
+    "PK-0005",
+    "PK-0006"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0008.md"
+  },
+  {
+   "id": "PK-0009",
+   "title": "关键词排名五大影响因素：相关性/曝光/点击率/转化率/评论；转化下滑进入负循环通道",
+   "knowledge_type": "mechanism",
+   "authority": "C",
+   "confidence": 0.5,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "通用"
+    ],
+    "scene": [
+     "排名恢复",
+     "老品反超",
+     "断货重推"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "ABA排名",
+     "搜索量趋势"
+    ],
+    "decision_metric": [
+     "CVR",
+     "CTR",
+     "自然位",
+     "评价数"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "通用"
+    ],
+    "channel": [
+     "站内自然"
+    ],
+    "data_source": [
+     "通用"
+    ],
+    "topic": [
+     "ranking_recovery",
+     "keyword_dynamic_control"
+    ]
+   },
+   "statement": "关键词排名由五因素决定：**相关性 > 曝光 > 点击率 > 转化率 > 评论**（收录取决于\"买家搜索词→找到商品→完成订单\"的闭环）；任一因素恶化——尤其转化率——会进入\"判定不受欢迎→曝光收缩→更差\"的**下降通道**；推词就是从五因素里找最弱项补强。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0003",
+     "locator": "§1.2.1 关键词收录减少与排名下降",
+     "date": "2026-03",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0001",
+    "PK-0010"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0009.md"
+  },
+  {
+   "id": "PK-0010",
+   "title": "广告单占比过大的失衡陷阱：自然占比上不去→出单成本降不下来→预算被锁死",
+   "knowledge_type": "anti_pattern",
+   "authority": "C",
+   "confidence": 0.55,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "成长期D30-90",
+     "成熟期D90+",
+     "断货重启"
+    ],
+    "scene": [
+     "老品反超",
+     "断货重推"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "通用"
+    ],
+    "decision_metric": [
+     "ACOS",
+     "TACOS",
+     "自然位"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "通用"
+    ],
+    "channel": [
+     "站内广告",
+     "站内自然"
+    ],
+    "data_source": [
+     "Ads-API",
+     "SP-API"
+    ],
+    "topic": [
+     "keyword_dynamic_control",
+     "diagnostics_gates",
+     "mature_defense"
+    ]
+   },
+   "statement": "**广告单占比长期过大是陷阱**：自然订单占比上不去 → 关键词权重与自然排名提不动 → 出单成本降不下来 → 只能靠维持/加预算保单量，利润被锁死。重推冲位后必须主动执行\"降广告依赖\"（词自然位进首页→降bid让位，见 PK-0005）。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0003",
+     "locator": "§1.2.2 广告策略失衡",
+     "date": "2026-03",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0005",
+    "PK-0009"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0010.md"
+  },
+  {
+   "id": "PK-0011",
+   "title": "七天秒杀激活三板斧：秒前砍差活动+词精准加bid → 秒中20%Coupon+好活动预算×2-3倍 → 秒后盯排名",
+   "knowledge_type": "playbook",
+   "authority": "C",
+   "confidence": 0.5,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "断货重启",
+     "衰退清仓"
+    ],
+    "scene": [
+     "断货重推",
+     "老品反超"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "通用"
+    ],
+    "decision_metric": [
+     "BSR",
+     "ACOS"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "促销活动",
+     "站内广告"
+    ],
+    "data_source": [
+     "Ads-API"
+    ],
+    "topic": [
+     "restock_relaunch",
+     "peak_season"
+    ]
+   },
+   "statement": "秒杀是排名杠杆，三段式执行：**秒前**——暂停 30 天有曝光有点击无转化的活动、关键词重新归类打精准并加 bid；**秒中**——开 20% Coupon + 表现好的活动预算放大 2-3 倍；**秒后**——持续盯排名变化承接流量。实操案例：日销 40 单的老品按此操作一周拿到 7 天秒杀推荐，秒杀周单量 74→197 递增，小类排名 65 → 20。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0003",
+     "locator": "§3.4 秒杀激活策略 / §5.3 案例三",
+     "date": "2026-03",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0003",
+    "PK-0005"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0011.md"
+  },
+  {
+   "id": "PK-0012",
+   "title": "词三档精准分类（绝对/相对/一般精准）+ 广:精:展 4:1:1 结构；老品重推先把绝对精准词打回首页",
+   "knowledge_type": "playbook",
+   "authority": "C",
+   "confidence": 0.45,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "标品",
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "断货重启",
+     "成长期D30-90"
+    ],
+    "scene": [
+     "断货重推",
+     "排名恢复"
+    ],
+    "keyword_tier": [
+     "核心大词",
+     "次核心",
+     "精准长尾"
+    ],
+    "market_signal": [
+     "通用"
+    ],
+    "decision_metric": [
+     "ACOS",
+     "自然位"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "通用"
+    ],
+    "channel": [
+     "站内广告"
+    ],
+    "data_source": [
+     "Ads-API"
+    ],
+    "topic": [
+     "keyword_tiering",
+     "restock_relaunch"
+    ]
+   },
+   "statement": "老品重推时把历史词重新归类为三档：**绝对精准**（历史出单最多最稳的词）→ 优先打回首页；**相对精准**（有关联出单）→ 精准/词组卡位；**一般精准**（沾边流量词）→ 广泛拓词。活动结构经验比例 **广泛:精准:展示（ASIN/类目）= 4:1:1**。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0003",
+     "locator": "§4.2.4 关键词分类与投放 / §4.2.1",
+     "date": "2026-03",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0005",
+    "PK-0012"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0012.md"
+  },
+  {
+   "id": "PK-0013",
+   "title": "被竞品 ASIN 定向抢流时的反制：Coupon 夺回转化 + 自家其他链接占住自己详情页广告位",
+   "knowledge_type": "playbook",
+   "authority": "C",
+   "confidence": 0.45,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "成熟期D90+",
+     "断货重启"
+    ],
+    "scene": [
+     "老品反超",
+     "排名恢复"
+    ],
+    "keyword_tier": [
+     "防御词"
+    ],
+    "market_signal": [
+     "竞争度"
+    ],
+    "decision_metric": [
+     "CVR",
+     "CTR"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告",
+     "促销活动"
+    ],
+    "data_source": [
+     "Ads-API"
+    ],
+    "topic": [
+     "overtaking_battle",
+     "mature_defense"
+    ]
+   },
+   "statement": "诊断到\"点击正常但转化异常走低\"时，先查**竞品是否对本链接做 ASIN 定向广告+低价卡位**；反制两招：**① 挂 Coupon 直接夺回转化**（比跟价灵活）② **用自家其他链接的广告占住自己详情页的广告位**，把竞品挤出位置——多 ASIN 卖家（多产品线家族布局）天然适用家族互防。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0003",
+     "locator": "§2.3 转化率诊断",
+     "date": "2026-03",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0001",
+    "PK-0010"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0013.md"
+  },
+  {
+   "id": "PK-0014",
+   "title": "Listing 权重顺序 标题>ST>五点>A+；价格螺旋法：降→排名升则停→达标后逐步回调",
+   "knowledge_type": "mechanism",
+   "authority": "C",
+   "confidence": 0.45,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "断货重启",
+     "成长期D30-90"
+    ],
+    "scene": [
+     "断货重推",
+     "排名恢复"
+    ],
+    "keyword_tier": [
+     "核心大词"
+    ],
+    "market_signal": [
+     "通用"
+    ],
+    "decision_metric": [
+     "自然位",
+     "价格",
+     "CTR"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "通用"
+    ],
+    "channel": [
+     "站内自然"
+    ],
+    "data_source": [
+     "通用"
+    ],
+    "topic": [
+     "ranking_recovery",
+     "pricing_strategy"
+    ]
+   },
+   "statement": "Listing 站内搜索权重顺序：**标题 > Search Terms > 五点 > A+**——埋词优先级照此分配；价格用**螺旋法**：降价→观察排名→升了就停、降了再降，循环到目标排名，**达标后逐步回调价格**探出\"稳定又有竞争力\"的平衡点。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0003",
+     "locator": "§4.1.1 标题优化 / §4.4.1 定价策略",
+     "date": "2026-03",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0007",
+    "PK-0009"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0014.md"
+  },
+  {
+   "id": "PK-0015",
+   "title": "广告压制免费流量的机制：广告位与自然位互斥；出价决定人群，越优化ACOS越卡高相关人群压自己自然位",
+   "knowledge_type": "mechanism",
+   "authority": "B",
+   "confidence": 0.6,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "成熟期D90+",
+     "成长期D30-90"
+    ],
+    "scene": [
+     "老品反超",
+     "断货重推"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "CPC"
+    ],
+    "decision_metric": [
+     "ACOS",
+     "曝光",
+     "自然位"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告",
+     "站内自然"
+    ],
+    "data_source": [
+     "Ads-API",
+     "SP-API",
+     "SIF"
+    ],
+    "topic": [
+     "keyword_dynamic_control",
+     "diagnostics_gates"
+    ]
+   },
+   "statement": "**广告与自然流量天然互斥**：① 广告通常曝光在自然位之前（自然位 #1 时广告才靠后）——广告把高相关人群先截走；② **出价决定人群**——持续降出价优化 ACOS 会把投放人群越卡越相关，广告位反而推到自然位之前，压制该词免费流量；③ 自动广告是收割机制（路径不可控、成交不沉淀到搜索词权重），转化好看但推不动自然流量——\"自动广告转化好但订单有瓶颈\"的根因。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0025",
+     "locator": "§广告是如何压制免费流量的 / §为什么",
+     "date": "2026-07",
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0010",
+    "PK-0016"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0015.md"
+  },
+  {
+   "id": "PK-0016",
+   "title": "广告压制免费流量三种诊断法：SIF饼图差额 / 客均浏览次数 / 广告与自然CVR比对；控制靠收缩让位",
+   "knowledge_type": "diagnostic",
+   "authority": "B",
+   "confidence": 0.6,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "成熟期D90+",
+     "成长期D30-90"
+    ],
+    "scene": [
+     "老品反超",
+     "断货重推"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "CPC"
+    ],
+    "decision_metric": [
+     "ACOS",
+     "曝光",
+     "CVR",
+     "自然位"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告",
+     "站内自然"
+    ],
+    "data_source": [
+     "SIF",
+     "SP-API",
+     "Ads-API"
+    ],
+    "topic": [
+     "diagnostics_gates",
+     "keyword_dynamic_control"
+    ]
+   },
+   "statement": "诊断广告是否压制免费流量三法：**① 流量结构比对**——后台广告占比（广告点击/父体访客数）vs SIF 反查流量饼图占比，差额即被压制部分（后台带人群相关度、插件不带）；**② 客均浏览次数**——短决策品看 24h 内访客平均访问次数，反映广告与自然位重叠触达；**③ CVR 比对**——广告转化率远超自然转化率 = 收割过重。控制手段：成熟期收缩广告、降 bid 让位自然承接。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0025",
+     "locator": "§如何诊断出来压制免费 / §实践中如何去控制压制",
+     "date": "2026-07",
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0015"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0016.md"
+  },
+  {
+   "id": "PK-0017",
+   "title": "词海打法：Alexa 语义算法时代所有类目必须重构词海流量结构；老链接按三类结构对号入座补短板",
+   "knowledge_type": "playbook",
+   "authority": "B",
+   "confidence": 0.55,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "标品",
+     "非标品",
+     "半标品"
+    ],
+    "lifecycle_stage": [
+     "断货重启",
+     "成长期D30-90",
+     "成熟期D90+"
+    ],
+    "scene": [
+     "断货重推",
+     "老品反超",
+     "排名恢复"
+    ],
+    "keyword_tier": [
+     "精准长尾",
+     "流量词",
+     "核心大词"
+    ],
+    "market_signal": [
+     "搜索量趋势",
+     "竞争度"
+    ],
+    "decision_metric": [
+     "ACOS",
+     "曝光",
+     "自然位"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告",
+     "站内自然"
+    ],
+    "data_source": [
+     "SIF",
+     "西柚",
+     "Ads-API"
+    ],
+    "topic": [
+     "keyword_tiering",
+     "restock_relaunch",
+     "ranking_recovery"
+    ]
+   },
+   "statement": "Alexa for Shopping AI 语义算法下，流量逻辑已从\"固定核心大词出单\"升级为\"**海量语义搜索意图匹配出单**\"——**所有类目都必须做词海**，固守几个大词的链接会被对手的海量长尾流量反超。老链接先复盘流量结构，按三类对号入座：**① 大词为主+花费高** → 海量补 2-5 级精准长尾 + 用 SBC（品牌广告）替代部分大词 SP 订单；**② 大词为主+花费低**（基础好只是入口少）→ 补 3-5 级长尾放量，最快盈利；**③ 长尾为主** → 按\"一二级↔三四五级\"互补补齐。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0013",
+     "locator": "§一 老链接流量结构复盘（分三类精准破局）",
+     "date": "2026-08",
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0005",
+    "PK-0012",
+    "PK-0018"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0017.md"
+  },
+  {
+   "id": "PK-0018",
+   "title": "AI 语义算法 Listing 适配：Specific Info 是重点抓取权重位；口语化详情+高价值词根聚焦+QA/Review 场景化布局",
+   "knowledge_type": "playbook",
+   "authority": "B",
+   "confidence": 0.55,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "断货重启",
+     "成长期D30-90"
+    ],
+    "scene": [
+     "断货重推",
+     "老品反超",
+     "换链接重上"
+    ],
+    "keyword_tier": [
+     "核心大词",
+     "精准长尾"
+    ],
+    "market_signal": [
+     "搜索量趋势"
+    ],
+    "decision_metric": [
+     "CVR",
+     "曝光"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内自然"
+    ],
+    "data_source": [
+     "通用"
+    ],
+    "topic": [
+     "ranking_recovery",
+     "restock_relaunch"
+    ]
+   },
+   "statement": "AI 语义算法（Alexa for Shopping）的 Listing 适配四件事：**① 词根聚焦**——不无脑堆词，抓\"搜索量大+成交高+转化稳\"的高价值词根，叠加场景/人群/属性词根；**② 详情页重写**——语句通顺口语化（贴买家表达习惯）、自然埋词不生硬，**前台 Specific Info 板块是 Alexa 重点抓取权重位，优化到位可获 AI 主动强推**；**③ QA/Review 深耕**——口语化问答、场景化痛点布局；**④ 轻改即可**——无需大改重起链接。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0013",
+     "locator": "§二 Listing 轻优化（适配 AI 算法）",
+     "date": "2026-08",
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0017",
+    "PK-0007"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0018.md"
+  },
+  {
+   "id": "PK-0019",
+   "title": "竞品推广手段溯源 12 项清单：刷单/合并/营销组合/站外/上首页/连秒/同行攻击/广告架构拆解逐一排查",
+   "knowledge_type": "diagnostic",
+   "authority": "B",
+   "confidence": 0.55,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "通用"
+    ],
+    "scene": [
+     "老品反超",
+     "断货重推",
+     "排名恢复"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "市场份额",
+     "竞争度"
+    ],
+    "decision_metric": [
+     "CVR",
+     "评价数",
+     "价格"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告",
+     "站外Deal",
+     "促销活动"
+    ],
+    "data_source": [
+     "SIF",
+     "Sorftime",
+     "西柚"
+    ],
+    "topic": [
+     "overtaking_battle",
+     "competition_assessment"
+    ]
+   },
+   "statement": "反超战前先给竞品做**12 项手段溯源**：① 是否刷单（免评单/留评单/WOOT 路径，看数据曲线异常）② 是否合并技巧（种子合并/僵尸合并/无父体镜像——变体向导查无父体即疑）③ 营销组合（会员折扣/Coupon 叠加）④ 站外踪迹（Google 搜 FB 群组秒杀、YouTube、TK 痕迹）⑤ 关键词上首页玩法（点击率/加购/收藏/分享率异常+低价）⑥ 连秒 ⑦ 是否遭同行攻击（差评攻击/listing 变狗/敏感词/高退货标签/点广告）⑧ **广告架构精确拆解**——搜索词规律判断匹配方式：无规律词多=自动或大词广泛；成规律跑词=词组或长尾广泛 ⑨~⑫ 链接起量根因/失败根因/综合溯源/持续监控表。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0026",
+     "locator": "课程目录（1-12 项）",
+     "date": "2026-07",
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0013",
+    "PK-0001"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0019.md"
+  },
+  {
+   "id": "PK-0020",
+   "title": "H10 关键词四维筛选+三维归类：IQS≥700、Xray同类占比定档（≥90%绝对精准/<20%废弃）、词根三组建组",
+   "knowledge_type": "playbook",
+   "authority": "B",
+   "confidence": 0.6,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "标品",
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "通用"
+    ],
+    "scene": [
+     "断货重推",
+     "老品反超"
+    ],
+    "keyword_tier": [
+     "核心大词",
+     "次核心",
+     "精准长尾"
+    ],
+    "market_signal": [
+     "ABA排名",
+     "竞争度"
+    ],
+    "decision_metric": [
+     "CVR",
+     "CTR",
+     "曝光"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告"
+    ],
+    "data_source": [
+     "H10",
+     "SIF",
+     "ABA"
+    ],
+    "topic": [
+     "keyword_tiering",
+     "keyword_research_tools"
+    ]
+   },
+   "statement": "H10 反查后的词库加工标准流：**四维筛选**（自然排名=转化力、广告排名=广告价值、IQS≥700+Xray 人工验证=精准度、流量竞争+合规=价值与安全）→ **三维归类**（精准度分档、长度分层、词根归类）→ **投放闭环**。分档核心标尺：搜索结果前 10 同类占比 **≥90% 绝对精准 / 50-90% 相对精准 / 20-50% 一般精准 / <20% 废弃**。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0044",
+     "locator": "§二 四维筛选法 / §三 三维归类法",
+     "date": 2026,
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0012",
+    "PK-0021"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0020.md"
+  },
+  {
+   "id": "PK-0021",
+   "title": "关键词三大归类法（整体/词根/属性）+ ABA 长度分层：大词<10万/中词10-50万/长尾50-100万/废弃>100万",
+   "knowledge_type": "playbook",
+   "authority": "B",
+   "confidence": 0.6,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "通用"
+    ],
+    "scene": [
+     "断货重推",
+     "新品首推"
+    ],
+    "keyword_tier": [
+     "核心大词",
+     "次核心",
+     "精准长尾",
+     "流量词"
+    ],
+    "market_signal": [
+     "ABA排名",
+     "搜索量趋势"
+    ],
+    "decision_metric": [
+     "CVR",
+     "CTR"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告",
+     "站内自然"
+    ],
+    "data_source": [
+     "ABA",
+     "卖家精灵",
+     "SIF"
+    ],
+    "topic": [
+     "keyword_tiering",
+     "keyword_research_tools"
+    ]
+   },
+   "statement": "词库组织三法并用：**整体法**定方向（精准度分级——与 PK-0020 分档一致）、**词根法**聚流量（核心词根整合衍生词，精准/词组/广泛三组建组递进投放）、**属性法**提转化（功能/参数/场景属性标签化，先打高转化属性再渐进联动）。**ABA 长度分层标尺**：大词 <10 万 / 中词 10-50 万 / 长尾 50-100 万 / 废弃 >100 万。避坑：新品前期不打广泛（防\"四不像\"判定）；否词要及时；品牌词与垃圾属性词不进 ST。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0045",
+     "locator": "§二 三大核心归类法 / 关键词长度分层",
+     "date": 2026,
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0020",
+    "PK-0012",
+    "PK-0017"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0021.md"
+  },
+  {
+   "id": "PK-0022",
+   "title": "老品广告优化操作规程：SP看最近7天/SD看14天；盈亏平衡ACOS=毛利-5~10pct；加成必配降竞价；禁天天调",
+   "knowledge_type": "playbook",
+   "authority": "B",
+   "confidence": 0.6,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "成熟期D90+",
+     "成长期D30-90"
+    ],
+    "scene": [
+     "老品反超",
+     "断货重推"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "CPC"
+    ],
+    "decision_metric": [
+     "ACOS",
+     "曝光",
+     "自然位"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告"
+    ],
+    "data_source": [
+     "Ads-API"
+    ],
+    "topic": [
+     "keyword_dynamic_control",
+     "diagnostics_gates"
+    ]
+   },
+   "statement": "老品广告周复盘标准规程：**口径**——SP 看最近 7 天（环比过去 7 天），SB/SBV/SD 看 14 天（归因期）；**方向**——老品以 ACOS 为核心（盈利导向），盈亏平衡 ACOS = 毛利率 −5~10 个百分点（毛利 25% → 平衡点 15-20%）；**例外**——重点推的词只看转化不看 ACOS。加预算：连续 2 周好且曝光超时→按曝光时长给足；一好一差→加 10-20%。广告位：正常不加成（拉高 CPC），加成必须**配合降竞价**且少量多次（+10-20 测试）。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0017",
+     "locator": "全文（时间选择/ACOS方向/具体操作/注意事项）",
+     "date": 2026,
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0015",
+    "PK-0016",
+    "PK-0005"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0022.md"
+  },
+  {
+   "id": "PK-0023",
+   "title": "关键词防守压舱石：核心词必须常挂【精准匹配+BID】；停投即掉位的教训",
+   "knowledge_type": "mechanism",
+   "authority": "B",
+   "confidence": 0.55,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "成熟期D90+",
+     "成长期D30-90"
+    ],
+    "scene": [
+     "排名恢复",
+     "老品反超"
+    ],
+    "keyword_tier": [
+     "核心大词",
+     "防御词"
+    ],
+    "market_signal": [
+     "ABA排名"
+    ],
+    "decision_metric": [
+     "自然位",
+     "ACOS"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告"
+    ],
+    "data_source": [
+     "Ads-API"
+    ],
+    "topic": [
+     "ranking_recovery",
+     "mature_defense"
+    ]
+   },
+   "statement": "核心关键词的自然排名需要**【精准匹配 + BID】活动常挂**压舱：没做精准+BID 的链接、或某词广告预算给不到位，该词自然排名都容易下滑——防守打法四件套 = 精准+BID / 词组匹配 / 手动 ASIN 定位 / 广泛匹配，其中精准+BID 是排名保卫的核心，**不能因为词组表现好就把精准+BID 停掉**（案例教训）。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0012",
+     "locator": "§正文",
+     "date": 2026,
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0022",
+    "PK-0010",
+    "PK-0019"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0023.md"
+  },
+  {
+   "id": "PK-0024",
+   "title": "Alexa for Shopping 官方机制与 GEO：结合 Rufus 知识/目录/评论/Q&A/购物历史/网页做推荐；AI 要能从页面回答 6 个问题",
+   "knowledge_type": "mechanism",
+   "authority": "B",
+   "confidence": 0.6,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "通用"
+    ],
+    "scene": [
+     "断货重推",
+     "新品首推",
+     "老品反超"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "搜索量趋势"
+    ],
+    "decision_metric": [
+     "曝光",
+     "CVR"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内自然"
+    ],
+    "data_source": [
+     "通用"
+    ],
+    "topic": [
+     "official_updates",
+     "ranking_recovery"
+    ]
+   },
+   "statement": "**Alexa for Shopping 官方机制**：结合 Rufus 的产品知识、商品目录、评论、Q&A、购物历史、网页信息，帮买家做产品比较、购物建议、价格追踪和推荐。买家搜索演变四阶段：关键词 → 场景 → 问题 → 需求（口语化提问）。**真正该怕的不是分流，而是 Listing 写得太模糊，AI 不知道该在什么场景推荐你**。GEO（生成式引擎优化）的核心：AI 要能从你的页面回答 6 个问题——你是什么产品/适合谁/解决什么问题/哪些场景有用/和竞品差在哪/为什么选你。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0028",
+     "locator": "slide 5-10（核心判断/GEO概念/搜索演变/致命问题）",
+     "date": 2026,
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0017",
+    "PK-0018",
+    "PK-0025"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0024.md"
+  },
+  {
+   "id": "PK-0025",
+   "title": "GEO 六步落地法：关键词升级问题词→补5类描述词→五点写答案→Q&A当入口→评论反推→后台词补自然语言变体",
+   "knowledge_type": "playbook",
+   "authority": "B",
+   "confidence": 0.6,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "断货重启",
+     "新品期D0-30"
+    ],
+    "scene": [
+     "断货重推",
+     "新品首推",
+     "老品反超"
+    ],
+    "keyword_tier": [
+     "核心大词",
+     "精准长尾"
+    ],
+    "market_signal": [
+     "搜索量趋势"
+    ],
+    "decision_metric": [
+     "CVR",
+     "CTR",
+     "曝光"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内自然",
+     "站内广告"
+    ],
+    "data_source": [
+     "通用"
+    ],
+    "topic": [
+     "ranking_recovery",
+     "keyword_tiering"
+    ]
+   },
+   "statement": "GEO 六步落地法（Alexa/Rufus AI 购物流量）：**① 关键词升级\"问题词\"**——不只收集关键词，收集买家口语化提问（\"What organizer fits around sink pipes?\"）；**② 补齐 5 类描述词**——场景词/痛点词/属性词/适配词/差异词，各告诉 AI 一件不同的事；**③ 五点写\"答案\"**——\"Fits Around Sink Pipes: adjustable shelf…\" 替代 \"High Quality Material\" 空话；**④ Q&A 当 GEO 入口**——AI 参考 Q&A，反向预写买家会问的问题；**⑤ 评论反推描述词**——买家比运营直白，是真实 GEO 素材；**⑥ 后台词（ST）补自然语言变体**。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0028",
+     "locator": "slide 17-25（六步落地法）",
+     "date": 2026,
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0024",
+    "PK-0018",
+    "PK-0007"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0025.md"
+  },
+  {
+   "id": "PK-0026",
+   "title": "标品词库搭建五步法：产品画像→竞品词频统计→10 ASIN流量反查筛选→ABA分层+前10同类相关性→动态补充",
+   "knowledge_type": "playbook",
+   "authority": "B",
+   "confidence": 0.6,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "标品"
+    ],
+    "lifecycle_stage": [
+     "立项期",
+     "新品期D0-30",
+     "断货重启"
+    ],
+    "scene": [
+     "新品首推",
+     "断货重推"
+    ],
+    "keyword_tier": [
+     "核心大词",
+     "次核心",
+     "精准长尾"
+    ],
+    "market_signal": [
+     "ABA排名",
+     "竞争度",
+     "转化基准"
+    ],
+    "decision_metric": [
+     "CVR"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "通用"
+    ],
+    "data_source": [
+     "SIF",
+     "西柚",
+     "ABA",
+     "本地表格"
+    ],
+    "topic": [
+     "keyword_tiering",
+     "keyword_research_tools"
+    ]
+   },
+   "statement": "标品词库搭建五步流（柠檬榨汁机全例）：**① 产品结构化画像**（品名/驱动方式/外观/容量/场景/人群/材质）+ 选定 10 个优秀竞品 ASIN；**② 竞品文案词频统计**——高频词根即核心词根（如 lemon 4.0%）；**③ 10 ASIN 流量反查筛选**——逐词记录各竞品流量占比与词类型，**占比>3% 突出保留、搜索频率排名 >20W 剔除、去重**；**④ ABA 分层 + 相关性双尺**——[0,2W]大词/(2,5W]中上/(5,10W]中下/>10W小词；前 10 搜索结果同类数 [0,3]弱/(3,5]一般/[6,10]强相关；**⑤ 类目转化率判断收尾**——用广告报告/ABA/下拉框持续补充新词，**词库是动态资产需不断完善**。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0029",
+     "locator": "sheet 1.0-1.4（标品词库搭建实操全流程）",
+     "date": 2023,
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0020",
+    "PK-0021",
+    "PK-0017"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0026.md"
+  },
+  {
+   "id": "PK-0027",
+   "title": "关键词排名四阶段推进：双自动跑词→单词单活动精准固定→CPC微调上2页→改提降策略上1页→顶部BID收 70% 点击",
+   "knowledge_type": "playbook",
+   "authority": "B",
+   "confidence": 0.6,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "标品",
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "新品期D0-30",
+     "断货重启"
+    ],
+    "scene": [
+     "新品首推",
+     "排名恢复",
+     "断货重推"
+    ],
+    "keyword_tier": [
+     "核心大词",
+     "次核心"
+    ],
+    "market_signal": [
+     "CPC"
+    ],
+    "decision_metric": [
+     "自然位",
+     "ACOS",
+     "CPC"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告"
+    ],
+    "data_source": [
+     "Ads-API"
+    ],
+    "topic": [
+     "launch_new_product",
+     "ranking_recovery",
+     "keyword_dynamic_control"
+    ]
+   },
+   "statement": "推词排名**四阶段递进，每阶段 10 天**（季节品压缩到 3 天）：**① 跑词**——双自动（A 紧密+固定 $0.8 / B 紧密+提降 $0.5）跑出相关精准词，筛\"广告排名已在第 3 页内\"的词 → **单词单活动单组**开精准+固定竞价，预算=每天 10 次点击；**② 上第 2 页**——自然位稳第 3 页后 CPC 微调 +$0.1-0.2 即可（不大幅拉基础 CPC）；**③ 上第 1 页**——三选一：加大CPC（后期难降）/首页加BID（ACOS难看）/**改竞价策略固定→提降**（推荐，综合最优）；**④ 收顶部**——首页顶部加 BID 10-50%，让 70% 点击集中顶部；**自然位进第 1 页后再打顶部**，ACOS 更好看（自然位权重支撑）。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0048",
+     "locator": "§四阶段全文",
+     "date": 2026,
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0005",
+    "PK-0022",
+    "PK-0023",
+    "PK-0016"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0027.md"
+  },
+  {
+   "id": "PK-0028",
+   "title": "核心词上首页五步：反查验证→全面埋词（含图片命名/QA）→大词每加10美金连7天→每日排名监控→BD秒杀冲刺稳位",
+   "knowledge_type": "playbook",
+   "authority": "B",
+   "confidence": 0.55,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "新品期D0-30",
+     "断货重启"
+    ],
+    "scene": [
+     "排名恢复",
+     "新品首推"
+    ],
+    "keyword_tier": [
+     "核心大词"
+    ],
+    "market_signal": [
+     "ABA排名"
+    ],
+    "decision_metric": [
+     "自然位",
+     "CVR",
+     "曝光"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告",
+     "促销活动"
+    ],
+    "data_source": [
+     "卖家精灵",
+     "Ads-API",
+     "SP-API"
+    ],
+    "topic": [
+     "ranking_recovery",
+     "peak_season"
+    ]
+   },
+   "statement": "核心词上首页五步：**① 找准词**——工具反查竞品流量词按搜索量降序，逐词到前台验证搜索结果与产品一致（防方向错）；**② 全面埋词**——标题 3-5 词、五点 10-15 词、ST 全埋，**图片命名/A+ 图片命名/Q&A 也埋**（相关性叠加，自动广告按 listing 内容跑）；**③ 大词广告冲**——自动+2 个最大核心词开跑，**最大核心词预算每加 $10 连加 7 天**+价格低于市场 $1-2+大额 Coupon，约半个月上首页后**降竞价降预算**；**④ 每日监控**——统计各核心词自然位（不同浏览器+不同邮编多次验证），每周波动分析；**⑤ BD 冲刺稳位**——上首页稳不住=转化未达标，用 7 天秒杀（BD）补转化冲稳。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0046",
+     "locator": "§1-5 全文",
+     "date": 2022,
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0027",
+    "PK-0023",
+    "PK-0011",
+    "PK-0009"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0028.md"
+  },
+  {
+   "id": "PK-0029",
+   "title": "归类反推广告：新品从绝对精准打起→自然位稳前2页再打相对精准→最后一般精准；直接打大词的恶果",
+   "knowledge_type": "playbook",
+   "authority": "B",
+   "confidence": 0.6,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "标品",
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "新品期D0-30",
+     "断货重启"
+    ],
+    "scene": [
+     "新品首推",
+     "断货重推",
+     "排名恢复"
+    ],
+    "keyword_tier": [
+     "核心大词",
+     "次核心",
+     "精准长尾"
+    ],
+    "market_signal": [
+     "ABA排名"
+    ],
+    "decision_metric": [
+     "CVR",
+     "自然位",
+     "ACOS"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告"
+    ],
+    "data_source": [
+     "ABA",
+     "SIF"
+    ],
+    "topic": [
+     "keyword_tiering",
+     "launch_new_product"
+    ]
+   },
+   "statement": "按三种归类法（精准/属性/词根）反推广告投放：**新品期必须从绝对精准词打起**（前台搜索该词 90%+ 出现同类产品即为绝对精准；**注意绝对精准≠ABA 小——`dash cam front and rear` 排名 700+ 照样是绝对精准**），自然位稳前 2 页后再打相对精准，最后才一般精准大词。**直接打一般精准大词** → 转化率不稳 → 自然排名上不来 → 广告订单占比高（与 PK-0009 机制互证）。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0050",
+     "locator": "§精准法 / 属性法",
+     "date": 2026,
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0012",
+    "PK-0020",
+    "PK-0021",
+    "PK-0027"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0029.md"
+  },
+  {
+   "id": "PK-0030",
+   "title": "属性词活动梯度设计（反直觉）：属性绝对精准长尾用广泛匹配、一般精准大词用精准匹配；CPC/预算 A>B>C 递减",
+   "knowledge_type": "playbook",
+   "authority": "B",
+   "confidence": 0.55,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "新品期D0-30",
+     "成长期D30-90"
+    ],
+    "scene": [
+     "新品首推",
+     "断货重推"
+    ],
+    "keyword_tier": [
+     "次核心",
+     "精准长尾"
+    ],
+    "market_signal": [
+     "CPC",
+     "ABA排名"
+    ],
+    "decision_metric": [
+     "ACOS",
+     "曝光",
+     "CVR"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告"
+    ],
+    "data_source": [
+     "ABA",
+     "Ads-API"
+    ],
+    "topic": [
+     "keyword_tiering",
+     "keyword_dynamic_control"
+    ]
+   },
+   "statement": "属性词活动**反向匹配设计**（反直觉但合理）：**属性绝对精准长尾词 → 广泛匹配**（语义已极窄跑不偏，还扩曝光；CPC/预算最高）；**属性相对精准 → 词组匹配**（中档）；**属性一般精准大词 → 精准匹配**（词本身混杂单双三录等，精准卡位防垃圾流量；CPC/预算最低）。梯度示例：活动 A $1.5/$15 → B $1/$8 → C $0.8/$5——**既确保曝光又降低垃圾流量对 CR 的伤害**。一个属性活动还应包含\"属性词根+核心词根\"的全部组合变体（4k+front and rear 的所有排列）。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0050",
+     "locator": "§属性法（活动A/B/C 设计）",
+     "date": 2026,
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0029",
+    "PK-0021",
+    "PK-0020"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0030.md"
+  },
+  {
+   "id": "PK-0031",
+   "title": "广告推动关键词收录-排名时间线：收录→上位最快阶段→稳定期自然单为主；广告预算减少取决于自然上位词数量",
+   "knowledge_type": "mechanism",
+   "authority": "B",
+   "confidence": 0.55,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "新品期D0-30",
+     "成长期D30-90",
+     "成熟期D90+"
+    ],
+    "scene": [
+     "新品首推",
+     "断货重推"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "ABA排名"
+    ],
+    "decision_metric": [
+     "自然位",
+     "ACOS",
+     "曝光"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告",
+     "站内自然"
+    ],
+    "data_source": [
+     "H10",
+     "Ads-API"
+    ],
+    "topic": [
+     "launch_new_product",
+     "lifecycle_overview"
+    ]
+   },
+   "statement": "广告与关键词的**时间线机制**：广告干涉 A9 的关键词 SEO 识别 → **收录及自然排名上位（最快阶段）** → 精准买家行为词大量上位、自然单比重越来越大（稳定期）→ **广告预算的减少幅度取决于自然排名上位的词数量与自然订单量**——\"广告就是关键词收录到排名上位的推手\"，推到后段广告逐步退位给自然。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0049",
+     "locator": "流量池时间线 / 广告体系逻辑",
+     "date": 2024,
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0009",
+    "PK-0010",
+    "PK-0015",
+    "PK-0005"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0031.md"
+  },
+  {
+   "id": "PK-0032",
+   "title": "核心词上首页四变量：点击率(TOS>1%)/转化率/关键词下出单量/新品期杠杆；老品必须借七天秒杀",
+   "knowledge_type": "playbook",
+   "authority": "B",
+   "confidence": 0.6,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "标品",
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "成长期D30-90",
+     "成熟期D90+",
+     "断货重启"
+    ],
+    "scene": [
+     "排名恢复",
+     "老品反超",
+     "断货重推"
+    ],
+    "keyword_tier": [
+     "核心大词",
+     "次核心"
+    ],
+    "market_signal": [
+     "ABA排名",
+     "转化基准"
+    ],
+    "decision_metric": [
+     "自然位",
+     "CTR",
+     "CVR",
+     "曝光"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告",
+     "站内自然"
+    ],
+    "data_source": [
+     "ABA",
+     "卖家精灵"
+    ],
+    "topic": [
+     "ranking_recovery",
+     "keyword_tiering",
+     "diagnostics_gates"
+    ]
+   },
+   "statement": "关键词自然位由四个变量共同决定——**点击率、转化率、关键词下出单量、是否新品期**；词位归词位、BSR 归 BSR：关键词下出单量 OK 的链接，即使总销量平庸也能在该词自然位靠前；而**老品单纯靠优化+广告很难上首页，必须借七天秒杀的东风**。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0047",
+     "locator": "§03 核心词上首页的因素（点击率/转化率/关键词下出单量/是否新品期）",
+     "date": "2022-04",
+     "authority": "B"
+    },
+    {
+     "source_id": "SRC-0047",
+     "locator": "§03（3）关键词下出单量 / §02 查找核心关键词途径",
+     "date": "2022-04",
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0028",
+    "PK-0011",
+    "PK-0009",
+    "PK-0021",
+    "PK-0001"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0032.md"
+  },
+  {
+   "id": "PK-0033",
+   "title": "捡漏广告体系30式：低价=品类均CPC÷3、预算$5-10、广泛为主、只图盈利不图排名；稳定老品专用",
+   "knowledge_type": "playbook",
+   "authority": "B",
+   "confidence": 0.55,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "标品",
+     "半标品",
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "成熟期D90+",
+     "成长期D30-90",
+     "通用"
+    ],
+    "scene": [
+     "淡季维持",
+     "旺季大促",
+     "老品反超"
+    ],
+    "keyword_tier": [
+     "捡漏词",
+     "流量词",
+     "防御词"
+    ],
+    "market_signal": [
+     "CPC",
+     "竞争度",
+     "ABA排名"
+    ],
+    "decision_metric": [
+     "ACOS",
+     "CPC",
+     "曝光"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告",
+     "关联流量"
+    ],
+    "data_source": [
+     "ABA",
+     "Ads-API"
+    ],
+    "topic": [
+     "keyword_tiering",
+     "growth_scale",
+     "mature_defense",
+     "peak_season"
+    ]
+   },
+   "statement": "捡漏广告=**极低出价×小预算×广泛匹配**去捕捉别人忽略的剩余流量，目标只有盈利（低 ACOS 高 ROI），**不以提升排名为目的**；\"低\"的标尺是**低于品类平均 CPC 的 3 倍以上**（相对值，不是死数 0.02-0.3），只适合权重稳定的老品，是主广告的补充而非替代。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0016",
+     "locator": "§1.2 核心特点 / 打法10 品牌词捡漏 / 打法19 ASIN定位捡漏 / 打法16 节日词 / 打法29 时间漏",
+     "date": 2025,
+     "authority": "B"
+    },
+    {
+     "source_id": "SRC-0016",
+     "locator": "§1.2 适用与角色边界",
+     "date": 2025,
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0023",
+    "PK-0030",
+    "PK-0027"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0033.md"
+  },
+  {
+   "id": "PK-0034",
+   "title": "COSMO-LM 机制：语义意图+知识图谱接管流量分发；新品广告曝光变贵变慢（需2-5倍建议竞价、预算4-8天烧完）",
+   "knowledge_type": "mechanism",
+   "authority": "B",
+   "confidence": 0.55,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "新品期D0-30",
+     "立项期",
+     "断货重启"
+    ],
+    "scene": [
+     "新品首推",
+     "断货重推",
+     "换链接重上"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "CPC",
+     "转化基准"
+    ],
+    "decision_metric": [
+     "曝光",
+     "CPC",
+     "CVR"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告",
+     "站内自然"
+    ],
+    "data_source": [
+     "通用"
+    ],
+    "topic": [
+     "official_updates",
+     "launch_new_product",
+     "restock_relaunch"
+    ]
+   },
+   "statement": "COSMO-LM 用 LLM 从买家行为里挖**深层购物意图**并建全类目知识图谱，流量分发从\"关键词相关性\"（A9）转向\"需求意图匹配\"——直接后果是**新品广告冷启动变贵变慢**（初期要 2-5 倍建议竞价才有曝光、预算 4-8 天才烧完、转化延迟），而**语义场景词与自动广告的价值上升**。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0015",
+     "locator": "§一 什么是 COSMO-LM / COSMO 与 A9 的区别",
+     "date": "2025-04",
+     "authority": "B"
+    },
+    {
+     "source_id": "SRC-0015",
+     "locator": "§一 新算法带来的影响 / §二 1 提高竞价但控制预算",
+     "date": "2025-04",
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0024",
+    "PK-0018",
+    "PK-0017",
+    "PK-0005"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0034.md"
+  },
+  {
+   "id": "PK-0035",
+   "title": "case_study 互补品词反转：互补品类关键词投放 CPA $20-90 全亏 → 关死关键词只做 ASIN 定向+吃自然位",
+   "knowledge_type": "case_study",
+   "authority": "C",
+   "confidence": 0.6,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "标品"
+    ],
+    "lifecycle_stage": [
+     "成熟期D90+",
+     "断货重启"
+    ],
+    "scene": [
+     "断货重推",
+     "老品反超"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "竞争度",
+     "CPC",
+     "搜索量趋势"
+    ],
+    "decision_metric": [
+     "ACOS",
+     "CPC",
+     "自然位"
+    ],
+    "category_family": [
+     "宠物"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告",
+     "站内自然",
+     "关联流量"
+    ],
+    "data_source": [
+     "Ads-API",
+     "西柚",
+     "SP-API"
+    ],
+    "topic": [
+     "case_studies",
+     "keyword_tiering",
+     "pet_category",
+     "keyword_dynamic_control"
+    ]
+   },
+   "statement": "互补品词的**搜索者要的是别人的产品**，搜索结果页上我们的转化天生差（CPA $20-90 全亏）；但搜这些词落地到互补大卖详情页的访客才是完美受众——**正确姿势是关键词投放关死+商品定向打互补大卖详情页，同时把互补词的自然位当免费流量养**。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0051",
+     "locator": "Ads API 近30天关键词基线 + keyword_package.yaml 互补品词节",
+     "date": "2026-09-18",
+     "authority": "A"
+    },
+    {
+     "source_id": "SRC-0052",
+     "locator": "西柚 get_keyword_info 互补词行 + get_asin_keywords 主推 ASIN 反查",
+     "date": "2026-09-18",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0016",
+    "PK-0013",
+    "PK-0032",
+    "PK-0001"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": "2026-09-18",
+   "stale": false,
+   "file": "cards/PK-0035.md"
+  },
+  {
+   "id": "PK-0036",
+   "title": "case_study 词库外场景增量词：跨场景词系单列攻坚组（ACOS 32% 盈利 + SIF 绿灯）",
+   "knowledge_type": "case_study",
+   "authority": "C",
+   "confidence": 0.6,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "标品"
+    ],
+    "lifecycle_stage": [
+     "成熟期D90+",
+     "断货重启"
+    ],
+    "scene": [
+     "断货重推",
+     "排名恢复"
+    ],
+    "keyword_tier": [
+     "精准长尾",
+     "次核心"
+    ],
+    "market_signal": [
+     "搜索量趋势",
+     "竞争度",
+     "CPC"
+    ],
+    "decision_metric": [
+     "ACOS",
+     "CPC",
+     "CVR",
+     "自然位"
+    ],
+    "category_family": [
+     "宠物"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告",
+     "站内自然"
+    ],
+    "data_source": [
+     "Ads-API",
+     "西柚",
+     "SIF"
+    ],
+    "topic": [
+     "case_studies",
+     "keyword_tiering",
+     "pet_category",
+     "keyword_dynamic_control"
+    ]
+   },
+   "statement": "**场景词组是词库分层的增量来源**：某跨场景词（关联场景清晰、词库外）不在常规 ABA 词库分层内，却实测 CPC $0.96 / ACOS 32% 盈利、竞品少（难度 61 但无人重投）、我方自然位已到 p2/13——发现一个就**单列一组**，不塞进大词组稀释。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0051",
+     "locator": "Ads API 近30天关键词基线：跨场景词行",
+     "date": "2026-09-18",
+     "authority": "A"
+    },
+    {
+     "source_id": "SRC-0052",
+     "locator": "西柚 get_keyword_info：dog ear hair removal tool 行",
+     "date": "2026-09-18",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0025",
+    "PK-0034",
+    "PK-0033",
+    "PK-0021"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": "2026-09-18",
+   "stale": false,
+   "file": "cards/PK-0036.md"
+  },
+  {
+   "id": "PK-0037",
+   "title": "case_study CVR 29% 定位流量短板：会话转化远超盈亏门禁(11.5-23.8%)时，唯一杠杆是把流量×3，别再优化承接",
+   "knowledge_type": "case_study",
+   "authority": "C",
+   "confidence": 0.6,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "标品"
+    ],
+    "lifecycle_stage": [
+     "成熟期D90+",
+     "断货重启"
+    ],
+    "scene": [
+     "断货重推",
+     "排名恢复",
+     "老品反超"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "转化基准",
+     "CPC"
+    ],
+    "decision_metric": [
+     "CVR",
+     "曝光",
+     "自然位",
+     "库存天数"
+    ],
+    "category_family": [
+     "宠物"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告",
+     "站内自然"
+    ],
+    "data_source": [
+     "SP-API",
+     "SIF",
+     "西柚"
+    ],
+    "topic": [
+     "case_studies",
+     "diagnostics_gates",
+     "restock_relaunch",
+     "growth_scale"
+    ]
+   },
+   "statement": "会话 CVR 29.1% ≫ 类目均值与广告盈亏门禁（11.5%-23.8%）时，**承接已被证明不是瓶颈**——日均 6.5→20 单的目标不需要再动 Listing/价格，唯一杠杆是**流量×3**（预算、词位、双位占坑），所有资源按此分配。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0051",
+     "locator": "data/baseline_by_asin_30d.json + competition_snapshot.yaml baseline_30d 节",
+     "date": "2026-09-18",
+     "authority": "A"
+    },
+    {
+     "source_id": "SRC-0053",
+     "locator": "SIF market_assess_keyword_promotion：候选词经济表",
+     "date": "2026-09-18",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0001",
+    "PK-0005",
+    "PK-0010",
+    "PK-0006"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": "2026-09-18",
+   "stale": false,
+   "file": "cards/PK-0037.md"
+  },
+  {
+   "id": "PK-0038",
+   "title": "A+ 内容官方规范：资格=专业账户+品牌注册；基本 A+ 官方效果 ≤+8%、高级 A+ ≤+20%；五步发布流程与 AI 模块",
+   "knowledge_type": "policy",
+   "authority": "A",
+   "confidence": 0.85,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "通用"
+    ],
+    "scene": [
+     "通用"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "转化基准"
+    ],
+    "decision_metric": [
+     "CVR",
+     "评价数"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内自然"
+    ],
+    "data_source": [
+     "通用"
+    ],
+    "topic": [
+     "listing_assets",
+     "official_updates",
+     "promotion_sop"
+    ]
+   },
+   "statement": "A+ 内容是**品牌详情页的增产工具**（视频/增强图/自定义文案位/可购物对比图），官方门槛是**专业卖家账户 + 品牌注册**（自有 ASIN 才能投放）；官方效果数据：**基本 A+ 最高 +8% 销售，实施良好的高级 A+ 最高 +20%**——双线产品均已具备资格（品牌注册 + 已有 A+ 资产），本周期升级高级 A+ 是确定性收益动作。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0061",
+     "locator": "§What is A+ Content（官方页 sell.amazon.com/tools/a-content，浏览器渲染提取）",
+     "date": "2026-09-18",
+     "authority": "A"
+    },
+    {
+     "source_id": "SRC-0057",
+     "locator": "§优化商品信息并启动评论 · A+ 商品描述（品牌注册官方页）",
+     "date": "2026-09-18",
+     "authority": "A"
+    },
+    {
+     "source_id": "SRC-0061",
+     "locator": "§Step 4 · Apply content to your products",
+     "date": "2026-09-18",
+     "authority": "A"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0039",
+    "PK-0007",
+    "PK-0025",
+    "PK-0018"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": "2026-09-18",
+   "stale": false,
+   "file": "cards/PK-0038.md"
+  },
+  {
+   "id": "PK-0039",
+   "title": "品牌旗舰店官方规范：资格=专业账户+品牌注册+Ads；建议≥3层页面；Hero 3000×600/logo 400²；发布审核<24h；访客购买频率+53.9%",
+   "knowledge_type": "policy",
+   "authority": "A",
+   "confidence": 0.85,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "通用"
+    ],
+    "scene": [
+     "通用"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "转化基准",
+     "市场份额"
+    ],
+    "decision_metric": [
+     "CVR",
+     "曝光"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内自然",
+     "站内广告",
+     "关联流量"
+    ],
+    "data_source": [
+     "通用"
+    ],
+    "topic": [
+     "listing_assets",
+     "official_updates"
+    ]
+   },
+   "statement": "品牌旗舰店是**免费但有三道门槛**的自有店铺（专业账户 + 品牌注册 + 注册 Amazon Ads 才可进 builder），官方建议**至少三层页面**；规格硬线：Hero ≥3000×600、logo ≥400×400（均 ≤5MB）；发布审核通常 **<24 小时**；官方数据：访问旗舰店的买家**购买频率 +53.9%、加购率 +52.1%、客单价 +71.3%**——共建品牌旗舰店是确定性动作，且要按\"移动优先 + 三层结构\"建。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0060",
+     "locator": "§How to create a Brand Store step-by-step · 2. Design your Brand Store（官方博客页，浏览器渲染提取）",
+     "date": "2026-09-18",
+     "authority": "A"
+    },
+    {
+     "source_id": "SRC-0055",
+     "locator": "§Header specs / Safe zones for hero images（Stores creative guidelines）",
+     "date": "2026-09-18",
+     "authority": "A"
+    },
+    {
+     "source_id": "SRC-0060",
+     "locator": "§Did you know? Amazon Brand Stores can increase sales and boost customer loyalty",
+     "date": "2026-09-18",
+     "authority": "A"
+    },
+    {
+     "source_id": "SRC-0054",
+     "locator": "§How do Brand Stores work（Amazon Ads 官方页）",
+     "date": "2026-09-18",
+     "authority": "A"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0038",
+    "PK-0024",
+    "PK-0017",
+    "PK-0013"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": "2026-09-18",
+   "stale": false,
+   "file": "cards/PK-0039.md"
+  },
+  {
+   "id": "PK-0040",
+   "title": "case_study 追赶者复盘：竞品A 反超=不断货×宽词系(167词含大词自然位)×合规资产×不折腾；不是靠单个爆招",
+   "knowledge_type": "case_study",
+   "authority": "C",
+   "confidence": 0.6,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "标品"
+    ],
+    "lifecycle_stage": [
+     "成熟期D90+",
+     "成长期D30-90"
+    ],
+    "scene": [
+     "老品反超",
+     "排名恢复",
+     "断货重推"
+    ],
+    "keyword_tier": [
+     "核心大词",
+     "流量词",
+     "次核心"
+    ],
+    "market_signal": [
+     "ABA排名",
+     "搜索量趋势",
+     "竞争度"
+    ],
+    "decision_metric": [
+     "自然位",
+     "BSR",
+     "CVR",
+     "评价数"
+    ],
+    "category_family": [
+     "宠物"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内自然",
+     "站内广告"
+    ],
+    "data_source": [
+     "西柚",
+     "SP-API"
+    ],
+    "topic": [
+     "case_studies",
+     "overtaking_battle",
+     "keyword_tiering",
+     "pet_category"
+    ]
+   },
+   "statement": "同规格同价位竞品A 从落后我方位次到稳定反超（细分排名 #41 vs 我们 ~#200、30 天 700 单 vs 100），**靠的不是爆招而是四件事的复合：① 不断货（月度订单 12 个月 400-900 从未塌方）② 宽词系覆盖（167 反查词，横跨多个大词系并吃到大词自然位）③ 合规且关键词化的资产（纯产品主图 / A+ 图片 alt 全部关键词化 / 品牌故事模块已部署）④ 不折腾（近 6 个月无标题主图变更、无新增广告活动）**。追赶者应复制的正是这套\"基础设施\"，而不是找捷径。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0052",
+     "locator": "西柚 competitor_bsr_trends / order_trends / asin_kw / orders30d（data/mcp_refresh/competitor_*，2026-09-18）",
+     "date": "2026-09-18",
+     "authority": "C"
+    },
+    {
+     "source_id": "SRC-0051",
+     "locator": "客户基线对照（同规格同价位：$12.99 vs $12.98；4.8★506 vs 4.7★522；其月度订单近 12 个月 400-900 从未塌方）",
+     "date": "2026-09-18",
+     "authority": "A"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0032",
+    "PK-0035",
+    "PK-0036",
+    "PK-0008",
+    "PK-0010"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": "2026-09-18",
+   "stale": false,
+   "file": "cards/PK-0040.md"
+  },
+  {
+   "id": "PK-0041",
+   "title": "playbook 竞品广告关键词还原法（SIF AdXray 链路）：ad_structure→贡献总览→活动结构→广告组词表；date 必传周日",
+   "knowledge_type": "playbook",
+   "authority": "C",
+   "confidence": 0.6,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "通用"
+    ],
+    "scene": [
+     "老品反超",
+     "排名恢复"
+    ],
+    "keyword_tier": [
+     "核心大词",
+     "流量词",
+     "次核心"
+    ],
+    "market_signal": [
+     "竞争度",
+     "CPC"
+    ],
+    "decision_metric": [
+     "曝光",
+     "自然位"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告"
+    ],
+    "data_source": [
+     "SIF"
+    ],
+    "topic": [
+     "competition_assessment",
+     "keyword_research_tools",
+     "overtaking_battle",
+     "case_studies"
+    ]
+   },
+   "statement": "竞品的**广告投放词表可以被完整还原**（不是推测）：SIF 四步链路 `ads_get_asin_ad_structure`（规模）→ `ads_get_asin_campaign_contribution_overview`（定主力活动）→ `ads_get_campaign_structure`（展开广告组）→ `ads_get_ad_group_keyword_breakdown`（**逐词流量份额**）——实查竞品A 得 83 活动 / 主力 2 组各 47 词，第一大投放词为核心大词（27.9%）。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0053",
+     "locator": "SIF ads_get_asin_ad_structure / campaign_contribution_overview / campaign_structure / ad_group_keyword_breakdown（竞品A 实查，原始数据 data/mcp_refresh/sif_competitor_*）",
+     "date": "2026-09-18",
+     "authority": "C"
+    },
+    {
+     "source_id": "SRC-0052",
+     "locator": "西柚 competitor 反查词与 BSR 轨迹（交叉验证同一竞品）",
+     "date": "2026-09-18",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0040",
+    "PK-0026",
+    "PK-0029",
+    "PK-0030"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": "2026-09-18",
+   "stale": false,
+   "file": "cards/PK-0041.md"
+  },
+  {
+   "id": "PK-0042",
+   "title": "敏感词与合规红线：三类高危词（杀虫抗菌/医疗功效/绝对化认证）+ 描述事实不描述功效的替代原则",
+   "knowledge_type": "policy",
+   "authority": "B",
+   "confidence": 0.6,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "通用"
+    ],
+    "scene": [
+     "通用"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "通用"
+    ],
+    "decision_metric": [
+     "通用"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内自然",
+     "站内广告"
+    ],
+    "data_source": [
+     "通用"
+    ],
+    "topic": [
+     "listing_assets",
+     "promotion_sop",
+     "diagnostics_gates"
+    ]
+   },
+   "statement": "Listing（标题/五点/ST/A+/图片内文字）中的**功能性、医疗性、绝对化与认证类表述**是高危雷区——被扫到轻则下架重则封号；安全原则是**只描述事实与物理属性（材质/尺寸/结构/用法），不描述功效与结果**，发品前用敏感词表做一遍机械过滤。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0033",
+     "locator": "《亚马逊敏感词大全》1-115 条（杀虫/抗菌/医疗/绝对化混合清单）",
+     "date": 2024,
+     "authority": "B"
+    },
+    {
+     "source_id": "SRC-0034",
+     "locator": "《亚马逊敏感词避雷1224》Sheet1（医疗/绝对化/认证/促销类英文词表）",
+     "date": "2024-12",
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0025",
+    "PK-0035",
+    "PK-0040",
+    "PK-0018"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0042.md"
+  },
+  {
+   "id": "PK-0043",
+   "title": "词库工具链四段 SOP：采集(下拉框a-z/反查表)→分析(三档数据字典/特征词)→监控(坑位表/跟踪表)→复核(排名/标题工具)",
+   "knowledge_type": "playbook",
+   "authority": "B",
+   "confidence": 0.55,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "标品",
+     "半标品",
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "立项期",
+     "新品期D0-30",
+     "成长期D30-90",
+     "成熟期D90+"
+    ],
+    "scene": [
+     "新品首推",
+     "排名恢复",
+     "老品反超"
+    ],
+    "keyword_tier": [
+     "核心大词",
+     "次核心",
+     "精准长尾",
+     "流量词"
+    ],
+    "market_signal": [
+     "ABA排名",
+     "搜索量趋势",
+     "竞争度",
+     "CPC"
+    ],
+    "decision_metric": [
+     "自然位",
+     "BSR",
+     "CVR"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告",
+     "站内自然"
+    ],
+    "data_source": [
+     "卖家精灵",
+     "SIF",
+     "西柚",
+     "本地表格"
+    ],
+    "topic": [
+     "keyword_research_tools",
+     "keyword_tiering",
+     "aba_analysis",
+     "promotion_sop"
+    ]
+   },
+   "statement": "词库不是\"一张表\"，而是**四段工具链**：采集（下拉框 a-z 拓词 / 工具反查表）→ 分析（三档精准分析表的数据字典 + 特征词频分析）→ 监控（坑位记录表 + 跟踪表模板）→ 复核（目标排名查询 + 标题规则批量查询）；每段都有现成模板/工具，串起来就是\"词海打法\"的日常运转底盘。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0032",
+     "locator": "《下拉框拓词工具用法》全文（a-z 采集模式、parm.txt 一行一词、Win10 运行）",
+     "date": 2024,
+     "authority": "B"
+    },
+    {
+     "source_id": "SRC-0031",
+     "locator": "《一般精准 关键词分析》表头（30 列数据字典）",
+     "date": 2024,
+     "authority": "B"
+    },
+    {
+     "source_id": "SRC-0035",
+     "locator": "《关键词坑位记录表（手动版）》AT006 sheet（每日 P页-R位 记录）",
+     "date": 2024,
+     "authority": "B"
+    },
+    {
+     "source_id": "SRC-0043",
+     "locator": "《亚马逊关键词库搭建实操和投放技巧》§2.1-2.3（品牌分析词根 / 竞品选择 / 修饰词分类）",
+     "date": 2024,
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0026",
+    "PK-0020",
+    "PK-0021",
+    "PK-0012",
+    "PK-0041"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0043.md"
+  },
+  {
+   "id": "PK-0044",
+   "title": "广告生命周期三阶段（新品探索/发展放量/成熟利润）+ 决策顺序'目标→承接→流量→约束'；季节性四节奏",
+   "knowledge_type": "playbook",
+   "authority": "B",
+   "confidence": 0.6,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "标品",
+     "半标品",
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "新品期D0-30",
+     "成长期D30-90",
+     "成熟期D90+",
+     "通用"
+    ],
+    "scene": [
+     "新品首推",
+     "旺季大促",
+     "淡季维持",
+     "排名恢复"
+    ],
+    "keyword_tier": [
+     "核心大词",
+     "次核心",
+     "精准长尾"
+    ],
+    "market_signal": [
+     "转化基准",
+     "CPC"
+    ],
+    "decision_metric": [
+     "TACOS",
+     "ACOS",
+     "自然位",
+     "库存天数"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告"
+    ],
+    "data_source": [
+     "通用"
+    ],
+    "topic": [
+     "lifecycle_overview",
+     "launch_new_product",
+     "peak_season",
+     "growth_scale"
+    ]
+   },
+   "statement": "广告没有\"通用最佳打法\"——先按**决策顺序（目标 → 承接能力 → 流量结构 → 资源约束）**定基调，再选阶段策略：**新品期探索优先**（自动+词组+少量广泛，宽泛探索收集搜索词）、**发展期放量优先**（聚焦验证过的转化词抢位，预算必须匹配库存）、**成熟期利润优先**（只留高转化高利润词，用广告养自然、广告占比逐步下降）。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0011",
+     "locator": "《亚马逊广告生命周期策略报告》§01-03 三阶段 + §04 季节性四节奏",
+     "date": 2026,
+     "authority": "B"
+    },
+    {
+     "source_id": "SRC-0011",
+     "locator": "§STAGE 02 发展期·注意事项",
+     "date": 2026,
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0005",
+    "PK-0027",
+    "PK-0029",
+    "PK-0034",
+    "PK-0010"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0044.md"
+  },
+  {
+   "id": "PK-0045",
+   "title": "广告自动化规则：点击-无单暂停阶梯（7/14天12击·30天10击·60/90天8击）；CVR<8%暂停；ROAS<3暂停；好词放大线 CVR≥20%且点击≥15",
+   "knowledge_type": "threshold",
+   "authority": "B",
+   "confidence": 0.55,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "标品",
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "成熟期D90+",
+     "成长期D30-90"
+    ],
+    "scene": [
+     "老品反超",
+     "排名恢复",
+     "淡季维持"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "CPC"
+    ],
+    "decision_metric": [
+     "ACOS",
+     "CVR",
+     "CPC",
+     "曝光"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告"
+    ],
+    "data_source": [
+     "本地表格"
+    ],
+    "topic": [
+     "diagnostics_gates",
+     "promotion_sop",
+     "keyword_dynamic_control"
+    ]
+   },
+   "statement": "把\"什么时候关词、什么时候否词、什么时候放大\"变成**自动化规则**而不是人工拍脑袋：**点击-无单按周期递增宽限（7/14 天 12 击 → 30 天 10 击 → 60/90 天 8 击）自动暂停；有单但 CVR<8% 人工复核暂停；ROAS<3 的商品定位暂停；CVR≥20% 且点击≥15 的好词拉出放大**——规则跑机器，人只看 8-12 击的灰色区与放大决策。",
+   "parameters": [
+    {
+     "value": "7/14天 12 击 0 单",
+     "unit": "点击",
+     "note": "关键词广告自动暂停线（短周期严）"
+    },
+    {
+     "value": "30天 10 击 0 单",
+     "unit": "点击",
+     "note": "关键词广告自动暂停线（中周期）"
+    },
+    {
+     "value": "60/90天 8 击 0 单",
+     "unit": "点击",
+     "note": "关键词广告自动暂停线（长周期宽）"
+    },
+    {
+     "value": "8-12 击 0 单",
+     "unit": "点击",
+     "note": "人工复核区：核心词降 bid+优化承接，非核心词直接关"
+    },
+    {
+     "value": "8 击 0 单",
+     "unit": "点击",
+     "note": "手动 ASIN 定向（商品定位）暂停线"
+    },
+    {
+     "value": "12 击 0 单",
+     "unit": "点击",
+     "note": "自动广告否定线"
+    },
+    {
+     "value": "CVR < 8%",
+     "unit": "转化率",
+     "note": "有出单但投产不佳 → 手动确认暂停"
+    },
+    {
+     "value": "ROAS < 3",
+     "unit": "ROAS",
+     "note": "商品定位暂停线"
+    },
+    {
+     "value": "CVR ≥ 20% 且点击 ≥ 15",
+     "unit": "指标",
+     "note": "好词放大线：拉出单独投放/预算集中到 1-2 词"
+    }
+   ],
+   "sources": [
+    {
+     "source_id": "SRC-0018",
+     "locator": "《广告自动化》领星自动规则（关/否关键词/ASIN 全表）",
+     "date": 2024,
+     "authority": "B"
+    },
+    {
+     "source_id": "SRC-0018",
+     "locator": "《广告自动化》有出单但投产不佳 + 转化率好的词放大 + RPA 新增广告频率",
+     "date": 2024,
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0022",
+    "PK-0029",
+    "PK-0033",
+    "PK-0043"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0045.md"
+  },
+  {
+   "id": "PK-0046",
+   "title": "新品 14 天启动冲刺表：D1-7 启动期（vine+coupon10%+自动$20-30+QA10条）→ D8-14 冲刺期（CPC 加大+关联位+活动）；上架即全量优化",
+   "knowledge_type": "playbook",
+   "authority": "B",
+   "confidence": 0.55,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "标品",
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "新品期D0-30"
+    ],
+    "scene": [
+     "新品首推",
+     "换链接重上"
+    ],
+    "keyword_tier": [
+     "核心大词",
+     "次核心"
+    ],
+    "market_signal": [
+     "转化基准",
+     "CPC"
+    ],
+    "decision_metric": [
+     "CTR",
+     "CVR",
+     "自然位",
+     "BSR",
+     "评价数"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告",
+     "促销活动"
+    ],
+    "data_source": [
+     "本地表格"
+    ],
+    "topic": [
+     "launch_new_product",
+     "promotion_sop",
+     "review_velocity"
+    ]
+   },
+   "statement": "新品前 14 天是一张**逐日冲刺表**：D1-7 启动期把\"上架即全量优化 + vine/Reviewer + 10% Coupon + 自动广告 $20-30 + QA\"全部压上去做流量测试；D8-14 冲刺期加大 CPC、守关联位、补 Review、报活动冲 Top100——**每一天有明确目标排名与日销数字，任何当天不达标就当日排查**（图文方向/主图/回款）。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0006",
+     "locator": "《亚马逊新品爆款推广及高效复盘SOP》新品推广计划 sheet（Day1-14 逐日目标与动作）",
+     "date": "2020-11",
+     "authority": "B"
+    },
+    {
+     "source_id": "SRC-0008",
+     "locator": "《亚马逊新品推广计划表（模版参考）》新品推广全流程 sheet（阶段→任务→交付物→预警）",
+     "date": 2024,
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0027",
+    "PK-0029",
+    "PK-0034",
+    "PK-0003",
+    "PK-0011"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0046.md"
+  },
+  {
+   "id": "PK-0047",
+   "title": "大促复盘六维框架（全局/工具/广告位/搜索词/DSP/依赖度）+ 年度品线财务模型数据字典（现金流/库存/净利润率）",
+   "knowledge_type": "playbook",
+   "authority": "B",
+   "confidence": 0.6,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "成熟期D90+",
+     "通用"
+    ],
+    "scene": [
+     "旺季大促",
+     "通用"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "转化基准",
+     "CPC",
+     "市场份额"
+    ],
+    "decision_metric": [
+     "TACOS",
+     "CVR",
+     "CPC",
+     "库存天数",
+     "曝光"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告",
+     "站外Deal"
+    ],
+    "data_source": [
+     "本地表格"
+    ],
+    "topic": [
+     "peak_season",
+     "promotion_sop",
+     "diagnostics_gates"
+    ]
+   },
+   "statement": "大促复盘按**六维框架**跑：全局（销量/转化/流量/广告依赖度）→ 工具（SP/SB/SBV 各自的量-率-成本）→ 广告位（首页/商品页/其余）→ 搜索词（大词/品牌词/品类词）→ DSP/上层（拉新 vs 收割）→ 依赖度趋势；**大促的胜负手是\"爆发力流量\"与\"广告依赖度\"两条线**——流量跌幅决定销量跌幅，点击量的持续增长才是订单增长的地基。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0007",
+     "locator": "《黑五网一广告复盘》复盘与策略汇总/店铺维度（六维复盘与数据）",
+     "date": "2024-12",
+     "authority": "B"
+    },
+    {
+     "source_id": "SRC-0005",
+     "locator": "《广告年日复盘SOP》品线年度规划 sheet（采购/物流/库存/销售/现金流/净利润 全模型）",
+     "date": 2025,
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0003",
+    "PK-0011",
+    "PK-0006",
+    "PK-0033"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0047.md"
+  },
+  {
+   "id": "PK-0048",
+   "title": "高客单新品三段式：高价+50%Coupon 起量 → 会员价拿红色标签+30% → 15%Coupon 转盈利；广告单自动起步($0.8固定)",
+   "knowledge_type": "case_study",
+   "authority": "B",
+   "confidence": 0.55,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "半标品",
+     "标品"
+    ],
+    "lifecycle_stage": [
+     "新品期D0-30"
+    ],
+    "scene": [
+     "新品首推"
+    ],
+    "keyword_tier": [
+     "核心大词",
+     "次核心"
+    ],
+    "market_signal": [
+     "CPC",
+     "转化基准"
+    ],
+    "decision_metric": [
+     "CVR",
+     "CPC",
+     "ACOS",
+     "评价数"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告",
+     "促销活动"
+    ],
+    "data_source": [
+     "本地表格"
+    ],
+    "topic": [
+     "launch_new_product",
+     "pricing_strategy",
+     "case_studies"
+    ]
+   },
+   "statement": "高客单（~$100）新品前 20 天的唯一目标就是**出单**：价格用\"**高价+50% Coupon → 会员价+红色降价标签+30% → 15% Coupon 转盈利**\"三段式接力（前两段亏广告费、订单不赚钱，第三段用订单利润顶广告费）；广告**只开一个自动活动起步**（固定竞价、$0.8 CPC、$30/天，靠 Coupon 加持跑起来），有数据后再拉精准。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0022",
+     "locator": "《客单价100刀的亚马逊新品广告策略打法》全文（2024-06 上架案例，400 件首批）",
+     "date": 2024,
+     "authority": "B"
+    },
+    {
+     "source_id": "SRC-0022",
+     "locator": "§广告策略（前 10 天单自动活动）",
+     "date": 2024,
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0046",
+    "PK-0029",
+    "PK-0034",
+    "PK-0014",
+    "PK-0003"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0048.md"
+  },
+  {
+   "id": "PK-0049",
+   "title": "广告没有独立权重：人群数据积累在 ASIN 不在计划；老计划关掉重建表现一致；压制/重叠用'后台免费流量占比 vs SIF 广告占比'判定",
+   "knowledge_type": "mechanism",
+   "authority": "B",
+   "confidence": 0.55,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "通用"
+    ],
+    "scene": [
+     "老品反超",
+     "排名恢复"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "转化基准"
+    ],
+    "decision_metric": [
+     "CVR",
+     "CPC",
+     "自然位"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告"
+    ],
+    "data_source": [
+     "SIF",
+     "SP-API"
+    ],
+    "topic": [
+     "growth_scale",
+     "diagnostics_gates",
+     "aba_analysis"
+    ]
+   },
+   "statement": "**广告没有独立权重**——老计划关掉、同设置重建，表现几乎一致（只冷启动几天）；人群数据积累在 **ASIN** 上而不是广告计划里，所以计划可以随时开关；广告表现由**访问行为 + 访问人群 + 出价**三要素决定——理解这点后，\"广告权重\"这个口头禅可以退休了。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0023",
+     "locator": "《亚马逊广告权重文章整理版》§广告真的有权重吗 / §判付费压制免费",
+     "date": 2024,
+     "authority": "B"
+    },
+    {
+     "source_id": "SRC-0023",
+     "locator": "§如何判断付费压制免费（SIF 交叉验证法）",
+     "date": 2024,
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0015",
+    "PK-0016",
+    "PK-0022",
+    "PK-0009"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0049.md"
+  },
+  {
+   "id": "PK-0050",
+   "title": "竞价测算四公式：CPC=ACOS×客单价×转化率 / 日预算=CPC÷转化率×目标日销 / 月预算=目标TACOS×销售额 / 参考CPC=毛利×1/10；位置与分时加成叠乘",
+   "knowledge_type": "formula",
+   "authority": "B",
+   "confidence": 0.6,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "通用"
+    ],
+    "scene": [
+     "通用"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "CPC",
+     "转化基准"
+    ],
+    "decision_metric": [
+     "ACOS",
+     "CPC",
+     "TACOS"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告"
+    ],
+    "data_source": [
+     "本地表格"
+    ],
+    "topic": [
+     "diagnostics_gates",
+     "pricing_strategy",
+     "promotion_sop"
+    ]
+   },
+   "statement": "出价与预算不靠感觉，用四个公式闭环：**CPC = ACOS × 客单价 × 转化率**（反推可接受出价）→ **日预算 = CPC ÷ 转化率 × 目标日销**（倒推预算）→ **月预算 = 目标 TACOS × 目标销售额**（总盘约束）→ **参考 CPC = 毛利 × 1/10**（单次点击成本的经验上限）；位置/受众/分时加成按**叠乘**计入最终出价。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0024",
+     "locator": "《广告位竞价测算（含企业购广告位-受众）》竞价计算/计算 sheet（四组公式 + 位置/受众/分时加成）",
+     "date": 2024,
+     "authority": "B"
+    },
+    {
+     "source_id": "SRC-0024",
+     "locator": "竞价计算 sheet（位置加成叠乘与分时阶梯）",
+     "date": 2024,
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0022",
+    "PK-0027",
+    "PK-0030",
+    "PK-0045"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0050.md"
+  },
+  {
+   "id": "PK-0051",
+   "title": "官方学习资源索引：亚马逊广告学堂月度培训指南（2026.02/05/08）——按卖家阶段分级的课程地图",
+   "knowledge_type": "glossary",
+   "authority": "A",
+   "confidence": 0.85,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "通用"
+    ],
+    "scene": [
+     "通用"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "通用"
+    ],
+    "decision_metric": [
+     "通用"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "通用"
+    ],
+    "data_source": [
+     "通用"
+    ],
+    "topic": [
+     "official_updates",
+     "promotion_sop"
+    ]
+   },
+   "statement": "亚马逊广告学堂的**月度培训指南**是官方持续更新的学习入口（免费直播课 + 回放）：2026 版按**卖家阶段分级**（0-3 月新手村 / 3-12 月晋级赛 / >12 月巅峰战）+ **专题分类**（新手/资讯/流量转化/上新/实操问答）——本库把它登记为\"官方源入口\"，用于补充第三方资料无法覆盖的官方口径。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0019",
+     "locator": "《亚马逊广告培训指南》2026.02 版（目录/课程分类）",
+     "date": "2026-02",
+     "authority": "B"
+    },
+    {
+     "source_id": "SRC-0021",
+     "locator": "《亚马逊广告培训指南》2026.08 版（阶段分级）",
+     "date": "2026-08",
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0038",
+    "PK-0039",
+    "PK-0024"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0051.md"
+  },
+  {
+   "id": "PK-0052",
+   "title": "变体级竞品调研：用子体流量词数/评论数占比找出主推子体（占比最高=流量与评论的承载体）",
+   "knowledge_type": "playbook",
+   "authority": "B",
+   "confidence": 0.55,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "标品",
+     "半标品"
+    ],
+    "lifecycle_stage": [
+     "成长期D30-90",
+     "成熟期D90+"
+    ],
+    "scene": [
+     "老品反超",
+     "新品首推"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "竞争度",
+     "市场份额"
+    ],
+    "decision_metric": [
+     "自然位",
+     "评价数"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内自然",
+     "站内广告"
+    ],
+    "data_source": [
+     "卖家精灵",
+     "本地表格"
+    ],
+    "topic": [
+     "competition_assessment",
+     "case_studies",
+     "pet_category"
+    ]
+   },
+   "statement": "竞品调研要下钻到**子体级**：用\"子体流量词数 ÷ 父体流量词数 = 变体流量词占比\"与\"变体评论占比\"两个占比，找出家族的**主推子体**（流量与评论的承载体）——对标时打的是那个子体，而不是随便一个变体；占比为 0 的子体是\"僵尸变体\"（挂家族吃流量但无作为）。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0027",
+     "locator": "《竞品调研表精华版》变体 Rating 数据 sheet（子体级字段体系）",
+     "date": 2024,
+     "authority": "B"
+    },
+    {
+     "source_id": "SRC-0027",
+     "locator": "同 sheet 结构（案例：smoking kit 家族 666 词散布于 7 个子体，最大子体占 37.7%）",
+     "date": 2024,
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0026",
+    "PK-0013",
+    "PK-0043",
+    "PK-0040"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0052.md"
+  },
+  {
+   "id": "PK-0053",
+   "title": "清货决策框架：以 CPA（单件出单成本=出单花费−单件利润）为准绳的七渠道排序与五步评估",
+   "knowledge_type": "playbook",
+   "authority": "B",
+   "confidence": 0.6,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "衰退清仓"
+    ],
+    "scene": [
+     "通用"
+    ],
+    "keyword_tier": [
+     "捡漏词",
+     "通用"
+    ],
+    "market_signal": [
+     "CPC",
+     "竞争度"
+    ],
+    "decision_metric": [
+     "ACOS",
+     "CPC",
+     "库存天数"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告",
+     "站外Deal",
+     "促销活动"
+    ],
+    "data_source": [
+     "本地表格"
+    ],
+    "topic": [
+     "decline_clearance",
+     "pricing_strategy",
+     "offsite_traffic"
+    ]
+   },
+   "statement": "清货只算一个数：**CPA = 平均出单花费 − 单件利润**——哪个渠道 CPA 最低就用哪个多出单；且先算\"直接弃置/亚马逊批量清货\"的**单件亏损底线**，**任何清货渠道成本高于它都无意义**（不如直接销毁）。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0062",
+     "locator": "《清货思路》全文（CPA 框架 / 七渠道排序 / 五步评估 / 低 CPA 广告三式）",
+     "date": 2025,
+     "authority": "B"
+    },
+    {
+     "source_id": "SRC-0062",
+     "locator": "§五步评估 第 1 步（清货成本底线）",
+     "date": 2025,
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0033",
+    "PK-0047",
+    "PK-0011",
+    "PK-0006"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0053.md"
+  },
+  {
+   "id": "PK-0054",
+   "title": "case_study 清货实战：奥特莱斯+阶梯降价（19.99→9.99 只降一个变体，销量 1-2→10 单/天）；价格是精准调控器",
+   "knowledge_type": "case_study",
+   "authority": "C",
+   "confidence": 0.6,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "非标品",
+     "半标品"
+    ],
+    "lifecycle_stage": [
+     "衰退清仓"
+    ],
+    "scene": [
+     "通用"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "CPC"
+    ],
+    "decision_metric": [
+     "ACOS",
+     "库存天数",
+     "CVR"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "促销活动",
+     "站内广告",
+     "站外Deal"
+    ],
+    "data_source": [
+     "本地表格"
+    ],
+    "topic": [
+     "decline_clearance",
+     "pricing_strategy",
+     "case_studies"
+    ]
+   },
+   "statement": "清货最有效的杠杆就是**降价**——用\"**奥特莱斯 + 只降一个变体的阶梯定价**\"（其他变体守原价）把销量从 1-2 单/天拉到 10 单/天；价格在清货期是\"精准调控器\"（涨 $1 立跌、降 $1 立涨），调价周期 **7-15 天**不能太频繁；广告只需最低限度参与（预算 <$5/天、竞价 0.2-0.4），因为**低价本身撑起转化**。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0063",
+     "locator": "《我的清货历程》全文（半年清货总结 + 问答）",
+     "date": 2025,
+     "authority": "B"
+    },
+    {
+     "source_id": "SRC-0063",
+     "locator": "§价格调控与问答（调价周期 7-15 天）",
+     "date": 2025,
+     "authority": "B"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0053",
+    "PK-0003",
+    "PK-0014",
+    "PK-0048"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0054.md"
+  },
+  {
+   "id": "PK-0055",
+   "title": "推品方法总纲：9种推品路径要按客单/站点/类目选型，标品/非标品各有12周SOP，杜绝一种打法走天下",
+   "knowledge_type": "playbook",
+   "authority": "C",
+   "confidence": 0.5,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "立项期",
+     "新品期D0-30"
+    ],
+    "scene": [
+     "新品首推",
+     "通用"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "竞争度",
+     "季节性"
+    ],
+    "decision_metric": [
+     "BSR",
+     "CVR",
+     "ACOS"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告"
+    ],
+    "data_source": [
+     "通用"
+    ],
+    "topic": [
+     "lifecycle_overview",
+     "launch_new_product"
+    ]
+   },
+   "statement": "推品没有万能打法：先按**客单价（低/中/高）× 站点 × 类目（家居/服装/玩具/工具）× 季节性**选定推品路径，再套对应的 12 周 SOP（标品/非标品两套），并用\"BSR 新品榜能否进人 + 核心词第一页是否被老卖家垄断 + 链接有无违规史\"三问预判成败。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0114",
+     "locator": "9种推品方法汇总/12周推品SOP（标品与非标品分开）",
+     "date": "2022-09",
+     "authority": "C"
+    },
+    {
+     "source_id": "SRC-0100",
+     "locator": "23条提升推品成功率规律（新品/秒杀/广告三段）",
+     "date": "2022-08",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0056",
+    "PK-0057",
+    "PK-0059"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0055.md"
+  },
+  {
+   "id": "PK-0056",
+   "title": "新品0到30单高效省钱三步法：极致Listing→自动双组起步+出单词手动渐进→Vine+索评，一个月盈利",
+   "knowledge_type": "playbook",
+   "authority": "C",
+   "confidence": 0.5,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "标品"
+    ],
+    "lifecycle_stage": [
+     "新品期D0-30",
+     "成长期D30-90"
+    ],
+    "scene": [
+     "新品首推"
+    ],
+    "keyword_tier": [
+     "核心大词",
+     "次核心",
+     "精准长尾"
+    ],
+    "market_signal": [
+     "ABA排名",
+     "CPC",
+     "转化基准"
+    ],
+    "decision_metric": [
+     "CVR",
+     "ACOS",
+     "自然位",
+     "曝光"
+    ],
+    "category_family": [
+     "家居"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告",
+     "站内自然"
+    ],
+    "data_source": [
+     "ABA",
+     "卖家精灵"
+    ],
+    "topic": [
+     "launch_new_product",
+     "lifecycle_overview",
+     "growth_scale"
+    ]
+   },
+   "statement": "标品新品**省钱稳健三步走**：①上架前极致优化（埋词+建模图+5视频铺满相关视频第一屏）；②广告从两个自动起步（高竞价跑词拓流 + 低竞价捡漏盈利），7 天后开 2 个最强词的单词单组手动精准，目标\"自然位第一大页\"而非第一小页，预算 10→20 封顶；③每周从广告报告捞表现好的词/ASIN 开出单词手动，大词（ABA<2W）单词单组、小词 3-5 词一组，自然位上首页后加开广泛匹配防守。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0110",
+     "locator": "高效省钱推品：新品从0到30单（home&kitchen标品案例）",
+     "date": "2023-03",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0057",
+    "PK-0058",
+    "PK-0059"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0056.md"
+  },
+  {
+   "id": "PK-0057",
+   "title": "白帽新品30天节奏：核心词15天上首页、30天稳30单；广告是推排名工具不是盈利工具，CVR 40%是及格线",
+   "knowledge_type": "playbook",
+   "authority": "C",
+   "confidence": 0.45,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "标品"
+    ],
+    "lifecycle_stage": [
+     "新品期D0-30"
+    ],
+    "scene": [
+     "新品首推"
+    ],
+    "keyword_tier": [
+     "核心大词"
+    ],
+    "market_signal": [
+     "竞争度",
+     "CPC"
+    ],
+    "decision_metric": [
+     "CVR",
+     "ACOS",
+     "自然位",
+     "评价数"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告",
+     "站内自然"
+    ],
+    "data_source": [
+     "卖家精灵",
+     "H10"
+    ],
+    "topic": [
+     "launch_new_product",
+     "lifecycle_overview",
+     "promotion_sop"
+    ]
+   },
+   "statement": "白帽新品节奏基准：**核心词 15 天进第一小页、30 天单量稳定 30+**。高竞争标品（首页首位竞价 $5-6）广告天然难盈利——把广告定位成\"推排名的杠杆\"：单价 $10-20 的产品 CVR≥40% 才算及格，ACOS 高于利润率也接受；Listing 按优秀同行改多版、QA 前 5 天铺 5 对、副视频占满 related videos 防流量外流。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0084",
+     "locator": "如何一个月把新品稳定在30+单量（白帽60天推品实录）",
+     "date": "2021-09",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0056",
+    "PK-0067"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0057.md"
+  },
+  {
+   "id": "PK-0058",
+   "title": "成长期稳步增量三步走：关键词表（ABA分层×相关性×类目转化率）→广告按目的分工→大促秒杀放大",
+   "knowledge_type": "playbook",
+   "authority": "C",
+   "confidence": 0.5,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "成长期D30-90"
+    ],
+    "scene": [
+     "新品首推",
+     "老品反超"
+    ],
+    "keyword_tier": [
+     "核心大词",
+     "次核心",
+     "精准长尾"
+    ],
+    "market_signal": [
+     "ABA排名",
+     "转化基准",
+     "竞争度"
+    ],
+    "decision_metric": [
+     "自然位",
+     "ACOS",
+     "CVR",
+     "BSR"
+    ],
+    "category_family": [
+     "户外园艺"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告"
+    ],
+    "data_source": [
+     "ABA",
+     "商机探测器",
+     "卖家精灵"
+    ],
+    "topic": [
+     "growth_scale",
+     "lifecycle_overview",
+     "keyword_tiering"
+    ]
+   },
+   "statement": "出单不稳定链接（新品/待激活老品）稳步增量三步走：**①关键词表**——反查 BSR+新品榜最优 10 个竞品流量词，按 ABA 分层（<2W 大词 / 2-10W 次级 / >10W 长尾）×前台验相关性（前 10 自然位 ≥6 个同类为强相关）×商机探测品类目转化率排序；**②广告按目的分工**——推排名用 SP-Exact/Phrase 与主跑单词的自动，拓词用自动+广泛，打关联用 ASIN/类目定位，盈利用 ASIN 定位/SBV/SD；**③大促秒杀放大**——LD/BD 推排名后接稳量动作。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0108",
+     "locator": "出单不稳定链接如何稳步增量实现盈利（关键词表/广告目的/标非标架构）",
+     "date": "2023-03",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0056",
+    "PK-0059",
+    "PK-0066"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0058.md"
+  },
+  {
+   "id": "PK-0059",
+   "title": "标品vs非标品打法分野：标品打搜索流量（精准/词组推自然位），非标品开流量入口打关联（词组广泛+ASIN类目定位+自然关联）",
+   "knowledge_type": "mechanism",
+   "authority": "C",
+   "confidence": 0.55,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "标品",
+     "非标品"
+    ],
+    "lifecycle_stage": [
+     "新品期D0-30",
+     "成长期D30-90"
+    ],
+    "scene": [
+     "新品首推",
+     "通用"
+    ],
+    "keyword_tier": [
+     "核心大词",
+     "流量词"
+    ],
+    "market_signal": [
+     "转化基准",
+     "竞争度"
+    ],
+    "decision_metric": [
+     "自然位",
+     "CVR",
+     "曝光"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告",
+     "站内自然",
+     "关联流量"
+    ],
+    "data_source": [
+     "通用"
+    ],
+    "topic": [
+     "standard_vs_nonstandard",
+     "keyword_tiering"
+    ]
+   },
+   "statement": "标品与 非标品的推广主轴不同：**标品主攻搜索流量**——转化率 ≥10% 的类目用精准匹配打自然位、5-10% 用词组匹配，靠持续点击成交把自然位从第 3 页推到第 1 页；**非标品主攻关联流量**——SP 词组/广泛 + SP/SB/SD 的 ASIN 与类目定位铺竞品页面 + 自然关联（New Model、捆绑、品牌故事 ASIN 卡、A+ 对比模块、Amazon Post、购买折扣），整体出单量起来后关键词自然排名自然跟随。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-3232",
+     "locator": "浅谈关键词自然排名（标品/非标品分野八大问）",
+     "date": "2024-12",
+     "authority": "C"
+    },
+    {
+     "source_id": "SRC-0138",
+     "locator": "推品首要条件：标/非标品关键词表搭建实操",
+     "date": 2023,
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0056",
+    "PK-0058",
+    "PK-0060"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0059.md"
+  },
+  {
+   "id": "PK-0060",
+   "title": "新品定价三策略与CPC上限反推：高价+大coupon/中价/低价三选一；新品CPC不得超过盈亏平衡反推值；价格切勿与竞品同价",
+   "knowledge_type": "playbook",
+   "authority": "C",
+   "confidence": 0.5,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "立项期",
+     "新品期D0-30"
+    ],
+    "scene": [
+     "新品首推"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "竞争度",
+     "CPC"
+    ],
+    "decision_metric": [
+     "价格",
+     "CPC",
+     "ACOS",
+     "CVR"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "促销活动",
+     "站内广告"
+    ],
+    "data_source": [
+     "商机探测器",
+     "卖家精灵"
+    ],
+    "topic": [
+     "standard_vs_nonstandard",
+     "pricing_strategy"
+    ]
+   },
+   "statement": "新品定价三选一：**高价+大 Coupon（如 50%）**切入给促销留利润空间、**中价**、**低价**——唯独不要与竞品同价（易被判价格同质化且先被 PK），等排名稳定后再回到对标价。新品 CPC 护栏用三法交叉：①关键词预估均值；②毛利分段（$10 内低价品=毛利 1/5-1/10；$50 中价=1/10-1/15；$100+ 高价=1/15-1/20 甚至 1/30）；③**ACOS=CPC/CR/UOV 反推**：把预期转化率与盈亏平衡 ACOS 代入，得出基础竞价上限，新品出价绝不超过它。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-3258",
+     "locator": "新品推广计划关注指标（价格策略/CPC/转化率三来源）",
+     "date": "2024-06",
+     "authority": "C"
+    },
+    {
+     "source_id": "SRC-3306",
+     "locator": "非标品新品打法分享（高价+高coupon切入）",
+     "date": "2024-01",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0059",
+    "PK-0056"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0060.md"
+  },
+  {
+   "id": "PK-0061",
+   "title": "中低客单价标品推广历程：图片对标美国卖家审美、ST词序与标题错开、定价过高卡死新品（30+刀滞销降 to 20+刀即出单）、1自动+1手动+SBV架构",
+   "knowledge_type": "case_study",
+   "authority": "C",
+   "confidence": 0.45,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "标品"
+    ],
+    "lifecycle_stage": [
+     "新品期D0-30"
+    ],
+    "scene": [
+     "新品首推"
+    ],
+    "keyword_tier": [
+     "核心大词",
+     "流量词"
+    ],
+    "market_signal": [
+     "竞争度",
+     "市场份额"
+    ],
+    "decision_metric": [
+     "价格",
+     "CVR",
+     "曝光",
+     "评价数"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告",
+     "站内自然"
+    ],
+    "data_source": [
+     "ABA",
+     "Vine"
+    ],
+    "topic": [
+     "standard_vs_nonstandard",
+     "launch_new_product",
+     "pricing_strategy"
+    ]
+   },
+   "statement": "中低客单标品新品最大的坑是**定价脱离市场承受度**：品牌集中度 80.7%、核心词 ABA 约 10 万的工具类标品，$30+ 定价即使挂 20% code 也广告单 1、自然单 0、Vine 无人领；降价到 $20+ 后 4-5 天 Vine 开始被领、广告陆续出单——新品期定价是转化的第一闸门，价格错了广告和 Vine 都救不动。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-3235",
+     "locator": "美国站中低客单价标品的推广历程（工具类，品牌集中度80.7%）",
+     "date": "2024-12",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0059",
+    "PK-0060",
+    "PK-0067"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0061.md"
+  },
+  {
+   "id": "PK-0062",
+   "title": "非标品新品打法流程：类目分析→词根法词库（SIF拓词20竞品5/10/5配比）→高价高coupon切入→精铺关键词，转化率数据用商机探测器校准",
+   "knowledge_type": "playbook",
+   "authority": "C",
+   "confidence": 0.5,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "非标品"
+    ],
+    "lifecycle_stage": [
+     "立项期",
+     "新品期D0-30"
+    ],
+    "scene": [
+     "新品首推"
+    ],
+    "keyword_tier": [
+     "核心大词",
+     "精准长尾",
+     "流量词"
+    ],
+    "market_signal": [
+     "搜索量趋势",
+     "竞争度",
+     "季节性"
+    ],
+    "decision_metric": [
+     "价格",
+     "CPC",
+     "CVR"
+    ],
+    "category_family": [
+     "家居"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内广告",
+     "关联流量"
+    ],
+    "data_source": [
+     "SIF",
+     "商机探测器",
+     "H10"
+    ],
+    "topic": [
+     "standard_vs_nonstandard",
+     "launch_new_product",
+     "keyword_tiering"
+    ]
+   },
+   "statement": "非标品新品五步：**①类目分析**（增长-类目分析锁定价格带/场景/偏好颜色）；**②词库**——词根法 + SIF 拓词收集箱，选 20 个直接对标 ASIN（头部爆品 5 + 腰部 10 + 新品榜 5），用核心词流量趋势判断生命周期与流量时段、用商机探测器看供需竞争；**③价格**——高价+高 Coupon 切入（留出活动利润），盈亏演算见 PK-0060；**④流量入口**——关联流量为主轴（PK-0059）；**⑤精铺**——按搜索量与词根精准度决定关键词切入时间。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-3306",
+     "locator": "非标品新品打法分享（词根法词库+竞品配比）",
+     "date": "2024-01",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0059",
+    "PK-0060",
+    "PK-0058"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0062.md"
+  },
+  {
+   "id": "PK-0063",
+   "title": "老品激活·7天秒杀实操：目标先行（词上首页+日均单量+秒杀后稳态）、预算翻倍推词、每天0点按数据阶梯加预算、副变体站外兜底",
+   "knowledge_type": "playbook",
+   "authority": "C",
+   "confidence": 0.5,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "标品"
+    ],
+    "lifecycle_stage": [
+     "成长期D30-90",
+     "断货重启"
+    ],
+    "scene": [
+     "断货重推",
+     "老品反超"
+    ],
+    "keyword_tier": [
+     "核心大词"
+    ],
+    "market_signal": [
+     "ABA排名",
+     "竞争度"
+    ],
+    "decision_metric": [
+     "自然位",
+     "BSR",
+     "曝光",
+     "ACOS"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "促销活动",
+     "站内广告"
+    ],
+    "data_source": [
+     "ABA"
+    ],
+    "topic": [
+     "relink_relaunch",
+     "restock_relaunch",
+     "peak_season"
+    ]
+   },
+   "statement": "老品激活用 **7 天秒杀 + 广告预算翻倍**的组合拳：秒杀前定三重目标（核心词 A/B 冲首页、日均约 100 单、秒杀后稳态 60-80 单/排名 35-45）；执行上每天 PST 0 点按前日数据阶梯加预算（案例 50→100→130→150→170 美金），秒杀价拿绝对价格优势（市场头部 10.99-11.99 时秒杀价 7.64），副变体平时不打广告、主变体推不动时放站外拉动。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0079",
+     "locator": "激活老品实操案例复盘（7天秒杀1159件，3个核心词上首页）",
+     "date": "2021-11",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0057",
+    "PK-0064",
+    "PK-0070"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0063.md"
+  },
+  {
+   "id": "PK-0064",
+   "title": "Listing翻新操作流程与雷区：新SKU新ASIN先建→跟卖老ASIN防变狗→删老ASIN→模板刷一致→开case映射→删自发货；全程防被系统Merge",
+   "knowledge_type": "playbook",
+   "authority": "C",
+   "confidence": 0.4,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "衰退清仓",
+     "断货重启"
+    ],
+    "scene": [
+     "换链接重上",
+     "排名恢复"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "通用"
+    ],
+    "decision_metric": [
+     "评价数",
+     "BSR"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "通用"
+    ],
+    "data_source": [
+     "SP-API"
+    ],
+    "topic": [
+     "relink_relaunch"
+    ]
+   },
+   "statement": "翻新 = 让老 SKU 继承新 ASIN 的\"新品流量\"同时保留评论资产。标准七步：①新 SKU+新 ASIN 建自发货（需审核品类先建 FBA 过审再转自发货）；②另一新 SKU 跟卖老 ASIN 防删后变狗；③模板删老 ASIN（全球站点同删，等 24h）；④老 SKU+新 ASIN 直选 FBA 重建；⑤模板把新旧文案/图片/参数刷成一致，**尽早**开 case；⑥找账户安全团队 remap（please remap the sku:老SKU to ASIN:新ASIN）；⑦删两个自发货、删老 ASIN 残留图文。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0206",
+     "locator": "翻新教程25.9.8（7步操作+3注意事项）",
+     "date": "2025-09",
+     "authority": "C"
+    },
+    {
+     "source_id": "SRC-0130",
+     "locator": "61.最新Listing翻新教程图文详解",
+     "date": 2022,
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0063",
+    "PK-0065"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0064.md"
+  },
+  {
+   "id": "PK-0065",
+   "title": "Merge合并打法：新listing细节与原listing一致→转FBA→详情页合并工具填新旧ASIN→1-2工作日继承评论与库存；只能合相同/相似品，不能删差评",
+   "knowledge_type": "playbook",
+   "authority": "C",
+   "confidence": 0.4,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "衰退清仓",
+     "断货重启"
+    ],
+    "scene": [
+     "换链接重上"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "通用"
+    ],
+    "decision_metric": [
+     "评价数",
+     "BSR"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "通用"
+    ],
+    "data_source": [
+     "SP-API"
+    ],
+    "topic": [
+     "relink_relaunch"
+    ]
+   },
+   "statement": "Merge（详情页合并）是翻新的替代路径：新建一条与原 listing 细节一致的新 listing → 转 FBA（不必真发货）→ 用后台\"如何合并商品详情页面\"工具填新 ASIN+待删 ASIN+理由 → 1-2 个工作日合并，旧 ASIN 删除、**库存直接转到新 ASIN**（省去海外仓换标贴标费）。价值：受限 ASIN 免移仓、正常 ASIN 借新品流量提排名、合并变体涨评论。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0186",
+     "locator": "亚马逊Merge详细教程（操作+三注意+总结）",
+     "date": "2024-02",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0064",
+    "PK-0063"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0065.md"
+  },
+  {
+   "id": "PK-0066",
+   "title": "ABA品牌分析权限与用法：仅品牌所有者可用5大报告；搜索词报告按搜索频率排名分层选词；品牌所有者比授权卖家多ABA/Vine/管理实验等权限",
+   "knowledge_type": "policy",
+   "authority": "C",
+   "confidence": 0.5,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "通用"
+    ],
+    "scene": [
+     "通用"
+    ],
+    "keyword_tier": [
+     "核心大词",
+     "次核心",
+     "精准长尾"
+    ],
+    "market_signal": [
+     "ABA排名",
+     "搜索量趋势"
+    ],
+    "decision_metric": [
+     "自然位",
+     "曝光"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内自然"
+    ],
+    "data_source": [
+     "ABA",
+     "商机探测器"
+    ],
+    "topic": [
+     "aba_analysis",
+     "keyword_research_tools"
+    ]
+   },
+   "statement": "ABA（Amazon Brand Analytics）只有**品牌所有者**能用，含 5 大报告（搜索词/人数统计/商品比较与替代购买/市场篮子/重复购买）；推广侧最常用的是搜索词报告的**搜索频率排名**：按 <2W / 2W-10W / >10W 把词切成大词/次级/长尾三层（经验切分），配合前台验相关性生成词表。权限缺失时后台搜\"品牌分析\"查资格，仍不可用需联系品牌注册支持。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0133",
+     "locator": "亚马逊品牌分析(ABA)怎么用（5大报告+权限区别）",
+     "date": "2021-10",
+     "authority": "C"
+    },
+    {
+     "source_id": "SRC-0108",
+     "locator": "关键词表搭建中的ABA分层用法",
+     "date": "2023-03",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0058",
+    "PK-0060"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0066.md"
+  },
+  {
+   "id": "PK-0067",
+   "title": "新品评价获取谱系与合规边界：合规=后台索评+Vine+发票索评；灰色=明信片返现邀评（真实订单但返现违规）；黑帽=无限ZP/炮灰Vine/Woot刷单（账号级风险，禁用）",
+   "knowledge_type": "diagnostic",
+   "authority": "C",
+   "confidence": 0.45,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "新品期D0-30",
+     "成长期D30-90"
+    ],
+    "scene": [
+     "新品首推",
+     "断货重推"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "转化基准"
+    ],
+    "decision_metric": [
+     "评价数",
+     "CVR"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "通用"
+    ],
+    "data_source": [
+     "Vine"
+    ],
+    "topic": [
+     "review_velocity",
+     "launch_new_product"
+    ]
+   },
+   "statement": "新品评价按风险分三档：**合规档**（首选）——后台\"请求评论\"按钮/ERP 自动邀评（购买后第 7 天、美区时间 10-14 点发送，差评风险品先发使用指导邮件拦截差评）、官方 Vine（直报或服务商定制，多站点叠加）、真实订单索评；**灰色档**（自担风险）——明信片/信件向真实订单地址邀评并附返现激励：真实购买所以不易被判定刷单，但返现激励本身违反平台政策，回评率约 8%、单评论成本约 $8.8；**黑帽档（禁用）**——无限 ZP 拆变体合并上评、炮灰账号 Vine、Woot 刷单，账号级风险。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0162",
+     "locator": "明信片邀评Q&A（成本/回评率/安全性自述）",
+     "date": "2024-11",
+     "authority": "C"
+    },
+    {
+     "source_id": "SRC-3307",
+     "locator": "怎么获取评价的方法（合规+违规清单）",
+     "date": "2025-04",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0057",
+    "PK-0056"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0067.md"
+  },
+  {
+   "id": "PK-0068",
+   "title": "A+品牌故事（Brand Story）：详情页'来自品牌'专属位，5-7模块可挂轮播19卡（品牌卡/四ASIN卡/问答卡），官方口径可带来约5%销量提升",
+   "knowledge_type": "policy",
+   "authority": "C",
+   "confidence": 0.55,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "新品期D0-30",
+     "成长期D30-90",
+     "成熟期D90+"
+    ],
+    "scene": [
+     "新品首推",
+     "通用"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "通用"
+    ],
+    "decision_metric": [
+     "CVR"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内自然",
+     "关联流量"
+    ],
+    "data_source": [
+     "通用"
+    ],
+    "topic": [
+     "listing_assets"
+    ]
+   },
+   "statement": "品牌故事（Brand Story）是 A+ 之外的独立模块，占据详情页\"来自品牌\"位置：品牌所有者可用 5-7 个内容模块，轮播最多 19 张卡片（品牌关于卡 / 品牌+四 ASIN 卡 / 品牌问答卡三类模板），卡片可直链其他 ASIN 和旗舰店——它同时是**品牌叙事位**和**免费关联流量位**；官方口径可能带来约 5% 销量提升。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0128",
+     "locator": "59.亚马逊新A+功能：品牌故事图文详解",
+     "date": "2021-12",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0069",
+    "PK-0059"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0068.md"
+  },
+  {
+   "id": "PK-0069",
+   "title": "品牌旗舰店最佳实践：按购物者决策树建导航（磁贴分组+主题集合），旗舰店销售高于普通销售51%（官方案例口径），引流到旗舰店而非商品页",
+   "knowledge_type": "policy",
+   "authority": "B",
+   "confidence": 0.7,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "成长期D30-90",
+     "成熟期D90+"
+    ],
+    "scene": [
+     "通用"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "市场份额"
+    ],
+    "decision_metric": [
+     "CVR",
+     "曝光"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站内自然",
+     "站内广告"
+    ],
+    "data_source": [
+     "通用"
+    ],
+    "topic": [
+     "listing_assets"
+    ]
+   },
+   "statement": "品牌旗舰店是免费的自助品牌购物区：**导航按购物者决策树**设计（磁贴按品类/商品类型/用途/需求分组，用主题/生活风尚/性别集合替代商品网格），子页底部互链延长浏览路径；官方案例口径旗舰店销售比普通亚马逊销售高 +51%，站外与站内广告引流**到旗舰店而不是商品列表页**效果更好；素材上要求高分辨率明亮图片、双端适配、零错别字（错误会拖长审批）。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0239",
+     "locator": "品牌旗舰店最佳做法指南（Amazon Advertising 官方）",
+     "date": 2018,
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0068",
+    "PK-0024"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0069.md"
+  },
+  {
+   "id": "PK-0070",
+   "title": "大促秒杀选型：会员日报会员专享折扣优于秒杀（同款蓝色标志+Today Deal栏目）；黑五报限时秒杀LD、网一报7天秒杀BD；秒杀是锦上添花，差链接不报",
+   "knowledge_type": "playbook",
+   "authority": "C",
+   "confidence": 0.5,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "成长期D30-90",
+     "成熟期D90+"
+    ],
+    "scene": [
+     "旺季大促"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "季节性"
+    ],
+    "decision_metric": [
+     "BSR",
+     "价格",
+     "曝光"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "促销活动"
+    ],
+    "data_source": [
+     "通用"
+    ],
+    "topic": [
+     "peak_season"
+    ]
+   },
+   "statement": "大促报活动先分诊：**日常排名销量差的链接直接放弃**（秒杀费上千美金，秒杀是锦上添花）；能报的按大促选型——**会员日**：会员专享折扣优先（前台同样有蓝色折扣标志，且 Today Deal 栏目推荐专享折扣，两天秒杀仅几小时）；**黑五**：报限时秒杀 LD；**网一**：报 7 天秒杀 BD，时间无缝衔接。DOTD 是大卖专属，需提前一年按 DOTD 价格倒推控制日常售价，小卖不碰。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0124",
+     "locator": "黑五网一是报秒杀还是会员专享折扣",
+     "date": "2021-08",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0063",
+    "PK-0072"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0070.md"
+  },
+  {
+   "id": "PK-0071",
+   "title": "滞销清货认知：先归因（选错品/季节品/差评下架/断货断流）再分阶段清（降价→ Coupon/秒杀 →站外→批发/清货商→销毁），清货本质是管理问题",
+   "knowledge_type": "diagnostic",
+   "authority": "C",
+   "confidence": 0.5,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "衰退清仓"
+    ],
+    "scene": [
+     "淡季维持"
+    ],
+    "keyword_tier": [
+     "捡漏词"
+    ],
+    "market_signal": [
+     "季节性"
+    ],
+    "decision_metric": [
+     "库存天数",
+     "价格",
+     "ACOS"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站外Deal",
+     "促销活动"
+    ],
+    "data_source": [
+     "通用"
+    ],
+    "topic": [
+     "off_season",
+     "decline_clearance"
+    ]
+   },
+   "statement": "清货第一步不是降价而是**归因**：①选品误判型（首批卖光后大量备货遇满屏低价竞品）；②季节型（高峰低谷差大、供应链/资金/技术撑不住大类目季节品）；③口碑塌方型（差评/投诉/反复下架申诉）；④管理型（补货与推广脱节）。归因决定路径——季节型等下一个旺季窗口、口碑型先止损、管理型改流程；然后按\"降价 → Coupon/秒杀 → 站外放量 → 批发/清货商 → 弃置销毁\"的阶梯分阶段执行并追踪数据，避免一步跳到最低价。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-3267",
+     "locator": "亚马逊滞销清货你应该要有的认知（413号木木）",
+     "date": "2024-07",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0072",
+    "PK-0063"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0071.md"
+  },
+  {
+   "id": "PK-0072",
+   "title": "Woot通道：亚马逊官方旗下渠道，连续7/14天BD价格不变+库存原路返回+结束后购物车评论排名归还卖家；可代投SP/SD广告；提报需PO额1万美金与最低评价数",
+   "knowledge_type": "mechanism",
+   "authority": "C",
+   "confidence": 0.5,
+   "status": "reviewed",
+   "tags": {
+    "product_type": [
+     "通用"
+    ],
+    "lifecycle_stage": [
+     "衰退清仓",
+     "成长期D30-90"
+    ],
+    "scene": [
+     "淡季维持",
+     "断货重推"
+    ],
+    "keyword_tier": [
+     "通用"
+    ],
+    "market_signal": [
+     "通用"
+    ],
+    "decision_metric": [
+     "BSR",
+     "库存天数",
+     "价格",
+     "评价数"
+    ],
+    "category_family": [
+     "通用"
+    ],
+    "marketplace": [
+     "US"
+    ],
+    "channel": [
+     "站外Deal",
+     "促销活动"
+    ],
+    "data_source": [
+     "通用"
+    ],
+    "topic": [
+     "off_season",
+     "decline_clearance",
+     "peak_season"
+    ]
+   },
+   "statement": "Woot（亚马逊旗下，国内经巧豚豚等服务商提报）是\"清货+推排名\"双用通道：库存由 Woot 从 FBA 划走运营，**活动未卖完原路退回省仓储费**；连续 7 天 BD 且价格可全程不变（或 14 天 BD，每轮间隔 7 天、每月最多 21 天）；活动结束购物车、销量、评论、排名自动归还卖家。期间卖家广告不可投，可让 Woot **代投 SP/SD**（方案卖家定、预算预付多还少补，每周二至六返数据、周二至五可提调整）。",
+   "parameters": {},
+   "sources": [
+    {
+     "source_id": "SRC-0218",
+     "locator": "WOOT运作规则与广告投放详解（优势/套餐/提报要求/代投广告）",
+     "date": "2024-06",
+     "authority": "C"
+    }
+   ],
+   "conflicts_with": [],
+   "related": [
+    "PK-0071",
+    "PK-0063"
+   ],
+   "starsky_hooks": [],
+   "newest_source_date": null,
+   "stale": false,
+   "file": "cards/PK-0072.md"
+  }
+ ],
+ "playbooks": []
+}

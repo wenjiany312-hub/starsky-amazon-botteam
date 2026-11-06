@@ -1,0 +1,26 @@
+schema_version: "1.0"
+selling_price: null
+contribution_margin_before_ads: null
+target_acos: null
+market_cpc_signal:
+  value: null
+  source_class: market_evidence
+  source_id: ""
+intent_factor: 1.0
+safety_factor: 1.0
+cvr_scenarios:
+  - scenario_id: BASE
+    cvr: null
+    clicks: null
+    orders: null
+    source_class: account_current_fact
+    source_id: ""
+current_adjustment_rule:
+  composition: multiplicative | additive_on_base
+  platform_max_multiplier: null
+  adjustments:
+    - name: placement
+      percent: null
+  source_class: account_current_fact
+  source_id: ""
+

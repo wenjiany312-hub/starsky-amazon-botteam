@@ -1,0 +1,12 @@
+schema_version: "1.0"
+from_skill: amazon-ad-campaign-builder
+to_skill: amazon-bulk-upload
+plan_ref: {plan_id: "", plan_version: 1, plan_hash: "", hash_schema: ad-plan-c14n-v1}
+strategy_ref: {strategy_id: "", strategy_version: 1, strategy_hash: ""}
+status: blocked  # blocked | awaiting_review | ready_for_bulk
+prerequisites:
+  human_review_approved: false
+  production_identifiers_confirmed: false
+  official_template_supplied: false
+  plan_hash_reverified: false
+instructions: []

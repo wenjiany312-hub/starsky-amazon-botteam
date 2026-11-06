@@ -1,0 +1,33 @@
+schema_version: "1.0"
+edition: starsky-v2
+enterprise_id: ""
+default_mode: "base"  # base | category | enterprise_category
+user_facing_modes: ["通用模式", "加载资料包"]
+data_pack_route:
+  external_root: ""
+  category_display_name: ""
+  category_relative_path: ""
+  allow_free_form_category: true
+  allow_nested_category_path: true
+  create_missing_category_folder_when_root_writable: true
+  built_in_playbooks_are_optional_seeds: true
+last_confirmed:
+  mode: ""
+  category_id: ""
+  category_overlay: ""
+  enterprise_overlay: ""
+  overlay_version: ""
+routes: []
+# routes item example:
+# - category_id: "apparel"
+#   aliases: ["服装", "apparel"]
+#   product_forms: ["non_standard"]
+#   category_overlay: "categories/apparel/playbook_overlay.yaml"
+#   enterprise_overlay: "enterprise_profile.yaml"
+#   enabled: true
+selection_policy:
+  recommend_last_confirmed: false
+  ask_only_if_material_ambiguity: true
+  allow_user_override: true
+  do_not_treat_routes_as_category_allow_list: true
+updated_at: ""

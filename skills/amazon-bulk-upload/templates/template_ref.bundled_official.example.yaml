@@ -1,0 +1,15 @@
+# 使用 Skill 内置官方模板时的 template_ref 标准填法。
+# 用法：复制本文件为 S4_广告板块/amazon-bulk-upload/bulk/input/template_ref.yaml；同时把 Skill 根目录的
+# AmazonAdvertisingBulksheetSellerTemplate.xlsx 复制到 S4_广告板块/amazon-bulk-upload/bulk/input/ 作为 --template。
+# marketplace/locale 按本轮计划实际站点修改；file_sha256 与内置表一致，勿改。
+schema_version: "1.0"
+source: skill_bundled_official
+downloaded_at: "2026-08-29"  # 内置官方表随 Skill 分发/更新的日期
+marketplace: US
+locale: en-US
+ad_product: SP
+sheet_name: Sponsored Products Campaigns
+adapter: SP_V1
+blank_template: true
+file_sha256: "sha256:e1d85f4fcc571ac091ab5723cc31d4a60b89792b6a919a283303aa7800a36a7f"
+column_map: {}

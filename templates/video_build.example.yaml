@@ -1,0 +1,85 @@
+schema_version: "1.0"
+# ====================================================================
+# 出片配置 —— 给 <home>/scripts/视频出片.py 用
+#
+# 落位：{产品根}/出片配置.yaml
+# 跑法：python <home>/scripts/视频出片.py {产品根}/出片配置.yaml
+#
+# 它做的事：即梦下载回来的分段 → 归一化 → 拼接 → 垫背景音乐
+#           → 母版（无字幕）→ 按投放位派生 + 叠该画幅专属字幕 → 规格校验
+#
+# ⛔ 它不替代剪映。调节奏、转场、精修仍在剪映做。两种用法二选一：
+#    A. 节奏简单的产品片：直接用本脚本一把出三个位
+#    B. 剪映精修完导出一条 16:9 母版，本脚本只做派生+校验：
+#         python 视频出片.py 出片配置.yaml --from-master 剪映导出.mp4
+#
+# ⛔ 所有路径相对本文件所在目录。
+# ====================================================================
+
+slug: dog_raincoat_us
+
+# 投放位规格：全平台通用，用工具包那一份，⛔ 不要复制进每个产品目录
+specs: <home>/templates/video_placement_specs.example.yaml
+
+# 样式令牌：只用来取补边色（palette.plate_bg），与图片链是同一份
+style_tokens: S3_视觉板块/amazon-listing-image-designer/visual_style_tokens.yaml
+
+output_dir: video_exports
+master_filename: master__16x9.mp4
+
+# -------------------------------------------------- 母版参数
+master:
+  width: 1920
+  height: 1080
+  fps: 30
+  video_bitrate: "6M"
+  # ⛔ 别低于 192k。AAC 编数字静音几乎不耗码率，片子里只要有安静段落，
+  #    整片**平均**音频码率就会掉到 Amazon 的 96kbps 下限以下。
+  #    实测：16s 片含 6s 静音时，即便给到 192k，平均也只有 94kbps。
+  #    真正治本的是下面的 music（垫一条连续的背景音乐）。
+  audio_bitrate: "192k"
+
+# -------------------------------------------------- 背景音乐（强烈建议）
+# 即梦有些段没有音轨，拼起来就是数字静音。垫一条贯穿全片的音乐，
+# 既满足 SBV「必须有音轨」，也把平均码率顶上去。
+# ⛔ 只用你有权使用的音乐（剪映曲库 / 免版税库），不要用流行歌。
+music:
+  file: assets/bed.mp3
+  volume: 0.18          # 压低，别盖过产品原声
+
+# -------------------------------------------------- 分段（按顺序）
+# 从即梦下载后回填到 S3_视觉板块/amazon-product-video-director/video_exports/clips/
+# 分辨率/帧率/有无音轨不一致没关系，脚本会统一
+clips:
+  - { file: S3_视觉板块/amazon-product-video-director/video_exports/clips/clip_01.mp4 }
+  - { file: S3_视觉板块/amazon-product-video-director/video_exports/clips/clip_02.mp4 }
+  - { file: S3_视觉板块/amazon-product-video-director/video_exports/clips/clip_03.mp4 }
+
+# -------------------------------------------------- 字幕（按画幅分组）
+# 透明 PNG 由 叠字渲染器.py 从 S3_视觉板块/amazon-listing-image-designer/overlay_tasks.yaml 产出，
+# 与 Listing 图、A+ 共用同一份 visual_style_tokens.yaml。
+#
+# ⛔ 横版竖版**各一套**。字幕是在派生之后按各自画幅叠的，
+#    不是把横版字幕跟着画面一起缩小 —— 那样竖版补出来的上下带全浪费。
+subtitles:
+  video_16x9:
+    - { png: S3_视觉板块/amazon-product-video-director/video_exports/subtitles/S01_lower.png,      start: 1.0,  end: 5.0 }
+    - { png: S3_视觉板块/amazon-product-video-director/video_exports/subtitles/END_card.png,       start: 12.5, end: 16.0 }
+  video_9x16:
+    - { png: S3_视觉板块/amazon-product-video-director/video_exports/subtitles/S01_lower_9x16.png, start: 1.0,  end: 5.0 }
+    - { png: S3_视觉板块/amazon-product-video-director/video_exports/subtitles/END_card_9x16.png,  start: 12.5, end: 16.0 }
+
+# -------------------------------------------------- 要出哪几个投放位
+outputs:
+  - { placement: listing_main,   file: dog_raincoat__listing_main.mp4 }
+  - { placement: aplus_module,   file: dog_raincoat__aplus_module.mp4 }
+  - { placement: sbv_horizontal, file: dog_raincoat__sbv_horizontal.mp4 }
+  # 竖版默认在规格文件里是 enabled: false；
+  # 确认你的站点支持 SBV 竖版素材后再开
+  # - { placement: sbv_vertical, file: dog_raincoat__sbv_vertical.mp4 }
+
+# ====================================================================
+# 文件名约定：{slug}__{placement}.mp4
+#   规格校验器靠 __ 后面那段识别投放位。
+#   master__ 开头的文件、clips/ 与 subtitles/ 目录会被自动跳过。
+# ====================================================================

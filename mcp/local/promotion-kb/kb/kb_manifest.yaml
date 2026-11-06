@@ -1,0 +1,17 @@
+{
+ "schema_version": "1.0",
+ "name": "产品推广知识库",
+ "created": "2026-09-18",
+ "updated": "2026-09-27",
+ "skill": "amazon-ad-knowledge-learner",
+ "sister_kb": "<bundled-promotion-kb>",
+ "stats": {
+  "sources": 556,
+  "sources_pending": 0,
+  "cards": 72,
+  "playbooks": 3
+ },
+ "products_note": "2026-09-26 起本库只存通用推广知识，不再内置自家店铺产品档案。三条产品线的完整档案（含关键词包/竞争快照/推广方案/复盘）已整体迁往店铺运营库，旧 dir 字段改为 dir_moved 仅作追溯，本库发布打包时不含任何店铺数据。",
+ "products_moved_home": "<bundled-promotion-kb>",
+ "updated_at": "2026-09-27T09:21:20"
+}

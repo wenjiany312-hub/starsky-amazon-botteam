@@ -1,0 +1,28 @@
+schema_version: "1.0"
+purpose: "每条 Bullet 的产品事实、关键词、Alexa 问题与 VOC 防御四联账本"
+unsupported_claim_terms: []
+bullets:
+  - bullet_id: B1
+    heading_en: ""
+    heading_zh: ""
+    copy_en: ""
+    char_count: 0
+    structure:
+      outcome: ""
+      feature: ""
+      use_case: ""
+    evidence_ids: []
+    embedded_keywords: []
+    alexa_questions_answered: []
+    voc_defense:
+      pain_point_ids: []
+      competitor_review_quotes: []
+      product_response: ""
+    unsupported_or_conditional_claims: []
+    compliance_checks: []
+acceptance_checks:
+  - "每条 Bullet 只写 evidence 支持的功能"
+  - "关键词、Alexa 问题与 VOC 防御逐条可追溯"
+  - "Outcome/Feature/Use Case 信息齐全但不机械要求每句同构"
+  - "不适用高流量词进入 unsupported_claim_terms，不硬埋"
+

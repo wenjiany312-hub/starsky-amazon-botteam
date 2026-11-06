@@ -1,0 +1,32 @@
+schema_version: "1.0"
+artifact_type: s5_ad_work_item
+status: example_only_not_executable
+state: needs_data
+entity:
+  store_key: STORE_KEY
+  marketplace: US
+  entity_type: campaign
+  native_id: null
+  name: EXAMPLE_CAMPAIGN
+facts:
+  w7_spend: 5.6
+  w7_clicks: 7
+  w7_orders: 0
+  sample: thin
+diagnosis:
+  primary: 有花费但尚无归因订单
+  alternatives:
+    - 归因未成熟
+    - 搜索词不相关
+    - 样本不够
+  kb_query: 花费无单样本不足
+proposed_actions:
+  - 保持
+  - 观察
+  - 补搜索词层再判断
+forbidden:
+  - pause_without_id
+  - call_waste_on_thin_sample
+  - write_ads_api
+approval_status: not_applicable
+note: 数值只作结构示例。7 次点击 0 单不是纯浪费，也不能据此暂停。

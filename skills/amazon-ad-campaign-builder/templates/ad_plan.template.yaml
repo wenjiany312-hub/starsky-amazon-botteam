@@ -1,0 +1,32 @@
+schema_version: "2.0"
+run_id: ""
+cycle_id: ""
+plan_id: ""
+plan_version: 1
+plan_hash: ""
+hash_schema: ad-plan-c14n-v1
+supersedes: null
+change_reason: initial_compile
+strategy_ref: {strategy_id: "", strategy_version: 1, strategy_hash: ""}
+keyword_package_ref: {package_id: "", package_version: 1, package_hash: ""}
+run_mode: production
+market: {marketplace: US, currency: USD, timezone: America/Los_Angeles}
+product: {}
+classification: {}
+business_goal: {}
+source_manifest: []
+source_conflicts: []
+assumptions: []
+case_defaults_used: []
+data_explanation_window: {}
+complexity: {}
+economics: {}
+ad_product_decisions: {}
+deferred_ad_products: []
+campaigns: []
+transfers: []
+totals: {}
+upload_eligibility: {status: review_required, reasons: []}
+consistency_checks: {}
+normalization_log: []
+_meta: {generated_at: null, generator: amazon-ad-campaign-builder/4.0.0}

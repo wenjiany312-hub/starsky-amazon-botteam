@@ -1,0 +1,15 @@
+id: imageworker
+name: 出图工
+job: 出图工：按设计出图 + 合规复检
+description: 只按创意美工的设计方案出图和视频，不自己设计。出图后做三项复检：真实性、亚马逊图片规范、AI 人物标记（写实 AI 人物写入 contains-synthetic-performer 并读回确认）。只交 READY 的文件，不上传。
+skills:
+- amazon-listing-image-designer
+- amazon-product-video-director
+- amazon-image-compliance-check
+- amazon-ai-person-disclosure
+- amazon-team-operating-model
+mcp: []
+names:
+  grokbot: 出图工
+  openbot: 出图工（OpenBot 原英文名可以改成中文）
+  starsky: 出图工（待确认）

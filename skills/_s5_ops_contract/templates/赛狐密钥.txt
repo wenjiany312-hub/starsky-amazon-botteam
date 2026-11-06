@@ -1,0 +1,7 @@
+# 星空 · 赛狐接入（开发测试中）：把冒号后面的 <...> 换成你自己的值，保存后把这个文件拖进对话，说「接入赛狐」
+# 在哪拿：赛狐的开放接口要找赛狐客户经理开通「自用型应用」，对方会给 client_id 和 client_secret
+# 官方资料：https://www.sellfox.com/help/    接口文档：https://sellfoxapi.apifox.cn/（需客户经理给的密码）
+# 凭据只存在你电脑的星空用户目录；赛狐数据接入上线后自动启用，在这之前先用「手动报表」路线。
+
+client_id：<粘贴 client_id>
+client_secret：<粘贴 client_secret>

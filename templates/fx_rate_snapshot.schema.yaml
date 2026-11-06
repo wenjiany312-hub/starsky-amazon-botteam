@@ -1,0 +1,25 @@
+# 沙龙第二版 · 汇率快照契约
+# 生成：scripts/refresh_fx_snapshot.py → 写入 {run}/fx_rate_snapshot.yaml（Windows 与 Mac 通用，不再用 PowerShell）
+# 下方为一次真实产出的样例；字段含义见 templates/report_depth_and_demo_policy.md §3.4
+
+schema_version: "1.0"
+artifact_type: "fx_rate_snapshot"
+pair: "USD/CNY"
+quote_convention: "CNY per 1 USD"
+quote_status: "daily_reference"
+reference_rate: 6.781903
+source_name: "ExchangeRate-API open endpoint"
+source_url: "https://open.er-api.com/v6/latest/USD"
+source_as_of_utc: "Sat, 25 Jul 2026 00:02:32 +0000"
+next_source_update_utc: "Sun, 26 Jul 2026 00:17:02 +0000"
+retrieved_at_utc: "2026-07-25T09:08:20.9664313Z"
+live_quote_provider: "not_configured_or_fallback"
+settlement_override:
+  actual_settlement_rate: null
+  status: "not_received"
+fx_buffer:
+  rate_haircut_pct: 0.015
+  effective_purchase_rate: 6.680174455
+  formula: "effective_purchase_rate = reference_or_settlement_rate * (1 - rate_haircut_pct)"
+refresh_failures: []
+allowed_use: "internal_simulation_only"

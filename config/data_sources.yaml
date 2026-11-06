@@ -1,0 +1,66 @@
+# 数据来源配置：每个「店铺 × 站点」一个经营单元
+# 运行时用 {WORK}/config/data_sources.yaml（升级不丢）；这份是出厂默认值
+# 凭据不写在这里！凭据只在数据底座（星空旗舰 AI 智能广告终端）的接入向导里填
+schema_version: "1.2"
+decided_at: "2026-11-05"
+hub:
+  name: 星空旗舰 AI 智能广告终端
+  where: owner_computer                 # 数据底座跑在老板自己的电脑上，所有店铺 / ERP 接口都由它在这台电脑上调用
+  os: ""                                # mac | windows；运营总监第一次连通时问老板一次再填
+  locate: "Mac：~/.starsky-codex/current.json（没有就 ~/.starsky-claude/current.json）；Windows：%USERPROFILE%\\.starsky-codex\\current.json；只取 python 和 home 字段"
+  cli: "<python> <home>/skills/starsky-ads-terminal/scripts/terminal.py <命令>"
+  pack_dir: {mac: "~/星空上架资料包", windows: "%USERPROFILE%\\星空上架资料包"}   # 上架资料包在老板电脑上的位置：<SKU 短号>/listing|aplus|brand_story|update/
+  pack_spec: "{KIT}/docs/上架资料包规格.md"
+  pages: {dashboard: "http://127.0.0.1:8999", brief: "http://127.0.0.1:9001", review: "http://127.0.0.1:9001/review"}
+  access:
+    openbot: local
+    starsky: local
+    grokbot:
+      method: execution_on_this_computer   # 老板已选（2026-11-05）
+      approval: ask_each_time              # 每条命令老板点批准；不要改成 Always Allow
+      runner: admin                        # 只有运营总监在老板电脑上执行命令，其他角色找运营总监要数据
+      drop_dir: "{WORK}/data/hub"          # 运营总监把取到的数据存到云电脑这里，按 <日期>/<单元> 分
+      needs: "老板电脑开机、Grok Bot 桌面端在运行；电脑睡眠时取不到数，当天日报写「数据底座离线」"
+units:
+  - id: A_US                  # 老板的 A 店美国站
+    store: A
+    marketplace: US
+    mode: mixed               # self=只自接 | erp=只靠 ERP | mixed=自接 + ERP 补充
+    sources:                  # 每类数据以谁为准
+      orders: sp-api
+      inventory: sp-api
+      finance: sp-api
+      listing: sp-api
+      ads: ads-api            # 领星只有 SP；优麦云有活动 / 关键词 / 搜索词，但归因窗口未核实
+      account_health: sp-api
+      product_cost: cost_sheet          # 成本表优先；成本表没填的项用领星的采购价 / 头程
+      inbound_freight: lingxing         # 头程、在途、货件
+      returns: sp-api
+    overlap: separate_count_once_push_self   # 同一店铺在 ERP 里也有：各自独立、合计只算一份、推送一律走自接
+    push:
+      ads: hub_review         # 审核报告 + 老板本人「确认推送」，走自接 Ads API
+      listing_update: hub_review        # 五点（PATCH）+ 属性补充（亮点 / 长描述 / ST 搜索词 / 材质…，listing update）
+      listing_create: hub_review        # R12：listing create → 审核报告 → 老板「确认推送」→ putListingsItem → 回读（2026-11-05 A 店真实走通）
+      aplus_create: hub_review          # 高级 A+（只开放：高级完整图片、高级问答）
+      brand_story_create: hub_review    # 品牌故事（5 种模块）
+    status: push_ok           # not_verified | read_ok | push_ok
+erp:
+  lingxing:
+    enabled: true
+    status: pending_setup     # 老板在数据底座接入向导第 5 步填 AppID / AppSecret、加 IP 白名单后改 read_ok
+    can_read: [订单, FBA 库存, SP 活动日报, 结算费用, 产品表现（访问量 / 转化）, 退货, FBA 货件, 采购价 / 头程]
+    can_push: [关键词竞价 / 启停 / 加词, 活动预算 / 启停 / 竞价策略, 否定词]   # 只靠领星的单元才用；A 店推送走自接
+    cannot: [新建 Listing（开放接口没有刊登，2026-11-05 核实）, 新建活动, 加商品投放, 五点文案, 售价, SB / SD 报表]
+    caveat: 订单金额含税和运费，比官方按 SKU 不含税金额高 1%～10%；利润按成本表算
+    guide: 数据底座 references/领星接入指引.md
+  youmaiyun:
+    enabled: true
+    status: pending_setup     # 老板在优麦云逐店授权 → 复制 MCP 密钥（sk-ss-）→ 接入向导第 5 步填写、勾选店铺 + 站点
+    can_read: [每日经营, 广告活动 / 广告组 / 关键词 / 投放 / 搜索词 / 推广商品, 库存, 退货, FBA 货件]
+    can_push: [关键词改竞价, 活动日预算（只降）]
+    allow_push: false         # A 店推送走自接，「允许推送到优麦云」先不勾
+    caveat: 广告币种按站点推定、归因窗口未核实（ACoS 只作方向）；访问量要优麦云先同步业务报告；会员到期停止同步
+    guide: 数据底座 references/优麦云接入指引.md
+  sellfox:
+    enabled: false
+    status: planned

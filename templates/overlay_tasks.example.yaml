@@ -1,0 +1,153 @@
+schema_version: "1.0"
+# ====================================================================
+# 叠字任务表 —— amazon-listing-image-designer 的新增产物
+#
+# 这份文件替代「把文案塞进英文 Prompt 让模型自己渲染」的老做法。
+# AI 决定写什么（text），样式引用令牌（style），落位引用积木（block）。
+#
+# 落位：{产品根}/S3_视觉板块/amazon-listing-image-designer/overlay_tasks.yaml
+# 跑法：python <home>/scripts/叠字渲染器.py {产品根}/S3_视觉板块/amazon-listing-image-designer/overlay_tasks.yaml
+#      加 --check 只过闸门不出图；加 --item IMG03 只跑一张
+#
+# ⛔ 全产品线只有这一份文件。三个视觉 Skill 依次往 items 里追加：
+#      amazon-listing-image-designer    → IMG01–IMG07
+#      amazon-premium-aplus-designer    → M1D/M1M – M5D/M5M
+#      amazon-standard-aplus-designer   → 需叠字的标准 A+ Banner
+#      amazon-product-video-director    → SUB_* 视频字幕层（透明 PNG）
+#    每条自带 canvas 与 profile，渲染器按条目各自的画布处理，混在一起没问题。
+#    ⛔ 不要另建 overlay_tasks_aplus.yaml 之类 —— 契约校验器判「同物异名」硬错误。
+#
+# ⛔ 路径都相对本文件所在目录。
+# ====================================================================
+
+style_tokens: visual_style_tokens.yaml
+run_log: 叠字渲染日志.yaml
+
+items:
+  # ---------------- 主图：禁止叠字，overlays 必须为空 ----------------
+  - item_id: IMG01
+    canvas: main
+    profile: editorial_dtc
+    plate: ../visuals/listing/plates/IMG01_plate_v1.png
+    output: ../visuals/listing/IMG01_main_v1.png
+    overlays: []
+
+  # ---------------- A 档副图：一张图只说一件事 ----------------
+  - item_id: IMG02
+    canvas: secondary
+    profile: editorial_dtc
+    plate: ../visuals/listing/plates/IMG02_plate_v1.png
+    output: ../visuals/listing/IMG02_v1.png
+    buyer_question_id: BQ-03           # 回溯到 07A_Listing转化蓝图.yaml
+    source_evidence_ids: [EV-11]
+    overlays:
+      - block: headline_tl
+        style: h1
+        text: "High Collar Two-Leg Poncho"
+      - block: headline_tl_sub
+        style: sub
+        text: "Full coverage, front legs in"
+
+  # ---------------- 底图太花时给文字加衬底 ----------------
+  - item_id: IMG05
+    canvas: secondary
+    profile: hybrid
+    plate: ../visuals/listing/plates/IMG05_plate_v1.png
+    output: ../visuals/listing/IMG05_v1.png
+    overlays:
+      - block: headline_bl
+        style: h2
+        text: "Reflective Trim"
+        scrim: true                    # 画一块半透明衬底保证可读
+        scrim_opacity: 0.82
+
+  # ---------------- B 档副图：统一底栏 ----------------
+  # band 先画色带，barlabel_* 再往上写字。六张副图共用同一套底栏
+  # 落位，买家扫得快 —— 这在 spec_dense 档不是廉价，是专业。
+  - item_id: IMG06
+    canvas: secondary
+    profile: spec_dense
+    plate: ../visuals/listing/plates/IMG06_plate_v1.png
+    output: ../visuals/listing/IMG06_v1.png
+    overlays:
+      - type: band
+        rect: [0, 86, 100, 14]         # x, y, w, h（画布百分比）
+        color: plate_bg
+        opacity: 0.94
+      - block: barlabel_l
+        style: label
+        text: "210T Polyester"
+      - block: barlabel_c
+        style: label
+        text: "2.5-4.6 oz"
+        color: accent                  # 唯一强调色，只给最关键那个数
+      - block: barlabel_r
+        style: label
+        text: "6 Sizes"
+      - block: headline_tl
+        style: h2
+        text: "Built for Rainy Walks"
+
+  # ---------------- Premium A+ 由下游 Skill 追加到同一份 items ----------------
+  # 每条自带 canvas，和上面的副图混在一起没问题
+  - item_id: M1D
+    canvas: aplus_d                    # 1464×600 桌面
+    profile: premium_aplus
+    plate: ../aplus_visuals/plates/M1_Desktop_plate.png
+    output: ../aplus_visuals/M1_Hero_Desktop.png
+    overlays:
+      - { block: aplus_d_right, style: h1, text: "Rain, Handled" }
+      - { block: aplus_d_right_sub, style: sub, text: "Full-body cover for daily walks" }
+
+  - item_id: M1M
+    canvas: aplus_m                    # 600×450 移动，⛔ 不是桌面版裁一刀
+    profile: premium_aplus
+    plate: ../aplus_visuals/plates/M1_Mobile_plate.png
+    output: ../aplus_visuals/M1_Hero_Mobile.png
+    overlays:
+      - { block: aplus_m_bottom, style: h2, text: "Rain, Handled" }
+      - { block: aplus_m_bottom_sub, style: sub, text: "Full-body cover" }
+
+  # ---------------- 视频字幕层：plate: transparent → 透明 PNG ----------------
+  # 拖进剪映当叠加层。字体色板与上面的 Listing 图、A+ 完全同源。
+  # ⛔ SBV 静音自动播放，卖点必须靠画面文字讲 —— 字幕不是可选项。
+  # ⛔ 必须带 stroke（推荐）或 scrim，否则遇到浅色镜头就糊，渲染器会拦。
+  - item_id: SUB_S01
+    canvas: video_16x9
+    profile: video_subtitle
+    plate: transparent
+    output: ../video_exports/subtitles/S01_lower.png
+    overlays:
+      - { block: vid_lower_third, style: h2, text: "Full Body Coverage",
+          color: on_dark, stroke: 4 }
+      - { block: vid_lower_sub, style: sub, text: "Head to tail, legs included",
+          color: on_dark, stroke: 3 }
+
+  - item_id: SUB_END                   # 收尾卡
+    canvas: video_16x9
+    profile: video_subtitle
+    plate: transparent
+    output: ../video_exports/subtitles/END_card.png
+    overlays:
+      - { block: vid_endcard, style: h1, text: "Rain, Handled",
+          color: on_dark, stroke: 5 }
+      - { block: vid_endcard_sub, style: sub, text: "6 sizes, 210T shell",
+          color: on_dark, stroke: 3 }
+
+# ====================================================================
+# 说明
+# --------------------------------------------------------------------
+# type 取值：
+#   text（默认）  文字块。必填 block + style + text
+#   band          实心/半透明色带。必填 rect；可选 color / opacity
+#   rule          分隔线。必填 rect；可选 color / thickness
+#
+# 文字块可选字段：
+#   color         覆盖样式默认色，取值必须是 palette 里的键名
+#   scrim         true 时在文字下画衬底；配 scrim_opacity / scrim_color / scrim_pad
+#
+# ⛔ 做不了的（老实说）：
+#   带引线的部件标注（callout line 指向产品某个部位）——
+#   引线终点取决于底图里产品的实际像素位置，每张都不一样，脚本算不出来。
+#   这类标注仍然走 Cowart 人工，或者让出图环节直接把标注画进底图。
+# ====================================================================

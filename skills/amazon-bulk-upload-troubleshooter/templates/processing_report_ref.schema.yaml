@@ -1,0 +1,12 @@
+schema_version: "1.0"
+artifact_type: amazon_ad_bulk_processing_report_ref
+source_bulk_sha256: "sha256:"
+processing_report_sha256: "sha256:"
+submission_reference: ""
+marketplace: US
+advertising_account_id: ""
+downloaded_at: ""
+note: >
+  This sidecar is required before a processing report may change amazon_upload_status
+  or feed retry actions. It binds the downloaded report to one exact Bulk candidate,
+  Amazon submission reference, marketplace, and advertising account.

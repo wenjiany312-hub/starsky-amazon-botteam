@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>amazon-product-video-director 用户使用指南 v2.0</title>
+<style>
+:root {
+  --ink: #0f172a;
+  --ink-soft: #334155;
+  --muted: #64748b;
+  --paper: #f8fafc;
+  --paper-warm: #e8eef5;
+  --accent: #1e40af;
+  --accent-light: #3b82f6;
+  --gold: #b8956a;
+  --gold-soft: #dbe4f0;
+  --green: #166534;
+  --amber: #b45309;
+  --danger: #991b1b;
+  --border: rgba(15,23,42,0.1);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 20px rgba(15,23,42,0.08);
+  --serif: 'Noto Serif SC', 'Songti SC', serif;
+  --sans: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+  --display: 'Playfair Display', 'Noto Serif SC', serif;
+  --mono: 'JetBrains Mono', 'Consolas', monospace;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:var(--serif); font-size:17px; line-height:1.85; color:var(--ink); background:var(--paper); }
+
+.progress-bar { position:fixed; top:0; left:0; right:0; height:3px; z-index:100; }
+.progress-bar > div { height:100%; width:0; background:var(--accent); transition:width 0.1s; }
+
+.layout { display:grid; grid-template-columns:260px minmax(0,780px); gap:3.5rem; max-width:1320px; margin:0 auto; padding:0 2rem; }
+main { padding:4rem 0 8rem; }
+
+.toc { position:sticky; top:2rem; align-self:start; padding-top:7rem; font-family:var(--sans); font-size:13px; max-height:calc(100vh - 4rem); overflow-y:auto; }
+.toc-label { font-size:10px; letter-spacing:0.2em; color:var(--muted); font-weight:700; margin-bottom:1rem; }
+.toc ol { list-style:none; counter-reset:toc; }
+.toc li { counter-increment:toc; margin-bottom:0.55rem; }
+.toc a { color:var(--ink-soft); text-decoration:none; display:block; padding-left:1.8rem; position:relative; }
+.toc a::before { content:counter(toc,decimal-leading-zero); position:absolute; left:0; color:var(--gold); font-weight:700; }
+.toc a:hover, .toc a.active { color:var(--accent); }
+
+.cover { border-top:4px double var(--ink); border-bottom:1px solid var(--border); padding:3rem 0; margin-bottom:3.5rem; }
+.cover-badge { display:inline-block; background:var(--accent); color:#fff; font-family:var(--sans); font-size:11px; letter-spacing:0.15em; font-weight:700; padding:4px 14px; border-radius:2px; margin-bottom:1.2rem; }
+.cover h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:900; line-height:1.2; margin-bottom:0.8rem; }
+.cover h1 em { font-style:normal; color:var(--accent); }
+.cover .sub { font-size:1.05rem; color:var(--muted); max-width:600px; margin-bottom:2rem; }
+.cover-meta { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; font-family:var(--sans); font-size:13px; padding-top:1.5rem; border-top:1px solid var(--border); }
+.cover-meta dt { font-size:10px; letter-spacing:0.12em; color:var(--muted); font-weight:700; margin-bottom:0.2rem; }
+
+section.chapter { margin-bottom:4.5rem; scroll-margin-top:2rem; }
+.chapter-num { font-family:var(--display); font-size:3.5rem; font-weight:900; color:var(--gold); line-height:0.9; }
+.chapter-title { font-size:1.85rem; font-weight:900; margin:0.4rem 0; }
+.chapter-divider { width:3rem; height:2px; background:var(--accent); margin:1rem 0 2rem; }
+
+.elevator { background:linear-gradient(180deg,var(--paper-warm),var(--paper)); border-left:5px solid var(--accent); padding:2rem 2.2rem; position:relative; margin-bottom:2rem; }
+.elevator::before { content:"一句话"; position:absolute; top:-11px; left:1.8rem; background:var(--accent); color:#fff; font-family:var(--sans); font-size:11px; font-weight:700; padding:3px 10px; }
+.elevator p { font-size:1.1rem; }
+.elevator strong { color:var(--accent); background:linear-gradient(180deg,transparent 65%,var(--gold-soft) 65%); }
+
+.prose p { margin-bottom:1rem; font-size:16px; }
+
+/* 步骤时间线 */
+.timeline { margin:2rem 0; }
+.phase { display:grid; grid-template-columns:100px 1fr; gap:1.5rem; margin-bottom:1.5rem; position:relative; }
+.phase:not(:last-child)::after { content:''; position:absolute; left:49px; top:80px; bottom:-1.5rem; width:2px; background:var(--border); }
+.phase-badge { text-align:center; }
+.phase-badge .num { font-family:var(--display); font-size:2.8rem; font-weight:900; color:var(--accent-light); line-height:1; }
+.phase-badge .label { font-family:var(--sans); font-size:11px; color:var(--muted); font-weight:700; letter-spacing:0.08em; }
+.phase-body { background:#fff; border:1px solid var(--border); border-radius:8px; padding:1.4rem 1.6rem; box-shadow:var(--shadow-sm); }
+.phase-body h3 { font-size:1.05rem; font-weight:700; margin-bottom:0.5rem; }
+.phase-body p, .phase-body li { font-size:15px; color:var(--ink-soft); line-height:1.7; }
+.phase-body ul { margin:0.5rem 0 0 1.2rem; }
+.phase-body .user-say { margin-top:0.8rem; background:var(--paper-warm); border-radius:6px; padding:0.8rem 1rem; font-family:var(--sans); font-size:14px; }
+.phase-body .user-say strong { color:var(--accent); font-size:11px; letter-spacing:0.08em; display:block; margin-bottom:0.3rem; }
+
+/* 触发词 */
+.trigger-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:0.8rem; margin:1.5rem 0; }
+.trigger-chip { background:#fff; border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:0 6px 6px 0; padding:0.8rem 1rem; font-family:var(--sans); font-size:14px; }
+
+/* 文件树 */
+.file-tree { background:#0f172a; color:#e2e8f0; border-radius:8px; padding:1.4rem 1.6rem 1.6rem; font-family:var(--mono); font-size:13px; margin:1.5rem 0; overflow-x:auto; border:1px solid #1e293b; }
+.file-tree-header { display:flex; align-items:center; gap:0.5rem; padding-bottom:0.9rem; margin-bottom:0.6rem; border-bottom:1px solid #334155; font-size:14px; font-weight:500; }
+.file-tree-header .tree-icon { font-size:15px; line-height:1; opacity:0.9; }
+.file-tree-list { list-style:none; margin:0; padding:0; }
+.file-tree-list.nested { margin:0.35rem 0 0.5rem 1.25rem; padding-left:0.75rem; border-left:1px dashed #334155; }
+.file-tree-item { display:block; padding:0.42rem 0; line-height:1.6; border-bottom:1px solid rgba(51,65,85,0.35); }
+.file-tree-item:last-child { border-bottom:none; }
+.file-tree-row { display:flex; flex-wrap:wrap; align-items:baseline; gap:0.35rem 0.6rem; }
+.tree-branch { color:#475569; flex-shrink:0; min-width:1.6rem; user-select:none; }
+.file-tree .dir { color:#93c5fd; font-weight:500; }
+.file-tree .file { color:#e2e8f0; }
+.file-tree .comment { color:#64748b; font-size:12px; }
+.file-tree-row .comment { margin-left:auto; }
+.file-tree-item.has-children > .file-tree-list.nested { margin-top:0.35rem; }
+@media (max-width:600px) {
+  .file-tree-row .comment { margin-left:1.6rem; width:100%; }
+}
+
+/* 表格 */
+table.data { width:100%; border-collapse:collapse; font-size:14.5px; background:#fff; border-radius:8px; overflow:hidden; box-shadow:var(--shadow-sm); margin:1.5rem 0; }
+table.data th { background:var(--ink); color:#fff; padding:0.75rem 1rem; text-align:left; font-family:var(--sans); font-size:12px; font-weight:700; }
+table.data td { padding:0.8rem 1rem; border-bottom:1px solid var(--border); vertical-align:top; line-height:1.65; }
+table.data tr:last-child td { border-bottom:none; }
+table.data tr:nth-child(even) td { background:#f1f5f9; }
+code { font-family:var(--mono); font-size:12.5px; background:var(--paper-warm); padding:2px 6px; border-radius:3px; color:var(--accent); }
+
+/* 命令示例 */
+.cmd-block { background:#fff; border:1px solid var(--border); border-radius:8px; margin:1.2rem 0; overflow:hidden; }
+.cmd-block .cmd-head { background:var(--paper-warm); padding:0.6rem 1rem; font-family:var(--sans); font-size:12px; font-weight:700; color:var(--muted); letter-spacing:0.06em; }
+.cmd-block pre { padding:1.2rem 1.4rem; font-family:var(--mono); font-size:13px; line-height:1.7; color:var(--ink-soft); overflow-x:auto; white-space:pre-wrap; }
+
+/* 即梦操作卡 */
+.jimeng-steps { display:grid; gap:1rem; margin:1.5rem 0; }
+.jimeng-step { display:grid; grid-template-columns:48px 1fr; gap:1rem; align-items:start; background:#fff; border:1px solid var(--border); border-radius:8px; padding:1.2rem; }
+.jimeng-step .n { width:48px; height:48px; background:var(--accent); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--display); font-size:1.4rem; font-weight:900; }
+.jimeng-step h4 { font-size:1rem; font-weight:700; margin-bottom:0.3rem; }
+.jimeng-step p { font-size:14.5px; color:var(--ink-soft); }
+
+/* 警告 */
+.warn { background:#fffbeb; border:1px solid #fde68a; border-radius:8px; padding:1.2rem 1.5rem; margin:1.5rem 0; }
+.warn-title { font-family:var(--sans); font-weight:700; color:var(--amber); font-size:14px; margin-bottom:0.5rem; }
+.warn ul { list-style:none; font-size:14.5px; }
+.warn li { padding:0.25rem 0 0.25rem 1.4rem; position:relative; }
+.warn li::before { content:"!"; position:absolute; left:0; color:var(--amber); font-weight:900; }
+
+.danger { background:#fef2f2; border:1px solid #fecaca; border-radius:8px; padding:1.2rem 1.5rem; margin:1.5rem 0; }
+.danger-title { font-family:var(--sans); font-weight:700; color:var(--danger); font-size:14px; margin-bottom:0.5rem; }
+
+.tag { display:inline-block; padding:2px 9px; border-radius:10px; font-family:var(--sans); font-size:11px; font-weight:600; }
+.tag-req { background:#dbeafe; color:var(--accent); }
+.tag-opt { background:#f1f5f9; color:var(--muted); }
+
+/* FAQ */
+details.faq { border:1px solid var(--border); border-radius:8px; background:#fff; margin-bottom:0.6rem; }
+details.faq summary { cursor:pointer; padding:1rem 1.3rem; font-family:var(--sans); font-weight:600; font-size:15px; list-style:none; }
+details.faq summary::-webkit-details-marker { display:none; }
+details.faq .faq-body { padding:0 1.3rem 1.2rem; font-size:14.5px; color:var(--ink-soft); border-top:1px dashed var(--border); line-height:1.75; }
+
+footer { border-top:1px solid var(--border); padding-top:2rem; margin-top:3rem; font-family:var(--sans); font-size:12px; color:var(--muted); text-align:center; line-height:1.8; }
+
+@media (max-width:980px) {
+  .layout { grid-template-columns:1fr; padding:0 1.2rem; }
+  .toc { display:none; }
+  .trigger-grid { grid-template-columns:1fr; }
+  .phase { grid-template-columns:70px 1fr; }
+}
+@media print { .progress-bar,.toc { display:none; } .layout { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<div class="progress-bar"><div id="progress"></div></div>
+<div class="layout">
+
+<nav class="toc">
+  <div class="toc-label">使用指南目录</div>
+  <ol>
+    <li><a href="#s1">这个 Skill 做什么</a></li>
+    <li><a href="#s2">什么时候用</a></li>
+    <li><a href="#s3">准备什么材料</a></li>
+    <li><a href="#s4">完整操作流程</a></li>
+    <li><a href="#s5">即梦实操步骤</a></li>
+    <li><a href="#s5b">Grok Imagine 实操</a></li>
+    <li><a href="#s6">交付文件说明</a></li>
+    <li><a href="#s7">省钱技巧</a></li>
+    <li><a href="#s8">常见问题</a></li>
+  </ol>
+</nav>
+
+<main>
+
+<header class="cover">
+  <div class="cover-badge">amazon-product-video-director v3.0</div>
+  <h1>产品视频分镜 Skill<br><em>用户使用指南</em></h1>
+  <p class="sub">把产品数据 + 垫图变成可执行的短视频方案：分镜脚本、垫图 Prompt、平台投喂包。v3.0 支持双平台：<strong>Grok Imagine</strong>（推荐 A+ / 防变形产线）与<strong>即梦 Seedance</strong>。</p>
+  <dl class="cover-meta">
+    <div><dt>目标平台</dt><dd>Grok Imagine · 即梦 Seedance 2.0</dd></div>
+    <div><dt>适用场景</dt><dd>主图视频 · SBV · Premium A+ · 种草</dd></div>
+    <div><dt>Skill 文件</dt><dd>SKILL.md（同目录）</dd></div>
+    <div><dt>版本</dt><dd>v3.0 · 2026-07-17</dd></div>
+  </dl>
+</header>
+
+<!-- S1 -->
+<section class="chapter" id="s1">
+  <div class="chapter-num">01</div>
+  <h2 class="chapter-title">这个 Skill 做什么</h2>
+  <div class="chapter-divider"></div>
+
+  <div class="elevator">
+    <p>本 Skill 是<strong>亚马逊产品短视频导演</strong>。它不替你「一键成片」，而是产出：<strong>分镜脚本</strong>、<strong>分镜垫图 Prompt/实图</strong>、以及按平台分流的<strong>视频生成包</strong>。v3.0 起二选一：<strong>Grok Imagine</strong>（英文 image-to-video + <code>video_production_v2</code> 自包含包）或<strong>即梦</strong>（中文 @引用投喂包）。</p>
+  </div>
+
+  <div class="prose">
+    <p><strong>两段式交付</strong>（核心设计，两平台相同）：</p>
+  </div>
+  <table class="data">
+    <thead><tr><th>阶段</th><th>产出</th><th>你用什么工具</th></tr></thead>
+    <tbody>
+      <tr><td>第一段 · 静态</td><td>分镜关键帧垫图</td><td>GPT-image-2 / Nano Banana / Grok 静图 / 复用 Listing·A+ 图</td></tr>
+      <tr><td>第二段 · 动态</td><td>5–8 段短视频 clip</td><td><strong>Grok Imagine</strong> 或 <strong>即梦 Seedance</strong></td></tr>
+      <tr><td>第三段 · 合成</td><td>完整 15–45s 视频</td><td>ffmpeg / 剪映 + 后期字幕</td></tr>
+    </tbody>
+  </table>
+
+  <div class="prose">
+    <p><strong>平台怎么选</strong>：Premium A+、防变形量产、可走 API → 选 <strong>Grok</strong>。国内主图竖版、剪映生态 → 选 <strong>即梦</strong>。对话开始 Agent 会强制问一次。</p>
+    <p><strong>唯一视频入口</strong>：本 Skill 直接产出 Premium A+、Listing 与 SBV 可用的分镜及 Grok <code>video_production_v2</code>；工具包不再依赖其他 A+ 视频 Skill。</p>
+    <p><strong>参考结构</strong>：以本 Skill 输出的 <code>S3_视觉板块/amazon-product-video-director/14_产品视频分镜.md</code> 与 <code>S3_视觉板块/amazon-product-video-director/video_production_v2/</code> 为准。</p>
+  </div>
+</section>
+
+<!-- S2 -->
+<section class="chapter" id="s2">
+  <div class="chapter-num">02</div>
+  <h2 class="chapter-title">什么时候用</h2>
+  <div class="chapter-divider"></div>
+
+  <div class="trigger-grid">
+    <div class="trigger-chip">帮我做产品视频分镜 + 即梦提示词</div>
+    <div class="trigger-chip">根据产品图和卖点出 30s 主图视频方案</div>
+    <div class="trigger-chip">生成分镜垫图 prompt，给我即梦能用的提示词</div>
+    <div class="trigger-chip">继续做产品视频（05 图 brief 完成后）</div>
+    <div class="trigger-chip">Listing 短视频脚本</div>
+    <div class="trigger-chip">SBV 广告视频创意</div>
+  </div>
+
+  <div class="prose">
+    <p>在 Codex 对话里说出上面任意一句，Agent 会自动加载本 Skill。</p>
+    <p><strong>最佳时机</strong>：已完成市场调研、文案、Listing 图片 brief（步骤 05）之后。有 1688 高清垫图时效果远好于只有模糊供应商图。</p>
+  </div>
+</section>
+
+<!-- S3 -->
+<section class="chapter" id="s3">
+  <div class="chapter-num">03</div>
+  <h2 class="chapter-title">准备什么材料</h2>
+  <div class="chapter-divider"></div>
+
+  <h3 style="font-size:1.1rem;font-weight:700;margin:1.5rem 0 0.8rem;">方式 A · 完整工作流（推荐）</h3>
+  <div class="file-tree">
+    <div class="file-tree-header">
+      <span class="tree-icon">📁</span>
+      <span class="dir">报告文件/{你的产品名}/</span>
+    </div>
+    <ul class="file-tree-list">
+      <li class="file-tree-item">
+        <div class="file-tree-row">
+          <span class="tree-branch">├──</span>
+          <span class="file">S1_选品板块/amazon-market-research/01_product_profile.yaml</span>
+          <span class="comment"># 外观、卖点、人群</span>
+        </div>
+      </li>
+      <li class="file-tree-item">
+        <div class="file-tree-row">
+          <span class="tree-branch">├──</span>
+          <span class="file">S2_文案板块/amazon-listing-copywriter/07_Listing文案.md</span>
+          <span class="comment"># 五点文案</span>
+        </div>
+      </li>
+      <li class="file-tree-item">
+        <div class="file-tree-row">
+          <span class="tree-branch">├──</span>
+          <span class="file">S3_视觉板块/amazon-listing-image-designer/08_主副图设计方案.md</span>
+          <span class="comment"># 7 图风格 + 垫图路径</span>
+        </div>
+      </li>
+      <li class="file-tree-item">
+        <div class="file-tree-row">
+          <span class="tree-branch">├──</span>
+          <span class="file">S1_选品板块/amazon-ip-risk-assessment/04_compliance_blacklist.yaml</span>
+          <span class="comment"># 合规禁词</span>
+        </div>
+      </li>
+      <li class="file-tree-item has-children">
+        <div class="file-tree-row">
+          <span class="tree-branch">├──</span>
+          <span class="dir">S3_视觉板块/amazon-listing-image-designer/产品垫图/</span>
+          <span class="comment"># 1688 抓取原图（最重要！）</span>
+        </div>
+        <ul class="file-tree-list nested">
+          <li class="file-tree-item">
+            <div class="file-tree-row">
+              <span class="tree-branch">├──</span>
+              <span class="file">main_01.jpg</span>
+            </div>
+          </li>
+          <li class="file-tree-item">
+            <div class="file-tree-row">
+              <span class="tree-branch">└──</span>
+              <span class="file">垫图说明.md</span>
+              <span class="comment"># 如有</span>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li class="file-tree-item">
+        <div class="file-tree-row">
+          <span class="tree-branch">└──</span>
+          <span class="dir">S3_视觉板块/amazon-listing-image-designer/visuals/</span>
+          <span class="comment"># 已生成的 Listing 图（可复用）</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <h3 style="font-size:1.1rem;font-weight:700;margin:2rem 0 0.8rem;">方式 B · 最小输入（独立使用）</h3>
+  <table class="data">
+    <thead><tr><th>材料</th><th>是否必须</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td>产品主图 / 1688 结构图</td><td><span class="tag tag-req">必须</span></td><td>至少 1 张，产品结构清晰可见</td></tr>
+      <tr><td>产品名称 + 核心卖点 3 条</td><td><span class="tag tag-req">必须</span></td><td>无上游文件时必填</td></tr>
+      <tr><td>视频用途 + 时长</td><td><span class="tag tag-req">必须</span></td><td>如：主图视频 30s</td></tr>
+      <tr><td>画幅</td><td><span class="tag tag-opt">建议</span></td><td>9:16 竖版 或 16:9 横版</td></tr>
+      <tr><td>目标人群 / 场景</td><td><span class="tag tag-opt">建议</span></td><td>影响场景镜头设计</td></tr>
+    </tbody>
+  </table>
+
+  <div class="warn">
+    <div class="warn-title">材料不足时 Agent 会追问</div>
+    <ul>
+      <li>没有清晰垫图 → 先跑 1688 抓取 Skill，再回来做视频</li>
+      <li>折叠/机械类产品 → 会自动降级为静态镜头，动作段建议实拍</li>
+    </ul>
+  </div>
+</section>
+
+<!-- S4 -->
+<section class="chapter" id="s4">
+  <div class="chapter-num">04</div>
+  <h2 class="chapter-title">完整操作流程（跟着做就行）</h2>
+  <div class="chapter-divider"></div>
+
+  <div class="timeline">
+
+    <div class="phase">
+      <div class="phase-badge"><div class="num">0</div><div class="label">PHASE 0</div></div>
+      <div class="phase-body">
+        <h3>产品认知 + 素材盘点</h3>
+        <p>Agent 读取你的报告文件，建立「产品结构真值表」，输出素材盘点表和产品认知摘要。</p>
+        <ul>
+          <li>核对产品外观、卖点、合规红线是否正确</li>
+          <li>确认垫图路径能访问</li>
+        </ul>
+        <div class="user-say"><strong>你说</strong>「信息无误，继续」或指出需要修改的地方</div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-badge"><div class="num">1</div><div class="label">PHASE 1</div></div>
+      <div class="phase-body">
+        <h3>确认视频参数</h3>
+        <p>Agent 会问你几个选择题：</p>
+        <ul>
+          <li><strong>视频类型</strong>：转化型 / 展示型 / 种草型 / 讲解型</li>
+          <li><strong>时长</strong>：15s / 30s / 45s</li>
+          <li><strong>画幅</strong>：9:16 或 16:9</li>
+          <li><strong>垫图生图模型</strong>：A. GPT-image-2（默认）/ B. Nano Banana 2</li>
+        </ul>
+        <div class="user-say"><strong>你说</strong>「30s 转化型，9:16，模型 A」</div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-badge"><div class="num">2</div><div class="label">PHASE 2</div></div>
+      <div class="phase-body">
+        <h3>分镜规划</h3>
+        <p>Agent 按时长自动拆镜头。30s 转化型默认 <strong>5 段 × 6s</strong>：</p>
+        <ul>
+          <li>S01 场景引入 → S02 痛点 → S03 产品出场 → S04 使用演示 → S05 hero 定格</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-badge"><div class="num">3</div><div class="label">PHASE 3</div></div>
+      <div class="phase-body">
+        <h3>输出分镜 + 提示词包（核心交付）</h3>
+        <p>此阶段<strong>不生成视频</strong>，只出方案和 Prompt。你会收到 5 个文件（见第 06 节）。</p>
+        <div class="user-say"><strong>你说</strong>审阅分镜，满意后进入下一步；不满意指出要改的镜头</div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-badge"><div class="num">4</div><div class="label">PHASE 4</div></div>
+      <div class="phase-body">
+        <h3>生成分镜垫图（可选，二选一）</h3>
+        <p><strong>选项 1</strong>：让 Agent 基于垫图 + Prompt 生成 <code>video_storyboards/</code> 目录下的分镜图。</p>
+        <p><strong>选项 2</strong>：直接复用 <code>S3_视觉板块/amazon-listing-image-designer/visuals/</code> 里已有的 Listing 场景图/功能图作首帧（更省钱）。</p>
+        <div class="user-say"><strong>你说</strong>「生成分镜垫图」或「用 visuals 图 2 和图 5 作首帧，跳过生图」</div>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-badge"><div class="num">5</div><div class="label">PHASE 5</div></div>
+      <div class="phase-body">
+        <h3>即梦生成 + 剪辑合成</h3>
+        <p>你亲自操作即梦（Agent 不代替你点即梦）。按第 05 节逐步投喂，生成 5 段 clip 后用剪映拼接。</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cmd-block">
+    <div class="cmd-head">完整对话示例（复制改产品名即用）</div>
+    <pre>帮我做这款【宠物饮水机】的 30s 主图视频，用即梦生成。
+产品根：{Codex 打开的产品文件夹}（上游报告在 S1_选品板块\ 与 S2_文案板块\ 各 Skill 夹里）
+视频类型：转化型，画幅 9:16，垫图模型 A。</pre>
+  </div>
+</section>
+
+<!-- S5 -->
+<section class="chapter" id="s5">
+  <div class="chapter-num">05</div>
+  <h2 class="chapter-title">即梦实操步骤（手把手）</h2>
+  <div class="chapter-divider"></div>
+
+  <div class="prose">
+    <p>打开 Skill 产出的 <code>jimeng_upload_manifest.yaml</code> 和 <code>jimeng_web_clip_prompts.txt</code>，按以下步骤操作：</p>
+  </div>
+
+  <div class="jimeng-steps">
+    <div class="jimeng-step">
+      <div class="n">1</div>
+      <div>
+        <h4>打开即梦 → 选择「图生视频」</h4>
+        <p>每段单独生成，不要试图一条 prompt 做完整 30s。30s 视频 = 5 次独立生成，每次 5–6s。</p>
+      </div>
+    </div>
+    <div class="jimeng-step">
+      <div class="n">2</div>
+      <div>
+        <h4>按 manifest 上传图片</h4>
+        <p>每段最多上传 <strong>1 张首帧 + 1 张结构锚点</strong>（1688 主图）。例如 C01 段：上传 <code>video_storyboards/S01_hook.jpg</code> 作首帧，上传 <code>S3_视觉板块/amazon-listing-image-designer/产品垫图/main_01.jpg</code> 作结构参考。</p>
+      </div>
+    </div>
+    <div class="jimeng-step">
+      <div class="n">3</div>
+      <div>
+        <h4>复制对应段的提示词</h4>
+        <p>从 <code>jimeng_web_clip_prompts.txt</code> 找到 <code>=== C01 ===</code> 段落，整段复制到即梦。提示词里已有 <code>@图片1 作为首帧</code> 等引用说明。</p>
+      </div>
+    </div>
+    <div class="jimeng-step">
+      <div class="n">4</div>
+      <div>
+        <h4>设置时长 5–6s，生成</h4>
+        <p>逐段生成，每段生成完<strong>先验片</strong>：产品颜色、部件数量、比例是否正确。不合格只重做该段。</p>
+      </div>
+    </div>
+    <div class="jimeng-step">
+      <div class="n">5</div>
+      <div>
+        <h4>重复 C02–C05，剪映拼接</h4>
+        <p>5 段 clip 导入剪映/CapCut，按 S01→S05 顺序排列。字幕从分镜表的 <code>overlay_text</code> 字段后期叠加（不要写进即梦 prompt）。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cmd-block">
+    <div class="cmd-head">即梦单段提示词示例（C01 钩子段）</div>
+    <pre>@图片1 作为首帧，产品外观 100% 参考 @图片2。
+
+0–2秒：固定机位，产品占画面中心 30%，柔和自然光从左侧打入。
+2–5秒：慢推镜头，手部从画面右侧轻触产品，展示核心交互。
+5–6秒：产品 hero 定格，浅景深。
+
+运镜：慢推，禁止环绕产品。
+音效：轻柔环境白噪音 + 轻微产品交互声。
+风格：现代美式 DTC 产品广告，电影级质感。
+产品结构严格锁定，禁止变形、拉伸、增删部件。</pre>
+  </div>
+
+  <div class="danger">
+    <div class="danger-title">即梦变形防控（必看）</div>
+    <ul style="list-style:none;font-size:14.5px;line-height:1.8;">
+      <li>✕ 不要一条 30s prompt + 8 张图一次性生成（产品极易变形）</li>
+      <li>✕ 不要用环绕/orbit 运镜拍产品</li>
+      <li>✕ 不要上传清晰真人正脸（会被拦截）</li>
+      <li>✓ 每段 1 首帧 + 1 结构锚点，相机尽量静态或慢推</li>
+      <li>✓ 变形严重时：该段改 Listing 静图 Ken Burns，或手机实拍 3–6s</li>
+    </ul>
+  </div>
+</section>
+
+<!-- S5b Grok -->
+<section class="chapter" id="s5b">
+  <div class="chapter-num">05b</div>
+  <h2 class="chapter-title">Grok Imagine 实操（v3 推荐产线）</h2>
+  <div class="chapter-divider"></div>
+
+  <div class="elevator">
+    <p>当你对 Agent 说「用 <strong>Grok Imagine</strong>」时，Skill 会组装自包含包 <code>S3_视觉板块/amazon-product-video-director/video_production_v2/</code>，而不是即梦 @引用文件。</p>
+  </div>
+
+  <div class="prose">
+    <p><strong>对话里怎么说</strong>：</p>
+  </div>
+  <div class="cmd-head">示例触发句</div>
+  <pre style="background:#0f172a;color:#e2e8f0;padding:1rem 1.2rem;border-radius:8px;font-size:13px;overflow-x:auto;">帮我做 Premium A+ 产品视频，平台选 Grok Imagine，时长约 42s，16:9。
+读取本案例目录的 product_profile、A+ brief、1688 垫图和 aplus_visuals。</pre>
+
+  <table class="data" style="margin-top:1.5rem;">
+    <thead><tr><th>步骤</th><th>谁做</th><th>做什么</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Codex</td><td>分镜 + 英文 clip prompt + 组装 <code>S3_视觉板块/amazon-product-video-director/video_production_v2/</code></td></tr>
+      <tr><td>2</td><td>Codex / 生图模型</td><td>生成 <code>video_storyboards/</code>，同步到 <code>images/clip_XX/</code></td></tr>
+      <tr><td>3</td><td>Grok</td><td>逐段 image-to-video（高风险段 primary+结构锚点）</td></tr>
+      <tr><td>4</td><td>本地</td><td>ffmpeg / <code>concat_final.py</code> 拼成片，字幕后期加</td></tr>
+    </tbody>
+  </table>
+
+  <div class="prose" style="margin-top:1.5rem;">
+    <p><strong>三条高效路径</strong>（写在包内 FAST_PATH / kit）：</p>
+  </div>
+  <table class="data">
+    <thead><tr><th>路径</th><th>手动上传</th><th>做法</th></tr></thead>
+    <tbody>
+      <tr><td>A 混合快路径 ⭐</td><td>约 2 次</td><td>低风险段静图 Ken Burns；只让 Grok 做动作段 02/03</td></tr>
+      <tr><td>B API 一键</td><td>0 次</td><td><code>XAI_API_KEY</code> + <code>batch_grok_video_api.py --concat</code></td></tr>
+      <tr><td>C Grok Agent</td><td>0 次*</td><td>打开包目录，发送 <code>START.txt</code> 内容（*需 Agent 能读本地盘）</td></tr>
+    </tbody>
+  </table>
+
+  <div class="danger" style="margin-top:1.5rem;">
+    <div class="danger-title">Grok 变形防控（必看）</div>
+    <ul style="list-style:none;font-size:14.5px;line-height:1.8;">
+      <li>✕ 禁止一次上传全部 8–14 张分镜做一条长 reference_to_video</li>
+      <li>✕ 禁止动作段不带 1688/结构锚点</li>
+      <li>✕ 禁止 orbit 环绕产品</li>
+      <li>✓ 一段一传；high 段多生成 2–3 条选优</li>
+      <li>✓ 产品保真锁写进每段英文 Prompt（臂数、直径等可量化）</li>
+    </ul>
+  </div>
+
+  <div class="prose" style="margin-top:1.2rem;">
+    <p>约束全文：<code>references/grok-imagine-constraints.md</code></p>
+  </div>
+</section>
+
+<!-- S6 -->
+<section class="chapter" id="s6">
+  <div class="chapter-num">06</div>
+  <h2 class="chapter-title">交付文件说明</h2>
+  <div class="chapter-divider"></div>
+
+  <p style="font-size:15px;color:var(--muted);margin-bottom:1rem;">视频分支的点报告统一保存在 <code>S3_视觉板块/amazon-product-video-director/</code>，编号固定使用 <strong>14_</strong> 号段（旧包的 06V_/10_ 只读兼容）。Grok 另产 <code>S3_视觉板块/amazon-product-video-director/video_production_v2/</code>。</p>
+
+  <table class="data">
+    <thead><tr><th>文件名</th><th>给谁看</th><th>用途</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><code>S3_视觉板块/amazon-product-video-director/14_产品视频分镜.md</code></td>
+        <td>你 / 团队</td>
+        <td>完整分镜表：每个镜头的画面、运镜、字幕建议、旁白</td>
+      </tr>
+      <tr>
+        <td><code>S3_视觉板块/amazon-product-video-director/14_video_prompt_package.yaml</code></td>
+        <td>机器 / 下游 Skill</td>
+        <td>结构化全量数据包，含真值表、所有镜头字段</td>
+      </tr>
+      <tr>
+        <td><code>jimeng_web_clip_prompts.txt</code></td>
+        <td><strong>你 → 即梦</strong></td>
+        <td>按 C01/C02… 分段，直接复制粘贴到即梦</td>
+      </tr>
+      <tr>
+        <td><code>jimeng_upload_manifest.yaml</code></td>
+        <td><strong>你 → 即梦</strong></td>
+        <td>@图片N 与本地文件路径的映射表</td>
+      </tr>
+      <tr>
+        <td><code>video_storyboards/</code></td>
+        <td>即梦首帧</td>
+        <td>实际分镜垫图（Phase 4 生成后才有）</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="prose">
+    <p><strong>你只需要重点看两个文件</strong>：<code>jimeng_web_clip_prompts.txt</code>（复制提示词）和 <code>jimeng_upload_manifest.yaml</code>（知道传哪张图）。</p>
+  </div>
+</section>
+
+<!-- S7 -->
+<section class="chapter" id="s7">
+  <div class="chapter-num">07</div>
+  <h2 class="chapter-title">省钱省时间技巧</h2>
+  <div class="chapter-divider"></div>
+
+  <table class="data">
+    <thead><tr><th>技巧</th><th>怎么做</th><th>省什么</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>复用 Listing 7 图</strong></td>
+        <td>图 2 场景图 → 即梦首帧；图 5 功能图 → 演示段首帧</td>
+        <td>跳过 GPT-image-2 生图费用</td>
+      </tr>
+      <tr>
+        <td><strong>变体共用母片</strong></td>
+        <td>同系列颜色款只换首帧或字幕，不重做全片</td>
+        <td>即梦生成次数 ×N → ×1</td>
+      </tr>
+      <tr>
+        <td><strong>长尾 SKU 用静图视频</strong></td>
+        <td>Listing 场景图 + Ken Burns 5–10s，不进即梦</td>
+        <td>零 AI 视频成本</td>
+      </tr>
+      <tr>
+        <td><strong>季节品母片 + 后期叠字</strong></td>
+        <td>节日元素（雪花/南瓜）后期加，不写进 prompt</td>
+        <td>每年不用重做</td>
+      </tr>
+      <tr>
+        <td><strong>复杂动作段实拍</strong></td>
+        <td>折叠/按压等高风险镜头，手机拍 3–6s 插入</td>
+        <td>避免反复重做变形片段</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- S8 -->
+<section class="chapter" id="s8">
+  <div class="chapter-num">08</div>
+  <h2 class="chapter-title">常见问题</h2>
+  <div class="chapter-divider"></div>
+
+  <details class="faq">
+    <summary>Q：只有产品图，没有完整报告文件，能用吗？</summary>
+    <div class="faq-body">可以。直接告诉 Agent 产品名称、卖点、图片路径、视频时长和画幅即可。但效果不如有 1688 垫图 + 文案 + 05 图 brief 的完整流程。</div>
+  </details>
+  <details class="faq">
+    <summary>Q：即梦生成后产品变形了怎么办？</summary>
+    <div class="faq-body">只重做变形的那一段（不要重做全片）。检查是否上传了结构锚点图（1688 主图）。仍变形则该段降级为 Listing 静图 Ken Burns 或手机实拍。详见 <code>references/jimeng-seedance-constraints.md</code>。</div>
+  </details>
+  <details class="faq">
+    <summary>Q：字幕和促销信息怎么加？</summary>
+    <div class="faq-body">全部后期在剪映叠加。分镜表 <code>overlay_text</code> 字段有字幕建议，但不要写进即梦 prompt（避免 AI 乱生成文字）。</div>
+  </details>
+  <details class="faq">
+    <summary>Q：16:9 横版和 9:16 竖版怎么选？</summary>
+    <div class="faq-body">9:16 用于主图视频位、TikTok/Reels 广告；16:9 用于 SBV 品牌视频广告、A+ 横版模块。在 Phase 1 告诉 Agent 即可，会影响垫图尺寸和即梦画幅。</div>
+  </details>
+  <details class="faq">
+    <summary>Q：05 图 brief 还没做，能先做视频吗？</summary>
+    <div class="faq-body">可以独立运行，但建议先完成 05 图 brief。有 7 图方案后，视频风格才能和 Listing 视觉统一，且可直接复用场景图省掉垫图生成。</div>
+  </details>
+  <details class="faq">
+    <summary>Q：Premium A+ 视频也从这里做吗？</summary>
+    <div class="faq-body">是。本 Skill 是工具包唯一视频入口，覆盖 Listing、SBV、种草和 Premium A+ 演示片，输出 Grok 或即梦投喂包。</div>
+  </details>
+  <details class="faq">
+    <summary>Q：Grok 和即梦选哪个？</summary>
+    <div class="faq-body"><strong>Grok Imagine</strong>：A+ 横版、英文市场、防变形分段产线、可 API 批量。<strong>即梦</strong>：主图竖版、国内工具与剪映习惯。不要在同一 clip 文件里混写两套语法。</div>
+  </details>
+  <details class="faq">
+    <summary>Q：Grok 一次上传所有分镜图可以吗？</summary>
+    <div class="faq-body"><strong>不可以。</strong>案例 v1 证明会导致产品变形。必须一段一传；动作段加 1688/结构锚点。详见 <code>references/grok-imagine-constraints.md</code>。</div>
+  </details>
+</section>
+
+<footer>
+  <p>amazon-product-video-director v3.0 用户使用指南<br>
+  Skill 目录：<code>amazon-product-video-director/</code> · <code>SKILL.md</code> · 约束：<code>references/grok-imagine-constraints.md</code> · <code>references/jimeng-seedance-constraints.md</code><br>
+  生成日期：2026-07-17 · 可直接浏览器打开或打印为 PDF</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+const p=document.getElementById('progress');
+window.addEventListener('scroll',()=>{const h=document.documentElement;p.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%';},{passive:true});
+const links=document.querySelectorAll('.toc a'),secs=document.querySelectorAll('section.chapter');
+function sync(){const y=window.scrollY+180;let c=secs[0]?.id;secs.forEach(s=>{if(s.offsetTop<=y)c=s.id;});links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+c));}
+window.addEventListener('scroll',sync,{passive:true});sync();
+</script>
+</body>
+</html>

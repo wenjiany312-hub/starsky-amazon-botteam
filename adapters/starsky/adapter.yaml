@@ -1,0 +1,8 @@
+platform: starsky
+name: StarSky（星空亚马逊运营 Agent 系统，DeepSeek Harness 桌面端）
+verified: 待做
+runtime: local
+skills_dir: ~/.dsh/skills            # 以 StarSky 设置里显示的为准
+dispatch: team_group_or_subagent
+models: magpie_per_role_unverified
+note: 角色名对照见各角色 card.yaml 的 names.starsky；内置「运营总监」等预设成员用替换提示词的方式升级

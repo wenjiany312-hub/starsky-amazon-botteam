@@ -1,0 +1,221 @@
+# ============================================================
+# SKU 状态机 v1.0（团队包 0.1.2）· FBA + FBM
+# 这是全店「SKU 台账」的唯一规则来源。运营总监按这里调度；所有角色只按这里改状态。
+# 配套：workflow/交接协议.md（怎么交接）、workflow/sku_registry_template.csv（台账表头）
+# ============================================================
+schema_version: "1.0"
+
+# ---------- 一、两层账本 ----------
+ledgers:
+  sku_registry:
+    what: 全店 SKU 台账，一个 SKU 一行，记录「它现在在哪、归谁、下一步是什么」
+    owner: admin
+    storage: 由平台决定（CSV / SQLite / 飞书多维表 / Notion）。字段以本文件为准
+  product_folder:
+    what: 单个产品的文件夹：各技能写出的产物（报告、文案、图片清单、进度文件等）
+    link_field: product_ref
+    rule: 台账只存「结论 + 引用」，详细过程留在产品根；两边冲突时以产品根里有证据的为准，运营总监负责回写台账
+
+# ---------- 二、字段和写入权（单写者原则：每列只有一个角色能写） ----------
+fields:
+  core:            # 运营总监写
+    writer: admin
+    cols: [sku_id, batch_id, product_name, product_root, product_ref, marketplace,
+           status, prev_status, owner_role, sub_status, autonomy_level, priority,
+           version, created_at, updated_at, due_at, return_count, last_msg_id]
+  identity:        # 文案算法师写（上架后才有 ASIN）
+    writer: listing
+    cols: [seller_sku, asin, parent_asin, product_type, fnsku]
+  scout:
+    writer: scout
+    cols: [category_node, target_price, competitor_price_range, demand_score, competition_score,
+           seasonality, fulfillment_hint, scout_ref]
+  guard:
+    writer: guard
+    cols: [g1_verdict, g1_reason_codes, g1_conditions, g1_confidence, g1_ref,
+           g1b_verdict, g1b_reason_codes, g1b_ref, restriction_check,
+           g2_verdict, g2_reason_codes, g2_fix_ref, risk_level]
+  warehouse:
+    writer: warehouse
+    cols: [supplier_offer_url, unit_cost_cny, moq, lead_time_days, pkg_dims_cm, pkg_weight_kg, warehouse_data_level,
+           hts_code, duty_rate, duty_checked_at, freight_quote_ref, fbm_ship_mode, fbm_handling_days, fbm_ship_template,
+           fba_shipment_id, fba_inbound_status, fba_available_units, days_of_supply, aged_90_units, warehouse_ref]
+  finance:
+    writer: finance
+    cols: [fbm_unit_cost, fbm_net_margin, fba_unit_cost, fba_net_margin, breakeven_acos, price_floor,
+           finance_recommendation, ads_daily_cap, ads_launch_total_cap, fba_first_batch_units,
+           cash_required, payback_days, finance_data_quality, finance_ref]
+  listing:
+    writer: listing
+    cols: [copy_status, copy_ref, copy_version, keyword_ref, preview_result, preview_ref,
+           upload_channel, upload_file_ref, upload_receipt_ref, listing_status, buyable_at, fulfillment_current]
+  imageworker:
+    writer: imageworker
+    cols: [image_status, video_status, image_manifest_ref, image_compliance_ref, video_qc_ref, ai_person_summary, aplus_ai_checkbox]
+  editor:
+    writer: editor
+    cols: [qa_verdict, qa_ref]
+  designer:
+    writer: designer
+    cols: [design_status, design_ref, design_version, visual_mode, feed_pack_ref, video_feed_pack_ref, aplus_status, aplus_type, aplus_ref, aplus_upload_pack_ref, aplus_live_at]
+  ads:
+    writer: ads
+    cols: [ads_plan_ref, ads_upload_channel, ads_bulk_ref, ads_receipt_ref, campaign_ids, ads_live_at, ads_status, ads_spend_to_date]
+  reviewer:
+    writer: reviewer
+    cols: [last_checkpoint, review_verdict, root_cause, review_ref, next_review_at]
+  human:           # 只有老板能写（AI 写入一律拒绝）
+    writer: owner
+    cols: [brand_registry, gate1_decision, gate1_by, gate1_at, gate1_note,
+           gate2_decision, gate2_by, gate2_at,
+           gate3_decision, gate3_by, gate3_at, approved_daily_budget, approved_total_budget,
+           gate_fba_decision, gate_fba_by, gate_fba_at, approved_fba_units,
+           gate_restock_decision, gate_restock_by, gate_restock_at, approved_restock_units,
+           gate_clear_decision, gate_delist_decision, halt_override]
+
+# 写引用（*_ref）规则：填产品文件夹下的相对路径；关键产物附 sha256，写法 "path#sha256:xxxx"
+# hash 规则：sha256 由「接收方」在收到文件后重算并写入；写入方不得在文件内容里写自己的 hash（先算后写，内容一变 hash 就失效）
+# 枚举值：
+enums:
+  fulfillment: [FBM_TEST, FBA_DIRECT, FBA_PLUS_FBM, FBM_ONLY]
+  fbm_ship_mode: [CN_DIRECT, US_3PL]
+  visual_mode: [in_team, outsource]   # 不填 = 按 config/team_settings.yaml
+  data_level: [CONFIRMED, PAGE_SIGNAL, ESTIMATE]   # 过闸门 1 前不能有 ESTIMATE
+  upload_channel: [hub_api, manual_sc, flat_file]   # hub_api = 数据底座 listing create → 审核报告 → 老板确认推送（店铺接了 SP-API 时默认，2026-11-05 起）；manual_sc = 照填包 + 老板后台创建（没接 SP-API 时）；flat_file = 类目上架表格（技能待开发）
+  ads_upload_channel: [hub_api, bulk_file]   # hub_api = 广告优化师出 plan.json → 运营总监 plan import → 审核报告 → 老板确认推送（店铺接了 Ads API 时默认）；bulk_file = Bulk 表格老板上传（没接 Ads API 时）
+  verdict_guard: [PASS, CONDITIONAL, REJECT]
+  restriction_check: [API_PASS, API_RESTRICTED, OWNER_TO_CHECK, OWNER_PASS, OWNER_RESTRICTED]   # 没接 SP-API 时写 OWNER_TO_CHECK，不单独构成 CONDITIONAL
+  autonomy_level: [L1, L2, L3]
+
+# ---------- 三、状态表 ----------
+# owner = 这个状态下该谁干活；requires = 进入这个状态时必须已经填好的字段；
+# next = 允许去的下一个状态（只能选这里列出的）；gate: true = 只有老板能把它推出去
+# sla_h = 超时提醒小时数；stage = 对应 S1–S5 板块
+states:
+  # ===== 阶段 A：选品（S1） =====
+  CANDIDATE:        {cn: 候选,          owner: guard,     stage: S1, sla_h: 24,
+                     requires: [sku_id, batch_id, product_name, target_price, scout_ref],
+                     next: [G1_PASS, G1_CONDITIONAL, REJECTED]}
+  G1_PASS:          {cn: 选品风控通过,   owner: warehouse, stage: S1, sla_h: 48,
+                     requires: [g1_verdict, g1_ref], next: [SOURCED, REJECTED]}
+  G1_CONDITIONAL:   {cn: 有条件通过,     owner: warehouse, stage: S1, sla_h: 48,
+                     requires: [g1_verdict, g1_conditions, g1_ref], next: [SOURCED, REJECTED],
+                     note: 条件会一路带到闸门1，老板必须逐条确认}
+  SOURCED:          {cn: 货源已确认（待图片 IP 复核）, owner: guard, stage: S1, sla_h: 24,
+                     requires: [supplier_offer_url, unit_cost_cny, moq, lead_time_days, pkg_dims_cm, pkg_weight_kg, hts_code, duty_rate, warehouse_ref],
+                     next: [IP_CLEARED, REJECTED],
+                     note: "风控官做 G1b：用仓管物流抓到的 1688 实物图做外观专利、实用专利、版权比对。CANDIDATE 阶段没有实物图，外观类风险只能在这里下结论"}
+  IP_CLEARED:       {cn: IP 复核通过,    owner: finance,   stage: S1, sla_h: 24,
+                     requires: [g1b_verdict, g1b_ref],
+                     next: [AWAIT_GATE1, NEED_INPUT, REJECTED]}
+  NEED_INPUT:       {cn: 缺数据,         owner: warehouse, stage: S1, sla_h: 48,
+                     requires: [finance_ref], next: [IP_CLEARED],
+                     note: 财务管家列出缺什么；仓管物流补完回到 SOURCED。来回超过 2 次升级老板}
+  AWAIT_GATE1:      {cn: 待老板选品确认, owner: owner, gate: true, stage: S1, sla_h: 72,
+                     requires: [g1b_verdict, finance_recommendation, fbm_net_margin, breakeven_acos, ads_daily_cap, finance_ref],
+                     next: [APPROVED_1, REJECTED, ON_HOLD]}
+
+  # ===== 阶段 B：内容（S2 文案 + S3 视觉） =====
+  APPROVED_1:       {cn: 已批准选品,     owner: admin,     stage: S2, sla_h: 4,
+                     requires: [gate1_decision, gate1_by, gate1_at], next: [CONTENT_WIP]}
+  CONTENT_WIP:      {cn: 文案、设计、出图制作中, owner: [listing, designer, imageworker], stage: S2+S3, sla_h: 96,
+                     parallel: {copy_status: [todo, draft, done], design_status: [todo, draft, done], image_status: [todo, producing, awaiting_backfill, checking, done, blocked], video_status: [n/a, awaiting_backfill, checking, done, blocked]},
+                     order_note: "文案算法师和创意美工同时开工；创意美工写 design_status = done 后：in_team 模式派出图工出图和复检；outsource 模式把投喂包交老板，image_status = awaiting_backfill，老板回填后再派出图工复检",
+                     requires: [], next: [QA_CHECK],
+                     exit_when: "copy_status == done 且 design_status == done 且 image_status == done 且 出图清单里没有 BLOCKED"}
+  QA_CHECK:         {cn: 质检中,         owner: editor,    stage: S2+S3, sla_h: 24,
+                     requires: [copy_ref, design_ref, image_manifest_ref, image_compliance_ref, ai_person_summary], next: [G2_CHECK, CONTENT_WIP]}
+  G2_CHECK:         {cn: 上架前风控,     owner: guard,     stage: S2+S3, sla_h: 24,
+                     requires: [qa_verdict, qa_ref], next: [PREVIEW, CONTENT_WIP, REJECTED]}
+  PREVIEW:          {cn: 上架预检,       owner: listing,   stage: S2, sla_h: 24,
+                     requires: [g2_verdict], next: [AWAIT_GATE2, CONTENT_WIP],
+                     note: "manual_sc 通道：按 Product Type 必填属性逐项核对；flat_file 通道：类目模板自带校验；sp_api 通道：VALIDATION_PREVIEW。广告用的 amazon-bulk-upload-troubleshooter 不能用来校验商品上架"}
+  AWAIT_GATE2:      {cn: 待老板抽检,     owner: owner, gate: true, stage: S2, sla_h: 48,
+                     requires: [preview_result, preview_ref], next: [APPROVED_2, CONTENT_WIP, REJECTED, ON_HOLD]}
+
+  # ===== 阶段 C：上架 =====
+  APPROVED_2:       {cn: 已批准上架,     owner: listing,   stage: S2, sla_h: 4,
+                     requires: [gate2_decision, gate2_by, gate2_at], next: [AWAIT_UPLOAD, SUBMITTED]}
+  AWAIT_UPLOAD:     {cn: 等老板上传表格, owner: owner,     stage: S2, sla_h: 48,
+                     requires: [upload_file_ref], next: [SUBMITTED],
+                     note: "upload_channel = manual_sc 或 flat_file 时走这里；upload_channel = hub_api 时不进这里：闸门 2 通过后由运营总监生成新建 Listing 审核报告，老板确认推送、listing status 回读到 ASIN 后进 SUBMITTED，upload_receipt_ref 填回读结果（amazon-data-hub）。老板在后台创建或上传后，回传 SKU、ASIN 和状态截图（或表格处理报告），文案算法师写 upload_receipt_ref；没有回执不能往下走"}
+  SUBMITTED:        {cn: 已提交,         owner: listing,   stage: S2, sla_h: 48,
+                     requires: [upload_receipt_ref], next: [FBA_INBOUND, BUYABLE, CONTENT_WIP],
+                     note: 提交报错打回 CONTENT_WIP；FBA_DIRECT 的品先去 FBA_INBOUND}
+  FBA_INBOUND:      {cn: FBA 入仓中,     owner: warehouse, stage: S2, sla_h: 336,
+                     requires: [fba_shipment_id], next: [BUYABLE],
+                     note: 只有走 FBA 的 SKU 会进来；入仓上架后变成可售}
+  BUYABLE:          {cn: 可售,           owner: admin,     stage: S4, sla_h: 4,
+                     requires: [asin, listing_status, buyable_at, fulfillment_current],
+                     next: [AWAIT_GATE3],
+                     side_task: "有品牌备案（brand_registry = true）时，同时派创意美工设计高级 A+ / 品牌故事，方案经老板确认后由出图工出图和复检；接了 SP-API 时由运营总监按 docs/上架资料包规格.md 出 aplus / brand_story 包 → listing aplus / brandstory 审核报告 → 老板确认推送，亚马逊审核通过后写 aplus_live_at；没接时出上传包由老板后台操作。aplus_status 单独跟踪，不卡主流程"}
+
+  # ===== 阶段 D：广告（S4） =====
+  AWAIT_GATE3:      {cn: 待老板确认广告预算, owner: owner, gate: true, stage: S4, sla_h: 48,
+                     requires: [ads_plan_ref, ads_daily_cap], next: [APPROVED_3, ON_HOLD],
+                     note: "L3 模式下，预算 ≤ ads_daily_cap 可以按规则自动放行；超出上限一律要老板确认"}
+  APPROVED_3:       {cn: 已批准广告,     owner: ads,       stage: S4, sla_h: 4,
+                     requires: [gate3_decision, approved_daily_budget], next: [ADS_AWAIT_UPLOAD, ADS_LIVE]}
+  ADS_AWAIT_UPLOAD: {cn: 等老板上传广告表格, owner: owner, stage: S4, sla_h: 24,
+                     requires: [ads_bulk_ref], next: [ADS_LIVE],
+                     note: "ads_upload_channel = bulk_file 时才走这里；ads_upload_channel = hub_api 时由运营总监 plan import 生成审核报告，老板确认推送后直接进 ADS_LIVE，ads_receipt_ref 填推送回读结果。没有处理报告或回读结果不能写 ADS_LIVE"}
+  ADS_LIVE:         {cn: 广告投放中,     owner: reviewer,  stage: S4, sla_h: 72,
+                     requires: [campaign_ids, ads_live_at, ads_receipt_ref], next: [REVIEWING]}
+
+  # ===== 阶段 E：复盘和运营（S5） =====
+  REVIEWING:        {cn: 复盘中,         owner: reviewer,  stage: S5, sla_h: 24,
+                     requires: [next_review_at],
+                     next: [SCALE, OPTIMIZING, PAUSED, STEADY, AWAIT_GATE_FBA, AWAIT_GATE_RESTOCK, AWAIT_GATE_CLEAR, AWAIT_GATE_DELIST],
+                     note: 第 3、7、14、30 天各复盘一次；last_checkpoint 记录到了哪个节点}
+  OPTIMIZING:       {cn: 优化执行中,     owner: [listing, designer, imageworker, ads, finance], stage: S5, sla_h: 72,
+                     requires: [review_ref], next: [REVIEWING],
+                     note: "按 review_ref 里的 actions 分派；改了图片或文案的，要重新走 QA_CHECK → G2_CHECK 的检查（标记 re_check=true）"}
+  SCALE:            {cn: 放量,           owner: ads,       stage: S5, sla_h: 24,
+                     requires: [review_ref], next: [AWAIT_GATE3, REVIEWING],
+                     note: 加预算要重新过闸门 3}
+  PAUSED:           {cn: 广告已暂停,     owner: reviewer,  stage: S5, sla_h: 168, requires: [review_ref], next: [REVIEWING, AWAIT_GATE_DELIST]}
+  STEADY:           {cn: 稳定维持,       owner: reviewer,  stage: S5, sla_h: 168, requires: [review_ref], next: [REVIEWING, AWAIT_GATE_RESTOCK]}
+  AWAIT_GATE_FBA:   {cn: 待老板确认转 FBA, owner: owner, gate: true, money: true, stage: S5, sla_h: 72,
+                     requires: [fba_first_batch_units, cash_required, payback_days], next: [FBA_CONVERTING, REVIEWING]}
+  FBA_CONVERTING:   {cn: 转 FBA 执行中,  owner: warehouse, stage: S5, sla_h: 72,
+                     requires: [gate_fba_decision, approved_fba_units], next: [FBA_INBOUND],
+                     note: "文案算法师要同时把 fulfillment_current 改成 FBA_PLUS_FBM（保留 FBM 的 SKU 作备份）"}
+  AWAIT_GATE_RESTOCK: {cn: 待老板确认补货, owner: owner, gate: true, money: true, stage: S5, sla_h: 48,
+                     requires: [days_of_supply, finance_ref], next: [RESTOCKING, REVIEWING]}
+  RESTOCKING:       {cn: 补货中,         owner: warehouse, stage: S5, sla_h: 336,
+                     requires: [gate_restock_decision, approved_restock_units], next: [REVIEWING]}
+  AWAIT_GATE_CLEAR: {cn: 待老板确认清仓, owner: owner, gate: true, money: true, stage: S5, sla_h: 72,
+                     requires: [aged_90_units, price_floor], next: [CLEARING, REVIEWING]}
+  CLEARING:         {cn: 清仓中,         owner: [ads, listing, warehouse], stage: S5, sla_h: 720,
+                     requires: [gate_clear_decision], next: [REVIEWING, AWAIT_GATE_DELIST]}
+  AWAIT_GATE_DELIST: {cn: 待老板确认下架, owner: owner, gate: true, stage: S5, sla_h: 72,
+                     requires: [review_ref], next: [DELISTED, REVIEWING]}
+
+  # ===== 终态和特殊状态 =====
+  DELISTED:         {cn: 已下架,   owner: reviewer, terminal: true, requires: [gate_delist_decision],
+                     note: 复盘分析师把复盘结论写回 selection_kb 后归档}
+  REJECTED:         {cn: 已淘汰,   owner: reviewer, terminal: true, requires: [reject_reason],
+                     note: 必须写原因代码；复盘分析师每周汇总淘汰原因，写回 selection_kb}
+  ON_HOLD:          {cn: 老板搁置, owner: owner, gate: true, requires: [], next: [恢复到搁置前的状态 prev_status, REJECTED]}
+
+# ---------- 四、全局规则 ----------
+global_rules:
+  halt:
+    flag: halt_flag              # 由风控官 G3 设置，是全店级开关，不是 SKU 状态
+    scope_field: halt_scope      # ALL = 全店暂停 / FBA = 只挡 FBA 相关状态
+    set_by: [guard, admin]       # admin 只有在老板下「全部暂停」口令时才能设置
+    blocks_transitions_into: [AWAIT_UPLOAD, SUBMITTED, APPROVED_3, ADS_AWAIT_UPLOAD, ADS_LIVE, FBA_CONVERTING, RESTOCKING, SCALE]
+    fba_only_halt_blocks: [FBA_CONVERTING, RESTOCKING, FBA_INBOUND]
+    release: 只有老板写 halt_override 才能解除
+  returns:
+    max_same_stage_returns: 2      # 同一个环节打回超过 2 次，状态改成 ON_HOLD，交给老板
+    return_requires: [reason, fix_ref]
+  gates:
+    human_only: true               # gate: true 的状态，只有老板身份能推进
+    money_gates_always_human: true # money: true 的闸门，L1/L2/L3 任何模式都必须人工确认
+  autonomy:
+    L1: 每次状态变化都要老板点一下「继续」
+    L2: 只有 gate 状态需要老板
+    L3: GATE1、GATE2 可以按规则自动放行（规则写在 gates.yaml）；GATE3 预算在上限内可以自动放行；涉及资金的闸门不能自动
+  version_lock: 每次写入 version + 1；写入时带上读取时的 version，对不上就拒绝写入（防止两个角色同时改）
+  terminal_is_final: 终态不能再改；要重新做，就新建一个 sku_id，并在 notes 里关联旧的

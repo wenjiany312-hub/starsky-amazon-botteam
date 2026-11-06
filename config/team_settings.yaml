@@ -1,0 +1,33 @@
+# 星空亚马逊 Bot Team · 团队设置（老板按自己的情况改）
+schema_version: "1.0"
+
+# ---------- 视觉出图方式 ----------
+visual:
+  image_mode: in_team        # in_team = 出图工配了出图模型，直接出图 ｜ outsource = 创意美工出投喂包，老板拿去第三方平台或外包出图，回填后出图工复检
+  video_mode: outsource      # 团队目前不能直接生成视频：创意美工出分镜投喂包 → 老板在即梦等平台生成 → 回填 → 出图工质检
+  outsource_platforms:       # 外包出图时，投喂包「怎么用」里推荐的平台，可改
+    image: [ChatGPT 网页端, 即梦, 外包设计师]
+    video: [即梦, 可灵]
+  backfill_folder: "products/<SKU>/S3_视觉/出图投喂包/回填/"
+
+# ---------- 每个角色用什么模型（OpenBot / StarSky 通过 MagPie 分配；Grok Bot 不适用） ----------
+# 只写「能力档」，具体模型由老板在 MagPie 里选，写成 MagPie 的模型 ID（provider/model）
+# 能力档说明见 docs/模型分配指南.md
+models:
+  gateway: magpie            # magpie ｜ platform_default（不用 MagPie，按平台默认模型）
+  roles:
+    admin:       {profile: 强推理,    model: ""}   # 运营总监：调度、检查、闸门，出错代价最高
+    scout:       {profile: 工具主力,  model: ""}   # 大量调用选品数据工具，要稳、要便宜
+    guard:       {profile: 强推理,    model: ""}   # 风控判断，宁可慢
+    warehouse:   {profile: 工具主力,  model: ""}   # 1688 浏览器、表格数据
+    finance:     {profile: 工具主力,  model: ""}   # 计算尽量用脚本，模型负责组织
+    listing:     {profile: 英文写作,  model: ""}   # 标题五点的英文质量
+    designer:    {profile: 多模态创意, model: ""}  # 要能读图（垫图、竞品图）
+    imageworker: {profile: 出图,      model: "", vision_model: ""}  # model = 出图模型；vision_model = 复检时读图用的模型
+    editor:      {profile: 多模态严谨, model: ""}  # 质检要看图
+    ads:         {profile: 工具主力,  model: ""}
+    reviewer:    {profile: 强推理,    model: ""}
+  video_model: ""            # 以后接入视频模型时填；填了再把 visual.video_mode 改成 in_team
+
+# ---------- 自动化等级 ----------
+autonomy_level: L1

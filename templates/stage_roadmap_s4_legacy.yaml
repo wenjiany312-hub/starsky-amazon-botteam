@@ -1,0 +1,278 @@
+S4:
+  name: 广告板块
+  total_steps: 9
+  note: 先判断再交互再架构；词库+文案埋词+图/A+；有 SIF 补机会词；HTML 审过才 Bulk。上线后 3–5 天投喂报表做阶段1优化。详见 skills/_ad_launch_contract/S4_CONTRACT.md。
+  handoff:
+    file: _NEXT_S4到S5.md
+    gate: S4 验收 → S4 HTML；stage_acceptance.S4 分 classroom_status 与 post_launch_status
+    next_session: 在同一个产品项目里，新开一个 Codex 会话进入 S5（上线后有真实数据再跑）
+  model_default: 6 Luna · 中；6.1 Sol · 中：架构与机会词；预算盘子和策略用高
+  steps:
+  - n: 1
+    deferrable: false
+    skippable: false
+    name: 承接 S3，核对闸门，先印 S4 九步交接卡
+    skill: starsky-fullchain-workflow
+    mcp: []
+    model: 6 Luna · 中
+    pause: ⚠️ 本步印一次 S4 路线图（九步表）。缺路线图不算开工。之后每步只出统一步骤卡，不要每步重印九步表。本步先跑 keyword_index.py
+      刷新 S2 目录下的 ad_keyword_index.md/.json，S4 全程只读这份索引（S4_CONTRACT 硬锁 9）。
+    control:
+      id: s4_intake
+      model_ref:
+      - by_step
+      - S4
+      - '1'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - blocked
+      required_artifacts:
+      - intake_md
+    kb: []
+  - n: 2
+    deferrable: false
+    skippable: false
+    name: 系统预判（读 S1/S2/S3：标品半标非标 · 新品 · 首期角色）
+    skill: amazon-ad-strategy-architect
+    mcp:
+    - promotion_knowledge_base
+    mcp_optional:
+    - ads_knowledge_base
+    model: 6.1 Sol · 中
+    pause: 写出判定与依据，让用户能否决，不要开场问形态
+    control:
+      id: ad_classification
+      model_ref:
+      - by_step
+      - S4
+      - '2'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - blocked
+      required_artifacts:
+      - classification_md
+    kb:
+      required: true
+      calls:
+      - server: ads_knowledge_base
+        tool: kb_scenario_rules
+        args:
+          ad_type: SP
+      - server: promotion_knowledge_base
+        tool: kb_scenario_rules
+        args:
+          scene: 新品首推
+  - n: 3
+    deferrable: false
+    skippable: false
+    name: 交互定盘子（日预算 · 毛利/保本 ACOS · 目标 ACOS · 前期能否亏损 · 打法）
+    skill: amazon-ad-strategy-architect → ad_strategy_brief.yaml
+    mcp:
+    - promotion_knowledge_base
+    model: 6.1 Sol · 高
+    pause: ⚠️ 只问盘子，不问开几个 Campaign；随后 strategy_review
+    control:
+      id: strategy_review
+      model_ref:
+      - by_step
+      - S4
+      - '3'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - blocked
+      required_artifacts:
+      - strategy_brief
+      - strategy_review
+      - parameters_md
+    kb:
+      required: true
+      calls:
+      - server: ads_knowledge_base
+        tool: kb_query
+        args:
+          text: 预算 保本 ACOS 阈值
+      - server: promotion_knowledge_base
+        tool: kb_scenario_rules
+        args:
+          scene: 新品首推
+  - n: 4
+    deferrable: false
+    skippable: false
+    name: 编译新品广告架构（吃词库 + Listing 埋词 + 主副图/A+ 图位）
+    skill: amazon-ad-campaign-builder（需已批准 brief）
+    mcp: []
+    model: 6.1 Sol · 中 + 编译脚本
+    pause: ''
+    artifacts:
+    - 11_新品广告架构.md
+    - ad_plan.yaml
+    control:
+      id: ad_architecture
+      model_ref:
+      - by_step
+      - S4
+      - '4'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - blocked
+      required_artifacts:
+      - plan_yaml
+      - architecture_md
+    kb:
+      required: true
+      calls:
+      - server: ads_knowledge_base
+        tool: kb_playbook
+        args:
+          ad_type: SP
+  - n: 5
+    deferrable: false
+    skippable: true
+    name: 机会词对齐（已有 SIF 词包 + 文案埋词；有 SIF MCP 再补当前类目）
+    skill: amazon-ad-campaign-builder
+    mcp:
+    - SIF
+    mcp_optional:
+    - xydc
+    model: 6.1 Sol · 中
+    pause: ''
+    control:
+      id: ad_signal
+      model_ref:
+      - by_step
+      - S4
+      - '5'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - skipped
+      - blocked
+      required_artifacts:
+      - ad_signal_md
+    kb: []
+  - n: 6
+    deferrable: false
+    skippable: false
+    name: 强制出新品广告 HTML 报告
+    skill: github-tabler-html-report
+    mcp: []
+    model: 6 Luna · 低 + 渲染脚本
+    pause: ''
+    artifacts:
+    - HTML/11_新品广告报告.html
+    control:
+      id: s4_report_delivery
+      model_ref:
+      - by_step
+      - S4
+      - '6'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - blocked
+      required_artifacts:
+      - report_md
+      - report_html
+    kb: []
+  - n: 7
+    deferrable: false
+    skippable: false
+    name: 审 HTML / 架构（过了才允许 Bulk）
+    skill: 总控等待 → architecture_review.yaml
+    mcp: []
+    model: 用户审核；6.1 Sol · 中辅助
+    pause: ⚠️ 要你确认（审核 ②）
+    control:
+      id: architecture_review
+      model_ref:
+      - by_step
+      - S4
+      - '7'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - blocked
+      required_artifacts:
+      - architecture_review
+      - review_md
+    kb:
+      required: true
+      calls:
+      - server: ads_knowledge_base
+        tool: kb_query
+        args:
+          text: 日预算 竞价 上限
+          knowledge_type: threshold
+  - n: 8
+    deferrable: false
+    skippable: false
+    name: 检查官方 Bulk 模板已同步 → 出表 → 技术校验
+    skill: amazon-bulk-upload → amazon-bulk-upload-troubleshooter
+    mcp: []
+    model: 6 Luna · 中 + 确定性脚本
+    pause: ⚠️ 先核对 AmazonAdvertisingBulksheetSellerTemplate.xlsx；无真实 SKU 只出 DEMO 表
+    control:
+      id: bulk_release
+      model_ref:
+      - by_step
+      - S4
+      - '8'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - blocked
+      required_artifacts:
+      - bulk_xlsx
+      - bulk_manifest
+      - bulk_template
+      - bulk_template_ref
+      - bulk_release_review
+      - approved_validation
+    kb: []
+  - n: 9
+    deferrable: false
+    skippable: false
+    name: 课堂收尾（去后台手传；写清 3–5 天后报表投喂路径）
+    skill: starsky-fullchain-workflow
+    mcp: []
+    model: 6 Luna · 低
+    pause: ⚠️ 系统不替你点上传；本步必须写出 _NEXT_S4到S5.md 并打印可复制口令。API 同步只预留
+    control:
+      id: s4_classroom_close
+      model_ref:
+      - by_step
+      - S4
+      - '9'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - partial
+      - blocked
+      required_artifacts:
+      - report_md
+      - report_html
+      - upload_card_md
+    kb: []
+  post_launch:
+  - n: 10
+    name: 用户把 Bulk 手动上传到 Amazon 后台
+    skill: 用户动手
+    pause: 上线后
+    model: 用户操作
+  - n: 11
+    name: 跑 3–5 天，去 S5（手动报表路线）：广告后台「批量操作」下载表格放入 S5_运营板块/_投喂_广告报表/（说「优化广告」）
+    skill: 用户动手
+    pause: 上线后；用户说「报表已放入」
+    model: 6 Luna · 低
+  - n: 12
+    name: 阶段1优化：S5 s5_optimize.py 出优化前后对比 HTML → 同意后出上传表（结构性改动如开 SB/SD 仍回 S4 策略）
+    skill: _s5_ops_contract/scripts/s5_optimize.py（ingest → diagnose → report → approve
+      → bulk）
+    mcp:
+    - promotion_knowledge_base
+    pause: 上线后；审过才出第二张表
+    model: 6.1 Sol · 高

@@ -1,0 +1,55 @@
+schema_version: "2.0"
+edition: starsky-v2
+category_id: ""
+category_name_zh: ""
+category_display_name: ""  # 用户原始自由输入，不限预置类目
+category_relative_path: "" # 可为层级路径，必须位于用户给定资料包根目录内
+marketplace: "US"
+profile_version: "1.0.0"
+product_forms: []  # standard | semi_standard | non_standard
+default_product_form: "semi_standard"
+target_customers: []
+purchase_scenarios: []
+required_attributes: []
+compliance_constraints: []
+keyword_dimensions: []
+visual_priorities: []
+ad_constraints: []
+source_sop_files: []
+data_pack_sources: []
+skill_patches: {}
+validation:
+  status: "draft"  # draft | validated | retired
+  validated_by: ""
+  validated_at: ""
+updated_at: ""
+
+# S4读取已确认且来源指纹有效的类目打法；示例数值不能直接作为产品事实。
+ad_playbook:
+  playbook_id: "tool-roll-us-v0"
+  category_display_name: "工具卷包（Tool Roll）"
+  marketplace: "US"
+  status: "draft"            # draft | validated | retired；validated 才在报告里写"按类目打法卡"
+  traffic_shape: "分散"      # 集中 | 分散：大词是否占大部分搜索量
+  head_terms_cpc_usd: [0.89, 1.45]   # 大词建议 CPC 区间，写数据日期
+  head_terms_cpc_as_of: "2026-10-15"
+  launch_structure: "母版 A：新品稳定出单"   # 对应 KC-0114 四个母版之一
+  launch_campaigns:
+    - name: "精准形态词"
+      match: "exact"
+      keywords_max: 5
+      budget_share: 0.67
+    - name: "自动紧密"
+      match: "auto_close"
+      budget_share: 0.33
+  start_bid_rule: "参考建议竞价；固定竞价；第 3 天无曝光 +15% 阶梯"   # KC-0053 / 0105 / 0146
+  review_rhythm_days: [3, 7, 14]
+  pitfalls:
+    - "通用词 tool roll 意图很宽（扳手卷包为主），陶艺等细分用途词要单独验证"
+    - "10% 优惠券每单约吃掉 $3.3，会明显压低可承受 CPC"
+  sources:
+    - type: "case"
+      ref: "2026-10-14_US-15-25-陶艺工具卷包验证"
+    - type: "kb"
+      ref: ["KC-0053", "KC-0105", "KC-0113", "KC-0114", "KC-0146"]
+  updated_at: "2026-10-16"

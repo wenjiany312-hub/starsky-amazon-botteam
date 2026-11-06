@@ -1,0 +1,177 @@
+# 星空合规词库 · 平台基础库（第一层）
+# 来源：用户整理《亚马逊敏感词与违规词避坑汇总-1227》（PDF，6 页，7 章），2026-10-15 结构化
+# 用途：S2 文案定稿前扫描（标题 / 亮点 / 五点 / 描述 / ST / Q&A / 后台属性），S3 图片文字、A+、品牌故事同样适用；S4 广告只用于提示，不拦截否定词
+#
+# level 含义：
+#   block       命中即拦截，必须替换后才能交付
+#   warn        高危，需要人工确认语境；默认提示替换
+#   conditional 需要证书或事实支持；产品资料里登记了对应证书 / 事实时放行，否则按 block 处理
+#   seasonal    时效词：只在有效期内允许，过期后必须撤下（与季节提醒联动）
+#
+# match 规则：不区分大小写；按完整单词匹配；variants 里列出常见拼写（连字符、空格、复数）
+# context：只在特定类目或语境下才算违规；扫描时结合产品 CT 与类目判断，减少误报
+
+schema_version: 1
+layer: platform_base
+source:
+  title: 亚马逊敏感词与违规词避坑汇总-1227
+  owner: user
+  file: /Volumes/Tool Disk/亚马逊日常/【测试】亚马逊敏感词与违规词避坑汇总-1227.pdf
+  structured_at: '2026-10-15'
+review_interval_days: 90
+
+chapters:
+
+  - id: ch1_trademark_genericide
+    name: 商标通用化陷阱（Trademark Erasure）
+    consequence: 这些词看起来像通用名称，实际是私有商标；中国卖家侵权最高发区域，会被品牌方投诉或维权
+    match_mode: compact   # 商标按变形匹配：Q-tips / QTips / Q Tips / Q.Tips / qtip 都算命中
+    entries:
+      # 居家与日用类
+      - {term: Velcro, level: block, risk: 极高, note: 3M 维权, replace: [hook and loop, fastener tape]}
+      - {term: Q-tips, variants: [Q-tip], level: block, risk: 极高, note: 联合利华；用户亲历：宠物棉签用了 QTips（无连字符）同样被投诉，影响多个产品销量和排名, replace: [cotton swabs, cotton buds, pet cotton swabs]}
+      - {term: Kleenex, level: block, risk: 高, replace: [facial tissue, tissue]}
+      - {term: Chapstick, variants: [Chap Stick], level: block, risk: 高, replace: [lip balm]}
+      - {term: Tupperware, level: block, risk: 高, replace: [food storage container]}
+      - {term: Thermos, level: block, risk: 高, replace: [vacuum flask, insulated bottle]}
+      - {term: Scotch Tape, level: block, risk: 高, replace: [transparent tape, clear tape]}
+      - {term: Post-it, variants: [Post it, Postit], level: block, risk: 高, replace: [sticky notes]}
+      - {term: Mason Jar, level: warn, risk: 中, replace: [glass jar, canning jar]}
+      - {term: Popsicle, level: warn, risk: 中, replace: [ice pop, ice lolly]}
+      - {term: Sharpie, level: warn, risk: 中, replace: [permanent marker]}
+      - {term: X-Acto, variants: [Xacto, X Acto], level: warn, risk: 中, replace: [hobby knife, utility knife]}
+      # 母婴、玩具与运动类
+      - {term: Onesie, variants: [Onesies], level: block, risk: 极高, note: Gerber 维权, replace: [bodysuit, romper]}
+      - {term: Hula Hoop, level: block, risk: 极高, replace: [weighted hoop, fitness hoop]}
+      - {term: Frisbee, level: block, risk: 高, replace: [flying disc]}
+      - {term: Lego, level: block, risk: 高, note: 慎用 compatible 说法, replace: [building blocks, bricks]}
+      - {term: Barbie, level: block, risk: 高, replace: [fashion doll]}
+      - {term: Rubik's Cube, variants: [Rubiks Cube, Rubik Cube], level: block, risk: 高, replace: [magic cube, puzzle cube]}
+      - {term: Ping Pong, variants: [Ping-Pong], level: warn, risk: 中, replace: [table tennis]}
+      - {term: Jacuzzi, level: warn, risk: 中, replace: [whirlpool bath, hot tub]}
+      - {term: Jet Ski, level: warn, risk: 中, replace: [personal watercraft]}
+      # 材质与时尚类
+      - {term: Gore-Tex, variants: [GoreTex, Gore Tex], level: block, risk: 极高, note: 户外类目重灾区, replace: [waterproof breathable fabric]}
+      - {term: Swarovski, level: block, risk: 极高, replace: [crystal, rhinestone]}
+      - {term: Lycra, level: block, risk: 高, replace: [spandex, elastane]}
+      - {term: Kevlar, level: block, risk: 高, replace: [aramid fiber]}
+      - {term: Teflon, level: block, risk: 高, replace: [non-stick coating]}
+
+  - id: ch2_epa_pesticide
+    name: 农药与杀虫剂红线（EPA Policy）
+    consequence: 被判定为「未注册农药 / 农药设备」，下架 ASIN，要求美国本土卖家权限及 EPA 注册号
+    applies_to: 所有非农药产品（如袜子、家电、UV 灯、鞋垫等）
+    entries:
+      - {term: Antimicrobial, variants: [Anti-microbial], level: block, cn: 抗菌}
+      - {term: Antibacterial, variants: [Anti-bacterial], level: block, cn: 杀菌, replace: [easy to clean]}
+      - {term: Antifungal, variants: [Anti-fungal], level: block, cn: 抗真菌}
+      - {term: Anti-mites, variants: [Anti mites, Antimites, Mite killer], level: block, cn: 防螨}
+      - {term: Anti-mold, variants: [Anti mold, Antimold, Mildew proof, Mildew-proof], level: block, cn: 防霉, replace: [keep fresh, moisture resistant]}
+      - {term: Anti-virus, variants: [Antivirus, Anti viral, Antiviral], level: block, cn: 抗病毒}
+      - {term: Insecticide, variants: [Pesticide], level: block, cn: 杀虫剂}
+      - {term: Disinfect, variants: [Disinfecting, Disinfectant, Sterilize, Sterilizing, Sterilization], level: block, cn: 消毒 / 灭菌}
+      - {term: Repel, variants: [Repels, Repellent, Repelling], level: block, cn: 驱赶, note: 如 repel bugs}
+      - {term: Kill bacteria, variants: [Kills bacteria, Kills germs, Kill germs], level: block, replace: [easy to clean]}
+      # 高危边缘词
+      - {term: Hygienic, level: warn, cn: 卫生的, note: 易误判}
+      - {term: Sanitize, variants: [Sanitizing, Sanitizer], level: warn, cn: 卫生处理}
+      - {term: Resistant, level: warn, cn: 抵抗, replace: [durable], context: 与 microbe / bacteria / mold / mildew 连用时按 block；water-resistant 等物理性能另按证据规则}
+      - {term: Stop Microbes, level: warn, cn: 阻断微生物}
+
+  - id: ch3_fda_medical
+    name: 医疗与健康功效红线（FDA Policy）
+    consequence: 被判定为「未批准药物」或「医疗器械」，强制下架，要求 FDA 认证
+    entries:
+      - {term: Cancer, level: block}
+      - {term: Diabetes, level: block}
+      - {term: Arthritis, level: block}
+      - {term: Asthma, level: block}
+      - {term: Psoriasis, level: block}
+      - {term: Eczema, level: block}
+      - {term: Depression, level: block}
+      - {term: Anxiety, level: block, note: 宠物用品的「焦虑」说法同样要改（如 calm、comfort）}
+      - {term: Insomnia, level: block}
+      - {term: Inflammation, level: block}
+      - {term: Virus, level: warn, note: 文案中尽量别碰}
+      - {term: Bacteria, level: warn, note: 文案中尽量别碰}
+      - {term: Fungus, level: warn, note: 文案中尽量别碰}
+      - {term: Cure, variants: [Cures], level: block, cn: 治愈}
+      - {term: Heal, variants: [Heals, Healing], level: block, cn: 治疗}
+      - {term: Treat, variants: [Treats, Treatment], level: warn, cn: 治疗, context: 指治疗疾病时 block；pet treats（零食）等非医疗义放行}
+      - {term: Prevent, variants: [Prevents, Prevention], level: warn, cn: 预防, context: 预防疾病时 block；prevent scratches 等物理防护放行}
+      - {term: Remedy, variants: [Remedies], level: block, cn: 疗法}
+      - {term: Pain Relief, variants: [Relieve pain, Relieves pain], level: warn, replace: [comfort], context: 按摩器、鞋垫类目慎用}
+
+  - id: ch4_weapons
+    name: 枪械、武器与战术配件（Weapons）
+    consequence: 违反「攻击性武器」禁令，可能直接封店（Account Deactivation）、资金冻结
+    entries:
+      - {term: Silencer, level: block, note: 即使卖汽车排气管也别用}
+      - {term: Suppressor, level: block}
+      - {term: Assault, level: block, note: 严禁 assault pack / assault vest}
+      - {term: Receiver, level: warn, context: 枪械语境 block；音响 AV receiver 等放行}
+      - {term: Flash Hider, level: block}
+      - {term: Bump Stock, level: block}
+      - {term: Pistol, level: warn, context: 非玩具类慎用}
+      - {term: Rifle, level: warn, context: 非玩具类慎用}
+      - {term: Handgun, level: warn, context: 非玩具类慎用}
+      - {term: Gun, level: warn, context: 非玩具类慎用；glue gun / nail gun / massage gun 等工具名人工确认}
+      # 配件高危词
+      - {term: Magazine, level: warn, replace: [mag, holder], context: 战术包类目慎用；书报杂志语境放行}
+      - {term: Clip, level: warn, context: 战术 / 枪械语境才算；hair clip、paper clip 等放行}
+      - {term: Ammo, variants: [Ammunition], level: block}
+      - {term: Laser Sight, level: block}
+      - {term: Solvent Trap, level: block, note: 被默认为消音器半成品}
+      - {term: High Capacity, level: warn, context: 形容容器时小心}
+      - {term: Switchblade, level: block, note: 禁售}
+      - {term: Butterfly Knife, level: block, note: 禁售}
+
+  - id: ch5_compliance_triggers
+    name: 合规审核触发词（Compliance Triggers）
+    consequence: 链接被 Listing Suppression（禁止显示），后台要求提交 CPC、UL、FCC 等证书；没证别写这些词
+    entries:
+      - {terms: [School, Kids, Children, Toddler, Education, Learning], level: conditional, requires: CPC（儿童产品证书）, examples: 笔筒、地毯、书包、玩具}
+      - {terms: [Baby, Infant, Teether, Crib], level: conditional, requires: CPC + ASTM 测试, examples: 母婴用品}
+      - {term: Bamboo, level: conditional, requires: 纺织品标签合规, note: 竹纤维纺织品必须写 Rayon made from Bamboo}
+      - {term: Non-toxic, variants: [Nontoxic, Non toxic], level: conditional, requires: LHAMA / CP65 / SDS, examples: 颜料、画笔、塑胶制品}
+      - {terms: [Laser, Light Therapy], level: conditional, requires: FDA Laser / Medical, examples: 激光笔、美容仪、逗猫笔}
+      - {terms: [Bluetooth, Wi-Fi, WiFi, Wireless], level: conditional, requires: FCC ID, examples: 耳机、遥控器、智能设备}
+      - {terms: [Battery, Lithium, Coin cell, Button battery], level: conditional, requires: UN38.3 / UL 4200A, note: 2025 新规：纽扣电池产品需 UL 4200A}
+      - {terms: [Biodegradable, Compostable], level: conditional, requires: ASTM D6400 / BPI 证书, examples: 环保垃圾袋、餐具（无证禁写）}
+
+  - id: ch6_restricted
+    name: 毒品、成人与政治敏感（Restricted）
+    entries:
+      - {terms: [Hemp, CBD], level: block, note: 大麻类，高危}
+      - {term: Poppy, level: warn, note: 罂粟；花卉装饰语境人工确认}
+      - {term: Coca, level: warn, note: 古柯；Coca-Cola 另属商标问题}
+      - {term: Grinder, level: warn, context: 厨具类要避开 herb / weed 连用；herb grinder 按 block}
+      - {term: Paraphernalia, level: block, note: 毒品圈黑话}
+      - {terms: [Herb grinder, Weed], level: block}
+      - {term: Xinjiang, level: block, note: 棉花法案}
+      - {term: Persian, level: block, replace: [oriental], note: 制裁；地毯类改 oriental}
+      - {terms: [Cuba, Cuban, Havana], level: block, note: 制裁}
+      - {term: Nazi, level: block}
+      - {terms: [Allah, God], level: warn, context: 不要印在鞋底、地垫、马桶盖等产品或图片上}
+
+  - id: ch7_listing_quality
+    name: 营销与 Listing 违规词（Listing Quality）
+    consequence: 搜索降权、无法保存 Listing、被投诉虚假宣传
+    entries:
+      - {terms: [Free shipping, Best Seller, Bestseller, Hot Item, On Sale, Discount, Cheapest], level: block, group: 价格与促销}
+      - {terms: [100% Quality Guaranteed, Quality Guaranteed, Satisfaction Guarantee, Satisfaction Guaranteed, Risk-free, Risk free], level: block, group: 绝对化承诺}
+      - {terms: [Leave a review, Five Star, 5 Star, 5-Star], level: block, group: 引导好评}
+      - {term: New Arrival, level: seasonal, note: 新品期过后即违规；建议直接不用}
+      - {term: Christmas, level: seasonal, note: 只在季节有效期内使用；过季后必须撤下（与季节 / 礼品词提醒联动）}
+
+# ---- 项目补充（非用户 PDF 内容，由 Claude 根据本次 S2 审核补充，单独标注来源，可删） ----
+supplements:
+  source: Claude 审核补充（2026-10-15），待用户确认是否并入基础库
+  entries:
+    - {term: Cordura, level: block, layer_hint: platform_base, replace: [nylon fabric], note: 面料注册商标，工具包 / 户外包类目常见}
+    - {term: YKK, level: warn, note: 拉链品牌；未经授权或无采购证明不写}
+    - {terms: [Best, '#1', Number One, Top Rated], level: block, group: 绝对化 / 排名宣传}
+    - {terms: [Sale, Clearance], level: warn, group: 价格与促销, note: 单独出现时人工确认是否构成促销用语；建议改写（如 the sale is for → this listing includes）}
+    - {terms: [Guarantee, Guaranteed, Lifetime warranty], level: warn, note: 需与实际售后政策一致}
+    - {terms: [Waterproof, Indestructible, Puncture-proof, Unbreakable], level: conditional, requires: 测试报告或样品验证, note: 性能承诺，无证据时改弱化说法}
+    - {terms: [FDA approved, OSHA, Certified], level: conditional, requires: 对应证书}

@@ -1,0 +1,24 @@
+schema_version: "2.0"
+analysis_id: ""
+run_id: ""
+plan_ref: {plan_id: null, plan_version: null, plan_hash: null}
+actions:
+  - action_id: ""
+    finding_id: ""
+    priority: P0
+    action_type: ""
+    object: {}
+    current_value: null
+    recommended_value: null
+    value_source: null
+    evidence_refs: []
+    alternative_explanations: []
+    preconditions: []
+    protection_conditions: []
+    observe_until: null
+    rollback_if: []
+    confidence: low
+    requires_user_confirmation: true
+    human_decision: pending
+transfers: []
+status: pending_review

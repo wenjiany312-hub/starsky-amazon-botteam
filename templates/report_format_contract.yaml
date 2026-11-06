@@ -1,0 +1,104 @@
+schema_version: "2.1"
+name: 星空 Agent V2 · 报告格式唯一契约
+updated: "2026-09-12"
+edition: starsky-v2
+
+decision: >
+  S2 词库与 Listing 使用 scripts/s2_report.py 的版本化模型和固定模板；
+  词库八节、Listing 十节，按字段、事实资格和输入对应验收。
+  S1/S3/S4/S5 继续使用 salon_report.py 及各自契约。
+  生产路径禁止临时重写 HTML 生成器或混入 editorial-html-report。
+
+why_not_four_styles: >
+  报告从同一结构化输入生成，固定阅读顺序和字段卡；普通产品运行只更新内容，
+  模板升级才改变布局。来源完整与正文完整通过数据对应核验，不按文件体积判定。
+
+generator:
+  skill: github-tabler-html-report
+  renderer: skills/github-tabler-html-report/assets/salon_report.py
+  scope: S1/S3/S4/S5
+  s1:
+    command: 'python scripts/s1_stage_report.py --root ROOT [--compact-receipt RECEIPT]'
+    renderer_model: scripts/s1_report_v2.py
+    modules: templates/s1_report_module_contract.yaml
+    front_contract: templates/s1_product_front_contract.md
+    acceptance: 七章必备字段、唯一结论、>=200字重复检测、保留完整深度及native源/双报告Hash；不按体积或KPI数量。
+  s2:
+    renderer: scripts/s2_report.py
+    input_contract: templates/s2_report_input.md
+    keyword_layout: templates/keyword_report_layout.md
+    listing_layout: skills/amazon-listing-copywriter/references/listing-report-contract.md
+    command: 'python scripts/s2_report.py --package PATH --context PATH --output-dir DIR'
+    optional_args: ['--listing PATH', '--baseline PATH']
+    outputs: [keyword_report.html, listing_report.html, listing.md, keywords.csv, report_model.json, validation.json, manifest.json]
+    listing_outputs_require_listing_input: true
+    legacy_alias_rule: 路由可映射为旧的 06/07 文件名，保留映射与输入指纹，不另行重写正文。
+    input_write_policy: 只读；正式用途资格更新须先写回所选词包并重新 finalize Hash。
+    acceptance: 字段完整性、事实/IP资格、计数去重、实际覆盖、版本指纹和关键风险可见性。
+    content_minimums: 无 KB、表格、进度条、场景卡或保留率下限。
+  import_rule: >
+    从插件根读 %USERPROFILE%\.codex\starsky.json 的 home，再
+    sys.path.insert(0, home + "/skills/github-tabler-html-report/assets")
+    ⛔ 禁止写死旧路径 00-工具包基础\
+    ⛔ 禁止现场重写 CSS / HTML 骨架
+  forbidden_in_production:
+    - editorial-html-report
+  editorial_only_when: 用户明确说「杂志风 / 老板页 / 精美分享」，且不是 S1–S5 阶段交付
+
+gold_standard:
+  visual_skin: "8.8 案例A · 阶段_S1_选品可行性研究报告_v2统一版.html"
+  visual_path: templates/gold_reports/S1_选品可行性_v2统一版.html   # 插件内自带的金样副本，随包分发
+  keyword_skeleton: "结论与事项 / 选词工作表 / 文案部署 / 广告交接 / MCP与季节 / 证据与排除"
+  keyword_path: templates/keyword_report_layout.md
+  keyword_layout_file: templates/keyword_report_layout.md
+  s1_modules_file: templates/s1_report_module_contract.yaml
+  recent_density: "非 S2 报告按各自 html_report_contract.yaml 验收；S2 不采用历史体积下限"
+  plugin_copy: templates/gold_reports/S1_选品可行性_v2统一版.html
+
+fingerprint_scope: salon_report.py 输出；S2 使用自身 manifest/模板版本和输入指纹校验。
+fingerprint_must_have:
+  - "--accent:#0f766e"
+  - 'class="hero"'
+  - 'class="layout"'
+  - 'class="kpirow"'
+  - "overflow-x:clip"
+  - 'class="tablewrap"'
+fingerprint_must_not:
+  - "Noto Serif SC"
+  - "editorial-html-report"
+  - "overflow-x:hidden"
+
+title_format:
+  S1: "S1 选品可行性综合报告 · {产品}"
+  S2_keyword: "S2 词库报告 · {产品}"
+  S2_listing: "S2 Listing 文案报告 · {产品}"
+  S3: "S3 视觉方案报告 · {产品}"
+  S4: "S4 广告架构报告 · {产品}"
+  S5: "S5 运营巡检报告 · {店铺或产品} · {日期}"
+
+shell:
+  scope: 非 S2 报告；S2 阅读顺序与字段卡按专用模板。
+  html:
+    - 左侧 sticky 目录（抬头=报告名，不放署名）
+    - Hero：标题 + 副标题 + meta 胶囊（板块 / 站点 / 数据日期 / 运行模式）
+    - 首屏决策：KPI 行 + 判定 callout
+    - 章节用 <section>，表用 table()，图用 donut/hbars_svg
+    - 页脚固定 DEFAULT_FOOT
+  markdown:
+    - 标题与 HTML 同句
+    - 报告头表：产品 / 站点 / 结论 / 数据源 / 运行模式
+    - 先决策后证据
+    - 文末数据解释窗口 + 验收 + 下一阶段口令
+    - 页脚：星空亚马逊 Agent V2.0｜{skill}｜坚哥｜跨境者说干货 · 星空的跨境圈子
+
+write_html:
+  v2: "{产品根}/{S?_板块夹}/github-tabler-html-report/HTML/{filename}"   # 与 skill_folder_map.yaml 一致
+  stage_overview_md: "{产品根}/{S?_板块夹}/_阶段总览/{阶段_S?_*.md}"
+  legacy_read: "{产品根}/{板块夹}/github-tabler-html-report/HTML/{filename}"   # 只读旧 run，新产物禁止写这里
+
+footer: "星空亚马逊 Agent V2.0｜github-tabler-html-report｜坚哥｜跨境者说干货 · 星空的跨境圈子｜Tabler MIT"
+
+listing_fidelity: >
+  S2 同一份模型逐 SKU 保留 Title、Highlights、B1–B5、Description、Search Terms
+  和交付的 Q&A。英文消费者文案与中文译文直接可读，关键风险可见，长证据可折叠。
+  缺字段明确说明，不新增事实；描述默认纯文本，HTML 源码仅作按需审阅。

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>S5 运营接入指南</title>
+<style>
+:root{--bg:#f7f8fa;--card:#fff;--ink:#1d2330;--mute:#667085;--line:#e4e7ec;--acc:#0f766e;--warn:#b54708;--tip:#eef6f5;--code:#f2f4f7}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.75 -apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+.wrap{display:flex;gap:22px;max-width:1120px;margin:0 auto;padding:18px}
+nav{position:sticky;top:18px;align-self:flex-start;width:200px;flex:none;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px}
+nav a{display:block;color:var(--ink);text-decoration:none;padding:4px 8px;border-radius:6px;font-size:14px}nav a:hover{background:var(--bg)}
+main{flex:1;min-width:0}section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-bottom:16px}
+h1{font-size:22px;margin:0 0 6px}h2{font-size:18px;margin:0 0 10px;color:var(--acc)}h3{font-size:15px;margin:16px 0 6px}
+.mute{color:var(--mute)}ol,ul{padding-left:22px}li{margin:4px 0}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:8px 0}th,td{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}th{color:var(--mute)}
+code{background:var(--code);padding:1px 6px;border-radius:4px;font-size:13px}.say{display:inline-block;background:var(--tip);border:1px solid var(--line);border-radius:6px;padding:0 8px;font-weight:600}
+.tip{background:var(--tip);border-left:3px solid var(--acc);padding:8px 12px;border-radius:6px;margin:10px 0}.warn{border-left-color:var(--warn)}
+a{color:var(--acc)}
+@media (max-width:760px){.wrap{display:block;padding:12px}nav{display:none}section{padding:14px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+<a href="#pick">0 · 先选一条路线</a>
+<a href="#part1">1 · 手动报表：一轮怎么走</a>
+<a href="#lingxing">2 · ERP 路线：接入领星</a>
+<a href="#saihu">2b · ERP 路线：接入赛狐</a>
+<a href="#youmaiyun">2c · ERP 路线：接入优麦云</a>
+<a href="#feishu">3 · 飞书日报（可选）</a>
+<a href="#cost">4 · 成本表</a>
+<a href="#daily">5 · 接好以后每天怎么用</a>
+<a href="#faq">6 · 常见问题</a>
+</nav>
+<main>
+<section>
+<h1>S5 运营接入指南</h1>
+<p class="mute">S5 做两件事：<b>广告优化</b>和<b>文案优化</b>（广告是文案的放大器，两条链一起看）。这份指南教你把数据接进来。
+<b>每一步卡住了，都可以把当前页面截图发给对话里的星空助手</b>，它会看图告诉你下一步点哪里（截图前把密钥打码）。</p>
+<div class="tip">所有密钥只存在你自己电脑的用户目录里，不经过任何服务器；星空不会替你上传或改后台——每一次改动都要你先确认。</div>
+</section>
+
+<section id="pick">
+<h2>0 · 先选一条路线</h2>
+<p>第一次进入 S5 运营，助手会问你走哪一条；选定后悬浮窗只显示这一条。<b>这只是默认值，不是锁死</b>：以后每次进 S5，助手会先用一句话确认「沿用上次路线：手动报表」，你回「沿用」就直接开始；如果它检测到你已经接入了领星，会问你要不要改用自动取数。想换随时说「换成接领星」「换成手动报表」，换了也会记住，已经配好的路线切回来不用重新配。同样的 5 步流程，不用重新学。</p>
+<table>
+<tr><th>路线</th><th>适合谁</th><th>要准备什么</th></tr>
+<tr><td><b>手动报表</b></td><td>刚起步，或者没有 ERP</td><td>什么都不用接：自己去广告后台下载表格给助手，看方案、确认、再把上传表传回后台</td></tr>
+<tr><td><b>接 ERP 自动取数 + 飞书日报</b></td><td>已经在用 ERP</td><td>领星、赛狐、优麦云，用哪个接哪个，按官方接入指引操作；准备开放接口密钥、IP 白名单、飞书机器人和成本表</td></tr>
+</table>
+<p>不确定就先选「手动报表」。接入状态按店铺记住，换产品或单独看全店都不用重新配置，每次只确认「本轮看全店还是这个产品」。手动表格只带成本表；ERP 路线把凭据、店铺、日报与成本表一起带完，日报可以明确说「先不要」。实际取数能力见各通道的连接测试说明。</p>
+</section>
+
+<section id="part1">
+<h2>1 · 手动报表：一轮怎么走</h2>
+<h3>配置（只做一次）</h3>
+<ol>
+<li>对助手说 <span class="say">手动报表</span>。它会在你的产品文件夹里建好放报表的地方（<code>S5_运营板块/_投喂_广告报表/</code>，悬浮窗里点文件夹就能打开），然后问你成本怎么给（见下面第 4 节，三选一，最轻的是说一句「毛利大概 30%」）。</li>
+<li>助手做配置检测，全部通过会告诉你 <b>「配置完成」</b>，并说下一步做什么。以后每次进 S5 直接从第 2 步开始。</li>
+</ol>
+<h3>每一轮优化</h3>
+<ol start="2">
+<li><b>下载报表</b>：打开亚马逊<b>广告后台</b> →「广告活动管理」→ <b>「批量操作」</b>（Bulk operations）→「创建并下载电子表格」，日期选<b>最近 7–14 天</b>，勾选<b>「商品推广」数据</b>和<b>「商品推广搜索词数据」</b>，创建、等生成完、下载。放进上面那个文件夹，或者把文件路径发给助手。</li>
+<li><b>诊断</b>：对助手说 <span class="say">优化广告</span>。助手读你的表，先拆「单量为什么变」（是曝光、点击、转化还是自然单出了问题），再结合本地广告知识库和你接的 SIF / 卖家精灵 / 西柚 / Sorftime 给每一条建议写清楚<b>原因和依据</b>。这一路只看广告这一侧；要连自然单一起拆，用「接领星」路线。</li>
+<li><b>你审核</b>：助手出「优化前后对比」报告（改前 → 改后、为什么、依据）。你看完回复「确认按建议改」，或点名「只改 A01、A03」；不认的直接说不要。</li>
+<li><b>上传</b>：助手生成<b>上传表</b>（照你下载表的语言和格式）。你回广告后台「批量操作」→ 上传这个文件。表里每一行都写明加在哪个广告活动、哪个广告组；批量上传不进去的行，就到对应广告活动的广告组里手动「添加」。上传后在「广告活动」里能看到改动，核对一下。</li>
+<li><b>观察</b>：改完 72 小时看方向、7 天看效果；同一个对象 7 天内不会被重复调整。下一轮再下载新表，助手会和上一轮对比。</li>
+</ol>
+<h3>文案优化（同一轮里可选）</h3>
+<ol>
+<li><b>给助手当前文案</b>：把标题、五点、Search Terms 贴给助手，或者直接给<b>产品链接</b>，助手会用内置浏览器打开、读取页面上的文案和数据。</li>
+<li><b>出建议</b>：结合广告里真正出单的词、知识库和竞品情况，给出改前改后。</li>
+<li><b>合规把关</b>：改稿会对照这个产品在 S1 / S2 做过的 <b>IP 侵权、品牌词、敏感词、受限宣称</b>排查结果和产品 CT，撞到的词直接拦下，不会给你。<b>没有做过 S1 / S2 排查的老品</b>（比如你只用 S5 拉数据诊断）也会出改稿，但报告最上面会有醒目提醒：<b>改之前你要自己确认改后没有侵权词、没有敏感词</b>，批准文案改动时助手会请你明确回一句确认。绝对化用语（#1、best）、疗效 / 医疗宣称、抗菌、FDA 背书，以及 Q-tips 这类已知商标陷阱词，不管有没有排查记录都会指出来。想让助手先帮你排一遍，说「IP排查」。</li>
+<li><b>你审核，自己到后台改</b>：文案永远由你在卖家后台手动修改，星空不代改；改完记得核对页面。</li>
+</ol>
+<div class="tip">单独下载的「搜索词报告」没有后台 ID，不能用来生成上传表——用「批量操作」那个文件就够了。</div>
+</section>
+
+<section id="lingxing">
+<h2>2 · ERP 路线：接入领星</h2>
+<p class="mute">接好以后：助手自动拉店铺数据，出方案；你确认后改竞价、否词、加词、改预算和广告位可以一键同步回后台（新建活动仍出上传表）。</p>
+<h3>前提</h3>
+<ul><li>用领星<b>超级管理员</b>账号操作；个别套餐的「开放接口」需要找领星客户经理开通。</li></ul>
+<h3>步骤</h3>
+<ol>
+<li>登录领星 → 左侧菜单最下面的<b>「设置」</b>→<b>「业务配置」</b>→ 左侧「基础」里的<b>「开放接口」</b>（有的版本这一项在「全局」里，名字一样）。</li>
+<li><b>第一次用</b>：页面上会让你填一个<b>邮箱</b>（用来接收领星开放平台的通知，填常用邮箱就行），填好点<b>「进入开放后台」</b>，企业的 AppID 和 AppSecret 就自动生成了。以前开通过的直接跳到下一步。</li>
+<li>看<b>「API 账号管理」/「API 信息」</b>：在 <b>APP ID</b> 和 <b>AppSecret</b> 两列点「查看」「复制」。没有账号的点「添加」。<b>AppSecret 泄露了</b>可以点「重置」，旧的立刻作废，重置后要把新的填回 txt 再说一次「接入领星」。</li>
+<li>看<b>「API 信息 → IP 白名单」</b>：点「编辑」，把你这台电脑的<b>直连出口 IP</b> 加进去（最多 20 个）。
+  <br>不知道 IP？对助手说 <span class="say">查我的出口IP</span>，它会绕开代理查准的那个。<b>开着代理 / VPN 在网页上查到的是国外 IP，不能用。</b></li>
+<li>打开安装包里的 <code>领星密钥.txt</code>，填好 APP ID 和 AppSecret，保存。</li>
+<li>把这个 txt 拖进对话，说 <span class="say">接入领星</span>。助手会：写进本机配置（聊天里不显示密钥）→ 测试连接 → 列出你的店铺，让你选要每天巡检哪几个。</li>
+</ol>
+<div class="tip">卡住了就截图问助手：比如「开放接口在哪」「这个页面没有添加按钮」。截图前把 AppSecret 打码。</div>
+<p class="mute">官方入口：<a href="https://apidoc.lingxing.com/" target="_blank" rel="noopener">领星开放平台文档</a>（2026-10-17 核验：当前页面要求访问密钥，向官方客服 / 客户经理申请）。后台菜单和套餐权限以你当前账号及官方指引为准；找不到「开放接口」时向官方确认权限。取得凭据、设置白名单后，仍需本机连接测试与选店铺，不能把文档可访问当作数据已接通。</p>
+</section>
+
+<section id="saihu">
+<h2>2b · ERP 路线：接入赛狐</h2>
+<p>领星、赛狐、优麦云，用哪个接哪个，按官方接入指引操作。</p>
+<ol><li>申请开放接口：登录赛狐，按<a href="https://www.sellfox.com/help/features/business-settings">官方业务设置与开放接口说明</a>确认当前账号权限，必要时联系官方客户经理。</li>
+<li>密钥 txt：向官方确认自用应用与凭据字段；若官方提供 client_id、client_secret，填入本机「赛狐密钥.txt」。字段不同先请官方确认映射，不猜字段；导入时不在聊天或日志回显。</li>
+<li>IP 白名单：按官方开放接口页面要求填写本机实际出口 IP；权限或白名单问题按官方提示排查。</li>
+<li>连接测试：目前插件仅能保存这条通道的凭据，不能取数；保存后如实提示「凭据已存，这条通道还没接通，本轮先用手动表格」。</li></ol></section>
+<section id="youmaiyun">
+<h2>2c · ERP 路线：接入优麦云</h2>
+<p>官方入口：<a href="https://www.sellerspace.com/help/">优麦云帮助中心</a>。本次未核实到可公开使用的第三方开放接口文档，不照搬其他 ERP 的菜单和凭据字段。</p>
+<ol><li>申请开放接口：先向官方客服确认本账号是否支持对外开放接口、可用权限及官方接入指引；未确认时用手动表格。</li>
+<li>密钥 txt：只保存官方实际发放的凭据文件，不猜测字段；用「接入优麦云」导入本机。</li>
+<li>IP 白名单：以官方针对该账号的要求为准，未要求时不虚构白名单配置步骤。</li>
+<li>连接测试：本轮不开发优麦云取数；仅保存凭据，不能将文件存在说成接通。提示「凭据已存，这条通道还没接通，本轮先用手动表格」。</li></ol></section>
+<section id="feishu">
+<h2>3 · ERP 路线的飞书日报</h2><p>ERP 首次接入时一起检测，用户明确说「先不要」可以跳过，选择将被记住。</p>
+<p class="mute">接好以后每天北京时间 9 点，手机飞书收到店铺日报：全店销售、广告花费、昨日利润、产品健康灯（🟢🟡🔴）、今日方案。</p>
+<ol>
+<li>在飞书建一个群（只有你自己也行）→ 群右上角「设置」→<b>「群机器人」</b>→「添加机器人」→<b>「自定义机器人」</b>，名字随意（比如「店铺日报」）。</li>
+<li>安全设置里建议勾<b>「签名校验」</b>，复制出现的密钥；再复制 <b>Webhook 地址</b>。</li>
+<li>把两样填进安装包里的 <code>飞书配置.txt</code>，保存，拖进对话，说 <span class="say">接入飞书</span>。助手会发一条测试消息到群里，收到就通了。</li>
+<li>说 <span class="say">开启日报</span>：每天 9 点自动推（电脑要开着；9 点在睡眠也没关系，中午前醒来会补推）。说 <span class="say">关闭日报</span> 随时关。</li>
+</ol>
+<div class="tip warn">Webhook 地址和签名密钥等于这个群的钥匙，别发到公开的地方。万一泄露，在机器人设置里点「重置」。</div>
+<p class="mute">官方文档：<a href="https://open.feishu.cn/document/client-docs/bot-v3/add-custom-bot?lang=zh-CN" target="_blank" rel="noopener">飞书「自定义机器人使用指南」</a>。</p>
+</section>
+
+<section id="cost">
+<h2>4 · 成本表：让「广告挣不挣钱」算得准</h2>
+<p>有了每个 SKU 的成本，助手才能算出每个产品的<b>保本 ACOS、目标 ACOS、扣广告后利润</b>，日报的利润和健康灯也靠它。按你愿意花的力气选一档：</p>
+<table>
+<tr><th>档</th><th>你做什么</th><th>口令</th></tr>
+<tr><td><b>A 完整</b></td><td>用安装包里的成本表模板（或你自己的表），只填黄色列：售价、采购成本（元）、头程（元/件）、FBA 配送费、佣金率、目标利润率、姿态</td><td><span class="say">登记成本表</span> + 表的路径</td></tr>
+<tr><td><b>B 半自动（推荐）</b></td><td>助手从领星预填售价、每件 FBA 配送费、亚马逊实收佣金比例；领星里维护过采购价 / 头程的 SKU 也一并带出。你只补空着的黄色格</td><td><span class="say">生成成本表</span></td></tr>
+<tr><td><b>C 最轻</b></td><td>不想填表：告诉助手大概毛利率，先按估算算，报告和日报会标「估算」</td><td><span class="say">毛利大概 30%</span></td></tr>
+</table>
+<p class="mute">姿态：均衡（默认）/ 保守（目标 ACOS 再收 3 个点）/ 进取（放 5 个点）/ 新品（放 10 个点，允许亏钱推量）/ 清仓（放 15 个点）。英国、欧洲站会自动扣 VAT 和数字服务费。以后从 C 换成 A / B，下一轮诊断自动变准。</p>
+</section>
+
+<section id="daily">
+<h2>5 · 接好以后每天怎么用</h2>
+<ol>
+<li><b>早上看日报</b>：ERP 路线已接机器人时看群日报；手动表格路线从下载新表开始。红点代表需核查，不能直接当改动指令。</li>
+<li>回到电脑，在对话里说 <span class="say">看今天的广告方案</span>：助手补知识库和 SIF 依据，出优化前后对比报告。</li>
+<li>你看完回 <span class="say">确认按建议改</span>，或点名「只改 A01、A03」「把某个活动预算降到 5」。</li>
+<li>领星能改的一键同步并核对后台操作日志；新建活动出上传表；文案出改前改后，你到后台照着改。</li>
+<li>改完 72 小时看方向、7 天看效果；同一个对象 7 天内不会被重复调整。</li>
+</ol>
+</section>
+
+<section id="faq">
+<h2>6 · 常见问题</h2>
+<table>
+<tr><th>现象</th><th>怎么办</th></tr>
+<tr><td>连接领星报 403 / IP 不在白名单</td><td>说「查我的出口IP」，把查到的 IP 加进领星白名单。家里宽带重启路由器后 IP 可能变，变了再加一次。</td></tr>
+<tr><td>开着代理 / VPN</td><td>领星是国内服务，星空会直连；白名单要加<b>直连 IP</b>，不是代理的国外 IP。</td></tr>
+<tr><td>Mac 上助手读不了「下载」文件夹里的文件</td><td>把文件挪到别的文件夹再给路径；或在「系统设置 → 隐私与安全性 → 文件和文件夹」里给对应应用打开「下载」权限。</td></tr>
+<tr><td>飞书没收到日报</td><td>电脑 9 点到中午一直关机或睡眠就不推；说「日报为什么没推」，助手会看日志告诉你原因。</td></tr>
+<tr><td>我不想让它改后台</td><td>不批准就不会改；每次写回前助手都会先预演给你看，你明确说同意才执行。</td></tr>
+</table>
+</section>
+<section><h2>知识库依据与观察</h2><p>方法依据自动随步骤调用；S2/S3 显示本步无库。断库提示原因并继续，缺广告手册时显示“无手册，按场景规则卡给依据”。详见安装包《内置知识库使用说明.md》和《S5报表导出与观察条件.md》。</p><p>上传前保留同对象、同层级的逐日或分窗原始报表及上传时间证据；没有观察结果不回写知识库。导出区间、每日序列与归因窗分别说明，未知口径保留待核。</p></section></main>
+</div>
+</body>
+</html>

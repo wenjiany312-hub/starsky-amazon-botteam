@@ -1,0 +1,105 @@
+# 场景库 · Scene Library Schema
+# 版本 1.0.0 · 建立 2026-07-28
+#
+# 定位：把「词库 + VOC + 产品事实」合成为**可直接写、可直接拍、可直接投**的场景卡。
+# 位置：S2 词库之后、文案之前。文案 / 视觉 / 广告三段共用同一份。
+#
+# 为什么需要它：
+#   既有的 VOC → 防御卖点对照表是**防守面**（竞品差评 → 我们怎么接）。
+#   场景库是**进攻面**（谁在什么情况下会买 → 我们说什么）。
+#   两者并存，不互相替代。
+#
+# 强制引用方：
+#   产出：amazon-sif-keyword-research / sellersprite / xiyou（三选一）
+#   消费：amazon-listing-copywriter（五点素材）
+#         amazon-listing-image-designer + premium-aplus-designer（图位场景）
+#         amazon-product-video-director（分镜场景）
+#         amazon-ad-campaign-builder（广告分组与人群定向）
+
+schema_version: "1.0"
+
+meta:
+  run_id: ""                      # 所属 run
+  product_id: ""
+  generated_at: ""
+  keyword_source: ""              # sif / sellersprite / xiyou —— 哪张导出表
+  voc_sample: ""                  # 例："3 个 ASIN 近一年 297 条评论"
+
+# ───────────────────────────────────────────────────────────
+# 场景卡：一个场景一张
+# ───────────────────────────────────────────────────────────
+scenes:
+  - scene_id: "SC-01"
+    name_cn: "办公隔间隐私"
+    name_en: "Cubicle Privacy"
+
+    # 标签：这个场景现在处于什么状态
+    tag: "潜在卖点"               # 潜在卖点 | 已验证 | 主打场景 | 竞品已占 | 空白机会
+    tag_basis: ""                 # 凭什么这么标（竞品覆盖情况 / 搜索量 / VOC 提及）
+
+    audience: ""                  # 人群：开放办公/居家办公者、需谈话隐私的治疗师
+    occasion: ""                  # 场景：工位墙插、诊室、会议隔间
+
+    # ── 痛点：必须标来源，实证与推断分开 ──
+    pain:
+      text: ""                    # 同事对话干扰专注 / 谈话被隔壁听到
+      evidence: ""                # voc | keyword | inferred
+      evidence_detail: ""         # VOC 出处（哪个 ASIN 第几条）或词及搜索量；inferred 须写推断依据
+      voc_mentions: null          # 若来自 VOC，提及次数
+
+    # ── 利益点：每条必须挂得住 ──
+    benefits:
+      - text: ""                  # 盖住键盘声和对话，专注不被打断
+        fact_basis: ""            # 挂哪条产品事实或 L-推导
+        fact_status: ""           # confirmed | derived | blocked
+    # ⛔ 硬规则：fact_status = blocked 的利益点不得写进消费者可见文案，
+    #    只能留在场景库内部作为"补齐该事实后可写"的记录。
+
+    # ── 搜索词：必须来自词库，不得现编 ──
+    search_terms:
+      - term: ""                  # office sound machine for privacy
+        weekly_volume: null       # 来自词库；无数据写 null 并在 note 说明
+        relevance: null           # 相关度分
+        pool: ""                  # exact_p1 | exact_p2 | phrase | broad | observe | negative
+    search_terms_note: ""         # 若某词无搜索量数据，写明是"未收录"还是"未查"
+
+    # ── 下游落位：这个场景会被谁用 ──
+    downstream:
+      listing: []                 # 例：["B2 前半段", "长描述第 3 段"]
+      images: []                  # 例：["IMG06 真人场景"]
+      video: []                   # 例：["分镜 2"]
+      ads: []                     # 例：["Phrase-场景组"]
+
+    priority: null                # 1 = 主打；数字越小越优先
+    priority_basis: ""            # 凭什么排这个序（搜索量 × 相关度 × 事实支撑度）
+
+# ───────────────────────────────────────────────────────────
+# 覆盖审计：防止只写好写的场景
+# ───────────────────────────────────────────────────────────
+coverage_audit:
+  scene_count: null
+  by_tag: {}                      # {潜在卖点: n, 已验证: n, 空白机会: n, 竞品已占: n}
+
+  # 每个场景至少要能对上一组 COSMO 意图关系，否则说明它不是真场景
+  cosmo_relation_map: {}          # {SC-01: [used_in_loc, used_by, xWant]}
+
+  # 词库覆盖率：有多少可执行词被场景吸收了
+  keyword_absorbed: null          # 被至少一个场景引用的词数
+  keyword_total: null
+  keyword_orphan: []              # 有量但没进任何场景的词 —— 要么补场景，要么说明为何不做
+
+  # 反向检查：有多少场景是拍脑袋的
+  inferred_only_scenes: []        # 痛点 evidence 全为 inferred 的场景 ID
+  inferred_ratio: null            # 上者占比；> 50% 判不合格
+
+# ───────────────────────────────────────────────────────────
+# 硬规则
+# ───────────────────────────────────────────────────────────
+hard_rules:
+  - "痛点必须标 evidence：voc / keyword / inferred 三选一，不得留空"
+  - "inferred 场景占比 > 50% 判不合格 —— 说明是想出来的不是查出来的"
+  - "利益点必须挂 fact_basis，挂不上的不写；fact_status=blocked 的不得进消费者可见文案"
+  - "搜索词必须来自词库并带搜索量，现编的词一律剔除"
+  - "有搜索量但未进任何场景的词（keyword_orphan）必须列出并说明原因"
+  - "场景数 < 3 判不合格 —— 单一场景说明没做透"
+  - "每个场景必须能映射到至少 2 种 COSMO 意图关系，否则它只是个卖点不是场景"

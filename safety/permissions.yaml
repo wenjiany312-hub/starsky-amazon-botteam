@@ -1,0 +1,13 @@
+# 最小权限原则：没有列出来的，就是没有权限
+admin:       {read: [sku_state, all_reports], write: [sku_state_non_gate]}
+scout:       {read: [sif-mcp, sorftime-mcp, xydc-mcp, selection_kb], write: [sku_state:scout_fields]}
+guard:       {read: [selection_kb, sp-api:restrictions, sp-api:account_health], write: [sku_state:guard_fields]}
+warehouse:   {read: [1688_scraper, sp-api:fba_inventory, sp-api:reports], write: [sku_state:warehouse_fields, fba_plan_draft], note: "平台上还没接 SP-API：出计划，由老板在 Send to Amazon 创建；以后有 API 也要在 GATE_FBA 或 GATE_RESTOCK 批准后才能写"}
+finance:     {read: [sp-api:fees, sp-api:pricing, sp-api:fba_reports, ads-api:reports], write: [sku_state:finance_fields, kb_append_only]}
+listing:     {read: [sp-api:product_type, sp-api:listings, sif-mcp], write: [sp-api:listings_patch_copy, sku_state:listing_fields], limits: {daily_new_listings: 10, patch_one_sku_at_a_time: true}, note: "新建 Listing 现在由老板在后台创建；PATCH 文案必须先 dry-run 并经老板确认"}
+imageworker: {read: [design_specs, product_facts, reference_images], write: [sku_state:imageworker_fields, image_files, image_metadata]}
+editor:      {read: [drafts, product_facts, image_manifest], write: [sku_state:editor_fields]}
+designer:    {read: [copy, keyword_index, product_facts, reference_images, compliance_blacklist], write: [sku_state:designer_fields, design_specs, aplus_upload_pack], condition: "A+、品牌故事、旗舰店只限有品牌备案的 ASIN；主副图和视频每个品都做", note: "平台上还没接 SP-API，A+ 由老板在 A+ 内容管理器上传"}
+ads:         {read: [ads-api:reports, ads_kb, promotion_kb, sif-mcp], write: [sku_state:ads_fields, ads_bulk_draft], limits: {per_campaign_daily_budget_usd: 20, account_daily_budget_usd: 100}, note: "平台上还没接 Ads API 写入：出 Bulk 表格，由老板上传；以后写 API 必须经过安全网关并查到 gate3 批准"}
+reviewer:    {read: [ads-api:reports, sp-api:reports, sp-api:fba_reports, ads_kb, selection_kb], write: [kb_append_only]}
+# limits 里的数字是默认值，请按自己店铺的情况调整

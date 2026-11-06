@@ -1,0 +1,826 @@
+{
+  "schema_version": "2.0",
+  "package_id": "DEMO-UNIFIED-S2",
+  "package_version": 1,
+  "package_hash": "sha256:59896849c144357599e8da46d0e8b118c6e4bdf4184c2463f2373f13202ae7ea",
+  "supersedes": null,
+  "change_reason": "initial",
+  "run_id": "RUN-001",
+  "run_mode": "demo_direct_run",
+  "demo_label": "DEMO_ONLY_NOT_UPLOADABLE",
+  "marketplace": "US",
+  "product_id": "DEMO-PAD-HOLDER",
+  "source_mode": "sif",
+  "source_line_policy": "isolated",
+  "data_sources": [
+    {
+      "source_id": "SRC-SIF-FILE-001",
+      "provider": "sif",
+      "acquisition_method": "file",
+      "relative_path": "synthetic_fixture_not_live_export.json",
+      "sha256": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+      "source_sheet": "Sheet1",
+      "marketplace": "US",
+      "as_of": "2026-08-09",
+      "period": {
+        "start": "2026-08-01",
+        "end": "2026-08-08",
+        "month": "2026-08",
+        "timezone": "America/Los_Angeles"
+      },
+      "units": {
+        "search_volume": "weekly"
+      },
+      "field_mapping": {
+        "keyword": "关键词"
+      },
+      "missing_fields": []
+    }
+  ],
+  "mcp": {
+    "status": "skipped",
+    "skipped_reason": "not_called_this_run",
+    "calls": []
+  },
+  "records": [
+    {
+      "keyword_id": "KW-001",
+      "keyword": "cotton pad holder",
+      "normalized_keyword": "cotton pad holder",
+      "source_keyword": "cotton pad holder",
+      "disposition": "retained",
+      "retention_status": "retained_core",
+      "claim_restricted": false,
+      "labels": [
+        "core"
+      ],
+      "six_dimensions": {
+        "D1": [],
+        "D2": [],
+        "D3": [],
+        "D4": [],
+        "D5": [],
+        "D6": []
+      },
+      "metrics": {
+        "search_volume": {
+          "value": 1200,
+          "status": "provided",
+          "source_id": "SRC-SIF-FILE-001",
+          "semantic": "weekly_search_volume",
+          "period": {
+            "start": "2026-08-01",
+            "end": "2026-08-08",
+            "month": "2026-08"
+          }
+        },
+        "cpc": {
+          "value": 1.2,
+          "status": "provided",
+          "source_id": "SRC-SIF-FILE-001",
+          "semantic": "third_party_cpc_signal",
+          "period": {
+            "start": "2026-08-01",
+            "end": "2026-08-08",
+            "month": "2026-08"
+          }
+        },
+        "cvr": {
+          "value": null,
+          "status": "missing",
+          "missing_reason": "source_field_null",
+          "source_id": "SRC-SIF-FILE-001",
+          "semantic": "third_party_metric_not_amazon_account_cvr",
+          "period": {
+            "start": "2026-08-01",
+            "end": "2026-08-08",
+            "month": "2026-08"
+          }
+        }
+      },
+      "coverage": {
+        "confirmed_competitor_count": 0,
+        "competitor_coverage_count": 0,
+        "competitor_asins": [],
+        "coverage_ratio": null,
+        "coverage_missing_reason": "no_confirmed_competitors",
+        "export_observed_asins": []
+      },
+      "listing_eligibility": {
+        "allowed": true,
+        "blocked_reasons": []
+      },
+      "ad_eligibility": {
+        "allowed": true,
+        "blocked_reasons": []
+      },
+      "unassigned_reason": null,
+      "lineage": [
+        {
+          "source_id": "SRC-SIF-FILE-001",
+          "source_sheet": "Sheet1",
+          "source_row": 2,
+          "semantic": "keyword_export"
+        }
+      ],
+      "cn_translation": "化妆棉收纳盒",
+      "product_match": "direct",
+      "fact_refs": [
+        "F-01"
+      ]
+    },
+    {
+      "keyword_id": "KW-002",
+      "keyword": "cotton round dispenser",
+      "normalized_keyword": "cotton round dispenser",
+      "source_keyword": "cotton round dispenser",
+      "disposition": "retained",
+      "retention_status": "retained_core",
+      "claim_restricted": false,
+      "labels": [
+        "core"
+      ],
+      "six_dimensions": {
+        "D1": [],
+        "D2": [],
+        "D3": [],
+        "D4": [],
+        "D5": [],
+        "D6": []
+      },
+      "metrics": {
+        "search_volume": {
+          "value": 480,
+          "status": "provided",
+          "source_id": "SRC-SIF-FILE-001",
+          "semantic": "weekly_search_volume",
+          "period": {
+            "start": "2026-08-01",
+            "end": "2026-08-08",
+            "month": "2026-08"
+          }
+        },
+        "cpc": {
+          "value": 1.2,
+          "status": "provided",
+          "source_id": "SRC-SIF-FILE-001",
+          "semantic": "third_party_cpc_signal",
+          "period": {
+            "start": "2026-08-01",
+            "end": "2026-08-08",
+            "month": "2026-08"
+          }
+        },
+        "cvr": {
+          "value": null,
+          "status": "missing",
+          "missing_reason": "source_field_null",
+          "source_id": "SRC-SIF-FILE-001",
+          "semantic": "third_party_metric_not_amazon_account_cvr",
+          "period": {
+            "start": "2026-08-01",
+            "end": "2026-08-08",
+            "month": "2026-08"
+          }
+        }
+      },
+      "coverage": {
+        "confirmed_competitor_count": 0,
+        "competitor_coverage_count": 0,
+        "competitor_asins": [],
+        "coverage_ratio": null,
+        "coverage_missing_reason": "no_confirmed_competitors",
+        "export_observed_asins": []
+      },
+      "listing_eligibility": {
+        "allowed": true,
+        "blocked_reasons": []
+      },
+      "ad_eligibility": {
+        "allowed": true,
+        "blocked_reasons": []
+      },
+      "unassigned_reason": null,
+      "lineage": [
+        {
+          "source_id": "SRC-SIF-FILE-001",
+          "source_sheet": "Sheet1",
+          "source_row": 2,
+          "semantic": "keyword_export"
+        }
+      ],
+      "cn_translation": "圆形化妆棉取用盒",
+      "product_match": "direct",
+      "fact_refs": [
+        "F-01"
+      ]
+    },
+    {
+      "keyword_id": "KW-003",
+      "keyword": "clear cotton pad holder",
+      "normalized_keyword": "clear cotton pad holder",
+      "source_keyword": "clear cotton pad holder",
+      "disposition": "retained",
+      "retention_status": "retained_core",
+      "claim_restricted": false,
+      "labels": [
+        "core"
+      ],
+      "six_dimensions": {
+        "D1": [],
+        "D2": [],
+        "D3": [],
+        "D4": [],
+        "D5": [],
+        "D6": []
+      },
+      "metrics": {
+        "search_volume": {
+          "value": 320,
+          "status": "provided",
+          "source_id": "SRC-SIF-FILE-001",
+          "semantic": "weekly_search_volume",
+          "period": {
+            "start": "2026-08-01",
+            "end": "2026-08-08",
+            "month": "2026-08"
+          }
+        },
+        "cpc": {
+          "value": 1.2,
+          "status": "provided",
+          "source_id": "SRC-SIF-FILE-001",
+          "semantic": "third_party_cpc_signal",
+          "period": {
+            "start": "2026-08-01",
+            "end": "2026-08-08",
+            "month": "2026-08"
+          }
+        },
+        "cvr": {
+          "value": null,
+          "status": "missing",
+          "missing_reason": "source_field_null",
+          "source_id": "SRC-SIF-FILE-001",
+          "semantic": "third_party_metric_not_amazon_account_cvr",
+          "period": {
+            "start": "2026-08-01",
+            "end": "2026-08-08",
+            "month": "2026-08"
+          }
+        }
+      },
+      "coverage": {
+        "confirmed_competitor_count": 0,
+        "competitor_coverage_count": 0,
+        "competitor_asins": [],
+        "coverage_ratio": null,
+        "coverage_missing_reason": "no_confirmed_competitors",
+        "export_observed_asins": []
+      },
+      "listing_eligibility": {
+        "allowed": true,
+        "blocked_reasons": []
+      },
+      "ad_eligibility": {
+        "allowed": true,
+        "blocked_reasons": []
+      },
+      "unassigned_reason": null,
+      "lineage": [
+        {
+          "source_id": "SRC-SIF-FILE-001",
+          "source_sheet": "Sheet1",
+          "source_row": 2,
+          "semantic": "keyword_export"
+        }
+      ],
+      "cn_translation": "透明化妆棉收纳盒",
+      "product_match": "direct",
+      "fact_refs": [
+        "F-01"
+      ]
+    },
+    {
+      "keyword_id": "KW-004",
+      "keyword": "bathroom organizer",
+      "normalized_keyword": "bathroom organizer",
+      "source_keyword": "bathroom organizer",
+      "disposition": "observe",
+      "retention_status": "retained_core",
+      "claim_restricted": false,
+      "labels": [
+        "core"
+      ],
+      "six_dimensions": {
+        "D1": [],
+        "D2": [],
+        "D3": [],
+        "D4": [],
+        "D5": [],
+        "D6": []
+      },
+      "metrics": {
+        "search_volume": {
+          "value": 5000,
+          "status": "provided",
+          "source_id": "SRC-SIF-FILE-001",
+          "semantic": "weekly_search_volume",
+          "period": {
+            "start": "2026-08-01",
+            "end": "2026-08-08",
+            "month": "2026-08"
+          }
+        },
+        "cpc": {
+          "value": 1.2,
+          "status": "provided",
+          "source_id": "SRC-SIF-FILE-001",
+          "semantic": "third_party_cpc_signal",
+          "period": {
+            "start": "2026-08-01",
+            "end": "2026-08-08",
+            "month": "2026-08"
+          }
+        },
+        "cvr": {
+          "value": null,
+          "status": "missing",
+          "missing_reason": "source_field_null",
+          "source_id": "SRC-SIF-FILE-001",
+          "semantic": "third_party_metric_not_amazon_account_cvr",
+          "period": {
+            "start": "2026-08-01",
+            "end": "2026-08-08",
+            "month": "2026-08"
+          }
+        }
+      },
+      "coverage": {
+        "confirmed_competitor_count": 0,
+        "competitor_coverage_count": 0,
+        "competitor_asins": [],
+        "coverage_ratio": null,
+        "coverage_missing_reason": "no_confirmed_competitors",
+        "export_observed_asins": []
+      },
+      "listing_eligibility": {
+        "allowed": true,
+        "blocked_reasons": []
+      },
+      "ad_eligibility": {
+        "allowed": true,
+        "blocked_reasons": []
+      },
+      "unassigned_reason": null,
+      "lineage": [
+        {
+          "source_id": "SRC-SIF-FILE-001",
+          "source_sheet": "Sheet1",
+          "source_row": 2,
+          "semantic": "keyword_export"
+        }
+      ],
+      "cn_translation": "浴室收纳用品",
+      "product_match": "adjacent",
+      "fact_refs": [
+        "F-01"
+      ]
+    },
+    {
+      "keyword_id": "KW-005",
+      "keyword": "magnetic cotton pad holder",
+      "normalized_keyword": "magnetic cotton pad holder",
+      "source_keyword": "magnetic cotton pad holder",
+      "disposition": "observe",
+      "retention_status": "retained_core",
+      "claim_restricted": true,
+      "labels": [
+        "core"
+      ],
+      "six_dimensions": {
+        "D1": [],
+        "D2": [],
+        "D3": [],
+        "D4": [],
+        "D5": [],
+        "D6": []
+      },
+      "metrics": {
+        "search_volume": {
+          "value": 140,
+          "status": "provided",
+          "source_id": "SRC-SIF-FILE-001",
+          "semantic": "weekly_search_volume",
+          "period": {
+            "start": "2026-08-01",
+            "end": "2026-08-08",
+            "month": "2026-08"
+          }
+        },
+        "cpc": {
+          "value": 1.2,
+          "status": "provided",
+          "source_id": "SRC-SIF-FILE-001",
+          "semantic": "third_party_cpc_signal",
+          "period": {
+            "start": "2026-08-01",
+            "end": "2026-08-08",
+            "month": "2026-08"
+          }
+        },
+        "cvr": {
+          "value": null,
+          "status": "missing",
+          "missing_reason": "source_field_null",
+          "source_id": "SRC-SIF-FILE-001",
+          "semantic": "third_party_metric_not_amazon_account_cvr",
+          "period": {
+            "start": "2026-08-01",
+            "end": "2026-08-08",
+            "month": "2026-08"
+          }
+        }
+      },
+      "coverage": {
+        "confirmed_competitor_count": 0,
+        "competitor_coverage_count": 0,
+        "competitor_asins": [],
+        "coverage_ratio": null,
+        "coverage_missing_reason": "no_confirmed_competitors",
+        "export_observed_asins": []
+      },
+      "listing_eligibility": {
+        "allowed": true,
+        "blocked_reasons": []
+      },
+      "ad_eligibility": {
+        "allowed": true,
+        "blocked_reasons": []
+      },
+      "unassigned_reason": null,
+      "lineage": [
+        {
+          "source_id": "SRC-SIF-FILE-001",
+          "source_sheet": "Sheet1",
+          "source_row": 2,
+          "semantic": "keyword_export"
+        }
+      ],
+      "cn_translation": "磁吸化妆棉收纳盒",
+      "product_match": "adjacent",
+      "fact_refs": [
+        "F-01"
+      ]
+    },
+    {
+      "keyword_id": "KW-006",
+      "keyword": "medical cotton holder",
+      "normalized_keyword": "medical cotton holder",
+      "source_keyword": "medical cotton holder",
+      "disposition": "compliance_negative",
+      "retention_status": "retained_core",
+      "claim_restricted": false,
+      "labels": [
+        "core"
+      ],
+      "six_dimensions": {
+        "D1": [],
+        "D2": [],
+        "D3": [],
+        "D4": [],
+        "D5": [],
+        "D6": []
+      },
+      "metrics": {
+        "search_volume": {
+          "value": 70,
+          "status": "provided",
+          "source_id": "SRC-SIF-FILE-001",
+          "semantic": "weekly_search_volume",
+          "period": {
+            "start": "2026-08-01",
+            "end": "2026-08-08",
+            "month": "2026-08"
+          }
+        },
+        "cpc": {
+          "value": 1.2,
+          "status": "provided",
+          "source_id": "SRC-SIF-FILE-001",
+          "semantic": "third_party_cpc_signal",
+          "period": {
+            "start": "2026-08-01",
+            "end": "2026-08-08",
+            "month": "2026-08"
+          }
+        },
+        "cvr": {
+          "value": null,
+          "status": "missing",
+          "missing_reason": "source_field_null",
+          "source_id": "SRC-SIF-FILE-001",
+          "semantic": "third_party_metric_not_amazon_account_cvr",
+          "period": {
+            "start": "2026-08-01",
+            "end": "2026-08-08",
+            "month": "2026-08"
+          }
+        }
+      },
+      "coverage": {
+        "confirmed_competitor_count": 0,
+        "competitor_coverage_count": 0,
+        "competitor_asins": [],
+        "coverage_ratio": null,
+        "coverage_missing_reason": "no_confirmed_competitors",
+        "export_observed_asins": []
+      },
+      "listing_eligibility": {
+        "allowed": true,
+        "blocked_reasons": []
+      },
+      "ad_eligibility": {
+        "allowed": true,
+        "blocked_reasons": []
+      },
+      "unassigned_reason": null,
+      "lineage": [
+        {
+          "source_id": "SRC-SIF-FILE-001",
+          "source_sheet": "Sheet1",
+          "source_row": 2,
+          "semantic": "keyword_export"
+        }
+      ],
+      "cn_translation": "医用棉收纳盒",
+      "product_match": "adjacent",
+      "fact_refs": [
+        "F-01"
+      ]
+    },
+    {
+      "keyword_id": "KW-007",
+      "keyword": "OtherBrand cotton pad holder",
+      "normalized_keyword": "OtherBrand cotton pad holder",
+      "source_keyword": "OtherBrand cotton pad holder",
+      "disposition": "brand_isolated",
+      "retention_status": "retained_core",
+      "claim_restricted": false,
+      "labels": [
+        "core"
+      ],
+      "six_dimensions": {
+        "D1": [],
+        "D2": [],
+        "D3": [],
+        "D4": [],
+        "D5": [],
+        "D6": []
+      },
+      "metrics": {
+        "search_volume": {
+          "value": 260,
+          "status": "provided",
+          "source_id": "SRC-SIF-FILE-001",
+          "semantic": "weekly_search_volume",
+          "period": {
+            "start": "2026-08-01",
+            "end": "2026-08-08",
+            "month": "2026-08"
+          }
+        },
+        "cpc": {
+          "value": 1.2,
+          "status": "provided",
+          "source_id": "SRC-SIF-FILE-001",
+          "semantic": "third_party_cpc_signal",
+          "period": {
+            "start": "2026-08-01",
+            "end": "2026-08-08",
+            "month": "2026-08"
+          }
+        },
+        "cvr": {
+          "value": null,
+          "status": "missing",
+          "missing_reason": "source_field_null",
+          "source_id": "SRC-SIF-FILE-001",
+          "semantic": "third_party_metric_not_amazon_account_cvr",
+          "period": {
+            "start": "2026-08-01",
+            "end": "2026-08-08",
+            "month": "2026-08"
+          }
+        }
+      },
+      "coverage": {
+        "confirmed_competitor_count": 0,
+        "competitor_coverage_count": 0,
+        "competitor_asins": [],
+        "coverage_ratio": null,
+        "coverage_missing_reason": "no_confirmed_competitors",
+        "export_observed_asins": []
+      },
+      "listing_eligibility": {
+        "allowed": true,
+        "blocked_reasons": []
+      },
+      "ad_eligibility": {
+        "allowed": true,
+        "blocked_reasons": []
+      },
+      "unassigned_reason": null,
+      "lineage": [
+        {
+          "source_id": "SRC-SIF-FILE-001",
+          "source_sheet": "Sheet1",
+          "source_row": 2,
+          "semantic": "keyword_export"
+        }
+      ],
+      "cn_translation": "他牌化妆棉收纳盒",
+      "product_match": "adjacent",
+      "fact_refs": [
+        "F-01"
+      ],
+      "brand_hits": [
+        "OtherBrand"
+      ]
+    }
+  ],
+  "listing_pools": {
+    "title_candidates": [
+      "KW-001",
+      "KW-003"
+    ],
+    "highlights_candidates": [],
+    "bullet_feature": [
+      "KW-002"
+    ],
+    "bullet_scenario": [],
+    "description_aplus": [
+      "KW-001"
+    ],
+    "search_terms_candidates": [],
+    "attributes": [],
+    "qa": [],
+    "fitment_review": []
+  },
+  "pools": {
+    "exact": [
+      "KW-001",
+      "KW-002"
+    ],
+    "exact_p1": [
+      "KW-001"
+    ],
+    "exact_p2": [],
+    "phrase_feature": [
+      "KW-002",
+      "KW-003"
+    ],
+    "phrase_scenario": [],
+    "broad_discovery": [],
+    "observe": [
+      "KW-004",
+      "KW-005"
+    ]
+  },
+  "negative_records": [],
+  "negative_pools": {
+    "exact": [],
+    "phrase": []
+  },
+  "asin_records": [],
+  "asin_pools": {
+    "pat_candidates": [],
+    "defense_candidates": [],
+    "brand_review": []
+  },
+  "compliance": {
+    "blacklist_source": null,
+    "removed_terms": [],
+    "brand_isolated_terms": [],
+    "claim_restricted_terms": []
+  },
+  "conservation": {
+    "raw_rows": 7,
+    "blank_keyword_rows": 0,
+    "invalid_rows": 0,
+    "normalized_valid_rows": 7,
+    "unique_keywords": 7,
+    "merged_duplicate_rows": 0,
+    "disposition_counts": {
+      "retained": 3,
+      "observe": 2,
+      "brand_isolated": 1,
+      "compliance_negative": 1,
+      "low_relevance_negative": 0
+    },
+    "records_count": 7
+  },
+  "analysis": {
+    "traffic_concentration": {
+      "status": "available",
+      "source_id": "SRC-SIF-FILE-001",
+      "top10_share": 1.0,
+      "keywords_to_80pct": 1
+    },
+    "seasonality": {
+      "status": "unavailable",
+      "source_ids": [],
+      "classification": "unknown",
+      "as_of": null
+    },
+    "competitor_coverage": {
+      "confirmed_competitor_count": 0,
+      "source_id": null
+    },
+    "metric_fill_rates": {
+      "search_volume": 1.0
+    }
+  },
+  "handoff": {
+    "strategy_brief_inputs": {
+      "package_ref": {
+        "package_id": "DEMO-UNIFIED-S2",
+        "package_version": 1,
+        "package_hash": "sha256:59896849c144357599e8da46d0e8b118c6e4bdf4184c2463f2373f13202ae7ea"
+      },
+      "source_refs": [
+        "SRC-SIF-FILE-001"
+      ],
+      "pool_counts": {
+        "exact": 1
+      },
+      "market_signals": {},
+      "data_caveats": [],
+      "strongest_counterargument": "small sample"
+    },
+    "ad_plan_pool_mapping": {
+      "exact": {
+        "target_type": "keyword",
+        "match_type": "exact"
+      },
+      "phrase_feature": {
+        "target_type": "keyword",
+        "match_type": "phrase"
+      },
+      "phrase_scenario": {
+        "target_type": "keyword",
+        "match_type": "phrase"
+      },
+      "broad_discovery": {
+        "target_type": "keyword",
+        "match_type": "broad"
+      },
+      "pat_candidates": {
+        "target_type": "asin",
+        "match_type": "product"
+      }
+    },
+    "never_authorizes_external_upload": true
+  },
+  "downstream_eligibility": {
+    "strategy": "eligible",
+    "builder": "conditional",
+    "external_upload": "never_authorized_by_keyword_package",
+    "reasons": []
+  },
+  "data_explanation_window": {
+    "obtained_facts": [],
+    "derived": [],
+    "simulated": [
+      "全部产品事实与搜索指标均为自编合成演示，不是真实店铺数据。"
+    ],
+    "missing_and_impact": [
+      "cvr missing"
+    ],
+    "continue_and_revision": [
+      "use scenario only"
+    ]
+  },
+  "late_data_revision": {
+    "policy": "impact_scoped",
+    "changed_source_ids": [],
+    "changed_record_ids": [],
+    "changed_fields": [],
+    "affected_artifacts": [],
+    "unaffected_artifacts": [],
+    "invalidates_downstream_hashes": true
+  },
+  "acceptance_checks": {
+    "fixture": {
+      "status": "passed",
+      "evidence": "unit-test"
+    }
+  },
+  "_meta": {
+    "generated_at": "2026-08-09T00:00:00Z",
+    "canonicalization_version": "kwp-c14n-1"
+  },
+  "seller_skus": [
+    "DEMO-PAD-01"
+  ]
+}

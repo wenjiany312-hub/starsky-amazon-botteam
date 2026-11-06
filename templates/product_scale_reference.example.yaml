@@ -1,0 +1,11 @@
+title: 示例产品 · 真实比例基准（同一基线，按实测尺寸缩放）
+output: 比例基准图.png
+canvas: { w: 1600, h: 900, bg: "#F2F1EF" }
+baseline_pct: 78
+tallest_height_pct: 58
+gap_pct: 7
+# photo 填本品垫图的绝对路径；height_cm/width_cm 填实测尺寸，不许估
+products:
+  - { name: "款式A", photo: 'D:\产品\示例产品\00_产品线档案\垫图素材\IMG01_款式A_main.jpg', height_cm: 11.5, width_cm: 7.0 }
+  - { name: "款式B", photo: 'D:\产品\示例产品\00_产品线档案\垫图素材\IMG02_款式B_main.jpg', height_cm: 8.0,  width_cm: 9.7 }
+  - { name: "款式C", photo: 'D:\产品\示例产品\00_产品线档案\垫图素材\IMG03_款式C_main.jpg', height_cm: 7.8,  width_cm: 8.5 }

@@ -1,0 +1,21 @@
+# 闸门对应的状态见 sku_states.yaml（gate: true）；审批流程见 交接协议.md 第六节
+gates:
+  GATE1:        {state: AWAIT_GATE1,        decide: 选品清单和履约方式（有风控条件的要逐条确认）, human_only: true}
+  GATE2:        {state: AWAIT_GATE2,        decide: 文案抽检和预检报告,          human_only: true}
+  GATE3:        {state: AWAIT_GATE3,        decide: 广告预算,                   human_only: true, budget_cap_from: finance}
+  GATE_FBA:     {state: AWAIT_GATE_FBA,     decide: 转 FBA 的首批备货量和资金,    human_only: true, money: true}
+  GATE_RESTOCK: {state: AWAIT_GATE_RESTOCK, decide: 补货量和资金,              human_only: true, money: true}
+  GATE_CLEAR:   {state: AWAIT_GATE_CLEAR,   decide: 清仓方式和底线价,           human_only: true, money: true}
+  GATE_DELIST:  {state: AWAIT_GATE_DELIST,  decide: 是否下架,                  human_only: true}
+autonomy_levels:
+  L1: 每次状态变化都要老板确认（第一次加载默认用这个）
+  L2: 只有闸门状态要老板确认
+  L3: GATE1、GATE2 按下面的 auto_rules 自动放行；GATE3 预算在财务管家给的上限以内自动放行（要先连续稳定运行 2–4 周）
+  note: "涉及资金的闸门（money = true）在任何模式下都必须人工确认"
+auto_rules_L3:      # 默认值，老板可以改
+  GATE1: "g1_verdict == PASS 且 g1b_verdict == PASS 且 g1_confidence == HIGH 且 restriction_check 不是 OWNER_TO_CHECK 且 fbm_net_margin ≥ 30%"
+  GATE2: "preview_result == pass 且 qa 没有问题 且 ai_person_summary 里没有 UNSURE"
+  GATE3: "approved_daily_budget ≤ ads_daily_cap"
+halt:
+  trigger: 风控官 G3 输出 HALT
+  effect: 不能再进入 sku_states.yaml 里 global_rules.halt 列出的状态，只有老板能解除；如果是 FBA 专项指标触发，只挡 FBA 相关的状态

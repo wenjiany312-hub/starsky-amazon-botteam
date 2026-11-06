@@ -1,0 +1,235 @@
+# 星空 V2.1 · workflow_state 示例（随 starsky-fullchain-workflow 分发）
+# 路径口径：artifacts 里全部是产品根相对的 V2.1 字面路径（{板块夹}/{skill}/文件），
+#    归属见 templates/skill_folder_map.yaml 与 templates/artifact_contract.md。
+#    读旧项目（根上有 生成报告/）时把旧路径记到 legacy_artifacts，不改写本表口径。
+schema_version: "3.7"
+edition: starsky-v2
+release_tag: "2026-08-01"
+scenario: "S"   # S=条件选品 A=有货源上架
+entry:
+  mode: "workflow"  # workflow | single_point
+  task: ""  # full_chain 或 single_point task
+  routing_status: "pending"  # pending | awaiting_anchor | intake_ready | active | followup_requested | completed
+single_point_progress:
+  state: "not_started"  # not_started | active | awaiting_user_choice | completed
+  active_skill: ""
+  completed_skills: []
+  user_requested_next_skill: ""
+  available_followups: []
+mcp_refresh:
+  policy: "available_on_demand"
+  requests: []
+data_intake:
+  status: "not_requested"  # not_requested | indexing | report_ready | consumed | revision_needed
+  accept_unorganized_sources: true
+  required_before_business_skill: true
+  report: "00_总控/starsky-fullchain-workflow/00C_资料接入与优化建议报告.md"
+  overlay: "00_总控/starsky-fullchain-workflow/00C_data_intake_overlay.yaml"
+  source_count: 0
+  unclassified_count: 0
+  consumed_by: []
+product_id: ""
+product_name: ""
+marketplace: "US"
+current_step: "intake_interview"
+completed_steps: []
+supplier_data_status: "pending"
+supplier_shortlist_status: "pending"  # pending | partial | complete | skipped_demo
+supplier_handoff:
+  status: "pending"  # pending | waiting_1688_verification | waiting_1688_offer_url | ready_for_product_scrape | invalid_1688_offer_url
+  candidate_count: 0
+  direct_match_count: 0
+  offer_url_count: 0
+  selected_offer_url: ""
+  selected_offer_id: ""
+  url_validation: "not_started"  # not_started | passed | failed
+  source_shop_url: ""
+  discovery_keywords: []
+  browser_context: ""
+  discovery_method: ""
+  verification_status: "not_required"  # not_required | waiting_user | user_completed_1688_slider | verified
+  reliability_status: "not_started"  # not_started | partial_page_signals_only | available | field_unavailable
+run_mode: "production"
+interaction_policy:
+  repeat_authorization_questions: false
+  proceed_with_labeled_defaults: true
+  internal_demo_media_use: false
+profile_mode: "base"  # 内部兼容：base | category | enterprise_category；用户界面只显示通用模式/加载资料包
+enterprise_id: ""
+category_id: ""
+routing_profile: ""
+overlay_version: ""
+profile_selection:
+  status: "pending"
+  user_mode: "通用模式"
+  recommended_mode: "base"
+  confirmed_by: ""
+  confirmed_at: ""
+mcp_status:
+  required: true
+  # 生产首选：用户自己配进 config.toml，插件不带
+  sorftime: unknown            # preferred_required
+  sif: unknown                 # preferred_required
+  # 可加装：有就调，没有不挡首选
+  xiyou: unknown               # welcome_extra · 西柚洞察
+  sellersprite: unknown        # welcome_extra
+  local_1688: required         # 星空 V2 生产必装；注册名 1688_scraper
+sharing_execution_policy:
+  # 1688 详情主路径 = 本地 MCP；Skill 只写报告
+  primary_path: "1688_scraper MCP · ping → get_offer → login_1688 → download_media"
+  skill_role: "1688-product-detail-scraper 消费 MCP 事实并落盘，不再作为抓页主入口"
+  demo_fallback_only: "仅当用户声明演示且没有 MCP 时，才允许网页半辅助"
+  mcp_detect_rule: "工具清单中存在名称含 1688 的工具，且 ping 通；生产不通则停"
+  resolved_channel: ""         # 本轮实际走的通道，Step 0 定死后写入，全程不改
+  channel_switch_allowed: false # ⛔ 换浏览器通道会触发 1688 风控
+  browser_action: "MCP 路径用其自带 Chromium；禁止中途改用 Codex 内置浏览器"
+  user_resume_phrase: "已完成"
+  waiting_states: [waiting_1688_login, waiting_1688_verification, waiting_1688_page_fact]
+category_overlay: ""
+enterprise_overlay: ""
+enterprise_data_pack:
+  source_mode: "external_read_only"
+  root: ""
+  root_status: "not_provided"
+  category_display_name: ""
+  category_relative_path: ""
+  category_resolution: "deferred"
+  manifest_status: "not_created"
+  source_write_allowed: false
+  shared_source_count: 0
+  category_source_count: 0
+  active_injection_summary: ""
+artifacts:
+  dir_reports: "按 skill_folder_map：{板块夹}/{skill}/；无单一报告目录"
+  intake_brief: "00_总控/starsky-fullchain-workflow/00A_选品需求确认单.md"
+  single_point_intake: "00_总控/starsky-singlepoint-intake/00B_单点任务接入单.md"
+  external_reference_manifest: "00_总控/starsky-singlepoint-intake/00B_external_reference_manifest.yaml"
+  data_intake_report: "00_总控/starsky-fullchain-workflow/00C_资料接入与优化建议报告.md"
+  data_intake_overlay: "00_总控/starsky-fullchain-workflow/00C_data_intake_overlay.yaml"
+  enterprise_data_manifest: "00_总控/starsky-fullchain-workflow/enterprise_data_manifest.yaml"
+  runtime_data_overlay: "00_总控/starsky-fullchain-workflow/runtime_data_overlay.yaml"
+  enterprise_data_pack_notes: "00_总控/starsky-fullchain-workflow/企业资料包注入说明.md"
+  selection_report: "00_总控/starsky-fullchain-workflow/00_选品推荐报告.md"
+  market_report: "S1_选品板块/amazon-market-research/01_市场穿透报告.md"
+  product_profile: "S1_选品板块/amazon-market-research/01_product_profile.yaml"
+  supplier_report: "S1_选品板块/alibaba-supplier-evaluation/02_1688供应商短名单.md"
+  product_scrape: "S1_选品板块/1688-product-detail-scraper/03_1688产品资料_{商品ID}.md"
+  extracted_listing_facts: "S1_选品板块/1688-product-detail-scraper/03_extracted_listing_facts.yaml"
+  listing_data_explanation: "S1_选品板块/1688-product-detail-scraper/03C_上架数据解释与续跑说明.md"
+  supplier_data_request: "S1_选品板块/1688-product-detail-scraper/03A_供应商数据补充清单.md"
+  supplier_data_merge: "S1_选品板块/1688-product-detail-scraper/03B_供应商数据合并与复算.md"
+  product_facts: "S1_选品板块/1688-product-detail-scraper/03_product_facts.yaml"
+  ip_report: "S1_选品板块/amazon-ip-risk-assessment/04_IP风险排查与专利分析.md"
+  compliance_blacklist: "S1_选品板块/amazon-ip-risk-assessment/04_compliance_blacklist.yaml"
+  phase_s1: "S1_选品板块/_阶段总览/阶段_S1_选品可行性研究报告.md"
+  phase_s1_html: "S1_选品板块/github-tabler-html-report/HTML/阶段_S1_选品可行性研究报告.html"
+  competitor_asin_report: "S1_选品板块/amazon-market-research/05_竞品ASIN研究报告.md"
+  competitor_review_xlsx: "S1_选品板块/amazon-market-research/05A_竞品候选确认表.xlsx"
+  competitor_review_html: "S1_选品板块/github-tabler-html-report/HTML/05A_竞品候选确认报告.html"
+  competitor_asin_pool: "S1_选品板块/amazon-market-research/competitor_asin_pool.yaml"
+  keyword_exports_sif_dir: "S2_文案板块/_投喂_关键词导出/SIF"
+  keyword_exports_sellersprite_dir: "S2_文案板块/_投喂_关键词导出/卖家精灵"
+  keyword_exports_xiyou_dir: "S2_文案板块/_投喂_关键词导出/西柚找词"
+  keyword_export_manifest: "S2_文案板块/_投喂_关键词导出/keyword_export_manifest.yaml"
+  keyword_package: "S2_文案板块/amazon-sif-keyword-research/keyword_package.yaml"
+  keyword_report: "S2_文案板块/amazon-sif-keyword-research/06_关键词库报告.md"
+  keyword_data_source_log: "S2_文案板块/amazon-sif-keyword-research/06_keyword_data_source_log.yaml"
+  keyword_html_report: "S2_文案板块/github-tabler-html-report/HTML/06_关键词库报告.html"
+  listing_content: "S2_文案板块/amazon-listing-copywriter/07_Listing文案.md"
+  listing_bullet_ledger: "S2_文案板块/amazon-listing-copywriter/07_listing_bullet_ledger.yaml"
+  listing_conversion_blueprint: "S2_文案板块/amazon-listing-copywriter/07A_Listing转化蓝图.yaml"
+  listing_validation_input: "S2_文案板块/amazon-listing-copywriter/07B_Listing校验输入.json"
+  listing_validation_result: "S2_文案板块/amazon-listing-copywriter/07C_Listing校验结果.json"
+  listing_content_html: "S2_文案板块/github-tabler-html-report/HTML/07_Listing文案.html"
+  visual_playbook: "S3_视觉板块/amazon-visual-benchmark-learner/visual_playbook.yaml"
+  visual_learning_report: "S3_视觉板块/amazon-visual-benchmark-learner/视觉学习报告.md"
+  visual_asset_report: "S3_视觉板块/amazon-listing-image-designer/08A_视觉垫图资产清单.md"
+  visual_asset_manifest: "S3_视觉板块/amazon-listing-image-designer/产品垫图/asset_manifest.yaml"
+  visual_asset_dir: "S3_视觉板块/amazon-listing-image-designer/产品垫图/主副图/"
+  image_brief: "S3_视觉板块/amazon-listing-image-designer/08_主副图设计方案.md"
+  aplus_brief: "S3_视觉板块/amazon-premium-aplus-designer/09_高级A+方案.md"
+  visual_generation_manifest: "S3_视觉板块/amazon-listing-image-designer/visual_generation_manifest.yaml"
+  visual_generation_checklist: "S3_视觉板块/amazon-listing-image-designer/08B_视觉出图执行清单.md"
+  visual_generation_run_log: "S3_视觉板块/amazon-listing-image-designer/visual_generation_run_log.md"
+  visual_prompt_iterations: "S3_视觉板块/amazon-listing-image-designer/visual_prompt_iterations.yaml"
+  standard_aplus_brief: "S3_视觉板块/amazon-standard-aplus-designer/09S_标准A+方案.md"
+  video_storyboard: "S3_视觉板块/amazon-product-video-director/14_产品视频分镜.md"
+  video_prompts: "S3_视觉板块/amazon-product-video-director/14_video_prompt_package.yaml"
+  video_asset_report: "S3_视觉板块/amazon-product-video-director/14A_视频垫图资产清单.md"
+  video_asset_manifest: "S3_视觉板块/amazon-product-video-director/视频垫图/asset_manifest.yaml"
+  video_generation_manifest: "S3_视觉板块/amazon-product-video-director/video_generation_manifest.yaml"
+  video_execution_checklist: "S3_视觉板块/amazon-product-video-director/14B_视频执行清单.md"
+  video_output: "S3_视觉板块/amazon-product-video-director/video_exports/{video_slug}_final.mp4"
+  video_acceptance: "S3_视觉板块/amazon-product-video-director/14C_视频回填验收.md"
+  ad_intake: "S4_广告板块/amazon-ad-strategy-architect/11A_广告参数确认单.md"
+  ad_strategy_input: "S4_广告板块/amazon-ad-strategy-architect/ad_strategy_input.yaml"
+  ad_architecture: "S4_广告板块/amazon-ad-campaign-builder/11_新品广告架构.md"
+  ad_architecture_html: "S4_广告板块/github-tabler-html-report/HTML/11_广告架构审阅版.html"
+  ad_plan: "S4_广告板块/amazon-ad-campaign-builder/ad_plan.yaml"
+  bulk_xlsx: "S4_广告板块/amazon-bulk-upload/bulk/SP_bulk_upload_{date}_v1.xlsx"
+  bulk_upload_guide: "S4_广告板块/amazon-bulk-upload/bulk/Bulk上传说明.md"
+  bulk_upload_error_analysis: "S4_广告板块/amazon-bulk-upload-troubleshooter/bulk/Bulk上传报错分析_{date}.md"
+  ad_diagnosis: "S4_广告板块/amazon-ad-report-analyzer/13_广告报表诊断_{date}.md"
+  ad_diagnosis_html: "S4_广告板块/github-tabler-html-report/HTML/13_广告分析_{date}.html"
+  ad_optimization_changes: "S4_广告板块/amazon-ad-report-analyzer/13A_广告优化变更建议.yaml"
+  phase_s2: "S2_文案板块/_阶段总览/阶段_S2_词库与文案总览.md"
+  phase_s3: "S3_视觉板块/_阶段总览/阶段_S3_视觉资产总览.md"
+  phase_s4: "S4_广告板块/_阶段总览/阶段_S4_广告与上传总览.md"
+  phase_s5: "S5_运营板块/_阶段总览/Ops_首次店铺快照.md"
+  ops_first_snapshot: "S5_运营板块/_阶段总览/Ops_首次店铺快照.md"
+  stage_acceptance_log: "S1_选品板块/_阶段总览/stage_acceptance.yaml"
+  html_report: "{板块夹}/github-tabler-html-report/HTML/{report_slug}.html"
+  product_development_prd: "S1_选品板块/amazon-product-development-prd/PRD_产品开发需求书.md"
+  launch_plan: "S4_广告板块/amazon-launch-plan/Launch_Plan.md"
+data_policy:
+  prefer_existing_artifacts: true
+  data_intake_before_business_skill: true
+  mcp_when_missing: true
+  mcp_refresh_before_user_prompt: true
+  ask_user_when_required: true
+  never_silent_fabricate: true
+  missing_data_behavior: "explain_and_continue"
+  auto_extract_existing_sources: true
+  conditional_simulation: true
+  late_data_revision: "impact_scoped"
+  enterprise_data_pack: "optional_read_only_runtime_injection"
+  enterprise_data_precedence: "current_facts_and_mcp_over_history"
+data_explanation_windows: []
+evidence_registry: []
+data_source_logs: []
+revision_queue: []
+active_data_injection:
+  stage: ""
+  summary: ""
+  source_ids: []
+stage_acceptance:
+  S1: {status: "pending", evidence_mode: "", accepted_at: "", notes: ""}
+  S2: {status: "pending", evidence_mode: "", accepted_at: "", notes: ""}
+  S3: {status: "pending", evidence_mode: "", accepted_at: "", notes: ""}
+  S4: {status: "pending", classroom_status: "pending", post_launch_status: "pending", notes: ""}
+  S5: {status: "pending", package_ready: false, final_accepted: false, notes: ""}
+  Ops: {status: "not_applicable", baseline_status: "not_started", notes: ""}
+competitor_review:
+  status: pending
+  candidate_count: 0
+  confirmed_count: 0
+video_status:
+  package_ready: false
+  final_accepted: false
+anchors:
+  entry_difficulty: ""
+  recommended_price: ""
+  breakeven_acos: ""
+next_step:
+  step_id: "condition_select"
+  skill: "starsky-fullchain-workflow"
+  instruction: "用 MCP 按条件出候选方向并落盘 00_选品推荐报告.md"
+blocked_reason: ""
+decisions: []
+legacy_artifacts: []
+updated_at: ""
+brand:
+  author: 坚哥
+  wechat_mp: 跨境者说干货
+  knowledge_planet: 星空的跨境圈子
+  series: Codex亚马逊实战

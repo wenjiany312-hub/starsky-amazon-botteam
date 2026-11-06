@@ -1,0 +1,47 @@
+schema_version: "1.0"
+product_id: "{product_slug}"
+product_variant: "{selected_variant_or_pending_confirmation}"
+source_media_root: "S1_选品板块/1688-product-detail-scraper/媒体/{YYYYMMDD}_{product_short_name}/"   # 厂家提供的原件在 00_产品资料/厂家提供/
+asset_root: "S3_视觉板块/amazon-listing-image-designer/产品垫图/"
+generated_at: "{ISO8601}"
+assets:
+  - asset_id: "IMG01"
+    relative_path: "S3_视觉板块/amazon-listing-image-designer/产品垫图/主副图/IMG01_main_front.jpg"
+    source_asset_id: "SRC-MAIN-01"
+    source_full_path: "S1_选品板块/1688-product-detail-scraper/媒体/{YYYYMMDD}_{product_short_name}/主图/main_01.jpg"
+    original_filename: "main_01.jpg"
+    sha256: "{sha256}"
+    media_type: "image"
+    selected_variant: "{variant}"
+    target_slots:
+      - "listing_img_01_main"
+    selection_reason: "产品完整、边缘清晰、单一已选变体、无叠字或水印"
+    supports_claims:
+      - "外观"
+      - "颜色"
+      - "结构"
+    cannot_support_claims:
+      - "尺寸"
+      - "包装内容"
+    backup_asset_ids: []
+    human_replacement_status: "original_copy"
+    review_status: "approved"
+  - asset_id: "APLUS01"
+    relative_path: "S3_视觉板块/amazon-listing-image-designer/产品垫图/高级A+/APLUS01_Hero_detail.jpg"
+    source_asset_id: "SRC-DETAIL-03"
+    source_full_path: "S1_选品板块/1688-product-detail-scraper/媒体/{YYYYMMDD}_{product_short_name}/详情图/detail_03.jpg"
+    original_filename: "detail_03.jpg"
+    sha256: "{sha256}"
+    media_type: "image"
+    selected_variant: "{variant}"
+    target_slots:
+      - "aplus_m1_hero"
+    selection_reason: "可支持 A+ 新增的结构细节说明，不重复 Listing 主图主题"
+    supports_claims:
+      - "已验证的结构细节"
+    cannot_support_claims:
+      - "未经供应商确认的材质或性能"
+    backup_asset_ids: []
+    human_replacement_status: "original_copy"
+    review_status: "pending"
+blocked_requirements: []

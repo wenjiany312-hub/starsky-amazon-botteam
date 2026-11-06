@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{报告标题}} · {{批次号}}</title>
+<!--
+  亚马逊 AI 运营团队 · HTML 报告模板 v1.0
+  用法（运营总监）：
+  1. 复制本文件，改名为 {批次号}_{报告类型}.html，放在台账同一个文件夹
+  2. 替换所有 {{...}} 占位符；表格每个 SKU 复制一行 <tr>
+  3. 单文件、不引用任何外部 CSS / JS / 字体 / 图片 URL
+  4. 「详情」「文件」里的链接用相对路径（相对本 HTML 所在文件夹），点击就能打开
+  5. 状态标签只用 5 种：ok（✅）warn（⚠️）bad（❌）wait（⏳）gate（🔒）
+-->
+<style>
+  :root{
+    --bg:#f6f7f9; --card:#fff; --ink:#1f2328; --muted:#6b7280; --line:#e5e7eb;
+    --brand:#2f5bea; --ok:#16a34a; --okbg:#e8f6ee; --warn:#b45309; --warnbg:#fdf3e2;
+    --bad:#dc2626; --badbg:#fdecec; --wait:#475569; --waitbg:#eef1f5; --gate:#7c3aed; --gatebg:#f1ebfd;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font:15px/1.65 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif}
+  .wrap{max-width:1080px;margin:0 auto;padding:28px 20px 48px}
+  header{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 26px;margin-bottom:16px}
+  .eyebrow{font-size:12px;letter-spacing:.08em;color:var(--brand);font-weight:600}
+  h1{font-size:22px;margin:4px 0 6px}
+  .meta{color:var(--muted);font-size:13px}
+  .meta span{margin-right:16px}
+  .conclusion{margin-top:14px;padding:12px 14px;background:#f3f6ff;border-left:4px solid var(--brand);border-radius:8px;font-weight:500}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:16px}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .kpi .n{font-size:26px;font-weight:700;font-variant-numeric:tabular-nums}
+  .kpi .l{color:var(--muted);font-size:13px}
+  .kpi.ok .n{color:var(--ok)} .kpi.warn .n{color:var(--warn)} .kpi.bad .n{color:var(--bad)} .kpi.gate .n{color:var(--gate)}
+  section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:16px}
+  h2{font-size:16px;margin:0 0 12px;display:flex;align-items:center;gap:8px}
+  .todo{border:2px solid var(--gate);background:var(--gatebg)}
+  .todo ol{margin:0;padding-left:20px} .todo li{margin:6px 0}
+  .reply{margin-top:12px;padding:10px 12px;background:#fff;border:1px dashed var(--gate);border-radius:8px;
+         font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px}
+  .tbl{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+  th{background:#fafbfc;color:var(--muted);font-weight:600;font-size:13px;position:sticky;top:0}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+  tr:hover td{background:#fafcff}
+  .pill{display:inline-block;padding:1px 9px;border-radius:999px;font-size:12px;font-weight:600}
+  .pill.ok{color:var(--ok);background:var(--okbg)} .pill.warn{color:var(--warn);background:var(--warnbg)}
+  .pill.bad{color:var(--bad);background:var(--badbg)} .pill.wait{color:var(--wait);background:var(--waitbg)}
+  .pill.gate{color:var(--gate);background:var(--gatebg)}
+  ul.risks{margin:0;padding-left:0;list-style:none} ul.risks li{padding:7px 0;border-bottom:1px dashed var(--line)}
+  ul.risks li:last-child{border-bottom:0}
+  a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+  ul.files{margin:0;padding-left:18px} ul.files li{margin:4px 0}
+  .hint{color:var(--muted);font-size:13px}
+  footer{color:var(--muted);font-size:12px;text-align:center;margin-top:20px}
+  @media print{body{background:#fff}.wrap{padding:0}section,header,.kpi{break-inside:avoid;border-color:#ccc}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">{{角色}} · {{报告类型，如：闸门 1 审批卡 / 批次报告 / 台账日报}}</div>
+    <h1>{{报告标题}}</h1>
+    <div class="meta">
+      <span>批次：{{批次号}}</span><span>站点：{{US}}</span><span>自动化等级：{{L1}}</span><span>生成时间：{{2026-11-02 07:20 PST}}</span>
+    </div>
+    <div class="conclusion">结论：{{一句话。做了多少、通过多少、淘汰多少、卡在哪}}</div>
+  </header>
+
+  <div class="kpis">
+    <div class="kpi"><div class="n">{{10}}</div><div class="l">候选</div></div>
+    <div class="kpi ok"><div class="n">{{6}}</div><div class="l">✅ 通过</div></div>
+    <div class="kpi warn"><div class="n">{{2}}</div><div class="l">⚠️ 有条件</div></div>
+    <div class="kpi bad"><div class="n">{{2}}</div><div class="l">❌ 淘汰</div></div>
+    <div class="kpi gate"><div class="n">{{8}}</div><div class="l">🔒 等你决定</div></div>
+  </div>
+
+  <section class="todo">
+    <h2>🔒 要你做的事</h2>
+    <ol>
+      <li>{{具体动作 1，比如：逐个决定 8 个品是否进入内容制作}}</li>
+      <li>{{具体动作 2，比如：在卖家后台「添加商品」里查这 8 个品能不能卖}}</li>
+    </ol>
+    <div class="reply">回复示例：批准 1,2,5　否决 3 原因：专利　搁置 4　限制 1,2 可卖 / 5 受限</div>
+  </section>
+
+  <section>
+    <h2>{{关键表格标题，如：逐个 SKU}}</h2>
+    <div class="tbl">
+    <table>
+      <thead>
+        <tr>
+          <th>SKU</th><th>产品</th><th class="num">售价($)</th><th class="num">FBM 净利率</th>
+          <th class="num">保本 ACoS</th><th>建议方式</th><th>状态</th><th>详情</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 每个 SKU 复制一行；最多 8 列，放不下的字段只放进详情文件 -->
+        <tr>
+          <td>{{001}}</td><td>{{产品名，≤8 字}}</td><td class="num">{{24.99}}</td><td class="num">{{35.6%}}</td>
+          <td class="num">{{35.6%}}</td><td>{{FBM 测款}}</td>
+          <td><span class="pill ok">✅ 通过</span></td>
+          <td><a href="{{相对路径/03_货源与物流_001.md}}">报告</a></td>
+        </tr>
+        <tr>
+          <td>{{003}}</td><td>{{产品名}}</td><td class="num">{{—}}</td><td class="num">{{—}}</td>
+          <td class="num">{{—}}</td><td>{{—}}</td>
+          <td><span class="pill bad">❌ 专利</span></td>
+          <td><a href="{{相对路径/04_G1_风控_003.md}}">风控</a></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="hint">{{表格说明，比如：利润数据等级「部分估算」——还没接 SP-API 费用预估}}</p>
+  </section>
+
+  <section>
+    <h2>⚠️ 风险和缺口</h2>
+    <ul class="risks">
+      <li><span class="pill warn">⚠️</span> {{风险 1：写清楚影响哪个 SKU、影响什么}}</li>
+      <li><span class="pill wait">⏳</span> {{缺口 1：缺什么、找谁补}}</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>📎 文件</h2>
+    <ul class="files">
+      <li><a href="{{sku_registry.csv}}">台账 sku_registry.csv</a></li>
+      <li><a href="{{finance_利润字段_批次号.json}}">利润字段明细（JSON）</a></li>
+      <li><a href="{{warehouse_货源字段_批次号.json}}">货源字段明细（JSON）</a></li>
+    </ul>
+  </section>
+
+  <footer>亚马逊 AI 运营团队 · 由 运营总监 生成 · 数据以台账和各角色文件为准</footer>
+</div>
+</body>
+</html>

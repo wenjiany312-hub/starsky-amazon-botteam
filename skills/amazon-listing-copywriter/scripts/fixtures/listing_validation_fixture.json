@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "fixture_kind": "synthetic_not_product_evidence",
+  "blacklist_terms": ["miracle", "medical grade"],
+  "skus": [
+    {
+      "sku": "DEMO-DRAWER-DIVIDER-WHITE",
+      "title": "NOVA Adjustable Drawer Divider, White",
+      "item_highlights": "Adjustable fit; tool-free setup; office drawer organization",
+      "bullets": [
+        "ADJUSTABLE FIT: Helps separate everyday office supplies in compatible drawers.",
+        "DRAWER SECTIONS: Group small items by the way you use them.",
+        "OFFICE ROUTINE: Keep stationery in its designated section.",
+        "WHITE FINISH: A light color for the inside of the drawer.",
+        "FIT CHECK: Compare the divider with the inside of your drawer before use."
+      ],
+      "description": "Divide a compatible office drawer into sections for everyday supplies. Choose a layout that groups items by use and check the available inside space before positioning the divider.",
+      "search_terms": "desk drawer organizer adjustable divider office storage"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+approval_where: "Settings → General → Auto-review（搭建时 Bot 会一条条弹出「Add custom rule」，点 Add Rule）"
+name_where: "左下角「Enter your name」"
+secret_where: "Grok Bot 的安全密钥卡 / 连接器的密钥框"
+model_note: "Grok Bot 由平台管理模型，不能按角色选；这一项不用改"
+model_section: "<p>Grok Bot 没有模型选择器，所有 Bot 由平台自动选模型，也连不到你电脑上的 MagPie，所以 Grok 版不按角色分配模型。实测（2026-11-04）出图工可以直接出图，默认 <code>in_team</code>。</p>"
+mcp_platform_note: "<div class='note'>Grok Bot 上的数据连接是<b>账户共享</b>的：接一次，所有 Bot 都看得到。「分配给谁」靠团队规则执行：每个角色只用分配给它的，运营总监派单时会写明。本地 MCP（1688 抓取 + 3 个知识库）会装在 Grok 的云电脑上并注册成自定义 MCP（搭建第 9b 步）；1688 第一次登录时你打开电脑预览接管扫码。建议打开 Settings → Computer → Route traffic through this computer，让 1688 看到你电脑的网络，减少拦截。</div>"
+safety_extra: "<li>11 个 Bot <b>共用一台云电脑</b>，彼此不是安全隔离的：不要在云电脑里登录卖家后台，密钥只用安全密钥卡</li><li>群聊里的「批准」不算数；闸门决定在运营总监私聊里回复</li>"

@@ -1,0 +1,11 @@
+schema_version: r01.cost-fees.1
+updated_at: '2026-10-15'
+currency: JPY
+referral_rate: 0.15
+referral_min: 30
+vat_rate: 0.1
+default_fx_cny_per_currency: 0.048
+status: prototype_assumption_manual_confirmation
+fba: null
+source: 'R01 approved prototype: scenario defaults, not an official fee table'
+note: FBA本轮手填；VAT/GST注册与抵扣资格需按实际确认；非官方费率核验

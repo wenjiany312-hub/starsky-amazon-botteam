@@ -1,0 +1,16 @@
+schema_version: "2.0"
+artifact_type: strategy_review
+run_id: ""
+cycle_id: ""
+strategy_review:
+  status: pending # pending | changes_requested | approved_for_builder | approved_for_demo_builder | rejected
+  approved_strategy_id: null
+  approved_strategy_version: null
+  approved_strategy_hash: null
+  approved_action_ids: []
+  modified_action_ids: []
+  rejected_action_ids: []
+  reviewed_by: null
+  reviewed_at: null
+unresolved_risks: []
+allowed_next_steps: []

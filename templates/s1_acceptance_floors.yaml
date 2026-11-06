@@ -1,0 +1,20 @@
+full_delivery:
+  category_comparison: 3
+  competitors: 15
+  variations: 10
+  reviews: 100
+  monthly_trend: 12
+  keyword_signals: 1
+  peak_top100: 1
+  organic_top5: 1
+  ad_keyword_count: 1
+salon_live:
+  category_comparison: 1
+  competitors: 5
+  variations: 1
+  reviews: 30
+  monthly_trend: 12
+  keyword_signals: 1
+  peak_top100: 1
+  organic_top5: 1
+  ad_keyword_count: 1

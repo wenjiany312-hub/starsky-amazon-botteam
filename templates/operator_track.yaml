@@ -1,0 +1,75 @@
+schema_version: "2.1"
+artifact_type: operator_track
+updated: "2026-09-02"
+purpose: >
+  选完 S1–S5 之后，先认人：A 新手 / B 老运营 / C 企业资料。
+  这是第二张卡的主问题，取代「要建夹 / 已有目录 / 没有」那种资料手续。
+  目标：少轮对话，尽快进入该板块干活。
+
+default_track_by_phrase: >
+  命中入口《日常口令直达》的句子（巡检、看报表、优化 Listing、改图、Bulk 报错等）默认 B 老运营，
+  不出本卡；用户在同一窗口后续换板块时沿用 B。只有「启动星空 / 回 S1–S5 代号」这类无上下文的开场才出本卡。
+
+tracks:
+  A:
+    name: 新手
+    who: 没有资料、没有在售链接、要从零选品或第一次跟流程。
+    s1_next: s1_quick_select.yaml
+    other_stages: "给一个最简单的起点（品名/ASIN/一句方向）就开；不要再盘问资料包。"
+    skip:
+      - 企业投喂建夹
+      - 00A 长访谈
+      - 空资料夹体检
+  B:
+    name: 老运营
+    who: 已经在卖或正在改：有 ASIN/SKU、Listing、广告、库存或后台/领星报表。
+    next: "只要一个定位物就能开跑，不走新手模板。"
+    anchors:
+      - ASIN / SKU
+      - 现有 Listing
+      - 广告报表 / ad_plan
+      - 领星或后台导出
+      - 当前产品文件夹
+    skip:
+      - 蓝海/两个月上架/中国卖家友好 新手模板
+      - 从零 condition_select 海选
+  C:
+    name: 企业资料
+    who: 有公司资料包、历史 SOP、词库、案例要叠进这一轮。
+    next: "只问建夹还是已有目录，拷完回「已完成」。"
+    subchoices:
+      - "要建夹：init_enterprise_drop.py，停等已完成"
+      - "已有目录：只读索引，不改源夹"
+
+card: |
+  【你是哪一种】回 A / B / C。不要再让我猜。
+
+  A 新手
+  没资料、从零开始。选品会给你站点、售价和几套模板，回一行就进市场。
+
+  B 老运营
+  已经在卖或正在改。丢一个定位物即可：ASIN / SKU / Listing / 广告报表 / 领星导出。
+
+  C 企业资料
+  有公司资料要叠进来。下一句问你：要建夹，还是已有目录。
+
+  也可以一行说完，例如：
+  A
+  B B0XXXXXXXX
+  C 要建夹
+
+  我先不干活。
+
+after_A_s1: |
+  立刻打印 templates/s1_quick_select.yaml 的 card，停。
+  用户回站点+售价+模板后写 00A，进入 condition_select，接 MCP。
+  禁止再访谈。
+
+after_B: |
+  若回复里已有 ASIN/路径/报表：当轮就开始对应板块，不再追问。
+  若只有一个 B：只问一句「把定位物发我」，停。
+
+after_C: |
+  若回复含「要建夹」：跑 init_enterprise_drop.py，停等已完成。
+  若回复含路径：只读索引。
+  若只有一个 C：问「1 要建夹  2 已有目录」，停。

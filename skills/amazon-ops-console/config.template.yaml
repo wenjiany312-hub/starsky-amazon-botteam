@@ -1,0 +1,36 @@
+schema_version: "1.0"
+store: ""                             # 用户自己的店铺标识；公开模板保持空
+workspace: ""                         # 必须填写发布包之外的绝对路径
+timezone: "Asia/Shanghai"
+daily_run_at: "09:00"
+collection_cadence: "market_local_midnight"
+sku_today_enabled: true
+port: 9766
+
+# Data App 是外部本地依赖。三项必须在 prepare 初始化后填写；空模板不能直接 serve。
+node_executable: ""
+data_plugin: ""
+dashboard_project: ""
+
+markets: []                           # 逐站填写；公开模板不含实例、凭据或默认数值
+# - market: ""                       # 当前实现支持 US | UK
+#   timezone: ""                     # 站点真实 IANA 时区
+#   ads_config: ""                   # Amazon Ads API 配置的绝对路径
+#   sp_config: ""                    # SP-API 配置的绝对路径
+#   cost_file: ""                    # 可选成本 CSV/XLSX 的绝对路径
+#   listing_field_schema: ""         # 可选：该站 Product Type Definition 的字段映射
+
+# 可选关键词信号，使用用户本机既有 MCP 配置；不自带任何服务密钥。
+keywords:
+  enabled: false
+  providers: [SIF, Sorftime, Xiyou]
+  max_asins_per_run: 10
+  cache_hours: 24
+  priority_asins: []
+listing_rules_file: ""                # 可选类目禁用词/品牌词与事实规则
+replenishment:
+  lead_days: 60                       # 首版备货排期假设，按自身供应链修改
+  safety_days: 15
+  review_days: 7
+
+backend_execution_enabled: false      # 首版固定 false

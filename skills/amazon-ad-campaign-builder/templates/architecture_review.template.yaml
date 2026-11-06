@@ -1,0 +1,34 @@
+schema_version: "2.0"
+artifact_type: architecture_review
+run_id: ""
+cycle_id: ""
+strategy_id: ""
+strategy_version: 1
+strategy_hash: "sha256:"
+plan_id: ""
+plan_version: 1
+plan_hash: "sha256:"
+hash_schema: ad-plan-c14n-v1
+status: pending  # pending | changes_requested | approved_for_bulk | approved_for_demo_bulk | rejected | blocked
+blocking_reasons: []
+warnings: []
+required_reviews:
+  strategy_confirmed: false
+  production_identifiers_confirmed: false
+  economics_reviewed: false
+  transfers_reviewed: false
+  official_bulk_template_available: false
+checks:
+  identity_scope: pending
+  campaign_role_and_goal: pending
+  daily_budget_reconciliation: pending
+  profit_and_inventory_guardrails: pending
+  maximum_effective_bid: pending
+  placement_and_bidding: pending
+  targeting_source_traceability: pending
+  negative_relevance_and_res_per_safety: pending
+  sp_sb_sd_eligibility: pending
+requested_changes: []
+decision_record: []
+reviewed_by: null
+reviewed_at: null

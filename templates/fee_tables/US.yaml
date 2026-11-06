@@ -1,0 +1,204 @@
+schema_version: r01.cost-fees.1
+updated_at: '2026-10-15'
+currency: USD
+referral_rate: 0.15
+referral_min: 0.3
+vat_rate: 0
+storage_per_cuft_month:
+  non_peak: 0.78
+  peak: 2.4
+awd:
+  storage_per_cuft_month: 0.48
+  inbound_per_carton: 1.4
+  outbound_per_carton: 1.4
+  transport_per_cuft: 1.4
+  status: third_party_default
+  source: R01 approved prototype; third-party 2026 summaries disagree
+  note: 请在卖家后台核对，非已验证官方统一费率
+sources:
+- url: https://sellercentral.amazon.com/help/hub/reference/external/GABBX6GZPA8MSZGW?locale=en-US
+  checked_at: '2026-10-15'
+  access: official_search_index; direct document requires JavaScript/login
+  scope: 2026 non-apparel standard-size fee bands and 3.5% surcharge; not account-specific
+    Revenue Calculator verification
+- url: https://sell.amazon.com/pricing
+  checked_at: '2026-10-15'
+  access: public_official_page
+  scope: Tools and Home Improvement 15%, minimum USD .30; other categories require
+    user override
+fba:
+  as_of: 2026 US non-apparel standard size
+  source_url: https://sellercentral.amazon.com/help/hub/reference/external/GABBX6GZPA8MSZGW?ld=NSGoogle&locale=en-US
+  valid_from: '2026-01-15'
+  valid_until: '2027-01-14'
+  fuel_surcharge_from: '2026-04-17'
+  fuel_surcharge_rate: 0.035
+  peak_from: '2026-10-15'
+  non_peak:
+    small_standard_oz:
+    - - 2
+      - 2.43
+      - 3.32
+      - 3.58
+    - - 4
+      - 2.49
+      - 3.42
+      - 3.68
+    - - 6
+      - 2.56
+      - 3.45
+      - 3.71
+    - - 8
+      - 2.66
+      - 3.54
+      - 3.8
+    - - 10
+      - 2.77
+      - 3.68
+      - 3.94
+    - - 12
+      - 2.82
+      - 3.78
+      - 4.04
+    - - 14
+      - 2.92
+      - 3.91
+      - 4.17
+    - - 16
+      - 2.95
+      - 3.96
+      - 4.22
+    large_standard_oz:
+    - - 4
+      - 2.91
+      - 3.73
+      - 3.99
+    - - 8
+      - 3.13
+      - 3.95
+      - 4.21
+    - - 12
+      - 3.38
+      - 4.2
+      - 4.46
+    - - 16
+      - 3.78
+      - 4.6
+      - 4.86
+    - - 20
+      - 4.22
+      - 5.04
+      - 5.3
+    - - 24
+      - 4.6
+      - 5.42
+      - 5.68
+    - - 28
+      - 4.75
+      - 5.57
+      - 5.83
+    - - 32
+      - 5.0
+      - 5.82
+      - 6.08
+    - - 36
+      - 5.1
+      - 5.92
+      - 6.18
+    - - 40
+      - 5.28
+      - 6.1
+      - 6.36
+    - - 44
+      - 5.44
+      - 6.26
+      - 6.52
+    - - 48
+      - 5.85
+      - 6.67
+      - 6.93
+  peak:
+    small_standard_oz:
+    - - 2
+      - 2.62
+      - 3.51
+      - 3.77
+    - - 4
+      - 2.68
+      - 3.61
+      - 3.87
+    - - 6
+      - 2.76
+      - 3.65
+      - 3.91
+    - - 8
+      - 2.86
+      - 3.74
+      - 4.0
+    - - 10
+      - 2.98
+      - 3.89
+      - 4.15
+    - - 12
+      - 3.03
+      - 3.99
+      - 4.25
+    - - 14
+      - 3.14
+      - 4.13
+      - 4.39
+    - - 16
+      - 3.17
+      - 4.18
+      - 4.44
+    large_standard_oz:
+    - - 4
+      - 3.15
+      - 3.97
+      - 4.23
+    - - 8
+      - 3.39
+      - 4.21
+      - 4.47
+    - - 12
+      - 3.66
+      - 4.48
+      - 4.74
+    - - 16
+      - 4.07
+      - 4.89
+      - 5.15
+    - - 20
+      - 4.52
+      - 5.34
+      - 5.6
+    - - 24
+      - 4.91
+      - 5.73
+      - 5.99
+    - - 28
+      - 5.07
+      - 5.89
+      - 6.15
+    - - 32
+      - 5.33
+      - 6.15
+      - 6.41
+    - - 36
+      - 5.47
+      - 6.29
+      - 6.55
+    - - 40
+      - 5.67
+      - 6.49
+      - 6.75
+    - - 44
+      - 5.84
+      - 6.66
+      - 6.92
+    - - 48
+      - 6.26
+      - 7.08
+      - 7.34
+  status: official_index_table_estimate
+  rounding: keep unrounded surcharge internally; display currency rounding only

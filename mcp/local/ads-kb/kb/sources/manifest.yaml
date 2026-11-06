@@ -1,0 +1,6854 @@
+{
+ "schema_version": null,
+ "note": "分发版：已去除本机路径。完整抽取件不随包分发。",
+ "sources": [
+  {
+   "source_id": "SRC-0001",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "daily_budget_policy_update.md",
+   "chars": 1988
+  },
+  {
+   "source_id": "SRC-0002",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "keyword_targeting.md",
+   "chars": 26183
+  },
+  {
+   "source_id": "SRC-0003",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "measurement.md",
+   "chars": 10578
+  },
+  {
+   "source_id": "SRC-0004",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "official_learning_path.md",
+   "chars": 3515
+  },
+  {
+   "source_id": "SRC-0005",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "sb_guide.md",
+   "chars": 16005
+  },
+  {
+   "source_id": "SRC-0006",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "search_term_impression_report_update.md",
+   "chars": 1867
+  },
+  {
+   "source_id": "SRC-0007",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "sp_best_practices.md",
+   "chars": 18933
+  },
+  {
+   "source_id": "SRC-0008",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "sp_budget.md",
+   "chars": 13084
+  },
+  {
+   "source_id": "SRC-0009",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "sp_dynamic_bidding.md",
+   "chars": 7477
+  },
+  {
+   "source_id": "SRC-0010",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "sp_plus_sd.md",
+   "chars": 2774
+  },
+  {
+   "source_id": "SRC-0011",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "sp_targeting.md",
+   "chars": 26595
+  },
+  {
+   "source_id": "SRC-0012",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "apollo_ads_methodology.md",
+   "chars": 8653
+  },
+  {
+   "source_id": "SRC-0013",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "source_conflicts_and_risks.md",
+   "chars": 4750
+  },
+  {
+   "source_id": "SRC-0014",
+   "authority": "D",
+   "status": "pending",
+   "ext": ".md",
+   "filename": "amazon_ad_architecture_optimization_skill_blueprint.md",
+   "chars": 11761
+  },
+  {
+   "source_id": "SRC-0015",
+   "authority": "D",
+   "status": "pending",
+   "ext": ".md",
+   "filename": "fusion_reconciliation.md",
+   "chars": 6387
+  },
+  {
+   "source_id": "SRC-0016",
+   "authority": "D",
+   "status": "pending",
+   "ext": ".md",
+   "filename": "source_capability_ledger.md",
+   "chars": 8425
+  },
+  {
+   "source_id": "SRC-0017",
+   "authority": "A",
+   "status": "ingested",
+   "chars": 28199,
+   "filename": "https://advertising.amazon.com/library/guides/keyword-targeting"
+  },
+  {
+   "source_id": "SRC-0018",
+   "authority": "A",
+   "status": "thin_or_js_rendered",
+   "chars": 0,
+   "filename": "https://advertising.amazon.com/help/G2Q3EMZR4WQ7N8A2"
+  },
+  {
+   "source_id": "SRC-0019",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "README.md",
+   "chars": 317
+  },
+  {
+   "source_id": "SRC-0020",
+   "authority": "B",
+   "status": "unsupported",
+   "ext": ".pand",
+   "filename": "1-1_01课程内容和结构介绍-笔记.PanD",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0021",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "30期-AD PLANNING.xlsx",
+   "chars": 360
+  },
+  {
+   "source_id": "SRC-0022",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "30期-批量操作分析.xlsx",
+   "chars": 1528
+  },
+  {
+   "source_id": "SRC-0023",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pptx",
+   "filename": "30期预算.pptx",
+   "chars": 822
+  },
+  {
+   "source_id": "SRC-0024",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "保守增量模型（通用版本）- 标品-大于100刀.pdf",
+   "chars": 4031
+  },
+  {
+   "source_id": "SRC-0025",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "保守增量模型（通用版本）- 标品-小于100刀.pdf",
+   "chars": 3569
+  },
+  {
+   "source_id": "SRC-0026",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "广告问题数据诊断表-研究院版-20220524(3).pdf",
+   "chars": 744
+  },
+  {
+   "source_id": "SRC-0027",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "老品广告架构-脑图.pdf",
+   "chars": 1239
+  },
+  {
+   "source_id": "SRC-0028",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".pdf",
+   "filename": "阿波罗控制ACoS体系_v2.pdf",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0029",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "1206阿波罗研究院 --节日属性产品的布局.pdf",
+   "chars": 1934
+  },
+  {
+   "source_id": "SRC-0030",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "2024-11-11+阿波罗广告-Exported_e089b2e10d3249069c5d8a4ee8aac739.pdf",
+   "chars": 23683
+  },
+  {
+   "source_id": "SRC-0031",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xmind",
+   "filename": "Day1.1 - 阿波罗流量大课 知识点梳理.xmind",
+   "chars": 1473
+  },
+  {
+   "source_id": "SRC-0032",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "Day2.1 - 阿波罗-策略评估分析表（用户版）.xlsx",
+   "chars": 1716
+  },
+  {
+   "source_id": "SRC-0033",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".pdf",
+   "filename": "阿波罗7.25.pdf",
+   "chars": 16472
+  },
+  {
+   "source_id": "SRC-0034",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "阿波罗分享-优化ACOS.pdf",
+   "chars": 1590
+  },
+  {
+   "source_id": "SRC-0035",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "阿波罗工具(v3)手册 - v1.1.pdf",
+   "chars": 16443
+  },
+  {
+   "source_id": "SRC-0036",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".pdf",
+   "filename": "阿波罗广告宝典.pdf",
+   "chars": 4641
+  },
+  {
+   "source_id": "SRC-0037",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "阿波罗广告策略2-概括.pdf",
+   "chars": 2731
+  },
+  {
+   "source_id": "SRC-0038",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "阿波罗的PER - 出单再优化.pdf",
+   "chars": 787
+  },
+  {
+   "source_id": "SRC-0039",
+   "authority": "B",
+   "status": "duplicate_supplement",
+   "ext": ".md",
+   "filename": "SRC-001.md",
+   "chars": 2284
+  },
+  {
+   "source_id": "SRC-0040",
+   "authority": "B",
+   "status": "duplicate_supplement",
+   "ext": ".md",
+   "filename": "SRC-002.md",
+   "chars": 24730
+  },
+  {
+   "source_id": "SRC-0041",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-005.md",
+   "chars": 73997
+  },
+  {
+   "source_id": "SRC-0042",
+   "authority": "B",
+   "status": "duplicate_supplement",
+   "ext": ".md",
+   "filename": "SRC-006.md",
+   "chars": 1835
+  },
+  {
+   "source_id": "SRC-0043",
+   "authority": "B",
+   "status": "duplicate_supplement",
+   "ext": ".md",
+   "filename": "SRC-007.md",
+   "chars": 17089
+  },
+  {
+   "source_id": "SRC-0044",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-008.md",
+   "chars": 179920
+  },
+  {
+   "source_id": "SRC-0045",
+   "authority": "B",
+   "status": "duplicate_supplement",
+   "ext": ".md",
+   "filename": "SRC-009.md",
+   "chars": 3056
+  },
+  {
+   "source_id": "SRC-0046",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-010.md",
+   "chars": 4416
+  },
+  {
+   "source_id": "SRC-0047",
+   "authority": "B",
+   "status": "duplicate_supplement",
+   "ext": ".md",
+   "filename": "SRC-011.md",
+   "chars": 1054
+  },
+  {
+   "source_id": "SRC-0048",
+   "authority": "A",
+   "status": "ingested",
+   "chars": 17177,
+   "filename": "https://advertising.amazon.com/library/guides/lifecycle-marketing"
+  },
+  {
+   "source_id": "SRC-0049",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "01.如何筛选核心关键词，如何确定广告投放词.pdf",
+   "chars": 3279
+  },
+  {
+   "source_id": "SRC-0050",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "02.我们常用的CPC广告打法.pdf",
+   "chars": 3659
+  },
+  {
+   "source_id": "SRC-0051",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "03.亚马逊CPC广告详解及新品投放策略.pdf",
+   "chars": 4671
+  },
+  {
+   "source_id": "SRC-0052",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "04.亚马逊视频广告效果怎么样.pdf",
+   "chars": 2949
+  },
+  {
+   "source_id": "SRC-0053",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "05.老板喊你将广告了， 如何降低链接对广告的依赖.pdf",
+   "chars": 1817
+  },
+  {
+   "source_id": "SRC-0054",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "06.亚马逊CPC广告出现问题怎么解决？.pdf",
+   "chars": 2695
+  },
+  {
+   "source_id": "SRC-0055",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "07.你真的会分析广告报告吗.pdf",
+   "chars": 4898
+  },
+  {
+   "source_id": "SRC-0056",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "08.3类不同卖家会员日广告实操设置，爆单利润两不误.pdf",
+   "chars": 1374
+  },
+  {
+   "source_id": "SRC-0057",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "09.知晓竞品广告主要投放词和投放效果的绝招.pdf",
+   "chars": 2125
+  },
+  {
+   "source_id": "SRC-0058",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pptx",
+   "filename": "1 个人创业-推链接的方法(管理员 143号 林康达）.pptx",
+   "chars": 967
+  },
+  {
+   "source_id": "SRC-0059",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "1 流量原则，亚马逊新品广告两套高效打法-0.pdf",
+   "chars": 10132
+  },
+  {
+   "source_id": "SRC-0060",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "1.31 Andy pang59号分享 季节性产品竞品策略分析(1).pdf",
+   "chars": 4132
+  },
+  {
+   "source_id": "SRC-0061",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "10.亚马逊链接在不同阶段如何打广告？.pdf",
+   "chars": 4160
+  },
+  {
+   "source_id": "SRC-0062",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "11.-实战--100位运营实战复盘总结的广告分析SOP内容.pdf",
+   "chars": 5590
+  },
+  {
+   "source_id": "SRC-0063",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "12.如何根据关键词排位高效优化广告活动.pdf",
+   "chars": 2865
+  },
+  {
+   "source_id": "SRC-0064",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "13.提高广告点击率的几个操作.pdf",
+   "chars": 2092
+  },
+  {
+   "source_id": "SRC-0065",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "14.亲测有效： 知晓前台广告位是哪个广告投放出来的最快方法.pdf",
+   "chars": 1745
+  },
+  {
+   "source_id": "SRC-0066",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "15.如何根据广告目的选择最合适的广告方式.pdf",
+   "chars": 3054
+  },
+  {
+   "source_id": "SRC-0067",
+   "authority": "C",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "16.amazon运营思维导图_wps图片.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0068",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "16.精华篇：如何根据不同广告目的选择最佳广告投放.pdf",
+   "chars": 2988
+  },
+  {
+   "source_id": "SRC-0069",
+   "authority": "C",
+   "status": "superseded_by_ocr",
+   "ext": ".jpg",
+   "filename": "17.CPC 广告全运营.jpg",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0070",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "17.精华篇：亚马逊最全广告位解读.pdf",
+   "chars": 1299
+  },
+  {
+   "source_id": "SRC-0071",
+   "authority": "C",
+   "status": "superseded_by_ocr",
+   "ext": ".jpg",
+   "filename": "18.CPC广告优化报表参量解析.jpg",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0072",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "18.测款，私模，推品的广告打法汇总.pdf",
+   "chars": 3477
+  },
+  {
+   "source_id": "SRC-0073",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xmind",
+   "filename": "19.CPC-流程规范化-LAST DAY.xmind",
+   "chars": 550
+  },
+  {
+   "source_id": "SRC-0074",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "19.必须收藏！SP广告的顶级投放底层逻辑梳理（4000字干货长文）.pdf",
+   "chars": 4969
+  },
+  {
+   "source_id": "SRC-0075",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".xlsx",
+   "filename": "2. 产品推广计划(1)(2).xlsx",
+   "chars": 9178
+  },
+  {
+   "source_id": "SRC-0076",
+   "authority": "C",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "20.CPC流量.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0077",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "20.广告订单一直占比高？原因在这里…….pdf",
+   "chars": 2199
+  },
+  {
+   "source_id": "SRC-0078",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".docx",
+   "filename": "2024-11-28-38《sp表格批量操作》.docx",
+   "chars": 1977
+  },
+  {
+   "source_id": "SRC-0079",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "2024.5.31 亚马逊B端SD广告(1).pdf",
+   "chars": 1646
+  },
+  {
+   "source_id": "SRC-0080",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "2025亚马逊广告官方培训课程 (每月更新) 2025-01(1).pdf",
+   "chars": 12228
+  },
+  {
+   "source_id": "SRC-0081",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "2025亚马逊广告官方培训课程2025年1月(1).pdf",
+   "chars": 12228
+  },
+  {
+   "source_id": "SRC-0082",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "2025亚马逊广告新玩法.pdf",
+   "chars": 8681
+  },
+  {
+   "source_id": "SRC-0083",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "2025亚马逊广告限时闭门课.pdf",
+   "chars": 49919
+  },
+  {
+   "source_id": "SRC-0084",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "2025亚马逊春促广告布局培训PPT.pdf",
+   "chars": 5098
+  },
+  {
+   "source_id": "SRC-0085",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "2025年11月亚马逊广告培训指南.pdf",
+   "chars": 9937
+  },
+  {
+   "source_id": "SRC-0086",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".docx",
+   "filename": "2025最新亚马逊低价捡漏广告策略(1).docx",
+   "chars": 2966
+  },
+  {
+   "source_id": "SRC-0087",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "21.超级干货：如何根据ACOS和TACOS趋势判断广告是不是良性循环？.pdf",
+   "chars": 3269
+  },
+  {
+   "source_id": "SRC-0088",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "22. 第四章-爆款打造技巧-如何有效地为新品引流？.pdf",
+   "chars": 2910
+  },
+  {
+   "source_id": "SRC-0089",
+   "authority": "C",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "22.PPC知识以及逻辑打法.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0090",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "22.广告这两个细节做好，15天关键词就能上首页.pdf",
+   "chars": 3174
+  },
+  {
+   "source_id": "SRC-0091",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "23.亚马逊ASIN定位广告为什么展示到其它广告位？.pdf",
+   "chars": 1806
+  },
+  {
+   "source_id": "SRC-0092",
+   "authority": "C",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "23.爆款指标.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0093",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "24.如何用最稳妥的竞价抢占最佳广告位？.pdf",
+   "chars": 1659
+  },
+  {
+   "source_id": "SRC-0094",
+   "authority": "C",
+   "status": "superseded_by_ocr",
+   "ext": ".jpg",
+   "filename": "24.爆品战略思维导图.jpg",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0095",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "25.你只投关键词广告吗？流量全覆盖的广告高阶玩法来了.pdf",
+   "chars": 3186
+  },
+  {
+   "source_id": "SRC-0096",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "26.CPC广告10大最强策略技巧，广告效果一定翻倍（中篇）.pdf",
+   "chars": 2480
+  },
+  {
+   "source_id": "SRC-0097",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "27.CPC广告10大策略技巧，让广告效果翻倍（上篇）.pdf",
+   "chars": 2735
+  },
+  {
+   "source_id": "SRC-0098",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "28.CPC广告10大最强策略技巧，广告效果一定翻倍（下篇）.pdf",
+   "chars": 2562
+  },
+  {
+   "source_id": "SRC-0099",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "29-CPC优化最全整理.pdf",
+   "chars": 5506
+  },
+  {
+   "source_id": "SRC-0100",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pptx",
+   "filename": "3 如何快速推新品（管理员 132号 于新）.pptx",
+   "chars": 2066
+  },
+  {
+   "source_id": "SRC-0101",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "30.亚马逊CPC高级培训.pdf",
+   "chars": 8478
+  },
+  {
+   "source_id": "SRC-0102",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "31-广告分析模型（精简版）.xlsx",
+   "chars": 261331
+  },
+  {
+   "source_id": "SRC-0103",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "32-广告数据报告精析.pdf",
+   "chars": 4658
+  },
+  {
+   "source_id": "SRC-0104",
+   "authority": "C",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "32.销售相关.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0105",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "33.亚马逊CPC广告策略终极指南.pdf",
+   "chars": 6250
+  },
+  {
+   "source_id": "SRC-0106",
+   "authority": "C",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "33.新品推广脑图.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0107",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "34-广告管理表.xlsx",
+   "chars": 29625
+  },
+  {
+   "source_id": "SRC-0108",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "35-广告数据这么看！.pdf",
+   "chars": 3918
+  },
+  {
+   "source_id": "SRC-0109",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".xmind",
+   "filename": "35.选品及站内运营.xmind",
+   "chars": 8108
+  },
+  {
+   "source_id": "SRC-0110",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "36.亚马逊CPC广告高级版.pdf",
+   "chars": 3600
+  },
+  {
+   "source_id": "SRC-0111",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".xmind",
+   "filename": "36.亚马逊（工作思路）.xmind",
+   "chars": 2720
+  },
+  {
+   "source_id": "SRC-0112",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "37-广告搜索词运营表现数据分析表.xlsx",
+   "chars": 66
+  },
+  {
+   "source_id": "SRC-0113",
+   "authority": "C",
+   "status": "superseded_by_ocr",
+   "ext": ".jpg",
+   "filename": "37.亚马逊CPC站内广告优化思路的思维导图.jpg",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0114",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "38-亚马逊广告设置与优化.pdf",
+   "chars": 962
+  },
+  {
+   "source_id": "SRC-0115",
+   "authority": "C",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "38.亚马逊新品打爆流程.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0116",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "39-广告运营记录整体汇总表.xlsx",
+   "chars": 20578
+  },
+  {
+   "source_id": "SRC-0117",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".xmind",
+   "filename": "39.亚马逊站内CPC广告日常工作流程.xmind",
+   "chars": 3805
+  },
+  {
+   "source_id": "SRC-0118",
+   "authority": "C",
+   "status": "thin_needs_ocr",
+   "ext": ".pdf",
+   "filename": "40-亚马逊广告无效流量否定排除法.pdf",
+   "chars": 295
+  },
+  {
+   "source_id": "SRC-0119",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "41-广告运营效果每周及月度数据报表.xlsx",
+   "chars": 1351
+  },
+  {
+   "source_id": "SRC-0120",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "42-亚马逊广告优化师的培养.pdf",
+   "chars": 1196
+  },
+  {
+   "source_id": "SRC-0121",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "42.运营思路le.pdf",
+   "chars": 1683
+  },
+  {
+   "source_id": "SRC-0122",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "43.最牛的Amazon选品+运营+推广思维导图.pdf",
+   "chars": 4381
+  },
+  {
+   "source_id": "SRC-0123",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pptx",
+   "filename": "44-亚马逊自动手动广告如何配合深入探讨.pptx",
+   "chars": 598
+  },
+  {
+   "source_id": "SRC-0124",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "45-广告主要优化动作记录观察表.xlsx",
+   "chars": 171
+  },
+  {
+   "source_id": "SRC-0125",
+   "authority": "C",
+   "status": "superseded_by_ocr",
+   "ext": ".jpg",
+   "filename": "45.关于cpc 你知道的一切.jpg",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0126",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "46-亚马逊cpc广告数据监控表.xlsx",
+   "chars": 329454
+  },
+  {
+   "source_id": "SRC-0127",
+   "authority": "C",
+   "status": "unsupported",
+   "ext": ".xls",
+   "filename": "47-亚马逊广告投放实操表格.xls",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0128",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "48.广告系列课1 — 选品和选词.pdf",
+   "chars": 1293
+  },
+  {
+   "source_id": "SRC-0129",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "49.广告系列课2 — 自动广告打法及选词.pdf",
+   "chars": 1399
+  },
+  {
+   "source_id": "SRC-0130",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "4个阶段，亚马逊关键词排名提升打法(3).pdf",
+   "chars": 2093
+  },
+  {
+   "source_id": "SRC-0131",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "50.广告系列课3 — 手动广告选词及打法.pdf",
+   "chars": 2229
+  },
+  {
+   "source_id": "SRC-0132",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "51.广告系列课4 — 各种词的花样打法.pdf",
+   "chars": 1753
+  },
+  {
+   "source_id": "SRC-0133",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "52.广告系列课5 — 否定词及报表出现ASIN的处理.pdf",
+   "chars": 1978
+  },
+  {
+   "source_id": "SRC-0134",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "53.广告系列课6 — 广告的四大核心数据.pdf",
+   "chars": 2614
+  },
+  {
+   "source_id": "SRC-0135",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "54.广告系列课7 — 通过预算和竞价实现卡位霸屏.pdf",
+   "chars": 2341
+  },
+  {
+   "source_id": "SRC-0136",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "55.亚马逊CPC广告高阶完整版.pdf",
+   "chars": 7425
+  },
+  {
+   "source_id": "SRC-0137",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "56.亚马逊高成功率广告架构搭建过程.pdf",
+   "chars": 3174
+  },
+  {
+   "source_id": "SRC-0138",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "57.亚马逊广告的极致玩法汇总---最后一条你肯定不知道.pdf",
+   "chars": 1272
+  },
+  {
+   "source_id": "SRC-0139",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "58.亚马逊广告预算如何调整才能效果最大化？.pdf",
+   "chars": 2922
+  },
+  {
+   "source_id": "SRC-0140",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "59.亚马逊链接新品期ACOS到底多少才合适？.pdf",
+   "chars": 3710
+  },
+  {
+   "source_id": "SRC-0141",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "6-非标品广告推品方法.pdf",
+   "chars": 6010
+  },
+  {
+   "source_id": "SRC-0142",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "60.邀月秘籍：亚马逊CPC竞价策略如何选择才能效果最大化.pdf",
+   "chars": 1669
+  },
+  {
+   "source_id": "SRC-0143",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "61.盈利型广告，按照这种方法开效果最好.pdf",
+   "chars": 2249
+  },
+  {
+   "source_id": "SRC-0144",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "62.老品广告架构-脑图.pdf",
+   "chars": 1174
+  },
+  {
+   "source_id": "SRC-0145",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "63.多变体广告策略-以服装为例子.xlsx",
+   "chars": 3037
+  },
+  {
+   "source_id": "SRC-0146",
+   "authority": "C",
+   "status": "empty",
+   "ext": ".pdf",
+   "filename": "64.广告位置.pdf",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0147",
+   "authority": "C",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "7.商品推广.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0148",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".xlsx",
+   "filename": "71.一份可以解决亚马逊新品广告策略表格【超级详细】.xlsx",
+   "chars": 1061950
+  },
+  {
+   "source_id": "SRC-0149",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "72.广告运营表格.xlsx",
+   "chars": 10985
+  },
+  {
+   "source_id": "SRC-0150",
+   "authority": "C",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "9.广告整体知识整理.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0151",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "AMC+DSP 简介&案例.pdf",
+   "chars": 12695
+  },
+  {
+   "source_id": "SRC-0152",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "Logen广告通投式打法.pdf",
+   "chars": 11699
+  },
+  {
+   "source_id": "SRC-0153",
+   "authority": "C",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "ScreenShot_2025-12-25_165743_502.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0154",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "SD广告投放进阶(1).pdf",
+   "chars": 5227
+  },
+  {
+   "source_id": "SRC-0155",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "【可复制打法】3C红海类目广告最强打法！.pdf",
+   "chars": 4169
+  },
+  {
+   "source_id": "SRC-0156",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "一味君Rita小分队第三期沙龙（使用GARI复盘法分析广告）.pdf",
+   "chars": 30289
+  },
+  {
+   "source_id": "SRC-0157",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "七种捡漏广告玩法(1).pdf",
+   "chars": 2227
+  },
+  {
+   "source_id": "SRC-0158",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "亚马逊 - 捡漏策略技巧库  - Apollo.pdf",
+   "chars": 2039
+  },
+  {
+   "source_id": "SRC-0159",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊广告-15种打法 -.pdf",
+   "chars": 23602
+  },
+  {
+   "source_id": "SRC-0160",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊广告-15种打法.pdf",
+   "chars": 23602
+  },
+  {
+   "source_id": "SRC-0161",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "亚马逊新品推广SOP.xlsx",
+   "chars": 7206
+  },
+  {
+   "source_id": "SRC-0162",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "亚马逊新品推广的节奏-必胜哥.pdf",
+   "chars": 5742
+  },
+  {
+   "source_id": "SRC-0163",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pptx",
+   "filename": "亚马逊新品精铺链接运营推广.pptx",
+   "chars": 3391
+  },
+  {
+   "source_id": "SRC-0164",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "亚马逊老品关键词排名速效打法模型.pdf",
+   "chars": 2525
+  },
+  {
+   "source_id": "SRC-0165",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "亚马逊运营全局思维与爆品打造流程V2_20251125154220.pdf",
+   "chars": 3449
+  },
+  {
+   "source_id": "SRC-0166",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "亚马逊非标品最强推品1111.pdf",
+   "chars": 3103
+  },
+  {
+   "source_id": "SRC-0167",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "亚马逊非标品最强推品打法.pdf",
+   "chars": 3103
+  },
+  {
+   "source_id": "SRC-0168",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "全系列捡漏广告的基础逻辑与操作-Vae.pdf",
+   "chars": 1341
+  },
+  {
+   "source_id": "SRC-0169",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "多变体sku的打法建议.pdf",
+   "chars": 5419
+  },
+  {
+   "source_id": "SRC-0170",
+   "authority": "C",
+   "status": "unsupported",
+   "ext": ".doc",
+   "filename": "如何判断你的广告来自哪个广告活动.doc",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0171",
+   "authority": "C",
+   "status": "thin_needs_ocr",
+   "ext": ".pdf",
+   "filename": "如何找到合适的ASIN投放定位广告！.pdf",
+   "chars": 101
+  },
+  {
+   "source_id": "SRC-0172",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "广告诊断模板.xlsx",
+   "chars": 6572
+  },
+  {
+   "source_id": "SRC-0173",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".docx",
+   "filename": "手动 asin 广告效果加倍的正确投放方法(1).docx",
+   "chars": 1901
+  },
+  {
+   "source_id": "SRC-0174",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pptx",
+   "filename": "捡漏广告.pptx",
+   "chars": 1421
+  },
+  {
+   "source_id": "SRC-0175",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pptx",
+   "filename": "新品精铺链接运营推广 - 分工与任务.pptx",
+   "chars": 3955
+  },
+  {
+   "source_id": "SRC-0176",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "标品的运营思路和广告结构.pdf",
+   "chars": 863
+  },
+  {
+   "source_id": "SRC-0177",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "水印-保守增量模型（通用版本）- 非标品 - 小于100.pdf",
+   "chars": 2211
+  },
+  {
+   "source_id": "SRC-0178",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "江小鱼2.0 亚马逊广告报告分析和优化.pdf",
+   "chars": 1550
+  },
+  {
+   "source_id": "SRC-0179",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pptx",
+   "filename": "流量位置-BY冰淇淋.pptx",
+   "chars": 1175
+  },
+  {
+   "source_id": "SRC-0180",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".docx",
+   "filename": "漏斗广告.docx",
+   "chars": 1711
+  },
+  {
+   "source_id": "SRC-0181",
+   "authority": "C",
+   "status": "needs_transcript",
+   "ext": ".mp4",
+   "filename": "百万美元玩具策略：亚马逊广告实战手册.mp4",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0182",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".docx",
+   "filename": "精铺运营推广分工计划.docx",
+   "chars": 1717
+  },
+  {
+   "source_id": "SRC-0183",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "螺旋式42天爆款打造方案.pdf",
+   "chars": 2168
+  },
+  {
+   "source_id": "SRC-0184",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "超级大麦帕拓逊内部推广流程.pdf",
+   "chars": 2968
+  },
+  {
+   "source_id": "SRC-0185",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "选择高潜力ASIN，通过广告拓展流量.pdf",
+   "chars": 4858
+  },
+  {
+   "source_id": "SRC-0186",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "非标品9周高成功率推品SOP (1).pdf",
+   "chars": 3514
+  },
+  {
+   "source_id": "SRC-0187",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "非标品多变体玩具类目广告打法--内部文档.pdf",
+   "chars": 7228
+  },
+  {
+   "source_id": "SRC-0188",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".docx",
+   "filename": "非标品广告打法.docx",
+   "chars": 2872
+  },
+  {
+   "source_id": "SRC-0189",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pptx",
+   "filename": "非标品新品打法分享-43号-Pinkbear-2024.1.27.pptx",
+   "chars": 3115
+  },
+  {
+   "source_id": "SRC-0190",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "非标品新品推广计划关注指标大纲-43号-Pinkbear-2024.6.12(1).xlsx",
+   "chars": 17466
+  },
+  {
+   "source_id": "SRC-0191",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "高客单价的亚马逊新品广告策略打法.pdf",
+   "chars": 2079
+  },
+  {
+   "source_id": "SRC-0192",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".docx",
+   "filename": "Rufus的来源和重要性.docx",
+   "chars": 1665
+  },
+  {
+   "source_id": "SRC-0193",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".docx",
+   "filename": "Amazon Rufus 指南-15 大洞察提升产.docx",
+   "chars": 7607
+  },
+  {
+   "source_id": "SRC-0194",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".xmind",
+   "filename": "Rufus编写亚马逊Listing实操版SOP教程.xmind",
+   "chars": 6411
+  },
+  {
+   "source_id": "SRC-0195",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".docx",
+   "filename": "亚马逊Prompt广告指南.docx",
+   "chars": 3540
+  },
+  {
+   "source_id": "SRC-0196",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".docx",
+   "filename": "如何利用Rufus的QA功能做好Listing运营.docx",
+   "chars": 3308
+  },
+  {
+   "source_id": "SRC-0197",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "SB&SP&SD广告联动，组合拳打法详解(1).pdf",
+   "chars": 1344
+  },
+  {
+   "source_id": "SRC-0198",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".docx",
+   "filename": "【03广告】亚马逊新品广告实战打法：从0到1打爆流量，精准提升转化.docx",
+   "chars": 3527
+  },
+  {
+   "source_id": "SRC-0199",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pptx",
+   "filename": "【11广告】AMC人群包创建+使用(1).pptx",
+   "chars": 2846
+  },
+  {
+   "source_id": "SRC-0200",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "【2026Rufus全流程广告】亚马逊Rufus新算法下广告打法框架（全流程）(1).pdf",
+   "chars": 7681
+  },
+  {
+   "source_id": "SRC-0201",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".docx",
+   "filename": "亚马逊广告ACOS的救星.docx",
+   "chars": 2294
+  },
+  {
+   "source_id": "SRC-0202",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "亚马逊广告AI百宝箱使用手册.pdf",
+   "chars": 8532
+  },
+  {
+   "source_id": "SRC-0203",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊广告培训指南-202602-wecom.pdf",
+   "chars": 9300
+  },
+  {
+   "source_id": "SRC-0204",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".docx",
+   "filename": "八种不同情况下的广告优化策略(1).docx",
+   "chars": 1678
+  },
+  {
+   "source_id": "SRC-0205",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "广告100问.docx",
+   "chars": 32263
+  },
+  {
+   "source_id": "SRC-0206",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "广告优化流程 copy(1).pdf",
+   "chars": 2457
+  },
+  {
+   "source_id": "SRC-0207",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "广告这两个细节做好，15天关键词就能上首页.pdf",
+   "chars": 2901
+  },
+  {
+   "source_id": "SRC-0208",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".docx",
+   "filename": "广告预算玩法全解析.docx",
+   "chars": 6803
+  },
+  {
+   "source_id": "SRC-0209",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".pdf",
+   "filename": "阿波罗广告宝典.pdf",
+   "chars": 4641
+  },
+  {
+   "source_id": "SRC-0210",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".html",
+   "filename": "11_广告架构审阅版.html",
+   "chars": 22521
+  },
+  {
+   "source_id": "SRC-0211",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "8月1日亚马逊广告扣款新规应对指南(1)(1)(1).pdf",
+   "chars": 679
+  },
+  {
+   "source_id": "SRC-0212",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "Amazon_Ads_API_社区版.pdf",
+   "chars": 13504
+  },
+  {
+   "source_id": "SRC-0213",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "FFC_onepager(2).pdf",
+   "chars": 2083
+  },
+  {
+   "source_id": "SRC-0214",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "【03广告】亚马逊广告年日复盘SOP(1).xlsx",
+   "chars": 46356
+  },
+  {
+   "source_id": "SRC-0215",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "【12广告】亚马逊新品爆款推广及高效复盘SOP.xlsx",
+   "chars": 13337
+  },
+  {
+   "source_id": "SRC-0216",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊广告培训指南_202608.pdf",
+   "chars": 4835
+  },
+  {
+   "source_id": "SRC-0217",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "亚马逊广告权重文章整理版.pdf",
+   "chars": 2595
+  },
+  {
+   "source_id": "SRC-0218",
+   "authority": "C",
+   "status": "unsupported",
+   "ext": ".rar",
+   "filename": "亚马逊批量创建和修改广告生成器3.0.rar",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0219",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".html",
+   "filename": "使用说明.html",
+   "chars": 3262
+  },
+  {
+   "source_id": "SRC-0220",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "广告位竞价测算（含企业购广告位-受众）(1).xlsx",
+   "chars": 2699
+  },
+  {
+   "source_id": "SRC-0221",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "广告压制免费流量诊断与控制.pdf",
+   "chars": 3840
+  },
+  {
+   "source_id": "SRC-0222",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".xlsx",
+   "filename": "黑五网一广告复盘(1).xlsx",
+   "chars": 36627
+  },
+  {
+   "source_id": "SRC-0223",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "AKO_SP_bulk_create_20260814_v1.xlsx",
+   "chars": 21615
+  },
+  {
+   "source_id": "SRC-0224",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "GMVMax底层逻辑拆解&优化全流程SOP.pdf",
+   "chars": 1678
+  },
+  {
+   "source_id": "SRC-0225",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".docx",
+   "filename": "【2608AI】ChatGPT5.6+运营skill生成亚马逊广告诊断报告.docx",
+   "chars": 10989
+  },
+  {
+   "source_id": "SRC-0226",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".html",
+   "filename": "亚马逊广告生命周期策略报告_优化版.html",
+   "chars": 2107
+  },
+  {
+   "source_id": "SRC-0227",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "广告优化参考(1)(1).pdf",
+   "chars": 1637
+  },
+  {
+   "source_id": "SRC-0228",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "广告命名（模板20260808） -1个表(1).xlsx",
+   "chars": 383
+  },
+  {
+   "source_id": "SRC-0229",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "9. 亚马逊商机探测器使用手册.pdf",
+   "chars": 12059
+  },
+  {
+   "source_id": "SRC-0230",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "三步完成多种广告产品的全年逐月预算表.pdf",
+   "chars": 3381
+  },
+  {
+   "source_id": "SRC-0231",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊Listing与广告相辅相成.pdf",
+   "chars": 13868
+  },
+  {
+   "source_id": "SRC-0232",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊创建广告活动操作指导.pdf",
+   "chars": 3180
+  },
+  {
+   "source_id": "SRC-0233",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊广告100问 第十一期.pdf",
+   "chars": 7583
+  },
+  {
+   "source_id": "SRC-0234",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊广告创意品牌素材的准备.pdf",
+   "chars": 5637
+  },
+  {
+   "source_id": "SRC-0235",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊广告活动概念解析.pdf",
+   "chars": 2069
+  },
+  {
+   "source_id": "SRC-0236",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊日本站广告运营指南.pdf",
+   "chars": 8371
+  },
+  {
+   "source_id": "SRC-0237",
+   "authority": "A",
+   "status": "thin_needs_ocr",
+   "ext": ".pdf",
+   "filename": "亚马逊澳洲站广告运营指南.pdf",
+   "chars": 266
+  },
+  {
+   "source_id": "SRC-0238",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "借助ASIN归类法，策划和搭建不同ASIN的Sponsored Ads的建议.pdf",
+   "chars": 6256
+  },
+  {
+   "source_id": "SRC-0239",
+   "authority": "A",
+   "status": "thin_needs_ocr",
+   "ext": ".pdf",
+   "filename": "广告入门前准备-1.2 - 解析精品垂直类目选品九步曲.pdf",
+   "chars": 336
+  },
+  {
+   "source_id": "SRC-0240",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "广告快速入门-2.5 自助式流媒体电视广告简介.pdf",
+   "chars": 5660
+  },
+  {
+   "source_id": "SRC-0241",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "广告效果优化-3.2 投放.pdf",
+   "chars": 12314
+  },
+  {
+   "source_id": "SRC-0242",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "广告效果优化-3.4 竞价.pdf",
+   "chars": 4811
+  },
+  {
+   "source_id": "SRC-0243",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "广告效果优化-3.7 批量操作.pdf",
+   "chars": 6576
+  },
+  {
+   "source_id": "SRC-0244",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "广告效果优化-3.8 广告运营常见问题解答.pdf",
+   "chars": 14243
+  },
+  {
+   "source_id": "SRC-0245",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "广告效果优化-3.9 案例学习-入门版实操.pdf",
+   "chars": 8656
+  },
+  {
+   "source_id": "SRC-0246",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "打造品牌购物体验的工具和广告产品概览.pdf",
+   "chars": 9728
+  },
+  {
+   "source_id": "SRC-0247",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "综合使用广告产品，助力品牌建设.pdf",
+   "chars": 7428
+  },
+  {
+   "source_id": "SRC-0248",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "针对欧洲五国站点卖家的广告架构和技巧建议.pdf",
+   "chars": 8739
+  },
+  {
+   "source_id": "SRC-0249",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "Davie 亚马逊广告高投产自动调价模型体系搭建.pdf",
+   "chars": 2717
+  },
+  {
+   "source_id": "SRC-0250",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "1.docx",
+   "chars": 7097
+  },
+  {
+   "source_id": "SRC-0251",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "2.pdf",
+   "chars": 7245
+  },
+  {
+   "source_id": "SRC-0252",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "3.pdf",
+   "chars": 14679
+  },
+  {
+   "source_id": "SRC-0253",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "Mike：用好亚马逊AMC，让每一分广告预算都花在刀刃上.pdf",
+   "chars": 7941
+  },
+  {
+   "source_id": "SRC-0254",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "任佳伟21天亚马逊CPC广告训练营第二节课.pdf",
+   "chars": 2770
+  },
+  {
+   "source_id": "SRC-0255",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xmind",
+   "filename": "任佳伟21天亚马逊CPC广告训练营第二节课.xmind",
+   "chars": 2600
+  },
+  {
+   "source_id": "SRC-0256",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xmind",
+   "filename": "任佳伟21天亚马逊广告训练营.xmind",
+   "chars": 9122
+  },
+  {
+   "source_id": "SRC-0257",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "1.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0258",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "10.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0259",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "11.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0260",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "12.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0261",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "13.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0262",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "14.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0263",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "15.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0264",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "16.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0265",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "17.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0266",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "18.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0267",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "19.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0268",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "2.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0269",
+   "authority": "B",
+   "status": "needs_vision",
+   "ext": ".png",
+   "filename": "20.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0270",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "21.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0271",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "22.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0272",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "23.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0273",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "24.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0274",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "25.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0275",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "26.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0276",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "27.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0277",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "28.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0278",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "29.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0279",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "3.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0280",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "30.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0281",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "31.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0282",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "32.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0283",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "33.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0284",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "34.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0285",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "35.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0286",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "36.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0287",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "37.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0288",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "38.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0289",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "39.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0290",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "4.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0291",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "40.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0292",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "41.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0293",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "42.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0294",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "43.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0295",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "44.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0296",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "45.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0297",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "46.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0298",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "47.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0299",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "48.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0300",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "49.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0301",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "5.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0302",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "50.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0303",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "51.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0304",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "52.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0305",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "53.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0306",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "54.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0307",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "55.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0308",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "56.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0309",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "57.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0310",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "6.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0311",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "7.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0312",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "8.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0313",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "9.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0314",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "1.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0315",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "10.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0316",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "11.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0317",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "12.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0318",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "13.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0319",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "14.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0320",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "15.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0321",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "16.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0322",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "17.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0323",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "18.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0324",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "19.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0325",
+   "authority": "B",
+   "status": "needs_vision",
+   "ext": ".png",
+   "filename": "2.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0326",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "20.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0327",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "21.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0328",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "22.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0329",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "23.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0330",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "24.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0331",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "25.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0332",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "26.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0333",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "27.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0334",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "28.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0335",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "29.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0336",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "3.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0337",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "30.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0338",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "31.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0339",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "32.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0340",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "33.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0341",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "34.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0342",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "35.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0343",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "36.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0344",
+   "authority": "B",
+   "status": "needs_vision",
+   "ext": ".png",
+   "filename": "37.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0345",
+   "authority": "B",
+   "status": "needs_vision",
+   "ext": ".png",
+   "filename": "4.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0346",
+   "authority": "B",
+   "status": "needs_vision",
+   "ext": ".png",
+   "filename": "5.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0347",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "6.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0348",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "7.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0349",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "8.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0350",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "9.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0351",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "1.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0352",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "10.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0353",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "11.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0354",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "12.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0355",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "13.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0356",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "14.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0357",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "15.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0358",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "16.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0359",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "17.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0360",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "18.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0361",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "19.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0362",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "2.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0363",
+   "authority": "B",
+   "status": "needs_vision",
+   "ext": ".png",
+   "filename": "20.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0364",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "21.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0365",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "22.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0366",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "23.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0367",
+   "authority": "B",
+   "status": "needs_vision",
+   "ext": ".png",
+   "filename": "24.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0368",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "26.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0369",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "27.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0370",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "28.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0371",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "29.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0372",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "3.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0373",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "30.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0374",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "31.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0375",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "32.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0376",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "33.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0377",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "34.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0378",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "35.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0379",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "36.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0380",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "37.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0381",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "38.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0382",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "39.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0383",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "4.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0384",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "40.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0385",
+   "authority": "B",
+   "status": "needs_vision",
+   "ext": ".png",
+   "filename": "41.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0386",
+   "authority": "B",
+   "status": "needs_vision",
+   "ext": ".png",
+   "filename": "42.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0387",
+   "authority": "B",
+   "status": "needs_vision",
+   "ext": ".png",
+   "filename": "43.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0388",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "5.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0389",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "6.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0390",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "7.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0391",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "8.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0392",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "9.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0393",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "1.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0394",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "10.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0395",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "11.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0396",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "12.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0397",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "13.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0398",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "14.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0399",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "15.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0400",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "16.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0401",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "17.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0402",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "18.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0403",
+   "authority": "B",
+   "status": "needs_vision",
+   "ext": ".png",
+   "filename": "19.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0404",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "2.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0405",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "20.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0406",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "21.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0407",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "22.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0408",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "3.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0409",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "4.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0410",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "5.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0411",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "6.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0412",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "7.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0413",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "8.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0414",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "9.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0415",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "1.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0416",
+   "authority": "B",
+   "status": "needs_vision",
+   "ext": ".png",
+   "filename": "10.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0417",
+   "authority": "B",
+   "status": "needs_vision",
+   "ext": ".png",
+   "filename": "11.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0418",
+   "authority": "B",
+   "status": "needs_vision",
+   "ext": ".png",
+   "filename": "12.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0419",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "13.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0420",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "14.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0421",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "15.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0422",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "16.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0423",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "17.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0424",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "18.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0425",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "19.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0426",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "2.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0427",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "20.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0428",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "21.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0429",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "22.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0430",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "23.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0431",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "24.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0432",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "25.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0433",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "26.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0434",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "27.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0435",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "28.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0436",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "29.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0437",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "3.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0438",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "4.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0439",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "5.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0440",
+   "authority": "B",
+   "status": "needs_vision",
+   "ext": ".png",
+   "filename": "6.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0441",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "7.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0442",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "8.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0443",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "9.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0444",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "1.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0445",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "10.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0446",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "11.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0447",
+   "authority": "B",
+   "status": "needs_vision",
+   "ext": ".png",
+   "filename": "12.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0448",
+   "authority": "B",
+   "status": "needs_vision",
+   "ext": ".png",
+   "filename": "13.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0449",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "14.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0450",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "15.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0451",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "16.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0452",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "17.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0453",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "18.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0454",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "19.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0455",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "2.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0456",
+   "authority": "B",
+   "status": "needs_vision",
+   "ext": ".png",
+   "filename": "20.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0457",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "21.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0458",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "22.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0459",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "23.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0460",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "24.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0461",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "25.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0462",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "26.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0463",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "3.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0464",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "4.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0465",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "5.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0466",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "6.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0467",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "7.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0468",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "8.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0469",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "9.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0470",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "038496af-b662-43df-a8a4-f6ebd1a725c2.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0471",
+   "authority": "B",
+   "status": "needs_vision",
+   "ext": ".png",
+   "filename": "080c3944-053a-41a0-a633-445b962d3d14.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0472",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "0f294541-ac62-4875-999c-33c3bfa41dc9.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0473",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "10e8c630-547a-4759-b103-07a44187ac1e.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0474",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "1a2b34c9-2b6f-4255-b36d-0afe0be10322.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0475",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "1f2a7949-47ed-45c1-92b0-dcaaafc1e030.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0476",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "222a23eb-da76-4859-a3f9-929aaad90152.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0477",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "2d7f818b-ed9b-4c4d-b3b0-d35f77a65879.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0478",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "30225b77-9445-48d4-bf9e-83304bb03bbf.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0479",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "3c6f0e2d-60c9-403c-986a-acc84e6c912f.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0480",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "4fe3d536-c864-4fb0-a1d3-e9155459c73a.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0481",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "51d93d01-8c6d-41d3-b5cb-5e910294dd83.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0482",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "57ebfae7-abe1-4a59-a38a-3887474aa823.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0483",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "60142475-b1d2-46fc-925c-afe14f6a556d.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0484",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "6355bf27-a976-49a1-93ff-95f50ca2418c.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0485",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "6a9b6654-fc89-444d-b1c0-1341641207fe.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0486",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "7c6f800b-18f0-4297-9636-1f5c611058fb.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0487",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "81e2528b-bfd8-4481-bad0-d3e3fea1bf1b.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0488",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "8b1e7cc0-6ab7-418d-9201-93673d4ec9f3.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0489",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "8b831348-fae7-4024-a5f5-75c0965d2d6f.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0490",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "8f387225-eacb-4513-9c6d-7937960838f4.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0491",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "909ca9c6-f5d7-4040-b317-070b188661d5.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0492",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "9148d607-8ee2-4313-8e0d-ff438fc1aa97.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0493",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "987bc50b-b47c-43c9-a478-6d39b54ee3f4.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0494",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "9bbc77af-d0ff-49be-b1fc-0aefb0ec605d.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0495",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "9fed24c4-54e8-47da-9340-92f7b00a4387.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0496",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "a22616e5-700b-4ec3-9d6a-196b532e36fc.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0497",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "ad4cc6b9-24d9-4d63-96dc-3a2805b5d4c7.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0498",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "b1074ca6-8cbc-4cdd-a4e3-7c2c0888e47a.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0499",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "c0eb0506-6faf-4284-87d2-259c76559ae3.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0500",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "db811faf-19b0-483f-9ffd-77ad29364009.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0501",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "e18cd6b5-12ed-405c-afe6-47c0374830ea.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0502",
+   "authority": "B",
+   "status": "needs_vision",
+   "ext": ".png",
+   "filename": "e55d115d-3968-48b9-8e84-caabb3004dff.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0503",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "e5c1fb17-54ec-4466-9dc3-2a7853c2c33a.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0504",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "fa8f47a2-029e-4167-b9c4-f6994710834d.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0505",
+   "authority": "B",
+   "status": "superseded_by_ocr",
+   "ext": ".png",
+   "filename": "第十节课 排除无效流量.png",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0506",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xmind",
+   "filename": "任佳伟21天亚马逊广告训练营(4).xmind",
+   "chars": 21323
+  },
+  {
+   "source_id": "SRC-0507",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xmind",
+   "filename": "任佳伟21天亚马逊广告训练营(第五节).xmind",
+   "chars": 7166
+  },
+  {
+   "source_id": "SRC-0508",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "任佳伟21天亚马逊广告训练营(第四节).pdf",
+   "chars": 6529
+  },
+  {
+   "source_id": "SRC-0509",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xmind",
+   "filename": "任佳伟21天亚马逊广告训练营(第四节).xmind",
+   "chars": 9019
+  },
+  {
+   "source_id": "SRC-0510",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "任佳伟21天亚马逊广告训练营第一节课.pdf",
+   "chars": 873
+  },
+  {
+   "source_id": "SRC-0511",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xmind",
+   "filename": "任佳伟21天亚马逊广告训练营第一节课.xmind",
+   "chars": 959
+  },
+  {
+   "source_id": "SRC-0512",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "任佳伟21天亚马逊广告训练营第三节课.pdf",
+   "chars": 4809
+  },
+  {
+   "source_id": "SRC-0513",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xmind",
+   "filename": "任佳伟21天亚马逊广告训练营第三节课.xmind",
+   "chars": 6798
+  },
+  {
+   "source_id": "SRC-0514",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "10月16号-亚马逊专题-254号丹丹-《广告问题汇总及解决方案》.pdf",
+   "chars": 12099
+  },
+  {
+   "source_id": "SRC-0515",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "10月24号-亚马逊专题-20号-《从三个维度分析品牌广告的效果》.pdf",
+   "chars": 5072
+  },
+  {
+   "source_id": "SRC-0516",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "10月8号-亚马逊专题-25号乔安-《结合亚马逊（ABA）拓展广告流量及利用5W2H拆解竞对视频》.pdf",
+   "chars": 7267
+  },
+  {
+   "source_id": "SRC-0517",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "11月5号-亚马逊专题-181号-《亚马逊运营日记之暴力推品广告打法》.pdf",
+   "chars": 6077
+  },
+  {
+   "source_id": "SRC-0518",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "12月17号-亚马逊专题-413号木木-《广告技巧篇-长尾词投放技巧》.pdf",
+   "chars": 5687
+  },
+  {
+   "source_id": "SRC-0519",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "5月22日-亚马逊专题-285号Arya-非标类目的一些广告打法.pdf",
+   "chars": 4528
+  },
+  {
+   "source_id": "SRC-0520",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "5月28日—亚马逊专题—273号《广告问题判断，指导广告优化》.pdf",
+   "chars": 2787
+  },
+  {
+   "source_id": "SRC-0521",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "6月26号-亚马逊专题-273号-《没有这些行为规范广告优化就是瞎胡闹》.pdf",
+   "chars": 2867
+  },
+  {
+   "source_id": "SRC-0522",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "8月5号-亚马逊专题-20号-《从广告报告出发告诉你如何优化广告》.pdf",
+   "chars": 1455
+  },
+  {
+   "source_id": "SRC-0523",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "9月27号-亚马逊专题分享-271号-《怎样提升自然流量+降低CPC》_watermark.pdf",
+   "chars": 4876
+  },
+  {
+   "source_id": "SRC-0524",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "9月6号-亚马逊专题-484号-《新品如何通过广告撬动流量》 (3).pdf",
+   "chars": 8397
+  },
+  {
+   "source_id": "SRC-0525",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".docx",
+   "filename": "《亚马逊广告报告分析》-61号Aika--3.4.docx",
+   "chars": 1668
+  },
+  {
+   "source_id": "SRC-0526",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "《关键词投放和商品投放解析》-3.10.pdf",
+   "chars": 5452
+  },
+  {
+   "source_id": "SRC-0527",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "《广告如何实现首页顶部和其它位置的卡位》--420号 Vae-3.13.pdf",
+   "chars": 4858
+  },
+  {
+   "source_id": "SRC-0528",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".docx",
+   "filename": "多变体产品的广告如何布局？-非标品-38-何灏彬-3.21.docx",
+   "chars": 2657
+  },
+  {
+   "source_id": "SRC-0529",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "4月29日-亚马逊专题-723号可可-自动广告的辅助玩法.pdf",
+   "chars": 2688
+  },
+  {
+   "source_id": "SRC-0530",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "28. 第五章-成为品牌主的优势-品牌主能使用的搜索广告-展示型推广.pdf",
+   "chars": 2695
+  },
+  {
+   "source_id": "SRC-0531",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "ASIN必杀技：低竞价实现流量卡位(1).pdf",
+   "chars": 3356
+  },
+  {
+   "source_id": "SRC-0532",
+   "authority": "C",
+   "status": "unsupported",
+   "ext": "",
+   "filename": "Kamchatka",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0533",
+   "authority": "C",
+   "status": "unsupported",
+   "ext": ".dll",
+   "filename": "api-ms-win-core-processthreads-l1-1-0.dll",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0534",
+   "authority": "C",
+   "status": "unsupported",
+   "ext": ".dll",
+   "filename": "api-ms-win-core-processthreads-l1-1-1.dll",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0535",
+   "authority": "C",
+   "status": "unsupported",
+   "ext": ".gz",
+   "filename": "endpoint-rule-set-1.json.gz",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0536",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".json",
+   "filename": "examples-1.json",
+   "chars": 25502
+  },
+  {
+   "source_id": "SRC-0537",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".json",
+   "filename": "paginators-1.json",
+   "chars": 1367
+  },
+  {
+   "source_id": "SRC-0538",
+   "authority": "C",
+   "status": "unsupported",
+   "ext": ".gz",
+   "filename": "service-2.json.gz",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0539",
+   "authority": "C",
+   "status": "unsupported",
+   "ext": ".gz",
+   "filename": "endpoint-rule-set-1.json.gz",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0540",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".json",
+   "filename": "examples-1.json",
+   "chars": 44
+  },
+  {
+   "source_id": "SRC-0541",
+   "authority": "C",
+   "status": "empty",
+   "ext": ".json",
+   "filename": "paginators-1.json",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0542",
+   "authority": "C",
+   "status": "unsupported",
+   "ext": ".gz",
+   "filename": "service-2.json.gz",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0543",
+   "authority": "C",
+   "status": "unsupported",
+   "ext": "",
+   "filename": "Kamchatka",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0544",
+   "authority": "C",
+   "status": "unsupported",
+   "ext": "",
+   "filename": "selenium-manager",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0545",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "亚马逊Cosmo新算法广告机制.pdf",
+   "chars": 4418
+  },
+  {
+   "source_id": "SRC-0546",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "SD+SB广告进阶技法.pdf",
+   "chars": 4184
+  },
+  {
+   "source_id": "SRC-0547",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "五十倍增长-2024黑五网一广告策略拆解.pdf",
+   "chars": 2606
+  },
+  {
+   "source_id": "SRC-0548",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "亚马逊展示型广告设置及优化技巧.pdf",
+   "chars": 9019
+  },
+  {
+   "source_id": "SRC-0549",
+   "authority": "C",
+   "status": "thin_needs_ocr",
+   "ext": ".pdf",
+   "filename": "亚马逊进入广告3.0时代，5个新动向让你在2025年抢得先机.pdf",
+   "chars": 378
+  },
+  {
+   "source_id": "SRC-0550",
+   "authority": "C",
+   "status": "thin_needs_ocr",
+   "ext": ".pdf",
+   "filename": "免费自助制作SBV SDV广告视频  步骤介绍.pdf",
+   "chars": 335
+  },
+  {
+   "source_id": "SRC-0551",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "广告架构的设计与落地方案 .pdf",
+   "chars": 3515
+  },
+  {
+   "source_id": "SRC-0552",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "肖总跟阿雅的广告分析.pdf",
+   "chars": 2920
+  },
+  {
+   "source_id": "SRC-0553",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "亚马逊top卖家的广告实操思路表格.xlsx",
+   "chars": 1943637
+  },
+  {
+   "source_id": "SRC-0554",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".xmind",
+   "filename": "肖总的广告分享.xmind",
+   "chars": 3332
+  },
+  {
+   "source_id": "SRC-0555",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "亚马逊产品推广 广告逻辑 权重推广思维图.pdf",
+   "chars": 8047
+  },
+  {
+   "source_id": "SRC-0556",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pptx",
+   "filename": "亚马逊关键词广告“流量池爆款打法体系.pptx",
+   "chars": 20078
+  },
+  {
+   "source_id": "SRC-0557",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "广告ACOS越来越高？亚马逊Listing部署SEO最全流程.pdf",
+   "chars": 3323
+  },
+  {
+   "source_id": "SRC-0558",
+   "authority": "C",
+   "status": "unsupported",
+   "ext": ".doc",
+   "filename": "附件6. 【勿外传】揭秘与官方广告产品经理讨论求证的要点.doc",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0559",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "亚马逊广告BID高阶技巧.pdf",
+   "chars": 2867
+  },
+  {
+   "source_id": "SRC-0560",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "亚马逊广告的否词逻辑全整理(3)(2).pdf",
+   "chars": 3237
+  },
+  {
+   "source_id": "SRC-0561",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "亚马逊省钱大法广告捡漏打法.pdf",
+   "chars": 1440
+  },
+  {
+   "source_id": "SRC-0562",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "从关键词归类反推广告打法(3).pdf",
+   "chars": 3210
+  },
+  {
+   "source_id": "SRC-0563",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "实操演示！最有效的广告曝光测试方法，优化亚马逊PPC.pdf",
+   "chars": 3513
+  },
+  {
+   "source_id": "SRC-0564",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".docx",
+   "filename": "对于一个新品,如何确定广告预算的多少.docx",
+   "chars": 3320
+  },
+  {
+   "source_id": "SRC-0565",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "广告表现分析模板.xlsx",
+   "chars": 333214
+  },
+  {
+   "source_id": "SRC-0566",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "AdsInsights-US-B0DNQKT5JP-广告组QJK0-73866.xlsx",
+   "chars": 660
+  },
+  {
+   "source_id": "SRC-0567",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "AdsInsights-US-B0DNQP93H3-广告组ESTA-73863.xlsx",
+   "chars": 2242
+  },
+  {
+   "source_id": "SRC-0568",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "AdsInsights-US-B0DNQP93H3-广告组MQKO-73868.xlsx",
+   "chars": 627
+  },
+  {
+   "source_id": "SRC-0569",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "AdsInsights-US-B0DNQP93H3-广告组TEZJ-73869.xlsx",
+   "chars": 2083
+  },
+  {
+   "source_id": "SRC-0570",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "广告数据分析结果-商品推广 搜索词 报告-(测试样表）-1101150317.xlsx",
+   "chars": 2092540
+  },
+  {
+   "source_id": "SRC-0571",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".xlsx",
+   "filename": "广告架构表-全系搜索维度.xlsx",
+   "chars": 633120
+  },
+  {
+   "source_id": "SRC-0572",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "5、应对广告成本危机 亚马逊卖家必备策略-总冠名 Chris.pdf",
+   "chars": 8716
+  },
+  {
+   "source_id": "SRC-0573",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "29 亚马逊关键词库搭建实操和投放技巧(1).pdf",
+   "chars": 1991
+  },
+  {
+   "source_id": "SRC-0574",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "33.想要爆单？ 你连关键词和广告词都选不好？.pdf",
+   "chars": 3484
+  },
+  {
+   "source_id": "SRC-0575",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "51.如何通过广告快速实现运营的三大不同目的？.pdf",
+   "chars": 5184
+  },
+  {
+   "source_id": "SRC-0576",
+   "authority": "C",
+   "status": "pending",
+   "ext": ".pdf",
+   "filename": "亚马逊广告报告诊断全攻略.pdf",
+   "chars": 2353
+  },
+  {
+   "source_id": "SRC-0577",
+   "authority": "A",
+   "status": "ingested",
+   "chars": 8297,
+   "filename": "https://advertising.amazon.com/library/guides/standard-asin-strategy"
+  },
+  {
+   "source_id": "SRC-0578",
+   "authority": "A",
+   "status": "ingested",
+   "chars": 5415,
+   "filename": "https://advertising.amazon.com/library/news/video-ads-organic-ranking-impact"
+  },
+  {
+   "source_id": "SRC-0579",
+   "authority": "A",
+   "status": "ingested",
+   "chars": 10332,
+   "filename": "https://advertising.amazon.com/library/guides/authors-guide-to-sponsored-products"
+  },
+  {
+   "source_id": "SRC-0580",
+   "authority": "A",
+   "status": "ingested",
+   "chars": 3013,
+   "filename": "https://advertising.amazon.com/resources/ad-policy/quick-reference"
+  },
+  {
+   "source_id": "SRC-0581",
+   "authority": "C",
+   "status": "unsupported",
+   "ext": ".py",
+   "filename": "_convert.py",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0582",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".json",
+   "filename": "_queue.json",
+   "chars": 45640
+  },
+  {
+   "source_id": "SRC-0583",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0067.md",
+   "chars": 2496
+  },
+  {
+   "source_id": "SRC-0584",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0069.md",
+   "chars": 4076
+  },
+  {
+   "source_id": "SRC-0585",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0071.md",
+   "chars": 594
+  },
+  {
+   "source_id": "SRC-0586",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0076.md",
+   "chars": 638
+  },
+  {
+   "source_id": "SRC-0587",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0089.md",
+   "chars": 2617
+  },
+  {
+   "source_id": "SRC-0588",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0092.md",
+   "chars": 994
+  },
+  {
+   "source_id": "SRC-0589",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0094.md",
+   "chars": 1380
+  },
+  {
+   "source_id": "SRC-0590",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0104.md",
+   "chars": 476
+  },
+  {
+   "source_id": "SRC-0591",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0106.md",
+   "chars": 4582
+  },
+  {
+   "source_id": "SRC-0592",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0113.md",
+   "chars": 1053
+  },
+  {
+   "source_id": "SRC-0593",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0115.md",
+   "chars": 2029
+  },
+  {
+   "source_id": "SRC-0594",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0125.md",
+   "chars": 5771
+  },
+  {
+   "source_id": "SRC-0595",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0147.md",
+   "chars": 4625
+  },
+  {
+   "source_id": "SRC-0596",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0150.md",
+   "chars": 2001
+  },
+  {
+   "source_id": "SRC-0597",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0153.md",
+   "chars": 885
+  },
+  {
+   "source_id": "SRC-0598",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0257.md",
+   "chars": 714
+  },
+  {
+   "source_id": "SRC-0599",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0258.md",
+   "chars": 717
+  },
+  {
+   "source_id": "SRC-0600",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0259.md",
+   "chars": 953
+  },
+  {
+   "source_id": "SRC-0601",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0260.md",
+   "chars": 1014
+  },
+  {
+   "source_id": "SRC-0602",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0261.md",
+   "chars": 1110
+  },
+  {
+   "source_id": "SRC-0603",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0262.md",
+   "chars": 1124
+  },
+  {
+   "source_id": "SRC-0604",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0263.md",
+   "chars": 1109
+  },
+  {
+   "source_id": "SRC-0605",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0264.md",
+   "chars": 903
+  },
+  {
+   "source_id": "SRC-0606",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0265.md",
+   "chars": 733
+  },
+  {
+   "source_id": "SRC-0607",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0266.md",
+   "chars": 669
+  },
+  {
+   "source_id": "SRC-0608",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0267.md",
+   "chars": 1034
+  },
+  {
+   "source_id": "SRC-0609",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0268.md",
+   "chars": 1012
+  },
+  {
+   "source_id": "SRC-0610",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0270.md",
+   "chars": 451
+  },
+  {
+   "source_id": "SRC-0611",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0271.md",
+   "chars": 675
+  },
+  {
+   "source_id": "SRC-0612",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0272.md",
+   "chars": 561
+  },
+  {
+   "source_id": "SRC-0613",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0273.md",
+   "chars": 515
+  },
+  {
+   "source_id": "SRC-0614",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0274.md",
+   "chars": 901
+  },
+  {
+   "source_id": "SRC-0615",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0275.md",
+   "chars": 615
+  },
+  {
+   "source_id": "SRC-0616",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0276.md",
+   "chars": 676
+  },
+  {
+   "source_id": "SRC-0617",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0277.md",
+   "chars": 734
+  },
+  {
+   "source_id": "SRC-0618",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0278.md",
+   "chars": 454
+  },
+  {
+   "source_id": "SRC-0619",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0279.md",
+   "chars": 556
+  },
+  {
+   "source_id": "SRC-0620",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0280.md",
+   "chars": 1041
+  },
+  {
+   "source_id": "SRC-0621",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0281.md",
+   "chars": 652
+  },
+  {
+   "source_id": "SRC-0622",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0282.md",
+   "chars": 1808
+  },
+  {
+   "source_id": "SRC-0623",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0283.md",
+   "chars": 725
+  },
+  {
+   "source_id": "SRC-0624",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0284.md",
+   "chars": 502
+  },
+  {
+   "source_id": "SRC-0625",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0285.md",
+   "chars": 1328
+  },
+  {
+   "source_id": "SRC-0626",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0286.md",
+   "chars": 839
+  },
+  {
+   "source_id": "SRC-0627",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0287.md",
+   "chars": 1297
+  },
+  {
+   "source_id": "SRC-0628",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0288.md",
+   "chars": 1334
+  },
+  {
+   "source_id": "SRC-0629",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0289.md",
+   "chars": 1253
+  },
+  {
+   "source_id": "SRC-0630",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0290.md",
+   "chars": 632
+  },
+  {
+   "source_id": "SRC-0631",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0291.md",
+   "chars": 1060
+  },
+  {
+   "source_id": "SRC-0632",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0292.md",
+   "chars": 856
+  },
+  {
+   "source_id": "SRC-0633",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0293.md",
+   "chars": 1131
+  },
+  {
+   "source_id": "SRC-0634",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0294.md",
+   "chars": 802
+  },
+  {
+   "source_id": "SRC-0635",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0295.md",
+   "chars": 925
+  },
+  {
+   "source_id": "SRC-0636",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0296.md",
+   "chars": 941
+  },
+  {
+   "source_id": "SRC-0637",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0297.md",
+   "chars": 1645
+  },
+  {
+   "source_id": "SRC-0638",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0298.md",
+   "chars": 1932
+  },
+  {
+   "source_id": "SRC-0639",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0299.md",
+   "chars": 1568
+  },
+  {
+   "source_id": "SRC-0640",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0300.md",
+   "chars": 1073
+  },
+  {
+   "source_id": "SRC-0641",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0301.md",
+   "chars": 1030
+  },
+  {
+   "source_id": "SRC-0642",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0302.md",
+   "chars": 1275
+  },
+  {
+   "source_id": "SRC-0643",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0303.md",
+   "chars": 968
+  },
+  {
+   "source_id": "SRC-0644",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0304.md",
+   "chars": 1037
+  },
+  {
+   "source_id": "SRC-0645",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0305.md",
+   "chars": 480
+  },
+  {
+   "source_id": "SRC-0646",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0306.md",
+   "chars": 405
+  },
+  {
+   "source_id": "SRC-0647",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0307.md",
+   "chars": 613
+  },
+  {
+   "source_id": "SRC-0648",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0308.md",
+   "chars": 505
+  },
+  {
+   "source_id": "SRC-0649",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0309.md",
+   "chars": 1726
+  },
+  {
+   "source_id": "SRC-0650",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0310.md",
+   "chars": 647
+  },
+  {
+   "source_id": "SRC-0651",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0311.md",
+   "chars": 766
+  },
+  {
+   "source_id": "SRC-0652",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0312.md",
+   "chars": 588
+  },
+  {
+   "source_id": "SRC-0653",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0313.md",
+   "chars": 619
+  },
+  {
+   "source_id": "SRC-0654",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0314.md",
+   "chars": 895
+  },
+  {
+   "source_id": "SRC-0655",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0315.md",
+   "chars": 1096
+  },
+  {
+   "source_id": "SRC-0656",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0316.md",
+   "chars": 897
+  },
+  {
+   "source_id": "SRC-0657",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0317.md",
+   "chars": 905
+  },
+  {
+   "source_id": "SRC-0658",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0318.md",
+   "chars": 620
+  },
+  {
+   "source_id": "SRC-0659",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0319.md",
+   "chars": 585
+  },
+  {
+   "source_id": "SRC-0660",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0320.md",
+   "chars": 486
+  },
+  {
+   "source_id": "SRC-0661",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0321.md",
+   "chars": 851
+  },
+  {
+   "source_id": "SRC-0662",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0322.md",
+   "chars": 564
+  },
+  {
+   "source_id": "SRC-0663",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0323.md",
+   "chars": 667
+  },
+  {
+   "source_id": "SRC-0664",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0324.md",
+   "chars": 982
+  },
+  {
+   "source_id": "SRC-0665",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0326.md",
+   "chars": 538
+  },
+  {
+   "source_id": "SRC-0666",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0327.md",
+   "chars": 621
+  },
+  {
+   "source_id": "SRC-0667",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0328.md",
+   "chars": 582
+  },
+  {
+   "source_id": "SRC-0668",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0329.md",
+   "chars": 831
+  },
+  {
+   "source_id": "SRC-0669",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0330.md",
+   "chars": 953
+  },
+  {
+   "source_id": "SRC-0670",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0331.md",
+   "chars": 730
+  },
+  {
+   "source_id": "SRC-0671",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0332.md",
+   "chars": 653
+  },
+  {
+   "source_id": "SRC-0672",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0333.md",
+   "chars": 692
+  },
+  {
+   "source_id": "SRC-0673",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0334.md",
+   "chars": 803
+  },
+  {
+   "source_id": "SRC-0674",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0335.md",
+   "chars": 684
+  },
+  {
+   "source_id": "SRC-0675",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0336.md",
+   "chars": 737
+  },
+  {
+   "source_id": "SRC-0676",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0337.md",
+   "chars": 648
+  },
+  {
+   "source_id": "SRC-0677",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0338.md",
+   "chars": 880
+  },
+  {
+   "source_id": "SRC-0678",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0339.md",
+   "chars": 874
+  },
+  {
+   "source_id": "SRC-0679",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0340.md",
+   "chars": 617
+  },
+  {
+   "source_id": "SRC-0680",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0341.md",
+   "chars": 539
+  },
+  {
+   "source_id": "SRC-0681",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0342.md",
+   "chars": 387
+  },
+  {
+   "source_id": "SRC-0682",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0343.md",
+   "chars": 530
+  },
+  {
+   "source_id": "SRC-0683",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0347.md",
+   "chars": 850
+  },
+  {
+   "source_id": "SRC-0684",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0348.md",
+   "chars": 575
+  },
+  {
+   "source_id": "SRC-0685",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0349.md",
+   "chars": 1134
+  },
+  {
+   "source_id": "SRC-0686",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0350.md",
+   "chars": 646
+  },
+  {
+   "source_id": "SRC-0687",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0351.md",
+   "chars": 930
+  },
+  {
+   "source_id": "SRC-0688",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0352.md",
+   "chars": 1076
+  },
+  {
+   "source_id": "SRC-0689",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0353.md",
+   "chars": 919
+  },
+  {
+   "source_id": "SRC-0690",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0354.md",
+   "chars": 946
+  },
+  {
+   "source_id": "SRC-0691",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0355.md",
+   "chars": 803
+  },
+  {
+   "source_id": "SRC-0692",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0356.md",
+   "chars": 875
+  },
+  {
+   "source_id": "SRC-0693",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0357.md",
+   "chars": 411
+  },
+  {
+   "source_id": "SRC-0694",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0358.md",
+   "chars": 858
+  },
+  {
+   "source_id": "SRC-0695",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0359.md",
+   "chars": 835
+  },
+  {
+   "source_id": "SRC-0696",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0360.md",
+   "chars": 574
+  },
+  {
+   "source_id": "SRC-0697",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0361.md",
+   "chars": 712
+  },
+  {
+   "source_id": "SRC-0698",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0362.md",
+   "chars": 1710
+  },
+  {
+   "source_id": "SRC-0699",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0364.md",
+   "chars": 525
+  },
+  {
+   "source_id": "SRC-0700",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0365.md",
+   "chars": 773
+  },
+  {
+   "source_id": "SRC-0701",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0366.md",
+   "chars": 2130
+  },
+  {
+   "source_id": "SRC-0702",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0368.md",
+   "chars": 752
+  },
+  {
+   "source_id": "SRC-0703",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0369.md",
+   "chars": 558
+  },
+  {
+   "source_id": "SRC-0704",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0370.md",
+   "chars": 733
+  },
+  {
+   "source_id": "SRC-0705",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0371.md",
+   "chars": 766
+  },
+  {
+   "source_id": "SRC-0706",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0372.md",
+   "chars": 2192
+  },
+  {
+   "source_id": "SRC-0707",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0373.md",
+   "chars": 703
+  },
+  {
+   "source_id": "SRC-0708",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0374.md",
+   "chars": 865
+  },
+  {
+   "source_id": "SRC-0709",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0375.md",
+   "chars": 849
+  },
+  {
+   "source_id": "SRC-0710",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0376.md",
+   "chars": 786
+  },
+  {
+   "source_id": "SRC-0711",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0377.md",
+   "chars": 607
+  },
+  {
+   "source_id": "SRC-0712",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0378.md",
+   "chars": 800
+  },
+  {
+   "source_id": "SRC-0713",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0379.md",
+   "chars": 801
+  },
+  {
+   "source_id": "SRC-0714",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0380.md",
+   "chars": 703
+  },
+  {
+   "source_id": "SRC-0715",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0381.md",
+   "chars": 671
+  },
+  {
+   "source_id": "SRC-0716",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0382.md",
+   "chars": 544
+  },
+  {
+   "source_id": "SRC-0717",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0383.md",
+   "chars": 1019
+  },
+  {
+   "source_id": "SRC-0718",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0384.md",
+   "chars": 818
+  },
+  {
+   "source_id": "SRC-0719",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0388.md",
+   "chars": 2572
+  },
+  {
+   "source_id": "SRC-0720",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0389.md",
+   "chars": 843
+  },
+  {
+   "source_id": "SRC-0721",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0390.md",
+   "chars": 1919
+  },
+  {
+   "source_id": "SRC-0722",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0391.md",
+   "chars": 1554
+  },
+  {
+   "source_id": "SRC-0723",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0392.md",
+   "chars": 1276
+  },
+  {
+   "source_id": "SRC-0724",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0393.md",
+   "chars": 728
+  },
+  {
+   "source_id": "SRC-0725",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0394.md",
+   "chars": 647
+  },
+  {
+   "source_id": "SRC-0726",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0395.md",
+   "chars": 781
+  },
+  {
+   "source_id": "SRC-0727",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0396.md",
+   "chars": 871
+  },
+  {
+   "source_id": "SRC-0728",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0397.md",
+   "chars": 939
+  },
+  {
+   "source_id": "SRC-0729",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0398.md",
+   "chars": 409
+  },
+  {
+   "source_id": "SRC-0730",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0399.md",
+   "chars": 845
+  },
+  {
+   "source_id": "SRC-0731",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0400.md",
+   "chars": 718
+  },
+  {
+   "source_id": "SRC-0732",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0401.md",
+   "chars": 676
+  },
+  {
+   "source_id": "SRC-0733",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0402.md",
+   "chars": 688
+  },
+  {
+   "source_id": "SRC-0734",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0404.md",
+   "chars": 387
+  },
+  {
+   "source_id": "SRC-0735",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0405.md",
+   "chars": 448
+  },
+  {
+   "source_id": "SRC-0736",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0406.md",
+   "chars": 841
+  },
+  {
+   "source_id": "SRC-0737",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0407.md",
+   "chars": 520
+  },
+  {
+   "source_id": "SRC-0738",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0408.md",
+   "chars": 939
+  },
+  {
+   "source_id": "SRC-0739",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0409.md",
+   "chars": 849
+  },
+  {
+   "source_id": "SRC-0740",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0410.md",
+   "chars": 1599
+  },
+  {
+   "source_id": "SRC-0741",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0411.md",
+   "chars": 1291
+  },
+  {
+   "source_id": "SRC-0742",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0412.md",
+   "chars": 1108
+  },
+  {
+   "source_id": "SRC-0743",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0413.md",
+   "chars": 775
+  },
+  {
+   "source_id": "SRC-0744",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0414.md",
+   "chars": 369
+  },
+  {
+   "source_id": "SRC-0745",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0415.md",
+   "chars": 562
+  },
+  {
+   "source_id": "SRC-0746",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0419.md",
+   "chars": 432
+  },
+  {
+   "source_id": "SRC-0747",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0420.md",
+   "chars": 388
+  },
+  {
+   "source_id": "SRC-0748",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0421.md",
+   "chars": 878
+  },
+  {
+   "source_id": "SRC-0749",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0422.md",
+   "chars": 1697
+  },
+  {
+   "source_id": "SRC-0750",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0423.md",
+   "chars": 958
+  },
+  {
+   "source_id": "SRC-0751",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0424.md",
+   "chars": 766
+  },
+  {
+   "source_id": "SRC-0752",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0425.md",
+   "chars": 1109
+  },
+  {
+   "source_id": "SRC-0753",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0426.md",
+   "chars": 372
+  },
+  {
+   "source_id": "SRC-0754",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0427.md",
+   "chars": 843
+  },
+  {
+   "source_id": "SRC-0755",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0428.md",
+   "chars": 549
+  },
+  {
+   "source_id": "SRC-0756",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0429.md",
+   "chars": 2129
+  },
+  {
+   "source_id": "SRC-0757",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0430.md",
+   "chars": 1106
+  },
+  {
+   "source_id": "SRC-0758",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0431.md",
+   "chars": 596
+  },
+  {
+   "source_id": "SRC-0759",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0432.md",
+   "chars": 600
+  },
+  {
+   "source_id": "SRC-0760",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0433.md",
+   "chars": 408
+  },
+  {
+   "source_id": "SRC-0761",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0434.md",
+   "chars": 678
+  },
+  {
+   "source_id": "SRC-0762",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0435.md",
+   "chars": 794
+  },
+  {
+   "source_id": "SRC-0763",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0436.md",
+   "chars": 453
+  },
+  {
+   "source_id": "SRC-0764",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0437.md",
+   "chars": 417
+  },
+  {
+   "source_id": "SRC-0765",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0438.md",
+   "chars": 467
+  },
+  {
+   "source_id": "SRC-0766",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0439.md",
+   "chars": 730
+  },
+  {
+   "source_id": "SRC-0767",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0441.md",
+   "chars": 652
+  },
+  {
+   "source_id": "SRC-0768",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0442.md",
+   "chars": 581
+  },
+  {
+   "source_id": "SRC-0769",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0443.md",
+   "chars": 531
+  },
+  {
+   "source_id": "SRC-0770",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0444.md",
+   "chars": 525
+  },
+  {
+   "source_id": "SRC-0771",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0445.md",
+   "chars": 973
+  },
+  {
+   "source_id": "SRC-0772",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0446.md",
+   "chars": 423
+  },
+  {
+   "source_id": "SRC-0773",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0449.md",
+   "chars": 467
+  },
+  {
+   "source_id": "SRC-0774",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0450.md",
+   "chars": 539
+  },
+  {
+   "source_id": "SRC-0775",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0451.md",
+   "chars": 489
+  },
+  {
+   "source_id": "SRC-0776",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0452.md",
+   "chars": 477
+  },
+  {
+   "source_id": "SRC-0777",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0453.md",
+   "chars": 660
+  },
+  {
+   "source_id": "SRC-0778",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0454.md",
+   "chars": 811
+  },
+  {
+   "source_id": "SRC-0779",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0455.md",
+   "chars": 798
+  },
+  {
+   "source_id": "SRC-0780",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0457.md",
+   "chars": 826
+  },
+  {
+   "source_id": "SRC-0781",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0458.md",
+   "chars": 620
+  },
+  {
+   "source_id": "SRC-0782",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0459.md",
+   "chars": 673
+  },
+  {
+   "source_id": "SRC-0783",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0460.md",
+   "chars": 1313
+  },
+  {
+   "source_id": "SRC-0784",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0461.md",
+   "chars": 488
+  },
+  {
+   "source_id": "SRC-0785",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0462.md",
+   "chars": 1884
+  },
+  {
+   "source_id": "SRC-0786",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0463.md",
+   "chars": 1055
+  },
+  {
+   "source_id": "SRC-0787",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0464.md",
+   "chars": 375
+  },
+  {
+   "source_id": "SRC-0788",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0465.md",
+   "chars": 1834
+  },
+  {
+   "source_id": "SRC-0789",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0466.md",
+   "chars": 1310
+  },
+  {
+   "source_id": "SRC-0790",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0467.md",
+   "chars": 969
+  },
+  {
+   "source_id": "SRC-0791",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0468.md",
+   "chars": 935
+  },
+  {
+   "source_id": "SRC-0792",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0469.md",
+   "chars": 958
+  },
+  {
+   "source_id": "SRC-0793",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0470.md",
+   "chars": 873
+  },
+  {
+   "source_id": "SRC-0794",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0472.md",
+   "chars": 596
+  },
+  {
+   "source_id": "SRC-0795",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0473.md",
+   "chars": 858
+  },
+  {
+   "source_id": "SRC-0796",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0474.md",
+   "chars": 601
+  },
+  {
+   "source_id": "SRC-0797",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0475.md",
+   "chars": 429
+  },
+  {
+   "source_id": "SRC-0798",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0476.md",
+   "chars": 568
+  },
+  {
+   "source_id": "SRC-0799",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0477.md",
+   "chars": 839
+  },
+  {
+   "source_id": "SRC-0800",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0478.md",
+   "chars": 810
+  },
+  {
+   "source_id": "SRC-0801",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0479.md",
+   "chars": 453
+  },
+  {
+   "source_id": "SRC-0802",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0480.md",
+   "chars": 952
+  },
+  {
+   "source_id": "SRC-0803",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0481.md",
+   "chars": 654
+  },
+  {
+   "source_id": "SRC-0804",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0482.md",
+   "chars": 581
+  },
+  {
+   "source_id": "SRC-0805",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0483.md",
+   "chars": 799
+  },
+  {
+   "source_id": "SRC-0806",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0484.md",
+   "chars": 537
+  },
+  {
+   "source_id": "SRC-0807",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0485.md",
+   "chars": 922
+  },
+  {
+   "source_id": "SRC-0808",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0486.md",
+   "chars": 585
+  },
+  {
+   "source_id": "SRC-0809",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0487.md",
+   "chars": 1080
+  },
+  {
+   "source_id": "SRC-0810",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0488.md",
+   "chars": 478
+  },
+  {
+   "source_id": "SRC-0811",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0489.md",
+   "chars": 947
+  },
+  {
+   "source_id": "SRC-0812",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0490.md",
+   "chars": 441
+  },
+  {
+   "source_id": "SRC-0813",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0491.md",
+   "chars": 434
+  },
+  {
+   "source_id": "SRC-0814",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0492.md",
+   "chars": 441
+  },
+  {
+   "source_id": "SRC-0815",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0493.md",
+   "chars": 694
+  },
+  {
+   "source_id": "SRC-0816",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0494.md",
+   "chars": 559
+  },
+  {
+   "source_id": "SRC-0817",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0495.md",
+   "chars": 490
+  },
+  {
+   "source_id": "SRC-0818",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0496.md",
+   "chars": 430
+  },
+  {
+   "source_id": "SRC-0819",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0497.md",
+   "chars": 675
+  },
+  {
+   "source_id": "SRC-0820",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0498.md",
+   "chars": 483
+  },
+  {
+   "source_id": "SRC-0821",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0499.md",
+   "chars": 679
+  },
+  {
+   "source_id": "SRC-0822",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0500.md",
+   "chars": 1173
+  },
+  {
+   "source_id": "SRC-0823",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0501.md",
+   "chars": 532
+  },
+  {
+   "source_id": "SRC-0824",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0503.md",
+   "chars": 554
+  },
+  {
+   "source_id": "SRC-0825",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0504.md",
+   "chars": 500
+  },
+  {
+   "source_id": "SRC-0826",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "SRC-0505.md",
+   "chars": 896
+  },
+  {
+   "source_id": "USER-DECISION",
+   "authority": "C",
+   "status": "ingested",
+   "filename": "用户合规与运营决策记录",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0827",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".rar",
+   "filename": "03 亚马逊新品广告词库搭建工具-ACOS值数值处理(1).rar",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0828",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "08 新品广告投放方案(1).xlsx",
+   "chars": 3099
+  },
+  {
+   "source_id": "SRC-0829",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "12 亚马逊广告关键词竞价原理与出价流量圈层(1).xlsx",
+   "chars": 967
+  },
+  {
+   "source_id": "SRC-0830",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "13.1 广告运营日常优化管理SOP汇总(1).xlsx",
+   "chars": 1702
+  },
+  {
+   "source_id": "SRC-0831",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "13.2  亚马逊广告策略自动化SOP流程(1).xlsx",
+   "chars": 750
+  },
+  {
+   "source_id": "SRC-0832",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "14 复制优秀广告投手自动调价模型策略(1).xlsx",
+   "chars": 868
+  },
+  {
+   "source_id": "SRC-0833",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "1_橘虹跨境-Soju 高阶广告课 20260312分享学员.pdf",
+   "chars": 26107
+  },
+  {
+   "source_id": "SRC-0834",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".html",
+   "filename": "Amazon广告与定价Skill使用说明.html",
+   "chars": 6250
+  },
+  {
+   "source_id": "SRC-0835",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xmind",
+   "filename": "V6 亚马逊白帽推广高阶特训营深圳方案班 思维导图2026-6-5.xmind",
+   "chars": 7348
+  },
+  {
+   "source_id": "SRC-0836",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊价格管理手册v2.pdf",
+   "chars": 27894
+  },
+  {
+   "source_id": "SRC-0837",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊广告中高阶课-Soju 20230825 Day1(1).pdf",
+   "chars": 10888
+  },
+  {
+   "source_id": "SRC-0838",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊广告中高阶课-Soju 20230826 Day2(1).pdf",
+   "chars": 9194
+  },
+  {
+   "source_id": "SRC-0839",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊广告中高阶课-Soju 20230827 Day3(1).pdf",
+   "chars": 11339
+  },
+  {
+   "source_id": "SRC-0840",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊流量增长白皮书_FInal压缩版.pdf",
+   "chars": 71838
+  },
+  {
+   "source_id": "SRC-0841",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊白帽推广高阶特训营-课件汇6月 学员手册(1).pdf",
+   "chars": 24928
+  },
+  {
+   "source_id": "SRC-0842",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pptx",
+   "filename": "亚马逊运营体系(1).pptx",
+   "chars": 27393
+  },
+  {
+   "source_id": "SRC-0843",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "竞品推广手段分析流程图(1).pdf",
+   "chars": 7896
+  },
+  {
+   "source_id": "SRC-0844",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pptx",
+   "filename": "老品链接分析和重推技巧(1).pptx",
+   "chars": 4408
+  },
+  {
+   "source_id": "SRC-0845",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".html",
+   "filename": "1_橘虹跨境-Soju高阶广告课-解读.html",
+   "chars": 10949
+  },
+  {
+   "source_id": "SRC-0846",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "1_橘虹跨境-Soju高阶广告课-解读.md",
+   "chars": 11506
+  },
+  {
+   "source_id": "SRC-0847",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".html",
+   "filename": "_全场综述-0916收集资料.html",
+   "chars": 6303
+  },
+  {
+   "source_id": "SRC-0848",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "_全场综述-0916收集资料.md",
+   "chars": 11459
+  },
+  {
+   "source_id": "SRC-0849",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".html",
+   "filename": "亚马逊价格管理手册v2-解读.html",
+   "chars": 7313
+  },
+  {
+   "source_id": "SRC-0850",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "亚马逊价格管理手册v2-解读.md",
+   "chars": 7401
+  },
+  {
+   "source_id": "SRC-0851",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".html",
+   "filename": "亚马逊流量增长白皮书-解读.html",
+   "chars": 5858
+  },
+  {
+   "source_id": "SRC-0852",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "亚马逊流量增长白皮书-解读.md",
+   "chars": 7979
+  },
+  {
+   "source_id": "SRC-0853",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "soju_triage_A.md",
+   "chars": 7525
+  },
+  {
+   "source_id": "SRC-0854",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "soju_triage_B.md",
+   "chars": 10411
+  },
+  {
+   "source_id": "SRC-0855",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "soju_triage_C.md",
+   "chars": 8508
+  },
+  {
+   "source_id": "SRC-0856",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "亚马逊运营开窍五节点_视频笔记.md",
+   "chars": 3622
+  }
+ ]
+}

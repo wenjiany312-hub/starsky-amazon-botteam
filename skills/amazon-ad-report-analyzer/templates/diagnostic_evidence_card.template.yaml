@@ -1,0 +1,44 @@
+schema_version: "2.0"
+analysis_id: ""
+run_id: ""
+cycle_id: ""
+plan_ref:
+  plan_id: null
+  plan_version: null
+  plan_hash: null
+  computed_plan_hash: null
+  plan_hash_valid: null
+  plan_file_sha256: null
+scope:
+  marketplace: US
+  currency: USD
+  timezone: America/Los_Angeles
+  asins: []
+  skus: []
+  attribution_windows: []
+sources: []
+data_quality:
+  accepted_rows: 0
+  rejected_sources: 0
+  unknown_attribution_windows: 0
+  warnings: []
+business_context: {}
+advertising_context:
+  overall_by_source_unit: []
+  campaign: []
+  ad_group: []
+  targeting: []
+  search_term: []
+  placement: []
+  advertised_product: []
+  purchased_product: []
+change_context: {}
+mcp_evidence: {}
+contribution_evidence: {}
+natural_flow_impact:
+  status: unavailable
+  causal_claim: false
+traffic_concentration: {}
+negative_impact_previews: []
+previous_action_results: {}
+finding_refs: []

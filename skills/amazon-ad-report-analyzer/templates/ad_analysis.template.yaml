@@ -1,0 +1,67 @@
+schema_version: "2.0"
+identity:
+  analysis_id: ""
+  run_id: ""
+  cycle_id: ""
+  generated_at: ""
+  script_version: "4.0.0"
+  mode: production_analysis
+  uploadability: ANALYSIS_ONLY_NOT_AN_UPLOAD_FILE
+plan_ref:
+  plan_id: null
+  plan_version: null
+  plan_hash: null
+  computed_plan_hash: null
+  plan_hash_valid: null
+  plan_file_sha256: null
+scope:
+  marketplace: US
+  currency: USD
+  timezone: America/Los_Angeles
+  asins: []
+  skus: []
+  attribution_windows: []
+coverage:
+  files_discovered: 0
+  accepted_source_units: 0
+  rejected_source_units: 0
+  accepted_rows: 0
+  ad_types: []
+  object_levels: []
+  cross_source_aggregation: false
+  cross_attribution_window_aggregation: false
+  cross_object_level_aggregation: false
+sources: []
+source_unit_totals: []
+business_context: {}
+change_context: {}
+mcp_evidence: {status: skipped, reason: no_mcp_evidence_file_supplied}
+contribution_evidence:
+  status: unavailable
+  reason: expected_baseline_not_supplied
+natural_flow_impact:
+  status: unavailable
+  causal_claim: false
+traffic_concentration:
+  status: unknown
+negative_impact_previews: []
+previous_action_results: {}
+analysis_layers:
+  campaign: {row_count: 0, full_csv: null, top_by_spend: []}
+  ad_group: {row_count: 0, full_csv: null, top_by_spend: []}
+  targeting: {row_count: 0, full_csv: null, top_by_spend: []}
+  search_term: {row_count: 0, full_csv: null, top_by_spend: []}
+  placement: {row_count: 0, full_csv: null, top_by_spend: []}
+  advertised_product: {row_count: 0, full_csv: null, top_by_spend: []}
+  purchased_product: {row_count: 0, full_csv: null, top_by_spend: []}
+findings: []
+transfers: []
+parameter_registry: {}
+warnings: []
+data_explanation_window:
+  obtained_facts: []
+  derived: []
+  simulated: []
+  missing_and_impact: []
+  continue_and_revision: []
+acceptance_checks: []

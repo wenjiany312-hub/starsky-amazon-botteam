@@ -1,0 +1,263 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jiangge.local/schemas/ad-plan-2.0.json",
+  "title": "Amazon Ad Plan 2.0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version", "run_id", "cycle_id", "plan_id", "plan_version", "plan_hash",
+    "hash_schema", "strategy_ref", "keyword_package_ref",
+    "run_mode", "market", "product", "complexity", "economics",
+    "ad_product_decisions", "campaigns", "transfers", "totals",
+    "upload_eligibility", "consistency_checks"
+  ],
+  "properties": {
+    "schema_version": {"const": "2.0"},
+    "run_id": {"type": "string", "minLength": 1},
+    "cycle_id": {"type": "string", "minLength": 1},
+    "plan_id": {"type": "string", "minLength": 1},
+    "plan_version": {"type": "integer", "minimum": 1},
+    "plan_hash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "hash_schema": {"const": "ad-plan-c14n-v1"},
+    "supersedes": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "required": ["plan_id", "plan_version", "plan_hash"],
+          "properties": {
+            "plan_id": {"type": "string", "minLength": 1},
+            "plan_version": {"type": "integer", "minimum": 1},
+            "plan_hash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+          }
+        }
+      ]
+    },
+    "change_reason": {"type": "string", "minLength": 1},
+    "strategy_ref": {"$ref": "#/$defs/versionedRef"},
+    "keyword_package_ref": {"type": "object"},
+    "run_mode": {"enum": ["production", "demo_direct_run"]},
+    "market": {
+      "type": "object",
+      "required": ["marketplace", "currency", "timezone"],
+      "properties": {
+        "marketplace": {"type": "string", "minLength": 1},
+        "currency": {"type": "string", "minLength": 3},
+        "timezone": {"type": "string", "minLength": 1}
+      }
+    },
+    "product": {
+      "type": "object",
+      "required": ["product_id", "seller_skus", "child_asins"],
+      "properties": {
+        "product_id": {"type": "string", "minLength": 1},
+        "seller_skus": {"type": "array", "items": {"type": "string"}},
+        "child_asins": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "required": ["form", "lifecycle", "form_evidence", "lifecycle_evidence"],
+      "properties": {
+        "form": {"enum": ["standard", "semi_standard", "nonstandard", "hybrid"]},
+        "lifecycle": {"enum": ["new", "growth", "mature", "relaunch", "seasonal"]},
+        "form_evidence": {"type": "array"},
+        "lifecycle_evidence": {"type": "array"}
+      }
+    },
+    "complexity": {
+      "type": "object",
+      "required": ["requested", "selected", "selection_basis", "compression_log"],
+      "properties": {
+        "requested": {"enum": ["auto", "simple", "standard", "advanced"]},
+        "selected": {"enum": ["simple", "standard", "advanced"]},
+        "selection_basis": {"type": "array", "minItems": 1},
+        "compression_log": {"type": "array"}
+      }
+    },
+    "economics": {
+      "type": "object",
+      "required": ["selling_price", "target_acos", "target_cpa"],
+      "properties": {
+        "selling_price": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "contribution_margin_before_ads": {"type": ["number", "null"]},
+        "break_even_acos": {"type": ["number", "null"]},
+        "target_acos": {"type": ["number", "null"]},
+        "target_cpa": {"type": ["number", "null"]}
+      }
+    },
+    "ad_product_decisions": {
+      "type": "object",
+      "required": ["SP", "SB", "SD"],
+      "properties": {
+        "SP": {"$ref": "#/$defs/adProductDecision"},
+        "SB": {"$ref": "#/$defs/adProductDecision"},
+        "SD": {"$ref": "#/$defs/adProductDecision"}
+      }
+    },
+    "campaigns": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/campaign"}
+    },
+    "transfers": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/transfer"}
+    },
+    "totals": {
+      "type": "object",
+      "required": ["campaign_count", "ad_group_count", "target_count", "negative_count", "daily_budget"],
+      "properties": {
+        "campaign_count": {"type": "integer", "minimum": 0},
+        "ad_group_count": {"type": "integer", "minimum": 0},
+        "target_count": {"type": "integer", "minimum": 0},
+        "negative_count": {"type": "integer", "minimum": 0},
+        "daily_budget": {"type": "number", "minimum": 0}
+      }
+    },
+    "upload_eligibility": {
+      "type": "object",
+      "required": ["status", "reasons"],
+      "properties": {
+        "status": {"enum": ["blocked", "review_required", "eligible"]},
+        "reasons": {"type": "array"}
+      }
+    },
+    "consistency_checks": {"type": "object"}
+  },
+  "$defs": {
+    "versionedRef": {
+      "type": "object",
+      "required": ["strategy_id", "strategy_version", "strategy_hash"],
+      "properties": {
+        "strategy_id": {"type": "string", "minLength": 1},
+        "strategy_version": {"type": "integer", "minimum": 1},
+        "strategy_hash": {"type": "string", "minLength": 1}
+      }
+    },
+    "adProductDecision": {
+      "type": "object",
+      "required": ["capability", "readiness"],
+      "properties": {
+        "capability": {
+          "type": "object",
+          "required": ["status", "evidence", "missing"],
+          "properties": {
+            "status": {"enum": ["available", "missing_assets", "ineligible", "unknown"]},
+            "evidence": {"type": "array"},
+            "missing": {"type": "array"}
+          }
+        },
+        "readiness": {
+          "type": "object",
+          "required": ["decision", "decision_basis"],
+          "properties": {
+            "decision": {"enum": ["open", "partial", "defer", "unknown"]},
+            "decision_basis": {"type": "array"},
+            "recommended_scope": {"type": "array"},
+            "reevaluate_when": {"type": "array"}
+          }
+        }
+      }
+    },
+    "sourceRef": {
+      "type": "object",
+      "required": ["source_id"],
+      "properties": {
+        "source_id": {"type": "string", "minLength": 1},
+        "period": {"type": ["object", "null"]},
+        "semantic": {"type": ["string", "null"]}
+      }
+    },
+    "target": {
+      "type": "object",
+      "required": ["target_id", "target_type", "expression", "lineage"],
+      "properties": {
+        "target_id": {"type": "string", "minLength": 1},
+        "target_type": {"enum": ["keyword", "asin", "category", "audience", "auto"]},
+        "expression": {"type": "string", "minLength": 1},
+        "match_type": {"type": ["string", "null"]},
+        "lineage": {"type": "array", "minItems": 1},
+        "metrics": {"type": "object"}
+      }
+    },
+    "negative": {
+      "type": "object",
+      "required": ["negative_id", "expression", "match_type", "status", "lineage"],
+      "properties": {
+        "negative_id": {"type": "string", "minLength": 1},
+        "expression": {"type": "string", "minLength": 1},
+        "match_type": {"type": "string", "minLength": 1},
+        "status": {"enum": ["active", "held", "ready_for_review"]},
+        "lineage": {"type": "array", "minItems": 1}
+      }
+    },
+    "adGroup": {
+      "type": "object",
+      "required": ["ad_group_key", "name", "purpose", "targets", "negatives"],
+      "properties": {
+        "ad_group_key": {"type": "string", "minLength": 1},
+        "name": {"type": "string", "minLength": 1},
+        "purpose": {"type": "string", "minLength": 1},
+        "targets": {"type": "array", "items": {"$ref": "#/$defs/target"}},
+        "negatives": {"type": "array", "items": {"$ref": "#/$defs/negative"}}
+      }
+    },
+    "campaign": {
+      "type": "object",
+      "required": [
+        "campaign_key", "campaign_name", "ad_product", "role", "primary_goal", "kpi",
+        "advertised_skus", "daily_budget", "bidding_strategy", "bid_guardrail",
+        "placement_adjustments", "ad_groups", "success_rule", "stop_or_reduce_rule",
+        "graduation_rule", "rollback_rule", "review_cadence"
+      ],
+      "properties": {
+        "campaign_key": {"type": "string", "minLength": 1},
+        "campaign_name": {"type": "string", "minLength": 1},
+        "ad_product": {"enum": ["SP", "SB", "SD"]},
+        "role": {"enum": ["foundation", "res", "per", "rank", "profit", "defense", "retargeting", "seasonal", "relaunch"]},
+        "primary_goal": {"type": "string", "minLength": 1},
+        "objective": {"enum": ["profit", "investment", "defense", "exposure", null]},
+        "objective_evidence": {"type": "object"},
+        "objective_kpi": {"type": "object"},
+        "investment_guardrails": {"type": "object"},
+        "kpi": {"type": "object"},
+        "advertised_skus": {"type": "array", "items": {"type": "string"}},
+        "daily_budget": {"type": "number", "minimum": 0},
+        "bidding_strategy": {"type": "string", "minLength": 1},
+        "bid_guardrail": {
+          "type": "object",
+          "required": ["expected_cvr", "allowable_cpc", "initial_bid", "worst_case_effective_bid", "increase_allowed"],
+          "properties": {
+            "expected_cvr": {"type": "object"},
+            "allowable_cpc": {"type": ["number", "null"]},
+            "initial_bid": {"type": ["number", "null"]},
+            "worst_case_effective_bid": {"type": ["number", "null"]},
+            "increase_allowed": {"type": "boolean"}
+          }
+        },
+        "placement_adjustments": {"type": "object"},
+        "ad_groups": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/adGroup"}}
+      }
+    },
+    "transfer": {
+      "type": "object",
+      "required": [
+        "transfer_id", "source_object", "destination_object", "destination_status",
+        "validation_rule", "validation_evidence", "source_negative", "rollback_rule"
+      ],
+      "properties": {
+        "transfer_id": {"type": "string", "minLength": 1},
+        "destination_status": {"enum": ["planned", "live", "validated"]},
+        "validation_evidence": {"type": "array"},
+        "source_negative": {
+          "type": "object",
+          "required": ["activate_after", "status"],
+          "properties": {
+            "activate_after": {"const": "destination_validated"},
+            "status": {"enum": ["held", "ready_for_review", "active"]}
+          }
+        }
+      }
+    }
+  }
+}

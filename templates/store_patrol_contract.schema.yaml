@@ -1,0 +1,44 @@
+schema_version: "1.0"
+snapshot:
+  snapshot_date: ""
+  marketplace: ""
+  store_id: ""
+  source: lingxing_openapi | amazon_report | manual_snapshot
+  data_quality:
+    completeness: 0
+    unavailable_domains: []
+findings:
+  - finding_id: ""
+    domain: sales | inventory | ads | listing | profit
+    object_type: ""
+    object_id: ""
+    fact: ""
+    evidence_refs: []
+    abnormality:
+      absolute_value: null
+      relative_change: null
+      persistence_days: null
+      business_scale: ""
+      related_signals: []
+      historical_pattern: ""
+    reason_chain:
+      main_contributor: ""
+      business_explanation: ""
+      counter_evidence: ""
+      impact: ""
+    priority: P1 | P2 | P3
+    confidence: high | medium | low
+actions:
+  - finding_id: ""
+    suggested_action: ""
+    preconditions: []
+    action_parameters: {}
+    human_decision: pending | approved | modified | rejected
+    executed_action: ""
+    execution_time: ""
+    result_window: ""
+    before_metrics: {}
+    after_metrics: {}
+    business_result: improved | no_change | worse | insufficient_data
+    rule_feedback: keep | adjust | retire
+

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title><目的仓代码> 航线选择分析</title>
+<style>
+:root{--bg:#0f1216;--card:#161a21;--border:#262b35;--text:#e6e9ef;--muted:#8a93a6;--accent:#5b8def;--good:#22c55e;--warn:#f59e0b;--bad:#ef4444;--hl:#fffbe6;}
+*{box-sizing:border-box;}
+body{font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;margin:0;padding:32px;background:var(--bg);color:var(--text);line-height:1.65;}
+.wrap{max-width:1080px;margin:0 auto;}
+h1{font-size:28px;border-left:6px solid var(--accent);padding-left:14px;margin:0 0 8px 0;}
+h2{font-size:20px;margin-top:36px;padding:8px 0 8px 12px;border-left:4px solid var(--accent);background:#1b2230;border-radius:0 6px 6px 0;}
+h3{font-size:16px;margin-top:24px;color:#c8d2e3;}
+.meta{background:var(--card);border:1px solid var(--border);padding:16px 20px;border-radius:10px;margin:16px 0 24px 0;}
+.meta b{color:var(--accent);}
+table{width:100%;border-collapse:collapse;margin:12px 0;background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top;}
+th{background:#1b2230;color:#cdd6e3;font-weight:600;}
+tr:last-child td{border-bottom:none;}
+tr:nth-child(even) td{background:#131820;}
+code{background:#1e2532;padding:2px 6px;border-radius:4px;font-size:13px;color:#ffd66e;}
+pre{background:#0b0e13;padding:14px;border-radius:8px;overflow-x:auto;border:1px solid var(--border);font-size:13px;}
+blockquote{border-left:4px solid var(--accent);margin:14px 0;padding:10px 16px;background:#162032;border-radius:0 8px 8px 0;color:#cfe1ff;}
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:12px;font-weight:600;}
+.b-good{background:#103919;color:#86efac;}
+.b-warn{background:#3a2706;color:#fcd34d;}
+.b-bad{background:#3a1414;color:#fca5a5;}
+.b-acc{background:#102a4f;color:#bfdbfe;}
+.muted{color:var(--muted);font-size:13px;}
+.toc{background:var(--card);border:1px solid var(--border);padding:14px 18px;border-radius:8px;margin:18px 0;}
+.toc ol{margin:6px 0 0 20px;padding:0;}
+.toc li{margin:4px 0;}
+.gap{background:#2a1f0a;border:1px solid #f59e0b;padding:10px 14px;border-radius:8px;margin:12px 0;color:#fde68a;}
+.note{background:#1a2535;border-left:4px solid var(--accent);padding:10px 14px;border-radius:0 8px 8px 0;margin:14px 0;}
+.footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>📦 <目的仓代码> 航线选择分析</h1>
+
+<div class="meta">
+<div>📅 报告生成：<b>2026-07-23</b>　|　📂 项目：<code>D:\航线选择\</code></div>
+<div>👤 货代：<货代名>　|　📑 价表版本：<生效日期></div>
+<div class="muted">⚠️ 本报告基于 logistics-warehouse-manager 经验撰写（当前 Hermes 环境未挂载该 SKILL，故未调用 Skill）。仓管物流 / Warehouse Manager。</div>
+</div>
+
+<blockquote>
+<b>📋 核心结论：</b>当前 <箱数> 箱 / <SKU> SKU / <件数> 件 货件去 <b><目的仓地址> = <分区></b>，<核心结论正文>。
+</blockquote>
+
+<div class="toc">
+<b>📑 目录</b>
+<ol>
+<li>货件基础信息</li>
+<li>邮编分区确认</li>
+<li>候选线路 × 目的仓适配性矩阵</li>
+<li>推荐方案 A / B / C</li>
+<li>三方案量级对比</li>
+<li>按用户场景的选择建议</li>
+<li>资料完整性 / 风险检查</li>
+<li>下一步动作</li>
+<li>资料附录</li>
+</ol>
+</div>
+
+<h2>1. 货件基础信息</h2>
+<table>
+<tr><th>项目</th><th>值</th><th>来源</th></tr>
+<tr><td>货件数量</td><td><数字></td><td>截图 <code>货件数量: <数字></code></td></tr>
+<tr><td>目的仓</td><td><b><目的仓地址></b></td><td>截图</td></tr>
+<tr><td>允许地区</td><td><分区中文名></td><td>截图</td></tr>
+<tr><td>配送能力</td><td>标准 / 加急</td><td>截图</td></tr>
+<tr><td>箱数</td><td><数字></td><td>截图</td></tr>
+<tr><td>SKU 数</td><td><数字></td><td>截图</td></tr>
+<tr><td>商品数量</td><td><数字></td><td>截图</td></tr>
+<tr><td>货代资料夹</td><td><货代名 + 价表文件名></td><td><code>D:\航线选择\</code></td></tr>
+</table>
+
+<div class="gap">
+<b>⚠️ 资料缺口：</b>截图未提供单箱重量、材积、是否敏感货。下文以"假设 <箱数> 箱整票计费重落在 12-50kg/kg 段，每箱 <数字>kg"做演示。实际报价需要补单箱重量后再精算。<br>
+另：截图未给出交货地，<b>深圳交货 <分区></b> 是默认口径；广州 +0.2、宁波/义乌 +0.5 RMB/kg。
+</div>
+
+<h2>2. 邮编分区确认（关键判断依据）</h2>
+<p><目的仓代码> 在 <货代>「<导航 sheet 名>」明确归属于 <b><分区>（邮编开头 <数字>）</b>：</p>
+<pre>r<行号>: <目的仓代码>  | <邮编> | <邮编首位> | <分区>
+r<行号>: <邻近仓库代码>  | <邮编> | <邮编首位> | <分区></pre>
+
+<h2>3. N 条候选线路 × 目的仓适配性</h2>
+<p class="muted">价格单位 RMB/kg，深圳交货口径；时效取"<开船后 X 天>"。✅ = 表内有目的仓 / 分区直接报价；⚠️ = 只有相邻区；❌ = 无对应报价。</p>
+
+<table>
+<tr><th>线路</th><th>渠道</th><th>卸货港</th><th><分区> 12-50kg</th><th><分区> 50+</th><th>时效</th><th>目的仓直接报价</th><th>总评</th></tr>
+<tr><td><b>线路 A</b></td><td>海派 / 海卡</td><td>港口</td><td><报价></td><td><报价></td><td><时效></td><td>✅/⚠️/❌</td><td>评价</td></tr>
+</table>
+
+<h2>4. 推荐方案（按"最优"的不同定义）</h2>
+
+<h3>🥇 方案 A：综合最优 → <线路></h3>
+<table>
+<tr><th>项</th><th>值</th><th>说明</th></tr>
+<tr><td>渠道</td><td colspan=2><内容></td></tr>
+<tr><td>报价</td><td colspan=2><数字> RMB/kg（12-50kg）；<数字>（50+）</td></tr>
+<tr><td>时效</td><td colspan=2>开船后 X 天</td></tr>
+<tr><td>估算运费</td><td colspan=2><数字> RMB</td></tr>
+<tr><td>优势</td><td colspan=2><内容></td></tr>
+<tr><td>风险</td><td colspan=2><内容></td></tr>
+</table>
+
+<h3>🥈 方案 B：极致时效 → <线路></h3>
+<table>
+<tr><th>项</th><th>值</th></tr>
+<tr><td>渠道</td><td><内容></td></tr>
+<tr><td>报价</td><td><数字> RMB/kg</td></tr>
+<tr><td>时效</td><td><数字> 天</td></tr>
+<tr><td>估算运费</td><td><数字> RMB</td></tr>
+<tr><td>适用</td><td>时效极敏感场景</td></tr>
+</table>
+
+<h3>🥉 方案 C：极致成本 → <线路></h3>
+<table>
+<tr><th>项</th><th>值</th></tr>
+<tr><td>渠道</td><td><内容></td></tr>
+<tr><td>报价</td><td><数字> RMB/kg</td></tr>
+<tr><td>时效</td><td><数字> 天</td></tr>
+<tr><td>估算运费</td><td><数字> RMB</td></tr>
+<tr><td>适用</td><td>成本敏感场景</td></tr>
+</table>
+
+<h2>5. 三方案量级对比（同 <箱数> 箱 / <假设总重>kg 假设）</h2>
+<table>
+<tr><th>维度</th><th>方案 A（推荐）</th><th>方案 B（最快）</th><th>方案 C（最便宜）</th></tr>
+<tr><td>报价（RMB/kg）</td><td><数字></td><td><数字></td><td><数字></td></tr>
+<tr><td>估算总运费（RMB）</td><td><b><数字></b></td><td><数字></td><td><b><数字></b></td></tr>
+<tr><td>时效（开船后）</td><td><数字> 天</td><td><b><数字> 天</b></td><td><b><数字> 天</b></td></tr>
+<tr><td>推荐度</td><td><span class="badge b-good">⭐⭐⭐⭐⭐</span></td><td><span class="badge b-acc">⭐⭐⭐</span></td><td><span class="badge b-good">⭐⭐⭐⭐</span></td></tr>
+</table>
+
+<h2>6. 按用户场景的选择建议</h2>
+<table>
+<tr><th>用户场景</th><th>推荐方案</th><th>关键理由</th></tr>
+<tr><td>断货风险高、时效极敏感</td><td>方案 B</td><td><内容></td></tr>
+<tr><td>日常补货、平衡成本与时效</td><td><b style="color:#86efac;">方案 A ⭐</b></td><td><内容></td></tr>
+<tr><td>中长期稳定补货、不急</td><td>方案 C</td><td><内容></td></tr>
+</table>
+
+<h2>7. 资料完整性 / 风险检查</h2>
+<table>
+<tr><th>检查项</th><th>状态</th><th>备注</th></tr>
+<tr><td>航线价格表</td><td>✅ 完整</td><td></td></tr>
+<tr><td>邮编→分区映射</td><td>✅ 完整</td><td></td></tr>
+<tr><td>单箱重量</td><td>❌ 缺失</td><td>需补</td></tr>
+<tr><td>货物品类</td><td>❌ 缺失</td><td>需补</td></tr>
+<tr><td>出货地</td><td>❌ 缺失</td><td>影响 ±0.5 RMB/kg</td></tr>
+<tr><td>截关/开船日</td><td>❌ 缺失</td><td>需与货代确认</td></tr>
+</table>
+
+<div class="note">
+<b>⚠️ 风险提示：</b>
+<ol>
+<li>截关日 X 截 Y 开 → 用户尚未指定出货批次；</li>
+<li><b><SKU> 是多品名</b>，每票超过 5 个品名后每个 +RMB30；</li>
+<li><b>预处理（贴标）</b>：<SKU> 都需要预处理，报价不含此费用；</li>
+<li><b>FedEx 偏远邮编</b>：需对照偏远 sheet；如命中偏远，海派每箱 +RMB35。</li>
+</ol>
+</div>
+
+<h2>8. 下一步动作</h2>
+<ol>
+<li>补齐单箱重量 / 材积 / 货物品类 → 重新精算三方案总运费；</li>
+<li>确认出货地 → 调整基准报价；</li>
+<li>确认出货批次与开船日 → 锁定实际船期；</li>
+<li>向 <货代> 确认：偏远邮编、多品名清关费、预处理服务费、舱位；</li>
+<li>（按需）向备选线路货代询"正班船"备选；</li>
+<li>建议额外购买保险（费率千分之三，最低 100 RMB）以覆盖高货值/丢件风险。</li>
+</ol>
+
+<h2>9. 资料附录</h2>
+<ul>
+<li>原始资料：<code><xlsx 路径></code></li>
+<li>TSV 拆解：<code><_raw/ 目录>/*.tsv</code></li>
+<li>关键 cell 引用：
+<ul>
+<li>价格快速导航：r<行号>-r<行号></li>
+<li><线路 A> <分区> 报价：<sheet> r<行号></li>
+<li><线路 C> 目的仓直接报价：<sheet> r<行号></li>
+<li>目的仓邮编分区：<导航 sheet> r<行号></li>
+</ul></li>
+</ul>
+
+<div class="footer">
+📊 仓管物流 / Warehouse Manager · <日期> · 本报告基于 logistics-warehouse-manager 经验撰写（当前 Hermes 环境未挂载该 SKILL，故未调用 Skill）· <b>【Warehouse Manager 完成】</b>
+</div>
+
+</div>
+</body>
+</html>

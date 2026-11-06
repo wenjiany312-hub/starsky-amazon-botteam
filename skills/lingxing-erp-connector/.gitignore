@@ -1,0 +1,13 @@
+lingxing_config.yaml
+references/巡检配置.yaml
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+outputs/
+reports/
+生成的报告/
+*.log
+*_raw.json

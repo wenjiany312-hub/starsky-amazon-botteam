@@ -1,0 +1,406 @@
+S1:
+  name: 选品板块
+  total_steps: 9
+  paths:
+    condition_first: 白手起家（没货源没资料）· 新手轨道 A 默认
+    supply_first: 有货源（已有供应商 / 工厂报价单）
+  path_note: 分岔只在前三步；第 4–9 步两条路完全同构。步骤卡按所走路径报「第 N 步 / 共 9 步」。
+  handoff:
+    file: _NEXT_S1到S2.md
+    gate: 阶段_S1_选品可行性研究报告.md + 同名 HTML 生成后先跑 scripts/verify_s1_acceptance.py，退出码 0
+      才能写 stage_acceptance.S1
+    next_session: 在同一个产品项目里，新开一个 Codex 会话，贴 _NEXT_S1到S2.md 里的口令进入 S2
+  model_default: 6.1 Sol · 中；6.1 Sol · 高：候选取舍、深度市场与竞品分析
+  steps:
+  - n: 1
+    deferrable: false
+    skippable: false
+    kb:
+      required: true
+      calls:
+      - server: selection_knowledge_base
+        tool: kb_status
+        args: {}
+        once_per_stage: true
+      - server: selection_knowledge_base
+        tool: kb_scenario_rules
+        args:
+          selection_phase: 定模式
+    name: 意图确认 + 条件访谈
+    supply_first_name: 意图确认 + 资料接入
+    control:
+      id: intake_interview
+      model_ref:
+      - by_step
+      - S1
+      - '1'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - blocked
+      required_artifacts:
+      - intake_md
+      - intake_yaml
+    condition_first: 站点 / 售价 / 模板一行回完即写 00A（templates/s1_quick_select.yaml）
+    supply_first: 意图确认 + 资料接入（00C）
+    skill: starsky-fullchain-workflow（总控 intake_interview / data_intake）
+    mcp: []
+    model: 6.1 Sol · 中
+    pause: ''
+    artifacts:
+    - 00_总控/starsky-fullchain-workflow/00A_选品需求确认单.md
+    - 00A_quick_select.yaml
+  - n: 2
+    deferrable: false
+    skippable: false
+    kb:
+      required: true
+      calls:
+      - server: selection_knowledge_base
+        tool: kb_scenario_rules
+        args:
+          selection_phase: 大盘快扫
+      - server: selection_knowledge_base
+        tool: kb_scenario_rules
+        args:
+          selection_phase: 需求验证
+      - server: selection_knowledge_base
+        tool: kb_scenario_rules
+        args:
+          selection_phase: 季节窗口
+        when: seasonal
+    name: L1 品类市场筛选
+    supply_first_name: L0 供应可行性筛选
+    control:
+      id: condition_select
+      model_ref:
+      - by_step
+      - S1
+      - '2'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - blocked
+      required_artifacts:
+      - selection_md
+      - selection_yaml
+    condition_first: MCP 数据 → 条件过滤季节性 / 认证 / 竞争度 → 收敛品类
+    supply_first: L0 供应可行性筛选（供应链目录 → 候选）
+    skill: starsky-fullchain-workflow（condition_select）
+    mcp:
+    - Sorftime
+    - SIF
+    mcp_optional:
+    - xydc
+    - sellersprite
+    model: 6.1 Sol · 中
+    pause: ''
+    artifacts:
+    - 00_总控/starsky-fullchain-workflow/00_选品推荐报告.md
+    - 00_product_selection.yaml
+  - n: 3
+    deferrable: false
+    skippable: false
+    kb:
+      required: true
+      calls:
+      - server: selection_knowledge_base
+        tool: kb_scenario_rules
+        args:
+          selection_phase: 难度判定
+      - server: selection_knowledge_base
+        tool: kb_scenario_rules
+        args:
+          selection_phase: 竞争力
+    name: 品类内 Top 候选收敛
+    supply_first_name: L1 品类市场筛选
+    control:
+      id: candidate_convergence
+      model_ref:
+      - by_step
+      - S1
+      - '3'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - blocked
+      required_artifacts:
+      - candidates_md
+    condition_first: MCP 数据 → 2–3 个候选款型
+    supply_first: L1 品类市场筛选（MCP 数据 → 收敛品类）
+    skill: starsky-fullchain-workflow（condition_select 评分收敛）
+    mcp:
+    - Sorftime
+    - SIF
+    model: 6.1 Sol · 高
+    pause: ''
+    artifacts:
+    - 00_选品推荐报告.md 内候选表
+  - n: 4
+    deferrable: false
+    skippable: false
+    kb:
+      required: true
+      calls:
+      - server: selection_knowledge_base
+        tool: kb_scenario_rules
+        args:
+          selection_phase: 竞争力
+      - server: selection_knowledge_base
+        tool: kb_scenario_rules
+        args:
+          selection_phase: 灰手段识别
+      - server: selection_knowledge_base
+        tool: kb_diagnose
+        args: {}
+        bind:
+          symptom: s1_findings
+    name: 品类内选款 → 定到具体 SKU
+    control:
+      id: product_selection
+      model_ref:
+      - by_step
+      - S1
+      - '4'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - blocked
+      required_artifacts:
+      - market_md
+      - profile_yaml
+    skill: starsky-fullchain-workflow（总控）→ 拍板后 amazon-market-research 深挖
+    mcp:
+    - Sorftime
+    mcp_optional:
+    - SIF
+    model: 6.1 Sol · 高
+    pause: ⚠️ 要你拍板：回候选编号或写 SKU 名。只回「下一步 / 继续」不算拍板。
+    artifacts:
+    - S1_选品板块/amazon-market-research/01_市场穿透报告.md
+    - 01_product_profile.yaml
+  - n: 5
+    deferrable: false
+    skippable: false
+    kb:
+      required: true
+      calls:
+      - server: selection_knowledge_base
+        tool: kb_scenario_rules
+        args:
+          selection_phase: 货源供应
+    tools:
+    - 1688_scraper
+    name: 去 1688 反查货源 + 抓页面事实
+    control:
+      id: supplier_sourcing
+      model_ref:
+      - by_step
+      - S1
+      - '5'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - blocked
+      required_artifacts:
+      - shortlist_md
+      - product_md
+    skill: alibaba-supplier-evaluation（短名单 ≥5 家）→ 1688-product-detail-scraper（只写报告）
+    mcp:
+    - 1688_scraper
+    mcp_optional:
+    - Sorftime
+    model: 6 Luna · 中
+    pause: 助手自动发现货源并抓取；已有真实链接不再要你找。仅实际缺链接 / 登录 / 滑块时暂停；验证在 MCP Chromium 完成。
+    artifacts:
+    - S1_选品板块/alibaba-supplier-evaluation/02_1688供应商短名单.md
+    - S1_选品板块/1688-product-detail-scraper/03_1688产品资料_{商品ID}.md
+    - S1_选品板块/1688-product-detail-scraper/offer_{商品ID}/供应商产品报告_{商品ID}.html
+  - n: 6
+    deferrable: true
+    skippable: false
+    deferral_impact: 厂家待核项保持未知；下一阶段不得作为已验证产品事实。
+    kb:
+      required: true
+      calls:
+      - server: selection_knowledge_base
+        tool: kb_query
+        args:
+          tags:
+            selection_phase:
+            - 货源供应
+          text: 供应商 MOQ 交期
+    tools:
+    - 1688_scraper
+    name: 供应商回填
+    control:
+      id: supplier_data_merge
+      model_ref:
+      - by_step
+      - S1
+      - '6'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - partial
+      - deferred
+      - blocked
+      required_artifacts:
+      - request_md
+      - merge_md
+      - facts
+    skill: starsky-fullchain-workflow（supplier_data_request → supplier_data_merge）+
+      amazon-market-research 财务复算
+    mcp: []
+    model: 6 Luna · 中
+    pause: 要你沟通卖家；明确说后补则 deferred，生成 03B/facts 后自动进入第 7→8→9 步。缺项保留 null，已授权不重复问。厂家没回也要做产品
+      CT（product_ct.py）：按 1688 页面/图片写清本品材质、安装方式、结构，市场上的其他材质/形态进 not_this；S2 词库以 CT
+      为准。
+    artifacts:
+    - 03A_供应商数据补充清单.md
+    - 03B_供应商数据合并与复算.md
+    - 03_product_facts.yaml
+    - 03_product_ct.yaml
+    - 03_产品CT.md
+  - n: 7
+    deferrable: false
+    skippable: false
+    kb:
+      required: true
+      calls:
+      - server: selection_knowledge_base
+        tool: kb_scenario_rules
+        args:
+          selection_phase: 利润进场
+    name: L2 成本可行性
+    control:
+      id: cost_feasibility
+      model_ref:
+      - by_step
+      - S1
+      - '7'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - partial
+      - blocked
+      required_artifacts:
+      - cost_md
+      - cost_model
+      - facts
+    skill: amazon-variant-packaging-planner（组合与定价方案）→ amazon-market-research（scripts/s1_cost_model.py：成本账
+      + 组合定价对比 + 毛利率档位 + 允许到岸 + 广告可推性）
+    mcp:
+    - Sorftime
+    mcp_optional:
+    - SIF
+    - xydc
+    - 1688_scraper
+    model: 6.1 Sol · 中 + 计算脚本
+    pause: 首次确认物流费率：回头程/报关数字，或回「用默认」按模拟算（已存过就不问）；组合方案里挑主推由你定。
+    artifacts:
+    - S1_选品板块/amazon-market-research/05_成本账与广告可推性.md
+    - S1_选品板块/amazon-market-research/05_cost_model.yaml
+    - S1_选品板块/amazon-market-research/05_利润测算表.xlsx
+  - n: 8
+    deferrable: false
+    skippable: false
+    kb:
+      required: true
+      calls:
+      - server: selection_knowledge_base
+        tool: kb_scenario_rules
+        args:
+          selection_phase: 市场穿透
+      - server: selection_knowledge_base
+        tool: kb_scenario_rules
+        args:
+          selection_phase: 灰手段识别
+      - server: selection_knowledge_base
+        tool: kb_scenario_rules
+        args:
+          selection_phase: IP合规
+      - server: promotion_knowledge_base
+        tool: kb_scenario_rules
+        args:
+          lifecycle_stage: 立项期
+          scene: 新品首推
+    name: 市场穿透 + 竞品池 + IP 合规
+    control:
+      id: market_ip_review
+      model_ref:
+      - by_step
+      - S1
+      - '8'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - partial
+      - blocked
+      required_artifacts:
+      - market_md
+      - ip_md
+      - ruler_md
+      - ruler_yaml
+      - blacklist_yaml
+    skill: amazon-market-research（内部调 competition-difficulty-assessor / gray-tactic-detector）→
+      amazon-ip-risk-assessment（先跑 scripts/compliance_ruler.py 合规尺子）
+    mcp:
+    - Sorftime
+    - SIF
+    mcp_optional:
+    - xydc
+    - sellersprite
+    - promotion_knowledge_base
+    model: 6.1 Sol · 高
+    pause: ''
+    artifacts:
+    - 01_市场穿透报告.md
+    - S1_选品板块/amazon-ip-risk-assessment/04A_合规尺子.md
+    - S1_选品板块/amazon-ip-risk-assessment/04A_compliance_ruler.yaml
+    - S1_选品板块/amazon-ip-risk-assessment/04_IP风险排查与专利分析.md
+    - 04_compliance_blacklist.yaml
+  - n: 9
+    deferrable: false
+    skippable: false
+    kb:
+      required: true
+      calls:
+      - server: selection_knowledge_base
+        tool: kb_scenario_rules
+        args:
+          selection_phase: 综合报告
+      - server: selection_knowledge_base
+        tool: kb_list_gaps
+        args:
+          status: open
+      observations:
+        servers:
+        - selection_knowledge_base
+        required_when_real: true
+    name: S1 综合可行性报告 + HTML
+    control:
+      id: s1_report_delivery
+      model_ref:
+      - by_step
+      - S1
+      - '9'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - partial
+      - blocked
+      required_artifacts:
+      - report_md
+      - report_html
+      - decision_yaml
+    skill: starsky-fullchain-workflow（ip_decision）→ github-tabler-html-report（assets/salon_report.py）→
+      scripts/verify_s1_acceptance.py
+    mcp: []
+    model: 6.1 Sol · 高
+    pause: 先完整交付 MD＋HTML 和验收结果；待回填不阻塞出报告。正式进入 S2 另核验业务门禁及 go / no-go。
+    artifacts:
+    - 阶段_S1_选品可行性研究报告.md
+    - HTML/阶段_S1_选品可行性研究报告.html
+    - _NEXT_S1到S2.md
+  roadmap_version: legacy.m1

@@ -1,0 +1,28 @@
+schema_version: 1
+listing:
+  title: {max: 75, target: [68, 75], repeat: 2, brand_reserve: 12}  # brand_reserve: brand name + space, kept free while the brand is undecided
+  item_highlights: {max: 125, target: [110, 125]}
+  bullets: {max: 500, target: [200, 250]}
+  description: {target: [1200, 1500]}
+  description_html: {max: 2000, tags: [p, br, b, ul, li]}
+  search_terms: {max: 249, target: [230, 249]}
+  qa: {count: 5}
+legacy_listing:
+  title: {max: 75}
+  item_highlights: {max: 125}
+  bullets: {max: 500, target: [200, 260], warn_range: [180, 300], max_spread: 60}
+  description: {target: [1200, 2000]}
+  search_terms: {max: 249, target: [230, 249], fill_warn: 200}
+unverified:
+  standard_aplus: {text_max: null, image_specs: null, alt_text_max: null, reason: '尚无可核对模块数值；不据此宣称通过'}
+  premium_aplus: {text_max: null, image_specs: null, alt_text_max: null, reason: '尚无可核对模块数值；不据此宣称通过'}
+rules:
+  - {id: title_highlights, authority: official_policy, sites: [US], categories: [non_media], effective: '2026-07-27', source: 'https://sellercentral.amazon.com/seller-forums/discussions/t/33f0a42a-17f1-46ef-b110-ba7512a3c881', verified: '2026-10-15', review_days: 90, affected_stages: [S2], content: '非媒体标题75、亮点125；其他站点及实际后台能力须核对'}
+  - {id: title_format, authority: official_policy, sites: [US], categories: [applicable_categories], effective: '2025-01-21', source: 'https://sellercentral.amazon.com/seller-forums/discussions/t/b2b15728-0d43-453e-974f-59eb63f73059', verified: '2026-10-15', review_days: 90, affected_stages: [S2], content: '同一有意义词不超过两次；格式校验沿用明确符号规则'}
+  - {id: search_terms, authority: official_policy, sites: [US], categories: [generic_keywords], effective: null, source: 'https://sellercentral.amazon.com/help/hub/reference/external/G23501', verified: '2026-10-16', review_days: 90, affected_stages: [S2], content: '小于250字节；FAQ称索引侧不计空格标点。建议相关通用词、同义词、合理变体，避免重复，不放品牌/ASIN/主观或时效宣称'}
+  - {id: editorial_targets, authority: project_target, sites: [US], categories: [project], effective: '2026-10-16', source: 'R02 G1及用户ST自动补足授权', verified: '2026-10-16', review_days: 90, affected_stages: [S2], content: '所有listing.target均为项目目标；ST raw UTF8包含空格标点，249保守上限；核心复用/有界重复仅质量提示，不证明排名收益。bullets.max500为兼容校验项目上限，非通用官方承诺'}
+  - {id: html_representation, authority: project_target, sites: [US], categories: [project], effective: '2026-10-15', source: 'https://sellercentral.amazon.com/seller-forums/discussions/t/d2712113d23ba4ccaede5a1bfd81f945', verified: '2026-10-15', review_days: 90, affected_stages: [S2], content: '安全HTML仅本地表示，2000为项目限制；默认API描述纯文字，未证明后台接受全部五标签'}
+  - {id: shopping_assistant, authority: official_context, sites: [US], categories: [all], effective: '2026-05-13', source: 'https://www.aboutamazon.com/news/retail/amazon-rufus-ai-assistant-personalized-shopping-features', verified: '2026-10-16', review_days: 90, affected_stages: [S2, S3], content: 'Alexa for Shopping（前身 Rufus）；不据此推断其他站点或排名权重'}
+  - {id: intent_selfcheck, authority: project_method, sites: [US], categories: [project], effective: '2026-10-15', source: 'https://www.amazon.science/publications/cosmo-a-large-scale-e-commerce-common-sense-knowledge-generation-and-serving-system-at-amazon', verified: '2026-10-15', review_days: 90, affected_stages: [S2], content: '五类意图为编辑自检；COSMO/A9/A10无本项目可验证评分公式，不杜撰算法分'}
+  - {id: aplus_specs, authority: unverified, sites: [US], categories: [module_specific], effective: null, source: '待取得适用官方模块规格', verified: null, review_days: 90, affected_stages: [S3], content: '模块文字、图片与替代文本数值暂为null及原因；本轮不实现S3'}
+  - {id: compliance_lexicon, authority: user_source_and_review_supplement, sites: [US], categories: [scope_per_entry], effective: '2026-10-15', source: '用户敏感词与违规词避坑汇总-1227及单列Claude审核补充', verified: '2026-10-15', review_days: 90, affected_stages: [S2, S3, S4], content: '词库版本R02.1；源注释未经逐条官方复核，不宣称全为官方禁用词'}

@@ -1,0 +1,24 @@
+version: r03.s3
+note: 新案按本表；旧案保留 artifact_contract.md 原路径。媒体是否完整仍由原生逐图验收器判断。
+required:
+  product_manual:
+    - 00_产品资料/产品使用说明书.md
+    - 00_产品资料/产品使用说明书.html
+    - 00_产品资料/产品使用说明书.yaml
+    - 00_产品资料/说明书确认.json
+  visual_inventory:
+    - S3_视觉板块/amazon-listing-image-designer/素材盘点.yaml
+    - S3_视觉板块/amazon-listing-image-designer/素材盘点.html
+  visual_master_plan:
+    - S3_视觉板块/amazon-listing-image-designer/visual_suite.yaml
+    - S3_视觉板块/amazon-listing-image-designer/视觉总规划.html
+    - S3_视觉板块/amazon-listing-image-designer/视觉规划确认.json
+  listing_image_production:
+    - S3_视觉板块/出图_主副图/media_manifest.yaml
+  phase_s3:
+    - S3_视觉板块/_阶段总览/阶段_S3_视觉资产总览.md
+    - S3_视觉板块/_阶段总览/视觉报告生成记录.json
+    - S3_视觉板块/github-tabler-html-report/HTML/阶段_S3_视觉方案.html
+aplus:
+  premium: S3_视觉板块/出图_高级A+/media_manifest.yaml
+  standard: S3_视觉板块/出图_普通A+/media_manifest.yaml

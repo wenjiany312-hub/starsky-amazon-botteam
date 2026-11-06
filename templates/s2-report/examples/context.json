@@ -1,0 +1,118 @@
+{
+  "product_id": "DEMO-PAD-HOLDER",
+  "sku_product_map": {
+    "DEMO-PAD-01": "DEMO-PAD-HOLDER"
+  },
+  "product_name": "化妆棉收纳盒 · 合成演示，不可投放",
+  "marketplace": "US",
+  "as_of": "2026-09-12",
+  "policy_profile": "US_non_media_2026_07",
+  "fixture_kind": "synthetic_not_product_evidence",
+  "facts": [
+    {
+      "id": "F-01",
+      "text": "合成设定：有盖透明 PS 圆形化妆棉收纳盒，侧面取用开口；兼容直径不超过 6 cm 的圆形化妆棉。",
+      "status": "synthetic",
+      "source": "self-authored demo scenario, not real product evidence"
+    }
+  ],
+  "decisions": {
+    "KW-001": {
+      "product_match": "direct",
+      "fact_refs": [
+        "F-01"
+      ],
+      "reason": "合成设定直接支持产品类型/透明属性",
+      "product_root": "holder / dispenser",
+      "primary_type": "product",
+      "tags": [
+        "收纳",
+        "取用"
+      ]
+    },
+    "KW-002": {
+      "product_match": "direct",
+      "fact_refs": [
+        "F-01"
+      ],
+      "reason": "合成设定直接支持产品类型/透明属性",
+      "product_root": "holder / dispenser",
+      "primary_type": "product",
+      "tags": [
+        "收纳",
+        "取用"
+      ]
+    },
+    "KW-003": {
+      "product_match": "direct",
+      "fact_refs": [
+        "F-01"
+      ],
+      "reason": "合成设定直接支持产品类型/透明属性",
+      "product_root": "holder / dispenser",
+      "primary_type": "attribute",
+      "tags": [
+        "收纳",
+        "取用"
+      ]
+    },
+    "KW-004": {
+      "product_match": "adjacent",
+      "fact_refs": [
+        "F-01"
+      ],
+      "reason": "需要补产品资格或单独合规复核",
+      "product_root": "holder / dispenser",
+      "primary_type": "attribute",
+      "tags": [
+        "收纳",
+        "取用"
+      ]
+    },
+    "KW-005": {
+      "product_match": "adjacent",
+      "fact_refs": [
+        "F-01"
+      ],
+      "reason": "需要补产品资格或单独合规复核",
+      "product_root": "holder / dispenser",
+      "primary_type": "attribute",
+      "tags": [
+        "收纳",
+        "取用"
+      ]
+    },
+    "KW-006": {
+      "product_match": "adjacent",
+      "fact_refs": [
+        "F-01"
+      ],
+      "reason": "需要补产品资格或单独合规复核",
+      "product_root": "holder / dispenser",
+      "primary_type": "attribute",
+      "tags": [
+        "收纳",
+        "取用"
+      ]
+    },
+    "KW-007": {
+      "product_match": "adjacent",
+      "fact_refs": [
+        "F-01"
+      ],
+      "reason": "需要补产品资格或单独合规复核",
+      "product_root": "holder / dispenser",
+      "primary_type": "attribute",
+      "tags": [
+        "收纳",
+        "取用"
+      ]
+    }
+  },
+  "restrictions": [],
+  "next_actions": [
+    "优先检查产品类型词与真实取用方式是否一致。",
+    "待证词保留在研究表；不同产品类型和品牌另审。",
+    "新品测试先核对利润、库存与预算，本页只演示用途分配。"
+  ]
+}

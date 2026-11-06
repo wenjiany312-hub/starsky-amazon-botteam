@@ -1,0 +1,315 @@
+schema_version: "2.2"
+artifact_type: skill_folder_map
+updated: "2026-09-03"
+purpose: >
+  产品项目内的文件夹名必须能对上插件 skills/ 目录名。
+  板块夹用官方名（Windows 不能用冒号，所以 S1: 选品板块 → S1_选品板块）。
+  Skill 子夹必须与插件目录完全同名，一个 Skill 只写进自己的夹。
+
+naming:
+  stage_folder: "S{n}_{板块二字或三字}"
+  skill_folder: "与 ~/.codex / 插件 skills/<name>/ 完全一致"
+  forbidden_in_folder_names: [":", "*", "?", '"', "<", ">", "|"]
+  do_not_copy_plugin_into_product: true
+
+# 2.4.0 起两个编排 Skill 改名（去掉课程色彩的 salon）。旧产品夹里的旧名子夹只读兼容：
+# 读上游时新旧两个夹都找；新产物只写新名夹；校验器把旧名视为合法但不再新建。
+legacy_skill_names:
+  amazon-salon-workflow: starsky-fullchain-workflow
+  codex-amazon-salon-quickstart: starsky-singlepoint-intake
+
+product_root_only:
+  - path: workflow_state.yaml
+    why: 「继续」和换窗都读根上这一份
+  - path: "_NEXT_S1到S2.md"
+    why: 一段一份接力口令，禁止覆盖、禁止放进 Skill 夹
+  - path: "_NEXT_S2到S3.md"
+  - path: "_NEXT_S3到S4.md"
+  - path: "_NEXT_S4到S5.md"
+  - path: "seasonal_bindings.json"
+    why: 显式店铺、站点、SKU、ASIN到系列词库绑定；仅本地读取提醒
+  - path: "seasonal_notices.json"
+    why: 小型逐消费者通知去重与月度审计；不代表业务验收
+  - path: "00_导航/导航.html"
+    why: 星空导航自动生成的路线图 + 当前进度，单文件离线可打开；不要手改
+
+shared:
+  "_词库资产":
+    not_a_skill: true
+    use: 系列持久词库；keyword_asset.merge/select 统一写读，S3/S4 只预留契约。
+    writes: [keyword_master.yaml, asin_targets.yaml, brand_terms.yaml, negative_terms.yaml, compliance_custom.yaml, placement_map.yaml, "snapshots/YYYY-MM.yaml", "词库体检_YYYY-MM.md"]
+    contract: docs/keyword_asset_contract.md
+  "00_产品资料":
+    not_a_skill: true
+    use: 企业投喂原件、供应商回填保留原样；R03 产品使用说明书、状态截帧、拍摄清单和确认记录也归此处，与原始文件分开保存。
+  "00_总控":
+    skills:
+      starsky-amazon-agent:
+        writes: []
+        note: 入口只调度，不落产物
+      starsky-fullchain-workflow:
+        writes:
+          - 00A_选品需求确认单.md
+          - 00C_资料接入与优化建议报告.md
+          - 00C_data_intake_overlay.yaml
+          - enterprise_data_manifest.yaml
+          - runtime_data_overlay.yaml
+          - 企业资料包注入说明.md
+          - 00_选品推荐报告.md
+          - 00_product_selection.yaml
+          - 00_L1市场筛选_data_source_log.yaml
+      starsky-singlepoint-intake:
+        writes: ["00B_单点任务接入单.md", "00B_external_reference_manifest.yaml"]
+      category-adapter:
+        writes: ["category_profile.yaml", "enterprise_profile.yaml", "profile_routing.yaml"]
+
+stages:
+  S1:
+    official: "S1: 选品板块"
+    dir: "S1_选品板块"
+    skills:
+      jingpu-product-selection:
+        optional: true
+        writes: ["00_精铺灵感池.md", "00_精铺方向初筛.yaml"]
+        note: 精铺选品灵感层（快速选品卡选 E 时启用）；先出灵感池，方向定了再进市场穿透
+      amazon-trend-signal-scanner:
+        optional: true
+        writes: ["SCAN_失衡快扫候选.md", "signal_scan.yaml"]
+        note: >
+          阈值法灵感层（快速选品卡选 F 时启用，与 E 并列）：扫类目月销榜找四种失衡，出 5-10 个候选；
+          用户选定后逐个交 amazon-competition-difficulty-assessor，再进 condition_select。阈值读 templates/s1_thresholds.yaml。
+      amazon-market-research:
+        writes:
+          - 01_市场穿透报告.md
+          - 01_product_profile.yaml
+          - 05_竞品ASIN研究报告.md
+          - 05A_竞品候选确认表.xlsx
+          - competitor_asin_pool.yaml
+        note: 竞品 ASIN 池由市场数据 MCP 生成，S2 词表导出只读它；市场穿透步内调用 assessor 与 gray-tactic-detector（下两夹）
+      amazon-competition-difficulty-assessor:
+        writes: ["01A_运营难度双法评估.md", "difficulty_assessment.yaml", "01A_data_source_log.yaml"]
+        note: >
+          新品进场难度双法（评论区间法 / 广告效率法，任一通过即可），market_research 步内由 amazon-market-research 调用，
+          也可单点触发；判定回填 S1 报告 M05 硬门槛与 M10 竞品穿透子节「新品进场难度双法」。脚本 scripts/difficulty_calc.py 可机检。
+      amazon-gray-tactic-detector:
+        writes: ["01B_竞品信号判读.md", "competitor_signal_flags.yaml"]
+        note: 竞品灰手段公开信号判读（只识别不执行）：每个参照 ASIN 标可作参照 / 仅证明市场存在 / 不可参照；不可参照的剔出难度分母
+      amazon-seasonal-selection:
+        optional: true
+        writes: ["SEASON_季节档期候选.md", "seasonal_candidates.yaml"]
+        note: 季节/节日档期方法层：档期大表读 templates/seasonal_calendar.yaml；偏季品判定回填 M11，最晚下单日仍由插件算
+      amazon-variant-packaging-planner:
+        optional: true
+        writes: ["VARIANT_变体与定位方案.md", "variant_matrix.yaml"]
+        note: IP 后、PRD 前的变体矩阵 / 定位五框架 / 搭配与包装；只在供应链可得且不侵权范围内规划，作 PRD 与 S1 报告首发变体策略的上游
+      alibaba-supplier-evaluation:
+        writes: ["02_1688供应商短名单.md"]
+      1688-product-detail-scraper:
+        writes:
+          - 03_1688产品资料_{商品ID}.md
+          - 03_extracted_listing_facts.yaml
+          - 03A_供应商数据补充清单.md
+          - 03B_供应商数据合并与复算.md
+          - 03C_上架数据解释与续跑说明.md
+          - 03_product_facts.yaml
+          - 主图/ 详情图/ 视频封面/（抓取媒体，与报告同夹）
+        note: >
+          抓页主路径是必装本地 MCP 1688_scraper（见 templates/1688_mcp_policy.yaml）。
+          本夹只收规范报告与抓取媒体；不要把 MCP 源码或 pw_user_data 拷进产品目录。
+      amazon-ip-risk-assessment:
+        writes: ["04_IP风险排查与专利分析.md", "04_compliance_blacklist.yaml"]
+      amazon-product-development-prd:
+        optional: true
+        writes: ["PRD_产品开发需求书.md", "product_prd.yaml", "PRD_供应商询价与打样清单.md", "PRD_样品回填验收.md"]
+      github-tabler-html-report:
+        writes: ["HTML/阶段_S1_选品可行性研究报告.html", "HTML/05A_竞品候选确认报告.html"]
+        note: S1–S5 唯一 HTML 生成器；必须用 salon_report.py，禁止现场重写 CSS
+    overview: "_阶段总览"
+    overview_writes: ["阶段_S1_选品可行性研究报告.md", "decision_record_S1.yaml", "stage_acceptance.yaml"]
+
+  S2:
+    official: "S2: 文案板块"
+    dir: "S2_文案板块"
+    feed_dirs:
+      "_投喂_关键词导出/SIF": "用户半辅助导出，不是 Skill"
+      "_投喂_关键词导出/卖家精灵": "用户半辅助导出，不是 Skill"
+      "_投喂_关键词导出/西柚找词": "用户半辅助导出，不是 Skill"
+      "_投喂_关键词导出/keyword_export_manifest.yaml": "导出清单与 downstream_line（哪条线给下游），由总控写"
+    skills:
+      amazon-sif-keyword-research:
+        writes: &kw_writes
+          - 06_关键词库报告.md
+          - keyword_package.yaml
+          - keyword_package.validation.json
+          - 06_keyword_data_source_log.yaml
+          - 06A_合规并集.yaml
+          - 06B_场景库.yaml
+        note: 每源一夹、文件名相同；源身份靠夹名和 keyword_package.source_id 区分，不再给文件名加 _sif/_xiyou 后缀
+      amazon-sellersprite-keyword-research:
+        writes: *kw_writes
+      amazon-xiyou-keyword-research:
+        writes: *kw_writes
+      amazon-listing-copywriter:
+        writes:
+          - 07_Listing文案.md
+          - 07_listing_bullet_ledger.yaml
+          - 07A_Listing转化蓝图.yaml
+          - 07B_Listing校验输入.json
+          - 07C_Listing校验结果.json
+          - ct_mapping.json
+          - listing_report.html
+          - listing.md
+          - report_model.json
+          - manifest.json
+          - effective_listing.json
+          - search_terms_completion.json
+      github-tabler-html-report:
+        writes: ["HTML/06_关键词库报告.html", "HTML/06C_三源差异对照.html", "HTML/07_Listing文案.html"]
+        note: 词库与 Listing HTML；必须 salon_report.py。词库骨架=keyword_report_layout.md
+    overview: "_阶段总览"
+    overview_writes: ["阶段_S2_词库与文案总览.md", "06C_三源关键词差异对照.md", "stage_acceptance.yaml"]
+
+  S3:
+    official: "S3: 视觉板块"
+    dir: "S3_视觉板块"
+    generated_dirs:
+      "出图_主副图": "01_投喂包 / 02_回填（放这里、最终版、_历史版本）/ 03_返修包；共用视觉生产器维护"
+      "出图_高级A+": "同一父体共享一套模块规划，桌面和手机分别验收"
+      "出图_普通A+": "仅用户明确选择普通 A+ 后创建，按已确认模块画布验收"
+      "视频_即梦": "独立投喂和回填，后补不阻塞必需项交付"
+    skills:
+      amazon-visual-benchmark-learner:
+        writes: ["visual_playbook.yaml", "视觉学习报告.md"]
+      amazon-listing-image-designer:
+        writes:
+          - visual_suite.yaml
+          - 08_主副图出图文档.md
+          - 08B_视觉出图执行清单.md
+          - visual_style_tokens.yaml
+          - overlay_tasks.yaml
+          - visual_generation_manifest.yaml
+          - visual_generation_run_log.md
+          - visual_prompt_iterations.yaml
+          - 叠字渲染日志.yaml
+          - 色彩审计.yaml
+          - 产品垫图/
+          - visuals/
+      amazon-premium-aplus-designer:
+        writes: ["09_高级A+方案.md", "09_高级A+出图文档.md", "visual_prompt_iterations.yaml", "aplus_visuals/"]
+      amazon-standard-aplus-designer:
+        optional: true
+        writes: ["09S_标准A+方案.md", "09S_标准A+出图文档.md"]
+      amazon-brand-story-designer:
+        writes:
+          - 10_brand_story.yaml
+          - 10_品牌故事预览.html
+          - 10_品牌故事后台填写清单.md
+          - 10_preview_status.json
+          - 上传尺寸导出/
+      amazon-brand-store-designer:
+        writes:
+          - 11_brand_store.yaml
+          - 11_品牌旗舰店预览.html
+          - 11_品牌旗舰店搭建清单.md
+          - 11_preview_status.json
+          - 上传尺寸导出/
+      amazon-product-video-director:
+        writes:
+          - 14_产品视频分镜.md
+          - 14_video_prompt_package.yaml
+          - 14A_视频垫图资产清单.md
+          - 14B_视频执行清单.md
+          - 14C_视频回填验收.md
+          - video_generation_manifest.yaml
+          - 视频垫图/
+          - video_production_v2/
+          - video_exports/
+      github-tabler-html-report:
+        writes: ["HTML/阶段_S3_视觉方案.html"]
+        note: 必须 salon_report.py
+    overview: "_阶段总览"
+    overview_writes: ["阶段_S3_视觉资产总览.md", "stage_acceptance.yaml"]
+
+  S4:
+    official: "S4: 广告板块"
+    dir: "S4_广告板块"
+    skills:
+      amazon-ad-strategy-architect:
+        writes:
+          - 11A_广告参数确认单.md
+          - ad_strategy_input.yaml
+          - ad_strategy_brief.yaml
+          - 10_广告策略决策.md
+          - economics_scenarios.yaml
+          - strategy_review.yaml
+          - diagnostic_evidence_card.yaml
+          - feedback_record.yaml
+          - change_context_log.yaml
+          - handoff.yaml
+      amazon-ad-campaign-builder:
+        writes: ["11_新品广告架构.md", "ad_plan.yaml", "architecture_review.yaml", "handoff.yaml"]
+      amazon-bulk-upload:
+        writes: ["bulk/SP_bulk_upload_{date}_v1.xlsx", "bulk/Bulk上传说明.md", "bulk/bulk_manifest.yaml"]
+      amazon-bulk-upload-troubleshooter:
+        writes: ["bulk/Bulk上传报错分析_{date}.md", "bulk/SP_bulk_upload_{date}_v{n}.xlsx", "bulk/bulk_validation.yaml", "bulk/bulk_retry_actions.yaml"]
+        note: 排错与重试版本写自己的 bulk/，不回写 amazon-bulk-upload 的夹
+      amazon-ad-report-analyzer:
+        writes:
+          - 13_广告报表诊断_{date}.md
+          - 13A_广告优化变更建议.yaml
+          - ad_analysis.yaml
+          - optimization_actions.yaml
+          - monitoring_plan.yaml
+          - diagnostic_evidence_card.yaml
+      amazon-launch-plan:
+        optional: true
+        writes: ["Launch_Plan.md", "launch_plan.yaml", "Launch_计划实际偏差表.md"]
+      github-tabler-html-report:
+        writes: ["HTML/11_广告架构审阅版.html", "HTML/13_广告分析_{date}.html", "HTML/阶段_S4_广告架构.html"]
+        note: 必须 salon_report.py
+    overview: "_阶段总览"
+    overview_writes: ["阶段_S4_广告与上传总览.md", "stage_acceptance.yaml"]
+
+  S5:
+    official: "S5: 运营板块"
+    dir: "S5_运营板块"
+    feed_dirs:
+      "_投喂_巡检报表/领星导出": "用户手动导出的领星表；有领星 API 配置时不需要"
+      "_投喂_巡检报表/后台报表": "亚马逊后台导出：业务报告 / 库存 / 订单 / Listing / SP-SB-SD 广告报表。巡检自动读最新一批"
+    skills:
+      amazon-ops-workflow:
+        writes: ["ops_state.yaml"]
+        note: patrol_scope 记住站点/店铺/ASIN 范围与数据源，第二次「今日巡检」起不再问；模板 templates/ops_state.example.yaml
+      amazon-store-patrol-orchestrator:
+        writes: ["巡检/{date}_店铺巡检报告.md", "巡检/{date}_patrol_snapshot.yaml", "巡检/{date}_待审核动作清单.yaml"]
+        note: 日/周/月巡检都进 巡检/，靠日期前缀区分；不再写产品根或 D 盘固定目录
+      lingxing-erp-connector:
+        optional: true
+        writes: ["erp_extract/"]
+        note: 全店采集优先 STARSKY_OPS_ROOT；产品夹只作兼容。不得写密钥。
+      amazon-sp-api-connector:  # <!--flagship-->
+        optional: true  # <!--flagship-->
+        writes: []  # <!--flagship-->
+        note: 只读 LWA 说明与空模板；配置在 ~/.starsky-codex/config/  # <!--flagship-->
+      github-tabler-html-report:
+        writes: ["HTML/{date}_店铺巡检报告.html"]
+        note: 必须 salon_report.py
+    overview: "_阶段总览"
+    overview_writes: ["Ops_首次店铺快照.md", "stage_acceptance.yaml"]
+
+process_dir:
+  name: "运行数据"
+  where: "{产品根}/{stage.dir}/{skill}/运行数据/"
+  use: 过程脚本、临时 JSON、渲染中间件；不是产物，不进契约校验
+
+write_rule: >
+  调用某个 Skill 时，产物写入 {产品根}/{stage.dir}/{skill}/ 。
+  文件名仍用 artifact_contract 的 canonical 名，只是前面加上板块夹和 Skill 夹。
+  禁止写到产品根的 生成报告/。禁止把 A 的报告写进 B 的 Skill 夹。
+  读上游：只读上一板块对应 Skill 夹 + 根上那一份 _NEXT_。
+
+read_rule:
+  S2: ["S1_选品板块/amazon-ip-risk-assessment/", "S1_选品板块/amazon-market-research/competitor_asin_pool.yaml", "S1_选品板块/_阶段总览/", "_NEXT_S1到S2.md"]
+  S3: ["S2_文案板块/amazon-listing-copywriter/", "S2_文案板块/_阶段总览/", "_NEXT_S2到S3.md"]
+  S4: ["S1_选品板块/_阶段总览/", "S2_文案板块/_投喂_关键词导出/keyword_export_manifest.yaml", "S2_文案板块/{downstream_line 指定的关键词 Skill}/", "S2_文案板块/amazon-listing-copywriter/", "S3_视觉板块/_阶段总览/", "S3_视觉板块/amazon-listing-image-designer/visual_suite.yaml", "_NEXT_S3到S4.md", "S4_广告板块/_投喂_广告报表/"]
+  S5: ["S4_广告板块/", "_NEXT_S4到S5.md"]

@@ -1,0 +1,20 @@
+product_id: ''
+run_id: ''
+marketplace: US
+target_asin: null
+own_brands: []
+own_parent_asins: []
+target_price: null
+target_node_ids: []
+entry_keywords: [] # 从S1事实形成4–5个入口词并由本人确认，不默认写死工具类目
+form_tokens:
+  required_any: []
+  container_any: []
+form_bridge_tokens: [] # 如形态词与收纳词之间有本品真实描述连接词，按画像声明
+variant_tokens: []
+accessory_tokens: []
+substitute_tokens: []
+contains_goods_tokens: []
+price_band: [0.33, 3.0]
+pages: {serp: 3, name: 1, new: 1}
+enrich_limit: 60

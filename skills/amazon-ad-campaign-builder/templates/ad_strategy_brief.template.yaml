@@ -1,0 +1,112 @@
+schema_version: "2.0"
+contract_owner: amazon-ad-strategy-architect
+template_role: builder_required_projection_not_second_source_of_truth
+run_id: ""
+cycle_id: ""
+strategy_id: ""
+strategy_version: 1
+strategy_hash: ""
+run_mode: production  # production | demo_direct_run
+entry_mode: architecture  # architecture | architecture_revision
+market:
+  marketplace: US
+  currency: USD
+  timezone: America/Los_Angeles
+product:
+  product_id: ""
+  parent_asin: null
+  child_asins: []
+  seller_skus: []
+  form: standard  # standard | semi_standard | nonstandard | hybrid
+  form_evidence: []
+  lifecycle: new  # new | growth | mature | relaunch | seasonal
+  lifecycle_evidence: []
+business_goal:
+  primary: stable_orders
+  secondary: []
+  target_kpis: {}
+  guardrails: {}
+unit_economics:
+  selling_price: null
+  contribution_margin_before_ads: null
+  break_even_acos: null
+  target_acos: null
+  source_id: null
+  exploration_override:
+    confirmed: false
+    max_loss: null
+    expires_at: null
+    rollback_if: null
+budget:
+  daily_total: null
+  min_campaign_daily_budget: null
+complexity:
+  requested: auto  # auto | simple | standard | advanced
+  evidence_maturity: none  # none | limited | stable
+  max_campaigns_override: null
+ad_product_decisions:
+  SP:
+    capability: {status: unknown, evidence: [], missing: []}
+    readiness: {decision: unknown, decision_basis: [], recommended_scope: [], reevaluate_when: []}
+  SB:
+    capability: {status: unknown, evidence: [], missing: []}
+    readiness: {decision: unknown, decision_basis: [], recommended_scope: [], reevaluate_when: []}
+  SD:
+    capability: {status: unknown, evidence: [], missing: []}
+    readiness: {decision: unknown, decision_basis: [], recommended_scope: [], reevaluate_when: []}
+architecture:
+  campaign_blueprints:
+    - campaign_key: ""
+      campaign_name: ""
+      minimum_complexity: simple
+      required: false
+      loss_if_omitted: ""
+      ad_product: SP
+      scope_id: null
+      role: foundation
+      primary_goal: discovery
+      kpi: {}
+      advertised_skus: []
+      daily_budget_weight: 1
+      bidding_strategy: dynamic_down_only
+      placement_adjustments: {}
+      expected_cvr:
+        value: null
+        clicks: null
+        orders: null
+        source_type: unknown
+        source_id: null
+        window: {}
+        metric_semantic: null
+      bid_signal:
+        value: null
+        source_id: null
+        intent_factor: null
+        safety_factor: null
+        requested_action: hold
+      effective_bid_factors:
+        formula_mode: unverified
+        dynamic_multiplier: null
+        business_multiplier: null
+        audience_multiplier: null
+      ad_groups:
+        - ad_group_key: ""
+          name: ""
+          purpose: ""
+          target_sources: []
+          negative_sources: []
+          manual_targets: []
+          manual_negatives: []
+      success_rule: {}
+      stop_or_reduce_rule: {}
+      graduation_rule: {}
+      rollback_rule: {}
+      review_cadence: {}
+  transfers: []
+source_manifest: []
+source_conflicts: []
+assumptions: []
+case_defaults_overrides: {}
+revision:
+  prior_plan_file: null
+  change_reason: null

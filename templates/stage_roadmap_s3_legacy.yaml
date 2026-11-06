@@ -1,0 +1,348 @@
+S3:
+  name: 视觉板块
+  total_steps: 12
+  note: 本品转化套图（主副图+A+一次出，不默认识竞品图）→ 人工回填 → 视频必须先让用户选「三段短片 / 一段约10秒 / 先跳过」→ 品牌故事、旗舰店可选（现在做
+    / 以后再做 / 不做；以后再做会一直记为待办）。改图在 GPT 网页端 / Codex App 完成，不另设改图步骤。
+  handoff:
+    file: _NEXT_S3到S4.md
+    gate: S3 验收 → S3 HTML
+    next_session: 在同一个产品项目里，新开一个 Codex 会话进入 S4
+  model_default: 6 Luna · 中；6.1 Sol · 中：读图、剧本、提示词与视觉验收
+  steps:
+  - n: 1
+    kb: []
+    name: 承接 S2，核对闸门
+    skill: starsky-fullchain-workflow
+    mcp: []
+    model: 6 Luna · 中
+    pause: ''
+    control:
+      id: s3_intake
+      model_ref:
+      - by_step
+      - S3
+      - '1'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - blocked
+      required_artifacts:
+      - intake_md
+    deferrable: false
+    skippable: false
+  - n: 2
+    kb: []
+    name: 本品垫图分类占位（先看完全部 1688/实拍；尺寸图/套杆图必须占位；不自动抓竞品图）
+    skill: amazon-listing-image-designer
+    mcp: []
+    model: 6.1 Sol · 中
+    pause: ''
+    control:
+      id: visual_references
+      model_ref:
+      - by_step
+      - S3
+      - '2'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - blocked
+      required_artifacts:
+      - asset_manifest
+    deferrable: false
+    skippable: false
+  - n: 3
+    kb: []
+    name: 本品转化套图剧本（visual_suite.yaml：每格痛点+垫图+后台词；不另给人剧本 MD）
+    skill: amazon-listing-image-designer
+    mcp: []
+    model: 6.1 Sol · 中
+    pause: ''
+    artifacts:
+    - visual_suite.yaml
+    control:
+      id: visual_benchmark
+      model_ref:
+      - by_step
+      - S3
+      - '3'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - blocked
+      required_artifacts:
+      - suite_yaml
+    deferrable: false
+    skippable: false
+  - n: 4
+    kb: []
+    name: 主副图 + A+ 整套出图提示词
+    folders:
+    - label: 上传包 · 主副图（垫图+提示词，整夹拖进 GPT 网页端）
+      path: S3_视觉板块/GPT网页端投喂_主副图
+    - label: 上传包 · A+（垫图+提示词）
+      path: S3_视觉板块/GPT网页端投喂_A+
+    skill: amazon-listing-image-designer → amazon-premium-aplus-designer（无资质则 standard）
+    mcp: []
+    model: 6.1 Sol · 中
+    pause: ''
+    artifacts:
+    - 08_主副图出图文档.md
+    - 09_高级A+出图文档.md
+    - asset_manifest.yaml
+    - GPT网页端投喂_主副图/
+    - GPT网页端投喂_A+/
+    control:
+      id: listing_image_prompts
+      model_ref:
+      - by_step
+      - S3
+      - '4'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - blocked
+      required_artifacts:
+      - listing_prompt_md
+      - aplus_prompt_md
+      - asset_manifest
+      - listing_feed_md
+      - aplus_feed_md
+    deferrable: false
+    skippable: false
+  - n: 5
+    kb: []
+    name: 用户去 ChatGPT Images 出主副图套图
+    folders:
+    - label: 上传包 · 主副图
+      path: S3_视觉板块/GPT网页端投喂_主副图
+    - label: 回填 · 主副图（网页端下载的图放这里）
+      path: S3_视觉板块/GPT网页端回填_主副图
+    skill: 用户动手（ChatGPT Images 2.5 网页端，整套出）
+    mcp: []
+    model: 对应图像生成工具
+    pause: ⚠️ 整夹投喂 GPT网页端投喂_主副图/；必须 7 张，停在 6 张就续出 IMG07；下载的图原样放进 GPT网页端回填_主副图/
+    control:
+      id: listing_image_production
+      model_ref:
+      - by_step
+      - S3
+      - '5'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - deferred
+      - blocked
+      required_artifacts:
+      - listing_media_manifest
+    deferrable: false
+    skippable: false
+  - n: 6
+    kb: []
+    name: A+ 整套提示词核对（第4步已出则复用，不重写）
+    skill: amazon-premium-aplus-designer（无资质则 standard）
+    mcp: []
+    model: 6.1 Sol · 中
+    pause: ''
+    artifacts:
+    - 09_ 方案
+    control:
+      id: aplus_prompts
+      model_ref:
+      - by_step
+      - S3
+      - '6'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - blocked
+      required_artifacts:
+      - aplus_prompt_md
+      - aplus_assets_manifest
+    deferrable: false
+    skippable: false
+  - n: 7
+    kb: []
+    name: 用户去 ChatGPT Images 出 A+ 套图
+    folders:
+    - label: 上传包 · A+
+      path: S3_视觉板块/GPT网页端投喂_A+
+    - label: 回填 · A+（网页端下载的图放这里）
+      path: S3_视觉板块/GPT网页端回填_A+
+    skill: 用户动手（可与第5步同一会话连续出）
+    mcp: []
+    model: 对应图像生成工具
+    pause: ⚠️ 整夹投喂 GPT网页端投喂_A+/（09_ 不是 09S）；10 张，先 5 Desktop 再 5 Mobile；下载的图原样放进 GPT网页端回填_A+/
+    control:
+      id: aplus_production
+      model_ref:
+      - by_step
+      - S3
+      - '7'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - deferred
+      - blocked
+      required_artifacts:
+      - aplus_media_manifest
+    deferrable: false
+    skippable: false
+  - n: 8
+    kb: []
+    name: 视频形态确认（三段短片 / 一段约10秒 / 跳过）→ 分镜 + 提示词 + 挑垫图
+    folders:
+    - label: 上传包 · 视频（即梦提示词+关键帧）
+      path: S3_视觉板块/amazon-product-video-director/video_production_jimeng
+    - label: 视频垫图 · 关键帧
+      path: S3_视觉板块/amazon-product-video-director/视频垫图/关键帧
+    skill: amazon-product-video-director
+    mcp: []
+    model: 6.1 Sol · 中
+    pause: ⚠️ 要你回编号：1=三段短视频（约5秒×3）  2=一段约10秒整片（建议）  3=先不做视频（继续品牌故事/旗舰店，可选）
+    artifacts:
+    - 14A_ / 14_ / 14B_
+    control:
+      id: video_package
+      model_ref:
+      - by_step
+      - S3
+      - '8'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - blocked
+      required_artifacts:
+      - video_prompt_md
+      - video_package_yaml
+    deferrable: false
+    skippable: false
+  - n: 9
+    kb: []
+    name: 用户去即梦生成 → 回填到 video_exports/
+    folders:
+    - label: 回填 · 视频片段（即梦下载的 mp4 放这里）
+      path: S3_视觉板块/amazon-product-video-director/video_exports/clips
+    - label: 回填 · 成片
+      path: S3_视觉板块/amazon-product-video-director/video_exports
+    skill: 用户动手（jimeng.jianying.com）
+    mcp: []
+    model: 对应视频生成工具
+    pause: ⚠️ 按第8步选定的形态投喂；选 3 跳过则本步 deferred
+    control:
+      id: video_production
+      model_ref:
+      - by_step
+      - S3
+      - '9'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - deferred
+      - blocked
+      required_artifacts:
+      - video_media_manifest
+    deferrable: true
+    skippable: false
+    deferral_impact: S4 不得将 SB 视频广告标为可用；视频补齐并独立验收后再启用。
+    unavailable_capabilities:
+    - sb_video
+  - n: 10
+    kb: []
+    name: 品牌故事（可选）：方案 → 从这里开始.html 预览 → 出图回填 → 上传包
+    folders:
+    - label: 上传包 · 品牌故事（从这里开始.html + 上传图片 + 文案）
+      path: S3_视觉板块/amazon-brand-story-designer/品牌故事上传包
+    - label: 出图包 · 品牌故事（整夹拖进 GPT 网页端 / Codex App）
+      path: S3_视觉板块/GPT网页端投喂_品牌故事
+    - label: 回填 · 品牌故事（网页端下载的图放这里）
+      path: S3_视觉板块/GPT网页端回填_品牌故事
+    skill: amazon-brand-story-designer（scripts 在 _brand_visual_contract/brand_preview.py）
+    mcp: []
+    mcp_optional:
+    - SIF
+    - xydc
+    model: 6.1 Sol · 中
+    pause: ⚠️ 要你三选一：1=现在做  2=以后再做（记为待办，随时说「做品牌故事」补）  3=不做；做就要你看「从这里开始.html」回「可以」或说改哪里
+    artifacts:
+    - S3_视觉板块/amazon-brand-story-designer/品牌故事上传包/从这里开始.html
+    - S3_视觉板块/amazon-brand-story-designer/10_brand_story.yaml
+    control:
+      id: brand_story
+      model_ref:
+      - by_step
+      - S3
+      - '10'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - deferred
+      - skipped
+      - blocked
+      required_artifacts:
+      - brand_story_page
+      - brand_story_status
+    deferrable: true
+    skippable: true
+    deferral_impact: 下一阶段不得把待补项标为已具备，补齐后独立验收。
+  - n: 11
+    kb: []
+    name: 品牌旗舰店（可选）：风格与页面结构 → 从这里开始.html 预览 → 出图回填 → 上传包
+    folders:
+    - label: 上传包 · 旗舰店（从这里开始.html + 上传图片 + 搭建步骤）
+      path: S3_视觉板块/amazon-brand-store-designer/旗舰店上传包
+    - label: 出图包 · 旗舰店
+      path: S3_视觉板块/GPT网页端投喂_旗舰店
+    - label: 回填 · 旗舰店（网页端下载的图放这里）
+      path: S3_视觉板块/GPT网页端回填_旗舰店
+    skill: amazon-brand-store-designer（scripts 在 _brand_visual_contract/brand_preview.py）
+    mcp: []
+    model: 6.1 Sol · 中
+    pause: ⚠️ 要你三选一：1=现在做  2=以后再做（记为待办，随时说「做旗舰店装修」补）  3=不做；需要至少 3 个同系列产品；做就要你看「从这里开始.html」确认版式
+    artifacts:
+    - S3_视觉板块/amazon-brand-store-designer/旗舰店上传包/从这里开始.html
+    - S3_视觉板块/amazon-brand-store-designer/11_brand_store.yaml
+    control:
+      id: brand_store
+      model_ref:
+      - by_step
+      - S3
+      - '11'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - deferred
+      - skipped
+      - blocked
+      required_artifacts:
+      - brand_store_page
+      - brand_store_status
+    deferrable: true
+    skippable: true
+    deferral_impact: 下一阶段不得把待补项标为已具备，补齐后独立验收。
+  - n: 12
+    kb: []
+    name: S3 验收 → S3 HTML
+    skill: starsky-fullchain-workflow → github-tabler-html-report
+    mcp: []
+    model: 6.1 Sol · 中 + 验收脚本
+    pause: ⚠️ 通过后 _NEXT_S3到S4.md
+    control:
+      id: s3_report_delivery
+      model_ref:
+      - by_step
+      - S3
+      - '12'
+      - recommended
+      allowed_outcomes:
+      - complete
+      - partial
+      - blocked
+      required_artifacts:
+      - report_md
+      - report_html
+      - visual_status_yaml
+    deferrable: false
+    skippable: false
+  roadmap_version: legacy.s3.r02
+  delivery_step: 12

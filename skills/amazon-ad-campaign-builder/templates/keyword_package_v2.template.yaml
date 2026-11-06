@@ -1,0 +1,52 @@
+schema_version: "2.0"
+package_id: ""
+package_version: 1
+package_hash: ""
+marketplace: US
+product_id: ""
+source_mode: sif  # sif | sellersprite | xiyou | user | mixed_with_lineage
+data_sources: []
+records:
+  - keyword_id: KW-001
+    keyword: ""
+    labels: []
+    metrics:
+      cpc:
+        value: null
+        currency: USD
+        source_id: ""
+        period: {}
+        semantic: third_party_cpc_signal
+      cvr:
+        value: null
+        source_id: ""
+        period: {}
+        semantic: third_party_estimate_not_amazon_account_cvr
+    lineage: []
+pools:
+  exact: []
+  phrase_feature: []
+  phrase_scenario: []
+  broad_discovery: []
+negative_records:
+  - negative_id: NEG-001
+    expression: ""
+    match_type: phrase
+    reason: ""
+    lineage: []
+negative_pools:
+  exact: []
+  phrase: []
+asin_records:
+  - asin_id: ASIN-001
+    asin: ""
+    labels: []
+    metrics: {}
+    lineage: []
+asin_pools:
+  pat_candidates: []
+  defense_candidates: []
+compliance:
+  blacklist_source: null
+  removed_terms: []
+

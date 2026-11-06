@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "keyword_package_selection.schema.json",
+  "title": "Keyword Package Single-Source Selection",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "selection_id",
+    "run_id",
+    "marketplace",
+    "product_id",
+    "status",
+    "selected_package",
+    "selection_evidence",
+    "authorization"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "selection_id": {"type": "string", "minLength": 1},
+    "run_id": {"type": "string"},
+    "marketplace": {"type": "string", "minLength": 1},
+    "product_id": {"type": "string"},
+    "status": {"enum": ["selected", "conditional", "blocked"]},
+    "selected_package": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["package_id", "package_version", "package_hash", "source_mode", "relative_path"],
+      "properties": {
+        "package_id": {"type": "string", "minLength": 1},
+        "package_version": {"type": "integer", "minimum": 1},
+        "package_hash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+        "source_mode": {"enum": ["sif", "sellersprite", "xiyou"]},
+        "relative_path": {"type": "string", "minLength": 1}
+      }
+    },
+    "selection_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["selected_by", "selected_at", "rationale", "compared_package_refs", "unresolved_conflicts"],
+      "properties": {
+        "selected_by": {"enum": ["user", "orchestrator"]},
+        "selected_at": {"type": "string"},
+        "rationale": {"type": "string"},
+        "compared_package_refs": {"type": "array", "items": {"type": "object"}},
+        "unresolved_conflicts": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "authorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["strategy_handoff", "bulk_upload"],
+      "properties": {
+        "strategy_handoff": {"type": "boolean"},
+        "bulk_upload": {"const": false}
+      }
+    },
+    "notes": {"type": "array", "items": {"type": "string"}}
+  }
+}

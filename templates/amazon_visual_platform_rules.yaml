@@ -1,0 +1,43 @@
+schema_version: 1
+image_targets:
+  main: [2000, 2000]
+  secondary: [1600, 2000]
+  aplus_desktop: [1464, 600]
+  aplus_mobile: [600, 450]
+  main_product_ratio: 0.85
+  mobile_preview_width: 390
+  disclaimer_min_preview_height: 10
+  ocr_confidence: 0.85
+  color_delta_ab_max: 5
+  neutral_color_delta_l_max: 25
+rules:
+  - id: ai_performer_metadata
+    authority: official_policy
+    sites: [worldwide]
+    categories: [applicable_product_media]
+    effective: null
+    source: https://sellercentral.amazon.com/help/hub/reference/external/GFXHCHYZRGJRBZA5?locale=en_US
+    verified: '2026-10-16'
+    review_days: 30
+    affected_stages: [S3]
+    content: 写实 AI 人物须在上传前向 XMP dc:subject 的 RDF Bag 添加 contains-synthetic-performer，并显式读回；保留原关键词。官方公告豁免仅真人及无人物等情况，不把真人拍摄说成 AI 生成。
+  - id: r03_visual_targets
+    authority: project_target
+    sites: [project]
+    categories: [project_visuals]
+    effective: '2026-10-16'
+    source: 用户修改包_R03_v2 的 O1-O8
+    verified: '2026-10-16'
+    review_days: 30
+    affected_stages: [S3]
+    content: 本表尺寸、占比、OCR与手机可读阈值是项目验收口径，不冒充所有站点/模块的官方统一上限；AI 生成画面中的写实手等人体局部保守纳入标记，无法判定则待复核。
+  - id: video_ai_performer_metadata_pending
+    authority: unverified
+    sites: [project]
+    categories: [video]
+    effective: null
+    source: 用户修改包_R03_v2 U4，视频人物元数据做法待核
+    verified: null
+    review_days: 30
+    affected_stages: [S3]
+    content: 视频实际复核记录是否含手部；视频是否适用及如何写 AI 人物标记尚待核实，不套用 PNG/JPEG 规则，不声称已写入视频标记。

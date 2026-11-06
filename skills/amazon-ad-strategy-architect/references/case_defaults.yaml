@@ -1,0 +1,53 @@
+schema_version: "1.0"
+purpose: "历史课程与案例参数登记；默认不进入生产判断"
+policy:
+  auto_apply: false
+  required_fields: [source_id, value, applicability, invalidation, override]
+  production_use: "只有用户/企业规则明确采用且通过当前账户、利润、库存和样本校验后才可使用"
+defaults:
+  - default_id: CD-SKAG-COUNT
+    source_id: apollo_case_library
+    value: [3, 5]
+    unit: keywords
+    applicability: "历史集中流量案例的单词/小组测试规模"
+    invalidation: "预算、流量入口、搜索量或管理能力不同"
+    override: "当前目标词池和预算"
+  - default_id: CD-ASIN-COUNT
+    source_id: apollo_case_library
+    value: [10, 20]
+    unit: asins
+    applicability: "历史商品定位样本"
+    invalidation: "竞品池规模、相关性或预算不同"
+    override: "当前 competitor_asin_pool 和测试预算"
+  - default_id: CD-WINDOWS
+    source_id: apollo_and_supplement_cases
+    value: [3, 7, 14, 30]
+    unit: days
+    applicability: "操作/观察/稳定性示例"
+    invalidation: "归因、客单价、订单量、季节或活动窗口不同"
+    override: "当前归因与业务周期"
+  - default_id: CD-NEGATIVE-CLICKS
+    source_id: amazon_official_recommendation_snapshot_20260809
+    value: 20
+    unit: clicks
+    applicability: "官方通用否定前评估建议，不是硬阈值"
+    invalidation: "明显不相关、归因未闭合、企业规则或经济阈值不同"
+    override: "相关性 + 允许 CPA + 样本可靠性"
+  - default_id: CD-CAMPAIGN-COUNT
+    source_id: historical_builder_and_apollo_cases
+    value: [3, 6, 8, 9]
+    unit: campaigns
+    applicability: "简版/成熟/新品案例层数"
+    invalidation: "策略角色和数据量不支持"
+    override: "complexity selector"
+  - default_id: CD-BID-BUDGET-PLACEMENT
+    source_id: historical_cases
+    value: "various USD and percentage examples"
+    unit: mixed
+    applicability: "仅用于教学代入"
+    invalidation: "任何真实账户"
+    override: "经济公式、当前 CPC/CVR、账户规则"
+rejected_defaults:
+  - "COSMO 机制下固定 2–5 倍竞价"
+  - "错拼/叠词/竞品品牌词作为默认捡漏"
+  - "以单一点击/CVR/ROAS 阈值自动暂停"

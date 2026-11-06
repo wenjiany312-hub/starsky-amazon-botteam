@@ -1,0 +1,6 @@
+# MCP 分配表：哪个角色能用哪些 MCP（由运营总监按 amazon-mcp-onboarding 生成和维护）
+# 默认值来自 mcp/third_party.yaml；老板说「给 XX 加 YY / 去掉 YY」时改这里
+schema_version: "1.0"
+updated_at: ""
+connected: {}      # 例：sif: {status: 实际可调用, checked_at: "2026-11-04 20:00", tool: "..."}
+assignment: {}     # 例：scout: [sif, sorftime, sellersprite]；空 = 按 third_party.yaml 的默认 roles

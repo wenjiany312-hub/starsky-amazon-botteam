@@ -1,0 +1,32 @@
+schema_version: "1.0"
+edition: starsky-v2
+enterprise_id: ""
+enterprise_name: ""
+profile_version: "1.0.0"
+marketplaces: ["US"]
+default_category_id: ""
+shared_rules:
+  brand_voice: []
+  compliance_non_overridable: []
+  supplier_thresholds: []
+  margin_model: {}
+  naming_conventions: {}
+data_sources:
+  keyword_history: []
+  advertising_history: []
+  visual_references: []
+  supplier_sop: []
+data_pack:
+  source_mode: "external_read_only"
+  external_root: ""
+  manifest_path: ""
+  shared_source_ids: []
+  category_source_ids: []
+  source_precedence: "current_facts_and_mcp_over_history"
+  last_indexed_at: ""
+categories: []
+validation:
+  status: "draft"  # draft | validated | retired
+  validated_by: ""
+  validated_at: ""
+updated_at: ""

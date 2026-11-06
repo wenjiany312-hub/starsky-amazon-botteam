@@ -1,0 +1,195 @@
+{
+  "schema_version": "1.0",
+  "fixture_kind": "synthetic_not_product_evidence",
+  "notes": [
+    "Review status is a synthetic test input, not human approval of a real product."
+  ],
+  "blacklist_terms": [
+    "medical grade"
+  ],
+  "keyword_rows": [
+    {
+      "keyword_id": "kw-ring",
+      "keyword": "key ring"
+    }
+  ],
+  "facts": [
+    {
+      "id": "synthetic-fact-ring",
+      "status": "synthetic",
+      "source": "self-authored test fixture; no live product evidence"
+    }
+  ],
+  "skus": [
+    {
+      "sku": "SYNTHETIC-KEYRING",
+      "title": "NOVA Split Key Ring",
+      "item_highlights": "Round profile; keeps small essentials together",
+      "bullets": [
+        "KEY ORGANIZATION: Group your keys in one place.",
+        "ROUND PROFILE: A circular shape connects compatible items.",
+        "SPLIT DESIGN: Thread a key through the opening.",
+        "DAILY ROUTINE: Keep a set together when leaving home.",
+        "FIT CHECK: Compare your key hole with the ring before use."
+      ],
+      "description": "Organize a set of keys on this split ring. Check the opening of each key before attaching it.",
+      "search_terms": "keychain holder pocket accessory",
+      "qa": [
+        {
+          "question": "What is included?",
+          "answer": "One split ring."
+        }
+      ],
+      "review_metadata": {
+        "schema_version": "1.0",
+        "fields": {
+          "title": {
+            "translation_zh": "NOVA 开口钥匙环",
+            "keyword_ids": [
+              "kw-ring"
+            ],
+            "buyer_questions": [
+              "What does this field tell the buyer about the ring?"
+            ],
+            "fact_refs": [
+              "synthetic-fact-ring"
+            ],
+            "voc_refs": [],
+            "pending_items": [],
+            "review_status": "reviewed"
+          },
+          "item_highlights": {
+            "translation_zh": "圆形外观；把小件日常用品集中在一起",
+            "keyword_ids": [],
+            "buyer_questions": [
+              "What does this field tell the buyer about the ring?"
+            ],
+            "fact_refs": [
+              "synthetic-fact-ring"
+            ],
+            "voc_refs": [],
+            "pending_items": [],
+            "review_status": "reviewed"
+          },
+          "description": {
+            "translation_zh": "用这款开口环整理一组钥匙。安装前检查每把钥匙的开口。",
+            "keyword_ids": [],
+            "buyer_questions": [
+              "What does this field tell the buyer about the ring?"
+            ],
+            "fact_refs": [
+              "synthetic-fact-ring"
+            ],
+            "voc_refs": [],
+            "pending_items": [],
+            "review_status": "reviewed"
+          },
+          "search_terms": {
+            "translation_zh": "钥匙链 收纳 随身 配件",
+            "keyword_ids": [],
+            "buyer_questions": [
+              "What does this field tell the buyer about the ring?"
+            ],
+            "fact_refs": [
+              "synthetic-fact-ring"
+            ],
+            "voc_refs": [],
+            "pending_items": [],
+            "review_status": "reviewed"
+          },
+          "bullets.1": {
+            "translation_zh": "钥匙整理：把钥匙集中在一处。",
+            "keyword_ids": [],
+            "buyer_questions": [
+              "What does this field tell the buyer about the ring?"
+            ],
+            "fact_refs": [
+              "synthetic-fact-ring"
+            ],
+            "voc_refs": [],
+            "pending_items": [],
+            "review_status": "reviewed"
+          },
+          "bullets.2": {
+            "translation_zh": "圆形外观：环形结构连接适配的物品。",
+            "keyword_ids": [],
+            "buyer_questions": [
+              "What does this field tell the buyer about the ring?"
+            ],
+            "fact_refs": [
+              "synthetic-fact-ring"
+            ],
+            "voc_refs": [],
+            "pending_items": [],
+            "review_status": "reviewed"
+          },
+          "bullets.3": {
+            "translation_zh": "开口设计：将钥匙穿过开口。",
+            "keyword_ids": [],
+            "buyer_questions": [
+              "What does this field tell the buyer about the ring?"
+            ],
+            "fact_refs": [
+              "synthetic-fact-ring"
+            ],
+            "voc_refs": [],
+            "pending_items": [],
+            "review_status": "reviewed"
+          },
+          "bullets.4": {
+            "translation_zh": "日常使用：离家时把一组钥匙放在一起。",
+            "keyword_ids": [],
+            "buyer_questions": [
+              "What does this field tell the buyer about the ring?"
+            ],
+            "fact_refs": [
+              "synthetic-fact-ring"
+            ],
+            "voc_refs": [],
+            "pending_items": [],
+            "review_status": "reviewed"
+          },
+          "bullets.5": {
+            "translation_zh": "适配检查：使用前比对钥匙孔与钥匙环。",
+            "keyword_ids": [],
+            "buyer_questions": [
+              "What does this field tell the buyer about the ring?"
+            ],
+            "fact_refs": [
+              "synthetic-fact-ring"
+            ],
+            "voc_refs": [],
+            "pending_items": [],
+            "review_status": "reviewed"
+          },
+          "qa.1.question": {
+            "translation_zh": "包含什么？",
+            "keyword_ids": [],
+            "buyer_questions": [
+              "What does this field tell the buyer about the ring?"
+            ],
+            "fact_refs": [
+              "synthetic-fact-ring"
+            ],
+            "voc_refs": [],
+            "pending_items": [],
+            "review_status": "reviewed"
+          },
+          "qa.1.answer": {
+            "translation_zh": "一个开口环。",
+            "keyword_ids": [],
+            "buyer_questions": [
+              "What does this field tell the buyer about the ring?"
+            ],
+            "fact_refs": [
+              "synthetic-fact-ring"
+            ],
+            "voc_refs": [],
+            "pending_items": [],
+            "review_status": "reviewed"
+          }
+        }
+      }
+    }
+  ]
+}

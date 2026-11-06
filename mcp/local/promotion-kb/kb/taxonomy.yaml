@@ -1,0 +1,77 @@
+# 产品推广知识库 · 分类法（受控词表）· v0.9 初稿（待终审后 learner 正式启用）
+# 规则沿用 04-广告知识库：想加新枚举改这里再 validate，禁止在卡片里随手造词。
+# 证据层级与引文纪律与姊妹库完全一致，保证跨库引用兼容。
+
+version: "0.9"
+
+# ---- 证据层级（决定 confidence 上限；写卡时必填 authority）----
+authority:
+  A: {name: 官方事实,   desc: "Amazon Seller Central / Ads 官方页面、官方培训、账户界面实拍、ABA/商机探测器官方数据", confidence_range: [0.80, 1.00]}
+  B: {name: 权威课程原文, desc: "系统性付费课程 / 头部服务商方法论的明确原文（保留页码/时间码）", confidence_range: [0.55, 0.85]}
+  C: {name: 第三方经验,  desc: "博主、社群、个人笔记、单案例复盘", confidence_range: [0.30, 0.65]}
+  D: {name: 项目推论,    desc: "由多源归纳/推导出的结论（必须写验证方法）", confidence_range: [0.20, 0.60]}
+  V: {name: 厂商宣称,    desc: "工具/服务商的能力与效果宣称——隔离，不进决策规则", confidence_range: [0.00, 0.30]}
+
+# ---- 知识类型 ----
+knowledge_type:
+  policy:      "官方规范/政策（能不能做、资格、限制）"
+  mechanism:   "平台机制（排名逻辑、流量分配、广告与自然位关系、权重）"
+  inference:   "算法推论（未被官方明说的部分，必标 D 级并写验证方法）"
+  playbook:    "实操打法（场景化的结构/词/出价/预算/节奏）"
+  threshold:   "阈值经验（闸门线、复盘周期——必标经验值与来源日期）"
+  diagnostic:  "诊断规则（症状 → 原因树 → 动作，对应场景手册）"
+  anti_pattern: "反面案例/常见误区"
+  glossary:    "术语定义"
+  formula:     "指标公式与口径"
+  case_study:  "自有实战复盘切片（带真实数据的实战案例，产品细节在店铺运营库）"
+
+# ---- 标签维度（多选；至少填 product_type / lifecycle_stage / scene / keyword_tier 四维，不适用填 [通用]）----
+tags:
+  product_type: [标品, 非标品, 半标品, 通用]
+  lifecycle_stage: [立项期, 新品期D0-30, 成长期D30-90, 成熟期D90+, 衰退清仓, 断货重启, 通用]
+  scene: [新品首推, 断货重推, 老品反超, 排名恢复, 换链接重上, 旺季大促, 淡季维持, 通用]
+  keyword_tier: [核心大词, 次核心, 精准长尾, 流量词, 防御词, 捡漏词, 通用]
+  market_signal: [ABA排名, 搜索量趋势, 竞争度, CPC, 转化基准, 市场份额, 季节性, 通用]
+  decision_metric: [曝光, CTR, CVR, CPC, ACOS, TACOS, 自然位, BSR, 库存天数, 评价数, 价格, 通用]
+  category_family: [宠物, 家居, 服装, 3C, 美妆, 户外园艺, 玩具, 母婴, 通用]   # 首战宠物
+  marketplace: [US, CA, UK, DE, JP, 通用]
+  channel: [站内广告, 站内自然, 站外Deal, 达人合作, 促销活动, 关联流量, 通用]
+  data_source: [SIF, Sorftime, 西柚, 卖家精灵, SP-API, Ads-API, H10, ABA, 商机探测器, Vine, 本地表格, 通用]
+  topic:   # 与 learning_plan.yaml 的主题 ID 对齐，用于覆盖度统计
+    - lifecycle_overview        # 生命周期总论与阶段判定
+    - launch_new_product        # 新品首推打法
+    - standard_vs_nonstandard   # 标品vs非标品打法差异（2026-09-27 增补）
+    - growth_scale              # 成长期放量
+    - mature_defense            # 成熟期稳利润与防御
+    - decline_clearance         # 衰退清仓
+    - restock_relaunch          # 断货重推
+    - overtaking_battle         # 老品被超越反超战
+    - ranking_recovery          # 关键词掉位恢复/上首页
+    - relink_relaunch           # 换链接重上
+    - peak_season               # 旺季大促
+    - off_season                # 淡季维持
+    - keyword_tiering           # 关键词分层与词库搭建
+    - keyword_research_tools    # H10/SIF/卖家精灵归类方法
+    - aba_analysis              # ABA 排名与竞争分析
+    - competition_assessment    # 竞争难度评估
+    - keyword_dynamic_control   # 词的动态调动（升降级/预算迁移）
+    - pricing_strategy          # 定价与促销配合
+    - review_velocity           # 评价与Vine配合
+    - offsite_traffic           # 站外流量配合
+    - promotion_sop             # 推广SOP与复盘节奏
+    - diagnostics_gates         # 指标闸门与诊断规则
+    - case_studies              # 自有案例复盘
+    - pet_category              # 宠物类目专题
+    - official_updates          # 近12个月官方更新追踪
+    - listing_assets            # 图文资产：主图/副图/A+/品牌旗舰店（官方规范）
+
+# ---- 卡片状态 ----
+status: [draft, reviewed, superseded, retracted]
+
+# ---- 引文与时效纪律 ----
+rules:
+  quote_max_words: 60
+  min_sources_for_reviewed: 1
+  freshness_warn_days: 365
+  thresholds_must_have_source_date: true
+  cross_ref_ads_kb: true    # 广告执行细节一律引用 04 库 KC-xxxx，不在本库重复建卡

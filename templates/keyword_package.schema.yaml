@@ -1,0 +1,39 @@
+schema_version: "1.0"
+edition: starsky-v2
+source: "sif|sellersprite|xiyou"
+marketplace: "US"
+product_id: ""
+mcp_status: "used"  # used | partial | skipped
+data_sources: []
+competitor_asin_pool_source: "S1_选品板块/amazon-market-research/competitor_asin_pool.yaml"
+keyword_export_manifest_source: "S2_文案板块/_投喂_关键词导出/keyword_export_manifest.yaml"
+title_pool: []
+item_highlights_pool: []
+bullet_pools:
+  benefits: []
+  features: []
+  scenarios: []
+  audience: []
+  compatibility: []
+search_terms_pool: []
+advertising_pools:
+  exact: []
+  phrase_feature: []
+  phrase_scenario: []
+  broad_discovery: []
+  asin_targets: []
+  brand_terms_for_targeting_only: []
+negative_pools:
+  exact: []
+  phrase: []
+compliance:
+  blacklist_source: "S1_选品板块/amazon-ip-risk-assessment/04_compliance_blacklist.yaml"
+  removed_terms: []
+metrics_fields:
+  - keyword
+  - search_volume
+  - aba_rank
+  - cpc
+  - cvr
+  - competition
+notes: []

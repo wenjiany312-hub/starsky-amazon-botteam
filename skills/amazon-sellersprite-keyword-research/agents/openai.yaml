@@ -1,0 +1,4 @@
+interface:
+  display_name: "Amazon 卖家精灵关键词研究"
+  short_description: "将卖家精灵导出清洗为不混源、可审计的 Keyword Package 2.0"
+  default_prompt: "使用 $amazon-sellersprite-keyword-research 清洗这份卖家精灵导出，并生成不冒充账户 CVR 的单源关键词包。"

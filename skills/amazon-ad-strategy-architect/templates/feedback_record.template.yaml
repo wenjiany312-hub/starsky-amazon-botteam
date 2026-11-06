@@ -1,0 +1,17 @@
+schema_version: "1.0"
+run_id: ""
+plan_ref: {plan_id: "", plan_version: null, plan_hash: ""}
+action_results:
+  - action_id: ""
+    approved_at: null
+    executed_at: null
+    actual_change: {}
+    baseline_metrics: {}
+    observations:
+      - observed_at: ""
+        elapsed_days: null
+        metrics: {}
+        context_events: []
+    result: improved | no_change | worse | insufficient_data | not_executed
+    rollback_status: not_needed | recommended | executed
+    rule_feedback: keep | adjust | retire | undecided

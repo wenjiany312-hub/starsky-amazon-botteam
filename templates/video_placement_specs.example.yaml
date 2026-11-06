@@ -1,0 +1,147 @@
+schema_version: "1.0"
+# ====================================================================
+# 视频投放位规格矩阵
+#
+# 同一条产品视频要投三个地方，三套规格。这份文件是唯一真相，
+# 由 <home>/scripts/视频规格校验.py 读取并逐条核。
+#
+# ⛔ 亚马逊规格会变，而且各来源说法不完全一致。
+#    这份是 2026-08-09 整理的，**上线前请到 Seller Central / 广告后台核实一次**，
+#    核完把 last_verified 改成当天日期。⛔ 不要凭这份文件跟平台争。
+# ====================================================================
+
+last_verified: "2026-08-09"
+verified_by: "网络资料整理，尚未在 Seller Central 逐项核对"
+
+placements:
+
+  # ------------------------------------------------------------------
+  listing_main:
+    display_name: "Listing 主图视频（商品详情页图库）"
+    where: "Seller Central → 上传和管理视频 → 绑定 ASIN"
+    aspect_ratio: "16:9"
+    # ⛔ 重要更正（2026-08-09）：本工具包早期版本写的是 9:16，那是错的。
+    #    商品详情页视频是横版 16:9；9:16 属于 SBV 竖版位与 Inspire/Posts。
+    #    如果你手上有按 9:16 出的主图视频，播放时大概率两侧加黑边。
+    width: 1920
+    height: 1080
+    min_width: 1280
+    min_height: 720
+    duration_min_s: 6
+    duration_max_s: 45
+    duration_sweet_spot_s: [15, 30]     # 实测更短的完播率更好
+    max_file_mb: 500                     # 有来源说详情页可到 5GB，取严的
+    container: [mp4, mov]
+    video_codec: [h264, hevc]
+    audio_codec: [aac, mp3, pcm_s16le]
+    fps_allowed: [23.976, 24, 25, 29.97, 29.98, 30]
+    min_video_bitrate_kbps: 1000
+    min_audio_sample_rate: 44100
+    min_audio_bitrate_kbps: 96
+    notes:
+      - "品牌元素必须出现在前 5 秒 —— 这是硬性内容规则，也是常见拒审原因"
+      - "禁止第三方品牌"
+
+  # ------------------------------------------------------------------
+  aplus_module:
+    display_name: "A+ / Premium A+ 视频模块"
+    where: "A+ 内容管理器 → 视频模块"
+    aspect_ratio: "16:9"
+    width: 1920
+    height: 1080
+    min_width: 800
+    min_height: 600
+    duration_min_s: 6
+    duration_max_s: 120                  # A+ 可以长一些，但不代表应该长
+    duration_sweet_spot_s: [20, 45]
+    max_file_mb: 500
+    container: [mp4]
+    video_codec: [h264, hevc]
+    audio_codec: [aac, mp3]
+    fps_allowed: [23.976, 24, 25, 29.97, 29.98, 30]
+    min_video_bitrate_kbps: 1000
+    notes:
+      - "A+ 视频不该复述 Listing 7 图与主图视频已讲过的内容，讲更深的"
+
+  # ------------------------------------------------------------------
+  sbv_horizontal:
+    display_name: "Sponsored Brands Video（横版）"
+    where: "广告后台 → SB 视频广告"
+    aspect_ratio: "16:9"
+    width: 1920
+    height: 1080
+    min_width: 1280
+    min_height: 720
+    duration_min_s: 6
+    duration_max_s: 45
+    duration_sweet_spot_s: [15, 30]
+    max_file_mb: 500
+    container: [mp4, mov]
+    video_codec: [h264, hevc]
+    audio_codec: [aac, mp3, pcm_s16le]
+    fps_allowed: [23.976, 24, 25, 29.97, 29.98, 30]
+    min_video_bitrate_kbps: 1000
+    min_audio_sample_rate: 44100
+    min_audio_bitrate_kbps: 96
+    audio_required: true
+    notes:
+      - "⛔ 静音自动播放 —— 音轨是必须的，但**信息不能靠声音传达**。"
+      - "   所有关键卖点必须以画面文字 + 视觉演示表达，这是 SBV 与其它位最大的差别。"
+      - "禁止：竞品 logo/产品、价格类声明、限时优惠、视频形式的买家证言、亚马逊自身 logo 与项目标识"
+
+  # ------------------------------------------------------------------
+  sbv_vertical:
+    display_name: "Sponsored Brands Video（竖版，移动位）"
+    where: "广告后台 → SB 视频广告（竖版素材）"
+    enabled: false                       # ⛔ 各来源对是否支持竖版说法不一，
+                                         #    确认你的站点/类目支持后再改 true
+    aspect_ratio: "9:16"
+    width: 1080
+    height: 1920
+    min_width: 720
+    min_height: 1280
+    duration_min_s: 6
+    duration_max_s: 45
+    max_file_mb: 500
+    container: [mp4, mov]
+    video_codec: [h264, hevc]
+    audio_codec: [aac, mp3]
+    fps_allowed: [23.976, 24, 25, 29.97, 29.98, 30]
+    min_video_bitrate_kbps: 1000
+    notes:
+      - "开启前先在广告后台确认本站点支持竖版素材"
+
+# ====================================================================
+# 一次分镜，三处投放 —— 16:9 母版怎么派生竖版
+# --------------------------------------------------------------------
+# 实算过（1920×1080 → 1080×1920）：
+#   crop 模式：保留全高时可用宽度只剩 608px = 全宽的 31.6%，左右共切掉 68.4%
+#   pad  模式：缩放到宽度 1080 后高度只有 608px，上下各补 656px（各占 34%）
+#
+# ⛔ 早期版本这里写的 56.25% 是算错的，正确是 31.6%。
+# ====================================================================
+vertical_derivation:
+
+  # ---- 默认：pad（补边）----
+  # 31.6% 太窄了，按那个约束做分镜等于放弃 16:9 这个画幅。
+  # 所以默认走 pad：画面完整保留，上下补边。
+  # 补出来的两条带**不要留空**，那是懒；用来放标题和收尾信息，
+  # 做成"专门设计过的竖版"而不是"横版加黑边"。
+  mode: pad
+  pad_color_token: plate_bg        # 取 visual_style_tokens.yaml 的调色板键名
+  band_usage:
+    top: "放主标题（视频画面里就不必再压字，避免上下重复）"
+    bottom: "放规格短句或收尾信息"
+
+  # ---- 备选：crop（中央裁切）----
+  # 只有当分镜从一开始就是「产品死死钉在正中间、很小」时才用。
+  # 一般产品视频不要选这个 —— 68.4% 的画面切掉，构图基本重做。
+  crop:
+    center_safe_width_pct: 31.6    # 实算值，⛔ 不是 56.25
+    center_safe_height_pct: 92.0
+
+  # ---- 字幕不受上面约束 ----
+  # 字幕是按投放位分别渲染的（同一份 overlay_tasks.yaml 里，
+  # 一条 canvas: video_16x9、一条 canvas: video_9x16，文字内容相同）。
+  # 令牌一样，所以两版字体色板天然一致，⛔ 不需要为了"裁切后不丢字"而压窄字幕区。
+  subtitles_rendered_per_placement: true

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Amazon 广告闭环与运营状态管家（内部）"
+  short_description: "S4 广告闭环状态机与 S5 运营状态管家，由星空入口调度，不直接面向用户"
+  default_prompt: "Internal orchestration skill. Start from $starsky-amazon-agent; it dispatches $amazon-ops-workflow for the S4 advertising closed loop and S5 operations state."

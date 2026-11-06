@@ -1,0 +1,4 @@
+interface:
+  display_name: "Amazon Ads Bulk Validator"
+  short_description: "校验广告 Bulk、发布审核及 Amazon 处理报告"
+  default_prompt: "Use $amazon-bulk-upload-troubleshooter to validate an Amazon Ads Bulk candidate and reconcile any processing-report failures."

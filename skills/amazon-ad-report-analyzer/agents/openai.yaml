@@ -1,0 +1,4 @@
+interface:
+  display_name: "Amazon 广告报表诊断师"
+  short_description: "清洗多份广告报表并生成可复算可追溯的诊断证据与待审动作"
+  default_prompt: "Use $amazon-ad-report-analyzer to analyze Amazon Ads reports and produce traceable findings and pending optimization actions."

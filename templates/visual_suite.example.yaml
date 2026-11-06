@@ -1,0 +1,74 @@
+schema_version: "1.0"
+suite_name: product_conversion_suite
+marketplace: US
+generation_mode: one_suite
+image_model: ChatGPT Images 2.5
+product_lock: pad_images_only
+competitor_images: human_fed_style_only
+style_reference_dir: S3_视觉板块/_投喂_风格参考
+slots:
+  - slot_id: IMG01
+    role: listing_main
+    buyer_question: ""
+    claim_allowed: []
+    claim_forbidden: []
+    pad_asset_id: ""
+    keyword_embed: []
+    on_image_copy: ""
+    notes: 白底无字，产品样子锁垫图
+  - slot_id: IMG02
+    role: listing_lifestyle
+    buyer_question: ""
+    claim_allowed: []
+    claim_forbidden: []
+    pad_asset_id: ""
+    keyword_embed: []
+    on_image_copy: ""
+  - slot_id: IMG03
+    role: listing_info
+    buyer_question: ""
+    claim_allowed: []
+    claim_forbidden: []
+    pad_asset_id: ""
+    keyword_embed: []
+    on_image_copy: ""
+  - slot_id: IMG04
+    role: listing_compare
+    buyer_question: ""
+    claim_allowed: []
+    claim_forbidden: []
+    pad_asset_id: ""
+    keyword_embed: []
+    on_image_copy: ""
+  - slot_id: IMG05
+    role: listing_function
+    buyer_question: ""
+    claim_allowed: []
+    claim_forbidden: []
+    pad_asset_id: ""
+    keyword_embed: []
+    on_image_copy: ""
+  - slot_id: IMG06
+    role: listing_multi_scene
+    buyer_question: ""
+    claim_allowed: []
+    claim_forbidden: []
+    pad_asset_id: ""
+    keyword_embed: []
+    on_image_copy: ""
+  - slot_id: IMG07
+    role: listing_emotion
+    buyer_question: ""
+    claim_allowed: []
+    claim_forbidden: []
+    pad_asset_id: ""
+    keyword_embed: []
+    on_image_copy: ""
+aplus_path: premium  # or standard
+aplus_slots: []
+dedupe_check: []
+blocked_facts:
+  - airline approved
+  - under-seat
+  - waterproof
+  - tear-resistant

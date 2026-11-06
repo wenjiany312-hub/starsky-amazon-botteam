@@ -1,0 +1,414 @@
+{
+ "gaps": [
+  {
+   "topic": "sp_basics",
+   "name": "SP 是什么、适用与建立框架",
+   "gap_cards": 4,
+   "priority": 1,
+   "seed_urls": [
+    "https://advertising.amazon.com/library/guides/sponsored-products-best-practices"
+   ],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-09"
+  },
+  {
+   "topic": "sp_targeting",
+   "name": "SP 自动/手动定向与四种自动匹配",
+   "gap_cards": 5,
+   "priority": 1,
+   "seed_urls": [
+    "https://advertising.amazon.com/library/guides/targeting-with-sponsored-products"
+   ],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-09"
+  },
+  {
+   "topic": "keyword_match_types",
+   "name": "广泛/词组/精准匹配的边界与差异",
+   "gap_cards": 4,
+   "priority": 1,
+   "seed_urls": [
+    "https://advertising.amazon.com/library/guides/keyword-targeting"
+   ],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-09"
+  },
+  {
+   "topic": "sp_bidding",
+   "name": "动态竞价（降低/提高降低/固定）与调整幅度",
+   "gap_cards": 3,
+   "priority": 1,
+   "seed_urls": [
+    "https://advertising.amazon.com/library/guides/dynamic-bidding-sponsored-products"
+   ],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-09"
+  },
+  {
+   "topic": "sp_placement",
+   "name": "广告位（首页顶部/商品页/其余）与位置加价",
+   "gap_cards": 3,
+   "priority": 1,
+   "seed_urls": [],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-09"
+  },
+  {
+   "topic": "sp_budget",
+   "name": "日预算、平均日预算与超投规则",
+   "gap_cards": 2,
+   "priority": 1,
+   "seed_urls": [
+    "https://advertising.amazon.com/library/guides/sponsored-products-budget-best-practices",
+    "https://advertising.amazon.com/resources/whats-new/sponsored-ads-daily-budgeting-policy-and-options"
+   ],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-08"
+  },
+  {
+   "topic": "negative_targeting",
+   "name": "否定关键词/否定 ASIN 的机制与限制",
+   "gap_cards": 2,
+   "priority": 1,
+   "seed_urls": [],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-09"
+  },
+  {
+   "topic": "sb_basics",
+   "name": "SB 形式、资格、创意规范",
+   "gap_cards": 4,
+   "priority": 2,
+   "seed_urls": [
+    "https://advertising.amazon.com/library/guides/sponsored-brands-what-to-know"
+   ],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-08"
+  },
+  {
+   "topic": "sbv",
+   "name": "SB 视频广告规范与打法",
+   "gap_cards": 2,
+   "priority": 2,
+   "seed_urls": [],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-08"
+  },
+  {
+   "topic": "sd_basics",
+   "name": "SD 受众/商品投放与再营销",
+   "gap_cards": 3,
+   "priority": 2,
+   "seed_urls": [
+    "https://advertising.amazon.com/library/guides/reach-more-shoppers-sponsored-products-with-display-ads"
+   ],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-09"
+  },
+  {
+   "topic": "dsp_basics",
+   "name": "DSP 与站外触点（了解即可）",
+   "gap_cards": 1,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-09"
+  },
+  {
+   "topic": "attribution_reporting",
+   "name": "归因窗口、报表种类与字段、搜索词展示份额",
+   "gap_cards": 4,
+   "priority": 1,
+   "seed_urls": [
+    "https://advertising.amazon.com/library/guides/measure-improve-campaigns",
+    "https://advertising.amazon.com/resources/whats-new/search-term-impression-report-sponsored-products"
+   ],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-08"
+  },
+  {
+   "topic": "ad_policy",
+   "name": "广告政策：禁投品类、创意与文案规范、品牌词使用",
+   "gap_cards": 3,
+   "priority": 1,
+   "seed_urls": [],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-09"
+  },
+  {
+   "topic": "brand_registry_eligibility",
+   "name": "品牌注册与 SB/SD/旗舰店资格",
+   "gap_cards": 2,
+   "priority": 2,
+   "seed_urls": [],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-09"
+  },
+  {
+   "topic": "official_updates",
+   "name": "近 12 个月官方功能/政策更新追踪",
+   "gap_cards": 2,
+   "priority": 2,
+   "seed_urls": [],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-09"
+  },
+  {
+   "topic": "auction_mechanism",
+   "name": "拍卖与扣费机制、CPC 与出价关系",
+   "gap_cards": 2,
+   "priority": 2,
+   "seed_urls": [],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-09"
+  },
+  {
+   "topic": "relevance_quality",
+   "name": "相关性/质量对展示与 CPC 的影响",
+   "gap_cards": 3,
+   "priority": 2,
+   "seed_urls": [],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-09"
+  },
+  {
+   "topic": "ads_vs_organic",
+   "name": "广告与自然位/BSR 的关系（相关≠因果）",
+   "gap_cards": 3,
+   "priority": 1,
+   "seed_urls": [],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-09"
+  },
+  {
+   "topic": "new_product_traffic",
+   "name": "新品期流量分配与冷启动",
+   "gap_cards": 3,
+   "priority": 1,
+   "seed_urls": [],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-09"
+  },
+  {
+   "topic": "standard_vs_nonstandard",
+   "name": "标品 vs 非标品：打法差异总纲",
+   "gap_cards": 4,
+   "priority": 1,
+   "seed_urls": [],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-09"
+  },
+  {
+   "topic": "lifecycle_playbooks",
+   "name": "新品/成长/成熟/清仓 分阶段打法",
+   "gap_cards": 6,
+   "priority": 1,
+   "seed_urls": [],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-08"
+  },
+  {
+   "topic": "keyword_tiering",
+   "name": "关键词分层与六大打法（贴标签/冲销量/拉自然位/捡漏/关联/品牌防御）",
+   "gap_cards": 6,
+   "priority": 1,
+   "seed_urls": [],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-09"
+  },
+  {
+   "topic": "budget_allocation",
+   "name": "预算分配（活动间/位置间/阶段间）",
+   "gap_cards": 3,
+   "priority": 2,
+   "seed_urls": [],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-08"
+  },
+  {
+   "topic": "bid_cadence",
+   "name": "调价节奏与幅度、样本量门槛",
+   "gap_cards": 3,
+   "priority": 1,
+   "seed_urls": [],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-08"
+  },
+  {
+   "topic": "negative_cadence",
+   "name": "否词节奏与点击阈值（多口径对比）",
+   "gap_cards": 2,
+   "priority": 1,
+   "seed_urls": [],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-09"
+  },
+  {
+   "topic": "peak_season",
+   "name": "Prime Day / 黑五网一 / 圣诞 的广告节奏",
+   "gap_cards": 4,
+   "priority": 2,
+   "seed_urls": [],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-09"
+  },
+  {
+   "topic": "clearance",
+   "name": "清仓与退出打法",
+   "gap_cards": 2,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-09"
+  },
+  {
+   "topic": "defense",
+   "name": "品牌词/ASIN 防御",
+   "gap_cards": 2,
+   "priority": 2,
+   "seed_urls": [],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-09"
+  },
+  {
+   "topic": "competitor_traffic",
+   "name": "关联流量与竞品 ASIN 投放",
+   "gap_cards": 3,
+   "priority": 2,
+   "seed_urls": [],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-09"
+  },
+  {
+   "topic": "diagnostics",
+   "name": "高曝光低点击 / 高点击低转化 / 花不出预算 / 抢不到位 / ACOS 高 的原因树与动作",
+   "gap_cards": 6,
+   "priority": 1,
+   "seed_urls": [],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-08"
+  },
+  {
+   "topic": "economics_formulas",
+   "name": "ACOS/TACoS/盈亏平衡/CPA/投产比 公式与口径陷阱",
+   "gap_cards": 4,
+   "priority": 1,
+   "seed_urls": [],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-08"
+  },
+  {
+   "topic": "category_specifics",
+   "name": "各类目差异（家居/宠物/服装/3C/…）",
+   "gap_cards": 3,
+   "priority": 3,
+   "seed_urls": [],
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-09"
+  },
+  {
+   "kind": "observation",
+   "topic": "negative_cadence",
+   "observation": "Porch Goose V1 实测：自动广告 25 次点击 0 单的词多为 desk goose 异形态，按 20 clicks 阈值否词后 ACOS 降 6 个点",
+   "run_id": "20260901_选品中",
+   "card_id": "KC-0003",
+   "product_id": "V1-FALL-GOOSE-23",
+   "metrics": {
+    "clicks": 25,
+    "orders": 0
+   },
+   "added": "2026-09-08",
+   "status": "closed",
+   "source": "mcp:kb_record_observation",
+   "closed": "2026-09-09"
+  },
+  {
+   "kind": "open_question",
+   "topic": "lifecycle_playbooks",
+   "question": "产品生命周期（新品/成长/成熟/清仓）分阶段打法缺官方来源：官方 lifecycle-marketing 指南（KC-0036）讲的是客户旅程五阶段，非产品阶段",
+   "why": "lifecycle_playbooks 主题 6 卡已由课程口径+客户旅程框架凑满，但产品阶段打法的官方页不存在；需要阿波罗课程批次（SRC-0030/0033/0036 等）提炼 B 级打法卡并标注『缺官方来源』",
+   "needed_sources": "B 级课程蒸馏；官方无对应页面",
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-08"
+  },
+  {
+   "kind": "open_question",
+   "topic": "keyword_tiering",
+   "question": "SP 侧关键词分层节奏官方只有零散建议（SB ≥25 词 KC-0033、否词阈值 KC-0003），缺官方分层方法论",
+   "why": "keyword_tiering 3/6；分层六大打法是课程方法论，官方页不存在，需阿波罗批次补 B 级卡",
+   "needed_sources": "SRC-0030/0033/0036（阿波罗广告宝典与流量大课）",
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-09"
+  },
+  {
+   "kind": "open_question",
+   "topic": "sbv",
+   "question": "KC-0032 的 D 级推论『SBV 独立拍卖 → 同词图文+视频双覆盖不互斥』待账户内验证",
+   "why": "官方只说独立广告位与独立拍卖，未表述叠加效果；影响同词是否值得 SBV 叠投的决策",
+   "needed_sources": "账户实验：同词同时开 SB 图文与 SBV，对比两侧曝光是否互斥",
+   "added": "2026-09-08",
+   "status": "closed",
+   "closed": "2026-09-08"
+  },
+  {
+   "kind": "observation",
+   "topic": "diagnostics",
+   "observation": "【外部经验印证 2026-09-28 运营口播视频】开窍运营的单量下跌处理路径=先拆结构再动作（流量整体vs单入口→点击率vs转化率→广告位vs自然排名→拆完再决定加词/调价/改图），与 KC-0023 官方症状→动作诊断树方向一致，互证有效。增量视角：库内诊断树以\"单量/曝光/点击/转化\"总量信号为入口，缺一条\"总量正常但结构恶化\"的领先预警——如\"单量没掉但自然流量占比持续下滑→两周后广告费扛不住\"（讲者原话经验）。建议 report-analyzer 的诊断顺序增加\"结构先行于总量\"检查位。",
+   "run_id": null,
+   "card_id": "KC-0023",
+   "product_id": null,
+   "metrics": {},
+   "added": "2026-09-28",
+   "status": "closed",
+   "source": "mcp:kb_record_observation",
+   "closed": "2026-09-29"
+  },
+  {
+   "kind": "observation",
+   "topic": "competitor_daily_recon",
+   "observation": "【库内缺口 2026-09-28 运营口播视频】竞品逆向在库内只有流量侧（KC-0157 竞品日级流量复盘：排名急升词/掉位弱点词），缺产品侧的\"差评挖掘→产品改进→卖点升级\"经验链。讲者实测案例：翻竞品 200+ 条差评发现高频吐槽\"用一个月就松掉\"→查图发现连接件为塑料→供应商改金属件仅+2 元成本→\"金属连接件用一年不松\"写进卖点→上架后转化率比竞品高近一倍。该链路是 CVR 的上游改造（ACOS=CPC÷CVR÷客单价的分母端），建议新增一张 inference/playbook 卡：差评主题聚类→硬件/规格改进可行性→卖点转写→CVR 验证（可用 MYE A/B 测试收口，衔接 KC-0069）。",
+   "run_id": null,
+   "card_id": "KC-0157",
+   "product_id": null,
+   "metrics": {},
+   "added": "2026-09-28",
+   "status": "open",
+   "source": "mcp:kb_record_observation"
+  }
+ ],
+ "note": "plan 会追加未覆盖主题；模型学习中发现的开放问题也记这里（含 why / 需要什么来源）"
+}

@@ -1,0 +1,102 @@
+# 亚马逊选品知识库 · 分类法（受控词表）
+# kb.py init 时复制到 <知识库>/taxonomy.yaml；validate 用它校验每张知识卡的标签枚举。
+# 想加新枚举：改这里再 validate，禁止在卡片里随手造词。
+
+version: "1.0"
+
+# ---- 证据层级（决定 confidence 上限；写卡时必填 authority）----
+authority:
+  A: {name: 官方事实,   desc: "Seller Central / sell.amazon / Brand Registry / 官方政策页、账户界面实拍", confidence_range: [0.80, 1.00]}
+  B: {name: 权威课程原文, desc: "系统性付费课程 / 星空已蒸馏 SOP / 头部服务商方法论的明确原文（保留页码/时间码）", confidence_range: [0.55, 0.85]}
+  C: {name: 第三方经验,  desc: "博主、社群、个人笔记、单案例复盘", confidence_range: [0.30, 0.65]}
+  D: {name: 项目推论,    desc: "由多源归纳/推导出的结论（必须写验证方法）", confidence_range: [0.20, 0.60]}
+  V: {name: 厂商宣称,    desc: "工具/服务商的能力与效果宣称——隔离，不进决策规则", confidence_range: [0.00, 0.30]}
+
+# ---- 知识类型 ----
+knowledge_type:
+  policy:      "官方规范/政策（能不能卖、资质、禁售、IP）"
+  mechanism:   "平台机制（搜索/BSR/评论展示、类目节点、广告词占比如何读）"
+  inference:   "未被官方明说的推论（必须写验证方法）"
+  playbook:    "实操打法（精铺从0到1、垂直、蓝海扫描、季节）"
+  threshold:   "阈值经验（难度%、投产比、首单件数——必标经验值与来源日期）"
+  diagnostic:  "诊断规则（症状 → 原因树 → 动作）"
+  anti_pattern: "反面案例/常见误区"
+  glossary:    "术语定义"
+  formula:     "指标公式与口径"
+
+# ---- 标签维度（多选；至少填 selection_mode / entry_path / selection_phase / decision_gate / topic）----
+# selection_phase 是方法阶段，不属于任何一个宿主的步骤编号。
+tags:
+  selection_mode: [精铺, 精品, 垂直, 从0到1, 爆款路径, 蓝海扫描, 通用]
+  entry_path: [大盘扫描, 类目方向, 季节档期, 货源倒推, 竞品跟卖, 通用]
+  selection_phase:
+    - 定模式
+    - 需求验证
+    - 难度判定
+    - 竞争力
+    - 利润进场
+    - 大盘快扫
+    - 季节窗口
+    - 灰手段识别
+    - 市场穿透
+    - IP合规
+    - 货源供应
+    - 综合报告
+    - 通用
+  product_archetype: [标品, 非标品, 半标品, 季节品, 礼品, 通用]
+  competition_band: [简单, 适中, 困难, 红海, 蓝海, 通用]
+  risk_type: [商标, 专利, 合规禁售, 灰手段, 季节来不及, 品牌流量不可复制, 通用]
+  data_tool: [Sorftime, 卖家精灵, SIF, 西柚, 前台目视, 1688, Google Trends, TikTok, ABA, 商机探测器, 通用]
+  decision_gate: [立项, 放弃, 降级精铺, 推迟档期, 继续验证, 通用]
+  category_family: [家居, 宠物, 服装, 3C, 美妆, 户外园艺, 玩具, 食品, 母婴, 汽配, 工具, 办公, 通用]
+  marketplace: [US, CA, UK, DE, JP, 通用]
+  topic:
+    - mode_jingpu
+    - mode_zero_to_one
+    - mode_vertical
+    - mode_hit_cost
+    - entry_imbalance
+    - entry_category
+    - entry_seasonal
+    - entry_supply_first
+    - demand_ten_checks
+    - gray_signals
+    - brand_traffic_unreplicable
+    - similar_product_set
+    - difficulty_review_band
+    - difficulty_ad_efficiency
+    - keyword_competition_split
+    - variant_no_cannibal
+    - positioning_five
+    - rufus_insight
+    - profit_go_line
+    - trial_order_size
+    - cpc_fba_vs_fbm
+    - ip_trademark
+    - ip_patent
+    - compliance_restricted
+    - blue_ocean_scan
+    - seasonal_playbook
+    - category_diff
+    - diag_fake_easy
+    - diag_season_late
+    - anti_copy_hit
+    - supply_1688_data
+    - supplier_horizontal
+    - supply_sop_stance
+    - voc_method
+    - trend_season_ai
+    - aba_diagnose
+    - ai_funnel
+    - ai_workflow_skills
+    - prompt_templates
+
+# ---- 卡片状态 ----
+status: [draft, reviewed, superseded, retracted]
+
+# ---- 引文与时效纪律 ----
+rules:
+  quote_max_words: 60
+  min_sources_for_reviewed: 1
+  freshness_warn_days: 365
+  required_tag_dims: [selection_mode, entry_path, selection_phase, decision_gate, topic]

@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "blacklist_terms": [],
+  "skus": [
+    {
+      "sku": "1MII-Y8-PLUS-AUDIT-REFERENCE",
+      "title": "1Mii Y8+ Hybrid ANC Over-Ear Headphones, LDAC Hi-Res Audio, Black",
+      "item_highlights": "Bluetooth 6.0 Wireless, 100H Playtime, Custom EQ, HD Mic, Foldable Memory Foam",
+      "bullets": [
+        "FACT BOUNDARY: The 100H versus 110H battery claim remains conditional until the source fact is reconciled."
+      ],
+      "search_terms": "wireless over ear headphones custom eq foldable"
+    }
+  ]
+}

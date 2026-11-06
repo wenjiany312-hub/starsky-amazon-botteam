@@ -1,0 +1,13 @@
+{
+ "schema_version": "1.0",
+ "name": "星空广告知识库",
+ "created": "2026-09-08",
+ "updated": "2026-09-29",
+ "skill": "amazon-ad-knowledge-learner",
+ "stats": {
+  "sources": 857,
+  "sources_pending": 160,
+  "cards": 161,
+  "playbooks": 4
+ }
+}

@@ -1,0 +1,22 @@
+platform: grokbot
+name: Grok Bot（xAI / Cursor）
+verified: 2026-11-04 rc2 在老板账户全部 12 步、6 项验证通过
+runtime: cloud_shared_computer        # 所有 Bot 共用一台云电脑
+paths:
+  kit: /workspace/amazon-ops/kit
+  work: /workspace/amazon-ops
+create_roles: bot_self_create          # Bot 自己创建：Name / Job / Description + 第一条消息发系统提示词
+dispatch: SendToAgent                  # 运营总监用 SendToAgent 派单，必须带 Bot ID；队友之间不互派
+groups: optional                       # 一个群最多 6 个 Bot；群聊只给老板旁观用，派单不走群
+skills: shared_pointer                 # 技能账户内共享；星空技能存成「指针」，正文留在团队包里（保留相对路径）
+mcp_local: cloud_stdio                 # 本机 MCP 连不到；改为装在云电脑上，按「命令」注册成自定义 MCP（官方支持）。1688 用 install_grokbot.sh 装，知识库免安装
+network: route_traffic_recommended     # 建议老板开 Settings → Computer → Route traffic through this computer，1688 看到的是老板电脑的 IP
+mcp_third_party: connector_or_plugin   # 密钥用安全密钥卡填
+approval: owner_dm_and_native_card     # 老板审批在运营总监私聊 + 原生审批卡；群里不显示审批卡
+reports: html_attachment               # 正式报告 HTML 作为附件发
+models: platform_managed               # 没有模型选择器，不按角色分配模型
+settings_override:
+  visual.image_mode: in_team           # 2026-11-04 老板账户实测：出图工能直接出图（SETUP 第 11 步第 6 项）；不行时改回 outsource
+  visual.video_mode: outsource
+  models.gateway: platform_default
+seller_central: owner_only_local       # 红线：不在云电脑里登录卖家后台 / 广告后台

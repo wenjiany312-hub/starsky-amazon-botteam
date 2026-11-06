@@ -1,0 +1,107 @@
+# 第三方 MCP 目录（唯一来源）：识别别名、获取方式、默认分配给哪些角色
+# 买家自己购买，密钥自己填写；团队包里不含任何密钥
+# roles 用英文 id：admin 运营总监 / scout 选品侦察员 / guard 风控官 / warehouse 仓管物流 / finance 财务管家 /
+#   listing 文案算法师 / designer 创意美工 / imageworker 出图工 / editor 质检官 / ads 广告优化师 / reviewer 复盘分析师
+schema_version: "2.0"
+mcps:
+  sif:
+    name: SIF
+    aliases: [sif, SIF, 西服, 斯芙, sif-mcp, sif.com]
+    url_hints: [sif.com]
+    required: recommended
+    use: 关键词流量、竞品广告结构、投放信号
+    roles: [scout, listing, ads]
+    get_key: "https://www.sif.com/mcp?tab=secret"
+    guide: "https://blog.sif.com/article/mcp-install/Sif-MCP%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3"
+    verify: 查 1 个自己的 ASIN 的关键词，或 1 个关键词的搜索量
+  sorftime:
+    name: Sorftime
+    aliases: [sorftime, Sorftime, 搜福, sorftime-mcp]
+    url_hints: [sorftime.com]
+    required: recommended
+    use: 类目容量、榜单、竞品、专利检索、站外讨论
+    roles: [scout, guard, ads, warehouse]
+    get_key: "https://open.sorftime.com/mcp"
+    buy: "https://open.sorftime.com/home?tag=S0paU0dI"
+    guide: "https://www.sorftime.com/zh-CN/mcp/Codex"
+    verify: 查 1 个自己的类目或 ASIN 的基础信息
+  xiyou:
+    name: 西柚
+    aliases: [西柚, 西柚洞察, 西柚找词, xiyou, xydc, xydc-mcp]
+    url_hints: [xiyou]
+    required: optional
+    use: 关键词研究、反查
+    roles: [scout, listing, ads]
+    get_key: 以西柚官方页面为准
+    verify: 查 1 个关键词
+  sellersprite:
+    name: 卖家精灵
+    aliases: [卖家精灵, sellersprite, SellerSprite, sellersprite-mcp]
+    url_hints: [sellersprite.com]
+    required: optional
+    use: 市场、关键词、竞品补充数据
+    roles: [scout, listing, ads]
+    get_key: "https://open.sellersprite.com/mcp"
+    guide: "https://open.sellersprite.com/mcp/16"
+    verify: 查 1 个关键词或 ASIN
+  lingxing:
+    name: 领星 ERP
+    aliases: [领星, lingxing, 领星ERP, LingXing]
+    url_hints: [lingxing, lingxingerp]
+    required: optional
+    use: 店铺订单、库存、广告、利润数据
+    roles: [finance, warehouse, reviewer, ads]
+    get_key: 领星开放平台（你自己企业的开放平台权限和店铺范围）
+    prefer: data_hub
+    grokbot: 不在 Grok 里直接注册，密钥只填在老板 Mac 的数据底座接入向导
+    verify: 读 1 个店铺最近 1 天的销售汇总（只读）
+  youmaiyun:
+    name: 优麦云
+    aliases: [优麦云, youmaiyun, 优麦, youmai, sellerspace]
+    url_hints: [sellerspace.com]
+    required: optional
+    use: 多店多站的订单、库存、广告、利润数据
+    roles: [finance, warehouse, reviewer, ads]
+    get_key: 优麦云后台取 MCP 专属密钥（sk-ss- 开头）
+    verify: 读 1 个店铺最近 1 天的汇总（只读）
+    prefer: data_hub
+    grokbot: 不在 Grok 里直接注册，密钥只填在老板 Mac 的数据底座接入向导   # 店铺数据优先经数据底座读（amazon-data-hub）；写入只走数据底座审核报告
+  sellfox:
+    name: 赛狐 ERP
+    aliases: [赛狐, sellfox, SellFox, 赛狐ERP]
+    url_hints: [sellfox.com]
+    required: optional
+    status: planned
+    use: 多店订单、广告、库存、头程、利润
+    roles: [finance, warehouse, reviewer, ads]
+    get_key: 赛狐后台【设置-业务设置-全局-开放接口】启用后，在【MCP管理】复制地址和 X-MCP-Key（查询、写入权限分开）
+    verify: 列出授权店铺（只读）
+    prefer: data_hub
+  feishu:
+    name: 飞书
+    aliases: [飞书, feishu, lark]
+    required: optional
+    use: 日报推送、通知
+    roles: [admin]
+    verify: 给老板自己发 1 条测试消息（要先问老板）
+  sp-api:
+    name: 亚马逊 SP-API
+    aliases: [SP-API, spapi, sellingpartner]
+    required: later
+    status: not_connected
+    roles: [listing, finance, guard, warehouse, designer, reviewer]
+    note: 不在 Bot 里直接接。经数据底座（星空旗舰 AI 智能广告终端）读写，见 docs/数据端接入方案.md；新建 Listing 在 Listings API 模块做好前由老板后台操作
+    prefer: data_hub
+  ads-api:
+    name: 亚马逊 Ads API
+    aliases: [Ads API, 广告API, advertising api]
+    required: later
+    status: read_only_skill
+    roles: [ads, reviewer]
+    note: 不在 Bot 里直接接。经数据底座读报表、交方案；老板确认推送后才改店铺。开新活动在接通前走 Bulk 表格
+    prefer: data_hub
+local:
+  1688_scraper:             {name: 1688 抓取, roles: [warehouse], grokbot: "云电脑上装（mcp/local/install_grokbot.sh），以 stdio 自定义 MCP 注册", tools: [ping, search_offers, login_1688, get_offer, download_media]}
+  selection_knowledge_base: {name: 选品知识库, roles: [scout, guard, finance, reviewer], grokbot: "免安装，以 stdio 自定义 MCP 注册；不通时用 amazon-kb-query 命令行"}
+  ads_knowledge_base:       {name: 广告知识库, roles: [ads, reviewer], grokbot: "同上"}
+  promotion_knowledge_base: {name: 促销知识库, roles: [ads, reviewer], grokbot: "同上"}

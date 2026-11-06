@@ -1,0 +1,7 @@
+approval_where: "在运营总监对话或团队群里亲自回复"
+name_where: "在运营总监对话里说「叫我 XX」"
+secret_where: "StarSky「连接插件」的密钥框"
+model_note: "通过 MagPie 分配（每个成员能否单独选模型以 StarSky 设置为准）"
+model_section: "<p>StarSky 基于 DeepSeek Harness，MagPie 支持接入。每个成员能不能单独选模型，以 StarSky 设置为准。</p>"
+mcp_platform_note: ""
+safety_extra: ""

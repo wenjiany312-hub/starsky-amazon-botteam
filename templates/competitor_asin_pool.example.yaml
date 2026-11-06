@@ -1,0 +1,51 @@
+schema_version: "1.0"
+edition: starsky-v2
+marketplace: "US"
+generated_at: "YYYY-MM-DD"
+source_skill: "starsky-fullchain-workflow"
+source_mcp: "sorftime|sellersprite|manual"
+source_reports:
+  market_report: "S1_选品板块/amazon-market-research/01_市场穿透报告.md"
+  product_profile: "S1_选品板块/amazon-market-research/01_product_profile.yaml"
+  phase_s1: "S1_选品板块/_阶段总览/阶段_S1_选品可行性研究报告.md"
+product_context:
+  product_type: ""
+  core_keywords: []
+  target_price_band: ""
+  category: ""
+asin_pool:
+  similar_competitors: []
+  new_release_competitors: []
+  pat_candidates: []
+  brand_terms_review: []
+limits:
+  bsr_1_30: 6
+  bsr_31_60: 6
+  bsr_61_100: 5
+  new_release: 3
+  max_total_after_dedup: 20
+rules:
+  no_fabricated_asins: true
+  insufficient_count_note_required: true
+  competitor_brands_for_ads_only: true
+notes: []
+
+# R02 S2 review is a fresh, hash-bound user decision; old S1 lists remain above.
+stratification_version: r02.f1
+status: candidate_review_required
+bsr_category: ""  # same category scope as every BSR source
+price_band: []     # [minimum, maximum]; absent prices remain unknown
+candidate_review: []
+# Each reviewed row needs asin/title/match/match_reason/source(path+sha256),
+# source_segment, bsr+bsr_category or official_new_release+new_release_source,
+# replacement(bool), price_band_status(within|outside|unknown), decision.
+# A replacement retains source_segment and records replacement_for+replacement_reason.
+new_release_evidence:
+  official_status: unknown
+  unavailable_evidence: null
+  date_from: null
+  date_to: null
+# Listing-date fallback requires official unavailability evidence and each row's
+# listing_date_source. Genuine shortage needs actual count/reason + user scope review.
+confirmation: null  # bind review_sha256 + real user evidence; never auto-confirm
+shortfall: null

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Amazon 广告计划编译器"
+  short_description: "将已审核策略与关键词证据编译成可校验可追溯的广告执行计划"
+  default_prompt: "Use $amazon-ad-campaign-builder to compile an approved Strategy Brief and canonical keyword package into a versioned ad_plan."

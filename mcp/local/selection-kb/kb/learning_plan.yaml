@@ -1,0 +1,98 @@
+# 亚马逊选品知识 · 学习大纲（自主进化的驱动器）
+# kb.py init 复制到 <知识库>/learning_plan.yaml。plan 按 min_cards 与现有卡片覆盖度排出未覆盖主题。
+
+version: "1.1"
+marketplace_default: US
+session_defaults:
+  budget_sources: 6
+  budget_topics: 3
+  target_cards_per_session: 8
+
+modules:
+  - id: M1_modes
+    name: 模式与哲学
+    topics:
+      - {id: mode_jingpu, name: "精铺 vs 精品：月单分界、资源与试错哲学", min_cards: 2, priority: 1}
+      - {id: mode_zero_to_one, name: "从0到1选品：入口、候选量、深研纪律", min_cards: 2, priority: 1}
+      - {id: mode_vertical, name: "垂直选品：同一需求簇深挖、不打一枪换一个地方", min_cards: 2, priority: 1}
+      - {id: mode_hit_cost, name: "爆款路径成本量级 vs 精铺试错量级", min_cards: 2, priority: 1}
+
+  - id: M2_entry
+    name: 入口与扫描
+    topics:
+      - {id: entry_imbalance, name: "大盘四失衡扫描（评论×销量 / 自然×广告 / 时间×销量 / 旺淡季）", min_cards: 2, priority: 1}
+      - {id: entry_category, name: "类目方向法：前台浏览 + 主题词翻译 + 产品查询", min_cards: 2, priority: 1}
+      - {id: entry_seasonal, name: "季节/偏季档期与备货提前量", min_cards: 2, priority: 1}
+      - {id: entry_supply_first, name: "货源倒推：有工厂/1688 再验市场需求", min_cards: 2, priority: 2}
+
+  - id: M3_demand
+    name: 需求真实性与灰手段
+    topics:
+      - {id: demand_ten_checks, name: "热卖原因十查（逐项通过/失败口径）", min_cards: 3, priority: 1}
+      - {id: gray_signals, name: "合并/刷/烧广告公开信号（只判读不操作）", min_cards: 2, priority: 1}
+      - {id: brand_traffic_unreplicable, name: "品牌词带量 = 流量复制不来", min_cards: 1, priority: 1}
+
+  - id: M4_competition
+    name: 竞争切分与难度双法
+    topics:
+      - {id: similar_product_set, name: "相似产品三标准与分母口径", min_cards: 2, priority: 1}
+      - {id: difficulty_review_band, name: "评论区间难度：<10% / 10-15% / >15%", min_cards: 2, priority: 1}
+      - {id: difficulty_ad_efficiency, name: "广告效率法与广告词占比>80%否决", min_cards: 2, priority: 1}
+      - {id: keyword_competition_split, name: "相关且竞争 / 相关不竞争 / 不相关", min_cards: 1, priority: 2}
+
+  - id: M5_differentiation
+    name: 竞争力与差异化
+    topics:
+      - {id: variant_no_cannibal, name: "变体三板斧与变体不互抢红线", min_cards: 2, priority: 1}
+      - {id: positioning_five, name: "定位五框架：场景/礼品/工艺/上镜/健康", min_cards: 1, priority: 2}
+      - {id: rufus_insight, name: "Rufus/客户关注点如何反推卖点", min_cards: 1, priority: 2}
+
+  - id: M6_economics
+    name: 利润、试错与进场
+    topics:
+      - {id: profit_go_line, name: "去广告投产比>50% 立项线", min_cards: 2, priority: 1}
+      - {id: trial_order_size, name: "精铺首单 30-50 件与跑通后 2 个月货", min_cards: 2, priority: 1}
+      - {id: cpc_fba_vs_fbm, name: "FBA 实际 CPC ≈ FBM 报价 1/3；测广告只开自动", min_cards: 1, priority: 1}
+
+  - id: M7_risk
+    name: IP / 合规 / 供应链否决
+    topics:
+      - {id: ip_trademark, name: "商标/品牌词风险：参考不来 vs 不能做", min_cards: 1, priority: 1}
+      - {id: ip_patent, name: "外观/实用新型专利排查时机", min_cards: 1, priority: 2}
+      - {id: compliance_restricted, name: "禁售、认证、航空/儿童等硬门槛", min_cards: 1, priority: 2}
+
+  - id: M8_playbooks
+    name: 场景手册主题
+    topics:
+      - {id: blue_ocean_scan, name: "蓝海/失衡扫描操作顺序与禁用筛选项", min_cards: 2, priority: 2}
+      - {id: seasonal_playbook, name: "季节品手册：提前量、偏季优先、来不及放弃", min_cards: 1, priority: 2}
+      - {id: category_diff, name: "家居/宠物/服装等类目差异（后补）", min_cards: 1, priority: 3}
+
+  - id: M9_diagnostics
+    name: 诊断与反模式
+    topics:
+      - {id: diag_fake_easy, name: "看起来好做其实是刷/合并/异形态分母", min_cards: 2, priority: 1}
+      - {id: diag_season_late, name: "节日畅销但档期已过 → 放弃或明年验证", min_cards: 1, priority: 1}
+      - {id: anti_copy_hit, name: "禁止把灰手段当进场路径；只识别不复制", min_cards: 1, priority: 1}
+
+  # —— 2026-09-26 五盘盘点后新增（见 资料盘点与归档方案_2026-09-26.md 4.3）——
+  - id: M10_supply
+    name: 供应链与 1688 开品
+    topics:
+      - {id: supply_1688_data, name: "1688 供应链数据调研：选供应商看什么（价格体系/起订/交期/品类专注度）", min_cards: 2, priority: 1}
+      - {id: supplier_horizontal, name: "五家供应商横向评估法：评估维度与演示供应商选择", min_cards: 2, priority: 1}
+      - {id: supply_sop_stance, name: "选品开发 SOP 中供应链的站位（市场调研第一棒交接）", min_cards: 1, priority: 2}
+
+  - id: M11_signal
+    name: VOC 与趋势信号
+    topics:
+      - {id: voc_method, name: "VOC 选品方法论：Reddit 前导信号 × 亚马逊滞后数据交叉验证", min_cards: 2, priority: 1}
+      - {id: trend_season_ai, name: "趋势/季节/事件性机会捕捉（AI 辅助）", min_cards: 1, priority: 2}
+      - {id: aba_diagnose, name: "ABA 排名透析与工具数据源判读口径", min_cards: 1, priority: 2}
+
+  - id: M12_aiworkflow
+    name: AI 选品工作流
+    topics:
+      - {id: ai_funnel, name: "AI 蓝海漏斗：阶段参数、硬过滤条件与人工复核点", min_cards: 2, priority: 1}
+      - {id: ai_workflow_skills, name: "SKILL/MCP 选品工作流编排（角色分工与产物交接）", min_cards: 1, priority: 2}
+      - {id: prompt_templates, name: "选品研究指令模板的用法与边界", min_cards: 1, priority: 3}

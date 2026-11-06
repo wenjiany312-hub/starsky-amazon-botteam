@@ -1,0 +1,33 @@
+schema_version: "1.0"
+edition: starsky-v2
+category_id: ""
+source_references:
+  refs_main: []
+  refs_aplus: []
+global:
+  visual_style: []
+  palette: []
+  typography: []
+  product_truth_locks: []
+  prohibited_elements: []
+main_images:
+  hero_composition: []
+  required_views: []
+  information_hierarchy: []
+  scenario_rules: []
+premium_aplus:
+  module_order: [M1, M2, M3, M4, M5]
+  composition_rules: []
+  desktop_mobile_rules: []
+standard_aplus:
+  module_order: [M1, M2, M3, M4, M5]
+  composition_rules: []
+  size_rules: []
+generation:
+  preferred_tool: "gpt_image"
+  cowart_edit_optional: true
+  fallback: "prompt_only"
+compliance:
+  logo_copy_prohibited: true
+  competitor_asset_copy_prohibited: true
+  text_blacklist_source: "S1_选品板块/amazon-ip-risk-assessment/04_compliance_blacklist.yaml"

@@ -1,0 +1,10 @@
+# 安装器会写入这一段。不要把密钥写进本文件。
+[mcp_servers.ads_knowledge_base]
+type = "stdio"
+command = "python"
+args = ["<USER>/.codex/mcp/starsky-ads-kb/server.py", "--kb", "<USER>/.codex/mcp/starsky-ads-kb/kb"]
+startup_timeout_sec = 60
+tool_timeout_sec = 120
+
+[mcp_servers.ads_knowledge_base.env]
+PYTHONUTF8 = "1"

@@ -1,0 +1,36 @@
+schema_version: "1.0"
+edition: starsky-v2
+marketplace: "US"
+generated_at: "YYYY-MM-DD"
+source_skill: "starsky-fullchain-workflow"
+competitor_asin_pool: "S1_选品板块/amazon-market-research/competitor_asin_pool.yaml"
+export_dirs:
+  sif: "S2_文案板块/_投喂_关键词导出/SIF"
+  sellersprite: "S2_文案板块/_投喂_关键词导出/卖家精灵"
+  xiyou: "S2_文案板块/_投喂_关键词导出/西柚找词"
+platforms:
+  sif:
+    status: "pending|provided|skipped"
+    webpage_hint: "https://www.sif.com/skill/keywords-library?country=US"
+    expected_files: []
+    notes: []
+  sellersprite:
+    status: "pending|provided|skipped"
+    webpage_hint: "SellerSprite ExpandKeywords / keyword expansion page"
+    expected_files: []
+    notes: []
+  xiyou:
+    status: "pending|provided|skipped"
+    webpage_hint: "西柚洞察 > 多ASIN对比 > 关键词列表 > 下载 .xlsx"
+    expected_files: []
+    notes: []
+chosen_keyword_skill: ""
+manual_steps:
+  - "把 competitor_asin_pool.yaml 中的 ASIN 输入到 SIF、卖家精灵或西柚洞察网页。"
+  - "下载关键词/拓词 Excel。"
+  - "SIF 表放入 S2_文案板块/_投喂_关键词导出/SIF/；卖家精灵表放入 S2_文案板块/_投喂_关键词导出/卖家精灵/；西柚多ASIN对比表放入 S2_文案板块/_投喂_关键词导出/西柚找词/。"
+  - "回复已放入对应表格后，调用对应关键词 Skill 清洗。"
+data_policy:
+  export_table_as_evidence_base: true
+  mcp_enrichment_optional: true
+  never_fabricate_missing_metrics: true

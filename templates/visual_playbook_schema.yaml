@@ -1,0 +1,210 @@
+# visual_playbook.yaml · 字段规范（2026-07-30 扩充）
+#
+# 作用：把「学竞品图」的结果变成出图 Skill 能直接消费的参数，
+#       用来覆盖 amazon-listing-image-designer 的 DTC 出厂风格。
+#
+# ⛔ 没有这个文件 = 学习白做。出图会退回 DTC 默认风格。
+# 实测教训：2026-07-28 那轮学了 6 个竞品、写了 962 字结论，
+#           但没落 playbook，出图仍是出厂风格 —— 学习结果没覆盖任何东西。
+#
+# 关键原则：每个字段都要能变成 prompt 里的一句话。写不成 prompt 的观察不要放进来。
+
+schema_version: "2.0"
+category: ""                    # 类目名
+site: ""                        # 站点（不同站点的表达逻辑不同，见下方 localization）
+learned_from: []                # 学习的 ASIN 列表
+learned_at: ""
+
+# ══════════════════════════════════════════════════════
+# 一｜版式语言 —— 这是新增的核心，决定「用什么形式表达」
+# ══════════════════════════════════════════════════════
+# 老 playbook 只记「信息层级」（先讲什么后讲什么），
+# 但同一个信息用图标条讲、用场景块讲、用对比图讲，效果完全不同。
+
+layout_patterns:
+  # 每个 pattern 必须给 prompt_fragment，否则出图用不上
+  - id: icon_strip
+    用途: 功能点速览
+    形态: 顶部或底部一行 N 个极简线性图标，每图标下 1 行粗体短标题 + 1–2 行小字说明
+    实例: "万圣节南瓜灯 6 个：Touch Dimmable / Rechargeable / Soft Silicone Rubber /
+           Warm LED Glow / Tabletop Friendly / Cute Pumpkin Design"
+    密度: 4–6 个/行
+    文案长度: 标题 2–3 词，说明 5–9 词
+    prompt_fragment: >
+      a horizontal strip of {N} minimal line icons across the top,
+      each icon followed by a bold 2-3 word label and one short line of description,
+      evenly spaced, consistent stroke weight
+
+  - id: scene_block
+    用途: 场景叙事，把功能翻译成生活片段
+    形态: 大图 + 手写体/斜体标题 + 2–3 行说明，多块并置
+    实例: "南瓜灯 3 块：Made for bedtime calm / Warm enough for little nighttime rituals /
+           Cute enough for your desk"
+    密度: 2–3 块
+    文案长度: 标题一个短句（4–7 词），说明 2–3 行
+    prompt_fragment: >
+      {N} lifestyle scene blocks, each with a photographic scene,
+      an italic script headline of 4-7 words, and 2-3 lines of body copy underneath
+
+  - id: spec_compare
+    用途: 参数/档位对比，把抽象数值变成可见差别
+    形态: 同一产品的 N 个状态并排，下方标注差异
+    实例: "One Tap, Three Cozy Moods —— Low Glow for sleep / Medium for comfort / Bright for reading"
+    密度: 2–4 档
+    prompt_fragment: >
+      {N} identical product shots side by side showing different states,
+      each labeled with a short state name and its use case, unified background
+
+  - id: detail_grid
+    用途: 款式/规格细节展示
+    形态: 圆形或方形裁切的细节图矩阵，每格配规格标签
+    实例: "圣诞球 4 格：2.36 IN/60MM Classic Size / GLITTER+GLOSS / GOLD&WHITE / LIGHTWEIGHT"
+    密度: 3–6 格
+    prompt_fragment: >
+      a grid of {N} circular product detail crops,
+      each labeled with a spec value in caps and a one-word descriptor
+
+  - id: checklist
+    用途: 使用场景/适用人群枚举
+    形态: 标题 + N 条带 ✓ 的短句
+    实例: "DESIGNED FOR LIFE'S BEST MOMENTS —— Christmas / Weddings / Anniversaries /
+           New Year Parties / Event & Table Decor / Commercial Displays"
+    密度: 4–8 条
+    prompt_fragment: >
+      a headline followed by {N} checkmark bullet items,
+      each 2-4 words, single column or two columns
+
+  - id: quantity_structure
+    用途: 套装/多件装的数量构成
+    形态: 大数字 + 构成拆解
+    实例: "6 DESIGNS · 5 OF EACH · 30 TOTAL"
+    prompt_fragment: >
+      a bold numeric breakdown line showing set composition,
+      large numerals with small connective words
+
+  - id: color_matrix
+    用途: 多颜色/多款式可选
+    形态: N 个色块/成品小图排列 + 颜色名
+    实例: "和服头饰 選べる 10色（レッド/アイボリー/ピンク/ブルー/グレー…）"
+    密度: 6–12 个
+    prompt_fragment: >
+      a matrix of {N} color variants of the product, each with its color name below,
+      uniform lighting and angle across all variants
+
+# ⭐ 学习时要判定：本类目头部普遍用哪几种 pattern，各用在第几屏
+pattern_usage:
+  - position: 1        # A+ 第几段 / 副图第几张
+    pattern: ""
+    why: ""
+
+# ══════════════════════════════════════════════════════
+# 二｜视觉参数 —— 能直接写进 prompt 的具体值
+# ══════════════════════════════════════════════════════
+visual_params:
+  palette:
+    primary: ""              # 主色（十六进制或描述）
+    accent: ""               # 强调色
+    background: ""           # 背景基调
+    note: ""                 # 例如「节日品类用节日色，日常品类用中性色」
+  typography:
+    headline_style: ""       # 例如 "italic script" / "bold sans caps"
+    levels: 0                # 字号层级数（实测头部普遍 3 级）
+    label_case: ""           # "UPPERCASE" / "Title Case"
+  layout:
+    zones_per_module: 0      # 每段 A+ 切几个区
+    whitespace: ""           # "generous" / "compact"
+    alignment: ""            # "center" / "left"
+  density:
+    info_points_per_module: 0   # 一段里放几个信息点（实测头部 3–6）
+    max_words_per_block: 0
+
+# ══════════════════════════════════════════════════════
+# 三｜本地化差异 —— 同一套工作流，不同站点表达不同
+# ══════════════════════════════════════════════════════
+# 实测标杆：同一家做美国站万圣节 / 美国站圣诞 / 日本站和服头饰，
+#           三套图的信息组织完全不同 —— 不是翻译，是重新组织阅读顺序与信息密度。
+localization:
+  language: ""
+  reading_order: ""          # 例如 "美国站：收益优先 → 场景 → 规格"
+                             #      "日本站：套装内容 → 颜色选择 → 使用场合"
+  density_note: ""           # 日本站信息密度普遍更高，字更小更密
+  cultural_cues: []          # 节日/传统语境元素
+
+# ══════════════════════════════════════════════════════
+# 四｜沿用原有字段（不变）
+# ══════════════════════════════════════════════════════
+information_hierarchy: []    # 信息顺序：先讲什么后讲什么
+category_conventions: []     # 类目惯例（如白底主图、尺码早置）
+differentiators: []          # 各家差异点
+forbidden_elements: []       # ⛔ 禁用元素（性能声明、竞品构图、叠字等）
+compliance_note: ""
+
+# ══════════════════════════════════════════════════════
+# 五｜覆盖声明 —— 明确它覆盖了 DTC 出厂风格的哪几项
+# ══════════════════════════════════════════════════════
+overrides_default_style:
+  - field: ""                # 覆盖了哪个默认设定
+    from: ""                 # 出厂值
+    to: ""                   # 学习后的值
+    evidence: ""             # 依据哪个 ASIN 的哪一段
+
+# ⛔ 这一节为空 = 学习没产生任何影响，等于白学。
+#    出图前必须检查这里至少有 3 条。
+
+# ══════════════════════════════════════════════════════
+# 六｜超越点 —— 学习的终点不是模仿，是找出竞品没做到的地方
+# ══════════════════════════════════════════════════════
+# ⛔ 这一节是本 schema 的最终目的。前五节都是为了推出这一节。
+#
+# 超越不靠「画得更漂亮」，靠三份数据交叉：
+#   ① 竞品 A+ 讲了什么（本 playbook 的 information_hierarchy）
+#   ② 买家实际在问什么（S1 的 VOC / 差评 / 退货主因）
+#   ③ 哪些能实证（03_product_facts.yaml 已确认事实 ∖ 04_compliance_blacklist）
+#
+# 交集就是超越点：买家在问、竞品没答、我们能证明。
+
+beyond_benchmark:
+
+  # 6.1 竞品的信息盲区 —— 买家在问，但六家都没在图里回答
+  information_gaps:
+    - buyer_question: ""        # 来自 VOC / 差评 / 搜索词意图
+      source: ""                # voc | review | keyword，⛔ 必须标来源，不许推测
+      competitors_coverage: ""  # 「6 家里 0 家讲了」/「只有 B0XXX 提了一句」
+      our_answer: ""            # 我们打算怎么在图里回答
+      evidence: ""              # 依据哪条已确认事实
+      pattern: ""               # 用第一节的哪个版式表达
+      # ⛔ 没有 evidence 的不算超越点，那叫编故事
+
+  # 6.2 竞品在吹但拿不出证据的点 —— 我们不跟，改讲能证明的
+  claim_arbitrage:
+    - competitor_claim: ""      # 竞品在图上吹的（如 waterproof / reflective）
+      why_unverifiable: ""      # 为什么我们不能跟（无测试报告等）
+      our_substitute: ""        # 换成什么能证明的卖点
+      why_stronger: ""          # 为什么这个替代更打得中人
+      # 实测范例：
+      #   competitor_claim: waterproof
+      #   why_unverifiable: 工厂无测试报告，blocked_claim
+      #   our_substitute: "Dog raincoat, sized for your dog"
+      #   why_stronger: 尺码是本类目退货主因（VOC 排第一），比吹防水更打得中人
+
+  # 6.3 表达手法上的可超越处 —— 同一件事，竞品做得不够好
+  execution_gaps:
+    - what: ""                  # 竞品怎么做的
+      weakness: ""              # 差在哪（密度不够 / 用文字讲了本该用图示的 / 顺序不对）
+      our_approach: ""          # 我们怎么做
+      pattern: ""               # 换用哪个版式
+      # 实测范例：
+      #   what: "六家都用文字表格讲尺码"
+      #   weakness: "买家看表格仍不知道自己的狗属于哪档"
+      #   our_approach: "量体三步图示 + S/M/L 三行表两层表达"
+      #   pattern: scene_block + detail_grid
+
+  # 6.4 自检
+  self_check:
+    gaps_found: 0               # information_gaps 条数，⛔ 少于 2 条说明 VOC 没读透
+    all_have_evidence: false    # 每条超越点都有 evidence
+    no_new_claims: false        # ⛔ 超越点不得引入任何 blocked_claim
+
+# ⛔ 出图前的硬闸门：
+#    beyond_benchmark 全空 = 这轮只是模仿，没有超越。
+#    至少要有 2 条 information_gaps + 1 条 claim_arbitrage。

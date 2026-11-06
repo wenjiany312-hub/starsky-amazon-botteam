@@ -1,0 +1,65 @@
+schema_version: "2.0"
+plan_id: "ADP-DEMO-US-001"
+plan_version: 1
+plan_hash: "sha256:RECOMPUTE_WITH_ad-plan-c14n-v1"
+hash_schema: "ad-plan-c14n-v1"
+marketplace: US
+ad_product: SP
+sku_asin_map:
+  - sku: "REAL-CHILD-SKU"
+    asin: "B0XXXXXXXX"
+bulk_operations:
+  - action_id: "ACT-CREATE-CAMPAIGN-001"
+    ad_product: SP
+    entity: Campaign
+    operation: Create
+    campaign_id: "TmpCampaign001"
+    campaign_name: "SP-EXAMPLE-EXACT"
+    start_date: "20260809"
+    targeting_type: MANUAL
+    state: enabled
+    daily_budget: 10.00
+    bidding_strategy: "Dynamic bids - down only"
+  - action_id: "ACT-CREATE-ADGROUP-001"
+    ad_product: SP
+    entity: Ad Group
+    operation: Create
+    campaign_id: "TmpCampaign001"
+    ad_group_id: "TmpGroup001"
+    campaign_name: "SP-EXAMPLE-EXACT"
+    ad_group_name: "AG-EXAMPLE-EXACT"
+    ad_group_default_bid: 0.50
+    state: enabled
+  - action_id: "ACT-CREATE-PRODUCT-AD-001"
+    ad_product: SP
+    entity: Product Ad
+    operation: Create
+    campaign_id: "TmpCampaign001"
+    ad_group_id: "TmpGroup001"
+    campaign_name: "SP-EXAMPLE-EXACT"
+    ad_group_name: "AG-EXAMPLE-EXACT"
+    sku: "REAL-CHILD-SKU"
+    state: enabled
+  - action_id: "ACT-CREATE-KEYWORD-001"
+    ad_product: SP
+    entity: Keyword
+    operation: Create
+    campaign_id: "TmpCampaign001"
+    ad_group_id: "TmpGroup001"
+    campaign_name: "SP-EXAMPLE-EXACT"
+    ad_group_name: "AG-EXAMPLE-EXACT"
+    keyword_text: "example keyword"
+    match_type: exact
+    bid: 0.50
+    state: enabled
+expected_counts:
+  total_rows: 4
+  by_entity:
+    Ad Group: 1
+    Campaign: 1
+    Keyword: 1
+    Product Ad: 1
+  by_operation:
+    Create: 4
+  daily_budget_sum: "10.00"
+

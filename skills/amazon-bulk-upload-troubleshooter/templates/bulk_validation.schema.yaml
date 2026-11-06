@@ -1,0 +1,46 @@
+schema_version: "1.0"
+artifact_type: amazon_ad_bulk_validation
+mode: production
+ad_product: SP
+marketplace: US
+plan_ref:
+  plan_id: ""
+  plan_version: 0
+  plan_hash: "sha256:"
+  hash_schema: ad-plan-c14n-v1
+technical_fingerprint: "sha256:"
+bulk_file: {path: "", sha256: "sha256:"}
+manifest_ref: {path: "", sha256: "sha256:"}
+compile_context_ref: null
+bulk_release_review_ref: null
+approved_validation_ref: null
+technical_status: failed  # passed | failed
+uploadability:
+  status: blocked  # candidate_needs_bulk_release_review | reviewed_candidate_upload_prepared | bulk_release_stale | bulk_release_changes_requested | bulk_release_rejected | demo_only_not_uploadable
+  bulk_release_review: pending  # pending | changes_requested | rejected | blocked | approved | demo_not_releasable | stale
+  amazon_upload_status: not_submitted
+  important_boundary: 文件存在或技术通过不等于已上传。
+expected_counts: {}
+actual_counts: {}
+checks: []
+warnings: []
+hard_blocks: []
+release_blocks: []
+processing_report:
+  provided: false
+  amazon_upload_status: not_submitted
+  success_count: 0
+  failure_count: 0
+  unknown_count: 0
+  retry_action_ids: []
+  unmapped_failure_rows: []
+  coverage_complete: false
+  expected_action_count: 0
+  covered_action_count: 0
+  missing_action_ids: []
+  unexpected_action_ids: []
+  duplicate_action_ids: []
+  unmapped_report_rows: []
+  binding_verified: false
+  binding_issues: []
+  binding_ref: null

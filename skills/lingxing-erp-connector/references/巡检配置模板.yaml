@@ -1,0 +1,38 @@
+# 家族配置模板(可选)
+#
+# 用途:daily_patrol_data.py 的家族级红线要靠它才能跑。不建这个文件,
+#      以下四类检查会整块跳过(脚本会提示一次,不报错):
+#        1. 价格跌破红线      ← 靠本文件的 floor_price
+#        2. 价格异动超阈值    ← 阈值在 ../rules.yaml family.price_change_pct
+#        3. 星级下跌          ← 阈值在 ../rules.yaml family.star_drop
+#        4. 评论激增且星级未升(疑集中差评) ← 阈值在 ../rules.yaml family.review_jump
+#
+# 使用方法:复制本文件为同目录下的 巡检配置.yaml 后填写。
+#          sid 从 python scripts/lingxing_client.py --smoke 拿。
+#
+# 注意:填好的 巡检配置.yaml 含真实 ASIN 和店铺 sid,不得进分享包/公开仓库/课程包。
+
+stores:
+  # - sid: 123                      # 领星店铺 ID(必填,要跟 lingxing_config.yaml 的 stores 对得上)
+  #   families:
+  #     - parent: "B0PARENT01"      # 父体 ASIN
+  #       nickname: "猫窝系列"       # 家族名,不填就显示父体 ASIN
+  #       children:
+  #         - asin: "B0CHILD001"    # 子体 ASIN(必填)
+  #           nickname: "猫窝 M 码"  # 子体名,报告里用它
+  #           floor_price: 25.99    # 价格红线:低于此价出 finding。不填=不查这条
+  #         - asin: "B0CHILD002"
+  #           nickname: "猫窝 L 码"
+  #           floor_price: 29.99
+  #
+  # - sid: 456
+  #   families:
+  #     - parent: "B0PARENT02"
+  #       nickname: "猫爬架系列"
+  #       children:
+  #         - asin: "B0CHILD003"
+  #           nickname: "猫爬架 1.2m"
+  #           floor_price: 59.99
+
+# 只填要盯的家族就行,不用把全店铺 ASIN 都列进来 —— 家族级检查是精细活,
+# 铺开了噪音大过信号。建议只放主推款和最近有价格战的款。

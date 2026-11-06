@@ -1,0 +1,54 @@
+schema_version: "1.0"
+artifact_type: ops_state
+updated: "2026-09-11"
+purpose: >
+  S5 运营板块的状态账本，由 amazon-ops-workflow 维护，写在 S5_运营板块/amazon-ops-workflow/ops_state.yaml。
+  patrol_scope 让「今日巡检」第二次起不再问站点/店铺/ASIN；review_card 让「复盘某某产品广告」只换参数；
+  pending_actions 让下一轮先核验上一轮动作。
+
+patrol_scope:
+  marketplace: "US"                 # US | UK | DE ...
+  stores:                           # 领星 sid 或店铺昵称；后台报表模式可留空
+    - "店铺A"
+  asins: []                         # 空 = 全店；填了就只看这些
+  skus: []
+  data_source: "feed_folder"        # amazon_ads_api | lingxing | feed_folder | manual_snapshot；沿用用户选择  # <!--flagship-->
+  data_source: "feed_folder"        # lingxing | feed_folder | manual_snapshot；沿用用户选择  # <!--basic-->
+  ops_workspace: ""                 # 空 = ~/.starsky-codex/ops_workspace；不要用新品 S1–S4 夹当全店账本
+  data_paths:
+    lingxing: "unknown"             # configured | no_credential | not_configured
+    amazon_ads_api: "unknown"       # not_configured | pending_authorization | needs_verification | reports_pending | data_available | failed  # <!--flagship-->
+    sp_api: "unknown"               # 订单/库存/Listing，只需 LWA；不是广告源  # <!--flagship-->
+    feed_folder: "unknown"
+    ads_knowledge_base: "unknown"
+  push_feishu: false                # true 且 lingxing_config.feishu.webhook 已配 → 巡检后推飞书
+  last_run_date: ""                 # yyyy-MM-dd，每次巡检结束更新
+  last_report: ""                   # 上次报告的产品根相对路径
+  baseline_status: "first_snapshot" # first_snapshot | has_baseline
+
+review_card:
+  data_source: ""
+  profile_id: ""
+  region: ""                       # NA | EU | FE；不猜
+  currency: ""
+  timezone: ""
+  date_range: {start: "", end: ""}
+  attribution_days: null            # 7 | 14；显式选择
+  campaign_scope: {all_campaigns: false, campaign_ids: []}
+  asin: ""
+  family: ""
+  aov: null                         # 客单价；缺了不算出价天花板
+  margin: null
+  target_acos: null
+  assumed_cvr: null                 # 用户未给就保持 null
+  observe: {fast: "72h", attrib: "7d", routine: "biweekly"}
+  stop_loss: {acos: null, consecutive_days: null}
+
+pending_actions: []                 # {action_id, native_id, layer, source_context, status, object, change, owner, due_date, approval_status, result}
+
+history:                            # 每轮一行，最多保留 30 行
+  - date: ""
+    layer: "daily"                  # daily | weekly | monthly
+    report: ""
+    findings: 0
+    critical: 0

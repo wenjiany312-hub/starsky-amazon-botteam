@@ -1,0 +1,62 @@
+schema_version: "2.0"
+artifact_type: external_mcp_policy
+updated: "2026-08-25"
+purpose: >
+  星空插件只打包 Skill / 契约 / 本地 1688 MCP 源码。
+  Sorftime、SIF、西柚、卖家精灵 是外部 MCP，必须由用户写进本机 Codex config.toml。
+  装插件 ≠ 已接通市场数据。禁止假装 Skill 里已经带了这些服务。
+
+hard_rule: >
+  不得把服务商密钥、完整 URL+key 写进插件仓库或分享包。
+  只告诉用户：把服务商给的配置原样贴进 %USERPROFILE%\.codex\config.toml，完全退出再开 Codex。
+
+plugin_ships:
+  skills: true
+  local_1688_mcp_source: "<home>/mcp/1688/"
+  external_market_mcp: false
+
+preferred_required:
+  description: 本套系统生产首选，S1/S2/S4 开跑前应可真实调用。
+  items:
+    - id: sorftime
+      detect: ["sorftime"]
+      typical_names: ["sorftime", "Sorftime MCP"]
+      use: "S1 选品 / 类目容量 / BSR / 竞品池"
+    - id: sif
+      detect: ["sif"]
+      typical_names: ["sif-mcp", "sif_mcp", "sif"]
+      use: "S2 词库信号 + S4 竞品广告结构（本系统广告域首选）"
+
+welcome_extras:
+  description: 用户有就探测、有就调用；没有不挡首选。不得用它们代替「我可以不配 Sorftime/SIF」。
+  items:
+    - id: xiyou
+      detect: ["xydc", "xiyou"]
+      typical_names: ["xydc-mcp", "xiyou"]
+      use: "季节性、价格段、多 ASIN 对比、广告活动增减"
+    - id: sellersprite
+      detect: ["sellersprite"]
+      typical_names: ["sellersprite-01", "sellersprite"]
+      use: "竞品详情、拓词、销量/流量补充"
+
+local_required:
+  - id: local_1688
+    mcp_name: 1688_scraper
+    policy: "<home>/templates/1688_mcp_policy.yaml"
+
+production:
+  - 探测工具清单：名称含 sorftime / sif / xydc|xiyou / sellersprite / 1688。
+  - 清单没有但 config.toml 已有对应段 → 当前权限允许时用 scripts/sorftime_mcp.py 直连桥；成功记 direct_bridge，不称原生注入。sandbox_blocked / 网络受限须按当前环境审批机制处理，不绕过限制，也不误判未配置。
+  - 首选缺失仅指 not_configured / 无密钥 / 凭证失效 / 直连桥也失败 → 停，指引用户配置 config.toml。禁止编造市场数。
+  - 可加装存在 → 与首选一起调用，不得「找到一个能用的就停」。
+  - 可加装不存在 → 不阻断，日志标 not_installed。
+  - 1688 按 1688_mcp_policy.yaml；开跑不因「本任务未注入」停，第 5 步再验本机服务。
+
+demo_only_fallback: >
+  仅当用户明确说演示，且已有可验证导出表 / 既有报告 / 卖家精灵或西柚可调用时，
+  才允许缺首选继续，并标 source_fallback。不得伪称调用了 Sorftime 或 SIF。
+
+never:
+  - 不把卖家精灵或西柚写成与 Sorftime/SIF 平级的「配一个就够」。
+  - 不跨源平均同一个指标。
+  - 不把插件安装成功写成 MCP 已接通。

@@ -1,0 +1,37 @@
+schema_version: "1.0"
+artifact_type: amazon_ad_bulk_manifest
+generated_at: ""
+mode: production  # production | demo_direct_run
+ad_product: SP
+marketplace: US
+plan_ref:
+  plan_id: ""
+  plan_version: 0
+  plan_hash: "sha256:"
+  hash_schema: ad-plan-c14n-v1
+review_gate_ref:
+  path: ""
+  sha256: "sha256:"
+  scope: architecture_review+archive_review
+  scope_sha256: "sha256:"
+template_ref:
+  path: ""
+  ref_path: ""
+  source: ""
+  downloaded_at: ""
+  locale: ""
+  sheet_name: ""
+  adapter: ""
+  file_sha256: "sha256:"
+compile_context_ref: null  # campaigns 时为 {path, sha256}；explicit bulk_operations 时为 null
+bulk_file: {path: "", sha256: "sha256:"}
+expected_counts: {}
+actual_counts: {}
+row_map: []
+uploadability:
+  status: candidate_needs_technical_validation_and_bulk_release_review
+  technical_validation: pending
+  bulk_release_review: pending
+  amazon_upload_status: not_submitted
+warnings: []
+hard_blocks: []

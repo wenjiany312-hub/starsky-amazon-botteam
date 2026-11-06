@@ -1,0 +1,19 @@
+# 本机指针配置示例；不要把真实凭据文件放进公开包。
+# 复制到 ~/.starsky-codex/config/sp_api_config.yaml 后修改路径和连接映射。
+schema_version: "1.1"
+connection_name: example-us
+region: NA
+expected_country: US
+credential_file: ./sp-api-private.env
+client_id_env: SP_CLIENT_ID
+client_secret_env: SP_CLIENT_SECRET
+refresh_token_env: SP_REFRESH_TOKEN
+marketplace_id_env: SP_MARKETPLACE_ID
+endpoint_env: SP_ENDPOINT
+# seller_id: 仅填写已经验证的卖家 ID；缺失时仅 Listing 域报 seller_id_required。
+max_pages: 100
+page_size: 20
+# 英国连接另存 sp_api_config_uk.yaml：region EU，expected_country GB，
+# refresh_token_env SP_REFRESH_TOKEN_UK，marketplace_id_env SP_MARKETPLACE_ID_UK，
+# endpoint_env SP_ENDPOINT_UK。credential_file 可指向另一份独立 .env。
+# 不需要 AWS Access Key / Secret Key。

@@ -1,0 +1,7 @@
+# 星空 · 飞书日报接入：把冒号后面的 <...> 换成你自己的值，保存后把这个文件拖进对话，说「接入飞书」
+# 在哪找：飞书群 → 右上角「…」→ 设置 → 群机器人 → 添加机器人 → 自定义机器人
+#         安全设置勾「签名校验」，复制 Webhook 地址和签名密钥
+# 官方说明：https://open.feishu.cn/document/client-docs/bot-v3/add-custom-bot?lang=zh-CN
+
+Webhook：<粘贴 https://open.feishu.cn/open-apis/bot/v2/hook/... 整串>
+签名校验：<粘贴签名密钥>

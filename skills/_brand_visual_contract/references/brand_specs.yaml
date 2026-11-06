@@ -1,0 +1,95 @@
+# 品牌故事 / 品牌旗舰店 规格表（brand_preview.py 读取）。适用所有站点：站点只决定语言与用词，模块与尺寸逻辑一样。
+# 方法与反例见同目录 brand_store_playbook.md。
+# 尺寸按公开资料整理，后台为准：上传前在 A+ 内容管理器（品牌故事）/ 品牌旗舰店编辑器里核一次，
+# 与这里不一致时以后台为准，并把新值改回本表。字数上限只做提醒，不卡流程。
+schema_version: "1.0"
+as_of: "2026-09"
+
+brand_story:
+  where: 卖家后台 → 广告 → A+ 内容管理器 → 开始创建 A+ 内容 → 品牌故事
+  sources:
+    - https://www.goatconsulting.com/merchandising/amazon-brand-story
+    - https://salesduo.com/blog/complete-amazon-brand-story-guide/
+    - https://myamazonguy.com/amazon-design/how-to-create-an-amazon-brand-story/
+  file: {formats: [jpg, png, bmp], max_mb: 2}
+  max_cards: 7               # 背景图之外的轮播卡片数，公开资料说法不一（7 或更多），按 7 设计最稳
+  languages: {US: English (United States), UK: English (United Kingdom), CA: English (Canada), AU: English (Australia),
+              DE: Deutsch, FR: Français, IT: Italiano, ES: Español, JP: 日本語}
+  modules:
+    background:
+      label: 背景图（整条轮播的底图，带标题/正文；电脑端 + 手机端各一张）
+      size: [1464, 625]
+      mobile_size: [463, 625]
+      alt_sizes: [[3000, 600]]
+      note: 电脑 1464×625 + 手机 463×625 为实跑验证过的组合（2026-09 英国站上传包）；部分资料称支持 3000×600，以后台弹窗为准
+      text: {headline: 30, body: 135}
+      required: true
+    logo:
+      label: 品牌 Logo + 品牌介绍
+      size: [315, 145]
+      note: 另有资料写 300×150；透明底 PNG 最稳
+      text: {description: 450}
+      required: true
+    focus_image:
+      label: 焦点图卡片（图 + 标题 + 正文；文字也可以做进图里，后台标题正文留空）
+      size: [362, 453]
+      text: {headline: 30, body: 450}
+    asin_showcase:
+      label: 商品与旗舰店展示卡（四宫格，每格一张自定义图 + ASIN + 短标签；店铺入口用后台原生选取）
+      size: [166, 182]
+      max_asins: 4
+      text: {headline: 30, label: 30}
+    store_showcase:
+      label: 旗舰店页面展示卡（链接最多 3 个旗舰店页面）
+      size: [166, 182]
+      max_pages: 3
+      text: {headline: 30, page_title: 30}
+    qa:
+      label: 品牌问答（纯文字）
+      max_pairs: 4
+      text: {question: 128, answer: 512}
+
+brand_store:
+  where: 卖家后台 → 品牌 → 品牌旗舰店 → 管理品牌旗舰店（需品牌备案）
+  sources:
+    - https://advertising.amazon.com/resources/ad-specs/stores
+    - https://advertising.amazon.com/library/guides/stores-best-practices
+    - https://advertising.amazon.com/library/expert-advice/six-tips-to-optimize-your-store-for-mobile
+  status_chain: [facts_ready, module_verified, design_accepted, upload_package_ready, backend_preview_verified, submitted, published_verified]
+  file: {formats: [jpg, png], max_mb: 5}
+  max_sections_per_page: 20
+  hero:
+    label: 页头大图（Header，全店共用一张即可）
+    module: 页头
+    size: [3000, 600]
+    note: 左侧 900px 可能被 Logo 覆盖；左右各 15% 可能被裁，关键内容放中间安全区
+    required: true
+  logo:
+    label: 品牌 Logo（正方形）
+    size: [400, 400]
+    required: true
+  # module：后台编辑器里的模块名；样式设置以当前账号实际控件为准。
+  tiles:
+    image_text_overlay:
+      label: 带文本的图片 · 叠加文本（首页产品线入口的主力版式）
+      module: 带文本的图片 → 叠加文本
+      size: [3000, 1280]
+      alt_sizes: [[1920, 820]]
+      default_overlay: {size: 中号, align: 左对齐, position: 右上角}
+      note: 案例实测尺寸（美国站 3000×1280、英国站约 1920×820），不是所有模块通用标准。图左约 70% 场景、右约 30% 浅色文字区；辅助文案可做进图，标题与按钮交给后台，不要再画进图
+    image_text_beside:
+      label: 带文本的图片 · 图旁文字
+      module: 带文本的图片 → 图旁文字
+      size: [1500, 1500]
+      note: 文字在图旁时按方形适配图出；长横图不能直接套用
+    full_width: {label: 通栏图片, module: 图片（全宽）, size: [3000, 1500], min: [1500, 20]}
+    large: {label: 大方图, module: 图片（大）, size: [1500, 1500]}
+    medium: {label: 中横图, module: 图片（中）, size: [1500, 750]}
+    small: {label: 小方图, module: 图片（小）, size: [750, 750]}
+    image_text: {label: 图文图块（旧写法，等同图旁文字）, module: 带文本的图片, size: [1500, 1500]}
+    shoppable: {label: 可购物图（图上点商品）, module: 可购物图片, size: [3000, 1500]}
+    video: {label: 视频图块封面, module: 视频, size: [3000, 1500], note: 视频 MP4/H.264，封面按图块尺寸}
+    text: {label: 纯文本, module: 文本, size: null}
+    product: {label: 商品（单个或少量）, module: 商品, size: null, note: 原生显示价格、评价、库存；不烘焙进图}
+    product_grid: {label: 商品网格, module: 商品网格, size: null, min_products: 4, max_per_page: 1, note: 4 件及以上才用；每页至多一个；少于 4 件用商品模块}
+  text_obscured: 带链接标题时，长方形图底部约 19%、正方形图底部约 12% 会被标题遮挡

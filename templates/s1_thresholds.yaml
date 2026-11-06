@@ -1,0 +1,94 @@
+schema_version: "1.0"
+artifact_type: s1_thresholds
+updated: "2026-09-03"
+purpose: >
+  S1「阈值法选品」方法层（amazon-trend-signal-scanner / amazon-competition-difficulty-assessor /
+  amazon-gray-tactic-detector / amazon-seasonal-selection / amazon-variant-packaging-planner）
+  的唯一阈值来源。来源：2025-07 选品实战班 + 旺季广告高阶课（2025-06）。
+  全部是经验值：输出时必须附注「按当前类目校准」；多源数据打架时取保守值（销量取低、难度取高、利润取低）。
+  ⛔ 不在各 Skill 里复制这些数字；改阈值只改本文件。
+
+calibration_note: "阈值来自 2025-07 课程经验值，请按当前类目校准"
+
+entry_difficulty_review_band:
+  formula: "难度 = A / B；A = 核心词下相似产品中 30 评论以内的平均月销量；B = 该词自然排名前 5 的平均月销量"
+  primary_band_reviews_max: 30
+  compare_bands: ["31-50", "51-100", "101-200", "201-500"]
+  hard_below_pct: 10
+  moderate_upto_pct: 15
+  verdicts:
+    hard: "困难：默认否决，除非广告效率法通过且有明确差异化"
+    moderate: "适中：可做，必须小步试错"
+    easy: "简单：可立项，仍要过利润线"
+  source: "课22 / 课24 / 课48"
+  example: "透明化妆包 154 / 2685 ≈ 5.7% → 困难；dog bandana bulk 200 / 482 = 41.49% → 简单"
+
+entry_difficulty_ad_efficiency:
+  formula: "广告效率 = 月销量 ÷ 广告词数；广告词占比 = 广告词 ÷ 全部流量词"
+  efficiency_friendly_min: 6
+  efficiency_band_high: 17
+  ad_share_burn_pct: 80
+  natural_dominant_share_pct_below: 20
+  cross_rule: "两法任一通过即可（课23 / 课34）"
+  source: "课23 / 课48 / 课52"
+
+similar_product_three_criteria:
+  criteria:
+    - "外观接近，且与核心词形成真实竞争"
+    - "评论量级接近我们上架时的状态，评分也接近"
+    - "价格接近"
+  exclude: "头部不同款 / 不同形态不算分母（课21 / 课55）"
+  note: "同类竞品分析（提升竞争力）≠ 相似产品（算难度），不要混成一张表"
+
+mode_and_profit:
+  jingpu_monthly_orders: [50, 400]
+  jingpin_monthly_orders_min: 400
+  profit_line_roi_after_ads_pct_min: 50
+  value_for_money_discount_pct_min: 30
+  value_for_money_note: "便宜 $1~2 不算性价比"
+  source: "课3 / 课11 / 课38 / 课39"
+
+entry_and_inventory:
+  first_order_units: [30, 50]
+  restock_months_per_shipment: 2
+  sales_forecast_rule: "评论区间参照 + 「评论/外观/价格接近且广告词最少」参照，取较少货量"
+  fba_cpc_vs_fbm_ratio: 0.33
+  cpc_source_preference: "卖家精灵实时竞价 > FBM 测试"
+  test_ads_rule: "开自动，不开手动（课35）"
+  seasonal_lead_months: [2, 3]
+  strong_holiday_lead_months: 7
+  source: "课34 / 课35 / 课60 / 课68 / 课70 / 课71"
+
+reviews:
+  very_good_count: 200
+  can_break_out_count: 50
+  natural_review_rate_pct: [0.8, 6.85]
+  suspicious_new_item_review_rate_pct_above: 5
+  note: "堆评论 ≠ 起来（课7 / 课13 / 课32）"
+
+signal_scanner_detectors:
+  reviews_x_sales: { reviews_max: 30, monthly_sales_min: 100 }
+  organic_x_ads: { ad_keywords_near_zero: true, burn_share_pct: 80 }
+  time_x_sales: { note: "只解释已找到的异常值，不当漏斗第一刀（课39）" }
+  peak_x_offseason: { rule: "旺季好卖且淡季不掉 = 偏季品；淡季归零 = 纯季节赌货" }
+  candidates_per_category: [5, 10]
+
+gray_tactic_signals:
+  brand_keyword_search_volume_min: 300
+  ad_share_burn_pct: 80
+  confidence_rule: "1 软信号=低；2 独立信号=中；3 个或明确品牌/侵权=高"
+  scope: "只识别，不提供任何违规操作"
+
+peak_season_ads:
+  formulas:
+    acos: "ACOS = CPC / (客单价 × CR)"
+    tacos: "TACOS = 广告花费 / 总销售额"
+    cpa: "CPA = CPC / CR"
+    total_profit: "总盈利 = 自然销售额 × 毛利率 + 广告销售额 × (毛利率 − ACOS)"
+    inventory: "备货 = 常规日销 × 常规天数 + 高峰日销 × 高峰天数 × 倍数 + 库存 × 15%"
+  inventory_example: "50×64 + 50×6×5 + 3500×15% = 5200 件"
+  peak_multiplier_reference: { fathers_day: 3, prime_day: 5, note: "课中示意，按本店历史校准" }
+  pd_bid_coefficient_range: [0.15, 0.3]
+  pd_first_page_leverage_relevance_min: 70
+  pd_exact_share_pct: [70, 90]
+  source: "旺季广告高阶课 AD66"

@@ -1,0 +1,219 @@
+schema_version: '1.0'
+name: 沙龙 HTML 报告产物契约
+edition: starsky-v2
+updated: '2026-09-12'
+purpose: S1/S2 以固定结构、实际字段与来源指纹验收；其他阶段保留原有契约。S1/S2 不用文件体积和图表数量衡量内容质量。
+generator: github-tabler-html-report
+visual_authority: templates/report_format_contract.yaml
+generator_note: S1 调用 scripts/s1_stage_report.py 及 s1_report_v2.py；S2 调用 scripts/s2_report.py；其他阶段继续既有 salon_report.py。禁止每次运行另写 HTML。
+path_resolution_v2: '本文件 file/sources 字段全部是产品根相对的 V2.1 字面路径：HTML 统一在 {板块夹}/github-tabler-html-report/HTML/{文件}；md/yaml 数据源在各自
+  Skill 夹 （归属见 templates/artifact_contract.md）。旧 run 根上的 生成报告/ 只读兼容， 自检脚本 检查HTML达标.py 两种布局都会找。
+
+  '
+global_rules:
+- 每个阶段的 HTML 份数固定，不多出也不少给
+- 每个板块的 HTML 集中放在 {板块夹}/github-tabler-html-report/HTML/ 一个目录，不分散、不在产品根另建 HTML/
+- 多源产物用源标识命名，一眼看出是哪家生成的（见 S2 naming_rule）
+- 生成后必须自检并把实测数字报给用户，不接受只回"已完成"
+- S2 严格复用固定八/十节；核心内容不折叠，完整证据可展开。缺口页不能当作阶段通过。
+reports:
+  S1:
+    count: 1
+    items:
+    - id: s1_feasibility
+      file: S1_选品板块/github-tabler-html-report/HTML/阶段_S1_选品可行性研究报告.html
+      title: 'S1: 选品板块 · 可行性综合报告'
+      summary: 汇总 S1 全部数据的唯一一份综合报告
+      sources:
+      - S1_选品板块/_阶段总览/阶段_S1_选品可行性研究报告.md
+      - S1_选品板块/amazon-market-research/01_product_profile.yaml
+      - S1_选品板块/amazon-market-research/01_market_facts.json
+      - S1_选品板块/1688-product-detail-scraper/03_product_facts.yaml
+      - S1_选品板块/1688-product-detail-scraper/03_product_ct.yaml
+      - S1_选品板块/amazon-ip-risk-assessment/04A_compliance_ruler.yaml
+      - S1_选品板块/amazon-ip-risk-assessment/04_compliance_blacklist.yaml
+      - S1_选品板块/amazon-market-research/05_cost_model.yaml
+      - s1_decision_inputs.yaml
+      - s1_purchase_checklist.yaml
+      - S1_选品板块/_阶段总览/decision_record_S1.yaml
+      historical_sources: 原生子报告全文与旧M00/A29内容只保留在结构化历史、原文件或附录索引中，不重复粘入七章正文。
+      baseline_20260726:
+        size_kb: 92
+        section: 38
+        table: 31
+        svg: 3
+        kpi: 7
+        bar: 7
+      minimum: {}
+      acceptance: templates/s1_report_module_contract.yaml；必备字段、唯一结论、重复检测与真实源文件Hash，不按文件体积或组件数量。
+      must_contain:
+      - 唯一结论、产品图与CT、四张答案卡、三件用户动作
+      - 市场分析与机会（五节）
+      - 产品与货源
+      - IP 与合规
+      - 推广难度
+      - 成本与定价（统一引擎）
+      - 风险与翻转条件
+      - 采购落地清单
+      - 默认折叠附录（来源、证据、知识库、验收、历史）
+  S2:
+    count: N + 1
+    count_rule: '词库 HTML 的份数 = 实际导入的词表源数（S2_文案板块/_投喂_关键词导出/ 下有文件的目录数）， 每源一份、各自独立；文案 HTML 固定 1 份。 三家都导 → 3 份词库 + 1 份文案 = 4
+      份；只导 SIF → 1 + 1 = 2 份。
+
+      '
+    note: 各已选来源独立输出；下游只消费指定主线，不混算不同来源/周期指标。
+    naming_rule: 06_<源标识>_产品词库.html —— 源标识用中文短名：SIF / 卖家精灵 / 西柚
+    multi_source_routing:
+      S2_文案板块/_投喂_关键词导出/SIF/:
+        skill: amazon-sif-keyword-research
+        html: S2_文案板块/github-tabler-html-report/HTML/06_SIF_产品词库.html
+        mcp: sif
+      S2_文案板块/_投喂_关键词导出/卖家精灵/:
+        skill: amazon-sellersprite-keyword-research
+        html: S2_文案板块/github-tabler-html-report/HTML/06_卖家精灵_产品词库.html
+        mcp: sellersprite
+      S2_文案板块/_投喂_关键词导出/西柚找词/:
+        skill: amazon-xiyou-keyword-research
+        html: S2_文案板块/github-tabler-html-report/HTML/06_西柚_产品词库.html
+        mcp: xydc
+      多源差异对照:
+        source: 06C_三源关键词差异对照.md
+        html: S2_文案板块/github-tabler-html-report/HTML/06C_三源差异对照.html
+    multi_source_rules:
+    - 尊重已确认来源和仅导表限制，当前任务无工具时记录未调用。
+    - 不平均不同来源，不让补数覆盖原始导表。
+    - 多源比较独立证据语义和周期；产生差异对照 Markdown。
+    required_when_multi_source:
+      file: S2_文案板块/_阶段总览/06C_三源关键词差异对照.md
+      why: "单看某一家的词库报告，看不出数据源本身的问题。 实测这份报告发现了两件只有并列才能发现的事： ① SIF 与西柚在 ABA排名 / Top3点击 / Top3转化 三组字段上**逐位完全相同**\n   → 说明共享上游，**实际只有\
+        \ 2 条独立指标线，不是 3 条**\n   → 推翻了\"配三家就有三重验证\"的直觉\n② 西柚五个核心词的 CPC 建议竞价全为 $0.30 但各自范围不同\n   → 疑似档位化/取整，**该值不可作为逐词最终竞价**\n"
+      must_answer:
+      - 搜索量差多少倍，是什么口径差异（周/月、搜索量/流量总和/搜索人数）
+      - CPC 差多少倍，能否判定谁更准（答案通常是不能，只能判口径不同）
+      - 各源之间是否同源 —— 逐字段核验五个核心词，判定实际有几条独立线
+      - 同一个词在各源相关性相反时，会不会进入不同池
+      - 某源独有的经济性字段（ACOS/CPA/预算）能否单独支持出价
+      - 换主线的影响面清单（只列不执行）
+      hard_rules:
+      - ⛔ 不得取中位数、不得择优、不得生成"统一搜索量"
+      - ⛔ 判定同源只能说"字段级非独立"，不得断言是转售还是共同公共上游
+      - ✅ 同源的源仍要保留 —— 它可能有独有观察能力（如西柚的页内位置/流量份额/滚动率）
+    items:
+    - id: s2_keywords
+      file: S2_文案板块/github-tabler-html-report/HTML/06_<源标识>_产品词库.html
+      title: 'S2: 文案板块 · 产品词库报告（每源一份）'
+      summary: 产品资格、用途、数据与理由一张工作表；原始记录保留。
+      sources:
+      - S2_文案板块/{关键词Skill}/06_关键词库报告.md
+      - S2_文案板块/{关键词Skill}/keyword_package.yaml
+      - S2_文案板块/amazon-sif-keyword-research/06_cleaned_sif_keywords.csv
+      - S2_文案板块/{关键词Skill}/06B_场景库.yaml
+      - S2_文案板块/{关键词Skill}/06A_合规并集.yaml
+      - S2_文案板块/{关键词Skill}/06_keyword_data_source_log.yaml
+      mcp_rule: 用户允许时探测实际工具/schema后补数；返回值、来源、周期和调用状态可追溯。失败/未调用不能冒充成功。
+      layout_basis: templates/keyword_report_layout.md
+      minimum: {}
+      renderer: scripts/s2_report.py
+      template_version: s2-unified-1.0
+      verification: s2_report.verify_report_file + 当前词包/文案指纹 + 逐字段资格校验
+      required_sections:
+      - decision
+      - worksheet
+      - placement
+      - advertising
+      - enrichment
+      - evidence
+    - id: s2_listing
+      file: S2_文案板块/github-tabler-html-report/HTML/07_Listing文案.html
+      title: 'S2: 文案板块 · Listing 文案报告'
+      summary: 正文、中文、计数、埋词、买家问题、事实证据与新旧版本对比。
+      sources:
+      - S2_文案板块/amazon-listing-copywriter/07_Listing文案.md
+      - S2_文案板块/amazon-listing-copywriter/07A_Listing转化蓝图.yaml
+      - S2_文案板块/amazon-listing-copywriter/07B_Listing校验输入.json
+      - S2_文案板块/amazon-listing-copywriter/07C_Listing校验结果.json
+      - S2_文案板块/amazon-listing-copywriter/07_listing_bullet_ledger.yaml
+      minimum: {}
+      renderer: scripts/s2_report.py
+      template_version: s2-unified-1.0
+      verification: s2_report.verify_report_file + 当前词包/文案指纹 + 逐字段资格校验
+      required_sections:
+      - summary
+      - identity
+      - bullets
+      - description
+      - search_terms
+      - coverage
+      - changes
+      - evidence
+  S3:
+    count: 1
+    items:
+    - id: s3_visual
+      file: S3_视觉板块/github-tabler-html-report/HTML/阶段_S3_视觉方案.html
+      title: 'S3: 视觉板块 · 方案报告'
+      summary: 视觉基准学习 + 主副图方案 + A+ 方案 + 视频分镜
+      minimum:
+        size_kb: 60
+        section: 15
+        table: 10
+        details: 3
+      must_contain:
+      - 6 个参考 ASIN 的视觉基准学习结论
+      - 每张出图指令指向具体垫图编号
+      - asset_manifest 状态（ready / blocked_* / generated）
+      - 垫图来源优先级说明（厂家提供 > 1688抓取 > 报价单内嵌）
+  S4:
+    count: 1
+    items:
+    - id: s4_ads
+      file: S4_广告板块/github-tabler-html-report/HTML/阶段_S4_广告架构.html
+      title: 'S4: 广告板块 · 架构报告'
+      summary: 分型判断 + 架构 + Bulk 表 + 跑数诊断口径
+      minimum:
+        size_kb: 50
+        section: 12
+        table: 12
+        bar: 8
+      must_contain:
+      - 分型判断的理由与触发数值
+      - 广告架构树
+      - Bulk 表预览（默认折叠）
+      - 否定词池
+      - 跑数后的诊断口径
+  S5:
+    count: 1
+    items:
+    - id: s5_ops
+      file: S5_运营板块/github-tabler-html-report/{date}_店铺巡检报告.html
+      title: 'S5: 运营板块 · 巡检报告'
+      summary: 日/周/月 snapshot + finding + 待审核动作
+      minimum:
+        size_kb: 30
+        section: 8
+        kpi: 5
+        table: 6
+      must_contain:
+      - 数据源与时间窗
+      - 自然流量与广告流量分开
+      - finding / reason / action
+      - 待审核动作（不得写成已改后台）
+self_check_command: '# 生成后必须跑这个并把结果报给用户（跨平台，V2/旧布局都会找）：
+
+  python "<home>/scripts/检查HTML达标.py" <run目录>
+
+  # 只想量单个文件时（macOS/Linux bash）：
+
+  # f=<HTML路径>
+
+  # echo "size:$(( $(stat -c%s $f)/1024 ))KB  section:$(grep -o ''<section'' $f|wc -l)  \
+
+  # kpi:$(grep -o ''class=\"kpi\|stat-card'' $f|wc -l)  details:$(grep -o ''<details'' $f|wc -l)  \
+
+  # bar:$(grep -o ''barrow\|bar-fill\|barfill'' $f|wc -l)  svg:$(grep -o ''<svg'' $f|wc -l)  \
+
+  # table:$(grep -o ''<table'' $f|wc -l)"
+
+  '
+failure_policy: S2 输入指纹、固定结构、实际消费者字段或资格不符时重新从模型生成；补事实不补装饰。不改历史已审核产物。其他阶段依各自 minimum 检查。

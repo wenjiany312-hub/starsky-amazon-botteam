@@ -1,0 +1,21 @@
+schema_version: "1.0"
+selling_price: null
+contribution_margin_before_ads: null
+break_even_acos: {value: null, reason: null}
+target_acos: null
+target_acos_interpretation: null
+target_cpa: null
+cvr_scenarios:
+  - scenario_id: BASE
+    cvr: null
+    cvr_interpretation: null
+    wilson_95: {low: null, high: null, width: null, reason: null, confidence: 0.95}
+    target_cpa: null
+    allowable_cpc: null
+    break_even_cpc: null
+    initial_bid: null
+    worst_case_effective_bid: {value: null, reason: current_adjustment_rule_missing, rule_verified: false}
+    economic_guardrail_passed: null
+    production_decision_source_allowed: false
+warnings: []
+parameter_lineage: {}

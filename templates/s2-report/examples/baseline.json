@@ -1,0 +1,157 @@
+{
+  "product_id": "DEMO-PAD-HOLDER",
+  "marketplace": "US",
+  "listing_revision": "DEMO-v1",
+  "blacklist_terms": [
+    "medical grade"
+  ],
+  "skus": [
+    {
+      "sku": "DEMO-PAD-01",
+      "title": "NOVA Cotton Pads Storage Organizer",
+      "item_highlights": "Side opening; removable top; for round cotton pads up to 6 cm; pads not included.",
+      "bullets": [
+        "SIDE OPENING FOR ACCESS: Take a cotton pad through the opening without lifting the entire stack out. Check the pad size before filling the holder; the opening is intended for round cotton pads up to 6 cm across.",
+        "CLEAR STORAGE AT A GLANCE: See the remaining stack through the clear PS plastic body. Keep the cotton pad holder beside your usual skincare items so you can check the supply as part of your routine.",
+        "LID FOR THE TOP OPENING: Lift the lid to refill the cotton round dispenser from above, then put it back after loading. The side opening stays accessible; this design is storage for daily use, with a removable top.",
+        "CHECK YOUR ROUND PAD SIZE: This holder is designed around round cotton pads up to 6 cm in diameter. Compare the pads you already use with that limit before ordering; oversized rounds and folded wipes need another fit.",
+        "ONE HOLDER WITH A LID: The set contains one clear body and one removable lid. Cotton pads are not included. Choose a spot that leaves the side opening clear so the holder remains accessible next to your other vanity items."
+      ],
+      "description": "Use this cotton pad holder to give a stack of round cotton pads a defined place on your vanity. The clear PS plastic body lets you see what remains, while the removable lid provides access from the top for refilling. A side opening offers a separate place to take a pad during your skincare routine.\n\nBefore choosing a spot, leave room around the side opening. Compare the diameter of the cotton pads you use with the 6 cm limit in this example. The holder is intended for round pads; larger rounds, folded wipes and other shapes should be checked separately rather than assumed to fit.\n\nTo refill the cotton round dispenser, lift the lid and lower the pads into the body. Replace the lid after loading and use the side opening for daily access. This arrangement keeps refilling and everyday access in separate places, so the product description tells you what each opening is for.\n\nThe package contains one clear holder and one removable lid. Cotton pads and the other vanity items shown in an example setting are not included. This description focuses on product type, access, material, compatibility and package contents; use those details to compare it with the space and pads you already have.",
+      "search_terms": "vanity dispenser round cosmetic countertop storage",
+      "review_metadata": {
+        "schema_version": "1.0",
+        "fields": {
+          "title": {
+            "translation_zh": "NOVA 有盖化妆棉收纳盒，透明圆形收纳",
+            "keyword_ids": [
+              "KW-001"
+            ],
+            "buyer_questions": [
+              "字段如何帮助买家判断产品是否适合自己？"
+            ],
+            "fact_refs": [
+              "F-01"
+            ],
+            "voc_refs": [],
+            "pending_items": [],
+            "review_status": "reviewed",
+            "change_reason": "演示：移除重复措辞，补足产品类型和具体使用边界。"
+          },
+          "item_highlights": {
+            "translation_zh": "侧面开口；顶部可拆；适用于直径不超过 6 cm 的圆形化妆棉；不含棉片。",
+            "keyword_ids": [],
+            "buyer_questions": [
+              "字段如何帮助买家判断产品是否适合自己？"
+            ],
+            "fact_refs": [
+              "F-01"
+            ],
+            "voc_refs": [],
+            "pending_items": [],
+            "review_status": "reviewed",
+            "change_reason": "演示：移除重复措辞，补足产品类型和具体使用边界。"
+          },
+          "search_terms": {
+            "translation_zh": "梳妆台 取用盒 圆形 化妆用品 台面 存储",
+            "keyword_ids": [],
+            "buyer_questions": [
+              "字段如何帮助买家判断产品是否适合自己？"
+            ],
+            "fact_refs": [
+              "F-01"
+            ],
+            "voc_refs": [],
+            "pending_items": [],
+            "review_status": "reviewed",
+            "change_reason": "演示：移除重复措辞，补足产品类型和具体使用边界。"
+          },
+          "bullets.1": {
+            "translation_zh": "侧面开口便于取用：从开口取出化妆棉，无需一次拿出整叠。装入前检查尺寸；本合成设定适用于直径不超过 6 cm 的圆形化妆棉。",
+            "keyword_ids": [],
+            "buyer_questions": [
+              "怎样取用化妆棉？"
+            ],
+            "fact_refs": [
+              "F-01"
+            ],
+            "voc_refs": [],
+            "pending_items": [],
+            "review_status": "reviewed",
+            "change_reason": "演示：移除重复措辞，补足产品类型和具体使用边界。"
+          },
+          "bullets.2": {
+            "translation_zh": "透明收纳方便查看余量：可通过透明 PS 塑料盒体看到剩余化妆棉。将收纳盒放在常用护肤用品旁，日常使用时顺便查看余量。",
+            "keyword_ids": [],
+            "buyer_questions": [
+              "还能剩多少，一眼能看到吗？"
+            ],
+            "fact_refs": [
+              "F-01"
+            ],
+            "voc_refs": [],
+            "pending_items": [],
+            "review_status": "reviewed",
+            "change_reason": "演示：移除重复措辞，补足产品类型和具体使用边界。"
+          },
+          "bullets.3": {
+            "translation_zh": "顶部开盖补充：从上方打开盖子补充化妆棉，再盖好。侧面开口保留，便于日常取用。",
+            "keyword_ids": [],
+            "buyer_questions": [
+              "从哪里补充，盖子怎么用？"
+            ],
+            "fact_refs": [
+              "F-01"
+            ],
+            "voc_refs": [],
+            "pending_items": [],
+            "review_status": "reviewed",
+            "change_reason": "演示：移除重复措辞，补足产品类型和具体使用边界。"
+          },
+          "bullets.4": {
+            "translation_zh": "先核对圆形棉片尺寸：本设定适配直径不超过 6 cm 的圆形化妆棉。下单前请与现有棉片比对；更大的圆片或折叠湿巾需另找合适规格。",
+            "keyword_ids": [],
+            "buyer_questions": [
+              "我现有的棉片能放进去吗？"
+            ],
+            "fact_refs": [
+              "F-01"
+            ],
+            "voc_refs": [],
+            "pending_items": [],
+            "review_status": "reviewed",
+            "change_reason": "演示：移除重复措辞，补足产品类型和具体使用边界。"
+          },
+          "bullets.5": {
+            "translation_zh": "套装包含一个盒体与一个盖子：不含化妆棉。摆放时留出侧面开口空间，便于在其他梳妆用品旁取用。",
+            "keyword_ids": [],
+            "buyer_questions": [
+              "包装里有什么，还需要单独买什么？"
+            ],
+            "fact_refs": [
+              "F-01"
+            ],
+            "voc_refs": [],
+            "pending_items": [],
+            "review_status": "reviewed",
+            "change_reason": "演示：移除重复措辞，补足产品类型和具体使用边界。"
+          },
+          "description": {
+            "translation_zh": "用这款收纳盒为圆形化妆棉安排固定位置。透明 PS 塑料盒体可查看余量，顶部盖子用于补充，侧面开口用于日常取用。\n\n摆放时为侧面开口留出空间。购买前，将现有棉片直径与本合成设定的 6 cm 上限比对。更大的圆片、折叠湿巾和其他形状需另核适配。\n\n打开盖子，从上方装入棉片，再盖好；日常从侧面开口取用。这样把补充和取用位置分开，便于理解每个开口的用途。\n\n套装含一个透明盒体和一个可拆盖子，不含化妆棉及其他摆拍用品。可根据产品类型、取用方式、材质、尺寸边界和包装内容，判断是否适合自己的使用环境。",
+            "keyword_ids": [],
+            "buyer_questions": [
+              "字段如何帮助买家判断产品是否适合自己？"
+            ],
+            "fact_refs": [
+              "F-01"
+            ],
+            "voc_refs": [],
+            "pending_items": [],
+            "review_status": "reviewed",
+            "change_reason": "演示：移除重复措辞，补足产品类型和具体使用边界。"
+          }
+        }
+      }
+    }
+  ]
+}

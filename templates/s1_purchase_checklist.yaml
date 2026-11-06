@@ -1,0 +1,26 @@
+schema_version: 1
+purpose: 采购准备清单；不新增采购授权，不阻断研究流程
+groups:
+  - title: 样品
+    items:
+      - {id: sample_dimensions, label: 尺寸与CT逐项对照}
+      - {id: sample_weight, label: 重量与CT逐项对照}
+      - {id: sample_workmanship, label: 做工、材质、气味、配件与CT核对}
+      - {id: sample_package, label: 包装与CT核对}
+      - {id: sample_photos, label: 拍摄正反面、细节及包装照片}
+  - title: 厂家配合
+    items:
+      - {id: fnsku, label: 确认FNSKU贴标、箱唛与费用}
+      - {id: fba_package, label: 确认单包FBA包装、袋厚与警示语要求}
+      - {id: carton_limits, label: 确认装箱数、外箱尺寸重量及FBA/AWD限制}
+  - title: 合同
+    items:
+      - {id: specification, label: 约定规格、数量、单价、交期与样品质量标准}
+      - {id: payment, label: 约定付款方式及比例}
+      - {id: defects, label: 约定延期与次品处理}
+      - {id: ip_terms, label: 约定知识产权保证或授权文件}
+  - title: 发票与报关
+    items:
+      - {id: invoice_tax, label: 确认开票及税点，与统一成本测算一致}
+      - {id: export_mode, label: 确认9810 / 9610 / 一般贸易出口方式}
+      - {id: customs, label: 准备品名、HS编码、申报价值及材质资料}

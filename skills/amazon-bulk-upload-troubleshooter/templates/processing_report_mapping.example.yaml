@@ -1,0 +1,9 @@
+schema_version: "1.0"
+note: 解析器先尝试下列常见列；无法识别时必须人工确认，不得猜测成功。
+status_columns: [Status, Record Status, Processing Status]
+error_columns: [Error Message, Error, Errors]
+row_columns: [Excel Row, Row, Row Number]
+action_columns: [action_id, Action ID]
+success_tokens: [success, processed, succeed, complete]
+failure_tokens: [fail, error, reject, invalid]
+

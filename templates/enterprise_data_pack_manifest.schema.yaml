@@ -1,0 +1,115 @@
+# 沙龙第二版 · 外置企业资料包运行索引（写入当前产品 run，不写回资料包源目录）
+schema_version: "1.1"
+artifact_type: "enterprise_data_pack_manifest"
+generated_in: "current_product_run"
+source_mode: "external_read_only"
+
+external_source:
+  root: ""                         # 仅用户明确提供的资料包根目录
+  input_mode: "directory_or_files" # directory_or_files | attachments | mixed
+  accept_unorganized_sources: true
+  user_supplied_items: []          # 可为目录、单文件、附件、链接、截图或历史报告
+  root_status: "not_provided"      # not_provided | readable | missing | inaccessible | writable | read_only
+  indexed_at: ""
+  source_write_allowed: false
+  category_display_name: ""        # 保留用户原始输入，可为任意自由文本或层级路径
+  category_relative_path: ""       # 相对于 root；允许如 宠物/狗狗清洁，拒绝 .. 和 root 外路径
+  category_resolution: "deferred"  # deferred | matched | created | unclassified | not_requested
+
+index_policy:
+  scope: "only_user_supplied_root"
+  inventory_level: "path_file_type_workbook_headers_basic_media_metadata"
+  read_large_video: "metadata_only"
+  read_credentials: "never"
+  migrate_existing_folders: false
+  source_folder_mutation: false
+  generated_manifest_location: "00_总控/starsky-fullchain-workflow/enterprise_data_manifest.yaml"
+  data_intake_report_location: "00_总控/starsky-fullchain-workflow/00C_资料接入与优化建议报告.md"
+  data_intake_overlay_location: "00_总控/starsky-fullchain-workflow/00C_data_intake_overlay.yaml"
+  runtime_overlay_location: "00_总控/starsky-fullchain-workflow/runtime_data_overlay.yaml"
+
+source_precedence:
+  - rank: 1
+    source: "current_product_facts_and_current_mcp"
+    rule: "当前产品事实、页面抓取和本轮 MCP 数据优先；历史资料不能覆盖。"
+  - rank: 2
+    source: "platform_compliance_ip_and_user_confirmed_hard_rules"
+    rule: "合规、IP 与用户明确禁区作为边界；冲突时记录，不静默取舍。"
+  - rank: 3
+    source: "enterprise_data_pack"
+    rule: "企业资料仅作为历史证据、起始策略和表达参考，必须保留来源与时间窗。"
+  - rank: 4
+    source: "labeled_defaults_or_ai_inference"
+    rule: "仅在缺数时条件性使用，不得伪装成当前事实。"
+
+classification:
+  allowed_kinds:
+    - shared_rule
+    - product_case
+    - keyword
+    - listing
+    - advertising
+    - supplier
+    - logistics
+    - compliance
+    - visual_reference
+    - store_baseline
+    - sop
+    - unclassified
+  file_inventory_item:
+    source_id: ""
+    absolute_path: ""
+    relative_path: ""
+    file_type: ""                  # xlsx | csv | md | pdf | docx | png | mp4 | ...
+    size_bytes: 0
+    content_fingerprint: ""        # 可选 SHA-256；不记录密钥/令牌
+    modified_at: ""
+    classification: "unclassified"
+    classification_reason: ""
+    classification_confidence: "low"
+    workbook_headers: []           # 仅 Excel/CSV 轻量读取
+    media_metadata: {}             # 图片尺寸或视频时长；大视频不转写
+    evidence_time_window: ""
+    applicable_scope: "shared"     # shared | category | product_case | unknown
+    stage_targets: []              # S1 | S2 | S3 | S4 | S5 | Ops
+    read_status: "metadata_only"   # metadata_only | stage_read | skipped_large_media | excluded
+    usage_boundary: ""
+
+shared_sources: []
+category_sources: []
+unclassified_sources: []
+
+stage_injection_plan:
+  S1:
+    preferred_kinds: ["shared_rule", "product_case", "supplier", "logistics", "compliance", "sop"]
+    purpose: "补充历史产品、供应链、头程与预算和合规经验；不替代本轮市场、1688 与 IP 证据。"
+    logistics_rules:
+      - "计费重 = max(实重, 抛重)；抛重除数按各货代自述口径，未写明时标 field_unavailable，不得假设。"
+      - "比价必须同交货地、同计费档、同包税口径；跨口径混比视为无效结论。"
+      - "报价全程使用原币（通常人民币）；仅在交接财务模型时换算一次，并标注 fx_rate_snapshot 与所用口径。"
+      - "先按时效分档，再在档内比价；不得按渠道名称中的天数直接选线。"
+      - "报价超过生效日 30 天必须提示复核；过期报价不得用于成本结论。"
+  S2:
+    preferred_kinds: ["keyword", "listing", "shared_rule", "compliance"]
+    purpose: "提供历史词表、否词、品牌语气和已验证表达；当前产品事实与本轮词表优先。"
+  S3:
+    preferred_kinds: ["visual_reference", "listing", "product_case"]
+    purpose: "学习构图、信息层级和品牌视觉；不得复制竞品商标或用历史素材冒充本品。"
+  S4:
+    preferred_kinds: ["advertising", "keyword", "store_baseline", "shared_rule"]
+    purpose: "提供命名、预算、词路由和历史复盘模式；不得直接照搬到新 SKU。"
+  S5:
+    preferred_kinds: ["visual_reference", "product_case", "listing"]
+    purpose: "仅补充镜头表达与禁用元素；当前产品媒体和事实优先。"
+  Ops:
+    preferred_kinds: ["store_baseline", "advertising", "listing", "shared_rule"]
+    purpose: "作为诊断基线和复盘参考；真实店铺数据优先。"
+
+active_injections: []
+acceptance_checks:
+  - "允许未整理的目录、单文件、附件和链接直接接入；未知资料保留为 unclassified。"
+  - "资料包源目录未被写入；manifest 与 runtime overlay 均在当前产品 run。"
+  - "只索引用户明确提供的根目录，未扫描无关公司目录。"
+  - "大视频仅登记元数据，未完整转写。"
+  - "每个已使用的来源均标记 stage_targets、来源路径和使用边界。"
+  - "历史资料未覆盖当前产品事实、本轮 MCP、合规或 IP 结论。"

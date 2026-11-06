@@ -1,0 +1,4 @@
+interface:
+  display_name: "Amazon Ads Bulk Generator"
+  short_description: "将已审核广告计划编译为受控 Amazon SP Bulk 候选"
+  default_prompt: "Use $amazon-bulk-upload to compile an approved Amazon ad plan into a validated SP Bulk candidate without uploading it."

@@ -1,0 +1,93 @@
+product:
+  id: starsky-botteam
+  name: 星空亚马逊 Bot Team
+  version: 1.0.0-rc9
+  license_prefix: SKYBT1.
+  owner_title: 老板
+marketplace: US
+fulfillment:
+- FBM
+- FBA
+platforms:
+  openbot:
+    status: verified
+    adapter: adapters/openbot/
+  starsky:
+    status: todo
+    adapter: adapters/starsky/
+  grokbot:
+    status: draft
+    adapter: adapters/grokbot/
+orchestrator: admin
+settings: config/team_settings.yaml
+data_sources: config/data_sources.yaml
+data_hub: docs/数据端接入方案.md
+roles:
+- id: admin
+  name: 运营总监
+  job: 总控，对老板负责
+  soul: roles/admin/soul.md
+  card: roles/admin/card.yaml
+- id: scout
+  name: 选品侦察员
+  job: 选品分析师（美国站 FBA/FBM）
+  soul: roles/scout/soul.md
+  card: roles/scout/card.yaml
+- id: guard
+  name: 风控官
+  job: 风控官：侵权、合规、账户健康
+  soul: roles/guard/soul.md
+  card: roles/guard/card.yaml
+- id: warehouse
+  name: 仓管物流
+  job: 货源与仓储（1688、物流、FBA 库存）
+  soul: roles/warehouse/soul.md
+  card: roles/warehouse/card.yaml
+- id: finance
+  name: 财务管家
+  job: 利润分析师（FBM / FBA 双算）
+  soul: roles/finance/soul.md
+  card: roles/finance/card.yaml
+- id: listing
+  name: 文案算法师
+  job: 文案与上架
+  soul: roles/listing/soul.md
+  card: roles/listing/card.yaml
+- id: designer
+  name: 创意美工
+  job: 创意美工：所有视觉板块的设计
+  soul: roles/designer/soul.md
+  card: roles/designer/card.yaml
+- id: imageworker
+  name: 出图工
+  job: 出图工：按设计出图 + 合规复检
+  soul: roles/imageworker/soul.md
+  card: roles/imageworker/card.yaml
+- id: editor
+  name: 质检官
+  job: 上架前质检
+  soul: roles/editor/soul.md
+  card: roles/editor/card.yaml
+- id: ads
+  name: 广告优化师
+  job: 广告投手
+  soul: roles/ads/soul.md
+  card: roles/ads/card.yaml
+- id: reviewer
+  name: 复盘分析师
+  job: 复盘分析师
+  soul: roles/reviewer/soul.md
+  card: roles/reviewer/card.yaml
+optional_roles:
+- id: content
+  name: 内容编辑
+  status: planned
+workflow:
+  states: workflow/sku_states.yaml
+  gates: workflow/gates.yaml
+  protocol: workflow/交接协议.md
+  format: workflow/输出排版规范.md
+mcp:
+  third_party: mcp/third_party.yaml
+  local: mcp/local/
+safety: safety/红线.md

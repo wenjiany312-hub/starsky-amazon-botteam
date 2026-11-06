@@ -1,0 +1,17 @@
+schema_version: "2.0"
+run_id: ""
+cycle_id: ""
+from_skill: amazon-ad-strategy-architect
+to_skill: amazon-ad-campaign-builder
+strategy_ref:
+  strategy_id: ""
+  strategy_version: 1
+  strategy_hash: ""
+  path: "S4_广告板块/amazon-ad-strategy-architect/ad_strategy_brief.yaml"
+plan_ref: null
+strategy_review_path: "S4_广告板块/amazon-ad-strategy-architect/strategy_review.yaml"
+required_inputs: []
+blocked_fields: []
+allowed_next_action: compile_plan
+mode: production
+warnings: []

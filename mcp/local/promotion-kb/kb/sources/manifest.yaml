@@ -1,0 +1,4450 @@
+{
+ "schema_version": null,
+ "note": "分发版：已去除本机路径。完整抽取件不随包分发。",
+ "sources": [
+  {
+   "source_id": "SRC-0001",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "research_plan_old_product_revitalization.md",
+   "chars": 492
+  },
+  {
+   "source_id": "SRC-0002",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "亚马逊老品流量下滑优化SKILL.md",
+   "chars": 3733
+  },
+  {
+   "source_id": "SRC-0003",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "亚马逊老品流量下滑重推优化运营资料汇总.md",
+   "chars": 11989
+  },
+  {
+   "source_id": "SRC-0005",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "【03广告】亚马逊广告年日复盘SOP(1).xlsx",
+   "chars": 46356
+  },
+  {
+   "source_id": "SRC-0006",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "【12广告】亚马逊新品爆款推广及高效复盘SOP.xlsx",
+   "chars": 13337
+  },
+  {
+   "source_id": "SRC-0007",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "黑五网一广告复盘(1).xlsx",
+   "chars": 36627
+  },
+  {
+   "source_id": "SRC-0008",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "亚马逊新品推广计划表（模版参考）(1)(1).xlsx",
+   "chars": 532332
+  },
+  {
+   "source_id": "SRC-0011",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".html",
+   "filename": "亚马逊广告生命周期策略报告_优化版.html",
+   "chars": 2107
+  },
+  {
+   "source_id": "SRC-0012",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "拒绝排名下滑！亚马逊广告关键词防守打法.pdf",
+   "chars": 2303
+  },
+  {
+   "source_id": "SRC-0013",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊老链接激活词海打法：全类目通用起量(1).pdf",
+   "chars": 1833
+  },
+  {
+   "source_id": "SRC-0014",
+   "authority": "B",
+   "status": "skipped_offtopic",
+   "ext": ".pdf",
+   "filename": "GMVMax底层逻辑拆解&优化全流程SOP.pdf",
+   "chars": 1678
+  },
+  {
+   "source_id": "SRC-0015",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "COSMO机制下广告打法_20250416.pdf",
+   "chars": 4376
+  },
+  {
+   "source_id": "SRC-0016",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊之30种捡漏广告打法(1).pdf",
+   "chars": 3926
+  },
+  {
+   "source_id": "SRC-0017",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "优化老品广告.docx",
+   "chars": 2856
+  },
+  {
+   "source_id": "SRC-0018",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "广告自动化(1).docx",
+   "chars": 628
+  },
+  {
+   "source_id": "SRC-0019",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊广告培训指南-202602-wecom.pdf",
+   "chars": 9300
+  },
+  {
+   "source_id": "SRC-0020",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊广告培训指南_202605.pdf",
+   "chars": 9608
+  },
+  {
+   "source_id": "SRC-0021",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊广告培训指南_202608(1).pdf",
+   "chars": 4835
+  },
+  {
+   "source_id": "SRC-0022",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "高客单价的亚马逊新品广告策略打法.pdf",
+   "chars": 2079
+  },
+  {
+   "source_id": "SRC-0023",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊广告权重文章整理版.pdf",
+   "chars": 2595
+  },
+  {
+   "source_id": "SRC-0024",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "广告位竞价测算（含企业购广告位-受众）(1).xlsx",
+   "chars": 2699
+  },
+  {
+   "source_id": "SRC-0025",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "广告压制免费流量诊断与控制.pdf",
+   "chars": 3840
+  },
+  {
+   "source_id": "SRC-0026",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "26.7.30-竞争对手推广手段溯源与拆解.pdf",
+   "chars": 1161
+  },
+  {
+   "source_id": "SRC-0027",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "竞品调研表精华版(3).xlsx",
+   "chars": 433822
+  },
+  {
+   "source_id": "SRC-0028",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pptx",
+   "filename": "亚马逊Listing截流内部实战培训_Jon.pptx",
+   "chars": 8203
+  },
+  {
+   "source_id": "SRC-0029",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "1.2-标品关键词库搭建实操.xlsx",
+   "chars": 218200
+  },
+  {
+   "source_id": "SRC-0030",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "SIF-反查_〔ASIN〕.xlsx",
+   "chars": 4617
+  },
+  {
+   "source_id": "SRC-0031",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "一般精准 关键词分析.xlsx",
+   "chars": 4548
+  },
+  {
+   "source_id": "SRC-0032",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "亚马逊下拉框拓词工具用法：自动获取亚马逊前台下拉框推荐的关键词.xlsx",
+   "chars": 591
+  },
+  {
+   "source_id": "SRC-0033",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊敏感词大全.pdf",
+   "chars": 2357
+  },
+  {
+   "source_id": "SRC-0034",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "亚马逊敏感词避雷1224.xlsx",
+   "chars": 2807
+  },
+  {
+   "source_id": "SRC-0035",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "关键词坑位记录表（手动版）.xlsx",
+   "chars": 1155
+  },
+  {
+   "source_id": "SRC-0036",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "关键词跟踪表模板.xlsx",
+   "chars": 15960
+  },
+  {
+   "source_id": "SRC-0037",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "单录记录仪关键词归类(7).xlsx",
+   "chars": 236433
+  },
+  {
+   "source_id": "SRC-0038",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".html",
+   "filename": "批量查询标题是否符合规则(1).html",
+   "chars": 105
+  },
+  {
+   "source_id": "SRC-0039",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xlsm",
+   "filename": "特征词分析工具V1.11.2.xlsm",
+   "chars": 30491
+  },
+  {
+   "source_id": "SRC-0040",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".html",
+   "filename": "目标排名查询.html",
+   "chars": 154
+  },
+  {
+   "source_id": "SRC-0041",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "相对精准 关键词分析.xlsx",
+   "chars": 2432
+  },
+  {
+   "source_id": "SRC-0042",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "绝对精准 关键词分析.xlsx",
+   "chars": 1689
+  },
+  {
+   "source_id": "SRC-0043",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "29 亚马逊关键词库搭建实操和投放技巧(1).pdf",
+   "chars": 1991
+  },
+  {
+   "source_id": "SRC-0044",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "H10关键词归类方法.pdf",
+   "chars": 2294
+  },
+  {
+   "source_id": "SRC-0045",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "卖家精灵关键词归类方法.pdf",
+   "chars": 1802
+  },
+  {
+   "source_id": "SRC-0046",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "22.如何让listing的核心关键词上首页.pdf",
+   "chars": 2567
+  },
+  {
+   "source_id": "SRC-0047",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "30.亚马逊核心关键词如何才能上首页.pdf",
+   "chars": 3050
+  },
+  {
+   "source_id": "SRC-0048",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "4个阶段，亚马逊关键词排名提升打法(5).pdf",
+   "chars": 2093
+  },
+  {
+   "source_id": "SRC-0049",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pptx",
+   "filename": "亚马逊关键词广告“流量池爆款打法体系.pptx",
+   "chars": 20078
+  },
+  {
+   "source_id": "SRC-0050",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "从关键词归类反推广告打法(3).pdf",
+   "chars": 3210
+  },
+  {
+   "source_id": "SRC-0051",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".json",
+   "filename": "keyword_baseline_30d.json",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0052",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".json",
+   "filename": "xydc_keyword_info_16kw_2026-09-18.json",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0053",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".json",
+   "filename": "sif_assess_5kw_2026-09-18.json",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-0054",
+   "authority": "A",
+   "status": "ingested",
+   "chars": 8293,
+   "filename": "https://advertising.amazon.com/solutions/products/stores"
+  },
+  {
+   "source_id": "SRC-0055",
+   "authority": "A",
+   "status": "ingested",
+   "chars": 13946,
+   "filename": "https://advertising.amazon.com/resources/ad-specs/stores"
+  },
+  {
+   "source_id": "SRC-0056",
+   "authority": "A",
+   "status": "skipped_thin",
+   "chars": 0,
+   "filename": "https://advertising.amazon.com/resources/ad-policy/creative-acceptance"
+  },
+  {
+   "source_id": "SRC-0057",
+   "authority": "A",
+   "status": "ingested",
+   "chars": 16477,
+   "filename": "https://brandservices.amazon.com/aplus"
+  },
+  {
+   "source_id": "SRC-0060",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "web_brand_storefront_20260918.md",
+   "chars": 17431
+  },
+  {
+   "source_id": "SRC-0061",
+   "authority": "A",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "web_aplus_content_20260918.md",
+   "chars": 8266
+  },
+  {
+   "source_id": "SRC-0062",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "清货思路.docx",
+   "chars": 1343
+  },
+  {
+   "source_id": "SRC-0063",
+   "authority": "B",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "我的清货历程-99-野望(1).docx",
+   "chars": 2564
+  },
+  {
+   "source_id": "SRC-0064",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "01.一个设置让利润提高40%，终于知道竞争对手的秘密了.pdf",
+   "chars": 2191
+  },
+  {
+   "source_id": "SRC-0065",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "02.亚马逊站外销量翻倍的绝佳攻略.pdf",
+   "chars": 3078
+  },
+  {
+   "source_id": "SRC-0066",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "03.亚马逊运营忽略了这些细节，链接永远做不起来.pdf",
+   "chars": 4054
+  },
+  {
+   "source_id": "SRC-0067",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "04.亚马逊新品打造爆款全流程解析（5000字干货长文）.pdf",
+   "chars": 6637
+  },
+  {
+   "source_id": "SRC-0068",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "05.亚马逊限时秒杀效果最大化黄金法则.pdf",
+   "chars": 2577
+  },
+  {
+   "source_id": "SRC-0069",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "06.亚马逊如何推广低客单产品并盈利？.pdf",
+   "chars": 7829
+  },
+  {
+   "source_id": "SRC-0070",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "07.亚马逊如何设置促销让单量翻倍？.pdf",
+   "chars": 2361
+  },
+  {
+   "source_id": "SRC-0071",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "08.你有没有彻底搞懂亚马逊的关键词排名？.pdf",
+   "chars": 3809
+  },
+  {
+   "source_id": "SRC-0072",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "09.亚马逊秒杀如何稳住单量，避免打回原形.pdf",
+   "chars": 2531
+  },
+  {
+   "source_id": "SRC-0073",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "10.为什么你选的品永远不能成为Bestsellers？.pdf",
+   "chars": 2851
+  },
+  {
+   "source_id": "SRC-0074",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "11.亚马逊单量下降该如何补救.pdf",
+   "chars": 2510
+  },
+  {
+   "source_id": "SRC-0076",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "12.如何成功打造类目垄断-躺着赚钱.pdf",
+   "chars": 3093
+  },
+  {
+   "source_id": "SRC-0077",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "13.通过slickdeal出7000单的实操方法.pdf",
+   "chars": 2889
+  },
+  {
+   "source_id": "SRC-0079",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "14.激活老品实操案例复盘.pdf",
+   "chars": 3555
+  },
+  {
+   "source_id": "SRC-0080",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "15.史上最全销量下降原因和解决措施汇总.pdf",
+   "chars": 4238
+  },
+  {
+   "source_id": "SRC-0081",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "16.亚马逊多变体listing的打造过程.pdf",
+   "chars": 3744
+  },
+  {
+   "source_id": "SRC-0082",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "17.如何正确使用站外资源.pdf",
+   "chars": 4525
+  },
+  {
+   "source_id": "SRC-0083",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "18.为什么你的listing变体总是合并不成功？.pdf",
+   "chars": 3506
+  },
+  {
+   "source_id": "SRC-0084",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "19.如何一个月把新品稳定在30+单量.pdf",
+   "chars": 5652
+  },
+  {
+   "source_id": "SRC-0085",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "20.新品要不要合并老品评价？.pdf",
+   "chars": 3354
+  },
+  {
+   "source_id": "SRC-0086",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "21.如何快速判断竞品Listing 哪个变体卖得好.pdf",
+   "chars": 2620
+  },
+  {
+   "source_id": "SRC-0087",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "23.如何避免被封店？如何多品牌与垂直深耕？.pdf",
+   "chars": 2740
+  },
+  {
+   "source_id": "SRC-0088",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "24.提高链接转化率的绝招之一.pdf",
+   "chars": 2918
+  },
+  {
+   "source_id": "SRC-0089",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "25.必须收藏的亚马逊商标和专利查询方法图文教程大全(上）.pdf",
+   "chars": 2392
+  },
+  {
+   "source_id": "SRC-0091",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "26.必须收藏的亚马逊商标和专利查询方法图文教程大全 (下).pdf",
+   "chars": 2939
+  },
+  {
+   "source_id": "SRC-0092",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "27.亚马逊品牌分析两大神器详解.pdf",
+   "chars": 1973
+  },
+  {
+   "source_id": "SRC-0094",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "28.如何让日销20单的链接变成日销100单？.pdf",
+   "chars": 2932
+  },
+  {
+   "source_id": "SRC-0097",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "31.月利润30万的链接是怎么推起来的？.pdf",
+   "chars": 4673
+  },
+  {
+   "source_id": "SRC-0098",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "32.新品快速爆单的4种定价及运营策略汇总，效果杠杠滴！.pdf",
+   "chars": 1491
+  },
+  {
+   "source_id": "SRC-0099",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "33.想要爆单？ 你连关键词和广告词都选不好？.pdf",
+   "chars": 3484
+  },
+  {
+   "source_id": "SRC-0100",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "34.三条大幅提升推品成功率的超强策略.pdf",
+   "chars": 2220
+  },
+  {
+   "source_id": "SRC-0101",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "35.Coupon和Prime专享折扣如何使用效果最大化.pdf",
+   "chars": 2828
+  },
+  {
+   "source_id": "SRC-0102",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "36.断货的链接，如何7天回归类目头部（9000字干货长文）下篇.pdf",
+   "chars": 5418
+  },
+  {
+   "source_id": "SRC-0103",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "37.断货的链接，如何冰冻权重，如何7天回归类目头部（9000字干货长文）上篇.pdf",
+   "chars": 5259
+  },
+  {
+   "source_id": "SRC-0104",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "38.高阶运营如何打造爆款？.pdf",
+   "chars": 1793
+  },
+  {
+   "source_id": "SRC-0105",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "39.案例：半个月从日销14单到70单.pdf",
+   "chars": 1629
+  },
+  {
+   "source_id": "SRC-0106",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "40.产品核心词推到首页了，出单还是不多？.pdf",
+   "chars": 1898
+  },
+  {
+   "source_id": "SRC-0108",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "41.出单不稳定链接如何稳步增量实现盈利 （4000字干货长文）.pdf",
+   "chars": 5680
+  },
+  {
+   "source_id": "SRC-0110",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "42.高效省钱推品方法：如何实现新品从0到30单跨越.pdf",
+   "chars": 2529
+  },
+  {
+   "source_id": "SRC-0111",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "43.从未公布的移花宫-心法秘籍，限时删.pdf",
+   "chars": 4300
+  },
+  {
+   "source_id": "SRC-0112",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "44.个人卖家投5万，月赚3万的低风险玩法，万字干货长文，请反复阅读.pdf",
+   "chars": 10047
+  },
+  {
+   "source_id": "SRC-0113",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "45.今年我推新品成功率80%以上的原因是什么？相信看完你也可以！.pdf",
+   "chars": 3139
+  },
+  {
+   "source_id": "SRC-0114",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "46.精华篇：亚马逊9种高成功率的推品方法汇总，你知道几种？.pdf",
+   "chars": 2274
+  },
+  {
+   "source_id": "SRC-0115",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "47.快看，亚马逊运营的几个实用技巧.pdf",
+   "chars": 2338
+  },
+  {
+   "source_id": "SRC-0116",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "48.链接推不起来，从这8个方面找原因.pdf",
+   "chars": 4040
+  },
+  {
+   "source_id": "SRC-0117",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "49.那年那坑--盘点亚马逊路上的坑及避坑指南（4000字干货长文）.pdf",
+   "chars": 5289
+  },
+  {
+   "source_id": "SRC-0119",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "50.如何根据亚马逊站内流量入口做好流量布局？.pdf",
+   "chars": 3153
+  },
+  {
+   "source_id": "SRC-0120",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "51.如何通过广告快速实现运营的三大不同目的？.pdf",
+   "chars": 5184
+  },
+  {
+   "source_id": "SRC-0121",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "52.解密亚马逊A10算法的神秘面纱.pdf",
+   "chars": 3471
+  },
+  {
+   "source_id": "SRC-0122",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "53.如何快速通过危险品审核.pdf",
+   "chars": 4236
+  },
+  {
+   "source_id": "SRC-0123",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "54.如何把链接干到类目前3.pdf",
+   "chars": 3701
+  },
+  {
+   "source_id": "SRC-0124",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "55.黑五网一是报秒杀还是会员专享折扣？.pdf",
+   "chars": 2317
+  },
+  {
+   "source_id": "SRC-0125",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "56.断货怎么办-如何突破发货限制.pdf",
+   "chars": 3837
+  },
+  {
+   "source_id": "SRC-0126",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "57.避坑：一次code亏损10万，如何避免.pdf",
+   "chars": 2692
+  },
+  {
+   "source_id": "SRC-0127",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "58.如何快速清理冗余库存.pdf",
+   "chars": 3627
+  },
+  {
+   "source_id": "SRC-0128",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "59.亚马逊新A+功能：品牌故事图文详解.pdf",
+   "chars": 2556
+  },
+  {
+   "source_id": "SRC-0129",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "60.你真的会分析竞品吗？.pdf",
+   "chars": 3397
+  },
+  {
+   "source_id": "SRC-0130",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "61.最新Listing翻新教程图文详解.pdf",
+   "chars": 3900
+  },
+  {
+   "source_id": "SRC-0131",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "62.拆解大卖完美listing的优化秘密.pdf",
+   "chars": 2742
+  },
+  {
+   "source_id": "SRC-0132",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "63.优化链接，必须先做这一步.pdf",
+   "chars": 2784
+  },
+  {
+   "source_id": "SRC-0133",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "64.亚马逊品牌分析(ABA)怎么用？.pdf",
+   "chars": 4041
+  },
+  {
+   "source_id": "SRC-0134",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "65.亚马逊免费流量-Amazon Post实操图文详解.pdf",
+   "chars": 2449
+  },
+  {
+   "source_id": "SRC-0135",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "66.亚马逊运营的十大雷区.pdf",
+   "chars": 4165
+  },
+  {
+   "source_id": "SRC-0136",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "67.亚马逊老司机的热心忠告.pdf",
+   "chars": 3306
+  },
+  {
+   "source_id": "SRC-0137",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "68.百家亚马逊店铺报告.pdf",
+   "chars": 18557
+  },
+  {
+   "source_id": "SRC-0138",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "69.推品首要条件：标品非标品关键词表搭建实操.pdf",
+   "chars": 2993
+  },
+  {
+   "source_id": "SRC-0139",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "70.亚马逊高阶训练营笔记【332】.pdf",
+   "chars": 173704
+  },
+  {
+   "source_id": "SRC-0140",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "76.亚马逊最全关联流量设置教程.pdf",
+   "chars": 2368
+  },
+  {
+   "source_id": "SRC-0141",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pptx",
+   "filename": "POST玩法篇.pptx",
+   "chars": 2305
+  },
+  {
+   "source_id": "SRC-0142",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "SIF关键词清洗归类方法.pdf",
+   "chars": 2182
+  },
+  {
+   "source_id": "SRC-0144",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "【seller facing】Listing同步的操作指引.pdf",
+   "chars": 3692
+  },
+  {
+   "source_id": "SRC-0145",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "不拆父体看各变体评分.docx",
+   "chars": 357
+  },
+  {
+   "source_id": "SRC-0146",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "亚马逊五点描述新规(2).docx",
+   "chars": 1562
+  },
+  {
+   "source_id": "SRC-0147",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊广告报告诊断全攻略.pdf",
+   "chars": 2366
+  },
+  {
+   "source_id": "SRC-0148",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊敏感词与违规词避坑汇总-1227.pdf",
+   "chars": 2444
+  },
+  {
+   "source_id": "SRC-0149",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊新更商品五点新要求(1)(1).pdf",
+   "chars": 1064
+  },
+  {
+   "source_id": "SRC-0150",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "如何玩转亚马逊POST.pdf",
+   "chars": 1885
+  },
+  {
+   "source_id": "SRC-0151",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "新版翻新实操教程(5).docx",
+   "chars": 663
+  },
+  {
+   "source_id": "SRC-0152",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "新版说明书上传-后台简易版本.pdf",
+   "chars": 1175
+  },
+  {
+   "source_id": "SRC-0153",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "翻新listing的细节详解！.pdf",
+   "chars": 1362
+  },
+  {
+   "source_id": "SRC-0155",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊促销活动卖家操作指导手册.pdf",
+   "chars": 27388
+  },
+  {
+   "source_id": "SRC-0156",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "亚马逊各种促销折扣叠加情况说明.xlsx",
+   "chars": 2626
+  },
+  {
+   "source_id": "SRC-0157",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊折扣使用规则.pdf",
+   "chars": 8895
+  },
+  {
+   "source_id": "SRC-0158",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊站外推广9步骤万字实战打法.pdf",
+   "chars": 8372
+  },
+  {
+   "source_id": "SRC-0159",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "广告+促销，复合营销效果佳.pdf",
+   "chars": 5370
+  },
+  {
+   "source_id": "SRC-0160",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pptx",
+   "filename": "折扣叠加&Deal.pptx",
+   "chars": 3043
+  },
+  {
+   "source_id": "SRC-0161",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "折扣叠加说明.xlsx",
+   "chars": 2626
+  },
+  {
+   "source_id": "SRC-0162",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "明信片邀评 Q&A.pdf",
+   "chars": 2756
+  },
+  {
+   "source_id": "SRC-0163",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "秋季促销临时的广告活动（秋促专享）(2)(1).pdf",
+   "chars": 599
+  },
+  {
+   "source_id": "SRC-0164",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".html",
+   "filename": "秒杀情况统计.html",
+   "chars": 84
+  },
+  {
+   "source_id": "SRC-0165",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".txt",
+   "filename": "站外反查更新版附使用方法.txt",
+   "chars": 9465
+  },
+  {
+   "source_id": "SRC-0166",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "站外引流资料全系列.pdf",
+   "chars": 10525
+  },
+  {
+   "source_id": "SRC-0168",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "04.多开节点的方法.docx",
+   "chars": 2720
+  },
+  {
+   "source_id": "SRC-0169",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "05.翻新教程 .pdf",
+   "chars": 672
+  },
+  {
+   "source_id": "SRC-0170",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "06.反击恶搞教程.pdf",
+   "chars": 1212
+  },
+  {
+   "source_id": "SRC-0171",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "07.分享亚马逊库存快速上架的方法.docx",
+   "chars": 1424
+  },
+  {
+   "source_id": "SRC-0172",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "08.解密大卖是如何在首页卡视频？（附高质量的测评实操步骤）.docx",
+   "chars": 900
+  },
+  {
+   "source_id": "SRC-0174",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "10.欧洲太阳能灯误判需要能效标申诉成功案例.docx",
+   "chars": 2468
+  },
+  {
+   "source_id": "SRC-0175",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "11.品牌备案解绑.docx",
+   "chars": 926
+  },
+  {
+   "source_id": "SRC-0176",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "12.品牌因为投诉被撤销举报功能申诉.docx",
+   "chars": 3784
+  },
+  {
+   "source_id": "SRC-0177",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "13.如何隐藏自己商品的排名？避免恶搞.docx",
+   "chars": 1940
+  },
+  {
+   "source_id": "SRC-0179",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "15.实操分享-- 被系统误判为限制商品要求提供一些注册号或认证材料的具体解决步骤.pdf",
+   "chars": 1076
+  },
+  {
+   "source_id": "SRC-0180",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "16.无限秒杀投诉.pdf",
+   "chars": 2355
+  },
+  {
+   "source_id": "SRC-0181",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "17.修改增加类目节点的方法汇总.docx",
+   "chars": 2806
+  },
+  {
+   "source_id": "SRC-0182",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "18.迅速提升新品排名的5个黑科技.pdf",
+   "chars": 7638
+  },
+  {
+   "source_id": "SRC-0183",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "19.亚马逊品牌保护Amazon_Brand_Protection_Report_202304.pdf",
+   "chars": 11990
+  },
+  {
+   "source_id": "SRC-0184",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "1_变体滥用申诉POA.docx",
+   "chars": 4604
+  },
+  {
+   "source_id": "SRC-0185",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "20.重新激活账户步骤.docx",
+   "chars": 317
+  },
+  {
+   "source_id": "SRC-0186",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "20240226-亚马逊Merge详细教程 (1).pdf",
+   "chars": 762
+  },
+  {
+   "source_id": "SRC-0187",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "21.专利侵权申诉.pdf",
+   "chars": 2384
+  },
+  {
+   "source_id": "SRC-0188",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "22.最新的2023年品牌备案与撤销流程.pdf",
+   "chars": 2193
+  },
+  {
+   "source_id": "SRC-0189",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "23.最新亚马逊产品差评移除方法.pdf",
+   "chars": 5611
+  },
+  {
+   "source_id": "SRC-0190",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "5月10日-亚马逊专题-509号Xbb-翻新.pdf",
+   "chars": 3144
+  },
+  {
+   "source_id": "SRC-0193",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "关联风险绝密文档.pdf",
+   "chars": 4119
+  },
+  {
+   "source_id": "SRC-0194",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "刷单POA.docx",
+   "chars": 12886
+  },
+  {
+   "source_id": "SRC-0195",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "店铺关联18种因素.docx",
+   "chars": 2228
+  },
+  {
+   "source_id": "SRC-0196",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "恶意差评-其它卖家删除成功经验.docx",
+   "chars": 4025
+  },
+  {
+   "source_id": "SRC-0197",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "新版翻新实操教程(5).docx",
+   "chars": 450
+  },
+  {
+   "source_id": "SRC-0198",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "新鲜滚热翻新教程 2.0.pdf",
+   "chars": 2190
+  },
+  {
+   "source_id": "SRC-0199",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "新鲜滚热辣链接翻新实操(5).docx",
+   "chars": 1310
+  },
+  {
+   "source_id": "SRC-0201",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "申诉信-真伪性申诉.docx",
+   "chars": 2652
+  },
+  {
+   "source_id": "SRC-0202",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "申请手工类目.docx",
+   "chars": 1414
+  },
+  {
+   "source_id": "SRC-0203",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "直送审核申诉模板.pdf",
+   "chars": 4547
+  },
+  {
+   "source_id": "SRC-0205",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "翻新教程-最新(3).docx",
+   "chars": 450
+  },
+  {
+   "source_id": "SRC-0206",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "翻新教程25.9.8(7).pdf",
+   "chars": 972
+  },
+  {
+   "source_id": "SRC-0207",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "评分计算器.xlsx",
+   "chars": 546
+  },
+  {
+   "source_id": "SRC-0208",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".html",
+   "filename": "评论异常统计.html",
+   "chars": 108
+  },
+  {
+   "source_id": "SRC-0209",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "账号各种身份视频认证材料和品牌滥用合集.xlsx",
+   "chars": 6207
+  },
+  {
+   "source_id": "SRC-0210",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "账号防关联指南.docx",
+   "chars": 1582
+  },
+  {
+   "source_id": "SRC-0211",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "2024_PinterestPredicts_Report(1).pdf",
+   "chars": 10237
+  },
+  {
+   "source_id": "SRC-0212",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "2026亚马逊全球开店大卖日历(1).pdf",
+   "chars": 8514
+  },
+  {
+   "source_id": "SRC-0213",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "Amazon 官方经理 Judy｜亚马逊企业购（Amazon Business）业务资讯分享  - 20251208.pdf",
+   "chars": 17835
+  },
+  {
+   "source_id": "SRC-0214",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "amazon-2025-by-sellersprite.pdf",
+   "chars": 26995
+  },
+  {
+   "source_id": "SRC-0215",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "Pinterest_Predicts_2025_EN.pdf",
+   "chars": 10612
+  },
+  {
+   "source_id": "SRC-0216",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "Woot 2023 - V4 B-QTT.pdf",
+   "chars": 6865
+  },
+  {
+   "source_id": "SRC-0217",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "Woot介绍.pdf",
+   "chars": 634
+  },
+  {
+   "source_id": "SRC-0218",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pptx",
+   "filename": "WOOT运作规则与广告投放详解OLD.pptx",
+   "chars": 2676
+  },
+  {
+   "source_id": "SRC-0219",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊双轨增长指南 - 20251128.pdf",
+   "chars": 57503
+  },
+  {
+   "source_id": "SRC-0220",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "进阶课4-打造百万品牌营销攻略：从小店到大牌的蜕变秘诀 251114.pdf",
+   "chars": 22602
+  },
+  {
+   "source_id": "SRC-0221",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "亚马逊运营必不可少的工具网站大全.docx",
+   "chars": 6355
+  },
+  {
+   "source_id": "SRC-0222",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊运营面试必备：运营检查清单167个问答.pdf",
+   "chars": 28937
+  },
+  {
+   "source_id": "SRC-0223",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "0516大会 Kevin分享.pdf",
+   "chars": 3153
+  },
+  {
+   "source_id": "SRC-0224",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "0516大会-Nico分享.pdf",
+   "chars": 2411
+  },
+  {
+   "source_id": "SRC-0225",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "0516大会-五爷分享.pdf",
+   "chars": 3251
+  },
+  {
+   "source_id": "SRC-0226",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "0516大会发言稿-陈饮冰.pdf",
+   "chars": 8474
+  },
+  {
+   "source_id": "SRC-0227",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "0516大会子明分享.pdf",
+   "chars": 2714
+  },
+  {
+   "source_id": "SRC-0228",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "0516迷谷分享版.pdf",
+   "chars": 738
+  },
+  {
+   "source_id": "SRC-0229",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".html",
+   "filename": "0516大会-Nico分享-解读.html",
+   "chars": 8516
+  },
+  {
+   "source_id": "SRC-0230",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "0516大会-Nico分享-解读.md",
+   "chars": 9266
+  },
+  {
+   "source_id": "SRC-0231",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".html",
+   "filename": "0516大会-五爷分享-解读.html",
+   "chars": 4481
+  },
+  {
+   "source_id": "SRC-0232",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "0516大会-五爷分享-解读.md",
+   "chars": 5954
+  },
+  {
+   "source_id": "SRC-0233",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".html",
+   "filename": "陈饮冰_五爷跨境大会发言稿_20260516.html",
+   "chars": 5026
+  },
+  {
+   "source_id": "SRC-0234",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "《AI如何驱动团队实现降本增效》-Lenry260516(1).pdf",
+   "chars": 9754
+  },
+  {
+   "source_id": "SRC-0235",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pptx",
+   "filename": "维正-0516大会PPT.pptx",
+   "chars": 2130
+  },
+  {
+   "source_id": "SRC-0236",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "AMZ123《2025上半年跨境电商行业报告》.pdf",
+   "chars": 33228
+  },
+  {
+   "source_id": "SRC-0237",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "cosmo-a-large-scale-e-commerce-common-sense-knowledge-generation-and-serving-system-at-amazon zh.pdf",
+   "chars": 29101
+  },
+  {
+   "source_id": "SRC-0238",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "multi-objective-ranking-to-boost-navigational-suggestions-in-ecommerce-autocomplete.pdf",
+   "chars": 30901
+  },
+  {
+   "source_id": "SRC-0239",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "品牌旗舰店最佳实践.pdf",
+   "chars": 1857
+  },
+  {
+   "source_id": "SRC-0240",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "1-江小鱼-Alexa for shopping 下流量与链接优化.pdf",
+   "chars": 566
+  },
+  {
+   "source_id": "SRC-0242",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".txt",
+   "filename": "01_江小鱼_Alexa流量与链接优化.txt",
+   "chars": 16541
+  },
+  {
+   "source_id": "SRC-0243",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".txt",
+   "filename": "04_蓝图梦_5H9H查验常态化.txt",
+   "chars": 9279
+  },
+  {
+   "source_id": "SRC-0248",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".txt",
+   "filename": "亚马逊广告培训指南_202606.txt",
+   "chars": 10133
+  },
+  {
+   "source_id": "SRC-0249",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊广告培训指南_202606.pdf",
+   "chars": 9302
+  },
+  {
+   "source_id": "SRC-0250",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "品牌旗舰店转化率优化方案_竞品案例.pdf",
+   "chars": 3307
+  },
+  {
+   "source_id": "SRC-0251",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊美国站保姆级新手教程.pdf",
+   "chars": 12814
+  },
+  {
+   "source_id": "SRC-0252",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "2025年亚马逊全维度关键词库搭建指南.pdf",
+   "chars": 2713
+  },
+  {
+   "source_id": "SRC-0253",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "主图A+(1).xlsx",
+   "chars": 3114
+  },
+  {
+   "source_id": "SRC-0254",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "3-老陈-COSMO算法下产品推广新思路.pdf",
+   "chars": 3787
+  },
+  {
+   "source_id": "SRC-0256",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "6-Mark-五大维度应对现阶段亚马逊运营破局方案.pdf",
+   "chars": 4102
+  },
+  {
+   "source_id": "SRC-0257",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "8-任广-品牌出海“嘉御”观.pdf",
+   "chars": 5051
+  },
+  {
+   "source_id": "SRC-0258",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "US_AMAZON_cerebro_〔ASIN〕_2024-10-23.xlsx",
+   "chars": 95267
+  },
+  {
+   "source_id": "SRC-0259",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "关键词.xlsx",
+   "chars": 46704
+  },
+  {
+   "source_id": "SRC-0270",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xmind",
+   "filename": "需求选品法.xmind",
+   "chars": 391
+  },
+  {
+   "source_id": "SRC-0277",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "ExpandKeywords-US-〔ASIN〕-batch(20)-202412.xlsx",
+   "chars": 746613
+  },
+  {
+   "source_id": "SRC-0279",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xmind",
+   "filename": "亚马逊简单的AI流程.xmind",
+   "chars": 92
+  },
+  {
+   "source_id": "SRC-0280",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "词库.xlsx",
+   "chars": 844053
+  },
+  {
+   "source_id": "SRC-0282",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "儿童爬爬垫关键词库.xlsx",
+   "chars": 532093
+  },
+  {
+   "source_id": "SRC-0283",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pptx",
+   "filename": "婴儿爬爬垫-高效搭建关键词库.pptx",
+   "chars": 7804
+  },
+  {
+   "source_id": "SRC-0284",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pptx",
+   "filename": "沙龙-高效搭建关键词库(1).pptx",
+   "chars": 7919
+  },
+  {
+   "source_id": "SRC-0285",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "谷歌批量查产品做站外.docx",
+   "chars": 96
+  },
+  {
+   "source_id": "SRC-0286",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "5组 爬爬垫精铺定价(2).xlsx",
+   "chars": 1270661
+  },
+  {
+   "source_id": "SRC-0287",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pptx",
+   "filename": "非标新品精铺链接运营推广.pptx",
+   "chars": 5036
+  },
+  {
+   "source_id": "SRC-0288",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "盈利模型分析数据_2024-09-28 (1).xlsx",
+   "chars": 2533339
+  },
+  {
+   "source_id": "SRC-0289",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "20240922_Blissful Diary_【卖家报告】BSR产品.xlsx",
+   "chars": 190
+  },
+  {
+   "source_id": "SRC-0290",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "关键词词库execl0379b6af850c6883165cfc6e103060e3(1).xlsx",
+   "chars": 155192
+  },
+  {
+   "source_id": "SRC-0291",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "广告架构表execl73a18a4ac170544df0722dcbeac70caa(1).xlsx",
+   "chars": 72711
+  },
+  {
+   "source_id": "SRC-0292",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "文案用关键词execl7e8fdb0cb2aacc9a3ca1ec9c05a72511(1).xlsx",
+   "chars": 3222
+  },
+  {
+   "source_id": "SRC-0293",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "流量画像表execla18cf7a2f26c315fb8e6b64e6717ad57(1).xlsx",
+   "chars": 143742
+  },
+  {
+   "source_id": "SRC-0294",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "5组 爬爬垫精铺定价(1).xlsx",
+   "chars": 1339299
+  },
+  {
+   "source_id": "SRC-0295",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "5组 爬爬垫精铺定价.xlsx",
+   "chars": 1341076
+  },
+  {
+   "source_id": "SRC-0297",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "ASIN_Product_Review_Report.xlsx",
+   "chars": 890
+  },
+  {
+   "source_id": "SRC-0298",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "广告建议.docx",
+   "chars": 11462
+  },
+  {
+   "source_id": "SRC-0299",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "精铺运营推广分工计划.docx",
+   "chars": 1717
+  },
+  {
+   "source_id": "SRC-0300",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "20150508宝能公馆项目开盘前计划.pdf",
+   "chars": 66796
+  },
+  {
+   "source_id": "SRC-0301",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "2024跨境电商宠物市场报告电子版.pdf",
+   "chars": 42204
+  },
+  {
+   "source_id": "SRC-0302",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "208-晟尧跨境-超全版亚马逊品牌备案保姆级流程.pdf",
+   "chars": 2778
+  },
+  {
+   "source_id": "SRC-0303",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "28. 第五章-成为品牌主的优势-品牌主能使用的搜索广告-展示型推广.pdf",
+   "chars": 6306
+  },
+  {
+   "source_id": "SRC-0304",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "_ 如何用GPT生成 万能指令.pdf",
+   "chars": 1034
+  },
+  {
+   "source_id": "SRC-0305",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "AI助力：从数据选品到场景图高效制作.pdf",
+   "chars": 2085
+  },
+  {
+   "source_id": "SRC-2650",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".txt",
+   "filename": "readme.txt",
+   "chars": 3310
+  },
+  {
+   "source_id": "SRC-3101",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".txt",
+   "filename": "使用说明文档.txt",
+   "chars": 497
+  },
+  {
+   "source_id": "SRC-3105",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "查询收录工具使用说明.docx",
+   "chars": 467
+  },
+  {
+   "source_id": "SRC-3106",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "CG5880118314534701336.pdf",
+   "chars": 651
+  },
+  {
+   "source_id": "SRC-3107",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "COSMO翻译版.pdf",
+   "chars": 34541
+  },
+  {
+   "source_id": "SRC-3108",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊Cosmo新算法广告机制.pdf",
+   "chars": 4426
+  },
+  {
+   "source_id": "SRC-3110",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "Rufus 模拟器.pdf",
+   "chars": 2034
+  },
+  {
+   "source_id": "SRC-3111",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "SD+SB广告进阶技法.pdf",
+   "chars": 3826
+  },
+  {
+   "source_id": "SRC-3112",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "Tool Prompts And Demo Content (16_12_2023).pdf",
+   "chars": 15173
+  },
+  {
+   "source_id": "SRC-3113",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "一味君社群沙龙42期运营讨论与答疑专题沙龙笔记10月26日.pdf",
+   "chars": 49798
+  },
+  {
+   "source_id": "SRC-3114",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "一味君进化小分队第四期选品沙龙笔记.pdf",
+   "chars": 44240
+  },
+  {
+   "source_id": "SRC-3117",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "五十倍增长-2024黑五网一广告策略拆解.pdf",
+   "chars": 2614
+  },
+  {
+   "source_id": "SRC-3118",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊展示型广告设置及优化技巧.pdf",
+   "chars": 9033
+  },
+  {
+   "source_id": "SRC-3119",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊运营宝典老于.pdf",
+   "chars": 68122
+  },
+  {
+   "source_id": "SRC-3121",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "产业带分布-2024.11.17.xlsx",
+   "chars": 857
+  },
+  {
+   "source_id": "SRC-3122",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pptx",
+   "filename": "使用GPT挑战40分钟内完成优质Listing的撰写.pptx",
+   "chars": 3524
+  },
+  {
+   "source_id": "SRC-3124",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "关键词波动性研究.xlsx",
+   "chars": 6906
+  },
+  {
+   "source_id": "SRC-3127",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "如何用mailchimp做landing page 页面_1群455小蛮.pdf",
+   "chars": 1515
+  },
+  {
+   "source_id": "SRC-3128",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".txt",
+   "filename": "新建 文本文档.txt",
+   "chars": 65
+  },
+  {
+   "source_id": "SRC-3129",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "广告架构的设计与落地方案 .pdf",
+   "chars": 3520
+  },
+  {
+   "source_id": "SRC-3130",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "keepa-〔ASIN〕-20241219.xlsx",
+   "chars": 61527
+  },
+  {
+   "source_id": "SRC-3131",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "keepa-〔ASIN〕-20241219.xlsx",
+   "chars": 30563
+  },
+  {
+   "source_id": "SRC-3132",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "keepa-〔ASIN〕-20241219.xlsx",
+   "chars": 40819
+  },
+  {
+   "source_id": "SRC-3133",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "keepa-〔ASIN〕-20241219.xlsx",
+   "chars": 30292
+  },
+  {
+   "source_id": "SRC-3134",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "keepa-〔ASIN〕-20241219.xlsx",
+   "chars": 19884
+  },
+  {
+   "source_id": "SRC-3135",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "keepa-〔ASIN〕-20241219.xlsx",
+   "chars": 20120
+  },
+  {
+   "source_id": "SRC-3136",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".html",
+   "filename": "敏感词检查工具.html",
+   "chars": 82
+  },
+  {
+   "source_id": "SRC-3137",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "手把手教你搭建一个亚马逊的GPTs助手.pdf",
+   "chars": 6485
+  },
+  {
+   "source_id": "SRC-3138",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "亚马逊敏感词避雷1224.xlsx",
+   "chars": 2799
+  },
+  {
+   "source_id": "SRC-3139",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "知无不言——ALEXYA跳转版(1).pdf",
+   "chars": 19180
+  },
+  {
+   "source_id": "SRC-3140",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "肖总跟阿雅的广告分析.pdf",
+   "chars": 2732
+  },
+  {
+   "source_id": "SRC-3141",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "英国-GB472311024-深圳市桐羽贸易有限公司-VAT申报-2024-10~2024-12-税金确认函.pdf",
+   "chars": 1194
+  },
+  {
+   "source_id": "SRC-3142",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "1227日 陈功醇 看得见的利润试算表.xlsx",
+   "chars": 2892
+  },
+  {
+   "source_id": "SRC-3143",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "1230下单.xlsx",
+   "chars": 1241
+  },
+  {
+   "source_id": "SRC-3144",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "2024亚马逊敏感词避雷.xlsx",
+   "chars": 2816
+  },
+  {
+   "source_id": "SRC-3145",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "600多个人工智能ai工具汇总(3).xlsx",
+   "chars": 161328
+  },
+  {
+   "source_id": "SRC-3146",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xmind",
+   "filename": "Rufus 模拟器的创建原理(2).xmind",
+   "chars": 2527
+  },
+  {
+   "source_id": "SRC-3147",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "TK产品定价.xlsx",
+   "chars": 3716
+  },
+  {
+   "source_id": "SRC-3148",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "亚马逊top卖家的广告实操思路表格.xlsx",
+   "chars": 1943637
+  },
+  {
+   "source_id": "SRC-3149",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "供应商考核表111(1).xlsx",
+   "chars": 1787
+  },
+  {
+   "source_id": "SRC-3150",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "关键词词库搭建.xlsx",
+   "chars": 573520
+  },
+  {
+   "source_id": "SRC-3151",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "流量入口调研模板（MoonSees跨境电商）.xlsx",
+   "chars": 4526
+  },
+  {
+   "source_id": "SRC-3152",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "用消费者的视角优化Listing-SOP-3C.xlsx",
+   "chars": 191860
+  },
+  {
+   "source_id": "SRC-3153",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "直评12.24.xlsx",
+   "chars": 1775
+  },
+  {
+   "source_id": "SRC-3154",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "知无不言社区帖子全记录（根据关注人数排序）.xlsx",
+   "chars": 4456023
+  },
+  {
+   "source_id": "SRC-3155",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xmind",
+   "filename": "肖总的广告分享.xmind",
+   "chars": 3332
+  },
+  {
+   "source_id": "SRC-3156",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "补货标签.xlsx",
+   "chars": 1540
+  },
+  {
+   "source_id": "SRC-3158",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "WOOT利润计算.xlsx",
+   "chars": 609
+  },
+  {
+   "source_id": "SRC-3159",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "举报权限撤销POA申诉.docx",
+   "chars": 2861
+  },
+  {
+   "source_id": "SRC-3160",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊产品推广 广告逻辑 权重推广思维图.pdf",
+   "chars": 8016
+  },
+  {
+   "source_id": "SRC-3162",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "品牌被移除成功案例.pdf",
+   "chars": 4645
+  },
+  {
+   "source_id": "SRC-3163",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "商标独家授权模板.docx",
+   "chars": 1035
+  },
+  {
+   "source_id": "SRC-3164",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "广告ACOS越来越高？亚马逊Listing部署SEO最全流程.pdf",
+   "chars": 3327
+  },
+  {
+   "source_id": "SRC-3165",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "新品架构脑图.pdf",
+   "chars": 1078
+  },
+  {
+   "source_id": "SRC-3166",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "新品的推广计划.pdf",
+   "chars": 2669
+  },
+  {
+   "source_id": "SRC-3167",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "无限秒杀投诉(1).pdf",
+   "chars": 2355
+  },
+  {
+   "source_id": "SRC-3168",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "附件1. 几个方法找差评客户.docx",
+   "chars": 970
+  },
+  {
+   "source_id": "SRC-3169",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "附件2. 利用Chatgpt更改话术.docx",
+   "chars": 3503
+  },
+  {
+   "source_id": "SRC-3178",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "2. 产品推广计划(1)(2).xlsx",
+   "chars": 9178
+  },
+  {
+   "source_id": "SRC-3179",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "2.1 SP+SB+SD产品不同阶段全策略xlsx.xlsx",
+   "chars": 6250
+  },
+  {
+   "source_id": "SRC-3180",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "5.0版优惠券新规后新老费用计算公式对比1.0版本.xlsx",
+   "chars": 5623
+  },
+  {
+   "source_id": "SRC-3181",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "ChatGPT应用到亚马逊指令合计(1).docx",
+   "chars": 943
+  },
+  {
+   "source_id": "SRC-3183",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "【新品推广计划表】(1).xlsx",
+   "chars": 7922
+  },
+  {
+   "source_id": "SRC-3185",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊FBA精品链接最快推广攻略.pdf",
+   "chars": 3568
+  },
+  {
+   "source_id": "SRC-3186",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "亚马逊图片设计如何突出卖点.docx",
+   "chars": 2258
+  },
+  {
+   "source_id": "SRC-3187",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊广告BID高阶技巧.pdf",
+   "chars": 2916
+  },
+  {
+   "source_id": "SRC-3188",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊广告的否词逻辑全整理(3)(2).pdf",
+   "chars": 3196
+  },
+  {
+   "source_id": "SRC-3189",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "亚马逊新品推广SOP.xlsx",
+   "chars": 7206
+  },
+  {
+   "source_id": "SRC-3190",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊省钱大法广告捡漏打法.pdf",
+   "chars": 1265
+  },
+  {
+   "source_id": "SRC-3191",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".md",
+   "filename": "亚马逊笔记-0610.md",
+   "chars": 175929
+  },
+  {
+   "source_id": "SRC-3192",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "亚马逊运营管控表.xlsx",
+   "chars": 10049
+  },
+  {
+   "source_id": "SRC-3193",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "品牌滥用申诉通过模板内容 (1).pdf",
+   "chars": 8364
+  },
+  {
+   "source_id": "SRC-3194",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "实操演示！最有效的广告曝光测试方法，优化亚马逊PPC.pdf",
+   "chars": 3587
+  },
+  {
+   "source_id": "SRC-3195",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "对于一个新品,如何确定广告预算的多少.docx",
+   "chars": 3320
+  },
+  {
+   "source_id": "SRC-3196",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "广告表现分析模板.xlsx",
+   "chars": 333214
+  },
+  {
+   "source_id": "SRC-3197",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "站外资源(1).xlsx",
+   "chars": 179713
+  },
+  {
+   "source_id": "SRC-3198",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "选品分析表(1).xlsx",
+   "chars": 662709
+  },
+  {
+   "source_id": "SRC-3199",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "选品调研表(1).xlsx",
+   "chars": 34781
+  },
+  {
+   "source_id": "SRC-3200",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "高级A_页面模块介绍.pdf",
+   "chars": 3455
+  },
+  {
+   "source_id": "SRC-3201",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "绩效考核评定(1).xlsx",
+   "chars": 1835
+  },
+  {
+   "source_id": "SRC-3202",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "关键词词库-ABA维度.xlsx",
+   "chars": 243949
+  },
+  {
+   "source_id": "SRC-3203",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "关键词词库-全系搜索维度.xlsx",
+   "chars": 2143390
+  },
+  {
+   "source_id": "SRC-3204",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "广告数据分析结果-商品推广 搜索词 报告-(测试样表）-1101150317.xlsx",
+   "chars": 2092540
+  },
+  {
+   "source_id": "SRC-3205",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "广告架构表-全系搜索维度.xlsx",
+   "chars": 633120
+  },
+  {
+   "source_id": "SRC-3206",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "拓词分析结果.xlsx",
+   "chars": 321373
+  },
+  {
+   "source_id": "SRC-3207",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "流量画像表-全系搜索维度.xlsx",
+   "chars": 1089057
+  },
+  {
+   "source_id": "SRC-3208",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "盈利模型分析数据_45%折扣起.xlsx",
+   "chars": 2533850
+  },
+  {
+   "source_id": "SRC-3209",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "词频词库-全系搜索维度.xlsx",
+   "chars": 2756745
+  },
+  {
+   "source_id": "SRC-3210",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "赛道分析-dash cam.xlsx",
+   "chars": 13250
+  },
+  {
+   "source_id": "SRC-3211",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pptx",
+   "filename": "AI视觉革命3分钟打造亚马逊爆款视觉体系-5月15日闭门会.pptx",
+   "chars": 3594
+  },
+  {
+   "source_id": "SRC-3212",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "AMZ123《2024跨境电商行业年.pdf",
+   "chars": 34876
+  },
+  {
+   "source_id": "SRC-3213",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "Monica-《如何裂变出优秀的业务操盘手？》-增.pdf",
+   "chars": 9267
+  },
+  {
+   "source_id": "SRC-3214",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "专题分享登记-副群主A登记.xlsx",
+   "chars": 12493
+  },
+  {
+   "source_id": "SRC-3215",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "亚马逊专题分享内容征集表.xlsx",
+   "chars": 2033
+  },
+  {
+   "source_id": "SRC-3216",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "1.31 Andy pang59号分享 季节性产品竞品策略分析(1).pdf",
+   "chars": 4931
+  },
+  {
+   "source_id": "SRC-3217",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "10月16号-亚马逊专题-254号丹丹-《广告问题汇总及解决方案》.pdf",
+   "chars": 7426
+  },
+  {
+   "source_id": "SRC-3218",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "10月22号-亚马逊专题-273号-《关于卡控预算》.pdf",
+   "chars": 4284
+  },
+  {
+   "source_id": "SRC-3219",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "10月24号-亚马逊专题-20号-《从三个维度分析品牌广告的效果》.pdf",
+   "chars": 3395
+  },
+  {
+   "source_id": "SRC-3220",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "10月29号-亚马逊专题-196 张鹏-《如何通过测试营销，提升链接的成功率》.pdf",
+   "chars": 2197
+  },
+  {
+   "source_id": "SRC-3221",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "10月8号-亚马逊专题-25号乔安-《结合亚马逊（ABA）拓展广告流量及利用5W2H拆解竞对视频》.pdf",
+   "chars": 4379
+  },
+  {
+   "source_id": "SRC-3222",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "11月12号-亚马逊专题-20号 必胜哥-《亚马逊选品阶段属性如何划分更合适》.pdf",
+   "chars": 3082
+  },
+  {
+   "source_id": "SRC-3223",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "11月15号-亚马逊专题-292号 关公的张-《亚马逊付费关联流量以及选择合适的竞对》.pdf",
+   "chars": 3316
+  },
+  {
+   "source_id": "SRC-3224",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "11月21号-亚马逊专题-413号木木-《亚马逊运营推品前期避坑指南》.pdf",
+   "chars": 3390
+  },
+  {
+   "source_id": "SRC-3225",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "11月26号-亚马逊专题-25号乔安 《海王打法在流量高峰期旺季的实践心得分享》.pdf",
+   "chars": 2557
+  },
+  {
+   "source_id": "SRC-3226",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "11月28号-亚马逊专题-38主任《sp表格批量操作》.pdf",
+   "chars": 3684
+  },
+  {
+   "source_id": "SRC-3227",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "11月5号-亚马逊专题-181号-《亚马逊运营日记之暴力推品广告打法》.pdf",
+   "chars": 3481
+  },
+  {
+   "source_id": "SRC-3228",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "11月7号-亚马逊专题-100号 北悲秋-《水冷产品调研》.pdf",
+   "chars": 6136
+  },
+  {
+   "source_id": "SRC-3229",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "12月10号-亚马逊专题-20号必胜哥-《从新算法出发，如何更快完成产品深度埋词》.pdf",
+   "chars": 4714
+  },
+  {
+   "source_id": "SRC-3230",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "12月12号-亚马逊专题-1281号柚子-《优秀竞品的页面分析思路&如何优化自身页面》.pdf",
+   "chars": 6008
+  },
+  {
+   "source_id": "SRC-3231",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "12月17号-亚马逊专题-413号木木-《广告技巧篇-长尾词投放技巧》.pdf",
+   "chars": 3292
+  },
+  {
+   "source_id": "SRC-3232",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "12月5号-亚马逊专题-254号丹丹-《浅谈关键词自然排名》.pdf",
+   "chars": 3589
+  },
+  {
+   "source_id": "SRC-3233",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "2024 年亚马逊入库配置服务费政策解读及应对方法-299号陈裕汉-2024.3.5.pdf",
+   "chars": 4702
+  },
+  {
+   "source_id": "SRC-3234",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "2024-11-19-亚马逊专题-271号 海鸥-《怎么做出差异化的图片》.pdf",
+   "chars": 1928
+  },
+  {
+   "source_id": "SRC-3235",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "2024-12-19号-亚马逊专题-292号 关公的张-《美国站 中低客单价标品的推广历程》.pdf",
+   "chars": 2080
+  },
+  {
+   "source_id": "SRC-3236",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "2024-12-26-亚马逊专题-271号 海鸥-《竞品观察收获》.pdf",
+   "chars": 2206
+  },
+  {
+   "source_id": "SRC-3237",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "2024-12-31-亚马逊专题-420 VAE《优化策略与实战技巧》.pdf",
+   "chars": 3240
+  },
+  {
+   "source_id": "SRC-3238",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "2025-1-2号-亚马逊专题-20 必胜哥-《近期亚马逊选品的一些思考》.pdf",
+   "chars": 3172
+  },
+  {
+   "source_id": "SRC-3239",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "3月25号《BS标签打法》-196号 张鹏.pdf",
+   "chars": 1824
+  },
+  {
+   "source_id": "SRC-3240",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "3月26号《标题的注意点》--285号分享.docx",
+   "chars": 1829
+  },
+  {
+   "source_id": "SRC-3241",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "3月27号-《亚马逊运营在求职中如何选择公司》--413号木木.docx",
+   "chars": 3643
+  },
+  {
+   "source_id": "SRC-3242",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "3月29号-《小公司如何针对小白运营进行亚马逊培训》-43-pinkbear.xlsx",
+   "chars": 17121
+  },
+  {
+   "source_id": "SRC-3243",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "4月12号--以TIKTOK为底层逻辑的亚马逊选品思路-191号nice.pdf",
+   "chars": 3052
+  },
+  {
+   "source_id": "SRC-3244",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "4月17号-《从推品失败的品复盘选品》-254-丹丹.docx",
+   "chars": 2844
+  },
+  {
+   "source_id": "SRC-3245",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "4月17号-《商机探测器》-282号 Arya.docx",
+   "chars": 1789
+  },
+  {
+   "source_id": "SRC-3246",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "4月1号《亚马逊选品避坑基础知识》-Vellan-317号.pdf",
+   "chars": 7117
+  },
+  {
+   "source_id": "SRC-3248",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "4月24号-《如何利用亚马逊ABA-热门搜索词进行选品》-218号 Roise.pdf",
+   "chars": 4317
+  },
+  {
+   "source_id": "SRC-3249",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "4月29号-亚马逊专题-191号Nice-进入一个新类目如何选中合适切入的材质和价格.pdf",
+   "chars": 1868
+  },
+  {
+   "source_id": "SRC-3250",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "4月29号-亚马逊专题-331号-亚马逊运营容易踩的坑，你中了几个？.pdf",
+   "chars": 3601
+  },
+  {
+   "source_id": "SRC-3251",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "4月8号《选品指南针》 285号 Arya.docx",
+   "chars": 3861
+  },
+  {
+   "source_id": "SRC-3252",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "5月15日-358号-COSMO算法对卖家的影响以及卖家如何拥抱新算法？5.15.pdf",
+   "chars": 2367
+  },
+  {
+   "source_id": "SRC-3253",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "5月15日-亚马逊专题-20号必胜哥-亚马逊选品灵感来源.pdf",
+   "chars": 2174
+  },
+  {
+   "source_id": "SRC-3254",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "5月22日-亚马逊专题-285号Arya-非标类目的一些广告打法.pdf",
+   "chars": 4339
+  },
+  {
+   "source_id": "SRC-3255",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "5月28日—亚马逊专题—273号《广告问题判断，指导广告优化》.pdf",
+   "chars": 2622
+  },
+  {
+   "source_id": "SRC-3256",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "5月6号-这个产品到底能做吗-254-丹丹.pdf",
+   "chars": 4023
+  },
+  {
+   "source_id": "SRC-3257",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "5月8号-亚马逊运营推广节奏究竟是什么？如何把握节奏？-272号-啊超.pdf",
+   "chars": 3477
+  },
+  {
+   "source_id": "SRC-3258",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "6月12号—亚马逊专题—43号《非标品新品推广计划关注指标》.pdf",
+   "chars": 7553
+  },
+  {
+   "source_id": "SRC-3259",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "6月17日—亚马逊专题—119号—亚马逊开店问题分享.pdf",
+   "chars": 2014
+  },
+  {
+   "source_id": "SRC-3260",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "6月19号-亚马逊专题-181号-《推品2个月复盘总结》.docx",
+   "chars": 3684
+  },
+  {
+   "source_id": "SRC-3261",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "6月24号-亚马逊专题-220号-《创建关键词跟踪透视表》.docx",
+   "chars": 1614
+  },
+  {
+   "source_id": "SRC-3262",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "6月26号-亚马逊专题-273号-《没有这些行为规范广告优化就是瞎胡闹》.pdf",
+   "chars": 2782
+  },
+  {
+   "source_id": "SRC-3263",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "6月3日—亚马逊专题—254号《浅谈LD 秒杀》.pdf",
+   "chars": 4353
+  },
+  {
+   "source_id": "SRC-3264",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "6月6号—亚马逊专题—220号《利用触点打造品牌力》.pdf",
+   "chars": 6167
+  },
+  {
+   "source_id": "SRC-3265",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "7月10号-亚马逊专题-91号-《亚马逊备案文件细节》.pdf",
+   "chars": 2765
+  },
+  {
+   "source_id": "SRC-3266",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "7月15号-亚马逊专题-271-《极致埋词》.pdf",
+   "chars": 2169
+  },
+  {
+   "source_id": "SRC-3267",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "7月17号-亚马逊专题-413号-《亚马逊滞销清货你应该要有的认知》.pdf",
+   "chars": 4485
+  },
+  {
+   "source_id": "SRC-3268",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "7月22号-亚马逊专题-254号-《如何做好7天秒杀？》.pdf",
+   "chars": 4361
+  },
+  {
+   "source_id": "SRC-3269",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "7月26号-亚马逊专题-196号-《亚马逊品牌引流奖励新玩法》.pdf",
+   "chars": 1915
+  },
+  {
+   "source_id": "SRC-3270",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "7月3号-亚马逊专题-20号-《利用工具查看独立站进行选品》.pdf",
+   "chars": 1991
+  },
+  {
+   "source_id": "SRC-3271",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "8月14号-亚马逊专题-150《一味君分享会》.pdf",
+   "chars": 3324
+  },
+  {
+   "source_id": "SRC-3272",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "8月20号-亚马逊专题-271号-《万圣节用户画像分析》.pdf",
+   "chars": 21375
+  },
+  {
+   "source_id": "SRC-3273",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "8月3号-亚马逊专题-99号-《我的清货历程》.pdf",
+   "chars": 2670
+  },
+  {
+   "source_id": "SRC-3274",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "8月5号-亚马逊专题-20号-《从广告报告出发告诉你如何优化广告》.pdf",
+   "chars": 1441
+  },
+  {
+   "source_id": "SRC-3275",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "9月12号-亚马逊专题-254号-《爆款链接拆解》.pdf",
+   "chars": 3845
+  },
+  {
+   "source_id": "SRC-3276",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "9月20号-亚马逊专题-196-《亚马逊AI搜索工具Rufus - 下期》.pdf",
+   "chars": 3875
+  },
+  {
+   "source_id": "SRC-3277",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "9月24号-亚马逊专题-190号-《近期学习GPT4o选品思路分享》.pdf",
+   "chars": 7043
+  },
+  {
+   "source_id": "SRC-3278",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "9月27号-亚马逊专题分享-271号-《怎样提升自然流量+降低CPC》_watermark.pdf",
+   "chars": 2930
+  },
+  {
+   "source_id": "SRC-3279",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "9月3号-亚马逊专题-181号-《红海类目3个星期推到前60，我是怎么做的？》.pdf",
+   "chars": 3084
+  },
+  {
+   "source_id": "SRC-3280",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "9月6号-亚马逊专题-484号-《新品如何通过广告撬动流量》 (3).pdf",
+   "chars": 5513
+  },
+  {
+   "source_id": "SRC-3281",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "A9算法-最新解析-43号Pinkbear-3.7.pdf",
+   "chars": 6674
+  },
+  {
+   "source_id": "SRC-3282",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "AGL 2024年3月海运价格-299号陈裕汉V20240302.xlsx",
+   "chars": 108105
+  },
+  {
+   "source_id": "SRC-3283",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "《2024年亚马逊入库配置费政策解读及应对方法》--299号-陈裕汉-3.5.pdf",
+   "chars": 3476
+  },
+  {
+   "source_id": "SRC-3284",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "《亚马逊广告报告分析》-61号Aika--3.4.docx",
+   "chars": 1668
+  },
+  {
+   "source_id": "SRC-3285",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "《从运营的角度如何去拆解分析亚马逊爆款链接》--413号木木.pdf",
+   "chars": 3579
+  },
+  {
+   "source_id": "SRC-3286",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "《关键词投放和商品投放解析》-3.10.pdf",
+   "chars": 5426
+  },
+  {
+   "source_id": "SRC-3287",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "《分析销量下降的ＳＯＰ》43号Pinkbear-3.7.pdf",
+   "chars": 7457
+  },
+  {
+   "source_id": "SRC-3288",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "《在大促前怎样利用站外预热》-海鸥271号-3.8.docx",
+   "chars": 4314
+  },
+  {
+   "source_id": "SRC-3289",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "《如何查询产品专利-美国站》-302-naros-3.16.docx",
+   "chars": 3863
+  },
+  {
+   "source_id": "SRC-3290",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "《广告如何实现首页顶部和其它位置的卡位》--420号 Vae-3.13.pdf",
+   "chars": 4703
+  },
+  {
+   "source_id": "SRC-3291",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "《提高销量tips之企业价格》--Cherry 260号-3.14.docx",
+   "chars": 3456
+  },
+  {
+   "source_id": "SRC-3292",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "《通过成本拆解实现利润优化的基本逻辑》-古月 197号-3.18.docx",
+   "chars": 8862
+  },
+  {
+   "source_id": "SRC-3293",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "专题-如何计算店铺利润-省掉ERP的钱-373号 啊就-2.26.pdf",
+   "chars": 3285
+  },
+  {
+   "source_id": "SRC-3294",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "亚马逊入库配置费第三方物流和官方物流运费对比-299号陈裕汉-2024.3.5.xlsx",
+   "chars": 455
+  },
+  {
+   "source_id": "SRC-3295",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "亚马逊入库配置费计算表格-299号陈裕汉-2024.3.5.xlsx",
+   "chars": 1705
+  },
+  {
+   "source_id": "SRC-3296",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊动销计算及补货策略-20号必胜哥-2.27.pdf",
+   "chars": 1851
+  },
+  {
+   "source_id": "SRC-3297",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "亚马逊动销计算及补货策略-20号必胜哥-2.27.xlsx",
+   "chars": 3352
+  },
+  {
+   "source_id": "SRC-3298",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊最强高级运营资料-43号Pinkbear-3.7.pdf",
+   "chars": 172193
+  },
+  {
+   "source_id": "SRC-3299",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "从运营的角度如何去拆解分析亚马逊爆款链接--413号--木木-3.1.docx",
+   "chars": 3631
+  },
+  {
+   "source_id": "SRC-3300",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "多变体产品的广告如何布局？-非标品-38-何灏彬-3.21.docx",
+   "chars": 2657
+  },
+  {
+   "source_id": "SRC-3301",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "如何找到适合自己类目和产品--24-林志勇-2.28.docx",
+   "chars": 2839
+  },
+  {
+   "source_id": "SRC-3302",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "气候友好标识亚马逊认证类目-412号-2.29.pdf",
+   "chars": 11798
+  },
+  {
+   "source_id": "SRC-3303",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "气候友好标识亚马逊认证类目-412号-2.29.xlsx",
+   "chars": 12918
+  },
+  {
+   "source_id": "SRC-3304",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "站外管理-海鸥271号-3.8.xlsx",
+   "chars": 1288
+  },
+  {
+   "source_id": "SRC-3305",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "美国站-利润-2024模板--分享-373-2.26.xlsx",
+   "chars": 4228
+  },
+  {
+   "source_id": "SRC-3306",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "非标品新品打法分享-43号-Pinkbear-2024.1.27.pdf",
+   "chars": 3717
+  },
+  {
+   "source_id": "SRC-3307",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "4月29日-亚马逊专题-509号肖总-怎么获取评价的方法.pdf",
+   "chars": 3243
+  },
+  {
+   "source_id": "SRC-3308",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "4月29日-亚马逊专题-575号Jessie-品牌流量护城河怎么搭建？.pdf",
+   "chars": 4358
+  },
+  {
+   "source_id": "SRC-3309",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "4月29日-亚马逊专题-723号可可-自动广告的辅助玩法.pdf",
+   "chars": 2701
+  },
+  {
+   "source_id": "SRC-3310",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "4月29日-亚马逊专题-822号多利-高质量listing打造以及推广.pdf",
+   "chars": 3847
+  },
+  {
+   "source_id": "SRC-3311",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "5月14日-亚马逊专题-420Vae-《细数亚马逊运营中的49条红线操作》.pdf",
+   "chars": 2935
+  },
+  {
+   "source_id": "SRC-3312",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "5月28日—亚马逊专题—666号《欧洲本土号常见问题以及低风险使用的办法》.pdf",
+   "chars": 2911
+  },
+  {
+   "source_id": "SRC-3313",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊生成式AI 高效提升Listing质量.pdf",
+   "chars": 13955
+  },
+  {
+   "source_id": "SRC-3314",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pptx",
+   "filename": "亚马逊选品实战策略与工具应用.pptx",
+   "chars": 2450
+  },
+  {
+   "source_id": "SRC-3315",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pptx",
+   "filename": "卖家精灵选品：季节性产品选品 149---(3).pptx",
+   "chars": 5498
+  },
+  {
+   "source_id": "SRC-3316",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "如何避免知识产权侵权(3).docx",
+   "chars": 4377
+  },
+  {
+   "source_id": "SRC-3317",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pptx",
+   "filename": "季节性产品的全方位调研方法.pptx",
+   "chars": 616
+  },
+  {
+   "source_id": "SRC-3318",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "广告基本功的修炼(7).pdf",
+   "chars": 16520
+  },
+  {
+   "source_id": "SRC-3319",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pptx",
+   "filename": "数据驱动 精准增长亚马逊十年运营的量化实战手册.pptx",
+   "chars": 940
+  },
+  {
+   "source_id": "SRC-3320",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pptx",
+   "filename": "欧美外观专利查询实操与侵权规避20250315.pptx",
+   "chars": 9812
+  },
+  {
+   "source_id": "SRC-3321",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "禁止外传==10.30学习课件(1).pdf",
+   "chars": 2034
+  },
+  {
+   "source_id": "SRC-3322",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "自动捡漏广告批量创建VS影刀.docx",
+   "chars": 976
+  },
+  {
+   "source_id": "SRC-3323",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "【izimi刘轶韵】年终大课学员分享版(1).pdf",
+   "chars": 3734
+  },
+  {
+   "source_id": "SRC-3324",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "亚马逊跨境电商运营1000题库题目题库面试.docx",
+   "chars": 115497
+  },
+  {
+   "source_id": "SRC-3326",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "02.202X年薪酬提成管理制度--运营部.pdf",
+   "chars": 2437
+  },
+  {
+   "source_id": "SRC-3329",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "2024美国站-利润计算-一味君团队.xlsx",
+   "chars": 3535
+  },
+  {
+   "source_id": "SRC-3330",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "220分享---如何建立数据透视图.docx",
+   "chars": 2624
+  },
+  {
+   "source_id": "SRC-3331",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "3. 欧洲站外渠道.xlsx",
+   "chars": 6601686
+  },
+  {
+   "source_id": "SRC-3332",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "5群问答表（3月26日）.xlsx",
+   "chars": 102620502
+  },
+  {
+   "source_id": "SRC-3333",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "6--85个站外红人资源.xlsx",
+   "chars": 21907
+  },
+  {
+   "source_id": "SRC-3335",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "74.亚马逊形式发票2.xlsx",
+   "chars": 607
+  },
+  {
+   "source_id": "SRC-3336",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "75.亚马逊形式发票模板.docx",
+   "chars": 536
+  },
+  {
+   "source_id": "SRC-3337",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "Amazon FBA 配送费率表 (2025_2026版).pdf",
+   "chars": 1074
+  },
+  {
+   "source_id": "SRC-3338",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "Amazon站内信敏感词大全 xlsx.xlsx",
+   "chars": 3014
+  },
+  {
+   "source_id": "SRC-3339",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "Deal网站大全.xlsx",
+   "chars": 6166
+  },
+  {
+   "source_id": "SRC-3340",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "《小公司如何针对小白运营进行亚马逊培训》-43-pinkbear-2024.3.29(1).xlsx",
+   "chars": 17121
+  },
+  {
+   "source_id": "SRC-3341",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "一味君社群1群.xlsx",
+   "chars": 1226608
+  },
+  {
+   "source_id": "SRC-3342",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "一味君社群2群.xlsx",
+   "chars": 1200618
+  },
+  {
+   "source_id": "SRC-3343",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "一味君社群2群问答全部.xlsx",
+   "chars": 1855480
+  },
+  {
+   "source_id": "SRC-3344",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "一照一码版.pdf",
+   "chars": 4887
+  },
+  {
+   "source_id": "SRC-3345",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊2025-2026佣金比例表.pdf",
+   "chars": 2170
+  },
+  {
+   "source_id": "SRC-3346",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "亚马逊FBA利润计算表..xlsx",
+   "chars": 1809
+  },
+  {
+   "source_id": "SRC-3347",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "亚马逊合作终止协议.docx",
+   "chars": 737
+  },
+  {
+   "source_id": "SRC-3348",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊常见类目认证对照表.pdf",
+   "chars": 693
+  },
+  {
+   "source_id": "SRC-3350",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsm",
+   "filename": "亚马逊搜索词报告分析工具-V16-20240627.xlsm",
+   "chars": 5804917
+  },
+  {
+   "source_id": "SRC-3351",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "亚马逊敏感词避雷.xlsx",
+   "chars": 2812
+  },
+  {
+   "source_id": "SRC-3352",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊禁售与限制商品清单 (Restricted Products).pdf",
+   "chars": 1098
+  },
+  {
+   "source_id": "SRC-3353",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "亚马逊站内信不能出现的敏感词和替代词(2).xlsx",
+   "chars": 862
+  },
+  {
+   "source_id": "SRC-3354",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "亚马逊运营主管KPI绩效考核表.xlsx",
+   "chars": 6130
+  },
+  {
+   "source_id": "SRC-3356",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "产品开发人员考核.xlsx",
+   "chars": 789
+  },
+  {
+   "source_id": "SRC-3357",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "产品运营工作流程.xlsx",
+   "chars": 1243
+  },
+  {
+   "source_id": "SRC-3358",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "产品采购合同Contract Of Purchase.docx",
+   "chars": 2727
+  },
+  {
+   "source_id": "SRC-3359",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "出单时间地区透视图高阶版.xlsx",
+   "chars": 390463
+  },
+  {
+   "source_id": "SRC-3360",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "利润核算模板.xlsx",
+   "chars": 6019
+  },
+  {
+   "source_id": "SRC-3361",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "利润表英国.xlsx",
+   "chars": 10956
+  },
+  {
+   "source_id": "SRC-3362",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "利润计算+星级计算+ACOS计算.xlsx",
+   "chars": 2022
+  },
+  {
+   "source_id": "SRC-3364",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "合伙协议模板.docx",
+   "chars": 1559
+  },
+  {
+   "source_id": "SRC-3365",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "员工月度考核表.xlsx",
+   "chars": 632
+  },
+  {
+   "source_id": "SRC-3366",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "如何看懂亚马逊财务报表？-热衷开源的宝藏Boy.pdf",
+   "chars": 4821
+  },
+  {
+   "source_id": "SRC-3367",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "定价 & ACOS公式模拟(一味君).xlsx",
+   "chars": 1153051
+  },
+  {
+   "source_id": "SRC-3368",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "定稿基础场5配套小工具：2025亚马逊新促销费用计算器_v1.1 1.xlsx",
+   "chars": 12743
+  },
+  {
+   "source_id": "SRC-3369",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "差异化爆款新品推广方案(3).xlsx",
+   "chars": 1056217
+  },
+  {
+   "source_id": "SRC-3370",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "差异化链接爆款推广方案（护腰带）.xlsx",
+   "chars": 1091978
+  },
+  {
+   "source_id": "SRC-3371",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "广告否词模板-最新-V5-20240627.xlsx",
+   "chars": 11500
+  },
+  {
+   "source_id": "SRC-3372",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "店铺转让协议-(1).docx",
+   "chars": 1506
+  },
+  {
+   "source_id": "SRC-3375",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "授权委托书（模板）.docx",
+   "chars": 177
+  },
+  {
+   "source_id": "SRC-3376",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "搜索词报告模拟数据.xlsx",
+   "chars": 110818174
+  },
+  {
+   "source_id": "SRC-3377",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "敏感词汇总.xlsx",
+   "chars": 4040
+  },
+  {
+   "source_id": "SRC-3378",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "敏感词词库-VAE.xlsx",
+   "chars": 7981
+  },
+  {
+   "source_id": "SRC-3379",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "日利润率表  各站点汇总表模板.xlsx",
+   "chars": 5864
+  },
+  {
+   "source_id": "SRC-3380",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "每月需提交的账单数据.xlsx",
+   "chars": 518
+  },
+  {
+   "source_id": "SRC-3382",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "矫正带新品推广.xlsx",
+   "chars": 16113
+  },
+  {
+   "source_id": "SRC-3384",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "站外工具网站.xlsx",
+   "chars": 1036
+  },
+  {
+   "source_id": "SRC-3385",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "站外引流网站及案例分享 仅供参考.xlsx",
+   "chars": 4244
+  },
+  {
+   "source_id": "SRC-3386",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "章程1（1股东、执行董事、监事）（一人有限公司不设董事会不设监事会）-模板.docx",
+   "chars": 6392
+  },
+  {
+   "source_id": "SRC-3387",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "章程2（多股东、执行董事、监事）（多人有限公司不设董事会不设监事会）-模板.docx",
+   "chars": 8362
+  },
+  {
+   "source_id": "SRC-3388",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "美国deals 网站.xlsx",
+   "chars": 10430
+  },
+  {
+   "source_id": "SRC-3389",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "美国站-利润-2024模板(销量-退货公式已修改).xlsx",
+   "chars": 7850
+  },
+  {
+   "source_id": "SRC-3390",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "美国站-利润-2024模板1.xlsx",
+   "chars": 4234
+  },
+  {
+   "source_id": "SRC-3391",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "美工绩效考核（起草版）.xlsx",
+   "chars": 2476
+  },
+  {
+   "source_id": "SRC-3392",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "跨境电商公司薪资体系.xlsx",
+   "chars": 20636
+  },
+  {
+   "source_id": "SRC-3393",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "跨境电商运营知识测试考核（第一期）.docx",
+   "chars": 3235
+  },
+  {
+   "source_id": "SRC-3394",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "跨境电商运营知识测试考核（第三期）.docx",
+   "chars": 3527
+  },
+  {
+   "source_id": "SRC-3395",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "跨境电商运营知识测试考核（第二期）.docx",
+   "chars": 3188
+  },
+  {
+   "source_id": "SRC-3396",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "跨境电商运营知识测试考核（第四期）.docx",
+   "chars": 3527
+  },
+  {
+   "source_id": "SRC-3397",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "跨境电商部团队成员月度绩效考核表-2021年度.xlsx",
+   "chars": 1999
+  },
+  {
+   "source_id": "SRC-3398",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "运营店长日常工作安排.xlsx",
+   "chars": 4151
+  },
+  {
+   "source_id": "SRC-3399",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "运营项目周报.xlsx",
+   "chars": 3761
+  },
+  {
+   "source_id": "SRC-3400",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "进阶广告：广告诊断模板V1.13.1 2025卖家峰会版本.xlsx",
+   "chars": 7939
+  },
+  {
+   "source_id": "SRC-3401",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "进阶物流1.IPSF入库配置费诊断模板.xlsx",
+   "chars": 34610657
+  },
+  {
+   "source_id": "SRC-3402",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "进阶物流2.分仓费用对比计算器-大号大件.xlsx",
+   "chars": 9873
+  },
+  {
+   "source_id": "SRC-3403",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "进阶物流3.分仓费用对比计算器-标准件.xlsx",
+   "chars": 38085
+  },
+  {
+   "source_id": "SRC-3404",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "退货报告分析模板.xlsx",
+   "chars": 306969
+  },
+  {
+   "source_id": "SRC-3406",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "问答.xlsx",
+   "chars": 2001015
+  },
+  {
+   "source_id": "SRC-3407",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "（实用）亚马逊销售目标和推广计划表.xlsx",
+   "chars": 10057
+  },
+  {
+   "source_id": "SRC-3408",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".doc",
+   "filename": "4月22号-《怎样更好的让我们差异化产品落地》--271号 海鸥.doc",
+   "chars": 0
+  },
+  {
+   "source_id": "SRC-3409",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".html",
+   "filename": "07_Listing文案.html",
+   "chars": 19228
+  },
+  {
+   "source_id": "SRC-3410",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "2026亚马逊主副标题新规｜爆款链接、大促前到底要不要改标题（实操标准答案）(5).pdf",
+   "chars": 1655
+  },
+  {
+   "source_id": "SRC-3411",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "6.0 运营策略复盘(1).xlsx",
+   "chars": 202378
+  },
+  {
+   "source_id": "SRC-3412",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "7月PartnerBoost达人合作Bf.pdf",
+   "chars": 1258
+  },
+  {
+   "source_id": "SRC-3413",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".html",
+   "filename": "amazon-daily-operations.html",
+   "chars": 1801
+  },
+  {
+   "source_id": "SRC-3414",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".html",
+   "filename": "amazon-title-audit-report(1).html",
+   "chars": 3846
+  },
+  {
+   "source_id": "SRC-3415",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".html",
+   "filename": "amazon-two-part-title-analyzer.html",
+   "chars": 587
+  },
+  {
+   "source_id": "SRC-3416",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "【listing优化】亚马逊标题新规(8).docx",
+   "chars": 5646
+  },
+  {
+   "source_id": "SRC-3417",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "亚马逊 2026 最新主副标题新规(1).docx",
+   "chars": 1352
+  },
+  {
+   "source_id": "SRC-3418",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".html",
+   "filename": "亚马逊75字符标题新规-运营学习手册.html",
+   "chars": 4037
+  },
+  {
+   "source_id": "SRC-3419",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "亚马逊两段式标题新规与Alexa结合解析.pdf",
+   "chars": 951
+  },
+  {
+   "source_id": "SRC-3420",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".txt",
+   "filename": "亚马逊站外反查by在路上(1).txt",
+   "chars": 16061
+  },
+  {
+   "source_id": "SRC-3421",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "站外查询(1).docx",
+   "chars": 65428
+  },
+  {
+   "source_id": "SRC-3422",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".docx",
+   "filename": "篡改猴-站外反查使用方法.docx",
+   "chars": 214
+  },
+  {
+   "source_id": "SRC-3423",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "精细化运营之Listing优化-VAE-会议记录-NEW.pdf",
+   "chars": 12056
+  },
+  {
+   "source_id": "SRC-3424",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "美国库存加载工具 Flat.File.InventoryLoader.us_副本(1).xlsx",
+   "chars": 478048
+  },
+  {
+   "source_id": "SRC-3425",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".html",
+   "filename": "07_Listing文案.html",
+   "chars": 26586
+  },
+  {
+   "source_id": "SRC-3426",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".html",
+   "filename": "2026-08-18_跨境简报.html",
+   "chars": 5743
+  },
+  {
+   "source_id": "SRC-3427",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".html",
+   "filename": "2026W33_跨境周报_0810-0816.html",
+   "chars": 13113
+  },
+  {
+   "source_id": "SRC-3428",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pptx",
+   "filename": "2026参考价政策升级解读&促销价格避坑实战(3).pptx",
+   "chars": 503
+  },
+  {
+   "source_id": "SRC-3429",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "amazon_operations_and_negative_reviews_guide.pdf",
+   "chars": 3588
+  },
+  {
+   "source_id": "SRC-3430",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".html",
+   "filename": "亚马逊主图视觉转化策略报告.html",
+   "chars": 22654
+  },
+  {
+   "source_id": "SRC-3431",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".xlsx",
+   "filename": "亚马逊动销计算及补货策略1(1).xlsx",
+   "chars": 2102
+  },
+  {
+   "source_id": "SRC-3432",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".html",
+   "filename": "亚马逊美站精铺入门全指南.html",
+   "chars": 11514
+  },
+  {
+   "source_id": "SRC-3433",
+   "authority": "C",
+   "status": "ingested",
+   "ext": ".pdf",
+   "filename": "模板-Listing写作指令模板.pdf",
+   "chars": 6592
+  }
+ ]
+}

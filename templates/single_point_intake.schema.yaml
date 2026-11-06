@@ -1,0 +1,115 @@
+# 沙龙第二版 · 单点任务接入、MCP 补数与连续调用 manifest 模板
+# 写入位置：{产品根}/00_总控/starsky-singlepoint-intake/00B_external_reference_manifest.yaml
+schema_version: "1.1"
+edition: starsky-v2
+release_tag: "2026-08-01"
+
+artifact_paths:
+  intake_document: "00_总控/starsky-singlepoint-intake/00B_单点任务接入单.md"
+  external_reference_manifest: "00_总控/starsky-singlepoint-intake/00B_external_reference_manifest.yaml"
+
+entry:
+  mode: "single_point"  # workflow | single_point
+  task: ""  # market_research | listing_optimization | ad_diagnosis | ad_architecture | image_optimization | product_video | keyword_research | ip_compliance | supplier_evaluation
+  target_skill: ""
+  routing_status: "awaiting_anchor"  # pending | awaiting_anchor | intake_ready | active | followup_requested | completed
+  selected_at: ""
+
+startup_anchor:
+  # 给一个可定位对象即可启动；不把补充资料当作前置门槛。
+  selected: []
+  required_any_of:
+    - "产品目录"
+    - "ASIN/SKU"
+    - "Amazon/1688 链接"
+    - "现有文案/广告报表/本品图片"
+    - "产品方向"
+  resolved_object: ""
+  status: "pending"  # pending | sufficient_to_start | needs_one_anchor
+
+run_context:
+  product_directory: ""
+  marketplace: "US"
+  asin_or_sku: ""
+  product_name: ""
+  product_type: ""
+  desired_outcome: ""
+  run_mode: "production"  # production | demo_direct_run
+
+source_scan:
+  scan_order:
+    - "用户指定的产品目录"
+    - "workflow_state.yaml"
+    - "各板块 Skill 夹（S1_选品板块/ … S5_运营板块/、00_总控/）中的既有产物与 00_产品资料/ 投喂原件"
+    - "本轮上传文件、ASIN/SKU、链接、图片、视频或表格"
+    - "目标 Skill 为补数实际调用的 MCP"
+  product_directory:
+    path: ""
+    status: "not_provided"  # not_provided | readable | missing | inaccessible
+  workflow_state:
+    path: "workflow_state.yaml"
+    status: "not_found"  # found | not_found | unreadable
+  reports_directory:
+    path: "按 skill_folder_map：{板块夹}/{skill}/（无单一报告目录）"
+    status: "not_found"
+
+references:
+  # 每个来源都只读记录；不得改写用户外部文件。
+  - source_id: ""
+    source_type: ""  # existing_report | listing | ad_report | product_image | product_video | asin | sku | url | mcp_result | keyword_export | voc | supplier_file | other
+    path_or_url: ""
+    supplied_by: "user"
+    read_status: "pending"  # pending | read | partial | unreadable | missing | deferred
+    extracted_fields: []
+    allowed_use: []  # factual_claim | analysis | draft_only | visual_reference | production_input
+    affected_outputs: []
+    notes: ""
+
+mcp_refresh:
+  policy: "available_on_demand"
+  target_skill_must_attempt_when_relevant: true
+  status: "ready"  # ready | running | completed | skipped_with_reason
+  requests:
+    - request_id: ""
+      round: 1
+      active_skill: ""
+      purpose: ""
+      target_object: ""
+      expected_fields: []
+      actual_mcp: ""
+      status: "pending"  # pending | used | skipped | unavailable | partial
+      returned_fields: []
+      evidence_refs: []
+      impact_on_outputs: []
+      notes: ""
+
+single_point_progress:
+  state: "active"  # active | awaiting_user_choice | completed
+  active_skill: ""
+  completed_skills: []
+  user_requested_next_skill: ""
+  available_followups: []
+  continuation_prompt: ""
+
+data_explanation_window:
+  acquired_facts: []
+  extracted_or_inferred: []
+  simulated_parameters: []
+  missing_and_impact: []
+  continue_and_revision: []
+
+handoff:
+  next_skill: ""
+  recommended_prompt: ""
+  mcp: "available_on_demand"
+  next_step_id: ""
+  user_controls_followup: true
+
+acceptance_checks:
+  - "已用一个启动锚点开始，而非等待完整资料"
+  - "已先读取已有产品目录与报告，再索取不可替代缺口"
+  - "目标 Skill 对相关外部数据实际调用 MCP 或记录 skipped 原因"
+  - "MCP 返回字段、证据与影响已登记，未把推断写成事实"
+  - "外部资料保持只读，来源和可用边界已登记"
+  - "用户可选择后续 Skill，且不会自动扩成整条工作流"
+  - "目标 Skill、推荐口令和四标签一致"

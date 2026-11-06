@@ -1,0 +1,72 @@
+schema_version: "1.0"
+purpose: "把买家问题、可用事实、Listing 信息部署、7 图规划、运营交接和验证计划连接成可复用的转化蓝图。"
+run_mode: "production | demo_direct_run"
+data_explanation_window:
+  acquired_facts: []
+  derived_or_normalized: []
+  simulated_parameters: []
+  missing_and_impact: []
+  continuation_and_revision: []
+buyer_questions:
+  - question_id: "BQ-01"
+    buyer_question: ""
+    source_types: ["keyword_package", "voc", "competitor", "product_facts"]
+    source_ids: []
+    priority: "P0 | P1 | P2"
+    evidence_ids: []
+    status: "covered | partially_covered | not_covered | not_applicable"
+    unresolved_reason: ""
+information_deployment:
+  - item_id: "INFO-01"
+    item: ""
+    item_type: "identity | model | variant | material | size | feature | use_case | compatibility | boundary"
+    evidence_ids: []
+    placements:
+      title: ""
+      item_highlights: ""
+      bullets: []
+      description: ""
+      attributes: []
+      qa: []
+      images: []
+    duplication_reason: ""
+    status: "confirmed | conditional | blocked_claim"
+visual_brief:
+  - image_id: "IMG01"
+    image_type: "main | secondary"
+    buyer_question_id: "BQ-01"
+    key_message: ""
+    source_evidence_ids: []
+    visual_content: ""
+    allowed_overlay_copy: ""
+    mobile_readability_note: ""
+    not_visualized_reason: ""
+    forbidden_expressions: []
+    compliance_notes: []
+operational_handoffs:
+  - touchpoint: "review | price_promotion | delivery | related_modules"
+    owner: "seller_operations | inventory_operations | advertising_operations | manual_review"
+    evidence_to_check: []
+    risk_if_unchecked: ""
+    action_scope: "handoff_only"
+    status: "not_measured | ready_for_review | blocked"
+validation_plan:
+  baseline_window: ""
+  change_log: []
+  indexing_check:
+    method: "ASIN + keyword reverse check when real data is available"
+    status: "not_measured"
+  metric_diagnosis:
+    - signal: "low_impressions | high_impressions_low_ctr | high_ctr_low_cvr | high_add_to_cart_low_cvr"
+      hypotheses: []
+      evidence_needed: []
+      owner: ""
+  observation_window: "at least 7 days unless traffic volume makes the result inconclusive"
+  user_validation: "optional; use real users or an approved test method, not fabricated feedback"
+  outcome_status: "not_measured | measured_positive | measured_negative | inconclusive"
+acceptance_checks:
+  - "每个 P0 买家问题有来源、证据和明确的落位或未覆盖原因。"
+  - "每个消费者可见主张可追溯到 evidence_id，条件性或 blocked_claim 不进入前台文案/图片。"
+  - "IMG01–IMG07 不重复解决同一问题；主图不含叠字。"
+  - "价格、配送、评论和关联模块只交接给运营核查，不由文案 Skill 自动执行。"
+  - "验证结论只引用已测量数据；未测量项保持 not_measured。"
