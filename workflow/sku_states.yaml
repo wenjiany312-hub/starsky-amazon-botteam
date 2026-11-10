@@ -80,7 +80,7 @@ enums:
   fulfillment: [FBM_TEST, FBA_DIRECT, FBA_PLUS_FBM, FBM_ONLY]
   fbm_ship_mode: [CN_DIRECT, US_3PL]
   visual_mode: [in_team, outsource]   # 不填 = 按 config/team_settings.yaml
-  data_level: [CONFIRMED, PAGE_SIGNAL, ESTIMATE]   # 过闸门 1 前不能有 ESTIMATE
+  data_level: [CONFIRMED, PAGE_SIGNAL, ESTIMATE]   # 包装尺寸重量可以带 ESTIMATE 过闸门 1（按仓管物流的保守估算规则，标「待样品确认」）；采购、转 FBA 前必须升级到 CONFIRMED。其他字段过闸门 1 前不能有 ESTIMATE
   upload_channel: [hub_api, manual_sc, flat_file]   # hub_api = 数据底座 listing create → 审核报告 → 老板确认推送（店铺接了 SP-API 时默认，2026-11-05 起）；manual_sc = 照填包 + 老板后台创建（没接 SP-API 时）；flat_file = 类目上架表格（技能待开发）
   ads_upload_channel: [hub_api, bulk_file]   # hub_api = 广告优化师出 plan.json → 运营总监 plan import → 审核报告 → 老板确认推送（店铺接了 Ads API 时默认）；bulk_file = Bulk 表格老板上传（没接 Ads API 时）
   verdict_guard: [PASS, CONDITIONAL, REJECT]

@@ -7,7 +7,8 @@
 
 edition:
   internal  = 老板自用：不检查授权；知识库原样带上（可能含自己店铺数据），包名带「内部自用」
-  customer  = 客户版：必须给 --license-id；知识库不能有疑似 ASIN；默认 basic 档（去掉旗舰专属技能）
+  customer  = 客户版：必须给 --license-id；整包真实 ASIN 换成 B0REDACTnn 替身，构建结束全包再扫一次必须为 0；默认 basic 档（去掉旗舰专属技能）
+两个版本都做导入检查（build/import_check.py）：.py 的 import 解析不到就构建失败
 依赖：Python 3.9+、PyYAML
 """
 import argparse, hashlib, json, os, re, shutil, sys, zipfile, datetime
@@ -27,6 +28,63 @@ def cp(src, dst):
     with open(src, 'rb') as i, open(dst, 'wb') as o: o.write(i.read())
 
 def die(msg): print('❌ ' + msg); sys.exit(1)
+
+# ---- ASIN 脱敏（客户版）----
+ASIN_SUFFIXES = ('.md', '.yaml', '.yml', '.json', '.csv', '.txt', '.py', '.html', '.htm', '.js', '.toml')
+# 占位写法：不是真实 ASIN，原样保留
+ASIN_PLACEHOLDER_PREFIXES = ('B0CHILD', 'B0PARENT', 'B0BURN', 'B0A000', 'B0REDACT')
+ASIN_PLACEHOLDER_EXACT = {'B012345678'}
+
+
+def is_placeholder_asin(x):
+    return (x in ASIN_PLACEHOLDER_EXACT or x.startswith(ASIN_PLACEHOLDER_PREFIXES)
+            or re.search(r'(.)\1{4,}', x) is not None           # 同一字符连续 5 个以上，如 B0XXXXXXXX
+            or re.fullmatch(r'B0[A-Z]{2,}0{3,}[0-9]*', x) is not None)   # 单词 + 3 个以上 0，如 B0NEW00001、B0TOP00001
+
+
+def _asin_files(out):
+    for dp, dn, fn in os.walk(out):
+        dn.sort()
+        for f in sorted(fn):
+            if f.endswith(ASIN_SUFFIXES):
+                yield os.path.join(dp, f)
+
+
+def redact_asins(out):
+    """按出现顺序给每个不同的真实 ASIN 分配 B0REDACT01、B0REDACT02…（10 位、B0 开头），全包同一个 ASIN 同一个替身。"""
+    mapping, total = {}, 0
+
+    def sub(m):
+        nonlocal total
+        x = m.group(0)
+        if is_placeholder_asin(x):
+            return x
+        if x not in mapping:
+            mapping[x] = f'B0REDACT{len(mapping) + 1:02d}'
+        total += 1
+        return mapping[x]
+
+    for p in _asin_files(out):
+        raw = open(p, 'rb').read()
+        try:
+            t = raw.decode('utf-8')
+        except UnicodeDecodeError:
+            continue                      # 非 UTF-8 文本不改，留给 scan_asins 兜底报错
+        t2 = ASIN.sub(sub, t)
+        if t2 != t:
+            open(p, 'w', encoding='utf-8', newline='').write(t2)
+    if len(mapping) > 99:
+        die(f'真实 ASIN 有 {len(mapping)} 个，超过替身编号上限 99，请扩展 redact_asins')
+    return total, len(mapping)
+
+
+def scan_asins(out):
+    hits = []
+    for p in _asin_files(out):
+        for x in ASIN.findall(open(p, encoding='utf-8', errors='ignore').read()):
+            if not is_placeholder_asin(x):
+                hits.append((os.path.relpath(p, out), x))
+    return hits
 
 
 def render_guide(out, a, team, kit, work):
@@ -185,27 +243,23 @@ def main(argv=None):
                     if m and 'example' not in f and 'test' not in p.lower() and 'fixture' not in p.lower():
                         errs.append(f'疑似密钥：{os.path.relpath(p, out)} → {m.group(0)[:12]}…')
                         break
-    # 客户版只在打包副本里脱敏疑似 ASIN，源码知识库保持原样
-    asin_redacted = 0
+    # 客户版：整个打包副本里的真实 ASIN 换成固定替身（源码不动，internal 不动）
     if a.edition == 'customer':
-        for dp, dn, fn in os.walk(os.path.join(out, 'mcp', 'local')):
-            for f in fn:
-                if f.endswith(('.md', '.yaml', '.json', '.csv', '.txt')):
-                    p = os.path.join(dp, f)
-                    t = open(p, encoding='utf-8', errors='ignore').read()
-                    t2, n = ASIN.subn('B0-REDACTED', t)
-                    if n:
-                        open(p, 'w', encoding='utf-8').write(t2)
-                        asin_redacted += n
-        if asin_redacted:
-            warns.append(f'客户版已脱敏 {asin_redacted} 处疑似 ASIN（只改打包副本）')
-    asin_hits = 0
-    for dp, dn, fn in os.walk(os.path.join(out, 'mcp', 'local')):
-        for f in fn:
-            if f.endswith(('.md', '.yaml', '.json', '.csv', '.txt')):
-                asin_hits += len(ASIN.findall(open(os.path.join(dp, f), encoding='utf-8', errors='ignore').read()))
-    if asin_hits:
-        (errs if a.edition == 'customer' else warns).append(f'知识库里有 {asin_hits} 处疑似 ASIN（客户版必须脱敏）')
+        n, kinds = redact_asins(out)
+        if n:
+            warns.append(f'客户版已脱敏 {n} 处真实 ASIN（{kinds} 个不同 ASIN，同一个 ASIN 全包同一个替身；只改打包副本）')
+    left = scan_asins(out)
+    if left:
+        sample = '；'.join(f'{p}:{x}' for p, x in left[:5])
+        (errs if a.edition == 'customer' else warns).append(f'包里有 {len(left)} 处真实 ASIN（客户版必须为 0）：{sample}')
+    # 导入检查：每个 .py 的 import 必须解析到 标准库 / 平台会装的依赖 / 包里自带的模块
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from import_check import check as import_check
+    ic = import_check(out)
+    for m in ic['missing']:
+        errs.append('导入解析不到：' + m)
+    for m in ic['syntax_errors']:
+        errs.append('Python 语法错误：' + m)
     if errs:
         for e in errs: print('❌', e)
         die('构建未通过')

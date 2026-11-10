@@ -1,0 +1,17 @@
+# 星空技能脚本的运行依赖（与星空亚马逊 Agent 运行环境 installer/requirements.txt 同一组库）
+# Grok：mcp/local/install_grokbot.sh 装进 {WORK}/py 虚拟环境；技能脚本一律用 {WORK}/py/bin/python 运行
+# build/import_check.py 以本文件为准判断第三方 import 能否解析，新增依赖必须写进这里
+# 云电脑的 Python 版本不固定，所以只写下限，不锁死版本
+PyYAML>=6.0
+openpyxl>=3.1
+Pillow>=10.0
+beautifulsoup4>=4.12
+requests>=2.31
+pycryptodome>=3.20
+numpy>=1.26
+pandas>=2.1
+PyMuPDF>=1.24
+jsonschema>=4.20
+opencv-python-headless>=4.8
+rapidocr>=1.3
+onnxruntime>=1.17

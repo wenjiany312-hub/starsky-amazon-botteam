@@ -59,3 +59,29 @@
 | `starsky-fullchain-workflow` | 2.19.0 | 2026-08-29 |
 | `starsky-navigator` | 1.0.0 | — |
 | `starsky-singlepoint-intake` | 4.6.0 | 2026-08-29 |
+
+## 发行叠加层（2026-11-09 补，rc10 起）
+
+星空亚马逊 Agent 正式发行时，在 `source/` 之上还叠加 `release-overrides/`（`*.py` 一律落到 `scripts/`）和 `installer/host_support.py`（落到 `scripts/`）。11-04 同步只拿了 `source/`，rc9 里有 7 个模块缺失：报告生成、证据校验、S1 验收这些脚本一跑就是 ImportError（`s1_cost_model.py`、`s5_optimize.py` 不报错，但会静默跳过知识库依据）。
+
+| 项 | 内容 |
+|---|---|
+| 来源 | `_Codex公开发布候选`，git `49e91ed`（2026-11-05） |
+| 对应正式发行 | 星空 Codex 3.0.44（2026-11-06）；落点以该发行包为准 |
+| 原则 | 只带被 import 到的模块（含间接依赖），不整目录搬；版本取 `release-overrides/`，和本包其余脚本同出 `source/` 那一棵树 |
+
+| 包内位置 | 来源 | sha256 前 12 位 |
+|---|---|---|
+| `scripts/kb_ui.py` | release-overrides/kb_ui.py | ca83788fe800 |
+| `scripts/kb_plan.py` | release-overrides/kb_plan.py | 57d67d2ab899 |
+| `scripts/kb_amend.py` | release-overrides/kb_amend.py（kb_ui 间接依赖） | 013d150b2397 |
+| `scripts/kb_observations.py` | release-overrides/kb_observations.py（kb_ui / verify_kb_evidence 间接依赖） | bdeef9bcbabf |
+| `scripts/verify_kb_evidence.py` | release-overrides/verify_kb_evidence.py | 570bbbcb1306 |
+| `scripts/workflow_checks.py` | release-overrides/workflow_checks.py | c3646e43b876 |
+| `scripts/s1_flow.py` | release-overrides/s1_flow.py | dfc3e423be96 |
+| `scripts/host_support.py` | installer/host_support.py | 4bf68a13647e |
+| `skills/github-tabler-html-report/assets/s1_product_front.py` | release-overrides/s1_product_front.py（3.0.44 发行包放在这里，`verify_s1_acceptance.py` 按这个路径找） | f3f8ab498b75 |
+| `scripts/s1_report_v3.py` | source/starsky-amazon-agent/scripts/s1_report_v3.py（11-04 同步漏掉；s1_product_front 依赖） | bdc53d813345 |
+
+第三方依赖清单：`scripts/requirements.txt`（与 Agent `installer/requirements.txt` 同一组库），Grok 上由 `mcp/local/install_grokbot.sh` 装进 `{WORK}/py`。
+以后再同步星空技能：先同步，再跑 `python build/import_check.py .`，有缺失就按上面的落点补。构建时同一检查对打包副本再跑一次，解析不到直接失败。

@@ -97,13 +97,14 @@ Grok Bot 一个群最多 6 个 Bot。派单走 SendToAgent，群聊只是方便�
 按 `mcp/grokbot_接入说明.md`：老板自己买的工具（SIF、Sorftime 等）通过连接器或插件接入，**密钥用安全密钥卡填**，不让老板把密钥贴进对话。没接的记「未接入」，不影响搭建。
 搭建完成后，老板可以随时把 MCP 清单（可以照 `mcp/我的MCP清单_模板.md` 填，也可以直接给截图或配置片段）拖给运营总监，由运营总监按技能 `amazon-mcp-onboarding` 一次接好、分配、体检。
 
-## 9b. 装本地 MCP（1688 抓取 + 3 个知识库）
+## 9b. 装本地 MCP（1688 抓取 + 3 个知识库）和技能脚本环境
 ```
 bash {KIT}/mcp/local/install_grokbot.sh
 ```
 脚本最后会打印 4 条注册命令。逐条在对话里「添加自定义 MCP 服务器（by command）」，名称照抄：`1688_scraper`、`selection_knowledge_base`、`ads_knowledge_base`、`promotion_knowledge_base`；环境变量都加 `PYTHONUTF8=1`。老板点确认后，在 Settings → Plugins → Yours 核对 4 个都在。
 然后请老板打开 **Settings → Computer → Your computer → Route traffic through this computer**（1688 会屏蔽云服务器 IP，打开后看到的是老板电脑的网络；需要老板电脑上的 Grok Bot 桌面端开着）。
-脚本任何一步报 ❌ 就停下来，把报错原文交给老板。
+同一个脚本还会建 `{WORK}/py`（技能脚本的运行环境，装 `{KIT}/scripts/requirements.txt`）；以后跑任何技能脚本都用 `{WORK}/py/bin/python`，写进 `{WORK}/team.md`。
+脚本任何一步报 ❌ 就停下来，把报错原文交给老板；第 4b 步只报 ⚠️ 时可以继续，但要在回执里写明哪些库没装上。
 
 ## 10. 团队档案 `{WORK}/team.md`
 只写**实际核对过**的：
@@ -128,7 +129,8 @@ bash {KIT}/mcp/local/install_grokbot.sh
 3. 私聊财务管家：「假设售价 $24.99、采购 ¥18.50、包装后 0.36 kg、FBM 国内直发，列出你还缺哪些数据才能算利润。」→ 预期：列出缺项，不编数字
 4. 私聊广告优化师：「用知识库查一下『新品期 出价』，给我 3 条建议并写出卡片编号。」→ 预期：命令行查询成功，带 KC 编号
 5. 私聊运营总监：「按报告模板做一份空的批次报告 HTML，作为附件发给我。」→ 预期：能打开的 HTML 附件
-6. 私聊出图工：「试着生成一张白底的测试图：一个白色陶瓷马克杯。生成不了就直接说。」→ 能生成：老板决定要不要把 `visual.image_mode` 改成 `in_team`；生成不了：保持 `outsource`
+6. 运营总监在终端跑：`{WORK}/py/bin/python {KIT}/scripts/kb_report_contract.py --help` → 预期：打印用法，没有 ImportError
+7. 私聊出图工：「试着生成一张白底的测试图：一个白色陶瓷马克杯。生成不了就直接说。」→ 能生成：老板决定要不要把 `visual.image_mode` 改成 `in_team`；生成不了：保持 `outsource`
 
 ## 12. 交回执
 一张表交给老板：11 个 Bot（ID、状态）、技能（状态）、群聊、审批规则、数据工具、6 项验证结果；并确认「搭建全程只读，没有要密钥，没有动店铺」。

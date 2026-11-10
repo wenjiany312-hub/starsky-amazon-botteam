@@ -62,6 +62,26 @@ fi
 if [ -n "${DISPLAY:-}" ]; then ok "图形显示 DISPLAY=$DISPLAY（1688 登录窗口会出现在这块屏幕上）"
 else warn "当前终端没有 DISPLAY。1688_scraper 需要有界面的 Chromium：注册 MCP 后如果 login_1688 / get_offer 报显示相关错误，把报错交给老板"; fi
 
+echo "== 4b. 技能脚本运行环境 $WORK/py =="
+# 星空技能脚本（报告生成、成本模型、图片后处理等）的依赖，清单在 kit/scripts/requirements.txt
+# 放在 kit 外面：升级团队包不用重装；技能脚本一律用 $WORK/py/bin/python 运行
+if [ ! -x "$WORK/py/bin/python" ]; then
+  python3 -m venv "$WORK/py" || die "建技能脚本虚拟环境失败。可能缺 python3-venv：sudo apt-get install -y python3-venv 后重跑"
+fi
+"$WORK/py/bin/python" -m pip install -q --upgrade pip >/dev/null 2>&1
+if "$WORK/py/bin/python" -m pip install -q -r "$KIT/scripts/requirements.txt"; then
+  ok "技能脚本依赖已装（$WORK/py/bin/python）"
+else
+  warn "技能脚本依赖没装全（看上面的报错，多半是网络）。知识库和 1688 不受影响；报告生成类脚本会跑不起来，网络好了重跑本脚本"
+fi
+"$WORK/py/bin/python" - <<'PY' || warn "技能脚本依赖导入自检没通过（见上面缺的库）"
+import importlib.util, sys
+need = ['yaml', 'openpyxl', 'PIL', 'bs4', 'requests', 'Crypto', 'numpy', 'pandas', 'fitz', 'jsonschema', 'cv2', 'rapidocr']
+bad = [m for m in need if importlib.util.find_spec(m) is None]
+print('缺：' + '、'.join(bad) if bad else 'import ok：' + '、'.join(need))
+sys.exit(1 if bad else 0)
+PY
+
 echo "== 5. 启动脚本 =="
 cat > "$DEST/run.sh" <<EOF
 #!/usr/bin/env bash
