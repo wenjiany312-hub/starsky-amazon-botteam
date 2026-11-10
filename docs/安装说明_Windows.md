@@ -36,7 +36,7 @@
 3. 授权通过后，安装器会解密并生成 Grok 上传包，路径会打印在窗口里，例如：
 
    ```
-   C:\Users\你的用户名\.starsky-botteam\packages\starsky-botteam_grokbot_v1.0.0-rc10_xxxxxxxx.zip
+   C:\Users\你的用户名\.starsky-botteam\packages\starsky-botteam_grokbot_v1.0.0-rc11_xxxxxxxx.zip
    ```
 
 > 截图位：授权通过后的上传包路径
