@@ -14,3 +14,6 @@
 产物在 `dist/`（不进仓库）。
 
 > **这是明文源码，不推任何公开远端。** 对外发行走公开仓 `wenjiany312-hub/starsky-amazon-botteam` 的加密发行包（payload.enc）+ 设备码授权，和星空亚马逊 Agent 同一套；见 `license/授权接入规格.md`。
+
+
+授权与使用条款：`license/使用条款.md`（一张授权 = 一台电脑 + 一个 Grok 账号；靠水印追查，更新只给登记过的授权）。
