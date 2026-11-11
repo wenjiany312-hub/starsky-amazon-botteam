@@ -63,7 +63,7 @@
 
 ## 怎么申请授权
 
-1. 从本仓 **Releases** 下载安装器：Mac 用 `…-macos.zip`，Windows 用 `…-windows.zip`
+1. 从本仓 **Releases** 下载安装器：Grok Bot 用 `Starsky-BotTeam-<版本>-macos.zip` / `…-windows.zip`；OpenBot 用文件名带 `-openbot-` 的那两个
 2. 解压后双击「申请授权」，记下显示的 **32 位本机申请码**
 3. 把「产品名 + 平台（Grok Bot / OpenBot / StarSky）+ 申请码」发给作者
 4. 拿到授权码后，双击「安装与更新」，粘贴授权码
@@ -92,6 +92,7 @@
 OpenBot 版不生成上传包，由安装器把团队包直接写进你的电脑。
 
 **前提**
+- 从本仓 Releases 下载 **OpenBot 专用安装包**（`…-openbot-macos.zip` / `…-openbot-windows.zip`）。Grok 版安装包只含 Grok 的团队包，用它会提示没有 OpenBot 内容
 - 先装好 OpenBot（MagPie 可选，用来给每个助手单独配模型）
 - 授权码要开通 OpenBot 平台：联系作者，用同一个授权编号重签一张码，到期日不变。老码只有 Grok Bot，安装时选 OpenBot 会被拒绝
 
