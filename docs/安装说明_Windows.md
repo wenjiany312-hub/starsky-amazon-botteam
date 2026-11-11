@@ -33,10 +33,11 @@
 
 1. 收到授权码后，双击 **安装与更新.bat**
 2. 粘贴完整的 `SKYBT1.` 授权码，回车
-3. 授权通过后，安装器会解密并生成 Grok 上传包，路径会打印在窗口里，例如：
+3. 如果这张授权同时开通了 Grok Bot 和 OpenBot，安装器会问装哪个平台，这里选 **Grok Bot**
+4. 授权通过后，安装器会解密并生成 Grok 上传包，路径会打印在窗口里，例如：
 
    ```
-   C:\Users\你的用户名\.starsky-botteam\packages\starsky-botteam_grokbot_v1.0.0-rc11_xxxxxxxx.zip
+   C:\Users\你的用户名\.starsky-botteam\packages\starsky-botteam_grokbot_v1.0.0-rc12_xxxxxxxx.zip
    ```
 
 > 截图位：授权通过后的上传包路径

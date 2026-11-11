@@ -4,7 +4,7 @@
 
 **AI 干活，AI 互相检查，钱和风险由你拍板。**
 
-支持平台：Grok Bot（本期）、OpenBot、StarSky（后续版本）。
+支持平台：Grok Bot、OpenBot（本期）；StarSky 后续版本。一张授权可以同时开通 Grok Bot 和 OpenBot，到期日一致。
 
 ---
 
@@ -40,7 +40,7 @@
 ## 包含 / 不包含
 
 **包含**
-- 11 个角色的 Grok 运营团队（岗位职责、闸门、交接规则）
+- 11 个角色的运营团队（Grok Bot / OpenBot）
 - 51 个技能
 - 4 个本地 MCP：1688 抓取，选品 / 广告 / 促销知识库
 - 服务期内的版本更新
@@ -69,7 +69,8 @@
 4. 拿到授权码后，双击「安装与更新」，粘贴授权码
 5. 按平台安装：
    - **Grok Bot**：安装器生成带授权编号水印的上传包 zip → 发给 Grok Bot 里的运营总监 → 按包里的 `BOOTSTRAP.md` 搭建团队
-   - **OpenBot / StarSky**：后续版本支持
+   - **OpenBot**：见下面「OpenBot 用户怎么装」
+   - **StarSky**：后续版本支持
 
 详细步骤：
 
@@ -83,6 +84,52 @@
 - **会员更新**：服务期内运行「检查新版」，或下载新版安装包运行「安装与更新」，无需逐版换 Key
 - **固定版本试用**：只能安装签发时的版本，不自动升级
 - 到期后已安装的内容继续可用，不再提供新版
+
+---
+
+## OpenBot 用户怎么装
+
+OpenBot 版不生成上传包，由安装器把团队包直接写进你的电脑。
+
+**前提**
+- 先装好 OpenBot（MagPie 可选，用来给每个助手单独配模型）
+- 授权码要开通 OpenBot 平台：联系作者，用同一个授权编号重签一张码，到期日不变。老码只有 Grok Bot，安装时选 OpenBot 会被拒绝
+
+**安装**
+1. 双击「安装与更新」，粘贴开通了 OpenBot 的授权码，平台选 **OpenBot**
+2. 默认装到 `~/OpenBot/Shared/starsky-amazon-botteam`（下称 `kit`），工作目录 `work` 与它同级
+3. 配本地 MCP：Mac 运行 `bash kit/mcp/local/install_local.sh`，Windows 运行 `powershell -ExecutionPolicy Bypass -File kit\mcp\local\install_local.ps1`。脚本会装好 4 个本地 MCP 并打印注册参数；**工作目录一律留空**，启动命令只填程序本身，参数一个一个加
+4. 在 OpenBot「你的应用」→「添加自定义项」逐个添加这 4 个 MCP，传输方式选 **STDIO**，点「测试连接」看到「已连接 · N 个工具」再保存
+5. 在 OpenBot 里对运营总监说「按 kit/SETUP.md 搭建团队」。它会用 `openbot.create_agent` 创建 11 个助手，装本地技能并按角色开开关，再把每个助手的「访问权限」设为「先询问」、文件夹加上 `kit` 和 `work`
+6. 1688 第一次抓详情要你本人扫码登录（`login_1688`），登录态存在 `work/mcp/starsky-1688/pw_user_data`，升级不丢
+
+**注意**
+- 安装器不会打开 OpenBot，也不会动你已有的助手和设置
+- 只有你能改助手权限；助手自己不能把「先询问」放宽成「完全访问」
+- 详细步骤见 `kit/SETUP.md`
+
+**升级**：运行「安装与更新」选 OpenBot。旧 `kit` 会改名为 `kit_<旧版本>_备份` 保留，`work/`（台账、产品文件、config）一个字都不动。之后按 `kit/docs/升级说明.md` 让运营总监换提示词、补技能、核对 MCP 和权限。
+
+---
+
+## 已装用户怎么升级到新版
+
+**Grok Bot**：运行「检查新版」→ 下载新版本 → 生成新的上传包 zip → 发给 Grok Bot 里的运营总监，贴下面这段口令（附件就是新上传包）：
+
+```
+团队包升级到 1.0.0-rc12（新增「选品证据方法」）。附件是用「检查新版」或「安装与更新」生成的 rc12 上传包。按升级模式做：不删除任何 Bot、台账、产品文件和已有设置，每步一句进度，中间不用问我。kit 里的文件一律不改。
+1. 解压附件到 /workspace/amazon-ops/，原 kit 改名为 kit_<当前版本号>_备份（看现在 kit/team.yaml 里的版本），新文件夹改名为 kit，跑 CHECKSUMS 校验，必须全部通过
+2. /workspace/amazon-ops/config/ 里的运行设置都不动
+3. 安装新的共享技能 amazon-selection-squad-method：全文安装，内容照 kit/skills/amazon-selection-squad-method/SKILL.md；已有同名的读回比对，以 kit 里的为准
+4. 把 11 个 Bot 的系统提示词全部重新发一遍（kit/agents/<id>.md「系统提示词」全文，包括你自己），前面加「这是你更新后的长期工作说明，替换之前的版本」
+5. 重跑 bash /workspace/amazon-ops/kit/mcp/local/install_grokbot.sh（已装的不会重装），报一下 4 个本地 MCP 和已接的第三方 MCP 各自通不通；**只看连没连上，不要为了测试去调用卖家精灵等按次扣费的数据工具**
+6. 验证：①选品侦察员说出五维打分里权重最高的是哪一维、对标池的门槛；②质检官说出它上架前多查的是什么；③逐个问 11 个 Bot 长期工作说明末尾的版本标记，应全部是 1.0.0-rc12，授权编号和升级前一致
+7. 交升级回执（每个 Bot 的版本号逐个列出）
+```
+
+**OpenBot**：运行「安装与更新」选 OpenBot → 旧 kit 自动备份、`work/` 不动 → 按 `kit/docs/升级说明.md` 让运营总监对齐助手。
+
+**不想用口令**：运行「安装与更新」下载新版安装包，上传包照样能生成；升级时不要删除任何助手、台账和产品文件。
 
 ---
 
