@@ -1,7 +1,7 @@
 product:
   id: starsky-botteam
   name: 星空亚马逊 Bot Team
-  version: 1.0.0-rc12
+  version: 1.0.0-rc.12
   license_prefix: SKYBT1.
   owner_title: 老板
 marketplace: US
