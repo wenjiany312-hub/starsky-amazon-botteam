@@ -2,14 +2,16 @@ platform: openbot
 name: OpenBot（原 Hermes + Discord 那一套已平移进来）
 verified: 2026-11-02 A 段试跑跑通
 runtime: local
-paths:
-  kit: <老板指定，比如 /Users/<你>/OpenBot/Shared/starsky-amazon-botteam>
-  work: <同上>/work
-create_roles: manual_or_director     # 手动粘贴，或运营总监创建「助手」
+paths:                               # 占位符：安装器写入本机时替换成真实绝对路径
+  kit: '{KIT}'                       # = 安装目录/kit（默认 ~/OpenBot/Shared/starsky-amazon-botteam/kit）
+  work: '{WORK}'                     # = 安装目录/work
+create_roles: openbot_create_agent   # 运营总监用 openbot.create_agent 代建；调不通就出可复制文本块交老板手动建
 dispatch: assistant_message
-skills: per_assistant_toggle         # 「你的技能」页，每个助手单独开关
-mcp_local: app                       # 「你的应用」
-approval: owner_in_director_chat
+skills: local_library_per_agent      # 本机技能库（「你的技能」→本地→添加技能，选文件夹或 ZIP）+ 按助手分配开关
+mcp_local: app_stdio                 # 「你的应用」→添加自定义项→STDIO；启动命令只填程序，参数分开，工作目录留空
+approval: owner_per_agent_permission # 助手设置→权限→访问权限「先询问」+ 文件夹范围；只有老板能放宽
 reports: html_link
 models: magpie_per_role              # 每个助手单独选模型（通过 MagPie）
 upgrade: in_place                    # 已有团队走原地升级：换提示词、调开关，不删助手
+license_binding: device_code              # OpenBot 跑在本机：授权绑本地电脑的设备码
+install: local_dir                        # 安装器直接把团队包写进本机目录（不生成上传包）

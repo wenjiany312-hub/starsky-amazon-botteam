@@ -16,7 +16,7 @@ import yaml
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FLAGSHIP_ONLY = {'amazon-ads-api-connector', 'amazon-sp-api-connector', 'amazon-ops-console'}
-OWN_SKILLS = ['amazon-team-operating-model', 'amazon-mcp-onboarding', 'amazon-ai-person-disclosure', 'amazon-image-compliance-check', 'amazon-kb-query', 'amazon-data-hub']
+OWN_SKILLS = ['amazon-team-operating-model', 'amazon-mcp-onboarding', 'amazon-ai-person-disclosure', 'amazon-image-compliance-check', 'amazon-kb-query', 'amazon-data-hub', 'amazon-selection-squad-method']
 COPY_DIRS = ['workflow', 'safety', 'skills', 'templates', 'scripts', 'knowledge', 'docs', 'config', 'license']
 SECRET_PATTERNS = [r'sk-[A-Za-z0-9_\-]{20,}', r'AKIA[0-9A-Z]{16}', r'-----BEGIN [A-Z ]*PRIVATE KEY-----',
                    r'(?i)(refresh_token|client_secret|app_secret|api_key)\s*[:=]\s*["\']?[A-Za-z0-9_\-\.]{16,}', r'Atzr\|[A-Za-z0-9_\-]{20,}']

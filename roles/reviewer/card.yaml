@@ -8,10 +8,12 @@ skills:
 - amazon-kb-query
 - amazon-team-operating-model
 - amazon-data-hub
+- amazon-selection-squad-method
 mcp:
 - ads_kb
 - selection_kb
 - promotion_kb
+- sellersprite-mcp
 names:
   grokbot: 复盘分析师
   openbot: 复盘分析师（OpenBot 原英文名可以改成中文）

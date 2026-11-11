@@ -39,8 +39,10 @@ mcps:
     aliases: [卖家精灵, sellersprite, SellerSprite, sellersprite-mcp]
     url_hints: [sellersprite.com]
     required: optional
-    use: 市场、关键词、竞品补充数据
-    roles: [scout, listing, ads]
+    use: 市场、关键词反查（流量重叠）、Listing 详情、评论样本（选品证据方法 S1 / S2 / 盯盘）
+    roles: [scout, listing, ads, reviewer]
+    endpoint: "https://mcp.sellersprite.com/mcp（官方接入页；文章里写的是 /v2/mcp，接入时以卖家精灵后台为准）"
+    transport: "Streamable HTTP，请求头名称固定 secret-key，值是「卖家精灵数据开放平台 → 我的密钥」里的密钥串"
     get_key: "https://open.sellersprite.com/mcp"
     guide: "https://open.sellersprite.com/mcp/16"
     verify: 查 1 个关键词或 ASIN
