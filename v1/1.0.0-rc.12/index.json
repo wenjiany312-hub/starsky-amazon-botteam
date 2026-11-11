@@ -1,0 +1,11 @@
+{
+  "bytes": 6034,
+  "file": "grants.zip",
+  "generated_at": "2026-11-11T16:09:50.215694+00:00",
+  "key_id": "2066626f7a2f4aa1bb804a7a3f14f5e0",
+  "payload_sha256": "842f32f12803a80e8203d612bc365f3fac62de9f457b12ea3807e34fc8945468",
+  "product": "starsky-botteam",
+  "schema": 1,
+  "sha256": "be8b4ee22dc7491287d6eeb369ee3d7196c9bd92ecd8436362adcd91a91b511b",
+  "version": "1.0.0-rc.12"
+}
