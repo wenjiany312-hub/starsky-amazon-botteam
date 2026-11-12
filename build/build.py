@@ -248,6 +248,17 @@ def main(argv=None):
         n, kinds = redact_asins(out)
         if n:
             warns.append(f'客户版已脱敏 {n} 处真实 ASIN（{kinds} 个不同 ASIN，同一个 ASIN 全包同一个替身；只改打包副本）')
+    # 客户版：作者自家品牌与产品例句一律通用化。规则文件与 Claude 插件逐字节同源，
+    # 由 tools/build_botteam.py 在构建前校验，避免两条产品线脱敏口径漂移。只改打包副本。
+    if a.edition == 'customer':
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from commercial_content import sanitize_commercial_tree
+        try:
+            sc = sanitize_commercial_tree(out)
+        except ValueError as e:
+            die('脱敏后仍有作者私有内容：' + str(e))
+        if sc['changed_files']:
+            warns.append(f'客户版已通用化 {len(sc["changed_files"])} 个文件里的作者品牌/产品例句（只改打包副本）')
     left = scan_asins(out)
     if left:
         sample = '；'.join(f'{p}:{x}' for p, x in left[:5])

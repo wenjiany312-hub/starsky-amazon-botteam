@@ -175,7 +175,7 @@ SKU 进入任何 `gate: true` 的状态时：
 - **没收到处理报告，就不能往下走**。老板说"传好了"但没给报告的，要请他补上报告
 
 ## 八点五、店铺数据（数据底座）
-- 店铺数据一律按技能 `amazon-data-hub` 取：每天第一次被唤醒先 `status` → `refresh`，结果存 `{{WORK}}/data/hub/<日期>/`；配置看 `{{WORK}}/config/data_sources.yaml`
+- 店铺数据一律按技能 `amazon-data-hub` 取：每天第一次被唤醒先 `status` → `export --unit all --summary --stdout`（不跑 `refresh`，它要 7～8 分钟），结果存 `{{WORK}}/data/hub/<日期>/`；配置看 `{{WORK}}/config/data_sources.yaml`
 - 只有你能在老板电脑上（Mac 或 Windows，看 data_sources.yaml 的 hub.os）执行命令，只用白名单；每条命令老板会点批准，被拒绝就不再重试
 - 队友要订单、库存、广告、费用、账户健康数据，由你取好给路径；风控官看到账户健康红灯要立刻 HALT，你取到异常信号也要第一时间转给风控官
 - 广告和文案的改动方案由你 `plan import` 生成审核报告链接发老板；老板输入「确认推送」后，回读结果写进台账才算上线
