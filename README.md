@@ -4,11 +4,42 @@
 
 **AI 干活，AI 互相检查，钱和风险由你拍板。**
 
-支持平台：Grok Bot、OpenBot（本期）；StarSky 后续版本。一张授权可以同时开通 Grok Bot 和 OpenBot，到期日一致。
+支持平台：Grok Bot、OpenBot；StarSky 后续版本。两个版本都有：
+
+| | 基础运营版 | 旗舰版 |
+|---|---|---|
+| 最新版本 | 1.0.0-rc.12（预发行） | 1.0.0-rc.13（预发行） |
+| 定位 | 11 角色团队出方案：选品、文案、图片、广告方案、上架资料包 | 基础运营版全部内容 + 接入你自己的店铺数据，做日常运营和推送 |
+| 店铺数据 | 不接，没装广告终端也能用 | 读你自己的 Ads API / SP-API，或优麦云、领星 |
+| 授权 | 基础版授权码 | 旗舰版授权码（基础版授权码不能装旗舰包，反过来也不行） |
+| 发行页 | [v1.0.0-rc12](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/tag/v1.0.0-rc12) | [v1.0.0-rc13-flagship](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/tag/v1.0.0-rc13-flagship) |
+
+买旗舰版即包含基础运营版的全部内容，用不用都可以。
 
 ---
 
-## 这套团队能做什么
+## 下载
+
+### 基础运营版 1.0.0-rc.12
+
+| 平台 | macOS | Windows |
+|---|---|---|
+| Grok Bot | [Starsky-BotTeam-1.0.0-rc.12-macos.zip](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/download/v1.0.0-rc12/Starsky-BotTeam-1.0.0-rc.12-macos.zip) | [Starsky-BotTeam-1.0.0-rc.12-windows.zip](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/download/v1.0.0-rc12/Starsky-BotTeam-1.0.0-rc.12-windows.zip) |
+| OpenBot | [Starsky-BotTeam-1.0.0-rc.12-openbot-macos.zip](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/download/v1.0.0-rc12/Starsky-BotTeam-1.0.0-rc.12-openbot-macos.zip) | [Starsky-BotTeam-1.0.0-rc.12-openbot-windows.zip](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/download/v1.0.0-rc12/Starsky-BotTeam-1.0.0-rc.12-openbot-windows.zip) |
+
+### 旗舰版 1.0.0-rc.13
+
+一个安装包同时含 Grok Bot 和 OpenBot，装哪个由授权码决定，按电脑系统选一个：
+
+| macOS | Windows |
+|---|---|
+| [Starsky-BotTeam-Flagship-1.0.0-rc.13-macos.zip](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/download/v1.0.0-rc13-flagship/Starsky-BotTeam-Flagship-1.0.0-rc.13-macos.zip) | [Starsky-BotTeam-Flagship-1.0.0-rc.13-windows.zip](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/download/v1.0.0-rc13-flagship/Starsky-BotTeam-Flagship-1.0.0-rc.13-windows.zip) |
+
+不要下载 `Source code (zip)` / `Source code (tar.gz)`，它们不是安装器。校验值见各发行页的 `SHA256SUMS.txt`。两个版本都是预发行，尚未完成两台电脑的实机验收。
+
+---
+
+## 这套团队能做什么（两个版本共有）
 
 | 板块 | 内容 |
 |---|---|
@@ -26,18 +57,9 @@
 
 ---
 
-## 先决条件：数据底座
+## 基础运营版
 
-店铺数据（订单、库存、广告、费用）不在这个包里，也不经过任何云端服务器。它由跑在**你自己电脑**上的「数据底座」（星空旗舰 AI 智能广告终端）读取：
-
-- 底座和团队是**两套安装、两张授权**，一起购买、分开安装
-- 底座支持 Mac / Windows，电脑需要能开机；电脑离线时团队会如实报「数据底座离线」
-- SP-API / Ads API / 领星 / 优麦云的密钥**只填在底座的接入向导里**，不要发进对话，也不要放进工作目录
-- 没装底座时：选品照常（靠 SIF / Sorftime 等数据服务），上架和运营拿不到店铺数据
-
----
-
-## 包含 / 不包含
+**适合**：先用团队做选品、文案、图片、广告方案和上架资料包，店铺操作自己在后台完成。
 
 **包含**
 - 11 个角色的运营团队（Grok Bot / OpenBot）
@@ -49,7 +71,47 @@
 **不包含**
 - Grok Bot 的套餐和用量：用你自己的 Grok 账号，额度用完需自行补充
 - SIF、Sorftime、西柚、卖家精灵等第三方数据账号：由你自己购买
-- 自动上架、开广告、店铺日报：属于旗舰版，另行提供。不接这些时，团队会出上架照填包和广告 Bulk 表，由你在卖家后台自己操作
+- 店铺数据接入、自动上架、开广告、店铺日报：属于旗舰版。基础运营版里团队会出上架照填包和广告 Bulk 表，由你在卖家后台自己操作
+
+**数据底座是可选的**：没装星空旗舰 AI 智能广告终端时，选品照常（靠 SIF / Sorftime 等数据服务），上架和运营拿不到店铺数据。
+
+---
+
+## 旗舰版
+
+**适合**：要让团队读你自己的店铺数据、做日常运营，并把确认过的方案推到店铺。
+
+**比基础运营版多什么**
+- **Amazon Ads API 只读接入**：读取你自己的 Sponsored Products 报表，用于广告复盘和新品期账户事实核对；不修改广告后台
+- **SP-API 接入**：读取订单、库存、Listing；文案只支持单个 SKU，经你本人确认后推送
+- **本地运营终端**：汇总广告与店铺的只读快照，生成每日巡检、广告和文案建议、人工审核账本
+- 日常取数改为读取广告终端的本地导出，不再每次触发整店刷新
+
+### 两个平台怎么分工
+
+| | Grok Bot | OpenBot |
+|---|---|---|
+| 团队跑在哪 | Grok Bot 云端（有云端电脑） | 你自己的电脑，OpenBot 本身就是底座，可直接调用模型 |
+| 团队做什么 | 选品、文案、广告、图片等生成，以及其他数据生成的机械性工作 | 同左，并可直接读取本机的广告终端导出 |
+| 成果怎么交给终端 | 运营总监把每批成果打成 zip，你下载到本机 `~/Downloads/grok bot team`（Windows：`%USERPROFILE%\Downloads\grok bot team`），再由广告终端读取 | 本机直接读取，对接更紧密 |
+| 安装得到什么 | 带授权编号水印的上传包 zip，发给 Grok Bot 里的运营总监搭建 | 写入 OpenBot 目录的 `kit/`，并打印一句搭建口令 |
+
+旗舰版负责店铺侧：接入你自己的店铺数据并执行运营，不依赖基础运营版也能单独工作。
+
+### 先决条件：星空旗舰 AI 智能广告终端
+
+- 店铺数据由跑在**你自己电脑**上的广告终端读取，不经过任何云端服务器，终端支持 Mac / Windows
+- 广告终端和团队包是**两套安装、两张授权**；本仓的安装包**不含**广告终端程序
+- 终端通过 Codex、Claude Code 或其他 AI 底座启动，读取上面的成果目录；也可接优麦云、领星或你自己店铺的 API 数据
+- SP-API / Ads API / 领星 / 优麦云的密钥**只填在广告终端的接入向导里**，不要发进对话，也不要放进工作目录
+- 推送只在你本人于广告终端输入「确认推送」后执行，团队不能代为确认
+
+### 旗舰版的边界
+
+- 预发行，尚未完成两台电脑的实机验收
+- 广告终端读取 Grok 成果目录并解包校验的联调、以及在真实 Grok Bot 上的下载流程，还没跑通
+- 只读报表目前覆盖 Sponsored Products
+- 利润与广告建议是经营估算，没有收益保证
 
 ---
 
@@ -63,9 +125,9 @@
 
 ## 怎么申请授权
 
-1. 从本仓 **Releases** 下载安装器：Grok Bot 用 `Starsky-BotTeam-<版本>-macos.zip` / `…-windows.zip`；OpenBot 用文件名带 `-openbot-` 的那两个
+1. 从上面的「下载」表下载安装器（基础运营版 Grok Bot 与 OpenBot 是不同的包；旗舰版一个包两个平台）
 2. 解压后双击「申请授权」，记下显示的 **32 位本机申请码**
-3. 把「产品名 + 平台（Grok Bot / OpenBot / StarSky）+ 申请码」发给作者
+3. 把「产品名（基础运营版 / 旗舰版）+ 平台（Grok Bot / OpenBot / StarSky）+ 申请码」发给作者
 4. 拿到授权码后，双击「安装与更新」，粘贴授权码
 5. 按平台安装：
    - **Grok Bot**：安装器生成带授权编号水印的上传包 zip → 发给 Grok Bot 里的运营总监 → 按包里的 `BOOTSTRAP.md` 搭建团队
@@ -81,7 +143,7 @@
 
 ## 更新与到期
 
-- **会员更新**：服务期内运行「检查新版」，或下载新版安装包运行「安装与更新」，无需逐版换 Key
+- **会员更新（基础运营版）**：服务期内运行「检查新版」，或下载新版安装包运行「安装与更新」，无需逐版换 Key
 - **固定版本试用**：只能安装签发时的版本，不自动升级
 - 到期后已安装的内容继续可用，不再提供新版
 
@@ -92,7 +154,7 @@
 OpenBot 版不生成上传包，由安装器把团队包直接写进你的电脑。
 
 **前提**
-- 从本仓 Releases 下载 **OpenBot 专用安装包**（`…-openbot-macos.zip` / `…-openbot-windows.zip`）。Grok 版安装包只含 Grok 的团队包，用它会提示没有 OpenBot 内容
+- 基础运营版：下载 **OpenBot 专用安装包**（`…-openbot-macos.zip` / `…-openbot-windows.zip`），Grok 版安装包只含 Grok 的团队包，用它会提示没有 OpenBot 内容；旗舰版：下载旗舰安装包即可，两个平台都在里面
 - 先装好 OpenBot（MagPie 可选，用来给每个助手单独配模型）
 - 授权码要开通 OpenBot 平台：联系作者，用同一个授权编号重签一张码，到期日不变。老码只有 Grok Bot，安装时选 OpenBot 会被拒绝
 
@@ -114,6 +176,8 @@ OpenBot 版不生成上传包，由安装器把团队包直接写进你的电脑
 ---
 
 ## 已装用户怎么升级到新版
+
+以下是**基础运营版**的升级步骤。旗舰版预发行期间，升级请下载新的旗舰安装包运行「安装与更新」，不要删除任何助手、台账和产品文件。
 
 **Grok Bot**：运行「检查新版」→ 下载新版本 → 生成新的上传包 zip → 发给 Grok Bot 里的运营总监，贴下面这段口令（附件就是新上传包）：
 
