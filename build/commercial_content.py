@@ -23,7 +23,8 @@ PERSONAL = re.compile('(?:' + BRAND + '|' + PRODUCT + ')', re.I)
 
 # Public trademark names and generic replacements are executable compliance rules,
 # not owner product examples. Preserve the Mac-supplied dictionary byte for byte.
-PUBLIC_RULE_FILES = {'skills/starsky-ads-terminal/engine/app/services/copy_guard.py'}
+PUBLIC_RULE_FILES = {'skills/starsky-ads-terminal/engine/app/services/copy_guard.py',
+                     'templates/compliance_base_lexicon.yaml'}
 
 # Reviewed customer documentation and redacted screenshots are supplied by Mac.
 # Preserve only these exact delivery paths, including original text bytes.
