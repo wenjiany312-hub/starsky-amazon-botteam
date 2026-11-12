@@ -6,14 +6,16 @@
 
 ## 一、位置
 
-默认位于使用者本机用户目录：
+默认位于 OpenBot 共享文件夹内：
 
 ```
-~/StarSky/handoff/
+~/OpenBot/Shared/StarSky/handoff/
 ```
 
+- 选这个位置的原因：OpenBot 助手默认只能读写自己的工作区和共享文件夹（见 [adapters/openbot/SETUP.md](../adapters/openbot/SETUP.md)）。放在共享文件夹里，OpenBot 不用额外授权就能写 `outbox/`；终端在同一台 Mac 上也能读。
 - 不在本仓库内，不进 Git。
 - 第一阶段（OpenBot、StarSky）与终端在同一台 Mac，直接读写。
+- 2026-11-12 实测：OpenBot 运营总监按本文档写入 `outbox/products/sample.json` 与 `manifest.json`，`validate_handoff.py` 通过（0 错误、0 警告）。
 - 第二阶段（Grok Bot）若在云电脑上运行，本目录由同步或执行桥接生成，路径另定。
 
 ## 二、目录结构
@@ -81,7 +83,7 @@ handoff/
 ## 六、校验
 
 ```bash
-python3 handoff/validate_handoff.py ~/StarSky/handoff
+python3 handoff/validate_handoff.py ~/OpenBot/Shared/StarSky/handoff
 ```
 
 - 退出码 `0`：通过（可能有警告）。
