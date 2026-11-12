@@ -42,7 +42,12 @@ python3 {KIT}/scripts/verify_checksums.py {KIT}      # Windows：py -3 {KIT}\scr
 ## 5. 装技能
 OpenBot 的技能是**本机技能库 + 按助手分配**，不是账户共享。两条路，优先第一条：
 
-**A. 你自己装（推荐）**：`openbot.create_skill` 建技能（正文见下），再 `openbot.install_local_skill` 装到指定助手（`agentId` 给目标助手的 id），最后 `openbot.set_skill_enabled` 按档案开关。装之前先 `openbot.list_local_skills` 看同名技能在不在，**已存在的不要覆盖**：读回比对，不一致就告诉老板。
+**A. 你自己装（推荐）**：`openbot.create_skill` 只吃一个参数 `sourcePath`，而且必须是**你自己工作区里的相对路径**——绝对路径、反斜杠、`..` 一律被拒（报 `Use a relative skill folder inside the current agent workspace.`）。所以分三步：
+1. 把 `{KIT}/skills/<技能名>/` 整个文件夹复制到你自己工作区，例如 `skills-draft/<技能名>/`（正文见下；`{KIT}` 那种绝对路径不能直接传给工具）
+2. `openbot.create_skill` 传相对路径 `skills-draft/<技能名>`：它把技能存进本机技能库，并**给你自己装好**，不用再给自己装一遍
+3. 其他助手用 `openbot.install_local_skill`（`agentId` 给目标助手的 id），最后 `openbot.set_skill_enabled` 按档案开关
+
+装之前先 `openbot.list_local_skills` 看同名技能在不在，**已存在的不要覆盖**：读回比对，不一致就告诉老板。
 
 **B. 老板手动装**：技能页 →「你的技能」→ 来源筛选切到「本地」→「添加技能」→ 系统对话框「选择技能文件夹或 ZIP」→ 选 `{KIT}/skills/<技能名>/` 整个文件夹（或它的 zip）。装完在技能详情点「添加到助手」，勾选要用的助手 → 保存。也可以在每个助手的 助手设置 →「技能」里单独开关。
 
