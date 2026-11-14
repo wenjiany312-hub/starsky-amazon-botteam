@@ -10,11 +10,11 @@
 
 | | 基础运营版 | 旗舰版 |
 |---|---|---|
-| 最新版本 | 1.0.0-rc.12（正式版） | 1.0.1（正式版） |
+| 最新版本 | 1.0.0-rc.12（正式版） | 1.0.2（正式版） |
 | 定位 | 11 角色团队出方案：选品、文案、图片、广告方案、上架资料包 | 基础运营版全部内容 + **本机广告终端**：接入你自己的店铺数据，日常运营、每日简报、审核后推送 |
 | 店铺数据 | 不接，没装广告终端也能用 | 读你自己的 Ads API / SP-API，或优麦云、领星；数据只在你自己电脑上 |
 | 授权 | 基础版授权码 | 旗舰版授权码（**一张码同时解锁团队和广告终端**；基础版授权码不能装旗舰包，反过来也不行） |
-| 发行页 | [v1.0.0-rc12](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/tag/v1.0.0-rc12) | [v1.0.1-flagship](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/tag/v1.0.1-flagship) |
+| 发行页 | [v1.0.0-rc12](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/tag/v1.0.0-rc12) | [v1.0.2-flagship](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/tag/v1.0.2-flagship) |
 
 买旗舰版即包含基础运营版的全部内容，用不用都可以。
 
@@ -22,13 +22,13 @@
 
 ## 下载
 
-### 旗舰版 1.0.1（推荐）
+### 旗舰版 1.0.2（推荐）
 
 一个安装包同时含 Grok Bot 和 OpenBot 的团队 + 本机广告终端，装哪个平台由授权码决定，按电脑系统选一个：
 
 | macOS | Windows |
 |---|---|
-| [Starsky-BotTeam-Flagship-1.0.1-macos.zip](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/download/v1.0.1-flagship/Starsky-BotTeam-Flagship-1.0.1-macos.zip) | [Starsky-BotTeam-Flagship-1.0.1-windows.zip](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/download/v1.0.1-flagship/Starsky-BotTeam-Flagship-1.0.1-windows.zip) |
+| [Starsky-BotTeam-Flagship-1.0.2-macos.zip](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/download/v1.0.2-flagship/Starsky-BotTeam-Flagship-1.0.2-macos.zip) | [Starsky-BotTeam-Flagship-1.0.2-windows.zip](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/download/v1.0.2-flagship/Starsky-BotTeam-Flagship-1.0.2-windows.zip) |
 
 装完团队后，安装器会**自动把「星空广告终端」装到你本机**，并在桌面生成三个图标：启动星空广告终端 / 星空每日经营简报 / 停止星空广告终端。双击启动，按接入向导接 ERP、店铺 API、维护成本表，然后就能看店铺数据和每日简报。
 
@@ -176,7 +176,10 @@
 - ⚠️ **老安装包里的「安装与更新」只重装它自己那一版，不会去拉新版**。要新版，必须先下载新安装包
 - 会员版和固定版本试用都可以这样装（固定版本试用只能装与授权对应的那一版）
 
-**更新后只有 Grok Bot 用户要多做一步**：把新生成的上传包发给云端的运营总监，并让它把 **11 个助手的系统提示词全部重发一遍**——新版的行为改动都在提示词里，不发新提示词它还是旧逻辑。OpenBot 用户按安装器打印的升级口令让运营总监对齐，`work/` 不会被改动。
+**更新后先看安装器打印的「本次更新范围」**（1.0.2 起）：
+
+- **只更新了本机广告终端和安装器** → 团队提示词、技能一个字没变，**不用**给运营总监发口令、也不用把上传包发给云端总监，双击桌面的「启动星空广告终端」即可
+- **团队内容（提示词 / 技能）有变化** → Grok Bot 用户把新生成的上传包发给云端运营总监，并让它把 **11 个助手的系统提示词全部重发一遍**（行为改动都在提示词里）；OpenBot 用户按安装器打印的升级口令让运营总监对齐。两种情况 `work/` 都不会被改动
 
 **Grok Bot 团队一份只升级一次**：在任意一台电脑上运行安装、生成新上传包、发给云端运营总监完成升级即可；其他设备登录同一个 Grok 账号，自动看到的就是新版，不用重复操作。
 
