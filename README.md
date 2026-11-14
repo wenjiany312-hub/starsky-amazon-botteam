@@ -10,11 +10,11 @@
 
 | | 基础运营版 | 旗舰版 |
 |---|---|---|
-| 最新版本 | 1.0.0-rc.12（正式版） | 1.0.0-rc.15（正式版） |
+| 最新版本 | 1.0.0-rc.12（正式版） | 1.0.1（正式版） |
 | 定位 | 11 角色团队出方案：选品、文案、图片、广告方案、上架资料包 | 基础运营版全部内容 + **本机广告终端**：接入你自己的店铺数据，日常运营、每日简报、审核后推送 |
 | 店铺数据 | 不接，没装广告终端也能用 | 读你自己的 Ads API / SP-API，或优麦云、领星；数据只在你自己电脑上 |
 | 授权 | 基础版授权码 | 旗舰版授权码（**一张码同时解锁团队和广告终端**；基础版授权码不能装旗舰包，反过来也不行） |
-| 发行页 | [v1.0.0-rc12](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/tag/v1.0.0-rc12) | [v1.0.0-rc15-flagship](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/tag/v1.0.0-rc15-flagship) |
+| 发行页 | [v1.0.0-rc12](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/tag/v1.0.0-rc12) | [v1.0.1-flagship](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/tag/v1.0.1-flagship) |
 
 买旗舰版即包含基础运营版的全部内容，用不用都可以。
 
@@ -22,13 +22,13 @@
 
 ## 下载
 
-### 旗舰版 1.0.0-rc.15（推荐）
+### 旗舰版 1.0.1（推荐）
 
 一个安装包同时含 Grok Bot 和 OpenBot 的团队 + 本机广告终端，装哪个平台由授权码决定，按电脑系统选一个：
 
 | macOS | Windows |
 |---|---|
-| [Starsky-BotTeam-Flagship-1.0.0-rc.15-macos.zip](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/download/v1.0.0-rc15-flagship/Starsky-BotTeam-Flagship-1.0.0-rc.15-macos.zip) | [Starsky-BotTeam-Flagship-1.0.0-rc.15-windows.zip](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/download/v1.0.0-rc15-flagship/Starsky-BotTeam-Flagship-1.0.0-rc.15-windows.zip) |
+| [Starsky-BotTeam-Flagship-1.0.1-macos.zip](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/download/v1.0.1-flagship/Starsky-BotTeam-Flagship-1.0.1-macos.zip) | [Starsky-BotTeam-Flagship-1.0.1-windows.zip](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/download/v1.0.1-flagship/Starsky-BotTeam-Flagship-1.0.1-windows.zip) |
 
 装完团队后，安装器会**自动把「星空广告终端」装到你本机**，并在桌面生成三个图标：启动星空广告终端 / 星空每日经营简报 / 停止星空广告终端。双击启动，按接入向导接 ERP、店铺 API、维护成本表，然后就能看店铺数据和每日简报。
 
