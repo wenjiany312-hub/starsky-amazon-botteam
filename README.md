@@ -10,7 +10,7 @@
 
 | | 基础运营版 | 旗舰版 |
 |---|---|---|
-| 最新版本 | 1.0.0-rc.12（预发行） | 1.0.0-rc.15（预发行） |
+| 最新版本 | 1.0.0-rc.12（正式版） | 1.0.0-rc.15（正式版） |
 | 定位 | 11 角色团队出方案：选品、文案、图片、广告方案、上架资料包 | 基础运营版全部内容 + **本机广告终端**：接入你自己的店铺数据，日常运营、每日简报、审核后推送 |
 | 店铺数据 | 不接，没装广告终端也能用 | 读你自己的 Ads API / SP-API，或优麦云、领星；数据只在你自己电脑上 |
 | 授权 | 基础版授权码 | 旗舰版授权码（**一张码同时解锁团队和广告终端**；基础版授权码不能装旗舰包，反过来也不行） |
@@ -39,7 +39,7 @@
 | Grok Bot | [Starsky-BotTeam-1.0.0-rc.12-macos.zip](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/download/v1.0.0-rc12/Starsky-BotTeam-1.0.0-rc.12-macos.zip) | [Starsky-BotTeam-1.0.0-rc.12-windows.zip](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/download/v1.0.0-rc12/Starsky-BotTeam-1.0.0-rc.12-windows.zip) |
 | OpenBot | [Starsky-BotTeam-1.0.0-rc.12-openbot-macos.zip](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/download/v1.0.0-rc12/Starsky-BotTeam-1.0.0-rc.12-openbot-macos.zip) | [Starsky-BotTeam-1.0.0-rc.12-openbot-windows.zip](https://github.com/wenjiany312-hub/starsky-amazon-botteam/releases/download/v1.0.0-rc12/Starsky-BotTeam-1.0.0-rc.12-openbot-windows.zip) |
 
-不要下载 `Source code (zip)` / `Source code (tar.gz)`，它们不是安装器。校验值见各发行页的 `SHA256SUMS.txt`。两个版本都是预发行，尚未完成两台电脑的实机验收。
+不要下载 `Source code (zip)` / `Source code (tar.gz)`，它们不是安装器。校验值见各发行页的 `SHA256SUMS.txt`。
 
 ---
 
@@ -128,8 +128,7 @@
 
 ### 旗舰版的边界
 
-- 预发行，尚未完成两台电脑的实机验收
-- 广告终端的 Windows 实机装机验证进行中；遇到问题联系作者
+- 广告终端装机若因网络等原因中断，重跑「安装与更新」即可补装，已接入的数据不会动；遇到问题联系作者
 - 只读报表目前覆盖 Sponsored Products
 - 利润与广告建议是经营估算，没有收益保证
 
@@ -213,7 +212,7 @@ OpenBot 版不生成上传包，由安装器把团队包直接写进你的电脑
 
 ## 已装用户怎么升级到新版
 
-以下是**基础运营版**的升级步骤。旗舰版预发行期间，升级请下载新的旗舰安装包运行「安装与更新」，不要删除任何助手、台账和产品文件。
+以下是**基础运营版**的升级步骤。**旗舰版**更简单：运行旗舰安装包里的「检查新版」在线升级，或下载新的旗舰安装包运行「安装与更新」，效果一样。都不要删除任何助手、台账和产品文件。
 
 **Grok Bot**：运行「检查新版」→ 下载新版本 → 生成新的上传包 zip → 发给 Grok Bot 里的运营总监，贴下面这段口令（附件就是新上传包）：
 
